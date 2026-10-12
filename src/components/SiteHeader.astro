@@ -30,7 +30,18 @@ const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
     <details class="mobile-navigation">
       <summary aria-label="Toggle navigation"><span>Menu</span><span aria-hidden="true">☰</span></summary>
       <nav aria-label="Mobile navigation">
-        {links.map((link) => <a href={link.href}>{link.label}</a>)}
+        {links.map((link) => (
+  <a
+    href={link.href}
+    aria-current={
+      current === (link.href.replace(/\/+$/, '') || '/')
+        ? 'page'
+        : undefined
+    }
+  >
+    {link.label}
+  </a>
+))}
       </nav>
     </details>
   </div>
