@@ -10,6 +10,34 @@ relatedSets:
     year: 1994
   - name: "The Brothers' War"
     year: 2022
+
+cards:
+  - name: "Brotherhood's End"
+    setCode: "bro"
+    collectorNumber: "128"
+    scryfallId: "50f7666d-0d60-4fe5-b144-286d4e47b704"
+    artist: "Bryan Sola"
+    significance: >-
+      Depicts the tragedy surrounding Tocasia's death,
+      an early turning point in Urza and Mishra's rivalry.
+
+  - name: "Urza, Lord Protector"
+    setCode: "bro"
+    collectorNumber: "225"
+    scryfallId: "8aefe8bd-216a-4ec1-9362-3f9dbf7fd083"
+    artist: "Ryan Pancoast"
+    significance: >-
+      Represents Urza's power as an artificer before
+      the catastrophic conclusion of the war.
+
+  - name: "Mishra, Tamer of Mak Fawa"
+    setCode: "bro"
+    collectorNumber: "217"
+    scryfallId: "585a753d-a692-474a-bc28-48dd93b73ace"
+    artist: "Darren Tan"
+    significance: >-
+      Illustrates Mishra's increasing authority and
+      the Phyrexian influence surrounding his ambitions.
 ---
 
 ## The Beginning of a Rivalry

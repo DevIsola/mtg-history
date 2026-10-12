@@ -6,6 +6,8 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../utils/paths';
 
+import HistoricalCard from '../../components/HistoricalCard.astro';
+
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
 
@@ -60,6 +62,35 @@ const { Content } = await render(chapter);
       <article class="chapter-prose">
         <Content />
       </article>
+
+{
+  chapter.data.cards.length > 0 && (
+    <section
+      class="chapter-cards"
+      aria-labelledby="chapter-cards-heading"
+    >
+      <p class="eyebrow">
+        Historical Artifacts
+      </p>
+
+      <h2 id="chapter-cards-heading">
+        The Cards Behind the History
+      </h2>
+
+      <p class="chapter-cards__intro">
+        These cards illustrate important characters,
+        conflicts, and moments from this chapter.
+      </p>
+
+      <div class="historical-card-grid">
+        {chapter.data.cards.map((card) => (
+          <HistoricalCard card={card} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
     </div>
   </section>
 </BaseLayout>

@@ -21,6 +21,19 @@ const chapters = defineCollection({
         year: z.number().int(),
       }),
     ),
+
+    cards: z
+      .array(
+        z.object({
+          name: z.string(),
+          setCode: z.string(),
+          collectorNumber: z.string(),
+          scryfallId: z.string().uuid(),
+          artist: z.string(),
+          significance: z.string(),
+        }),
+      )
+      .default([]),
   }),
 });
 
