@@ -1,0 +1,24 @@
+
+---
+import HistoricalCard from './HistoricalCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+type Card =
+  CollectionEntry<'chapters'>['data']['cards'][number];
+
+interface Props {
+  card: Card;
+}
+
+const { card } = Astro.props;
+---
+
+<aside class="historical-moment" aria-label={`Historical illustration: ${card.name}`}>
+  <div class="historical-moment__narrative">
+    <slot />
+  </div>
+
+  <div class="historical-moment__illustration">
+    <HistoricalCard card={card} />
+  </div>
+</aside>

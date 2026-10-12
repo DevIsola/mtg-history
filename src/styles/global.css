@@ -1071,3 +1071,52 @@ summary:focus-visible {
     margin-inline: auto;
   }
 }
+
+/* Illustrated historical moments */
+
+.historical-moment {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 280px);
+  gap: 2rem;
+  align-items: start;
+
+  margin-block: 2.5rem;
+  padding: 1.5rem;
+
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+}
+
+.historical-moment__narrative {
+  min-width: 0;
+}
+
+.historical-moment__narrative p:first-child {
+  margin-top: 0;
+}
+
+.historical-moment__narrative p {
+  line-height: 1.85;
+}
+
+.historical-moment__illustration {
+  min-width: 0;
+}
+
+.historical-moment__illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 680px) {
+  .historical-moment {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .historical-moment__illustration {
+    width: min(100%, 300px);
+    margin-inline: auto;
+  }
+}
