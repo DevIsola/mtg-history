@@ -40,7 +40,15 @@ const chaptersByEra = new Map(
               <div class="timeline-entry__meta">
                 <span>{era.kicker}</span>
                 <span class:list={['chapter-status', era.status === 'in-progress' && 'chapter-status--progress']}>
-                  {era.status === 'in-progress' ? 'Chapter in progress' : 'Chapter planned'}
+                  
+{
+  era.status === 'published'
+    ? 'Chapter available'
+    : era.status === 'in-progress'
+      ? 'Chapter in progress'
+      : 'Chapter planned'
+}
+
                 </span>
               </div>
               <h3>{era.name}</h3>
@@ -55,7 +63,13 @@ const chaptersByEra = new Map(
       class="text-link"
       href={withBase(`chapters/${chaptersByEra.get(era.id)}/`)}
     >
-      Read chapter draft →
+      
+{
+  era.status === 'published'
+    ? 'Read chapter →'
+    : 'Read chapter draft →'
+}
+
     </a>
   )
 }
