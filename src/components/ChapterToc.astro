@@ -1,0 +1,45 @@
+
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+  hasSources?: boolean;
+}
+
+const {
+  headings,
+  hasSources = false,
+} = Astro.props;
+
+const sections = headings.filter(
+  (heading) => heading.depth === 2
+);
+---
+
+<nav class="chapter-toc" aria-label="Chapter contents">
+  <p class="eyebrow">In this chapter</p>
+
+  <ol class="chapter-toc__list">
+    {sections.map((section) => (
+      <li>
+        <a href={`#${section.slug}`}>
+          {section.text}
+        </a>
+      </li>
+    ))}
+  </ol>
+
+  {hasSources && (
+    <a
+      class="chapter-toc__sources"
+      href="#chapter-sources"
+    >
+      Sources &amp; further reading
+    </a>
+  )}
+</nav>

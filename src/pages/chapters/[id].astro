@@ -4,9 +4,9 @@ import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChapterToc from '../../components/ChapterToc.astro';
+import ChapterSources from '../../components/ChapterSources.astro';
 import { withBase } from '../../utils/paths';
-
-import HistoricalCard from '../../components/HistoricalCard.astro';
 
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
@@ -21,7 +21,22 @@ const { chapter } = Astro.props as {
   chapter: CollectionEntry<'chapters'>;
 };
 
-const { Content } = await render(chapter);
+// Render the chapter and collect its headings.
+const { Content, headings } = await render(chapter);
+
+// Determine the reading order from authored chapters.
+const chapters = (await getCollection('chapters')).sort(
+  (a, b) =>
+    a.data.order - b.data.order ||
+    a.id.localeCompare(b.id)
+);
+
+const currentIndex = chapters.findIndex(
+  (entry) => entry.id === chapter.id
+);
+
+const previousChapter = chapters[currentIndex - 1];
+const nextChapter = chapters[currentIndex + 1];
 ---
 
 <BaseLayout
@@ -41,56 +56,83 @@ const { Content } = await render(chapter);
   </section>
 
   <section class="section-spacing">
-    <div class="page-shell article-column">
-      <a
-        href={withBase(`timeline/#${chapter.data.eraId}`)}
-        class="text-link"
-      >
-        ← Return to timeline
-      </a>
+    <div class="page-shell chapter-reading-grid">
 
-      <div class="chapter-publications">
-        <p class="eyebrow">Related Expansions</p>
+      <!-- Chapter navigation sidebar -->
+      <aside class="chapter-reading-sidebar">
+        <ChapterToc
+          headings={headings}
+          hasSources={chapter.data.sources.length > 0}
+        />
+      </aside>
 
-        <ul>
-          {chapter.data.relatedSets.map((set) => (
-            <li>{set.name} ({set.year})</li>
-          ))}
-        </ul>
+      <!-- Main reading column -->
+      <div class="chapter-reading-content">
+
+        <a
+          class="text-link"
+          href={withBase(`timeline/#${chapter.data.eraId}`)}
+        >
+          ← Return to timeline
+        </a>
+
+        <div class="chapter-publications">
+          <p class="eyebrow">Related Expansions</p>
+
+          <ul>
+            {chapter.data.relatedSets.map((set) => (
+              <li>{set.name} ({set.year})</li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Historical narrative -->
+        <article class="chapter-prose">
+          <Content />
+        </article>
+
+        <!-- Historical references -->
+        <ChapterSources sources={chapter.data.sources} />
+
+        <!-- Reading navigation -->
+        <nav
+          class="chapter-pagination"
+          aria-label="Chapter navigation"
+        >
+          {previousChapter && (
+            <a
+              class="chapter-pagination__link"
+              href={withBase(
+                `chapters/${previousChapter.id}/`
+              )}
+            >
+              <span>← Previous chapter</span>
+              <strong>{previousChapter.data.title}</strong>
+            </a>
+          )}
+
+          {nextChapter && (
+            <a
+              class="chapter-pagination__link"
+              href={withBase(
+                `chapters/${nextChapter.id}/`
+              )}
+            >
+              <span>Next chapter →</span>
+              <strong>{nextChapter.data.title}</strong>
+            </a>
+          )}
+
+          <a
+            class="chapter-pagination__link"
+            href={withBase('timeline/')}
+          >
+            <span>Explore more history</span>
+            <strong>Complete historical timeline →</strong>
+          </a>
+        </nav>
+
       </div>
-
-      <article class="chapter-prose">
-        <Content />
-      </article>
-
-{
-  chapter.data.cards.length > 0 && (
-    <section
-      class="chapter-cards"
-      aria-labelledby="chapter-cards-heading"
-    >
-      <p class="eyebrow">
-        Historical Artifacts
-      </p>
-
-      <h2 id="chapter-cards-heading">
-        The Cards Behind the History
-      </h2>
-
-      <p class="chapter-cards__intro">
-        These cards illustrate important characters,
-        conflicts, and moments from this chapter.
-      </p>
-
-      <div class="historical-card-grid">
-        {chapter.data.cards.map((card) => (
-          <HistoricalCard card={card} />
-        ))}
-      </div>
-    </section>
-  )
-}
-
     </div>
   </section>
 </BaseLayout>

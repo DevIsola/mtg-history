@@ -1,0 +1,59 @@
+
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Source =
+  CollectionEntry<'chapters'>['data']['sources'][number];
+
+interface Props {
+  sources: Source[];
+}
+
+const { sources } = Astro.props;
+---
+
+{sources.length > 0 && (
+  <section
+    id="chapter-sources"
+    class="chapter-sources"
+    aria-labelledby="chapter-sources-title"
+  >
+    <p class="eyebrow">Historical research</p>
+
+    <h2 id="chapter-sources-title">
+      Sources &amp; Further Reading
+    </h2>
+
+    <ol>
+      {sources.map((source, index) => (
+        <li id={`source-${index + 1}`}>
+          <span class="chapter-sources__number">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+
+          <div>
+            {source.url ? (
+              <a
+                href={source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {source.title} ↗
+              </a>
+            ) : (
+              <cite>{source.title}</cite>
+            )}
+
+            <p>
+              {source.author && `${source.author} · `}
+              {source.kind === 'official'
+                ? 'Official Magic publication'
+                : 'Book'}
+              {source.year && ` · ${source.year}`}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

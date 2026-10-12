@@ -1120,3 +1120,187 @@ summary:focus-visible {
     margin-inline: auto;
   }
 }
+
+/* =========================================
+   Historical reading experience
+   ========================================= */
+
+.chapter-reading-grid {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.chapter-reading-sidebar {
+  min-width: 0;
+}
+
+.chapter-reading-content {
+  min-width: 0;
+  max-width: 820px;
+}
+
+/* Table of contents */
+
+.chapter-toc {
+  position: sticky;
+  top: 2rem;
+  padding: 1.5rem;
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+}
+
+.chapter-toc__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--line);
+}
+
+.chapter-toc__list li {
+  margin: 0;
+}
+
+.chapter-toc__list a {
+  display: block;
+  padding: 0.65rem 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  line-height: 1.5;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+}
+
+.chapter-toc__list a:hover,
+.chapter-toc__list a:focus-visible {
+  color: #785528;
+  background: var(--paper-deep);
+  border-left-color: var(--gold);
+}
+
+.chapter-toc__sources {
+  display: block;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: #785528;
+  text-decoration: none;
+}
+
+.chapter-prose h2 {
+  scroll-margin-top: 2rem;
+}
+
+/* Source bibliography */
+
+.chapter-sources {
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 2rem;
+}
+
+.chapter-sources h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+.chapter-sources ol {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.chapter-sources li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.chapter-sources__number {
+  color: #8b693c;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.chapter-sources li a {
+  color: #785528;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.chapter-sources li p {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+/* Previous / next chapter navigation */
+
+.chapter-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.chapter-pagination__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.chapter-pagination__link:hover {
+  border-color: var(--gold);
+}
+
+.chapter-pagination__link span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8b693c;
+}
+
+.chapter-pagination__link strong {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .chapter-reading-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-toc {
+    position: static;
+  }
+
+  .chapter-reading-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .chapter-pagination {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-toc {
+    padding: 1.2rem;
+  }
+}
