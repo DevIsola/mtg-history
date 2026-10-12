@@ -33,18 +33,25 @@ export const eras: HistoricalEra[] = [
     summary:
       "Urza and Mishra turn rivalry into catastrophe. Their war changes Dominaria and echoes through stories released decades apart.",
     sets: ["Antiquities · 1994", "The Brothers’ War · 2022"],
-    status: "in-progress",
+    status: "published",
   },
   {
     id: "ice-age",
     chapter: "03",
     name: "The Dark and the Ice Age",
-    kicker: "The Long Winter",
+    kicker: "From Darkness to the Thaw",
     summary:
-      "In the aftermath of ruin, Dominaria enters an age of upheaval, cold, and struggles for survival.",
-    sets: ["The Dark · 1994", "Ice Age · 1995", "Alliances · 1996"],
-    status: "planned",
+      "After the Sylex Blast, Dominaria enters centuries of turmoil. Jodah, Lim-Dûl, and Freyalise become central figures in the struggle through the Ice Age.",
+    sets: [
+      "The Dark · 1994",
+      "Fallen Empires · 1994",
+      "Ice Age · 1995",
+      "Alliances · 1996",
+      "Coldsnap · 2006",
+    ],
+    status: "published",
   },
+
   {
     id: "weatherlight",
     chapter: "04",

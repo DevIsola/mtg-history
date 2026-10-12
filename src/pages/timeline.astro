@@ -30,7 +30,12 @@ const chaptersByEra = new Map(
         <p class="eyebrow">Reading guide</p>
         <h2>History is not always linear.</h2>
         <p>Many stories occur simultaneously or revisit events told years earlier. These chapters are editorial groupings, designed as a starting point rather than an exhaustive in-universe calendar.</p>
-        <span class="timeline-count">{String(eras.length).padStart(2, '0')} eras planned</span>
+        
+<span class="timeline-count">
+  {String(eras.length).padStart(2, '0')} historical eras
+  · {eras.filter((era) => era.status === 'published').length} chapters available
+</span>
+
       </aside>
       <div class="timeline-list">
         {eras.map((era) => (
