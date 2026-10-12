@@ -1,0 +1,62 @@
+
+---
+import type { CollectionEntry } from 'astro:content';
+
+type HistoricalCardData =
+  CollectionEntry<'chapters'>['data']['cards'][number];
+
+interface Props {
+  card: HistoricalCardData;
+}
+
+const { card } = Astro.props;
+
+const id = card.scryfallId.toLowerCase();
+
+const imageUrl =
+  `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`;
+
+const cardUrl =
+  `https://scryfall.com/card/${card.setCode}/${card.collectorNumber}`;
+---
+
+<figure class="historical-card">
+  <a
+    href={cardUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`View ${card.name} on Scryfall`}
+  >
+    <img
+      src={imageUrl}
+      alt={`${card.name}, illustrated by ${card.artist}`}
+      width="488"
+      height="680"
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+
+  <figcaption class="historical-card__caption">
+    <h3>{card.name}</h3>
+
+    <p class="historical-card__significance">
+      {card.significance}
+    </p>
+
+    <p class="historical-card__credit">
+      Illustrated by {card.artist}
+      · {card.setCode.toUpperCase()}
+      #{card.collectorNumber}
+    </p>
+
+    <a
+      class="historical-card__source"
+      href={cardUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View card on Scryfall ↗
+    </a>
+  </figcaption>
+</figure>

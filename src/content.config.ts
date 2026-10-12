@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 const chapters = defineCollection({
   loader: glob({
-    pattern: "**/*.md",
+    pattern: "**/*.{md,mdx}",
     base: "./src/content/chapters",
   }),
 
@@ -21,6 +21,19 @@ const chapters = defineCollection({
         year: z.number().int(),
       }),
     ),
+
+    cards: z
+      .array(
+        z.object({
+          name: z.string(),
+          setCode: z.string(),
+          collectorNumber: z.string(),
+          scryfallId: z.string().uuid(),
+          artist: z.string(),
+          significance: z.string(),
+        }),
+      )
+      .default([]),
   }),
 });
 
