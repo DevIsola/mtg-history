@@ -34,6 +34,18 @@ const chapters = defineCollection({
         }),
       )
       .default([]),
+
+    sources: z
+      .array(
+        z.object({
+          title: z.string(),
+          kind: z.enum(["official", "book"]),
+          author: z.string().optional(),
+          year: z.number().int().optional(),
+          url: z.string().url().optional(),
+        }),
+      )
+      .default([]),
   }),
 });
 
