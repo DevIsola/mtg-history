@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="344" viewBox="0 0 1440 344" role="img" aria-labelledby="title desc">
+<title id="title">Three windows into Magic's history</title>
+<desc id="desc">Original decorative triptych: an ancient spire, opposing artificers' machines, and an open portal between worlds.</desc>
+<defs>
+ <linearGradient id="panel" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#15262a"/><stop offset="1" stop-color="#0d191d"/></linearGradient>
+ <radialGradient id="flare"><stop stop-color="#d4ae6a" stop-opacity=".65"/><stop offset="1" stop-color="#d4ae6a" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1440" height="344" fill="#101a1e"/>
+<rect x="9" y="9" width="1422" height="326" fill="url(#panel)" stroke="#99764b" opacity=".96"/>
+<path d="M480 25V319M960 25V319" stroke="#9c8057" opacity=".6"/>
+<g fill="none" stroke="#9db1a4" stroke-opacity=".22" stroke-width="1">
+ <path d="M26 190Q235 50 456 190M502 190Q715 57 938 190M982 190Q1198 53 1414 190"/>
+ <path d="M28 210Q240 95 454 210M505 210Q715 100 935 210M983 210Q1202 99 1413 210"/>
+</g>
+<!-- ancient spire -->
+<g transform="translate(240 139)" fill="none" stroke="#d2ac6e">
+ <circle r="82" opacity=".26"/><circle r="67" opacity=".4" stroke-dasharray="3 8"/>
+ <path d="M-42 89H43L33 63L27 13L13 -5L9 -55L0 -76L-9 -55L-13 -5L-27 13L-33 63Z" fill="#2b413d" stroke-width="2"/>
+ <path d="M0 -71V81M-27 24H27M-34 64H34" opacity=".57"/>
+ <path d="M-8 -16L0 -32L8 -16L0 2Z" fill="#e0c28a" opacity=".65"/>
+ <path d="M-59 82V37L-43 19V82M59 82V37L43 19V82" opacity=".55"/>
+</g>
+<!-- brother constructs -->
+<g transform="translate(720 143)" stroke="#d2ac6e" stroke-width="2" fill="none">
+ <circle cx="0" cy="0" r="83" opacity=".17"/>
+ <path d="M-105 82L-99 15L-77 -10L-55 15L-49 82Z" fill="#37504b"/>
+ <path d="M50 82L56 15L78 -10L100 15L106 82Z" fill="#37504b"/>
+ <path d="M-107 23H-47M49 23H107M-92 42H-62M63 42H93" opacity=".58"/>
+ <path d="M-77 -10V-40L-63 -55M78 -10V-40L64 -55"/>
+ <path d="M-53 76L-30 35L-16 47M53 76L30 35L16 47"/>
+ <path d="M0 -70L15 -15L4 -9L29 29L-8 8L-24 53L-21 0L-41 -9Z" fill="#b68a53" opacity=".58"/>
+ <circle cx="0" cy="-70" r="36" fill="url(#flare)" stroke="none"/>
+</g>
+<!-- omenpath -->
+<g transform="translate(1200 145)" fill="none" stroke="#d2ac6e">
+ <path d="M-92 84V0A92 92 0 0 1 92 0V84" stroke-width="5" opacity=".64"/>
+ <path d="M-70 84V0A70 70 0 0 1 70 0V84" stroke-width="2" opacity=".77"/>
+ <path d="M-52 84V0A52 52 0 0 1 52 0V84" stroke-width="3" opacity=".52"/>
+ <path d="M0 -50C34 -29 -28 5 6 32C33 50 15 70 -16 82" stroke="#dfc28c" stroke-width="3"/>
+ <path d="M-90 90H90M-85 99H85" opacity=".43"/>
+ <path d="M-105 -8L-92 -22L-79 -8M79 -8L92 -22L105 -8" opacity=".5"/>
+</g>
+<g fill="#e9d8b9" font-family="Georgia, 'Times New Roman', serif" font-size="26" text-anchor="middle">
+ <text x="240" y="275">Ancient Dominaria</text><text x="720" y="275">The Brothers’ War</text><text x="1200" y="275">The Changing Multiverse</text>
+</g>
+<g fill="#bda06e" font-family="Verdana, Arial, sans-serif" font-size="12" letter-spacing="3" text-anchor="middle">
+ <text x="240" y="304">ORIGINS</text><text x="720" y="304">CONFLICT</text><text x="1200" y="304">CONSEQUENCES</text>
+</g>
+</svg>
