@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { eras } from '../data/eras';
+---
+<BaseLayout
+  title="Historical timeline"
+  description="Follow major narrative eras in the history of Magic: The Gathering, from ancient Dominaria to the age of Omenpaths."
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">The historical archive</p>
+      <h1>The <em>timeline</em></h1>
+      <p>Explore a guided reading order of pivotal stories across the Multiverse. Dates on set references describe publication, not necessarily when an event occurred in the lore.</p>
+    </div>
+  </section>
+  <section class="timeline-section section-spacing" aria-label="Historical eras">
+    <div class="page-shell timeline-layout">
+      <aside class="timeline-aside">
+        <p class="eyebrow">Reading guide</p>
+        <h2>History is not always linear.</h2>
+        <p>Many stories occur simultaneously or revisit events told years earlier. These chapters are editorial groupings, designed as a starting point rather than an exhaustive in-universe calendar.</p>
+        <span class="timeline-count">{String(eras.length).padStart(2, '0')} eras planned</span>
+      </aside>
+      <div class="timeline-list">
+        {eras.map((era) => (
+          <article id={era.id} class="timeline-entry">
+            <div class="timeline-entry__marker" aria-hidden="true">{era.chapter}</div>
+            <div class="timeline-entry__body">
+              <div class="timeline-entry__meta">
+                <span>{era.kicker}</span>
+                <span class:list={['chapter-status', era.status === 'in-progress' && 'chapter-status--progress']}>
+                  {era.status === 'in-progress' ? 'Chapter in progress' : 'Chapter planned'}
+                </span>
+              </div>
+              <h3>{era.name}</h3>
+              <p>{era.summary}</p>
+              <div class="set-references">
+                <strong>Related publications</strong>
+                <ul>{era.sets.map((set) => <li>{set}</li>)}</ul>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
+---
+<BaseLayout
+  title="About the archive"
+  description="Learn how Chronicles of the Multiverse organizes Magic: The Gathering lore, publications, and historical card references."
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">Our approach</p>
+      <h1>History before <em>everything.</em></h1>
+      <p>An independent, non-commercial reading project about the events, people, and worlds of Magic: The Gathering.</p>
+    </div>
+  </section>
+  <section class="section-spacing">
+    <div class="page-shell article-column">
+      <p class="eyebrow">The purpose</p>
+      <h2 class="section-title">A story-first <em>archive.</em></h2>
+      <p class="lead-copy">Magic has been published in sets for decades. Its fictional history, however, is richer—and less linear—than any release calendar.</p>
+      <p>Our goal is to organize those stories into clear chapters. Rather than list every card in an expansion, each chapter will explain a significant historical event and show a curated group of cards that illustrate or reference it.</p>
+      <h3>Two complementary timelines</h3>
+      <p><strong>Story chronology</strong> traces events in the fiction. <strong>Publication chronology</strong> records when a story or reference appeared in a Magic set. For instance, Antiquities (1994) and The Brothers' War (2022) both reference the same ancient conflict.</p>
+      <h3>Editorial care</h3>
+      <p>We will favor original summaries, link to official sources where possible, and mark disputed or uncertain lore clearly. Illustrated chapters and card selection will be added incrementally.</p>
+      <h3>Fan-content notice</h3>
+      <p>This site is independent fan content and is not affiliated with, endorsed, or approved by Wizards of the Coast. Magic: The Gathering and associated characters, worlds, and card artwork are the property of their respective rights holders.</p>
+      <p>Read the <a class="inline-link" href="https://company.wizards.com/en/legal/fancontentpolicy" target="_blank" rel="noopener noreferrer">Wizards of the Coast Fan Content Policy ↗</a>.</p>
+      <a class="button button--dark" href={withBase('timeline/')}>Explore the historical timeline <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import { withBase } from '../utils/paths';
+---
+<footer class="site-footer">
+  <div class="page-shell footer-grid">
+    <div>
+      <div class="footer-brand"><span aria-hidden="true">✦</span> Chronicles of the Multiverse</div>
+      <p>An independent historical guide to the stories behind Magic: The Gathering.</p>
+    </div>
+    <div class="footer-links">
+      <a href={withBase('timeline/')}>Timeline</a>
+      <a href={withBase('about/')}>About this project</a>
+      <a href="https://github.com/DevIsola/mtg-history" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="page-shell footer-legal">
+    <p>This is unofficial fan content, not approved or endorsed by Wizards of the Coast. Magic: The Gathering and related marks belong to Wizards of the Coast.</p>
+    <p>Built as a free historical reading project.</p>
+  </div>
+</footer>

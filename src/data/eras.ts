@@ -1,0 +1,117 @@
+/**
+ * Editorial narrative groupings, not a strict calendar of Multiverse events.
+ * Stories on different planes may overlap. Exact chronology and source
+ * references will be verified as individual chapters are published.
+ */
+export interface HistoricalEra {
+  id: string;
+  chapter: string;
+  name: string;
+  kicker: string;
+  summary: string;
+  sets: string[];
+  status: 'planned' | 'in-progress' | 'published';
+}
+
+export const eras: HistoricalEra[] = [
+  {
+    id: 'thran',
+    chapter: '01',
+    name: 'The Thran and the Origins of Phyrexia',
+    kicker: 'Before the Brothers',
+    summary:
+      'A civilization of extraordinary artifice, and the roots of a threat that will haunt the Multiverse for ages.',
+    sets: ['Referenced across later Dominaria stories'],
+    status: 'planned',
+  },
+  {
+    id: 'brothers-war',
+    chapter: '02',
+    name: "The Brothers’ War",
+    kicker: 'A World Divided',
+    summary:
+      'Urza and Mishra turn rivalry into catastrophe. Their war changes Dominaria and echoes through stories released decades apart.',
+    sets: ['Antiquities · 1994', "The Brothers’ War · 2022"],
+    status: 'in-progress',
+  },
+  {
+    id: 'ice-age',
+    chapter: '03',
+    name: 'The Dark and the Ice Age',
+    kicker: 'The Long Winter',
+    summary:
+      'In the aftermath of ruin, Dominaria enters an age of upheaval, cold, and struggles for survival.',
+    sets: ['The Dark · 1994', 'Ice Age · 1995', 'Alliances · 1996'],
+    status: 'planned',
+  },
+  {
+    id: 'weatherlight',
+    chapter: '04',
+    name: 'The Weatherlight Saga',
+    kicker: 'Legacy and Invasion',
+    summary:
+      'A ship, a crew, and a long resistance to Phyrexia converge on a conflict that transforms Dominaria.',
+    sets: ['Weatherlight · 1997', 'Invasion · 2000', 'Apocalypse · 2001'],
+    status: 'planned',
+  },
+  {
+    id: 'otaria',
+    chapter: '05',
+    name: 'The Mirari and Otaria',
+    kicker: 'Power and Ambition',
+    summary:
+      'A mysterious artifact fuels a new cycle of ambition, conflict, and transformation on Dominaria.',
+    sets: ['Odyssey · 2001', 'Onslaught · 2002', 'Scourge · 2003'],
+    status: 'planned',
+  },
+  {
+    id: 'mending',
+    chapter: '06',
+    name: 'Time Spiral and the Mending',
+    kicker: 'The Nature of Planeswalkers',
+    summary:
+      'Rifts in reality threaten Dominaria, and repairing them changes what it means to be a planeswalker.',
+    sets: ['Time Spiral · 2006', 'Planar Chaos · 2007', 'Future Sight · 2007'],
+    status: 'planned',
+  },
+  {
+    id: 'many-worlds',
+    chapter: '07',
+    name: 'Stories Across the Planes',
+    kicker: 'An Expanding Multiverse',
+    summary:
+      'Ravnica, Zendikar, Innistrad, and other worlds become home to distinct histories and intersecting journeys.',
+    sets: ['Ravnica · 2005', 'Zendikar · 2009', 'Innistrad · 2011'],
+    status: 'planned',
+  },
+  {
+    id: 'war-of-the-spark',
+    chapter: '08',
+    name: 'The War of the Spark',
+    kicker: 'The Fate of Ravnica',
+    summary:
+      'Nicol Bolas draws planeswalkers into a confrontation whose consequences reach far beyond a single plane.',
+    sets: ['War of the Spark · 2019'],
+    status: 'planned',
+  },
+  {
+    id: 'march-of-the-machine',
+    chapter: '09',
+    name: 'The New Phyrexian Invasion',
+    kicker: 'A Multiverse at War',
+    summary:
+      'Phyrexia launches a campaign across the planes, forcing old rivals and new allies to confront a shared threat.',
+    sets: ['Dominaria United · 2022', 'March of the Machine · 2023'],
+    status: 'planned',
+  },
+  {
+    id: 'omenpaths',
+    chapter: '10',
+    name: 'The Era of Omenpaths',
+    kicker: 'After the Invasion',
+    summary:
+      'New routes between worlds reshape travel, relationships, and the possibilities of life in the Multiverse.',
+    sets: ['Wilds of Eldraine · 2023', 'Later story releases'],
+    status: 'planned',
+  },
+];
