@@ -1,6 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { eras } from '../data/eras';
+import { getCollection } from 'astro:content';
+import { withBase } from '../utils/paths';
+
+const chapters = await getCollection('chapters');
+
+const chaptersByEra = new Map(
+  chapters.map((chapter) => [
+    chapter.data.eraId,
+    chapter.id,
+  ]),
+);
 ---
 <BaseLayout
   title="Historical timeline"
@@ -38,6 +49,16 @@ import { eras } from '../data/eras';
                 <strong>Related publications</strong>
                 <ul>{era.sets.map((set) => <li>{set}</li>)}</ul>
               </div>
+              {
+  chaptersByEra.has(era.id) && (
+    <a
+      class="text-link"
+      href={withBase(`chapters/${chaptersByEra.get(era.id)}/`)}
+    >
+      Read chapter draft →
+    </a>
+  )
+}
             </div>
           </article>
         ))}

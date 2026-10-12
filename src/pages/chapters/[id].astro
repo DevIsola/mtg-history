@@ -1,0 +1,65 @@
+
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../utils/paths';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('chapters');
+
+  return chapters.map((chapter) => ({
+    params: { id: chapter.id },
+    props: { chapter },
+  }));
+}
+
+const { chapter } = Astro.props as {
+  chapter: CollectionEntry<'chapters'>;
+};
+
+const { Content } = await render(chapter);
+---
+
+<BaseLayout
+  title={chapter.data.title}
+  description={chapter.data.subtitle}
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">
+        Historical Chapter {String(chapter.data.order).padStart(2, '0')}
+        · {chapter.data.plane}
+      </p>
+
+      <h1>{chapter.data.title}</h1>
+      <p>{chapter.data.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="page-shell article-column">
+      <a
+        href={withBase(`timeline/#${chapter.data.eraId}`)}
+        class="text-link"
+      >
+        ← Return to timeline
+      </a>
+
+      <div class="chapter-publications">
+        <p class="eyebrow">Related Expansions</p>
+
+        <ul>
+          {chapter.data.relatedSets.map((set) => (
+            <li>{set.name} ({set.year})</li>
+          ))}
+        </ul>
+      </div>
+
+      <article class="chapter-prose">
+        <Content />
+      </article>
+    </div>
+  </section>
+</BaseLayout>
