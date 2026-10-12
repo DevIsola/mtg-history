@@ -1,146 +1,102 @@
-# Chronicles of the Multiverse
+<p align="center">
+  <img src="docs/assets/archive-cover.svg" alt="Chronicles of the Multiverse — an illustrated historical archive with an ancient golden portal over the worlds of Magic" width="100%" />
+</p>
 
-**An illustrated history of Magic: The Gathering.**
+<p align="center">
+  <strong>History before everything.</strong><br />
+  Follow the wars, discoveries, characters, and turning points that shaped the Multiverse — through the cards that remember them.
+</p>
 
-Chronicles of the Multiverse is an independent, non-commercial fan project dedicated to exploring the history, lore, characters, and defining events of Magic: The Gathering.
+<p align="center">
+  <a href="https://devisola.github.io/mtg-history/"><strong>Enter the archive</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://devisola.github.io/mtg-history/timeline/">Explore the timeline</a>
+  &nbsp;·&nbsp;
+  <a href="https://devisola.github.io/mtg-history/about/">About the project</a>
+</p>
 
-The goal is to create an accessible historical archive that connects the stories of the Multiverse with the expansions and cards that brought them to life.
+---
 
-**Live website:** https://devisola.github.io/mtg-history/
+## The archive
 
-## About the Project
+**Chronicles of the Multiverse** is an independent, non-commercial historical reading project about the lore of _Magic: The Gathering_. It's designed as an illustrated chronicle, **not a card database or deckbuilding guide**.
 
-Magic: The Gathering has developed an extensive fictional history across decades of expansions, novels, official stories, and card flavor text.
+Magic's history has been told across decades of expansions, novels, short fiction, and flavor text. This project connects those scattered sources into readable chapters, with selected cards acting as **historical artifacts**: illustrations and references that bring each event into focus.
 
-This project aims to organize that history into a cohesive, chronological reading experience.
+<p align="center">
+  <img src="docs/assets/historical-eras.svg" alt="Three illustrated eras: Ancient Dominaria, the Brothers' War, and the changing Multiverse" width="100%" />
+</p>
 
-Rather than functioning as a conventional card database, Chronicles of the Multiverse focuses on **historical storytelling**.
+## Explore the history
 
-Each chapter will explore important events, explain their consequences, introduce relevant characters, and feature selected cards that illustrate significant moments.
+| Follow the story                                                                                                                                                      | Discover its sources                                                                                                |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| **[Historical timeline](https://devisola.github.io/mtg-history/timeline/)** — Explore the major eras in a guided narrative order.                                     | **Expansions** — Connect fictional events to the sets that introduced or revisited them. _Planned archive section._ |
+| **[Illustrated chapters](https://devisola.github.io/mtg-history/chapters/brothers-war/)** — Read the stories behind the events, with selected cards beside the prose. | **Cards as artifacts** — Examine why a particular printing, image, or flavor reference matters to the history.      |
 
-## Features
+### Two chronologies, one story
 
-The website is being developed around four areas:
+> **Story chronology** tracks when an event took place _inside_ the fictional Multiverse. **Publication chronology** tracks when Magic players first encountered, or later revisited, that event.
 
-### Historical Timeline
+The Brothers' War, for example, appeared through the artifacts of _Antiquities_ (1994), was developed extensively in fiction, and returned in _The Brothers' War_ (2022). Our chapters connect those perspectives without confusing release dates with in-world history.
 
-An interactive timeline connecting the major events and historical eras of the Multiverse.
+## How a chapter is built
 
-### Historical Chapters
+Each article aims to provide:
 
-Detailed articles examining significant conflicts, characters, civilizations, and turning points.
+1. **Historical context** — what led to the event and why it matters.
+2. **The narrative** — key people, places, conflicts, and consequences.
+3. **Illustrated evidence** — a small, carefully chosen selection of relevant cards.
+4. **Publication history** — expansions and stories that reveal or revisit the event.
+5. **Sources and connections** — references, uncertainties, and links to related chapters.
 
-### Cards as Historical Artifacts
+The writing is original. Official lore is prioritized, and retcons or uncertain chronology are identified rather than quietly presented as settled fact.
 
-Curated Magic cards selected for their illustrations, names, flavor text, and relevance to historical events.
+## Behind the archive
 
-### Expansion References
+|                     |                                            |
+| :------------------ | :----------------------------------------- |
+| **Framework**       | [Astro](https://astro.build/) + TypeScript |
+| **Styling**         | Tailwind CSS                               |
+| **Content**         | Markdown / MDX + Astro Content Collections |
+| **Package manager** | pnpm                                       |
+| **Hosting**         | GitHub Pages                               |
+| **Deployment**      | GitHub Actions                             |
 
-Connections between fictional historical events and the real-world Magic sets that introduced or revisited them.
+This is a statically generated site: no accounts, database, or application server are required.
 
-## Historical Approach
+### Run locally
 
-The project distinguishes between two chronological systems:
-
-- **Story chronology:** When events occur within Magic's fictional universe.
-- **Publication chronology:** When the corresponding expansions, cards, or stories were released.
-
-For example, the Brothers' War appears in both _Antiquities_ (1994) and _The Brothers' War_ (2022).
-
-This distinction allows visitors to explore the fictional history without losing its publishing context.
-
-## Technology Stack
-
-- Astro
-- TypeScript
-- Tailwind CSS
-- pnpm
-- GitHub Actions
-- GitHub Pages
-
-The website is statically generated and does not require a traditional backend or database.
-
-## Local Development
-
-### Requirements
-
-- Node.js 22.12.0 or newer
-- pnpm
-- Git
-
-### Installation
-
-Clone the repository:
+Requires **Node.js 22.12+**, **pnpm**, and Git.
 
 ```bash
 git clone https://github.com/DevIsola/mtg-history.git
 cd mtg-history
-```
-
-Install dependencies:
-
-```bash
 pnpm install
-```
-
-Start the development server:
-
-```bash
 pnpm dev
 ```
 
-Create a production build:
+With Astro's configured base path, open `http://localhost:4321/mtg-history/`.
 
 ```bash
-pnpm build
+pnpm build      # Create the static production site
+pnpm preview    # Preview the production build
 ```
 
-Preview the production build:
+Pushing a reviewed change to `main` triggers the existing GitHub Pages deployment workflow.
 
-```bash
-pnpm preview
-```
+## Current chapter of the project
 
-## Project Status
+**Under active development.** The timeline and chapter system establish the reading experience; historical articles, imagery, source references, and cross-links are being expanded incrementally.
 
-The project is under active development.
+The first reference chapter is **[The Brothers' War](https://devisola.github.io/mtg-history/chapters/brothers-war/)**, a conflict portrayed in releases separated by decades. Future chapters will reach back to the Thran and forward through Dominaria's later history and other planes.
 
-Current focus:
+## Curated by DevIsola
 
-- Establishing the website's visual identity
-- Developing historical timeline navigation
-- Building reusable historical chapter templates
-- Preparing the first illustrated historical articles
+Created and maintained by **[DevIsola](https://github.com/DevIsola)** as an independent, open-source tribute to the storytelling of Magic: The Gathering.
 
-Future development will expand historical coverage, card references, and exploration features.
+[Visit the live archive](https://devisola.github.io/mtg-history/) · [Explore the source](https://github.com/DevIsola/mtg-history)
 
-## Author
+---
 
-**DevIsola**
-
-Creator and maintainer of Chronicles of the Multiverse.
-
-GitHub: [@DevIsola](https://github.com/DevIsola)
-
-Repository: [DevIsola/mtg-history](https://github.com/DevIsola/mtg-history)
-
-## Sources and Editorial Principles
-
-Historical articles will prioritize official Magic: The Gathering lore and original summaries.
-
-The project aims to:
-
-- Distinguish established lore from interpretations or uncertain chronology.
-- Reference official sources where practical.
-- Acknowledge revisions and inconsistencies in Magic's history.
-- Use cards to support historical narratives rather than reproduce complete card databases.
-
-## Disclaimer
-
-Chronicles of the Multiverse is unofficial fan content and is not affiliated with, endorsed, sponsored, or approved by Wizards of the Coast.
-
-Magic: The Gathering, its characters, settings, card illustrations, and associated trademarks belong to their respective rights holders.
-
-This project is non-commercial.
-
-See the [Wizards of the Coast Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy).
+<sub>**Unofficial fan-content notice.** This project is not affiliated with, sponsored, endorsed, or approved by Wizards of the Coast. Magic: The Gathering, its characters, settings, card art, and associated marks belong to their respective rights holders. This non-commercial archive uses original writing and original decorative README artwork. See the <a href="https://company.wizards.com/en/legal/fancontentpolicy">Wizards of the Coast Fan Content Policy</a>.</sub>
