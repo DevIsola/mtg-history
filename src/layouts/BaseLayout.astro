@@ -15,6 +15,33 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script is:inline>
+  (() => {
+    const key = 'mtg-history-theme';
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(key);
+    } catch {
+      // Browser storage may be unavailable.
+    }
+
+    const systemPrefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+
+    const theme =
+      savedTheme === 'dark' || savedTheme === 'light'
+        ? savedTheme
+        : systemPrefersDark
+          ? 'dark'
+          : 'light';
+
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>
+
     <meta name="theme-color" content="#11191d" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
