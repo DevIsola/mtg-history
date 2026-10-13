@@ -1,0 +1,102 @@
+
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { characters } from '../../data/characters';
+import { withBase } from '../../utils/paths';
+
+const availableChapterIds = new Set(
+  (await getCollection('chapters')).map((chapter) => chapter.id)
+);
+
+const orderedCharacters = [...characters].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+---
+
+<BaseLayout
+  title="Historical characters"
+  description="Explore the people and beings who shaped Magic: The Gathering's fictional history."
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">
+        The historical archive
+      </p>
+
+      <h1>Characters of the <em>Multiverse.</em></h1>
+
+      <p>
+        Discover the people behind the wars, discoveries,
+        and turning points of Magic's history.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="section-spacing character-section"
+    aria-labelledby="character-directory-heading"
+  >
+    <div class="page-shell">
+      <div class="character-section__intro">
+        <p class="eyebrow">An evolving encyclopedia</p>
+
+        <h2
+          id="character-directory-heading"
+          class="section-title"
+        >
+          The faces behind <em>history.</em>
+        </h2>
+
+        <p>
+          Each profile connects a historical figure to the
+          chapters where their story is told, with selected
+          cards and official lore references.
+        </p>
+      </div>
+
+      <div class="character-grid">
+        {orderedCharacters.map((character) => {
+          const chapterCount = character.chapterIds.filter(
+            (id) => availableChapterIds.has(id)
+          ).length;
+
+          return (
+            <a
+              class="character-entry"
+              href={withBase(`characters/${character.id}/`)}
+            >
+              <span class="character-entry__initial" aria-hidden="true">
+                {character.name.charAt(0)}
+              </span>
+
+              <span class="character-entry__body">
+                <span class="character-entry__eyebrow">
+                  {character.role}
+                </span>
+
+                <strong>{character.name}</strong>
+
+                <span class="character-entry__title">
+                  {character.title}
+                </span>
+
+                <span class="character-entry__summary">
+                  {character.summary}
+                </span>
+
+                <span class="character-entry__bottom">
+                  {chapterCount} published {
+                    chapterCount === 1 ? 'chapter' : 'chapters'
+                  }
+                  <span aria-hidden="true">Explore →</span>
+                </span>
+              </span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

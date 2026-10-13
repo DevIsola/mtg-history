@@ -3,11 +3,14 @@
 import { withBase } from '../utils/paths';
 import ThemeToggle from './ThemeToggle.astro';
 
+
 const links = [
   { label: 'Home', href: withBase('') },
   { label: 'Timeline', href: withBase('timeline/') },
+  { label: 'Characters', href: withBase('characters/') },
   { label: 'About', href: withBase('about/') },
 ];
+
 
 const current =
   Astro.url.pathname.replace(/\/+$/, '') || '/';

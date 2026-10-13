@@ -1,0 +1,27 @@
+
+---
+import { characters } from '../data/characters';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const character = characters.find(
+  (entry) => entry.id === id
+);
+
+if (!character) {
+  throw new Error(`Unknown historical character: ${id}`);
+}
+---
+
+<a
+  class="character-inline-link"
+  href={withBase(`characters/${character.id}/`)}
+  title={`Read the historical profile of ${character.name}`}
+>
+  <slot>{character.name}</slot>
+</a>
