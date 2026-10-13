@@ -2,11 +2,12 @@
 ---
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../../utils/paths';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChapterToc from '../../components/ChapterToc.astro';
 import ChapterSources from '../../components/ChapterSources.astro';
-import { withBase } from '../../utils/paths';
+import ChapterChronology from '../../components/ChapterChronology.astro';
 
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
@@ -54,6 +55,15 @@ const nextChapter = chapters[currentIndex + 1];
       <p>{chapter.data.subtitle}</p>
     </div>
   </section>
+
+<div class="chronology-band">
+  <div class="page-shell">
+    <ChapterChronology
+      chapters={chapters}
+      activeId={chapter.id}
+    />
+  </div>
+</div>
 
   <section class="section-spacing">
     <div class="page-shell chapter-reading-grid">

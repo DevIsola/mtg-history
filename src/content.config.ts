@@ -22,6 +22,12 @@ const chapters = defineCollection({
       }),
     ),
 
+    chronology: z.object({
+      storyPeriod: z.string(),
+      storyDetail: z.string(),
+      publicationHistory: z.string(),
+    }),
+
     cards: z
       .array(
         z.object({
