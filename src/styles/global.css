@@ -2019,3 +2019,42 @@ summary:focus-visible {
     flex-direction: column;
   }
 }
+
+/* =========================================
+   Previous / next character navigation
+   ========================================= */
+
+.character-pagination {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.character-pagination__next {
+  grid-column: 2;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.character-pagination__previous {
+  grid-column: 1;
+  align-items: flex-start;
+}
+
+.character-pagination .chapter-pagination__link {
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.character-pagination .chapter-pagination__link:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .character-pagination__next,
+  .character-pagination__previous {
+    grid-column: 1;
+  }
+}
