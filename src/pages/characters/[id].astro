@@ -20,6 +20,27 @@ const { profile } = Astro.props as {
   profile: CharacterProfile;
 };
 
+
+const orderedCharacters = [...characters].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
+const currentIndex = orderedCharacters.findIndex(
+  (character) => character.id === profile.id
+);
+
+const previousCharacter =
+  currentIndex > 0
+    ? orderedCharacters[currentIndex - 1]
+    : undefined;
+
+const nextCharacter =
+  currentIndex >= 0 &&
+  currentIndex < orderedCharacters.length - 1
+    ? orderedCharacters[currentIndex + 1]
+    : undefined;
+
+
 const chapters = await getCollection('chapters');
 
 const chaptersById = new Map(
@@ -51,6 +72,38 @@ const relatedChapters = profile.chapterIds
   </section>
 
   <section class="section-spacing">
+
+{(previousCharacter || nextCharacter) && (
+  <nav
+    class="chapter-pagination character-pagination"
+    aria-label="Character navigation"
+  >
+    {previousCharacter && (
+      <a
+        class="chapter-pagination__link character-pagination__previous"
+        href={withBase(
+          `characters/${previousCharacter.id}/`
+        )}
+      >
+        <span>← Previous character</span>
+        <strong>{previousCharacter.name}</strong>
+      </a>
+    )}
+
+    {nextCharacter && (
+      <a
+        class="chapter-pagination__link character-pagination__next"
+        href={withBase(
+          `characters/${nextCharacter.id}/`
+        )}
+      >
+        <span>Next character →</span>
+        <strong>{nextCharacter.name}</strong>
+      </a>
+    )}
+  </nav>
+)}
+
     <div class="page-shell">
       <a
         class="text-link"
