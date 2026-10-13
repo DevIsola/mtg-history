@@ -1665,3 +1665,82 @@ summary:focus-visible {
   background: var(--gold);
   color: var(--night);
 }
+
+/* =========================================
+   Optional support / Ko-fi
+   ========================================= */
+
+.support-panel {
+  margin-block: 3rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+}
+
+.support-panel h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  font-weight: normal;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.support-panel p:not(.eyebrow) {
+  margin-top: 1rem;
+  max-width: 60ch;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.support-panel strong {
+  color: var(--ink);
+}
+
+.support-panel__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.3rem;
+
+  background: var(--night);
+  color: #f9f0dc;
+  border: 1px solid var(--gold);
+
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.support-panel__link:hover {
+  background: var(--night-raised);
+  transform: translateY(-2px);
+}
+
+.support-panel__link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Dark theme */
+
+:root[data-theme="dark"] .support-panel__link {
+  background: var(--gold);
+  color: var(--night);
+}
+
+:root[data-theme="dark"] .support-panel__link:hover {
+  background: var(--gold-light);
+}
+
+@media (max-width: 600px) {
+  .support-panel__link {
+    width: 100%;
+  }
+}

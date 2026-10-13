@@ -91,6 +91,31 @@ Pushing a reviewed change to `main` triggers the existing GitHub Pages deploymen
 
 The first reference chapter is **[The Brothers' War](https://devisola.github.io/mtg-history/chapters/brothers-war/)**, a conflict portrayed in releases separated by decades. Future chapters will reach back to the Thran and forward through Dominaria's later history and other planes.
 
+## Support the archive
+
+Chronicles of the Multiverse is a free, independent fan project
+created and maintained by DevIsola.
+
+If you enjoy the historical research, original writing, and
+development that goes into this archive, you can support my work
+through Ko-fi.
+
+Your support helps me dedicate more time to expanding the
+chapters, improving the reading experience, and maintaining
+the project.
+
+**Donations are entirely optional. All historical content
+remains free to read and explore.**
+
+<p align="center">
+  <a href="https://ko-fi.com/B1H328PBAR">
+    <img
+      src="https://ko-fi.com/img/githubbutton_sm.svg"
+      alt="Support DevIsola on Ko-fi"
+    />
+  </a>
+</p>
+
 ## Curated by DevIsola
 
 Created and maintained by **[DevIsola](https://github.com/DevIsola)** as an independent, open-source tribute to the storytelling of Magic: The Gathering.
