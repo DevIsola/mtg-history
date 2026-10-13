@@ -56,12 +56,21 @@ export const eras: HistoricalEra[] = [
     id: "weatherlight",
     chapter: "04",
     name: "The Weatherlight Saga",
-    kicker: "Legacy and Invasion",
+    kicker: "The Legacy and the Invasion",
     summary:
-      "A ship, a crew, and a long resistance to Phyrexia converge on a conflict that transforms Dominaria.",
-    sets: ["Weatherlight · 1997", "Invasion · 2000", "Apocalypse · 2001"],
-    status: "planned",
+      "Follow Gerrard Capashen, Captain Sisay, Karn, and the Weatherlight crew through Rath, Mercadia, and the final struggle against Yawgmoth's Phyrexia.",
+    sets: [
+      "Weatherlight · 1997",
+      "Tempest · 1997",
+      "Urza's Saga · 1998",
+      "Mercadian Masques · 1999",
+      "Invasion · 2000",
+      "Planeshift · 2001",
+      "Apocalypse · 2001",
+    ],
+    status: "published",
   },
+
   {
     id: "otaria",
     chapter: "05",
