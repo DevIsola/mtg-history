@@ -4,6 +4,7 @@ import { eras } from '../data/eras';
 import { getCollection } from 'astro:content';
 import { withBase } from '../utils/paths';
 
+import ChapterChronology from '../components/ChapterChronology.astro';
 const chapters = await getCollection('chapters');
 
 const chaptersByEra = new Map(
@@ -24,6 +25,13 @@ const chaptersByEra = new Map(
       <p>Explore a guided reading order of pivotal stories across the Multiverse. Dates on set references describe publication, not necessarily when an event occurred in the lore.</p>
     </div>
   </section>
+
+<div class="chronology-band">
+  <div class="page-shell">
+    <ChapterChronology chapters={chapters} />
+  </div>
+</div>
+
   <section class="timeline-section section-spacing" aria-label="Historical eras">
     <div class="page-shell timeline-layout">
       <aside class="timeline-aside">
