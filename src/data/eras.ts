@@ -75,11 +75,18 @@ export const eras: HistoricalEra[] = [
     id: "otaria",
     chapter: "05",
     name: "The Mirari and Otaria",
-    kicker: "Power and Ambition",
+    kicker: "Ambition, Redemption, and Rebirth",
     summary:
-      "A mysterious artifact fuels a new cycle of ambition, conflict, and transformation on Dominaria.",
-    sets: ["Odyssey · 2001", "Onslaught · 2002", "Scourge · 2003"],
-    status: "planned",
+      "The Mirari draws Kamahl, Chainer, and rival Otarian powers into conflict; Jeska's transformation and the emergence of Karona reshape Dominaria.",
+    sets: [
+      "Odyssey · 2001",
+      "Torment · 2002",
+      "Judgment · 2002",
+      "Onslaught · 2002",
+      "Legions · 2003",
+      "Scourge · 2003",
+    ],
+    status: "published",
   },
   {
     id: "mending",
