@@ -99,7 +99,7 @@ export const characters: CharacterProfile[] = [
       "As part of the Weatherlight crew, Karn was drawn into the struggle against Phyrexia. His role in the Legacy helped make the final confrontation with Yawgmoth possible.",
       "Karn survived that conflict and became a planeswalker. His later creation of an artificial world would have consequences for another era of Magic’s history.",
     ],
-    chapterIds: ["weatherlight"],
+    chapterIds: ["weatherlight", "otaria"],
     featuredCard: {
       name: "Karn, Silver Golem",
       setCode: "usg",
@@ -208,6 +208,92 @@ export const characters: CharacterProfile[] = [
     source: {
       title: "Wizards of the Coast — Commander Legends Characters",
       url: "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30",
+    },
+  },
+
+  // Chapter 05 — The Mirari and Otaria
+  {
+    id: "kamahl",
+    name: "Kamahl",
+    title: "From Pit Fighter to Druid",
+    origin: "Dominaria — Otaria",
+    role: "Pardic barbarian and Krosan druid",
+    summary:
+      "A celebrated warrior whose pursuit of the Mirari led to tragedy, remorse, and a new calling as a protector of Krosa.",
+    biography: [
+      "Kamahl began as a formidable Pardic barbarian and gladiator, drawn to Cabal City and the Mirari during the struggle for power on Otaria.",
+      "The Mirari amplified his aggression. With the artifact bound to his sword, he seriously injured his sister Jeska, setting in motion her transformation into Phage.",
+      "Kamahl sought a different life in the Krosan Forest, where Thriss the Nantuko taught him druidic ways. His transformation from pit fighter to protector would shape the Onslaught story and his efforts to save Jeska.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Kamahl, Fist of Krosa",
+      setCode: "arc",
+      collectorNumber: "61",
+      scryfallId: "97ab4974-d0a4-4033-b150-8928b46dc626",
+      artist: "Matthew D. Wilson",
+      significance:
+        "A reprint of Kamahl's green incarnation, originally introduced in Onslaught to reflect his turn from violent pit fighting toward druidic magic.",
+    },
+    source: {
+      title: "Wizards of the Coast — Kamahl, Heart of Krosa",
+      url: "https://magic.wizards.com/en/news/card-preview/kamahl-heart-krosa-2020-10-28",
+    },
+  },
+  {
+    id: "jeska",
+    name: "Jeska",
+    title: "The Thrice-Reborn Planeswalker",
+    origin: "Dominaria — Otaria",
+    role: "Pardic warrior, Phage, Karona, and planeswalker",
+    summary:
+      "Kamahl's sister survived a terrible wound and multiple transformations before becoming a planeswalker.",
+    biography: [
+      "Jeska was a Pardic warrior and the younger sister of Kamahl. Her life changed when he struck her with a sword influenced by the Mirari.",
+      "The wound led to her transformation into Phage the Untouchable. A later confrontation combined Phage, Akroma, and Zagorka into Karona, the False God.",
+      "After Karona was broken apart, Jeska's planeswalker spark ignited. Karn became her guide, and she would later return to Dominaria during the crisis of the temporal rifts.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Jeska, Warrior Adept",
+      setCode: "jud",
+      collectorNumber: "93",
+      scryfallId: "1cf96a59-8b7d-4a5b-adfd-17eeedd95db5",
+      artist: "rk post",
+      significance:
+        "Jeska's original legendary card shows the Pardic warrior before the identities of Phage, Karona, and planeswalker.",
+    },
+    source: {
+      title: "Wizards of the Coast — Legendary Characters of Commander Legends, Part 1",
+      url: "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30",
+    },
+  },
+  {
+    id: "chainer",
+    name: "Chainer",
+    title: "Master of Dementia",
+    origin: "Dominaria — Otaria",
+    role: "Cabal dementia summoner",
+    summary:
+      "A gifted summoner of nightmares whose friendship with Kamahl could not save him from the Mirari's influence.",
+    biography: [
+      "Chainer trained within the Cabal of Otaria, using dementia magic to summon nightmarish creatures from his mind.",
+      "Despite their contrasting backgrounds, he and Kamahl formed an unexpected friendship amid the Cabal's contests and political ambitions.",
+      "Possession of the Mirari amplified Chainer's abilities and destabilized his control. His downfall became one of the defining tragedies of the Odyssey block story.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Chainer, Dementia Master",
+      setCode: "tor",
+      collectorNumber: "56",
+      scryfallId: "40342b11-1005-4ccc-bef4-9ea4c640b048",
+      artist: "Mark Zug",
+      significance:
+        "Chainer's original Torment printing illustrates the Cabal summoner and his nightmarish magic.",
+    },
+    source: {
+      title: "Wizards of the Coast — Commander Masters Storyteller, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1",
     },
   },
 ];
