@@ -20,3 +20,6 @@
 
 /* Historical events and relationships */
 @import "./events.css";
+
+/* Unified encyclopedia search */
+@import "./discovery.css";
