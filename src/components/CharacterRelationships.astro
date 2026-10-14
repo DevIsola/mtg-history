@@ -1,0 +1,319 @@
+
+---
+import { getCollection } from 'astro:content';
+
+import { characters } from '../data/characters';
+
+import {
+  characterRelationships,
+  type RelationshipCategory,
+} from '../data/relationships';
+
+import { withBase } from '../utils/paths';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const charactersById = new Map(
+  characters.map((character) => [
+    character.id,
+    character,
+  ])
+);
+
+const chapters = await getCollection('chapters');
+
+const chaptersById = new Map(
+  chapters.map((chapter) => [
+    chapter.id,
+    chapter,
+  ])
+);
+
+const categoryLabels: Record<RelationshipCategory, string> = {
+  family: 'Family',
+  friendship: 'Friendship',
+  alliance: 'Alliance',
+  rivalry: 'Conflict',
+  mentorship: 'Mentorship',
+  creation: 'Creation',
+};
+
+// Validate all registered relationships.
+const seenPairs = new Set<string>();
+
+for (const relationship of characterRelationships) {
+  if (
+    !charactersById.has(relationship.a) ||
+    !charactersById.has(relationship.b)
+  ) {
+    throw new Error(
+      `Unknown character in relationship: ${relationship.a} / ${relationship.b}`
+    );
+  }
+
+  if (relationship.a === relationship.b) {
+    throw new Error(
+      `A character cannot have a relationship with itself: ${relationship.a}`
+    );
+  }
+
+  if (!chaptersById.has(relationship.chapterId)) {
+    throw new Error(
+      `Unknown chapter "${relationship.chapterId}" in character relationships`
+    );
+  }
+
+  const pairKey = [
+    relationship.a,
+    relationship.b,
+  ].sort().join(':');
+
+  if (seenPairs.has(pairKey)) {
+    throw new Error(
+      `Duplicate character relationship: ${pairKey}`
+    );
+  }
+
+  seenPairs.add(pairKey);
+}
+
+const related = characterRelationships
+  .filter(
+    (relationship) =>
+      relationship.a === id ||
+      relationship.b === id
+  )
+  .map((relationship) => {
+    const fromA = relationship.a === id;
+
+    const otherId = fromA
+      ? relationship.b
+      : relationship.a;
+
+    const other = charactersById.get(otherId)!;
+    const chapter = chaptersById.get(
+      relationship.chapterId
+    )!;
+
+    return {
+      other,
+      chapter,
+      category: categoryLabels[relationship.category],
+      label: fromA
+        ? relationship.labelForA
+        : relationship.labelForB,
+      context: relationship.context,
+    };
+  })
+  .sort((a, b) =>
+    a.other.name.localeCompare(b.other.name)
+  );
+---
+
+{related.length > 0 && (
+  <section
+    class="character-relations"
+    aria-labelledby="character-relations-heading"
+  >
+    <p class="eyebrow">
+      People behind the history
+    </p>
+
+    <h2 id="character-relations-heading">
+      Relationships and connections
+    </h2>
+
+    <p class="character-relations__intro">
+      Explore the figures connected to this character
+      through family, friendship, conflict,
+      or shared historical events.
+    </p>
+
+    <ul class="character-relations__list">
+      {related.map((relationship) => (
+        <li class="character-relations__item">
+          <article class="character-relations__card">
+
+            <div class="character-relations__identity">
+              <span
+                class="character-relations__initial"
+                aria-hidden="true"
+              >
+                {relationship.other.name.charAt(0)}
+              </span>
+
+              <div>
+                <p class="character-relations__category">
+                  {relationship.category}
+                  {' · '}
+                  {relationship.label}
+                </p>
+
+                <h3>
+                  <a
+                    href={withBase(
+                      `characters/${relationship.other.id}/`
+                    )}
+                  >
+                    {relationship.other.name}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </h3>
+              </div>
+            </div>
+
+            <p class="character-relations__context">
+              {relationship.context}
+            </p>
+
+            <a
+              class="character-relations__chapter"
+              href={withBase(
+                `chapters/${relationship.chapter.id}/`
+              )}
+            >
+              Historical context:
+              {' '}
+              {relationship.chapter.data.title}
+              {' →'}
+            </a>
+
+          </article>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<style>
+  .character-relations {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .character-relations h2 {
+    font-family: var(--font-display);
+    font-weight: normal;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  .character-relations__intro {
+    margin-top: 1rem;
+    margin-bottom: 1.7rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  .character-relations__list {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .character-relations__item {
+    min-width: 0;
+  }
+
+  .character-relations__card {
+    padding: 1.4rem;
+    border: 1px solid var(--line);
+    background: var(--paper-white);
+  }
+
+  .character-relations__identity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .character-relations__initial {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+  }
+
+  .character-relations__category {
+    color: var(--jade);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.6;
+  }
+
+  .character-relations h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: normal;
+    line-height: 1.3;
+  }
+
+  .character-relations h3 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .character-relations h3 a:hover {
+    color: var(--gold);
+  }
+
+  .character-relations h3 a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+  }
+
+  .character-relations__context {
+    margin-top: 1rem;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .character-relations__chapter {
+    display: block;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  .character-relations__chapter:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .character-relations__card {
+      padding: 1rem;
+    }
+
+    .character-relations__initial {
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+    }
+
+    .character-relations h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>
