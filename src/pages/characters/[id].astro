@@ -7,6 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import HistoricalCard from '../../components/HistoricalCard.astro';
 import { characters } from '../../data/characters';
 import type { CharacterProfile } from '../../data/characters';
+import { historicalEvents } from '../../data/events';
 import { withBase } from '../../utils/paths';
 
 export function getStaticPaths() {
@@ -54,6 +55,12 @@ const relatedChapters = profile.chapterIds
       chapter !== undefined
   )
   .sort((a, b) => a.data.order - b.data.order);
+
+
+const relatedEvents = historicalEvents.filter(
+  (event) => event.characterIds.includes(profile.id)
+);
+
 ---
 
 <BaseLayout
@@ -193,6 +200,63 @@ const relatedChapters = profile.chapterIds
               {profile.source.title} ↗
             </a>
           </section>
+
+
+{relatedEvents.length > 0 && (
+  <section
+    class="character-profile__events"
+    aria-labelledby="character-events-heading"
+  >
+    <p class="eyebrow">
+      Defining moments
+    </p>
+
+    <h2 id="character-events-heading">
+      Historical events involving {profile.name}
+    </h2>
+
+    <p class="character-profile__events-intro">
+      Explore the events that shaped this character's
+      history and their role in the Multiverse.
+    </p>
+
+    <ol class="character-event-list">
+      {relatedEvents.map((event) => {
+        const chapter = chaptersById.get(event.chapterId);
+
+        return (
+          <li>
+            <a href={withBase(`events/${event.id}/`)}>
+              <span class="character-event-list__chapter">
+                {chapter
+                  ? `Chapter ${String(chapter.data.order).padStart(2, '0')} · ${chapter.data.title}`
+                  : 'Historical event'}
+              </span>
+
+              <strong>{event.title}</strong>
+
+              <span class="character-event-list__summary">
+                {event.summary}
+              </span>
+
+              <span class="character-event-list__action">
+                Explore this event →
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+
+    <a
+      class="text-link character-profile__events-all"
+      href={withBase('events/')}
+    >
+      Browse all historical events →
+    </a>
+  </section>
+)}
+
         </div>
 
         <aside
