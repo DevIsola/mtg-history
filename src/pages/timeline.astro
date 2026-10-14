@@ -44,6 +44,14 @@ const chaptersByEra = new Map(
   · {eras.filter((era) => era.status === 'published').length} chapters available
 </span>
 
+<p class="timeline-events-link">
+  <a
+    class="text-link"
+    href={withBase('events/')}
+  >
+    Explore defining historical events →
+  </a>
+</p>
       </aside>
       <div class="timeline-list">
         {eras.map((era) => (

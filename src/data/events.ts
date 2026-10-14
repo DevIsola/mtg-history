@@ -1,0 +1,168 @@
+export interface HistoricalEvent {
+  id: string;
+  title: string;
+  chapterId: string;
+  summary: string;
+  narrative: string[];
+  characterIds: string[];
+  cardName: string;
+}
+
+export const historicalEvents: HistoricalEvent[] = [
+  {
+    id: "rise-of-yawgmoth",
+    title: "The Rise of Yawgmoth",
+    chapterId: "thran",
+    summary:
+      "A physician gains control of Phyrexia and becomes an existential threat to Dominaria.",
+    narrative: [
+      "Yawgmoth gained influence during a crisis in the ancient Thran civilization. His ambition and increasingly ruthless medical experiments helped destabilize an already divided society.",
+      "With access to the artificial plane of Phyrexia, he established the foundations of an empire that would threaten Dominaria for thousands of years.",
+    ],
+    characterIds: ["yawgmoth", "rebbec"],
+    cardName: "Yawgmoth, Thran Physician",
+  },
+  {
+    id: "rebbec-seals-phyrexia",
+    title: "Rebbec Seals the Gateway",
+    chapterId: "thran",
+    summary:
+      "Rebbec makes a final sacrifice to separate Dominaria from Phyrexia.",
+    narrative: [
+      "As the Thran civilization collapsed, Rebbec recognized the danger posed by Yawgmoth and his Phyrexian domain.",
+      "Her decision to seal the gateway prevented Yawgmoth from freely returning to Dominaria, though the consequences of his rise would endure.",
+    ],
+    characterIds: ["rebbec", "yawgmoth"],
+    cardName: "Rebbec, Architect of Ascension",
+  },
+  {
+    id: "brothers-war",
+    title: "The Brothers Become Enemies",
+    chapterId: "brothers-war",
+    summary:
+      "Urza and Mishra turn a personal rivalry into a conflict that engulfs Terisiare.",
+    narrative: [
+      "The brothers began as students fascinated by the remnants of ancient Thran technology. Their discovery of powerful artifacts contributed to a growing rivalry.",
+      "Their separate ambitions eventually drew nations and armies into a destructive struggle, transforming the political and physical landscape of Dominaria.",
+    ],
+    characterIds: ["urza"],
+    cardName: "Mishra, Tamer of Mak Fawa",
+  },
+  {
+    id: "sylex-blast",
+    title: "The Sylex Blast",
+    chapterId: "brothers-war",
+    summary:
+      "The destruction of Argoth ends the Brothers’ War and changes Dominaria.",
+    narrative: [
+      "The final confrontation on Argoth culminated in Urza activating the Golgothian Sylex, releasing catastrophic magical energy.",
+      "The blast ended the war, ignited Urza’s planeswalker spark, and helped precipitate the prolonged climatic disruption associated with the Ice Age.",
+    ],
+    characterIds: ["urza"],
+    cardName: "Brotherhood's End",
+  },
+  {
+    id: "rise-of-lim-dul",
+    title: "The Rise of Lim-Dûl",
+    chapterId: "ice-age",
+    summary:
+      "Necromancy and political ambition threaten the frozen kingdoms of Dominaria.",
+    narrative: [
+      "During the Ice Age, Lim-Dûl assembled undead forces and pursued power amid the turmoil of the frozen world.",
+      "His ambitions brought him into conflict with those attempting to protect magical knowledge and resist the growing influence of necromancy.",
+    ],
+    characterIds: ["jodah"],
+    cardName: "Lim-Dûl the Necromancer",
+  },
+  {
+    id: "world-spell",
+    title: "Freyalise Casts the World Spell",
+    chapterId: "ice-age",
+    summary:
+      "A vast magical undertaking helps bring Dominaria’s Ice Age to an end.",
+    narrative: [
+      "The Ice Age was sustained by more than ordinary climate conditions. Magical disruptions continued to affect the plane long after the Brothers’ War.",
+      "Freyalise’s World Spell played a decisive role in ending that era, allowing Dominaria to move toward a period of thaw and renewal.",
+    ],
+    characterIds: ["freyalise", "jodah"],
+    cardName: "The World Spell",
+  },
+  {
+    id: "weatherlight-rescue",
+    title: "The Weatherlight Mission to Rath",
+    chapterId: "weatherlight",
+    summary:
+      "Gerrard and the Weatherlight crew confront Volrath to rescue Captain Sisay.",
+    narrative: [
+      "Sisay’s capture brought Gerrard back into the life of the Weatherlight crew and into the struggle surrounding the Legacy.",
+      "The expedition to Rath exposed the companions to Phyrexian influence, personal betrayals, and the dangerous rule of Volrath.",
+    ],
+    characterIds: ["gerrard", "karn"],
+    cardName: "Sisay, Weatherlight Captain",
+  },
+  {
+    id: "legacy-weapon",
+    title: "The Legacy Defeats Yawgmoth",
+    chapterId: "weatherlight",
+    summary:
+      "Centuries of preparation culminate in the destruction of Yawgmoth.",
+    narrative: [
+      "The Phyrexian invasion brought Dominaria to the brink of catastrophe. Urza’s long preparations converged with the actions of Gerrard and the Weatherlight crew.",
+      "The assembled Legacy became the decisive weapon against Yawgmoth, ending his immediate threat while leaving immense devastation behind.",
+    ],
+    characterIds: ["urza", "yawgmoth", "gerrard", "karn"],
+    cardName: "Legacy Weapon",
+  },
+  {
+    id: "mirari-crisis",
+    title: "The Mirari Crisis",
+    chapterId: "otaria",
+    summary:
+      "A mysterious artifact magnifies the ambitions of competing powers on Otaria.",
+    narrative: [
+      "The Mirari promised extraordinary magical power, attracting warriors, Cabal mages, and political rivals.",
+      "Its influence repeatedly encouraged obsession and destructive decisions, drawing Kamahl and Chainer into a conflict whose consequences spread throughout Otaria.",
+    ],
+    characterIds: ["kamahl", "chainer", "karn"],
+    cardName: "Mirari",
+  },
+  {
+    id: "birth-of-karona",
+    title: "The Birth of Karona",
+    chapterId: "otaria",
+    summary:
+      "Phage, Akroma, and Zagorka merge into a being worshipped as a false god.",
+    narrative: [
+      "Jeska’s transformation into Phage and the creation of Akroma drew Otaria into an escalating conflict of vengeance and devotion.",
+      "A catastrophic confrontation joined Phage, Akroma, and Zagorka into Karona, whose immense power placed the continent in even greater danger.",
+    ],
+    characterIds: ["jeska", "kamahl"],
+    cardName: "Karona, False God",
+  },
+  {
+    id: "shivan-rift",
+    title: "Teferi Repairs the Shivan Rift",
+    chapterId: "mending",
+    summary:
+      "Teferi sacrifices his old planeswalker powers to help restore a fractured Dominaria.",
+    narrative: [
+      "Centuries of planar disturbances had left dangerous temporal rifts across Dominaria. The effort to close them demanded unprecedented sacrifices.",
+      "Teferi helped repair the rift at Shiv, losing his planeswalker spark in the process and demonstrating the personal cost of healing reality.",
+    ],
+    characterIds: ["teferi", "jhoira", "venser"],
+    cardName: "Teferi, Mage of Zhalfir",
+  },
+  {
+    id: "the-mending",
+    title: "The Mending of the Multiverse",
+    chapterId: "mending",
+    summary:
+      "The restoration of reality fundamentally changes the nature of planeswalkers.",
+    narrative: [
+      "The repair of Dominaria’s temporal rifts required the intervention and sacrifice of several powerful figures, including Freyalise and Lord Windgrace.",
+      "The final restoration, associated with Jeska’s actions, transformed the nature of the planeswalker spark and ended the era of near-omnipotent oldwalkers.",
+    ],
+    characterIds: ["jeska", "teferi", "freyalise", "windgrace"],
+    cardName: "The Mending of Dominaria",
+  },
+];
