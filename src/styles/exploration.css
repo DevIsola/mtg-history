@@ -1,0 +1,458 @@
+/* =========================================
+   Phase 15 — Three exploration paths
+   ========================================= */
+
+.journey-section {
+  background: var(--paper-deep);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.journey-intro {
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+.journey-intro > p:last-child {
+  max-width: 650px;
+  margin-top: 1.3rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.journey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 0;
+  min-height: 380px;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--ink);
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 14px 32px #0002;
+}
+
+.journey-card__number {
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.journey-card__symbol {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
+}
+
+.journey-card h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.journey-card p {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+.journey-card__action {
+  display: block;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   Illustrated archive
+   ========================================= */
+
+.archive-directory {
+  background: var(--paper);
+}
+
+.archive-directory__intro {
+  max-width: 740px;
+}
+
+.archive-directory__intro > p:last-child {
+  margin-top: 1.2rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.archive-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.archive-jump-links a {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper-white);
+  font-size: 0.77rem;
+  text-decoration: none;
+}
+
+.archive-jump-links a:hover,
+.archive-jump-links a:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.archive-era {
+  padding-top: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.archive-era + .archive-era {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.archive-era__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.archive-era__heading h2 {
+  max-width: 650px;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.archive-era__heading p:last-child {
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.archive-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.archive-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+
+.archive-card__image {
+  display: block;
+  padding: 1rem;
+  background: var(--paper-deep);
+}
+
+.archive-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 488 / 680;
+  object-fit: contain;
+  border-radius: 4%;
+}
+
+.archive-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.7rem;
+  padding: 1.2rem;
+}
+
+.archive-card__set,
+.archive-card__artist {
+  color: var(--jade);
+  font-size: 0.72rem;
+}
+
+.archive-card__set {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.archive-card h3 {
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+.archive-card__body > p {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.archive-card__chapter {
+  display: block;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.archive-card__chapter:hover {
+  text-decoration: underline;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 1000px) {
+  .archive-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-card {
+    min-height: 280px;
+  }
+
+  .archive-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .archive-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-era__heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .archive-card__image {
+    max-width: 350px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-card,
+  .archive-card {
+    transition: none;
+  }
+}
+
+/* =========================================
+   Phase 16 — Searchable illustrated archive
+   ========================================= */
+
+.archive-filters {
+  margin-top: 3rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+}
+
+.archive-filters__heading h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: normal;
+  color: var(--ink);
+}
+
+.archive-filters__heading p {
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.archive-filters__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.75fr;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.archive-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.archive-filter-field label {
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.archive-filter-field input,
+.archive-filter-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.archive-filter-field input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+.archive-filter-field input:hover,
+.archive-filter-field select:hover {
+  border-color: var(--gold);
+}
+
+.archive-filter-field input:focus-visible,
+.archive-filter-field select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.archive-filters__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.4rem;
+  margin-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.archive-filters__footer p {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+#archive-reset {
+  min-height: 40px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#archive-reset:hover:not(:disabled) {
+  background: var(--paper-deep);
+}
+
+#archive-reset:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.archive-no-results {
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Ensure hidden cards, sections, and controls
+   stay hidden despite author-level display styles. */
+
+.archive-directory [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .archive-filters__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-filter-field:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .archive-filters__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-filter-field:first-child {
+    grid-column: auto;
+  }
+
+  .archive-filters__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #archive-reset {
+    width: 100%;
+  }
+}
+

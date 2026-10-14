@@ -1,0 +1,213 @@
+/* =========================================
+   Theme switcher
+   ========================================= */
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 42px;
+  padding: 0.55rem 0.85rem;
+
+  color: var(--gold-light);
+  background: transparent;
+  border: 1px solid rgba(226, 194, 138, 0.45);
+
+  font: inherit;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(226, 194, 138, 0.12);
+  border-color: var(--gold-light);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+.theme-toggle__icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 680px) {
+  .site-header__inner {
+    gap: 0.65rem;
+  }
+
+  .site-header__actions {
+    gap: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+  }
+
+  .theme-toggle__label {
+    display: none;
+  }
+
+  .brand {
+    gap: 0.5rem;
+  }
+
+  .brand__name {
+    max-width: 155px;
+  }
+}
+
+/* =========================================
+   Dark theme — midnight archive
+   ========================================= */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ink: #f0eadb;
+  --ink-soft: #c0c6c0;
+
+  --night: #0a1216;
+  --night-raised: #18282c;
+
+  --paper: #111d20;
+  --paper-white: #172529;
+  --paper-deep: #203137;
+
+  --line: #425450;
+
+  --gold: #d0aa6e;
+  --gold-light: #f3d29a;
+  --jade: #9abbaf;
+}
+
+/* Dark surfaces and illustrations */
+
+:root[data-theme="dark"] .era-card {
+  background: var(--paper-white);
+  box-shadow: 0 8px 20px #0003;
+}
+
+:root[data-theme="dark"] .era-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 17px 40px #0005;
+}
+
+:root[data-theme="dark"] .editorial-mark {
+  color: var(--gold);
+  border-color: var(--line);
+  outline-color: var(--line);
+}
+
+/* Warm gold typography */
+
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .era-card__top,
+:root[data-theme="dark"] .era-card__bottom,
+:root[data-theme="dark"] .era-card__kicker,
+:root[data-theme="dark"] .era-card__ornament,
+:root[data-theme="dark"] .timeline-count,
+:root[data-theme="dark"] .timeline-entry__meta,
+:root[data-theme="dark"] .set-references strong,
+:root[data-theme="dark"] .chapter-sources__number,
+:root[data-theme="dark"] .chapter-pagination__link span,
+:root[data-theme="dark"] .chronology-strip__number {
+  color: var(--gold);
+}
+
+:root[data-theme="dark"] .section-title em,
+:root[data-theme="dark"] .page-banner h1 em {
+  color: var(--gold-light);
+}
+
+:root[data-theme="dark"] .muted-copy {
+  color: var(--ink-soft);
+}
+
+/* Links */
+
+:root[data-theme="dark"] .text-link,
+:root[data-theme="dark"] .inline-link,
+:root[data-theme="dark"] .chapter-prose a,
+:root[data-theme="dark"] .historical-card__source,
+:root[data-theme="dark"] .chapter-toc__sources,
+:root[data-theme="dark"] .chapter-sources li a,
+:root[data-theme="dark"] .chronology-strip__action {
+  color: var(--gold-light);
+}
+
+:root[data-theme="dark"] .text-link {
+  border-bottom-color: var(--gold);
+}
+
+:root[data-theme="dark"] .text-link:hover,
+:root[data-theme="dark"] .chapter-prose a:hover {
+  color: #ffe0a3;
+}
+
+:root[data-theme="dark"] .chapter-toc__list a:hover,
+:root[data-theme="dark"] .chapter-toc__list a:focus-visible {
+  color: var(--gold-light);
+}
+
+/* Timeline */
+
+:root[data-theme="dark"] .timeline-entry__marker {
+  background: var(--paper-white);
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
+:root[data-theme="dark"] .chapter-status {
+  color: var(--ink-soft);
+  background: var(--paper-white);
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .chapter-status--progress {
+  color: var(--gold-light);
+  background: var(--paper-deep);
+  border-color: var(--gold);
+}
+
+:root[data-theme="dark"] .set-references li {
+  color: var(--ink-soft);
+  background: var(--paper-deep);
+}
+
+/* Buttons */
+
+:root[data-theme="dark"] .button--dark {
+  color: var(--night);
+  background: var(--gold);
+}
+
+:root[data-theme="dark"] .button--dark:hover {
+  background: var(--gold-light);
+}
+
+/* A more subtle selection color */
+
+:root[data-theme="dark"] ::selection {
+  background: var(--gold);
+  color: var(--night);
+}
+
