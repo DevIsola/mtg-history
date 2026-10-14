@@ -1,0 +1,40 @@
+
+---
+import { historicalEvents } from '../data/events';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const event = historicalEvents.find(
+  (entry) => entry.id === id
+);
+
+if (!event) {
+  throw new Error(`Unknown historical event: ${id}`);
+}
+---
+
+<aside
+  class="historical-event-reference"
+  aria-label="Related historical event"
+>
+  <p class="historical-event-reference__eyebrow">
+    Explore this historical event
+  </p>
+
+  <a
+    class="historical-event-reference__link"
+    href={withBase(`events/${event.id}/`)}
+  >
+    <strong>{event.title}</strong>
+    <span aria-hidden="true">↗</span>
+  </a>
+
+  <p class="historical-event-reference__summary">
+    {event.summary}
+  </p>
+</aside>
