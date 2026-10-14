@@ -50,6 +50,22 @@ export const historicalEvents: HistoricalEvent[] = [
     characterIds: ["rebbec", "yawgmoth"],
     cardName: "Rebbec, Architect of Ascension",
   },
+
+  {
+    id: "tocasias-death",
+    title: "The Death of Tocasia",
+    chapterId: "brothers-war",
+    summary:
+      "A confrontation between Urza and Mishra kills their mentor and destroys the brothers' shared life.",
+    narrative: [
+      "Under Tocasia's guidance, Urza and Mishra explored ancient Thran ruins and developed their talents as artificers. Their discovery of the Mightstone and Weakstone eventually caused a bitter rivalry to emerge.",
+      "During a violent confrontation between the brothers, Tocasia attempted to intervene. The power unleashed in their struggle killed the archaeologist who had raised and guided them.",
+      "Her death became a decisive personal tragedy. Urza and Mishra separated, and the ambitions that once centered on ancient artifacts eventually grew into a war between nations.",
+    ],
+    characterIds: ["tocasia", "urza", "mishra"],
+    cardName: "Brotherhood's End",
+  },
+
   {
     id: "brothers-war",
     title: "The Brothers Become Enemies",
@@ -60,9 +76,25 @@ export const historicalEvents: HistoricalEvent[] = [
       "The brothers began as students fascinated by the remnants of ancient Thran technology. Their discovery of powerful artifacts contributed to a growing rivalry.",
       "Their separate ambitions eventually drew nations and armies into a destructive struggle, transforming the political and physical landscape of Dominaria.",
     ],
-    characterIds: ["urza"],
+    characterIds: ["urza", "mishra"],
     cardName: "Mishra, Tamer of Mak Fawa",
   },
+
+  {
+    id: "gix-influences-mishra",
+    title: "Gix and the Corruption of Mishra",
+    chapterId: "brothers-war",
+    summary:
+      "Phyrexian influence transforms Mishra's ambitions and draws the Brothers' War into Yawgmoth's larger conflict.",
+    narrative: [
+      "The rivalry between Urza and Mishra created an opening for Phyrexian interference on Dominaria. Gix, a servant of Yawgmoth, worked to expand Phyrexian influence through the conflict.",
+      "Mishra's pursuit of power became increasingly entangled with the forces Gix represented. The Phyrexian presence deepened a war that was already consuming Terisiare.",
+      "By the war's final confrontation, Mishra had undergone a terrible transformation. His fate demonstrated that the struggle between the brothers had become part of a much older threat to Dominaria.",
+    ],
+    characterIds: ["mishra", "gix", "yawgmoth"],
+    cardName: "Gix, Yawgmoth Praetor",
+  },
+
   {
     id: "sylex-blast",
     title: "The Sylex Blast",
@@ -73,8 +105,8 @@ export const historicalEvents: HistoricalEvent[] = [
       "The final confrontation on Argoth culminated in Urza activating the Golgothian Sylex, releasing catastrophic magical energy.",
       "The blast ended the war, ignited Urza’s planeswalker spark, and helped precipitate the prolonged climatic disruption associated with the Ice Age.",
     ],
-    characterIds: ["urza"],
-    cardName: "Brotherhood's End",
+    characterIds: ["urza", "mishra"],
+    cardName: "Urza's Sylex",
   },
   {
     id: "rise-of-lim-dul",

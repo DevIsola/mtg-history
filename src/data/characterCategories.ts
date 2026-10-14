@@ -14,7 +14,16 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "artifice",
     label: "Artifice and engineering",
-    characterIds: ["urza", "karn", "glacian", "rebbec", "jhoira", "venser"],
+    characterIds: [
+      "urza",
+      "mishra",
+      "tocasia",
+      "karn",
+      "glacian",
+      "rebbec",
+      "jhoira",
+      "venser",
+    ],
   },
 
   {
@@ -27,9 +36,23 @@ export const characterCategories: CharacterCategory[] = [
     label: "Warriors and heroes",
     characterIds: ["gerrard", "kamahl", "jeska", "radha"],
   },
+
   {
     id: "leaders",
     label: "Leaders and guardians",
-    characterIds: ["yawgmoth", "freyalise", "windgrace", "radha"],
+    characterIds: [
+      "yawgmoth",
+      "mishra",
+      "gix",
+      "freyalise",
+      "windgrace",
+      "radha",
+    ],
+  },
+
+  {
+    id: "phyrexia",
+    label: "Phyrexian figures",
+    characterIds: ["yawgmoth", "gix"],
   },
 ];
