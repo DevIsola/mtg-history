@@ -2358,3 +2358,161 @@ summary:focus-visible {
     transition: none;
   }
 }
+
+/* =========================================
+   Phase 16 — Searchable illustrated archive
+   ========================================= */
+
+.archive-filters {
+  margin-top: 3rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+}
+
+.archive-filters__heading h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: normal;
+  color: var(--ink);
+}
+
+.archive-filters__heading p {
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.archive-filters__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.75fr;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.archive-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.archive-filter-field label {
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.archive-filter-field input,
+.archive-filter-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.archive-filter-field input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+.archive-filter-field input:hover,
+.archive-filter-field select:hover {
+  border-color: var(--gold);
+}
+
+.archive-filter-field input:focus-visible,
+.archive-filter-field select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.archive-filters__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.4rem;
+  margin-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.archive-filters__footer p {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+#archive-reset {
+  min-height: 40px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#archive-reset:hover:not(:disabled) {
+  background: var(--paper-deep);
+}
+
+#archive-reset:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.archive-no-results {
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Ensure hidden cards, sections, and controls
+   stay hidden despite author-level display styles. */
+
+.archive-directory [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .archive-filters__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-filter-field:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .archive-filters__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-filter-field:first-child {
+    grid-column: auto;
+  }
+
+  .archive-filters__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #archive-reset {
+    width: 100%;
+  }
+}
