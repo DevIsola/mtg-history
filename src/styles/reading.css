@@ -24,7 +24,7 @@
 }
 
 .chapter-prose h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: normal;
   line-height: 1.25;
@@ -48,12 +48,12 @@
 }
 
 .chapter-prose a {
-  color: #785528;
+  color: var(--link-color);
   text-decoration: underline;
 }
 
 .chapter-prose a:hover {
-  color: #483514;
+  color: var(--link-hover);
 }
 
 .chapter-prose p:last-child {
@@ -69,7 +69,7 @@
 }
 
 .chapter-cards h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: normal;
   line-height: 1.2;
@@ -210,7 +210,7 @@
 
 .chapter-toc__list a:hover,
 .chapter-toc__list a:focus-visible {
-  color: #785528;
+  color: var(--link-color);
   background: var(--paper-deep);
   border-left-color: var(--gold);
 }
@@ -221,7 +221,7 @@
   padding-top: 1rem;
   border-top: 1px solid var(--line);
   font-size: 0.82rem;
-  color: #785528;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -239,7 +239,7 @@
 }
 
 .chapter-sources h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: normal;
   line-height: 1.25;
@@ -266,7 +266,7 @@
 }
 
 .chapter-sources li a {
-  color: #785528;
+  color: var(--link-color);
   font-weight: 600;
   text-underline-offset: 3px;
 }
@@ -308,7 +308,7 @@
 }
 
 .chapter-pagination__link strong {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: normal;
   line-height: 1.4;
@@ -356,7 +356,7 @@
 }
 
 .chronology-strip__heading h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: normal;
   line-height: 1.2;
@@ -410,7 +410,7 @@
 }
 
 .chronology-strip__number {
-  color: #785528;
+  color: var(--link-color);
   font-size: 0.69rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -418,7 +418,7 @@
 }
 
 .chronology-strip__title {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.3rem, 2vw, 1.6rem);
   font-weight: normal;
   line-height: 1.25;
@@ -439,7 +439,7 @@
 }
 
 .chronology-strip__date {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   color: var(--ink);
 }
@@ -465,7 +465,7 @@
 .chronology-strip__action {
   padding-top: 0.9rem;
   border-top: 1px solid var(--line);
-  color: #785528;
+  color: var(--link-color);
   font-size: 0.75rem;
   font-weight: 700;
 }
