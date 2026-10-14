@@ -30,18 +30,59 @@ const cardCount = sections.reduce(
   (total, section) => total + section.cards.length,
   0
 );
+
+
+const setNames: Record<string, string> = {
+  apc: 'Apocalypse',
+  bro: "The Brothers' War",
+  c14: 'Commander 2014',
+  c18: 'Commander 2018',
+  cmr: 'Commander Legends',
+  dmu: 'Dominaria United',
+  dom: 'Dominaria',
+  fut: 'Future Sight',
+  jud: 'Judgment',
+  lgn: 'Legions',
+  mh1: 'Modern Horizons',
+  nms: 'Nemesis',
+  ody: 'Odyssey',
+  ons: 'Onslaught',
+  plc: 'Planar Chaos',
+  pls: 'Planeshift',
+  scg: 'Scourge',
+  tor: 'Torment',
+  tsp: 'Time Spiral',
+};
+
+const formatSet = (code: string): string => {
+  const normalized = code.toLowerCase();
+  const name = setNames[normalized] ?? normalized.toUpperCase();
+
+  return `${name} [${normalized.toUpperCase()}]`;
+};
+
+const setCodes = [
+  ...new Set(
+    sections.flatMap((section) =>
+      section.cards.map((card) => card.setCode.toLowerCase())
+    )
+  ),
+].sort((a, b) => formatSet(a).localeCompare(formatSet(b)));
+
 ---
 
 <BaseLayout
   title="Illustrated archive"
-  description="Browse the Magic cards that illustrate major events, figures, and periods in the history of the Multiverse."
+  description="Search and browse the cards illustrating the history of Magic: The Gathering."
 >
   <section class="page-banner">
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">
-        The historical collection
+        The historical collection``
       </p>
+
       <h1>The illustrated <em>archive.</em></h1>
+
       <p>
         Every card is a fragment of history.
         Explore the illustrations behind the stories,
@@ -52,6 +93,7 @@ const cardCount = sections.reduce(
 
   <section class="section-spacing archive-directory">
     <div class="page-shell">
+
       <div class="archive-directory__intro">
         <p class="eyebrow">Cards as historical records</p>
 
@@ -60,14 +102,89 @@ const cardCount = sections.reduce(
         </h2>
 
         <p>
-          {cardCount} illustrated references across
-          {' '}{sections.length} historical chapters.
-          Each card links to its original printing
-          and the chapter where it appears.
+          {cardCount} illustrated references across{' '}
+          {sections.length} historical chapters.
+          Each card links to its printing and the
+          chapter where its story is told.
         </p>
       </div>
 
+      <!-- Progressive enhancement: hidden without JavaScript -->
+      <div
+        id="archive-filters"
+        class="archive-filters"
+        hidden
+      >
+        <div class="archive-filters__heading">
+          <h3>Explore the collection</h3>
+          <p>Search the historical records or narrow the collection.</p>
+        </div>
+
+        <div class="archive-filters__grid">
+          <div class="archive-filter-field">
+            <label for="archive-search">Search the archive</label>
+
+            <input
+              id="archive-search"
+              type="search"
+              placeholder="Card, character, artist, event..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="archive-filter-field">
+            <label for="archive-chapter">Historical chapter</label>
+
+            <select id="archive-chapter">
+              <option value="">All chapters</option>
+
+              {sections.map((section) => (
+                <option value={section.id}>
+                  {String(section.order).padStart(2, '0')}
+                  {' — '}
+                  {section.title}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div class="archive-filter-field">
+            <label for="archive-set">Card set</label>
+
+            <select id="archive-set">
+              <option value="">All sets</option>
+
+              {setCodes.map((code) => (
+                <option value={code}>
+                  {formatSet(code)}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div class="archive-filters__footer">
+          <p
+            id="archive-filter-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            Showing {cardCount} of {cardCount} illustrated references
+          </p>
+
+          <button
+            id="archive-reset"
+            type="button"
+            disabled
+          >
+            Clear filters
+          </button>
+        </div>
+      </div>
+
       <nav
+        id="archive-jump-links"
         class="archive-jump-links"
         aria-label="Browse archive by chapter"
       >
@@ -80,10 +197,20 @@ const cardCount = sections.reduce(
         ))}
       </nav>
 
+      <p
+        id="archive-no-results"
+        class="archive-no-results"
+        hidden
+      >
+        No illustrated references match these filters.
+        Try another search or clear your selections.
+      </p>
+
       {sections.map((section) => (
         <section
           id={section.id}
           class="archive-era"
+          data-archive-section
           aria-labelledby={`archive-heading-${section.id}`}
         >
           <div class="archive-era__heading">
@@ -112,7 +239,13 @@ const cardCount = sections.reduce(
 
           <div class="archive-card-grid">
             {section.cards.map((card) => (
-              <article class="archive-card">
+              <article
+                class="archive-card"
+                data-archive-card
+                data-chapter={section.id}
+                data-set={card.setCode.toLowerCase()}
+                data-search={`${section.title} ${card.name} ${card.significance} ${card.artist} ${formatSet(card.setCode)}`}
+              >
                 <a
                   class="archive-card__image"
                   href={card.cardUrl}
@@ -132,7 +265,7 @@ const cardCount = sections.reduce(
 
                 <div class="archive-card__body">
                   <span class="archive-card__set">
-                    {card.setCode.toUpperCase()}
+                    {formatSet(card.setCode)}
                     {' · '}
                     #{card.collectorNumber}
                   </span>
@@ -162,3 +295,115 @@ const cardCount = sections.reduce(
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const panel = document.querySelector<HTMLElement>('#archive-filters');
+  const search = document.querySelector<HTMLInputElement>('#archive-search');
+  const chapter = document.querySelector<HTMLSelectElement>('#archive-chapter');
+  const set = document.querySelector<HTMLSelectElement>('#archive-set');
+  const reset = document.querySelector<HTMLButtonElement>('#archive-reset');
+  const status = document.querySelector<HTMLElement>('#archive-filter-status');
+  const empty = document.querySelector<HTMLElement>('#archive-no-results');
+  const jumpLinks = document.querySelector<HTMLElement>('#archive-jump-links');
+
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-archive-card]')
+  );
+
+  const sections = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-archive-section]')
+  );
+
+  const normalize = (value: string) =>
+    value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+
+  if (
+    panel &&
+    search &&
+    chapter &&
+    set &&
+    reset &&
+    status &&
+    empty &&
+    jumpLinks
+  ) {
+    panel.hidden = false;
+
+    const applyFilters = () => {
+      const query = normalize(search.value);
+      const selectedChapter = chapter.value;
+      const selectedSet = set.value;
+
+      const isFiltering =
+        query !== '' ||
+        selectedChapter !== '' ||
+        selectedSet !== '';
+
+      let visibleCount = 0;
+
+      for (const card of cards) {
+        const searchText = normalize(
+          card.dataset.search ?? ''
+        );
+
+        const matchesQuery =
+          query === '' || searchText.includes(query);
+
+        const matchesChapter =
+          selectedChapter === '' ||
+          card.dataset.chapter === selectedChapter;
+
+        const matchesSet =
+          selectedSet === '' ||
+          card.dataset.set === selectedSet;
+
+        const matches =
+          matchesQuery &&
+          matchesChapter &&
+          matchesSet;
+
+        card.hidden = !matches;
+
+        if (matches) {
+          visibleCount++;
+        }
+      }
+
+      for (const section of sections) {
+        const sectionCards = section.querySelectorAll<HTMLElement>(
+          '[data-archive-card]'
+        );
+
+        section.hidden = !Array.from(sectionCards).some(
+          (card) => !card.hidden
+        );
+      }
+
+      jumpLinks.hidden = isFiltering;
+      empty.hidden = visibleCount !== 0;
+      reset.disabled = !isFiltering;
+
+      status.textContent =
+        `Showing ${visibleCount} of ${cards.length} illustrated references`;
+    };
+
+    search.addEventListener('input', applyFilters);
+    chapter.addEventListener('change', applyFilters);
+    set.addEventListener('change', applyFilters);
+
+    reset.addEventListener('click', () => {
+      search.value = '';
+      chapter.value = '';
+      set.value = '';
+
+      applyFilters();
+      search.focus();
+    });
+
+    applyFilters();
+  }
+</script>
