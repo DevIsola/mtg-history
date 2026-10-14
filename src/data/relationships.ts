@@ -21,6 +21,57 @@ export interface CharacterRelationship {
 
 export const characterRelationships: CharacterRelationship[] = [
   {
+    a: "urza",
+    b: "mishra",
+    category: "family",
+    labelForA: "Brother and rival",
+    labelForB: "Brother and rival",
+    context:
+      "Urza and Mishra were brothers whose shared interest in Thran artifacts developed into a rivalry that devastated Terisiare.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "tocasia",
+    b: "urza",
+    category: "mentorship",
+    labelForA: "Student",
+    labelForB: "Mentor",
+    context:
+      "Tocasia guided Urza's early studies of ancient Thran technology before her death separated the brothers.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "tocasia",
+    b: "mishra",
+    category: "mentorship",
+    labelForA: "Student",
+    labelForB: "Mentor",
+    context:
+      "Tocasia taught Mishra alongside Urza and died attempting to intervene in their conflict.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "mishra",
+    b: "gix",
+    category: "alliance",
+    labelForA: "Phyrexian patron",
+    labelForB: "Manipulated ally",
+    context:
+      "Gix exploited the Brothers' War to extend Phyrexian influence, drawing Mishra further into its machinery and ambitions.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "yawgmoth",
+    b: "gix",
+    category: "alliance",
+    labelForA: "Praetor and agent",
+    labelForB: "Master",
+    context:
+      "Gix served Yawgmoth and advanced Phyrexian interests on Dominaria during the Brothers' War.",
+    chapterId: "brothers-war",
+  },
+
+  {
     a: "glacian",
     b: "rebbec",
     category: "family",

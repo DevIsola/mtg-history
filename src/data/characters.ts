@@ -20,6 +20,105 @@ export interface CharacterProfile {
 
 export const characters: CharacterProfile[] = [
   // =========================================
+  // The Brothers' War — Mishra
+  // =========================================
+  {
+    id: "mishra",
+    name: "Mishra",
+    title: "The Brother Lost to Phyrexia",
+    origin: "Dominaria — Terisiare",
+    role: "Artificer, Fallaji commander, and war leader",
+    summary:
+      "Urza's gifted younger brother, whose rivalry, military ambitions, and Phyrexian corruption helped devastate Terisiare.",
+    biography: [
+      "Mishra studied ancient Thran artifacts alongside his brother Urza under the archaeologist Tocasia. Their discovery of two halves of a powerful stone helped ignite the rivalry that would define both their lives.",
+      "After Tocasia's death, Mishra separated from Urza and rose to prominence among the Fallaji. His talents as an artificer and his growing influence turned a family conflict into a struggle between powerful factions.",
+      "As the war continued, the Phyrexian praetor Gix took advantage of Mishra's ambitions. Mishra became increasingly entangled with Phyrexian influence, and his eventual transformation symbolized how far the conflict had moved beyond its original causes.",
+      "Mishra's final confrontation with Urza took place on Argoth. Urza's activation of the Golgothian Sylex brought the war to a catastrophic end, leaving the brothers' legacy inseparable from the devastation of Dominaria.",
+    ],
+    chapterIds: ["brothers-war"],
+    featuredCard: {
+      name: "Mishra, Tamer of Mak Fawa",
+      setCode: "bro",
+      collectorNumber: "217",
+      scryfallId: "585a753d-a692-474a-bc28-48dd93b73ace",
+      artist: "Darren Tan",
+      significance:
+        "Mishra as a powerful artificer and leader before the ultimate consequences of his Phyrexian corruption.",
+    },
+    source: {
+      title: "Wizards of the Coast — The Brothers' War Card Stories, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/the-brothers-war-card-stories-part-1",
+    },
+  },
+
+  // =========================================
+  // The Brothers' War — Tocasia
+  // =========================================
+  {
+    id: "tocasia",
+    name: "Tocasia",
+    title: "Mentor of the Brothers",
+    origin: "Dominaria — Terisiare",
+    role: "Archaeologist, artificer, and teacher",
+    summary:
+      "An archaeologist who guided Urza and Mishra through the ruins of the Thran before their rivalry brought tragedy to her camp.",
+    biography: [
+      "Tocasia was an experienced archaeologist whose investigations of ancient Thran ruins provided the setting for Urza and Mishra's early studies. She helped nurture their interest in artifice and the forgotten civilizations of Dominaria.",
+      "The brothers' discoveries at the Caves of Koilos brought them into possession of the Mightstone and Weakstone. As their rivalry grew, the artifacts increasingly became objects of conflict rather than shared curiosity.",
+      "Tocasia died when she attempted to intervene in a confrontation between the brothers. Her death ended their life together under her guidance and became one of the defining tragedies preceding the Brothers' War.",
+      "The Brothers' War expansion later depicted Tocasia on a legendary creature card, giving an important early figure in the story her own representation in the illustrated historical record.",
+    ],
+    chapterIds: ["brothers-war"],
+    featuredCard: {
+      name: "Tocasia, Dig Site Mentor",
+      setCode: "bro",
+      collectorNumber: "360",
+      scryfallId: "25d759dc-0501-481a-8330-005f83b999d7",
+      artist: "Lie Setiawan",
+      significance:
+        "An extended-art depiction of Tocasia, the archaeologist who mentored Urza and Mishra.",
+    },
+    source: {
+      title: "Wizards of the Coast — Act of War, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/act-of-war-part-1",
+    },
+  },
+
+  // =========================================
+  // The Brothers' War — Gix
+  // =========================================
+  {
+    id: "gix",
+    name: "Gix",
+    title: "Praetor of Old Phyrexia",
+    origin: "Phyrexia",
+    role: "Phyrexian praetor and agent of Yawgmoth",
+    summary:
+      "A powerful Phyrexian agent whose interference in the Brothers' War helped corrupt Mishra and advance Yawgmoth's interests.",
+    biography: [
+      "Gix was a powerful servant of Yawgmoth and one of the major Phyrexian figures involved in the events surrounding the Brothers' War.",
+      "His influence reached Dominaria while Urza and Mishra were fighting for control of Terisiare. Rather than acting as an ordinary military commander, Gix worked to extend Phyrexian power through the conflict already underway.",
+      "Mishra's growing dependence on Phyrexian forces enabled Gix's influence to become part of the war's central story. The brother's ultimate corruption reflected the danger of treating those forces as instruments of personal ambition.",
+      "Gix's involvement helped connect the ancient origins of Phyrexia to the later struggles against Yawgmoth, making the Brothers' War an important chapter in a much longer conflict.",
+    ],
+    chapterIds: ["brothers-war"],
+    featuredCard: {
+      name: "Gix, Yawgmoth Praetor",
+      setCode: "bro",
+      collectorNumber: "95",
+      scryfallId: "2c76f7e0-37e7-4e87-93a3-a25ba0674645",
+      artist: "Anna Podedworna",
+      significance:
+        "Gix as a legendary Phyrexian praetor in The Brothers' War.",
+    },
+    source: {
+      title: "Wizards of the Coast — The Brothers' War Card Stories, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/the-brothers-war-card-stories-part-1",
+    },
+  },
+
+  // =========================================
   // Urza
   // =========================================
   {
