@@ -92,11 +92,15 @@ export const eras: HistoricalEra[] = [
     id: "mending",
     chapter: "06",
     name: "Time Spiral and the Mending",
-    kicker: "The Nature of Planeswalkers",
+    kicker: "The Cost of Repairing Reality",
     summary:
-      "Rifts in reality threaten Dominaria, and repairing them changes what it means to be a planeswalker.",
-    sets: ["Time Spiral · 2006", "Planar Chaos · 2007", "Future Sight · 2007"],
-    status: "planned",
+      "Time rifts threaten Dominaria and the Multiverse; Teferi, Jeska, Freyalise, Windgrace, and their allies pay the price of the Mending.",
+    sets: [
+      "Time Spiral · 2006",
+      "Planar Chaos · 2007",
+      "Future Sight · 2007",
+    ],
+    status: "published",
   },
   {
     id: "many-worlds",
