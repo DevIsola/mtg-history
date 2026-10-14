@@ -22,6 +22,57 @@ export interface CharacterRelationship {
 export const characterRelationships: CharacterRelationship[] = [
   {
     a: "urza",
+    b: "kayla",
+    category: "family",
+    labelForA: "Wife",
+    labelForB: "Husband",
+    context:
+      "Urza's marriage to Kayla connected him to Yotia's ruling family. Their relationship was profoundly affected by the war and its aftermath.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "urza",
+    b: "tawnos",
+    category: "mentorship",
+    labelForA: "Apprentice",
+    labelForB: "Mentor",
+    context:
+      "Tawnos studied under Urza and contributed to his mechanical inventions, later questioning the destructive uses of their technology.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "mishra",
+    b: "ashnod",
+    category: "alliance",
+    labelForA: "Artificer and lieutenant",
+    labelForB: "Commander and patron",
+    context:
+      "Ashnod worked within Mishra's war effort, but her independence and decisions eventually brought her into conflict with his ambitions.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "ashnod",
+    b: "tawnos",
+    category: "friendship",
+    labelForA: "Friend across enemy lines",
+    labelForB: "Friend across enemy lines",
+    context:
+      "Despite serving opposing armies, Ashnod and Tawnos developed an important personal connection. Ashnod later helped Tawnos escape captivity.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "kayla",
+    b: "tawnos",
+    category: "alliance",
+    labelForA: "Trusted artificer",
+    labelForB: "Queen and political ally",
+    context:
+      "Kayla and Tawnos survived the war's devastation and later worked to protect communities struggling with its consequences.",
+    chapterId: "brothers-war",
+  },
+
+  {
+    a: "urza",
     b: "mishra",
     category: "family",
     labelForA: "Brother and rival",

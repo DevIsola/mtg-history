@@ -23,6 +23,8 @@ export const characterCategories: CharacterCategory[] = [
       "rebbec",
       "jhoira",
       "venser",
+      "tawnos",
+      "ashnod",
     ],
   },
 
@@ -47,6 +49,7 @@ export const characterCategories: CharacterCategory[] = [
       "freyalise",
       "windgrace",
       "radha",
+      "kayla",
     ],
   },
 

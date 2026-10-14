@@ -81,6 +81,21 @@ export const historicalEvents: HistoricalEvent[] = [
   },
 
   {
+    id: "fall-of-kroog",
+    title: "The Fall of Kroog",
+    chapterId: "brothers-war",
+    summary:
+      "The destruction of Yotia's capital forces Kayla and its inhabitants to confront the devastating human cost of the Brothers' War.",
+    narrative: [
+      "As Urza and Mishra's armies struggled for control of Terisiare, the city of Kroog became a target of the expanding conflict. The destruction of the Yotian capital shattered a major political and civilian center.",
+      "Kayla bin-Kroog survived the catastrophe. Her experiences highlighted the suffering of families, displaced communities, and people whose lives were consumed by decisions made by the rival artificers.",
+      "The fall of Kroog further intensified the conflict, while its survivors faced the task of preserving their communities amid the destruction of their homeland.",
+    ],
+    characterIds: ["kayla", "urza", "mishra", "tawnos", "ashnod"],
+    cardName: "Queen Kayla bin-Kroog",
+  },
+
+  {
     id: "gix-influences-mishra",
     title: "Gix and the Corruption of Mishra",
     chapterId: "brothers-war",
@@ -93,6 +108,21 @@ export const historicalEvents: HistoricalEvent[] = [
     ],
     characterIds: ["mishra", "gix", "yawgmoth"],
     cardName: "Gix, Yawgmoth Praetor",
+  },
+
+  {
+    id: "ashnod-frees-tawnos",
+    title: "Ashnod Frees Tawnos",
+    chapterId: "brothers-war",
+    summary:
+      "A personal connection across enemy lines leads Ashnod to help Urza's apprentice escape captivity.",
+    narrative: [
+      "Tawnos and Ashnod served opposing sides of the Brothers' War: Tawnos worked with Urza, while Ashnod was associated with Mishra. Both were gifted inventors, but their methods and loyalties differed.",
+      "As the conflict continued, Tawnos fell into captivity. Ashnod chose to help him escape, placing their personal connection above the demands of the competing war efforts.",
+      "The decision added to Ashnod's growing distance from Mishra's circle and revealed that the war's apparent divisions did not fully determine the loyalties of everyone involved.",
+    ],
+    characterIds: ["ashnod", "tawnos", "mishra", "urza"],
+    cardName: "Ashnod, Flesh Mechanist",
   },
 
   {
