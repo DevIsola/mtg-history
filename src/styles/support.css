@@ -11,7 +11,7 @@
 }
 
 .support-panel h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.65rem, 3vw, 2.2rem);
   font-weight: normal;
   line-height: 1.25;
@@ -76,4 +76,3 @@
     width: 100%;
   }
 }
-
