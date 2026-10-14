@@ -20,6 +20,106 @@ export interface CharacterProfile {
 
 export const characters: CharacterProfile[] = [
   // =========================================
+  // The Brothers' War — Kayla bin-Kroog
+  // =========================================
+  {
+    id: "kayla",
+    name: "Kayla bin-Kroog",
+    title: "The Queen Who Endured",
+    origin: "Dominaria — Yotia and Argive",
+    role: "Yotian noble, queen, and historical chronicler",
+    summary:
+      "A royal figure whose life was transformed by Urza's war with Mishra, and whose leadership helped preserve her people after catastrophe.",
+    biography: [
+      "Kayla bin-Kroog belonged to the ruling family of Yotia. Her marriage to Urza connected the artificer to Yotian political power, placing her close to the origins and escalation of the Brothers' War.",
+      "The destruction of Kroog devastated the world Kayla had known. She survived the attack and became a leader for people displaced by the war, facing political and humanitarian consequences that neither brother's inventions could solve.",
+      "Kayla's experiences continued beyond the final battle on Argoth. As the climate deteriorated and surviving communities struggled to adapt, she worked to preserve order and protect the people under her care.",
+      "Her account, The Antiquities War, became an important historical record of the conflict. Her perspective preserved not simply the actions of Urza and Mishra but the suffering and resilience of those who lived through their decisions.",
+    ],
+    chapterIds: ["brothers-war"],
+    featuredCard: {
+      name: "Queen Kayla bin-Kroog",
+      setCode: "bro",
+      collectorNumber: "218",
+      scryfallId: "685c9767-eaa7-4e16-b245-816181e2fc36",
+      artist: "Cristi Balanescu",
+      significance:
+        "A depiction of Kayla as a leader whose role continued beyond the military conflict between Urza and Mishra.",
+    },
+    source: {
+      title: "Wizards of the Coast — The Brothers' War, Episode 1: The End",
+      url: "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end",
+    },
+  },
+
+  // =========================================
+  // The Brothers' War — Tawnos
+  // =========================================
+  {
+    id: "tawnos",
+    name: "Tawnos",
+    title: "The Apprentice Who Questioned War",
+    origin: "Dominaria — Terisiare",
+    role: "Artificer, inventor, and apprentice of Urza",
+    summary:
+      "A gifted inventor who served Urza during the Brothers' War and later confronted the destructive legacy of the machines they built.",
+    biography: [
+      "Tawnos became a student and close associate of Urza, developing an exceptional understanding of machinery and powerstone-driven inventions. His talents helped support the engineering projects of Urza's forces.",
+      "Unlike the two brothers, whose rivalry came to dominate their lives, Tawnos maintained relationships across the conflict. His connection with Ashnod, an artificer associated with Mishra, revealed the possibility of cooperation beyond opposing military loyalties.",
+      "During the war, Tawnos experienced imprisonment and was eventually freed through Ashnod's intervention. His experiences exposed him to the personal consequences of the struggle between their respective leaders.",
+      "After the devastation of Argoth, Tawnos continued working with mechanical technology in the changed world. His efforts to serve civilian communities forced him to confront the danger that machines designed for peaceful use could once again become instruments of war.",
+    ],
+    chapterIds: ["brothers-war"],
+    featuredCard: {
+      name: "Tawnos, the Toymaker",
+      setCode: "bro",
+      collectorNumber: "222",
+      scryfallId: "1f855a7e-3a97-4b62-a2a7-06ff1fbb2c4c",
+      artist: "Livia Prima",
+      significance:
+        "Represents Tawnos's inventive approach to mechanical life and his interests beyond military artifice.",
+    },
+    source: {
+      title:
+        "Wizards of the Coast — The Brothers' War, Episode 2: The Beginning",
+      url: "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-2-the-beginning",
+    },
+  },
+
+  // =========================================
+  // The Brothers' War — Ashnod
+  // =========================================
+  {
+    id: "ashnod",
+    name: "Ashnod",
+    title: "The Flesh Mechanist",
+    origin: "Dominaria — Terisiare",
+    role: "Artificer and researcher of flesh and machinery",
+    summary:
+      "A brilliant but ruthless artificer associated with Mishra, whose experiments and independent decisions shaped the Brothers' War.",
+    biography: [
+      "Ashnod was an accomplished artificer whose inventions and experiments explored the manipulation of living bodies through machinery and magical power. Her methods were frequently cruel, reflecting the moral costs of the technological arms race.",
+      "Ashnod worked within Mishra's sphere of influence and contributed to the development of increasingly destructive technologies. Her relationship with Mishra was complicated by her independence and the growing Phyrexian influence around him.",
+      "Despite their opposing loyalties, Ashnod developed an important connection with Tawnos, Urza's apprentice. During the conflict, she helped him escape captivity, a choice that demonstrated her willingness to act against expectations imposed by the war.",
+      "Her story illustrates a central contradiction of the Brothers' War: extraordinary technical ingenuity flourished while the political ambitions surrounding it caused immense suffering.",
+    ],
+    chapterIds: ["brothers-war"],
+    featuredCard: {
+      name: "Ashnod, Flesh Mechanist",
+      setCode: "bro",
+      collectorNumber: "84",
+      scryfallId: "5eb43c15-50a9-488f-b0be-84a5e0a6d10b",
+      artist: "Howard Lyon",
+      significance:
+        "Depicts Ashnod's experiments with powerstones, flesh, and constructed beings.",
+    },
+    source: {
+      title: "Wizards of the Coast — Act of War, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/act-of-war-part-1",
+    },
+  },
+
+  // =========================================
   // The Brothers' War — Mishra
   // =========================================
   {
