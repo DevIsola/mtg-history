@@ -21,6 +21,17 @@ export interface CharacterRelationship {
 
 export const characterRelationships: CharacterRelationship[] = [
   {
+    a: "glacian",
+    b: "rebbec",
+    category: "family",
+    labelForA: "Wife",
+    labelForB: "Husband",
+    context:
+      "Glacian and Rebbec were married and stood among the Thran Empire's most accomplished figures. Glacian's powerstones supported Rebbec's architectural achievements, and his illness led her to seek treatment from Yawgmoth.",
+    chapterId: "thran",
+  },
+
+  {
     a: "rebbec",
     b: "yawgmoth",
     category: "rivalry",

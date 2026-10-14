@@ -180,6 +180,40 @@ export const characters: CharacterProfile[] = [
   },
 
   // =========================================
+  // Glacian
+  // =========================================
+  {
+    id: "glacian",
+    name: "Glacian",
+    title: "The Father of Powerstone Artifice",
+    origin: "Dominaria",
+    role: "Thran engineer and powerstone inventor",
+    summary:
+      "The brilliant Thran engineer whose powerstones powered an empire and whose inventions shaped the conflicts of later ages.",
+    biography: [
+      "Glacian discovered how to create powerstones, crystals capable of storing extraordinary amounts of magical energy. His inventions became fundamental to the machines, infrastructure, and achievements of the ancient Thran Empire.",
+      "Glacian was married to Rebbec, one of the empire's greatest architects. Their accomplishments were closely intertwined: powerstones supported the extraordinary structures Rebbec designed, including the floating Thran Temple above Halcyon.",
+      "The technologies Glacian pioneered were also linked to phthisis, a devastating illness afflicting the Thran. When Glacian became gravely ill, Rebbec used her influence to bring the physician Yawgmoth to Halcyon.",
+      "Yawgmoth implanted two halves of a broken powerstone in Glacian's body, draining his life force. Rebbec later used those stones to seal the gateway to Phyrexia. Millennia afterward, Urza and Mishra discovered them and named them the Mightstone and Weakstone.",
+    ],
+    chapterIds: ["thran"],
+    featuredCard: {
+      name: "Glacian, Powerstone Engineer",
+      setCode: "cmr",
+      collectorNumber: "72",
+      scryfallId: "a736df42-18e9-4259-b0b8-54d21143e72e",
+      artist: "Magali Villeneuve",
+      significance:
+        "A Commander Legends depiction of Glacian, whose inventions powered Thran civilization and influenced generations of later artificers.",
+    },
+    source: {
+      title:
+        "Wizards of the Coast — The Legendary Characters of Commander Legends, Part 2",
+      url: "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-2-2020-11-06",
+    },
+  },
+
+  // =========================================
   // Rebbec
   // =========================================
   {
@@ -264,7 +298,8 @@ export const characters: CharacterProfile[] = [
         "Jeska's original legendary card shows the Pardic warrior before the identities of Phage, Karona, and planeswalker.",
     },
     source: {
-      title: "Wizards of the Coast — Legendary Characters of Commander Legends, Part 1",
+      title:
+        "Wizards of the Coast — Legendary Characters of Commander Legends, Part 1",
       url: "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30",
     },
   },
@@ -304,27 +339,27 @@ export const characters: CharacterProfile[] = [
     title: "The Time Mage of Zhalfir",
     origin: "Dominaria — Zhalfir",
     role: "Temporal archmage; former planeswalker",
-    summary: "A master of time magic who surrendered his planeswalker spark to save Shiv and begin healing Dominaria.",
+    summary:
+      "A master of time magic who surrendered his planeswalker spark to save Shiv and begin healing Dominaria.",
     biography: [
       "A gifted student of the Tolarian Academy, Teferi mastered temporal magic and eventually became a planeswalker. During the Phyrexian invasion he phased Zhalfir and Shiv out of ordinary reality to spare them from conquest.",
       "Returning to Dominaria centuries later, he found a dying plane whose time rifts were partly the legacy of those drastic interventions. He worked with Jhoira, Venser, and Radha to understand how they could be sealed.",
-      "Teferi spent his spark restoring Shiv and healing its rift. Zhalfir, however, remained absent—one of the most enduring costs of his earlier decision."
+      "Teferi spent his spark restoring Shiv and healing its rift. Zhalfir, however, remained absent—one of the most enduring costs of his earlier decision.",
     ],
-    chapterIds: [
-      "mending"
-    ],
+    chapterIds: ["mending"],
     featuredCard: {
       name: "Teferi, Mage of Zhalfir",
       setCode: "tsp",
       collectorNumber: "83",
       scryfallId: "3c0145f6-4e27-49e7-9ef6-bac6fa3de26d",
       artist: "D. Alexander Gregory & Jeremy Jarvis",
-      significance: "Teferi as depicted in Time Spiral, before the sacrifice of his planeswalker spark."
+      significance:
+        "Teferi as depicted in Time Spiral, before the sacrifice of his planeswalker spark.",
     },
     source: {
       title: "Wizards of the Coast — Teferi: Behind the Magic",
-      url: "https://magic.wizards.com/en/news/card-preview/teferi-behind-magic-2020-06-12"
-    }
+      url: "https://magic.wizards.com/en/news/card-preview/teferi-behind-magic-2020-06-12",
+    },
   },
   {
     id: "jhoira",
@@ -332,27 +367,27 @@ export const characters: CharacterProfile[] = [
     title: "The Tolarian Artificer",
     origin: "Dominaria — Shiv",
     role: "Artificer, engineer, and keeper of historical memory",
-    summary: "An ingenious Tolarian and longtime ally of Teferi and Karn whose practical skill proved critical during the temporal crisis.",
+    summary:
+      "An ingenious Tolarian and longtime ally of Teferi and Karn whose practical skill proved critical during the temporal crisis.",
     biography: [
       "Jhoira studied at Urza's Tolarian Academy and developed enduring friendships with Teferi and Karn. Her long life made her a living connection to eras separated by centuries.",
       "When Dominaria's temporal fractures threatened the world, she accompanied Teferi and worked with Venser and other allies, often challenging those who treated mortal companions as expendable resources.",
-      "Jhoira survived the crisis and remained important to Dominaria's history beyond the Mending, carrying forward the practical legacy of artifice."
+      "Jhoira survived the crisis and remained important to Dominaria's history beyond the Mending, carrying forward the practical legacy of artifice.",
     ],
-    chapterIds: [
-      "mending"
-    ],
+    chapterIds: ["mending"],
     featuredCard: {
       name: "Jhoira of the Ghitu",
       setCode: "fut",
       collectorNumber: "157",
       scryfallId: "1f437128-3a87-4958-97d0-3940d8761cba",
       artist: "Kev Walker",
-      significance: "Jhoira's Future Sight card depicts the Ghitu artificer associated with Teferi and the Tolarian legacy."
+      significance:
+        "Jhoira's Future Sight card depicts the Ghitu artificer associated with Teferi and the Tolarian legacy.",
     },
     source: {
       title: "Wizards of the Coast — Planeswalker's Guide to Dominaria",
-      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31"
-    }
+      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31",
+    },
   },
   {
     id: "venser",
@@ -360,27 +395,27 @@ export const characters: CharacterProfile[] = [
     title: "The Shaper Savant",
     origin: "Dominaria — Urborg",
     role: "Artificer, teleportation specialist, and planeswalker",
-    summary: "An inventive mage whose teleportation experiments and emerging spark foreshadowed the post-Mending age.",
+    summary:
+      "An inventive mage whose teleportation experiments and emerging spark foreshadowed the post-Mending age.",
     biography: [
       "Venser grew up in Urborg, where he pursued the construction of devices capable of extraordinary transportation and displacement. His talents attracted the attention of Teferi and Lord Windgrace.",
       "Drawn into the attempt to close Dominaria's rifts, he discovered that his own potential for planeswalking differed from the nearly limitless abilities of the older planeswalkers.",
-      "Venser survived the final repair of the Otarian rift and entered the new era as one of the first examples of a post-Mending planeswalker."
+      "Venser survived the final repair of the Otarian rift and entered the new era as one of the first examples of a post-Mending planeswalker.",
     ],
-    chapterIds: [
-      "mending"
-    ],
+    chapterIds: ["mending"],
     featuredCard: {
       name: "Venser, Shaper Savant",
       setCode: "fut",
       collectorNumber: "46",
       scryfallId: "0e84fc99-4045-4518-b588-512a675f2933",
       artist: "Aleksi Briclot",
-      significance: "Venser's first legendary card, printed in Future Sight, reflects his talent for teleportation."
+      significance:
+        "Venser's first legendary card, printed in Future Sight, reflects his talent for teleportation.",
     },
     source: {
       title: "Wizards of the Coast — Venser",
-      url: "https://magic.wizards.com/en/story/venser-planeswalker"
-    }
+      url: "https://magic.wizards.com/en/story/venser-planeswalker",
+    },
   },
   {
     id: "radha",
@@ -388,27 +423,27 @@ export const characters: CharacterProfile[] = [
     title: "Heir to Keld",
     origin: "Dominaria — Keld and Skyshroud",
     role: "Half-elven warrior and Keldon leader",
-    summary: "A formidable warrior whose connection to Skyshroud's rift helped reshape attempts to save Dominaria.",
+    summary:
+      "A formidable warrior whose connection to Skyshroud's rift helped reshape attempts to save Dominaria.",
     biography: [
       "Radha was raised between the heritage of Skyshroud's elves and the fierce traditions of Keld. She sought recognition as a Keldon warrior rather than simply accepting the identity others assigned her.",
       "Her unusual bond with rift mana made her central to Teferi's investigation and later to Jeska's attempts to heal the damaged plane. Both planeswalkers had to confront Radha's independence and the dangers of using another person as a tool.",
-      "She survived the Mending and became an influential leader in Keld during Dominaria's subsequent recovery."
+      "She survived the Mending and became an influential leader in Keld during Dominaria's subsequent recovery.",
     ],
-    chapterIds: [
-      "mending"
-    ],
+    chapterIds: ["mending"],
     featuredCard: {
       name: "Radha, Heir to Keld",
       setCode: "plc",
       collectorNumber: "162",
       scryfallId: "7fc23b2e-9124-4f88-b93e-8bfe90e6eb41",
       artist: "Jim Murray",
-      significance: "Radha's original Planar Chaos printing captures her Keldon identity and link to the forest."
+      significance:
+        "Radha's original Planar Chaos printing captures her Keldon identity and link to the forest.",
     },
     source: {
       title: "Wizards of the Coast — Planeswalker's Guide to Dominaria",
-      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31"
-    }
+      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31",
+    },
   },
   {
     id: "freyalise",
@@ -416,28 +451,27 @@ export const characters: CharacterProfile[] = [
     title: "Guardian of Elvenkind",
     origin: "Dominaria",
     role: "Ancient planeswalker and protector of Skyshroud",
-    summary: "A formidable guardian who ended Dominaria's Ice Age and died sealing the Skyshroud rift.",
+    summary:
+      "A formidable guardian who ended Dominaria's Ice Age and died sealing the Skyshroud rift.",
     biography: [
       "Freyalise had wielded extraordinary power since the age of the Ice Age, when her magic helped end the long supernatural winter. She became particularly associated with elven communities and the defense of their forests.",
       "After the Rathi Overlay transplanted Skyshroud into Keld, Freyalise continued to protect its inhabitants from threats even while the growing temporal rift weakened the plane.",
-      "Recognizing the threat to all of Dominaria, she sacrificed her life and power to heal the fracture above Skyshroud."
+      "Recognizing the threat to all of Dominaria, she sacrificed her life and power to heal the fracture above Skyshroud.",
     ],
-    chapterIds: [
-      "ice-age",
-      "mending"
-    ],
+    chapterIds: ["ice-age", "mending"],
     featuredCard: {
       name: "Freyalise, Llanowar's Fury",
       setCode: "c14",
       collectorNumber: "43",
       scryfallId: "6c6ef042-1a69-4b16-abae-4f436dbadbbd",
       artist: "Adam Paquette",
-      significance: "A later planeswalker card representing the elven protector who sacrificed herself during the Mending."
+      significance:
+        "A later planeswalker card representing the elven protector who sacrificed herself during the Mending.",
     },
     source: {
       title: "Wizards of the Coast — Freyalise",
-      url: "https://magic.wizards.com/en/story/freyalise-planeswalker"
-    }
+      url: "https://magic.wizards.com/en/story/freyalise-planeswalker",
+    },
   },
   {
     id: "windgrace",
@@ -445,26 +479,26 @@ export const characters: CharacterProfile[] = [
     title: "Protector of Urborg",
     origin: "Dominaria — Urborg",
     role: "Planeswalker and guardian of Urborg",
-    summary: "An ancient protector who surrendered his life to close Urborg's temporal rift.",
+    summary:
+      "An ancient protector who surrendered his life to close Urborg's temporal rift.",
     biography: [
       "Lord Windgrace ruled as a guardian of Urborg and was wary of the destructive effects of artifice and the interventions of outsiders. The Rathi Overlay left his homeland scarred with transplanted structures and a dangerous rift.",
       "When Teferi and his companions sought a way to heal the plane, Windgrace's suspicion made cooperation difficult. He nevertheless came to recognize the scale of the crisis.",
-      "Windgrace gave his life sealing Urborg's rift, leaving an enduring spiritual connection to the land he had defended."
+      "Windgrace gave his life sealing Urborg's rift, leaving an enduring spiritual connection to the land he had defended.",
     ],
-    chapterIds: [
-      "mending"
-    ],
+    chapterIds: ["mending"],
     featuredCard: {
       name: "Lord Windgrace",
       setCode: "c18",
       collectorNumber: "43",
       scryfallId: "213d6fb8-5624-4804-b263-51f339482754",
       artist: "Bram Sels",
-      significance: "A Commander 2018 depiction of the historical guardian of Urborg."
+      significance:
+        "A Commander 2018 depiction of the historical guardian of Urborg.",
     },
     source: {
       title: "Wizards of the Coast — Planeswalker's Guide to Dominaria",
-      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31"
-    }
+      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31",
+    },
   },
 ];
