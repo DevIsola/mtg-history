@@ -311,3 +311,167 @@
     grid-column: 1;
   }
 }
+
+/* =========================================
+   Phase 24 — Searchable character directory
+   ========================================= */
+
+.character-filter-panel {
+  margin: 2.5rem 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+}
+
+.character-filter-panel__heading h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: normal;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.character-filter-panel__heading p {
+  margin-top: 0.6rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.character-filter-panel__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.character-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.character-filter-field--search {
+  grid-column: 1 / -1;
+}
+
+.character-filter-field label {
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.character-filter-field input,
+.character-filter-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.character-filter-field input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+.character-filter-field input:hover,
+.character-filter-field select:hover {
+  border-color: var(--gold);
+}
+
+.character-filter-field input:focus-visible,
+.character-filter-field select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.character-filter-panel__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.character-filter-panel__footer p {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+#character-reset {
+  min-height: 40px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#character-reset:hover:not(:disabled) {
+  background: var(--paper-deep);
+}
+
+#character-reset:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#character-reset:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.character-no-results {
+  margin: 2rem 0;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Override the display properties of the character
+   cards when the filtering script hides them. */
+
+.character-section [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .character-filter-panel__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .character-filter-panel__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-filter-field--search {
+    grid-column: auto;
+  }
+
+  .character-filter-panel__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #character-reset {
+    width: 100%;
+  }
+}
