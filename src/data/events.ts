@@ -10,6 +10,21 @@ export interface HistoricalEvent {
 
 export const historicalEvents: HistoricalEvent[] = [
   {
+    id: "powerstone-revolution",
+    title: "Glacian and the Powerstone Revolution",
+    chapterId: "thran",
+    summary:
+      "Glacian's discovery of powerstone technology transforms the Thran Empire and leaves a legacy lasting thousands of years.",
+    narrative: [
+      "Glacian developed a method of creating powerstones, crystals that could contain vast quantities of energy. The Thran built much of their extraordinary civilization around the technology, powering machinery, construction, and magical artifice.",
+      "Working in the same technologically advanced society, Glacian and his wife Rebbec became two of the empire's most influential figures. Rebbec incorporated powerstones into ambitious architectural projects, including the Thran Temple floating above Halcyon.",
+      "The powerstones also carried a terrible cost. Their connection to the illness known as phthisis placed Glacian's achievements at the center of a crisis that would help bring Yawgmoth to power.",
+      "After the fall of the Thran, two halves of a broken powerstone associated with Glacian survived. Urza and Mishra would discover them millennia later, continuing a chain of events that eventually led to the Brothers' War.",
+    ],
+    characterIds: ["glacian", "rebbec"],
+    cardName: "Glacian, Powerstone Engineer",
+  },
+  {
     id: "rise-of-yawgmoth",
     title: "The Rise of Yawgmoth",
     chapterId: "thran",
@@ -19,7 +34,7 @@ export const historicalEvents: HistoricalEvent[] = [
       "Yawgmoth gained influence during a crisis in the ancient Thran civilization. His ambition and increasingly ruthless medical experiments helped destabilize an already divided society.",
       "With access to the artificial plane of Phyrexia, he established the foundations of an empire that would threaten Dominaria for thousands of years.",
     ],
-    characterIds: ["yawgmoth", "rebbec"],
+    characterIds: ["yawgmoth", "rebbec", "glacian"],
     cardName: "Yawgmoth, Thran Physician",
   },
   {

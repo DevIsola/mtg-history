@@ -10,11 +10,13 @@ export const characterCategories: CharacterCategory[] = [
     label: "Planeswalkers",
     characterIds: ["urza", "karn", "jeska", "teferi", "freyalise", "windgrace"],
   },
+
   {
     id: "artifice",
     label: "Artifice and engineering",
-    characterIds: ["urza", "karn", "rebbec", "jhoira", "venser"],
+    characterIds: ["urza", "karn", "glacian", "rebbec", "jhoira", "venser"],
   },
+
   {
     id: "magic",
     label: "Mages and spellcasters",
