@@ -249,8 +249,51 @@ export const historicalEvents: HistoricalEvent[] = [
       "Sisay’s capture brought Gerrard back into the life of the Weatherlight crew and into the struggle surrounding the Legacy.",
       "The expedition to Rath exposed the companions to Phyrexian influence, personal betrayals, and the dangerous rule of Volrath.",
     ],
-    characterIds: ["gerrard", "karn", "sisay", "volrath", "hanna"],
+    characterIds: ["gerrard", "karn", "sisay", "volrath", "hanna", "crovax", "mirri", "ertai"],
     cardName: "Sisay, Weatherlight Captain",
+  },
+  // Phase 35 — personal catastrophes during the escape from Rath
+  {
+    id: "selenia-curse-crovax",
+    title: "Crovax Kills Selenia",
+    chapterId: "weatherlight",
+    summary:
+      "To save Mirri in Volrath's Stronghold, Crovax kills Selenia and fulfills a curse that turns him into a vampire.",
+    narrative: [
+      "Crovax had once freed the angel Selenia from a cursed artifact. Their bond became a source of pain after she was taken into Volrath's service on Rath.",
+      "At the Stronghold, Selenia attacked members of the Weatherlight crew. Mirri intervened and was badly hurt, forcing Crovax to choose between the angel he loved and the companion he hoped to save.",
+      "Crovax killed Selenia. The act completed the curse placed on him, transforming him into a vampire and beginning the collapse of his remaining loyalties to the crew.",
+    ],
+    characterIds: ["crovax", "mirri"],
+    cardName: "Selenia, Dark Angel",
+  },
+  {
+    id: "mirris-final-confrontation",
+    title: "Mirri's Final Confrontation",
+    chapterId: "weatherlight",
+    summary:
+      "The wounded Weatherlight warrior follows Crovax and is killed by the companion she had tried to protect.",
+    narrative: [
+      "Mirri was Gerrard's longtime companion and one of the most capable fighters aboard the Weatherlight. During the Stronghold mission, she was wounded while confronting Selenia.",
+      "Crovax killed Selenia to save Mirri but became a vampire as a result. His curse changed the relationship between two people who had once served the same cause.",
+      "After Crovax left the Weatherlight, Mirri followed him. Crovax killed her, making the escape from Rath an irreversible tragedy for the crew and for Gerrard.",
+    ],
+    characterIds: ["mirri", "crovax", "gerrard"],
+    cardName: "Mirri, Cat Warrior",
+  },
+  {
+    id: "ertai-stranded-on-rath",
+    title: "Ertai Is Stranded on Rath",
+    chapterId: "weatherlight",
+    summary:
+      "Ertai holds an escape portal open while the Weatherlight departs Rath without him.",
+    narrative: [
+      "When the Predator damaged the Weatherlight's planeshifting engine, the crew could no longer rely on its normal way of traveling between planes.",
+      "Ertai helped open an escape portal from Rath. After delays during the Stronghold mission, the Weatherlight used the Skyshaper to reach the portal before it closed.",
+      "Ertai was left on Rath. His isolation and later corruption transformed the former Weatherlight mage into an enemy of the people he had helped save.",
+    ],
+    characterIds: ["ertai", "gerrard", "sisay"],
+    cardName: "Ertai, Wizard Adept",
   },
   {
     id: "volrath-unmasked",
@@ -265,6 +308,20 @@ export const historicalEvents: HistoricalEvent[] = [
     ],
     characterIds: ["volrath", "gerrard", "sisay", "hanna"],
     cardName: "Unmask",
+  },
+  {
+    id: "crovax-becomes-evincar",
+    title: "Crovax Becomes the Evincar of Rath",
+    chapterId: "weatherlight",
+    summary:
+      "Crovax defeats the returning Volrath with Ertai's help and assumes control of Rath in Phyrexia's service.",
+    narrative: [
+      "After becoming a vampire, Crovax abandoned his former companions and turned toward power within the Phyrexian-controlled plane of Rath.",
+      "When Volrath returned from Mercadia, the two competed for the role of evincar. With assistance from the corrupted wizard Ertai, Crovax killed Volrath and took control of Rath.",
+      "The Nemesis card Ascendant Evincar depicts Crovax in this new role. His transformation completed the fall of a former Weatherlight companion into a central figure in the enemy's regime.",
+    ],
+    characterIds: ["crovax", "ertai", "volrath"],
+    cardName: "Ascendant Evincar",
   },
   {
     id: "hanna-phyrexian-plague",
