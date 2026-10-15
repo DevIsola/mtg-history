@@ -21,6 +21,47 @@ export interface CharacterRelationship {
 
 export const characterRelationships: CharacterRelationship[] = [
   {
+    a: "jodah",
+    b: "jaya",
+    category: "friendship",
+    labelForA: "Longtime friend and ally",
+    labelForB: "Longtime friend and ally",
+    context:
+      "Jodah and Jaya maintained an enduring friendship and helped bring Kjeldoran and Balduvian forces together against Lim-Dûl.",
+    chapterId: "ice-age",
+  },
+  {
+    a: "jodah",
+    b: "lim-dul",
+    category: "rivalry",
+    labelForA: "Necromancer adversary",
+    labelForB: "Archmage adversary",
+    context:
+      "Jodah opposed Lim-Dûl's ambitions and helped build resistance to his undead armies.",
+    chapterId: "ice-age",
+  },
+  {
+    a: "jaya",
+    b: "lim-dul",
+    category: "rivalry",
+    labelForA: "Necromancer adversary",
+    labelForB: "Pyromancer adversary",
+    context:
+      "Jaya joined Jodah in resisting Lim-Dûl and the threat his forces posed to Terisiare.",
+    chapterId: "ice-age",
+  },
+  {
+    a: "jodah",
+    b: "freyalise",
+    category: "alliance",
+    labelForA: "World Spell caster",
+    labelForB: "Mirror bearer",
+    context:
+      "Jodah possessed an enchanted mirror that helped Freyalise cast the World Spell and bring Dominaria's Ice Age to an end.",
+    chapterId: "ice-age",
+  },
+
+  {
     a: "urza",
     b: "kayla",
     category: "family",

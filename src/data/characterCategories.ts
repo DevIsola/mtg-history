@@ -8,7 +8,15 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "planeswalkers",
     label: "Planeswalkers",
-    characterIds: ["urza", "karn", "jeska", "teferi", "freyalise", "windgrace"],
+    characterIds: [
+      "urza",
+      "karn",
+      "jeska",
+      "teferi",
+      "freyalise",
+      "windgrace",
+      "jaya",
+    ],
   },
 
   {
@@ -31,8 +39,17 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "magic",
     label: "Mages and spellcasters",
-    characterIds: ["jodah", "chainer", "teferi", "venser", "freyalise"],
+    characterIds: [
+      "jodah",
+      "jaya",
+      "lim-dul",
+      "chainer",
+      "teferi",
+      "venser",
+      "freyalise",
+    ],
   },
+
   {
     id: "warriors",
     label: "Warriors and heroes",

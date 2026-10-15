@@ -139,6 +139,21 @@ export const historicalEvents: HistoricalEvent[] = [
     cardName: "Urza's Sylex",
   },
   {
+    id: "jodah-preserves-magic",
+    title: "Jodah and the Preservation of Magic",
+    chapterId: "ice-age",
+    summary:
+      "Amid fear and persecution after the Brothers' War, Jodah helps carry magical knowledge into a new historical era.",
+    narrative: [
+      "The destruction caused by the Brothers' War left much of Terisiare fearful of the forces that had devastated its kingdoms. In the centuries that followed, magical practitioners faced suspicion and, at times, persecution.",
+      "Jodah's early adventures unfolded against this background of declining institutions and uncertain magical knowledge. His survival and education connected him to traditions that might otherwise have been lost.",
+      "Over an extraordinarily long life, Jodah became a link between the Dark Age and the Ice Age, preserving experience and knowledge that would prove essential in later conflicts.",
+    ],
+    characterIds: ["jodah"],
+    cardName: "Jodah, Archmage Eternal",
+  },
+
+  {
     id: "rise-of-lim-dul",
     title: "The Rise of Lim-Dûl",
     chapterId: "ice-age",
@@ -148,9 +163,25 @@ export const historicalEvents: HistoricalEvent[] = [
       "During the Ice Age, Lim-Dûl assembled undead forces and pursued power amid the turmoil of the frozen world.",
       "His ambitions brought him into conflict with those attempting to protect magical knowledge and resist the growing influence of necromancy.",
     ],
-    characterIds: ["jodah"],
+    characterIds: ["jodah", "jaya", "lim-dul"],
     cardName: "Lim-Dûl the Necromancer",
   },
+
+  {
+    id: "alliance-against-lim-dul",
+    title: "The Alliance Against Lim-Dûl",
+    chapterId: "ice-age",
+    summary:
+      "Jodah and Jaya help bring rival peoples together against the necromancer threatening the frozen kingdoms.",
+    narrative: [
+      "Kjeldor and the Balduvian communities had their own histories of rivalry and conflict. The growing threat posed by Lim-Dûl's undead forces made continued division increasingly dangerous.",
+      "Jodah and Jaya Ballard played important roles in encouraging cooperation against the necromancer. Their partnership demonstrated how personal relationships and shared threats could change the political landscape.",
+      "The resistance to Lim-Dûl helped reshape the relationships between the peoples of Terisiare and contributed to the emergence of a new political order.",
+    ],
+    characterIds: ["jodah", "jaya", "lim-dul"],
+    cardName: "Jaya Ballard, Task Mage",
+  },
+
   {
     id: "world-spell",
     title: "Freyalise Casts the World Spell",
