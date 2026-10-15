@@ -17,10 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-      - name: Build Astro website
+      - name: Build and verify Astro website
         uses: withastro/action@v6
         with:
           package-manager: pnpm@10
+          build-cmd: pnpm run verify
 
   deploy:
     needs: build
