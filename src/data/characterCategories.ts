@@ -17,6 +17,8 @@ export const characterCategories: CharacterCategory[] = [
       "windgrace",
       "tevesh-szat",
       "jaya",
+      "nahiri",
+      "sorin",
     ],
   },
 
@@ -60,7 +62,7 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "warriors",
     label: "Warriors and heroes",
-    characterIds: ["gerrard", "sisay", "mirri", "kamahl", "jeska", "akroma", "radha"],
+    characterIds: ["gerrard", "sisay", "mirri", "kamahl", "jeska", "akroma", "radha", "agrus-kos", "avacyn"],
   },
 
   {
@@ -81,7 +83,16 @@ export const characterCategories: CharacterCategory[] = [
       "aboshan",
       "laquatus",
       "seton",
+      "szadek",
+      "teysa-karlov",
+      "avacyn",
     ],
+  },
+
+  {
+    id: "otherworldly",
+    label: "Angels, demons, and Eldrazi",
+    characterIds: ["avacyn", "griselbrand", "emrakul"],
   },
 
   {

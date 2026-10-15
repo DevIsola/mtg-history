@@ -20,6 +20,43 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 07 — relationships across Ravnica, Zendikar, and Innistrad
+  {
+    a: "agrus-kos", b: "szadek", category: "rivalry",
+    labelForA: "Conspiracy suspect", labelForB: "Wojek investigator",
+    context: "Agrus Kos pursued Szadek's hidden conspiracy, but the vampire's arrest was entangled with the first Guildpact's destruction.",
+    chapterId: "many-worlds",
+  },
+  {
+    a: "agrus-kos", b: "teysa-karlov", category: "alliance",
+    labelForA: "Orzhov political ally", labelForB: "Boros investigator",
+    context: "Agrus and Teysa worked across guild boundaries as Ravnica confronted the consequences of the broken Guildpact.",
+    chapterId: "many-worlds",
+  },
+  {
+    a: "nahiri", b: "sorin", category: "alliance",
+    labelForA: "Eldrazi prison ally", labelForB: "Lithomancer ally",
+    context: "Nahiri and Sorin cooperated with Ugin to imprison the Eldrazi on Zendikar; their later rupture was not part of the prison's founding.",
+    chapterId: "many-worlds",
+  },
+  {
+    a: "nahiri", b: "emrakul", category: "rivalry",
+    labelForA: "Imprisoned titan", labelForB: "Hedron prison architect",
+    context: "Nahiri helped construct the ward network that confined Emrakul and the other Eldrazi titans to Zendikar.",
+    chapterId: "many-worlds",
+  },
+  {
+    a: "sorin", b: "avacyn", category: "creation",
+    labelForA: "Created angelic guardian", labelForB: "Creator and protector",
+    context: "Sorin created Avacyn to preserve Innistrad's humanity and the balance between its peoples and monsters.",
+    chapterId: "many-worlds",
+  },
+  {
+    a: "avacyn", b: "griselbrand", category: "rivalry",
+    labelForA: "Demon who trapped her", labelForB: "Angelic adversary",
+    context: "Griselbrand lured Avacyn into the Helvault, imprisoning himself and the angel while the church's protections collapsed.",
+    chapterId: "many-worlds",
+  },
   // Chapter 05 — Mirari Saga relationships
   {
     a: "chainer",

@@ -108,9 +108,9 @@ export const eras: HistoricalEra[] = [
     name: "Stories Across the Planes",
     kicker: "An Expanding Multiverse",
     summary:
-      "Ravnica, Zendikar, Innistrad, and other worlds become home to distinct histories and intersecting journeys.",
+      "Ravnica’s first Guildpact collapses, Zendikar’s Eldrazi prison weakens, and Innistrad’s Helvault crisis changes the fate of humanity.",
     sets: ["Ravnica · 2005", "Zendikar · 2009", "Innistrad · 2011"],
-    status: "planned",
+    status: "published",
   },
   {
     id: "war-of-the-spark",

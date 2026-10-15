@@ -78,8 +78,15 @@ export function validateContentGraph({
     if (relationshipsSeen.has(key)) errors.push(`relationship: duplicated pair/category/chapter "${key}"`);
     relationshipsSeen.add(key);
   }
+  const categorizedCharacterIds = new Set();
   for (const category of characterCategories) {
     checkReferences(category.characterIds, characterIds, `category "${category.id}" characters`, errors);
+    for (const id of category.characterIds) categorizedCharacterIds.add(id);
+  }
+  for (const character of characters) {
+    if (!categorizedCharacterIds.has(character.id)) {
+      errors.push(`character "${character.id}": missing directory category`);
+    }
   }
   return errors;
 }

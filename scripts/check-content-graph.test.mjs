@@ -12,12 +12,19 @@ function fixture() {
     characters: [{ id: 'rebbec', chapterIds: ['thran'] }, { id: 'yawgmoth', chapterIds: ['thran'] }],
     historicalEvents: [{ id: 'gateway', chapterId: 'thran', characterIds: ['rebbec'], cardName: 'History Card' }],
     characterRelationships: [{ a: 'rebbec', b: 'yawgmoth', category: 'rivalry', chapterId: 'thran' }],
-    characterCategories: [{ id: 'leaders', characterIds: ['rebbec'] }],
+    characterCategories: [{ id: 'leaders', characterIds: ['rebbec', 'yawgmoth'] }],
   };
 }
 
 test('accepts valid chapter, character, event, relationship and category links', () => {
   assert.deepEqual(validateContentGraph(fixture()), []);
+});
+
+test('rejects uncategorized characters before directory prerender', () => {
+  const data = fixture();
+  data.characterCategories[0].characterIds = ['rebbec'];
+  const errors = validateContentGraph(data);
+  assert.ok(errors.some((error) => error.includes('character "yawgmoth": missing directory category')));
 });
 
 test('rejects duplicate IDs and missing published chapters', () => {
