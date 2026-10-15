@@ -12,7 +12,8 @@
     "astro": "astro",
     "test": "node --test scripts/*.test.mjs",
     "check:links": "node scripts/check-built-links.mjs",
-    "verify": "pnpm run test && pnpm run build && pnpm run check:links"
+    "check:content": "node --experimental-strip-types scripts/check-content-graph.mjs",
+    "verify": "pnpm run test && pnpm run check:content && pnpm run build && pnpm run check:links"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.3",
