@@ -34,7 +34,7 @@ const chapters = defineCollection({
           name: z.string(),
           setCode: z.string(),
           collectorNumber: z.string(),
-          scryfallId: z.string().uuid(),
+          scryfallId: z.string(),
           artist: z.string(),
           significance: z.string(),
         }),
@@ -48,7 +48,7 @@ const chapters = defineCollection({
           kind: z.enum(["official", "book"]),
           author: z.string().optional(),
           year: z.number().int().optional(),
-          url: z.string().url().optional(),
+          url: z.url().optional(),
         }),
       )
       .default([]),
