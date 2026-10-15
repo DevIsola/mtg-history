@@ -571,4 +571,54 @@ export const characterRelationships: CharacterRelationship[] = [
       "Venser’s experiments drew the attention of Lord Windgrace, whose distrust of artifice complicated their involvement in the temporal crisis.",
     chapterId: "mending",
   },
+  {
+    a: "freyalise",
+    b: "radha",
+    category: "alliance",
+    labelForA: "Keldon-elf warrior tied to Skyshroud",
+    labelForB: "Guardian of the forest",
+    context:
+      "Radha's connection to rift mana placed her in the struggle over Skyshroud, the displaced forest Freyalise sacrificed herself to protect.",
+    chapterId: "mending",
+  },
+  {
+    a: "teferi",
+    b: "windgrace",
+    category: "alliance",
+    labelForA: "Urborg's wary protector",
+    labelForB: "Time mage seeking to close rifts",
+    context:
+      "The temporal crisis ultimately aligned the work of Teferi and the fiercely independent Windgrace, despite the latter's suspicion of outside interventions.",
+    chapterId: "mending",
+  },
+  {
+    a: "jeska",
+    b: "radha",
+    category: "rivalry",
+    labelForA: "Rift-linked warrior whose autonomy she endangered",
+    labelForB: "Planeswalker who tried to exploit her link to rifts",
+    context:
+      "Jeska attempted to use Radha's connection to the temporal fractures before finally refusing to sacrifice her in the last repair.",
+    chapterId: "mending",
+  },
+  {
+    a: "jeska",
+    b: "venser",
+    category: "alliance",
+    labelForA: "Artificer and final-rift collaborator",
+    labelForB: "Planeswalker and final-rift collaborator",
+    context:
+      "Venser and Jeska converged at Otaria's final rift; Jeska chose to send him to safety rather than force him to pay for its closure.",
+    chapterId: "mending",
+  },
+  {
+    a: "jeska",
+    b: "teferi",
+    category: "rivalry",
+    labelForA: "Time mage whose home she could not restore",
+    labelForB: "Planeswalker who closed Zhalfir's remaining route",
+    context:
+      "Jeska's sealing of the Zhalfirin rift prevented Teferi from using that opening to retrieve Zhalfir, revealing the conflicting costs of repairing the world.",
+    chapterId: "mending",
+  },
 ];
