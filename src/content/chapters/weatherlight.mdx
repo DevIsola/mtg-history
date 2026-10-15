@@ -85,6 +85,26 @@ cards:
       preparations: the assembled Legacy that
       ultimately destroyed Yawgmoth.
 
+  - name: "Hanna, Ship's Navigator"
+    setCode: "inv"
+    collectorNumber: "249"
+    scryfallId: "83a4e48d-6452-4245-bdad-63fe3263550e"
+    artist: "Dave Dorman"
+    significance: >-
+      Depicts Hanna, the Weatherlight's navigator and expert in
+      magical artifacts. Her engineering and knowledge of
+      Tolaria were essential to the crew's mission.
+
+  - name: "Unmask"
+    setCode: "mmq"
+    collectorNumber: "168"
+    scryfallId: "2db7a0e6-eea5-4fa6-ac14-401411b106cc"
+    artist: "rk post"
+    significance: >-
+      The Mercadian Masques illustration reveals Volrath
+      emerging from his Takara disguise. It directly
+      references the deception aboard the Weatherlight.
+
 sources:
   - title: "Weather(light) Report"
     kind: official
@@ -109,6 +129,10 @@ sources:
   - title: "Stories from Dominaria, Part 3"
     kind: official
     url: "https://magic.wizards.com/en/news/making-magic/stories-dominaria-part-3-2018-04-30"
+
+  - title: "Dominaria United States of Design, Part 1"
+    kind: official
+    url: "https://magic.wizards.com/en/news/making-magic/dominaria-united-states-design-part-1-2022-08-29"
 
   - title: "Invasion"
     kind: book
@@ -204,15 +228,25 @@ crew would become inseparable.
 
 ## III. Sisay and the Gathering of the Crew
 
-Captain Sisay commanded the Weatherlight during
-its search for the scattered pieces of the Legacy.
+<CharacterLink id="sisay">Captain Sisay</CharacterLink> commanded the
+Weatherlight during its search for the scattered
+pieces of the Legacy.
 
 Her crew included individuals with very different
 backgrounds and loyalties.
 
-Hanna served as a navigator and expert in
-artifacts, while Orim provided healing and
-medical knowledge.
+<CharacterLink id="hanna">Hanna</CharacterLink> served as the
+ship's navigator and an expert in magical artifacts,
+while Orim provided healing and medical knowledge.
+
+Hanna had studied at Tolaria and was the daughter of
+Barrin, Urza's trusted colleague. Her decision to pursue
+artifice rather than follow her father's preferred path
+reflected her independent judgment.
+
+She also shared a complicated history with Gerrard:
+they had been close before he abandoned the ship and
+the destiny Sisay hoped he would embrace.
 
 Tahngarth, the minotaur warrior, brought
 formidable strength to the ship.
@@ -239,6 +273,20 @@ rescue operation.
 
 </HistoricalMoment>
 
+Sisay was more than a captain carrying orders. Her faith
+in Gerrard's eventual return helped preserve the crew's
+purpose while he resisted the Legacy's demands.
+
+<HistoricalMoment card={frontmatter.cards[5]}>
+
+Hanna's technical expertise kept the Weatherlight and
+its irreplaceable artifacts functioning during an
+extraordinary journey. Her knowledge of machinery and
+artifice brought practical insight to decisions that
+others approached as questions of duty or destiny.
+
+</HistoricalMoment>
+
 The crew sought <CharacterLink id="gerrard">Gerrard Capashen</CharacterLink>, a warrior
 whose life was bound to the Legacy's purpose.
 
@@ -255,15 +303,18 @@ The rescue mission led the Weatherlight
 to Rath, an artificial plane deeply
 connected to Phyrexia.
 
-Rath was governed by Volrath, an ambitious
-shapeshifter who served Phyrexian interests.
+Rath was governed by <CharacterLink id="volrath">Volrath</CharacterLink>,
+a shapeshifter whose service to Phyrexia made him
+one of the Weatherlight crew's most formidable enemies.
 
-Volrath had once been known as Vuel,
-a figure from Gerrard's earlier life.
+Before becoming the evincar of Rath, Volrath was known
+as Vuel. He had grown up alongside Gerrard under Sidar
+Kondo's care, but jealousy and resentment turned their
+bond into an enduring rivalry.
 
-Their relationship made the struggle more
-personal than a simple conflict between
-heroes and a distant ruler.
+Sisay's kidnapping thus drew Gerrard into a struggle
+with someone from his own past, not merely the ruler
+of a distant enemy plane.
 
 <HistoricalMoment card={frontmatter.cards[2]}>
 
@@ -341,13 +392,27 @@ efforts to recover and repair their ship.
 
 Volrath's influence also followed them.
 
-Disguised as Takara, he concealed himself
-among the people the crew believed
-they had rescued.
+Disguised as Takara, Starke's daughter, Volrath
+had accompanied the rescued crew off Rath. The
+shapeshifter used the disguise to sow distrust,
+concealing his true identity until events on
+Mercadia exposed him.
 
-The deception led to the death of Starke,
-whose troubled dealings had helped
-guide the expedition to Rath.
+<HistoricalMoment card={frontmatter.cards[6]}>
+
+_Unmask_ depicts Volrath emerging from Takara's
+appearance. The card captures one of the saga's
+most consequential acts of deception: a Phyrexian
+agent moving among the heroes he had tormented.
+
+</HistoricalMoment>
+
+Volrath murdered Starke while still concealed
+among the companions, showing how little safety
+the Weatherlight's escape from Rath had actually
+provided.
+
+<HistoricalEventReference id="volrath-unmasked" />
 
 More importantly, the crew discovered that
 Mercadia had become another part of the
@@ -439,11 +504,15 @@ difficult choices concerning
 his companions and the Legacy.
 
 The war brought devastating losses
-to the Weatherlight crew, including
-Hanna, who succumbed to a
-Phyrexian plague.
+to the Weatherlight crew. Hanna,
+its navigator and artificer, succumbed
+to a Phyrexian plague, leaving a
+personal and practical absence that
+the survivors could not repair.
 
 </HistoricalMoment>
+
+<HistoricalEventReference id="hanna-phyrexian-plague" />
 
 For the defenders, the invasion
 was no longer an approaching threat.
@@ -472,6 +541,13 @@ Phyrexia's armies could now
 advance through territory that
 had been transformed by the
 invasion itself.
+
+The fusion of two planes changed landscapes,
+transplanted populations, and allowed Phyrexian
+armies to appear across Dominaria without relying
+on ordinary routes of invasion.
+
+<HistoricalEventReference id="rathi-overlay" />
 
 The conflict spread across
 many regions of Dominaria.
@@ -697,6 +773,13 @@ years, and sometimes
 in an order very
 different from the
 fictional sequence.
+
+Two selected cards help illustrate the personal
+cost of the voyage: _Hanna, Ship's Navigator_,
+first printed in _Invasion_ (2000), and _Unmask_,
+printed in _Mercadian Masques_ (1999). The latter
+actually depicts Volrath shedding his Takara disguise,
+connecting an important plot revelation to a card's art.
 
 The Weatherlight Saga
 is therefore both

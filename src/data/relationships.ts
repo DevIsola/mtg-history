@@ -20,6 +20,68 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Phase 34 — Weatherlight companions and adversaries
+  {
+    a: "gerrard",
+    b: "sisay",
+    category: "alliance",
+    labelForA: "Captain and trusted ally",
+    labelForB: "Legacy hero and crew member",
+    context:
+      "Sisay believed in Gerrard's part in the Legacy, and her abduction drew him back into the Weatherlight's mission.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "gerrard",
+    b: "hanna",
+    category: "friendship",
+    labelForA: "Former partner and shipmate",
+    labelForB: "Former partner and shipmate",
+    context:
+      "Hanna and Gerrard shared a romantic past, strained when Gerrard abandoned the Weatherlight; his return brought them together again before the invasion took Hanna's life.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "gerrard",
+    b: "volrath",
+    category: "rivalry",
+    labelForA: "Foster brother and enemy",
+    labelForB: "Foster brother and rival",
+    context:
+      "The boys Gerrard and Vuel grew up together, but Vuel later became Volrath, evincar of Rath and the chief antagonist of the Weatherlight's rescue mission.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "sisay",
+    b: "hanna",
+    category: "alliance",
+    labelForA: "Navigator and artificer",
+    labelForB: "Captain",
+    context:
+      "Sisay led the Weatherlight and relied on Hanna's command of its machinery and magical artifacts.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "sisay",
+    b: "karn",
+    category: "alliance",
+    labelForA: "Legacy companion",
+    labelForB: "Captain",
+    context:
+      "Sisay and Karn served aboard the Weatherlight as the crew pursued the pieces of the Legacy.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "volrath",
+    b: "yawgmoth",
+    category: "alliance",
+    labelForA: "Master of Phyrexia",
+    labelForB: "Evincar and agent",
+    context:
+      "Volrath ruled Rath as a Phyrexian evincar and worked to advance Yawgmoth's invasion plans.",
+    chapterId: "weatherlight",
+  },
+
   {
     a: "jodah",
     b: "jaya",
