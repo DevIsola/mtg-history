@@ -11,6 +11,7 @@
   --gold: #b89150;
   --gold-light: #e2c28a;
   --jade: #516f67;
+  --site-header-height: 86px;
 
   /* Typography */
   --font-body: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
@@ -71,14 +72,15 @@ summary:focus-visible {
 
 /* Navigation */
 .site-header {
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 60;
   background: var(--night);
   color: #efe7d7;
   border-bottom: 1px solid rgba(226, 194, 138, 0.2);
 }
 .site-header__inner {
-  min-height: 86px;
+  min-height: var(--site-header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -804,6 +806,10 @@ summary:focus-visible {
   }
 }
 @media (max-width: 680px) {
+  :root {
+    --site-header-height: 72px;
+  }
+
   .page-shell {
     width: min(100% - 2rem, 1160px);
   }
