@@ -47,6 +47,10 @@ export const characterCategories: CharacterCategory[] = [
       "jaya",
       "lim-dul",
       "chainer",
+      "ixidor",
+      "braids",
+      "laquatus",
+      "cabal-patriarch",
       "teferi",
       "venser",
       "freyalise",
@@ -56,7 +60,7 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "warriors",
     label: "Warriors and heroes",
-    characterIds: ["gerrard", "sisay", "mirri", "kamahl", "jeska", "radha"],
+    characterIds: ["gerrard", "sisay", "mirri", "kamahl", "jeska", "akroma", "radha"],
   },
 
   {
@@ -73,6 +77,10 @@ export const characterCategories: CharacterCategory[] = [
       "windgrace",
       "radha",
       "kayla",
+      "cabal-patriarch",
+      "aboshan",
+      "laquatus",
+      "seton",
     ],
   },
 

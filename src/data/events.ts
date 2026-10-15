@@ -410,6 +410,125 @@ export const historicalEvents: HistoricalEvent[] = [
     characterIds: ["urza", "yawgmoth", "gerrard", "karn", "sisay"],
     cardName: "Legacy Weapon",
   },
+  // Chapter 05 — Mirari owners, the Cabal, and the Otarian aftermath
+  {
+    id: "mirari-discovery",
+    title: "Chainer Discovers the Mirari",
+    chapterId: "otaria",
+    summary:
+      "Chainer finds Karn's enigmatic probe and presents it to the Cabal Patriarch, setting the Otarian struggle in motion.",
+    narrative: [
+      "In an abandoned mansion near Cabal City, the young dementia caster Chainer encountered the Mirari. He delivered it to the First rather than claiming the device for himself.",
+      "The Patriarch placed the object among the Cabal's treasures and made it a prize, attracting champions and ambitious powers into a struggle for possession. Its origin as Karn's probe would be revealed only later.",
+    ],
+    characterIds: ["chainer", "cabal-patriarch", "karn"],
+    cardName: "Mirari",
+  },
+  {
+    id: "mirari-changes-hands",
+    title: "The Mirari's Disastrous Journey",
+    chapterId: "otaria",
+    summary:
+      "The Mirari leaves the Cabal, corrupts leaders of the Order and the merfolk empire, and returns after widespread ruin.",
+    narrative: [
+      "Lieutenant Kirtar of the Order acquired the artifact after the attack on Cabal City; his use of it led to catastrophe for the Order.",
+      "The cephalid emperor Aboshan later attempted to fulfill his dreams through the Mirari, unleashing devastating flooding. Laquatus continued his maneuvering, and the sphere ultimately returned to Cabal custody.",
+    ],
+    characterIds: ["aboshan", "laquatus", "braids"],
+    cardName: "Aboshan, Cephalid Emperor",
+  },
+  {
+    id: "chainer-downfall",
+    title: "Chainer's Nightmare Catastrophe",
+    chapterId: "otaria",
+    summary:
+      "After seizing the Mirari and Cabal City, Chainer loses control of a tide of nightmares and dies in a confrontation with Kamahl.",
+    narrative: [
+      "Chainer used the Mirari to drive the Cabal Patriarch from the city and magnify dementia summoning beyond his ability to contain it.",
+      "Kamahl tried to halt his friend, but Chainer was overwhelmed as the nightmares he had summoned merged with his body. Kamahl ended Chainer's suffering, inheriting the artifact that had destroyed him.",
+    ],
+    characterIds: ["chainer", "kamahl", "cabal-patriarch"],
+    cardName: "Chainer, Dementia Master",
+  },
+  {
+    id: "jeska-wounded",
+    title: "The Mirari Sword Wounds Jeska",
+    chapterId: "otaria",
+    summary:
+      "Under the Mirari's influence, Kamahl nearly kills Jeska, beginning a transformation he cannot reverse.",
+    narrative: [
+      "The Mirari amplified Kamahl's violent ambition as he attempted to assert leadership among the Pardic tribes.",
+      "When Jeska confronted him, he stabbed her with his Mirari sword. The wound resisted ordinary healing and eventually contributed to her transformation into Phage.",
+    ],
+    characterIds: ["kamahl", "jeska"],
+    cardName: "Jeska, Warrior Adept",
+  },
+  {
+    id: "miraris-wake",
+    title: "Kamahl Releases Mirari's Wake",
+    chapterId: "otaria",
+    summary:
+      "Kamahl abandons the Mirari sword in Krosa, releasing transformative magical energy into the forest.",
+    narrative: [
+      "After learning from the Krosan druids and turning away from his old life, Kamahl confronted the continuing danger of the Mirari and the ambitions of Laquatus.",
+      "He planted the Mirari sword in Krosa. The land absorbed and radiated its power, creating Mirari's Wake and changing the forest's fate.",
+    ],
+    characterIds: ["kamahl", "seton", "laquatus"],
+    cardName: "Mirari's Wake",
+  },
+  {
+    id: "jeska-becomes-phage",
+    title: "Jeska Becomes Phage",
+    chapterId: "otaria",
+    summary:
+      "Dark Cabal intervention remakes the wounded Jeska as Phage the Untouchable, whose touch brings death.",
+    narrative: [
+      "Jeska did not recover from the injury caused by Kamahl's Mirari sword. The Cabal's intervention transformed her into Phage rather than restoring her original condition.",
+      "Her deadly power became central to the arena culture and political designs of the Cabal Patriarch, drawing her into new conflicts across Otaria.",
+    ],
+    characterIds: ["jeska", "cabal-patriarch"],
+    cardName: "Phage the Untouchable",
+  },
+  {
+    id: "akroma-created",
+    title: "Ixidor Creates Akroma",
+    chapterId: "otaria",
+    summary:
+      "Ixidor turns grief over Nivea's death into the reality-sculpted angel Akroma and a vendetta against Phage.",
+    narrative: [
+      "After Nivea died in a pit encounter with Phage, Ixidor's powers as an illusionist developed into the ability to make imagined beings real.",
+      "He created Akroma as an instrument of vengeance. The conflict between Akroma and Phage spread beyond personal grief into a devastating confrontation between their followers.",
+    ],
+    characterIds: ["ixidor", "akroma", "jeska"],
+    cardName: "Akroma, Angel of Wrath",
+  },
+  {
+    id: "jeska-spark",
+    title: "Karona Falls and Jeska Ascends",
+    chapterId: "otaria",
+    summary:
+      "The Mirari sword breaks Karona apart; Akroma and Zagorka die while Jeska becomes a planeswalker.",
+    narrative: [
+      "Sash and Waistcoat betrayed Karona and stabbed her with the Mirari sword, separating the three beings whose fusion had created the false god.",
+      "Akroma and Zagorka died, but Jeska survived and her planeswalker spark ignited. Karn became her mentor, linking the Otarian saga to later events on Dominaria.",
+    ],
+    characterIds: ["jeska", "akroma", "kamahl", "karn"],
+    cardName: "Jeska, Thrice Reborn",
+  },
+  {
+    id: "mirari-aftermath",
+    title: "Karn Reclaims the Mirari",
+    chapterId: "otaria",
+    summary:
+      "Karn retrieves the probe and transforms it into Memnarch, connecting the Otarian crisis to the future of Mirrodin.",
+    narrative: [
+      "Karn returned to collect the Mirari, an object originally intended to observe the world rather than amplify the ambitions of its inhabitants.",
+      "On his artificial plane Argentum, he reshaped the device into Memnarch. That new guardian's subsequent history would become central to the Mirrodin storyline.",
+    ],
+    characterIds: ["karn"],
+    cardName: "Mirari",
+  },
+
   {
     id: "mirari-crisis",
     title: "The Mirari Crisis",

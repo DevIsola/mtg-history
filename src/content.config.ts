@@ -34,7 +34,7 @@ const chapters = defineCollection({
           name: z.string(),
           setCode: z.string(),
           collectorNumber: z.string(),
-          scryfallId: z.string(),
+          scryfallId: z.uuid(),
           artist: z.string(),
           significance: z.string(),
         }),

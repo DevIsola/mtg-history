@@ -20,6 +20,118 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 05 — Mirari Saga relationships
+  {
+    a: "chainer",
+    b: "cabal-patriarch",
+    category: "alliance",
+    labelForA: "Cabal patron and eventual rival",
+    labelForB: "Protégé turned usurper",
+    context:
+      "Chainer initially delivered the newly discovered Mirari to the First, then ultimately used its power to remove the Patriarch from Cabal City.",
+    chapterId: "otaria",
+  },
+  {
+    a: "braids",
+    b: "cabal-patriarch",
+    category: "alliance",
+    labelForA: "Leader of the Cabal",
+    labelForB: "Unpredictable operative",
+    context:
+      "Braids operated within the Cabal's sphere of influence and helped return the Mirari to the institution's control after its passage through rival hands.",
+    chapterId: "otaria",
+  },
+  {
+    a: "chainer",
+    b: "braids",
+    category: "alliance",
+    labelForA: "Fellow Cabal operative",
+    labelForB: "Dementia summoner colleague",
+    context:
+      "Chainer and Braids were members of the Cabal whose separate activities brought them into the Mirari crisis as the artifact returned to Cabal City.",
+    chapterId: "otaria",
+  },
+  {
+    a: "laquatus",
+    b: "aboshan",
+    category: "rivalry",
+    labelForA: "Emperor and political obstacle",
+    labelForB: "Ambitious court diplomat",
+    context:
+      "Laquatus schemed around Aboshan's rule and the Mirari, while the emperor's disastrous use of the artifact damaged the underwater empire.",
+    chapterId: "otaria",
+  },
+  {
+    a: "laquatus",
+    b: "cabal-patriarch",
+    category: "rivalry",
+    labelForA: "Cabal political rival",
+    labelForB: "Manipulative merfolk contender",
+    context:
+      "Laquatus and the Cabal Patriarch pursued conflicting ambitions for the Mirari and maneuvered to exploit one another's vulnerabilities.",
+    chapterId: "otaria",
+  },
+  {
+    a: "kamahl",
+    b: "seton",
+    category: "friendship",
+    labelForA: "Krosan friend and ally",
+    labelForB: "Pardic warrior turned defender",
+    context:
+      "Seton's alliance with Kamahl connected the former pit fighter to the living forest and its values as he abandoned the Mirari's corrupting influence.",
+    chapterId: "otaria",
+  },
+  {
+    a: "cabal-patriarch",
+    b: "jeska",
+    category: "rivalry",
+    labelForA: "Wounded warrior made into Phage",
+    labelForB: "Cabal authority behind her transformation",
+    context:
+      "Cabal intervention transformed the Mirari-wounded Jeska into Phage, whose deadly power became useful to the Patriarch's arenas and political aims.",
+    chapterId: "otaria",
+  },
+  {
+    a: "ixidor",
+    b: "akroma",
+    category: "creation",
+    labelForA: "Angel created from grief",
+    labelForB: "Reality-sculpting creator",
+    context:
+      "Ixidor created Akroma with his reality-shaping magic after Nivea's death and directed her toward vengeance against Phage.",
+    chapterId: "otaria",
+  },
+  {
+    a: "akroma",
+    b: "jeska",
+    category: "rivalry",
+    labelForA: "Phage, target of her vengeance",
+    labelForB: "Angel seeking her death",
+    context:
+      "As Phage, Jeska became Akroma's enemy. Their escalating conflict culminated in their fusion with Zagorka into Karona.",
+    chapterId: "otaria",
+  },
+  {
+    a: "ixidor",
+    b: "jeska",
+    category: "rivalry",
+    labelForA: "Phage, blamed for Nivea's death",
+    labelForB: "Vengeful illusionist",
+    context:
+      "Ixidor blamed Phage for the death of Nivea and created Akroma as the agent of his retribution.",
+    chapterId: "otaria",
+  },
+  {
+    a: "kamahl",
+    b: "akroma",
+    category: "rivalry",
+    labelForA: "Vengeful angel and threat to Krosa",
+    labelForB: "Druid defending his sister and forest",
+    context:
+      "Kamahl opposed the destructive conflict involving Akroma and Phage and ultimately struck both with the Soul Reaper axe during the confrontation that created Karona.",
+    chapterId: "otaria",
+  },
+
   // Phase 36 — the final Phyrexian campaign
   {
     a: "urza",
