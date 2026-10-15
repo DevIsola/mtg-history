@@ -20,6 +20,28 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Phase 36 — the final Phyrexian campaign
+  {
+    a: "urza",
+    b: "tevesh-szat",
+    category: "rivalry",
+    labelForA: "Traitor among the Titans",
+    labelForB: "Leader and executioner",
+    context:
+      "Urza recruited Tevesh Szat into the Nine Titans but expected his betrayal. After Szat killed Daria and Kristina, Urza used the traitor's life essence to power the soul bombs against Phyrexia.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "urza",
+    b: "gerrard",
+    category: "rivalry",
+    labelForA: "Legacy hero and arena opponent",
+    labelForB: "Architect of the Legacy and arena opponent",
+    context:
+      "Urza engineered the Legacy that shaped Gerrard's life. Under Yawgmoth's influence, the two fought each other in an arena, where Gerrard beheaded Urza.",
+    chapterId: "weatherlight",
+  },
+
   // Phase 35 — the loss and corruption of three Weatherlight companions
   {
     a: "gerrard",
