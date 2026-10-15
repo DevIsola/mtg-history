@@ -19,6 +19,95 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Phase 34 — The Weatherlight Saga
+  {
+    id: "sisay",
+    name: "Captain Sisay",
+    title: "Captain of the Weatherlight",
+    origin: "Dominaria — Jamuraa",
+    role: "Skyship captain and leader of the Legacy expedition",
+    summary:
+      "The steadfast Weatherlight captain whose leadership united its crew and whose capture drew Gerrard back to the Legacy's mission.",
+    biography: [
+      "Sisay captained the Weatherlight and helped gather the people and artifacts associated with Urza's Legacy. She believed in Gerrard's destiny even when he rejected it, and her judgment held together a crew of very different companions.",
+      "Volrath captured Sisay and took her to Rath. Rescuing her was the immediate reason Gerrard returned to the Weatherlight and led the expedition through the enemy stronghold.",
+      "After her rescue, Sisay remained a central leader as the crew escaped Rath, survived Mercadia, and returned to face the Phyrexian invasion of Dominaria.",
+      "Her Modern Horizons card revisits a captain first established in the original Weatherlight-era storytelling, emphasizing the legendary companions she sought to bring together.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Sisay, Weatherlight Captain",
+      setCode: "mh1",
+      collectorNumber: "29",
+      scryfallId: "5a293c45-1e73-4527-be2f-2dcd5c47b610",
+      artist: "Anna Steinbauer",
+      significance:
+        "A later portrait of the Weatherlight's captain, whose capture begins the crew's rescue mission to Rath.",
+    },
+    source: {
+      title: "Wizards of the Coast — Weather(light) Report",
+      url: "https://magic.wizards.com/en/news/making-magic/weatherlight-report-2007-12-03",
+    },
+  },
+  {
+    id: "volrath",
+    name: "Volrath",
+    title: "Evincar of Rath",
+    origin: "Dominaria — Jamuraa; later Rath",
+    role: "Phyrexian shapeshifter and ruler of Rath",
+    summary:
+      "Once Gerrard's foster brother Vuel, Volrath ruled Rath for Phyrexia and infiltrated the Weatherlight crew through a dangerous disguise.",
+    biography: [
+      "Known as Vuel in his youth, Volrath grew up alongside Gerrard under Sidar Kondo's care. His resentment toward Gerrard helped turn their personal bond into a lasting enmity.",
+      "As evincar of Rath, Volrath ruled from the Stronghold and served the Phyrexian plan to use the artificial plane as a staging ground for the invasion of Dominaria.",
+      "He abducted Captain Sisay, bringing Gerrard back into the Weatherlight's mission. When the crew freed its captives, Volrath escaped Rath disguised as Takara, Starke's daughter, and traveled with the group to Mercadia.",
+      "On Mercadia, Volrath's deception led to Starke's murder and further fractured the crew's trust. His schemes were part of a wider campaign stretching beyond one plane or one rivalry.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Volrath the Fallen",
+      setCode: "nms",
+      collectorNumber: "75",
+      scryfallId: "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56",
+      artist: "Kev Walker",
+      significance:
+        "A Nemesis depiction of the Phyrexian shapeshifter who ruled Rath and deceived the Weatherlight crew.",
+    },
+    source: {
+      title: "Wizards of the Coast — Face Cards, Part 2",
+      url: "https://magic.wizards.com/en/news/making-magic/face-cards-part-2-2018-12-03",
+    },
+  },
+  {
+    id: "hanna",
+    name: "Hanna",
+    title: "The Weatherlight's Navigator",
+    origin: "Dominaria — Tolaria",
+    role: "Navigator, artificer, and magical engineer",
+    summary:
+      "A gifted Tolarian artificer who maintained the Weatherlight's technology and whose death in the Phyrexian invasion devastated its crew.",
+    biography: [
+      "Hanna was the daughter of Barrin and Rayne and studied at Tolaria. Though her father wanted her to pursue spellcraft, her own strengths and interests lay with magical objects and engineering.",
+      "She served aboard the Weatherlight as navigator and artificer, using her expertise to maintain its extraordinary machinery and the artifacts tied to the Legacy.",
+      "Hanna and Gerrard had shared a close romantic relationship before his departure from the ship. His return after Sisay's abduction forced them to confront the consequences of that earlier separation.",
+      "During the Phyrexian invasion, Hanna died from a Phyrexian plague. Her loss represented both a personal tragedy and a severe blow to the crew's knowledge and experience.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Hanna, Ship's Navigator",
+      setCode: "inv",
+      collectorNumber: "249",
+      scryfallId: "83a4e48d-6452-4245-bdad-63fe3263550e",
+      artist: "Dave Dorman",
+      significance:
+        "Hanna's Invasion card commemorates the artificer and navigator whose life ended during the war against Phyrexia.",
+    },
+    source: {
+      title: "Wizards of the Coast — Face Cards, Part 2",
+      url: "https://magic.wizards.com/en/news/making-magic/face-cards-part-2-2018-12-03",
+    },
+  },
+
   // =========================================
   // Chapter 03 — Jaya Ballard
   // =========================================

@@ -249,8 +249,50 @@ export const historicalEvents: HistoricalEvent[] = [
       "Sisay’s capture brought Gerrard back into the life of the Weatherlight crew and into the struggle surrounding the Legacy.",
       "The expedition to Rath exposed the companions to Phyrexian influence, personal betrayals, and the dangerous rule of Volrath.",
     ],
-    characterIds: ["gerrard", "karn"],
+    characterIds: ["gerrard", "karn", "sisay", "volrath", "hanna"],
     cardName: "Sisay, Weatherlight Captain",
+  },
+  {
+    id: "volrath-unmasked",
+    title: "Volrath's Disguise Is Revealed",
+    chapterId: "weatherlight",
+    summary:
+      "On Mercadia, the shapeshifter Volrath's disguise as Takara conceals an enemy within the Weatherlight's own company.",
+    narrative: [
+      "After the Weatherlight rescued Sisay and other captives from Rath, Volrath escaped the Stronghold by impersonating Takara, the daughter of Starke. The apparent rescued companion traveled with the crew to Mercadia.",
+      "Volrath used the disguise to sow mistrust and conceal his own movements. His murder of Starke exposed the deadly consequences of admitting an enemy into the company under a borrowed identity.",
+      "The Mercadian Masques card Unmask depicts Volrath shedding Takara's appearance, making its illustration an unusually direct representation of a major plot revelation.",
+    ],
+    characterIds: ["volrath", "gerrard", "sisay", "hanna"],
+    cardName: "Unmask",
+  },
+  {
+    id: "hanna-phyrexian-plague",
+    title: "Hanna Falls to the Phyrexian Plague",
+    chapterId: "weatherlight",
+    summary:
+      "The invasion costs the Weatherlight its navigator and one of its most capable artificers.",
+    narrative: [
+      "Hanna was essential to the Weatherlight's extraordinary journey. Her expertise in magical artifacts supported the crew through the rescue on Rath, the danger of Mercadia, and their return to Dominaria.",
+      "When Phyrexia invaded, Hanna succumbed to a Phyrexian plague. Her death brought devastating personal grief and deprived the defenders of a deeply experienced member of the crew.",
+      "Her loss exemplified the consequences of the invasion beyond its military campaigns: the destruction of relationships, knowledge, and irreplaceable lives.",
+    ],
+    characterIds: ["hanna", "gerrard", "sisay"],
+    cardName: "Hanna, Ship's Navigator",
+  },
+  {
+    id: "rathi-overlay",
+    title: "The Rathi Overlay",
+    chapterId: "weatherlight",
+    summary:
+      "The artificial plane of Rath merges with Dominaria, delivering Phyrexian forces and transforming the landscape.",
+    narrative: [
+      "Phyrexia had constructed Rath as more than a fortress world. Its flowstone substrate and accumulating mass allowed the entire plane to be used as an invasion mechanism against Dominaria.",
+      "During the Rathi Overlay, territory, peoples, and armies from Rath were superimposed upon Dominaria. The maneuver deployed enemy forces across the world and changed familiar landscapes.",
+      "The Stronghold and other features of Rath appeared on Dominaria, leaving consequences that would endure beyond the end of the invasion.",
+    ],
+    characterIds: ["gerrard", "sisay", "karn", "yawgmoth"],
+    cardName: "Skyship Weatherlight",
   },
   {
     id: "legacy-weapon",
