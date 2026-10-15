@@ -20,6 +20,74 @@ export interface CharacterProfile {
 
 export const characters: CharacterProfile[] = [
   // =========================================
+  // Chapter 03 — Jaya Ballard
+  // =========================================
+  {
+    id: "jaya",
+    name: "Jaya Ballard",
+    title: "The Task Mage of the Ice Age",
+    origin: "Dominaria — Terisiare",
+    role: "Pyromancer, task mage, and later planeswalker",
+    summary:
+      "A renowned pyromancer and longtime friend of Jodah, whose courage and magical abilities helped defend Dominaria during and after the Ice Age.",
+    biography: [
+      "Jaya Ballard became known as a resourceful task mage and an exceptionally talented wielder of fire magic. Her adventures brought her into the dangerous political and magical struggles of Terisiare.",
+      "Her friendship with Jodah endured across centuries. Together, they played a crucial role in bringing the Kjeldoran and Balduvian factions into cooperation against the necromancer Lim-Dûl.",
+      "Jaya's life extended beyond the end of the Ice Age. Her planeswalker spark eventually ignited, beginning another chapter in a career that connected several distinct eras of Dominarian history.",
+      "Although her name first appeared in Ice Age card flavor text, Jaya received a legendary creature card in Time Spiral, followed by later cards depicting her as a planeswalker.",
+    ],
+    chapterIds: ["ice-age"],
+    featuredCard: {
+      name: "Jaya Ballard, Task Mage",
+      setCode: "tsp",
+      collectorNumber: "166",
+      scryfallId: "a1f85b2a-7836-4058-87a5-859c4311a7e4",
+      artist: "Matt Cavotta",
+      significance:
+        "Jaya as a task mage, before her later depiction as a planeswalker.",
+    },
+    source: {
+      title:
+        "Wizards of the Coast — The Legends You'll Find in Dominaria United",
+      url: "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01",
+    },
+  },
+
+  // =========================================
+  // Chapter 03 — Lim-Dûl
+  // =========================================
+  {
+    id: "lim-dul",
+    name: "Lim-Dûl",
+    title: "The Necromancer of the Ice Age",
+    origin: "Dominaria — Terisiare",
+    role: "Necromancer and commander of undead armies",
+    summary:
+      "A powerful necromancer whose ambitions and undead forces threatened the kingdoms of Terisiare during Dominaria's long winter.",
+    biography: [
+      "Lim-Dûl pursued magical and political power during Dominaria's Ice Age, when the kingdoms of Terisiare were already strained by generations of environmental hardship and warfare.",
+      "His mastery of necromancy allowed him to raise and command undead forces, adding a supernatural threat to the conflicts of the frozen kingdoms.",
+      "Jodah and Jaya Ballard became important opponents of Lim-Dûl. Resistance to his ambitions encouraged cooperation between the rival Kjeldoran and Balduvian factions.",
+      "Lim-Dûl became one of the enduring figures associated with the Ice Age storyline. His legendary creature card appeared in Time Spiral, years after the original Ice Age expansion.",
+    ],
+    chapterIds: ["ice-age"],
+    featuredCard: {
+      name: "Lim-Dûl the Necromancer",
+      setCode: "tsp",
+      collectorNumber: "114",
+      scryfallId: "b8a3cdfe-0289-474b-b9c4-07e8c6588ec5",
+      artist: "Matt Cavotta",
+      significance:
+        "A Time Spiral depiction of Lim-Dûl, whose undead armies threatened Terisiare.",
+    },
+    source: {
+      title:
+        "Wizards of the Coast — The Legends You'll Find in Dominaria United",
+      url: "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01",
+    },
+  },
+
+  // =========================================
   // The Brothers' War — Kayla bin-Kroog
   // =========================================
   {
