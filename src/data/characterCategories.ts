@@ -42,6 +42,7 @@ export const characterCategories: CharacterCategory[] = [
     label: "Mages and spellcasters",
     characterIds: [
       "jodah",
+      "ertai",
       "jaya",
       "lim-dul",
       "chainer",
@@ -54,7 +55,7 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "warriors",
     label: "Warriors and heroes",
-    characterIds: ["gerrard", "sisay", "kamahl", "jeska", "radha"],
+    characterIds: ["gerrard", "sisay", "mirri", "kamahl", "jeska", "radha"],
   },
 
   {
@@ -66,6 +67,7 @@ export const characterCategories: CharacterCategory[] = [
       "gix",
       "sisay",
       "volrath",
+      "crovax",
       "freyalise",
       "windgrace",
       "radha",
@@ -76,6 +78,6 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "phyrexia",
     label: "Phyrexian figures",
-    characterIds: ["yawgmoth", "gix", "volrath"],
+    characterIds: ["yawgmoth", "gix", "volrath", "crovax", "ertai"],
   },
 ];

@@ -19,6 +19,94 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Phase 35 — Rath, the Stronghold, and the Weatherlight's losses
+  {
+    id: "crovax",
+    name: "Crovax",
+    title: "The Cursed Nobleman",
+    origin: "Dominaria",
+    role: "Weatherlight companion, vampire, and later evincar of Rath",
+    summary:
+      "A former Weatherlight companion whose bond with Selenia brought a vampiric curse and whose fall led him to rule Rath.",
+    biography: [
+      "Crovax was a Dominarian nobleman whose household was afflicted by a curse bound to the angel Selenia. After releasing her from the artifact that held her, he lost her to Volrath and joined the Weatherlight's journey to Rath in hopes of finding her.",
+      "During the rescue mission at Volrath's Stronghold, Selenia attacked Mirri. To save his companion, Crovax killed the angel, unwittingly fulfilling the curse that transformed him into a vampire.",
+      "The change consumed his former loyalties. After an injured Mirri followed him when he left the Weatherlight, Crovax killed her, severing another bond to the crew and Gerrard's life.",
+      "Crovax later served Phyrexian interests on Rath. With Ertai's assistance, he killed the returning Volrath and claimed the title of evincar, a transformation represented by the later card Ascendant Evincar.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Crovax the Cursed",
+      setCode: "sth",
+      collectorNumber: "55",
+      scryfallId: "88a9b76d-6ce1-40d4-bc04-7ae6237f5eaf",
+      artist: "Pete Venters",
+      significance:
+        "A Stronghold depiction of Crovax following his transformation into a vampire through Selenia's death.",
+    },
+    source: {
+      title: "Wizards of the Coast — Face Cards, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/face-cards-part-1-2018-11-19",
+    },
+  },
+  {
+    id: "mirri",
+    name: "Mirri",
+    title: "The Weatherlight's Cat Warrior",
+    origin: "Dominaria — Llanowar",
+    role: "Cat warrior and Weatherlight crew member",
+    summary:
+      "A skilled fighter and Gerrard's longtime friend whose loyalty could not save her from Crovax's curse and betrayal.",
+    biography: [
+      "Mirri was a cat warrior raised among the elves of Llanowar, where her friendship with Gerrard formed an important part of her life. Her speed and combat abilities made her a valued member of the Weatherlight crew.",
+      "When the crew invaded Volrath's Stronghold to rescue Sisay, Mirri intervened during an encounter with the angel Selenia and was badly injured. Crovax killed Selenia to protect her, completing the curse that made him a vampire.",
+      "Mirri remained loyal to her companions. After the encounter, she followed Crovax when he departed the Weatherlight, and he killed her. Her death was one of the defining personal losses of the Rath expedition.",
+      "The original Exodus card Mirri, Cat Warrior depicts her as part of the main Weatherlight continuity. Mirri the Cursed, published later in Planar Chaos, depicts an alternative reality and not her canonical fate.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Mirri, Cat Warrior",
+      setCode: "exo",
+      collectorNumber: "114",
+      scryfallId: "6d1682dd-5a99-4bee-a2c2-c8735047e1a9",
+      artist: "Daren Bader",
+      significance:
+        "Mirri's Exodus legendary card, issued during the story of the crew's escape from Rath.",
+    },
+    source: {
+      title: "Wizards of the Coast — The Making of a Legend",
+      url: "https://magic.wizards.com/en/news/making-magic/making-legend-2003-08-25",
+    },
+  },
+  {
+    id: "ertai",
+    name: "Ertai",
+    title: "The Wizard Left Behind",
+    origin: "Dominaria — Tolaria",
+    role: "Tolarian wizard and later Phyrexian agent",
+    summary:
+      "A talented, boastful Weatherlight mage whose efforts to open an escape portal left him stranded on Rath and vulnerable to corruption.",
+    biography: [
+      "Ertai was a talented Tolarian wizard known for his mastery of countermagic and his considerable confidence in his own abilities. He joined the Weatherlight during the search for Captain Sisay.",
+      "After the Predator damaged the Weatherlight's ability to cross planes, Ertai helped open an escape portal on Rath. The crew used the Legacy's Skyshaper to reach it before it closed, but the escape left Ertai stranded on the enemy plane.",
+      "His isolation and subsequent experiences under Phyrexian influence transformed him. Ertai aided Crovax during the struggle for leadership of Rath and was depicted as Ertai, the Corrupted in Planeshift.",
+      "The later Dominaria United storyline resurrected Ertai centuries after his original death. His original Exodus and Planeshift cards record the much earlier journey from young wizard to fallen antagonist.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Ertai, Wizard Adept",
+      setCode: "exo",
+      collectorNumber: "33",
+      scryfallId: "91971e19-61ce-45ac-b700-9ffca5091a27",
+      artist: "Terese Nielsen",
+      significance:
+        "Ertai as a talented young mage before being stranded on Rath and later transformed by Phyrexia.",
+    },
+    source: {
+      title: "Wizards of the Coast — Face Cards, Part 2",
+      url: "https://magic.wizards.com/en/news/making-magic/face-cards-part-2-2018-12-03",
+    },
+  },
   // Phase 34 — The Weatherlight Saga
   {
     id: "sisay",

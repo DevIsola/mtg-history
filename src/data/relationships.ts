@@ -20,6 +20,77 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Phase 35 — the loss and corruption of three Weatherlight companions
+  {
+    a: "gerrard",
+    b: "mirri",
+    category: "friendship",
+    labelForA: "Longtime friend and companion",
+    labelForB: "Longtime friend and companion",
+    context:
+      "Gerrard and Mirri grew up together, and she accompanied him aboard the Weatherlight until her death at the hands of Crovax.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "crovax",
+    b: "mirri",
+    category: "rivalry",
+    labelForA: "Former shipmate and victim",
+    labelForB: "Former ally and killer",
+    context:
+      "Crovax killed Selenia to save Mirri but became cursed; after she followed him away from the Weatherlight, he killed her.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "gerrard",
+    b: "crovax",
+    category: "rivalry",
+    labelForA: "Fallen crew companion",
+    labelForB: "Former shipmate and adversary",
+    context:
+      "Crovax once sailed with Gerrard but betrayed the crew after his transformation into a vampire, killing Mirri and later serving Phyrexia.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "sisay",
+    b: "ertai",
+    category: "alliance",
+    labelForA: "Crew wizard",
+    labelForB: "Captain",
+    context:
+      "Ertai served the Weatherlight's mission and kept open the portal the crew used to escape Rath, but was left stranded there.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "hanna",
+    b: "ertai",
+    category: "alliance",
+    labelForA: "Tolarian crew mage",
+    labelForB: "Navigator and artificer",
+    context:
+      "Hanna and Ertai both brought Tolarian knowledge aboard the Weatherlight during the rescue mission to Rath.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "crovax",
+    b: "ertai",
+    category: "alliance",
+    labelForA: "Corrupted wizard and aide",
+    labelForB: "Evincar and Phyrexian master",
+    context:
+      "Ertai's transformation on Rath brought him into Crovax's service; he aided Crovax in defeating Volrath and claiming the title of evincar.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "crovax",
+    b: "volrath",
+    category: "rivalry",
+    labelForA: "Former evincar and rival",
+    labelForB: "Successor and killer",
+    context:
+      "With Ertai's help, Crovax killed Volrath after the shapeshifter's return from Mercadia and became the new evincar of Rath.",
+    chapterId: "weatherlight",
+  },
   // Phase 34 — Weatherlight companions and adversaries
   {
     a: "gerrard",
