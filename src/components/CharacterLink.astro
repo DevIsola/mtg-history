@@ -1,7 +1,7 @@
-
 ---
 import { characters } from '../data/characters';
 import { withBase } from '../utils/paths';
+import CardHoverPreview from './CardHoverPreview.astro';
 
 interface Props {
   id: string;
@@ -9,19 +9,18 @@ interface Props {
 
 const { id } = Astro.props;
 
-const character = characters.find(
-  (entry) => entry.id === id
-);
+const character = characters.find((entry) => entry.id === id);
 
 if (!character) {
   throw new Error(`Unknown historical character: ${id}`);
 }
 ---
 
-<a
-  class="character-inline-link"
-  href={withBase(`characters/${character.id}/`)}
-  title={`Read the historical profile of ${character.name}`}
->
-  <slot>{character.name}</slot>
-</a>
+<CardHoverPreview name={character.name} card={character.featuredCard}>
+  <a
+    class="character-inline-link"
+    href={withBase(`characters/${character.id}/`)}
+  >
+    <slot>{character.name}</slot>
+  </a>
+</CardHoverPreview>
