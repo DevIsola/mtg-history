@@ -139,6 +139,21 @@ export const historicalEvents: HistoricalEvent[] = [
     cardName: "Urza's Sylex",
   },
   {
+    id: "talite-siege-of-penregon",
+    title: "The Talite Siege of Penregon",
+    chapterId: "ice-age",
+    summary:
+      "The Church of Tal assaults Penregon as postwar communities struggle over the future of magic and artifice.",
+    narrative: [
+      "In 69 AR, followers of Tal attempted to seize Penregon. Their opposition to magic and artifice made the surviving machines of Urza's age an object of hostility, even where those machines supported civilian life.",
+      "The crusaders attacked the city's defenses while sympathizers within its walls spread violence and destruction. Kayla bin-Kroog worked with Penregon's commanders to organize resistance and make decisions about its survival.",
+      "Tawnos, troubled by the conversion of his civilian machines back into weapons, had destroyed his workshop. The siege and its aftermath exposed the fragile balance between technological dependence, political fear, and responsibility after the Brothers' War.",
+    ],
+    characterIds: ["kayla", "tawnos"],
+    cardName: "Witch Hunter",
+  },
+
+  {
     id: "jodah-preserves-magic",
     title: "Jodah and the Preservation of Magic",
     chapterId: "ice-age",
@@ -151,6 +166,35 @@ export const historicalEvents: HistoricalEvent[] = [
     ],
     characterIds: ["jodah"],
     cardName: "Jodah, Archmage Eternal",
+  },
+
+  {
+    id: "sarpadian-factions-fracture",
+    title: "The Fragmentation of Sarpadia",
+    chapterId: "ice-age",
+    summary:
+      "Five competing factions confront rival societies and upheavals within their own ranks during the decline recorded in Fallen Empires.",
+    narrative: [
+      "The continent of Sarpadia became the setting for struggles involving the Order of Leitbur, the Vodalian merfolk, the Order of the Ebon Hand, the dwarves, and the elves. Each power faced both neighboring enemies and pressures within its own society.",
+      "The Farrelites challenged Icatia, homarids threatened the Vodalians, and goblins and orcs fought the dwarves. The elves faced thallids, while the Ebon Hand confronted rebellion among the thrulls it had created.",
+      "These histories did not unfold as one battle or a single simultaneous collapse. Fallen Empires presents them as interconnected but distinct conflicts that undermined established powers across Sarpadia.",
+    ],
+    characterIds: [],
+    cardName: "Order of the Ebon Hand",
+  },
+  {
+    id: "thrull-uprising",
+    title: "The Thrull Uprising",
+    chapterId: "ice-age",
+    summary:
+      "The thrulls bred by the Order of the Ebon Hand become a threat to the society that exploited them.",
+    narrative: [
+      "The Order of the Ebon Hand relied on thrulls bred to serve its purposes. The same creatures that had supported the faction eventually challenged its control.",
+      "The thrull revolt became one of the defining internal conflicts of Sarpadia's decline, turning the Order's own creations against an established power.",
+      "Thrull Champion is used here as a representative card from Fallen Empires. This is a history of a factional uprising rather than a biographical event attributed to a particular named character.",
+    ],
+    characterIds: [],
+    cardName: "Thrull Champion",
   },
 
   {

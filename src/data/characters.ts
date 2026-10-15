@@ -104,7 +104,7 @@ export const characters: CharacterProfile[] = [
       "Kayla's experiences continued beyond the final battle on Argoth. As the climate deteriorated and surviving communities struggled to adapt, she worked to preserve order and protect the people under her care.",
       "Her account, The Antiquities War, became an important historical record of the conflict. Her perspective preserved not simply the actions of Urza and Mishra but the suffering and resilience of those who lived through their decisions.",
     ],
-    chapterIds: ["brothers-war"],
+    chapterIds: ["brothers-war", "ice-age"],
     featuredCard: {
       name: "Queen Kayla bin-Kroog",
       setCode: "bro",
@@ -137,7 +137,7 @@ export const characters: CharacterProfile[] = [
       "During the war, Tawnos experienced imprisonment and was eventually freed through Ashnod's intervention. His experiences exposed him to the personal consequences of the struggle between their respective leaders.",
       "After the devastation of Argoth, Tawnos continued working with mechanical technology in the changed world. His efforts to serve civilian communities forced him to confront the danger that machines designed for peaceful use could once again become instruments of war.",
     ],
-    chapterIds: ["brothers-war"],
+    chapterIds: ["brothers-war", "ice-age"],
     featuredCard: {
       name: "Tawnos, the Toymaker",
       setCode: "bro",
