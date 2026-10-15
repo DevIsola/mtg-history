@@ -9,6 +9,103 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 07 — first major narratives beyond Dominaria
+  {
+    id: "ravnica-guildpact-collapse",
+    title: "The First Guildpact Breaks",
+    chapterId: "many-worlds",
+    summary: "Agrus Kos's investigation brings Szadek to justice but triggers the collapse of Ravnica's ancient magical settlement.",
+    narrative: [
+      "The ten guilds had spent millennia operating within the magically enforced Guildpact.",
+      "During the Decamillennial crisis, Agrus Kos followed evidence to the secret Dimir founder Szadek. His arrest broke the original pact, exposing Ravnica to renewed factional conflict.",
+    ],
+    characterIds: ["agrus-kos", "szadek"],
+    cardName: "Szadek, Lord of Secrets",
+  },
+  {
+    id: "ravnica-project-kraj",
+    title: "Project Kraj and Ravnica's Aftermath",
+    chapterId: "many-worlds",
+    summary: "Momir Vig's living weapon threatens a city destabilized by the broken Guildpact.",
+    narrative: [
+      "With the old constraints weakened, guild leaders pursued increasingly dangerous plans to dominate Ravnica.",
+      "Teysa Karlov and Agrus Kos became involved in struggles that culminated in the defeat of Momir Vig's Project Kraj, even as the guilds remained politically divided.",
+    ],
+    characterIds: ["teysa-karlov", "agrus-kos"],
+    cardName: "Teysa, Orzhov Scion",
+  },
+  {
+    id: "zendikar-hedrons",
+    title: "Nahiri Builds the Hedron Prison",
+    chapterId: "many-worlds",
+    summary: "Nahiri, Sorin, and Ugin construct an immense prison to bind the Eldrazi titans to Zendikar.",
+    narrative: [
+      "Ugin devised a network of magical leylines and floating stone hedrons to draw the Eldrazi into confinement.",
+      "Nahiri built the prison on her home plane with the help of Sorin. The arrangement contained three titans, but made Zendikar bear the danger on behalf of other worlds.",
+    ],
+    characterIds: ["nahiri", "sorin", "emrakul"],
+    cardName: "Nahiri, the Harbinger",
+  },
+  {
+    id: "zendikar-eye-rupture",
+    title: "The Eye of Ugin Is Disturbed",
+    chapterId: "many-worlds",
+    summary: "A confrontation at the Eye damages the prison and begins the Eldrazi awakening.",
+    narrative: [
+      "Jace, Chandra, and Sarkhan converged on the Eye of Ugin amid Nicol Bolas's larger schemes.",
+      "The resulting disruption weakened the prison, allowing Eldrazi spawn to emerge across Zendikar.",
+    ],
+    characterIds: ["nahiri", "emrakul"],
+    cardName: "Eye of Ugin",
+  },
+  {
+    id: "zendikar-eldrazi-awakening",
+    title: "The Eldrazi Awakening",
+    chapterId: "many-worlds",
+    summary: "Eldrazi spawn and titanic manifestations turn Zendikar's frontier into an existential battlefield.",
+    narrative: [
+      "When the wards began to fail, Zendikar's inhabitants discovered that the ancient hedrons had imprisoned entities from outside ordinary reality.",
+      "The emergence of Eldrazi spawn and titans endangered the landscape and the communities living upon it.",
+    ],
+    characterIds: ["emrakul", "nahiri", "sorin"],
+    cardName: "Emrakul, the Aeons Torn",
+  },
+  {
+    id: "innistrad-avacyn-created",
+    title: "Sorin Creates Avacyn",
+    chapterId: "many-worlds",
+    summary: "Sorin fashions an angel to protect humanity and sustain Innistrad's fragile balance.",
+    narrative: [
+      "Sorin understood that unconstrained predation would eventually threaten the vampires alongside their human prey.",
+      "He created Avacyn as a guardian and the focus of a protective church, giving human communities a chance to survive.",
+    ],
+    characterIds: ["sorin", "avacyn"],
+    cardName: "Sorin, Lord of Innistrad",
+  },
+  {
+    id: "innistrad-helvault-imprisonment",
+    title: "Avacyn Disappears into the Helvault",
+    chapterId: "many-worlds",
+    summary: "Griselbrand lures Avacyn into the Helvault, leaving humanity's defenses gravely weakened.",
+    narrative: [
+      "The demon Griselbrand tricked Avacyn into confinement within the enchanted prison she used against demons.",
+      "With both imprisoned, the church's protective rites weakened and Innistrad descended toward a new crisis.",
+    ],
+    characterIds: ["griselbrand", "avacyn", "sorin"],
+    cardName: "Helvault",
+  },
+  {
+    id: "innistrad-avacyn-restored",
+    title: "The Helvault Breaks and Avacyn Returns",
+    chapterId: "many-worlds",
+    summary: "Breaking the Helvault frees Avacyn and its demons, transforming the balance of hope and danger.",
+    narrative: [
+      "Liliana's search for Griselbrand intersected with the desperate efforts of Innistrad's human defenders.",
+      "The Helvault's destruction released Avacyn and the imprisoned demons. The angel's return restored hope, but did not remove the supernatural threats to humanity.",
+    ],
+    characterIds: ["avacyn", "griselbrand", "sorin"],
+    cardName: "Avacyn, Angel of Hope",
+  },
   {
     id: "powerstone-revolution",
     title: "Glacian and the Powerstone Revolution",
