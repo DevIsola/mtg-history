@@ -337,6 +337,22 @@ export const historicalEvents: HistoricalEvent[] = [
     characterIds: ["hanna", "gerrard", "sisay"],
     cardName: "Hanna, Ship's Navigator",
   },
+  // Phase 36 — invasion, betrayal, and the Legacy's finale
+  {
+    id: "battle-of-koilos",
+    title: "The Coalition's Victory at Koilos",
+    chapterId: "weatherlight",
+    summary:
+      "Dominaria's allied defenders secure a crucial victory at Koilos, though the Phyrexian invasion is far from over.",
+    narrative: [
+      "As Phyrexian forces invaded Dominaria, peoples and military leaders from across the world formed the Coalition. Their combined strength contested the enemy's ancient foothold at Koilos.",
+      "The victory at Koilos demonstrated the power of cooperation among former rivals and became an important source of hope for the defenders.",
+      "That triumph was not the end of the conflict. Rath had been prepared to overlay Dominaria, allowing another vast army to enter the war and transforming the battlefield itself.",
+      "The original Invasion card Coalition Victory represents the unity of the Coalition and the celebration after Koilos; it must not be mistaken for the later, final defeat of Yawgmoth.",
+    ],
+    characterIds: ["gerrard", "sisay", "urza", "karn"],
+    cardName: "Coalition Victory",
+  },
   {
     id: "rathi-overlay",
     title: "The Rathi Overlay",
@@ -352,16 +368,46 @@ export const historicalEvents: HistoricalEvent[] = [
     cardName: "Skyship Weatherlight",
   },
   {
+    id: "nine-titans-assault",
+    title: "The Nine Titans Assault Phyrexia",
+    chapterId: "weatherlight",
+    summary:
+      "Urza leads nine planeswalkers into Phyrexia, but Tevesh Szat's betrayal brings lethal consequences.",
+    narrative: [
+      "Urza assembled the Nine Titans—nine powerful planeswalkers, including Freyalise, Lord Windgrace, and Tevesh Szat—to strike directly at Phyrexia while Dominaria fought the invasion.",
+      "Szat turned on his companions and killed Daria and Kristina. Urza had anticipated this betrayal and used Szat's life essence to fuel the soul bombs intended to destroy Phyrexian territory.",
+      "The operation inflicted tremendous damage, but its sacrifices exposed the moral cost of Urza's strategy. The remaining Titans struggled to fulfill the mission even as Urza became captivated by Phyrexian artifice.",
+    ],
+    characterIds: ["urza", "tevesh-szat", "freyalise", "windgrace"],
+    cardName: "Tevesh Szat, Doom of Fools",
+  },
+  {
+    id: "yawgmoths-arena",
+    title: "Gerrard and Urza in Yawgmoth's Arena",
+    chapterId: "weatherlight",
+    summary:
+      "Yawgmoth turns two of Dominaria's central defenders against each other, and Gerrard beheads Urza.",
+    narrative: [
+      "Yawgmoth tempted Gerrard with the possibility of recovering Hanna and appealed to Urza's obsession with understanding Phyrexia. Under his control, the two adversaries fought in a dreadful arena.",
+      "Gerrard eventually beheaded Urza, though the planeswalker continued to survive as a living head containing the Mightstone and Weakstone.",
+      "The arena scene is represented by the original Apocalypse printing of Phyrexian Arena. The confrontation did not end the invasion; it preceded the Legacy's final activation.",
+    ],
+    characterIds: ["gerrard", "urza", "yawgmoth"],
+    cardName: "Phyrexian Arena",
+  },
+  {
     id: "legacy-weapon",
     title: "The Legacy Defeats Yawgmoth",
     chapterId: "weatherlight",
     summary:
-      "Centuries of preparation culminate in the destruction of Yawgmoth.",
+      "Gerrard, Urza, Karn, and the Legacy's accumulated power bring Yawgmoth's original invasion to an end.",
     narrative: [
-      "The Phyrexian invasion brought Dominaria to the brink of catastrophe. Urza’s long preparations converged with the actions of Gerrard and the Weatherlight crew.",
-      "The assembled Legacy became the decisive weapon against Yawgmoth, ending his immediate threat while leaving immense devastation behind.",
+      "The crisis culminated after Gerrard's confrontation with Urza in Yawgmoth's arena. Urza's living head still held the Mightstone and Weakstone, ancient fragments whose history reached back to the Thran and the Brothers' War.",
+      "Karn, the Weatherlight, Gerrard, the powerstones, and other components of the Legacy converged in a final release of power. Yawgmoth's destructive manifestation was destroyed, and the invading forces lost their central master.",
+      "The victory demanded the deaths of Gerrard and Urza and the loss of the Weatherlight as it had been known. Karn survived the activation and emerged as a planeswalker.",
+      "The original Apocalypse card Legacy Weapon depicts the assembled artifact; Vindicate provides a complementary illustration associated with Gerrard's ultimate sacrifice.",
     ],
-    characterIds: ["urza", "yawgmoth", "gerrard", "karn"],
+    characterIds: ["urza", "yawgmoth", "gerrard", "karn", "sisay"],
     cardName: "Legacy Weapon",
   },
   {

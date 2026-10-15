@@ -15,6 +15,7 @@ export const characterCategories: CharacterCategory[] = [
       "teferi",
       "freyalise",
       "windgrace",
+      "tevesh-szat",
       "jaya",
     ],
   },
