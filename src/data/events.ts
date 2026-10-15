@@ -581,4 +581,121 @@ export const historicalEvents: HistoricalEvent[] = [
     characterIds: ["jeska", "teferi", "freyalise", "windgrace"],
     cardName: "The Mending of Dominaria",
   },
+  {
+    id: "origins-of-the-temporal-rifts",
+    title: "The Origins of Dominaria's Temporal Rifts",
+    chapterId: "mending",
+    summary:
+      "Separate catastrophes at Tolaria, Shiv, Zhalfir, Urborg, Skyshroud, and Otaria weaken a single world.",
+    narrative: [
+      "The Sylex Blast, Urza's Tolarian experiments, Teferi's phasing, the Rathi Overlay, and Karona's emergence left different kinds of damage in Dominaria's history.",
+      "The wounds accumulated and accelerated the loss of mana, so a local solution could have consequences for other regions.",
+    ],
+    characterIds: ["teferi", "karn", "jeska"],
+    cardName: "The Mending of Dominaria",
+  },
+  {
+    id: "teferis-phasing-decision",
+    title: "Teferi Phases Out Zhalfir and Shiv",
+    chapterId: "mending",
+    summary:
+      "Teferi preserves two lands from Phyrexia, but leaves their inhabitants separated from Dominaria.",
+    narrative: [
+      "During the Phyrexian invasion, Teferi phased Zhalfir and Shiv out of normal reality in an effort to save their populations.",
+      "His later restoration of Shiv could not undo the isolation of Zhalfir, a loss that shaped his actions for centuries.",
+    ],
+    characterIds: ["teferi", "jhoira"],
+    cardName: "Teferi, Mage of Zhalfir",
+  },
+  {
+    id: "radha-and-the-skyshroud-rift",
+    title: "Radha and the Skyshroud Rift",
+    chapterId: "mending",
+    summary:
+      "Radha's connection to a damaged landscape makes her central to rift research and a target of dangerous plans.",
+    narrative: [
+      "Radha's Keldon and elven heritage placed her amid the Skyshroud crisis, where her unusual access to rift mana drew Teferi's attention.",
+      "Her resistance to being used as a magical tool foreshadowed the conflict over Jeska's later attempts to close rifts.",
+    ],
+    characterIds: ["radha", "teferi", "freyalise"],
+    cardName: "Radha, Heir to Keld",
+  },
+  {
+    id: "freyalise-seals-skyshroud",
+    title: "Freyalise Seals the Skyshroud Rift",
+    chapterId: "mending",
+    summary:
+      "Skyshroud's ancient protector gives her life to heal the displaced forest's fracture.",
+    narrative: [
+      "The Rathi Overlay had brought Skyshroud into Keld, and a dangerous rift threatened its inhabitants.",
+      "Freyalise ultimately sacrificed herself to close the wound and protect the people under her care.",
+    ],
+    characterIds: ["freyalise", "radha"],
+    cardName: "Freyalise, Llanowar's Fury",
+  },
+  {
+    id: "windgrace-seals-urborg",
+    title: "Windgrace Seals the Urborg Rift",
+    chapterId: "mending",
+    summary:
+      "The protector of Urborg surrenders his life to close the wound left by the Rathi Overlay.",
+    narrative: [
+      "Urborg's fracture was bound to the geographic upheaval and machinery that had arrived during Phyrexia's invasion.",
+      "Lord Windgrace's final act healed the rift while leaving his legacy tied to the land.",
+    ],
+    characterIds: ["windgrace", "venser", "jhoira"],
+    cardName: "Lord Windgrace",
+  },
+  {
+    id: "karn-heals-tolaria",
+    title: "Karn Heals the Tolarian Rift",
+    chapterId: "mending",
+    summary:
+      "Karn confronts the Academy's temporal catastrophe and disappears after repairing the fracture.",
+    narrative: [
+      "Tolaria's rift emerged from Urza's temporal research and the disaster that struck his Academy.",
+      "Karn traveled into the past to address its origin and vanished afterward, leaving Jeska without her mentor during the remaining crisis.",
+    ],
+    characterIds: ["karn", "jeska", "jhoira"],
+    cardName: "The Mending of Dominaria",
+  },
+  {
+    id: "jeska-seals-zhalfir-rift",
+    title: "Jeska Closes the Zhalfirin Rift",
+    chapterId: "mending",
+    summary:
+      "A dangerous fracture is closed, but Teferi's remaining route to Zhalfir is cut off.",
+    narrative: [
+      "Jeska tried to repair the damage to Dominaria while relying upon others' connections to the rifts.",
+      "Closing the Zhalfirin wound preserved reality but eliminated the route through which Teferi hoped to recover the phased-out homeland.",
+    ],
+    characterIds: ["jeska", "teferi", "radha"],
+    cardName: "Jeska, Thrice Reborn",
+  },
+  {
+    id: "bolas-and-madara-rift",
+    title: "Bolas, Leshrac, and the Madaran Rift",
+    chapterId: "mending",
+    summary:
+      "The contest between two ancient planeswalkers becomes the means of sealing Madara's fracture.",
+    narrative: [
+      "Leshrac attempted to use Jeska and the rifts to increase his own power before confronting Nicol Bolas.",
+      "Bolas defeated Leshrac and used the defeated walker's power to seal the Madaran rift, an outcome driven by rivalry rather than altruism.",
+    ],
+    characterIds: ["jeska"],
+    cardName: "The Mending of Dominaria",
+  },
+  {
+    id: "jeskas-final-sacrifice",
+    title: "Jeska's Final Sacrifice at Otaria",
+    chapterId: "mending",
+    summary:
+      "Jeska protects Radha and Venser and gives her life to seal the final rift.",
+    narrative: [
+      "The damage associated with Karona culminated in a final, exceptionally dangerous fracture over Otaria.",
+      "Rather than sacrifice Radha and Venser, Jeska sent them away and spent her own power and life to close the wound, completing the Mending.",
+    ],
+    characterIds: ["jeska", "radha", "venser"],
+    cardName: "Jeska, Thrice Reborn",
+  },
 ];
