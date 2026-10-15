@@ -730,7 +730,7 @@ export const characters: CharacterProfile[] = [
     summary:
       "A celebrated warrior whose pursuit of the Mirari led to tragedy, remorse, and a new calling as a protector of Krosa.",
     biography: [
-      "Kamahl began as a formidable Pardic barbarian and gladiator, drawn to Cabal City and the Mirari during the struggle for power on Otaria.",
+      "Kamahl began as a formidable Pardic barbarian and gladiator, drawn to Cabal City and the Mirari during the struggle for power on Otaria. He befriended Chainer while competing in the Cabal pits; after Chainer lost control of the Mirari and his nightmares, Kamahl was forced to end his friend’s suffering.",
       "The Mirari amplified his aggression. With the artifact bound to his sword, he seriously injured his sister Jeska, setting in motion her transformation into Phage.",
       "Kamahl sought a different life in the Krosan Forest, where Thriss the Nantuko taught him druidic ways. His transformation from pit fighter to protector would shape the Onslaught story and his efforts to save Jeska.",
     ],
@@ -760,7 +760,7 @@ export const characters: CharacterProfile[] = [
     biography: [
       "Jeska was a Pardic warrior and the younger sister of Kamahl. Her life changed when he struck her with a sword influenced by the Mirari.",
       "The wound led to her transformation into Phage the Untouchable. A later confrontation combined Phage, Akroma, and Zagorka into Karona, the False God.",
-      "After Karona was broken apart, Jeska's planeswalker spark ignited. Karn became her guide, and she would later return to Dominaria during the crisis of the temporal rifts.",
+      "When Karona was stabbed with the Mirari sword, Akroma and Zagorka died, but Jeska survived and her planeswalker spark ignited. Karn became her guide, and she would later return to Dominaria during the crisis of the temporal rifts.",
     ],
     chapterIds: ["otaria", "mending"],
     featuredCard: {
@@ -788,8 +788,8 @@ export const characters: CharacterProfile[] = [
       "A gifted summoner of nightmares whose friendship with Kamahl could not save him from the Mirari's influence.",
     biography: [
       "Chainer trained within the Cabal of Otaria, using dementia magic to summon nightmarish creatures from his mind.",
-      "Despite their contrasting backgrounds, he and Kamahl formed an unexpected friendship amid the Cabal's contests and political ambitions.",
-      "Possession of the Mirari amplified Chainer's abilities and destabilized his control. His downfall became one of the defining tragedies of the Odyssey block story.",
+      "Chainer discovered the Mirari in an abandoned mansion and presented it to the Cabal Patriarch. He and Kamahl formed an unexpected friendship in the pits, but his loyalty to the Cabal and growing distrust of its leadership eventually separated their paths.",
+      "Chainer used the Mirari to displace the Patriarch and overwhelm Cabal City with nightmares drawn through dementia magic. As his body was overtaken by the creatures he could no longer control, Kamahl killed him in an act of mercy. His downfall became one of the defining tragedies of the Odyssey block.",
     ],
     chapterIds: ["otaria"],
     featuredCard: {
@@ -804,6 +804,197 @@ export const characters: CharacterProfile[] = [
     source: {
       title: "Wizards of the Coast — Commander Masters Storyteller, Part 1",
       url: "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1",
+    },
+  },
+
+  // Chapter 05 — Additional Otarian leaders, rivals, and figures
+  {
+    id: "cabal-patriarch",
+    name: "Cabal Patriarch",
+    title: "The First of the Cabal",
+    origin: "Dominaria — Otaria",
+    role: "Leader of the Cabal and ruler of its arena establishment",
+    summary:
+      "The First made the Mirari a public prize and manipulated Cabal City through spectacle, patronage, and dark magic.",
+    biography: [
+      "The Cabal Patriarch, known as the First, wielded political power through the profitable, violent arena culture of Cabal City.",
+      "Chainer brought the Mirari to him after its discovery. The First recognized its potential and offered it as a prize that would draw ambitious combatants and rival factions to the games.",
+      "Chainer eventually seized the Mirari and temporarily displaced the Patriarch, but the First's wider influence survived this rebellion and later extended to Jeska's transformation into Phage.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Cabal Patriarch",
+      setCode: "cmm",
+      collectorNumber: "140",
+      scryfallId: "9e9a1276-5ad5-44ee-83e5-2d1ab728946e",
+      artist: "Mark Zug",
+      significance: "A Commander Masters reprint of the original Odyssey-era portrait of the Cabal's First.",
+    },
+    source: {
+      title: "Wizards of the Coast — Commander Masters Storyteller, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1",
+    },
+  },
+  {
+    id: "braids",
+    name: "Braids",
+    title: "An Agent of the Cabal",
+    origin: "Dominaria — Otaria",
+    role: "Cabal operative and dementia caster",
+    summary:
+      "A ruthless and unpredictable figure whose activities helped the Cabal maintain its reach during the Mirari crisis.",
+    biography: [
+      "Braids served the Cabal in the era when its pit games and dementia magic shaped Otaria's political life.",
+      "She was involved in the movements and return of the Mirari after the artifact passed through the hands of rival powers.",
+      "Her original Odyssey card depicts the Cabal's uncompromising methods and the lives sacrificed to preserve its influence.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Braids, Cabal Minion",
+      setCode: "ody",
+      collectorNumber: "117",
+      scryfallId: "4dcdcad5-e4fb-480e-984f-1ac5cdc986b9",
+      artist: "Eric Peterson",
+      significance: "Braids's original Odyssey portrait, representing the Cabal's harsh internal culture.",
+    },
+    source: {
+      title: "Wizards of the Coast — Commander Masters Storyteller, Part 1",
+      url: "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1",
+    },
+  },
+  {
+    id: "aboshan",
+    name: "Aboshan",
+    title: "The Cephalid Emperor",
+    origin: "Dominaria — Otaria",
+    role: "Ruler of the underwater empire",
+    summary:
+      "A ruler whose attempt to realize his desires through the Mirari caused a devastating flood.",
+    biography: [
+      "Aboshan ruled the cephalid empire during the crisis that followed the Mirari's discovery on Otaria.",
+      "When he obtained the Mirari, his wish for dominion over the sea was magnified into catastrophic magic that flooded great stretches of the continent and devastated his capital.",
+      "His destruction demonstrates that a ruler's ambition was no more immune to the Mirari than the desires of a gladiator or a dementia caster.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Aboshan, Cephalid Emperor",
+      setCode: "ody",
+      collectorNumber: "58",
+      scryfallId: "82db4a41-03e8-4f0c-946c-a98fc5c9f7c8",
+      artist: "Christopher Moeller",
+      significance: "An original Odyssey portrait of the emperor whose use of the Mirari caused disaster.",
+    },
+    source: {
+      title: "Wizards of the Coast — Dominarian Cartography",
+      url: "https://magic.wizards.com/en/news/feature/dominarian-cartography-2018-04-20",
+    },
+  },
+  {
+    id: "laquatus",
+    name: "Ambassador Laquatus",
+    title: "The Otarian Intriguer",
+    origin: "Dominaria — Otaria",
+    role: "Merfolk diplomat and political schemer",
+    summary:
+      "An ambitious merfolk ambassador who pursued the Mirari through alliances, manipulations, and opportunism.",
+    biography: [
+      "Laquatus represented the merfolk court but devoted considerable effort to advancing his own position in Otaria's shifting conflicts.",
+      "The Mirari offered leverage over the emperor, the Cabal, the Order, and other contenders. Laquatus pursued it through political intrigue rather than the straightforward combat favored by Kamahl.",
+      "His continuing attempts to seize its power contributed to the conflicts that brought Kamahl to his final decision in Krosa.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Laquatus's Creativity",
+      setCode: "ody",
+      collectorNumber: "88",
+      scryfallId: "dcd48c28-bfa3-4eca-8e1a-f72d785b2ab9",
+      artist: "Don Hazeltine",
+      significance: "A named Odyssey-era reference to Laquatus; not a direct portrait of his attempt to acquire the Mirari.",
+    },
+    source: {
+      title: "Wizards of the Coast — Dominarian Cartography",
+      url: "https://magic.wizards.com/en/news/feature/dominarian-cartography-2018-04-20",
+    },
+  },
+  {
+    id: "seton",
+    name: "Seton",
+    title: "Protector of Krosa",
+    origin: "Dominaria — Krosan Forest",
+    role: "Centaur druid and guardian",
+    summary:
+      "A Krosan defender who represented the values of a living forest in contrast with Otaria's arena politics.",
+    biography: [
+      "Seton was a centaur associated with the Krosan Forest and its traditions of guardianship and druidic magic.",
+      "His friendship with Kamahl helped connect the former pit fighter to a world where power could be exercised in service to living things rather than personal conquest.",
+      "Kamahl's principal Nantuko teacher was Thriss; Seton is best understood as an ally and representative of the wider Krosan tradition, not as a replacement for Thriss in the narrative.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Seton, Krosan Protector",
+      setCode: "ody",
+      collectorNumber: "267",
+      scryfallId: "641a3bae-9146-4e70-862a-86a56f7c3816",
+      artist: "Greg Staples",
+      significance: "Seton's original Odyssey portrait, showing the guardians of Krosa before Kamahl's transformation.",
+    },
+    source: {
+      title: "Wizards of the Coast — Kamahl, Heart of Krosa",
+      url: "https://magic.wizards.com/en/news/card-preview/kamahl-heart-krosa-2020-10-28",
+    },
+  },
+  {
+    id: "ixidor",
+    name: "Ixidor",
+    title: "The Reality Sculptor",
+    origin: "Dominaria — Otaria",
+    role: "Illusionist and creator of Akroma",
+    summary:
+      "Grief over Nivea's death led Ixidor to reshape reality and create Akroma to destroy Phage.",
+    biography: [
+      "Ixidor was an illusionist whose relationship with Nivea ended in tragedy after a lethal arena confrontation with Phage.",
+      "In grief, he developed the ability to make imagined forms real. Akroma was his most consequential creation, an angel shaped by the loss of Nivea and driven toward vengeance.",
+      "The conflict between Akroma and Phage escaped the bounds of Ixidor's private motives and became part of Otaria's wider devastation.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Ixidor, Reality Sculptor",
+      setCode: "ons",
+      collectorNumber: "89",
+      scryfallId: "314d5e89-55f7-42b4-af19-d4d0f499a265",
+      artist: "Kev Walker",
+      significance: "Ixidor's original Onslaught card, portraying the illusionist who could realize imagined beings.",
+    },
+    source: {
+      title: "Wizards of the Coast — Quite Some Characters",
+      url: "https://magic.wizards.com/en/news/making-magic/quite-some-characters-2020-11-09",
+    },
+  },
+  {
+    id: "akroma",
+    name: "Akroma",
+    title: "The Angel of Wrath",
+    origin: "Dominaria — Otaria",
+    role: "Reality-sculpted angel and adversary of Phage",
+    summary:
+      "Created by Ixidor in grief, Akroma became a symbol of vengeance whose conflict with Phage culminated in Karona.",
+    biography: [
+      "Akroma was a powerful angel made real by Ixidor after the death of Nivea in the Cabal pits.",
+      "Her purpose was vengeance against Phage, Jeska's transformed identity. Their confrontation grew beyond a personal feud as competing supporters rallied to them.",
+      "Kamahl's Soul Reaper strike joined Akroma, Phage, and Zagorka into Karona. Akroma died when that composite being was later broken apart.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Akroma, Angel of Wrath",
+      setCode: "lgn",
+      collectorNumber: "1",
+      scryfallId: "814245de-6105-43ef-acbf-d12d304b6331",
+      artist: "Ron Spears",
+      significance: "The original Legions depiction of the angel created by Ixidor to avenge Nivea.",
+    },
+    source: {
+      title: "Wizards of the Coast — Quite Some Characters",
+      url: "https://magic.wizards.com/en/news/making-magic/quite-some-characters-2020-11-09",
     },
   },
 
