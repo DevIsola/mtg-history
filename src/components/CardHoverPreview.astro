@@ -333,7 +333,11 @@ const imageUrl =
     });
 
     window.addEventListener('resize', positionPreview);
-    window.addEventListener('scroll', closePreview, {
+    // Focusing, hovering, and tapping a trigger can scroll it into view.
+    // Closing on every scroll immediately hides the preview and clears its
+    // ARIA state. Reposition it instead; pointerleave, blur, outside taps,
+    // and Escape already handle deliberate dismissal.
+    window.addEventListener('scroll', positionPreview, {
       capture: true,
       passive: true,
     });
