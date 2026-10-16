@@ -89,3 +89,56 @@ test('fails when the output has no generated HTML', async () => {
   const distDir = await fixture({ 'favicon.svg': '<svg></svg>' });
   await assert.rejects(checkBuiltLinks({ distDir, base, site }), /No generated HTML/);
 });
+
+
+test('checks responsive image candidates, including data URLs containing commas', async () => {
+  const distDir = await fixture({
+    'index.html': `<picture>
+      <source srcset="/mtg-history/img/one.webp 1x, /mtg-history/img/two.webp 2x">
+      <img srcset="data:image/png;base64,aGVsbG8= 1x, /mtg-history/img/one.webp 2x"
+           src="/mtg-history/img/one.webp" alt="Archive card">
+    </picture>`,
+    'img/one.webp': 'test',
+    'img/two.webp': 'test',
+  });
+  const result = await checkBuiltLinks({ distDir, base, site });
+  assert.equal(result.checked, 4);
+  assert.deepEqual(result.errors, []);
+});
+
+test('reports missing and escaped-base srcset images', async () => {
+  const distDir = await fixture({
+    'index.html': '<img srcset="/mtg-history/unknown.webp 1x, /another-site/image.webp 2x">',
+  });
+  const result = await checkBuiltLinks({ distDir, base, site });
+  assert.equal(result.errors.length, 2);
+  assert.match(result.errors[0], /missing local target/);
+  assert.match(result.errors[1], /escapes configured base/);
+});
+
+test('resolves CSS images and fonts relative to generated stylesheet paths', async () => {
+  const distDir = await fixture({
+    'index.html': '<link href="/mtg-history/_astro/site.css" rel="stylesheet">',
+    '_astro/site.css': `/* url('/mtg-history/obsolete.svg') */
+      .hero { background-image: url('../images/hero.svg'); }
+      @font-face { src: url("./font.woff2") format('woff2'); }
+      .icon { mask: url(data:image/svg+xml,%3Csvg%3E); }
+      .filter { filter: url(#svg-filter); }
+      .remote { background: url(https://example-cdn.com/picture.png); }`,
+    '_astro/font.woff2': 'test',
+    'images/hero.svg': '<svg></svg>',
+  });
+  const result = await checkBuiltLinks({ distDir, base, site });
+  assert.equal(result.checked, 3);
+  assert.deepEqual(result.errors, []);
+});
+
+test('reports missing CSS asset URLs using stylesheet source names', async () => {
+  const distDir = await fixture({
+    'index.html': '<link href="/mtg-history/_astro/site.css" rel="stylesheet">',
+    '_astro/site.css': '.hero { background: url(../images/missing.svg); }',
+  });
+  const result = await checkBuiltLinks({ distDir, base, site });
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0], /_astro\/site\.css: missing local target/);
+});

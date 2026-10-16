@@ -30,37 +30,45 @@ in chapter MDX. It uses Node 22+ TypeScript type stripping rather than another
 runtime dependency. Astro remains authoritative for YAML and MDX schema validation.
 
 `check:links` loads the site origin and base path from `astro.config.mjs` and
-checks `href` and `src` targets in generated HTML against files in `dist/`.
+checks `href`, `src`, and responsive-image `srcset` references in generated
+HTML against files in `dist/`. It also validates local CSS `url(...)` assets,
+resolving relative paths from the generated stylesheet location.
 It reports missing internal route or asset targets, including same-origin links
 that accidentally escape the configured GitHub Pages base path, and also checks
-HTML fragment identifiers. External URLs are intentionally excluded. `srcset`
-and CSS asset URLs remain outside its scope.
+HTML fragment identifiers. External URLs, data URIs, CSS-only `#fragment`
+references, and HTML asset fragments are intentionally excluded. This check
+operates on generated output, not the source CSS import graph. It is not a
+substitute for browser accessibility or visual regression testing.
 
 `.github/workflows/quality.yaml` runs `pnpm run verify` for pull requests against
 `main`; the Pages deployment uses the same verification command. A failing
 type check, integrity check, build, or link check must prevent deployment.
 
-## One-time setup for this change
+## Repository housekeeping
 
-The `pnpm-lock.yaml` must be **regenerated and committed** whenever dependencies
-change. This patch deliberately does not hand-edit pnpm's dependency resolution
-or package integrity hashes. On the branch where this change is applied, run:
+The temporary `apply-phase-13.py` migration helper has served its purpose: its
+Chapter 05 changes were merged, and the published content remains in
+`src/content/chapters/otaria.mdx` and `src/data/`. Remove the helper with a
+normal versioned deletion; do not rerun it against current registries.
+
+Keep `pnpm-lock.yaml`, the `docs/assets/` illustrations, editor settings,
+`AGENTS.md`, and the `CLAUDE.md` link to it. The `.gitignore` already excludes
+macOS `.DS_Store` files, local dependencies, build output, and environment
+files; ignored `.DS_Store` metadata is not a Git synchronization error.
+
+For development on macOS:
 
 ```bash
-corepack enable
-corepack prepare pnpm@10 --activate
-pnpm install --no-frozen-lockfile
-pnpm run check:types
+pnpm install --frozen-lockfile
 pnpm run verify
-
-git add package.json pnpm-lock.yaml docs/engineering-quality.md scripts/type-check-wiring.test.mjs
-git commit -m "chore: enforce Astro diagnostics in verification"
+git diff --check
+git status --short
 ```
 
-If `check:types` reports existing errors, fix the source and rerun verification
-before committing. Never bypass the checker with `|| true` or disable the CI
-step. Subsequently, local clean installations and CI should use
-`pnpm install --frozen-lockfile` for reproducible installs.
+No new runtime or development dependencies are required for the responsive
+image and CSS URL checks. If a future change adds dependencies, update and
+commit `pnpm-lock.yaml` in the same pull request. Never bypass a failing
+quality check to force a deployment.
 
 ## Follow-up quality improvements
 

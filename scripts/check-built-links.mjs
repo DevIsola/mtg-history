@@ -22,16 +22,61 @@ function decodeHtmlAmpersands(value) {
   return value.replaceAll('&amp;', '&');
 }
 
+/** Parse responsive-image candidates, including data URLs containing commas. */
+function* srcsetReferences(value) {
+  let index = 0;
+
+  while (index < value.length) {
+    while (index < value.length && /[\s,]/.test(value[index])) index++;
+    if (index >= value.length) break;
+
+    const start = index;
+    while (index < value.length && !/\s/.test(value[index])) index++;
+
+    const token = value.slice(start, index);
+    const reference = token.replace(/,+$/, '');
+    if (reference) yield reference;
+
+    // A URL ending in a comma has no descriptor; continue at the next URL.
+    if (token.endsWith(',')) continue;
+
+    // Ignore density/width descriptors, including parenthesized expressions.
+    let depth = 0;
+    while (index < value.length) {
+      const char = value[index++];
+      if (char === '(') depth++;
+      else if (char === ')' && depth > 0) depth--;
+      else if (char === ',' && depth === 0) break;
+    }
+  }
+}
+
 function* pageReferences(html) {
   for (const tag of html.matchAll(/<(a|link|script|img|source)\b[^>]*>/gi)) {
     const isAnchor = tag[1].toLowerCase() === 'a';
 
-    for (const attribute of tag[0].matchAll(/\s(href|src)\s*=\s*(["'])(.*?)\2/gi)) {
-      yield {
-        reference: decodeHtmlAmpersands(attribute[3]),
-        isAnchorHref: isAnchor && attribute[1].toLowerCase() === 'href',
-      };
+    for (const attribute of tag[0].matchAll(/\s(href|src|srcset)\s*=\s*(["'])(.*?)\2/gi)) {
+      const name = attribute[1].toLowerCase();
+      const value = decodeHtmlAmpersands(attribute[3]);
+      if (name === 'srcset') {
+        for (const reference of srcsetReferences(value)) {
+          yield { reference, isAnchorHref: false };
+        }
+      } else {
+        yield { reference: value, isAnchorHref: isAnchor && name === 'href' };
+      }
     }
+  }
+}
+
+/** Extract CSS url(...) references, ignoring plain CSS fragment pointers. */
+function* cssReferences(css) {
+  // Bundled CSS typically uses quoted or unquoted URLs. Comments are stripped
+  // so examples in documentation cannot trigger false positives.
+  const withoutComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  for (const match of withoutComments.matchAll(/url\(\s*(?:(["'])(.*?)\1|([^)]*?))\s*\)/gi)) {
+    const reference = (match[2] ?? match[3] ?? '').trim();
+    if (reference && !reference.startsWith('#')) yield reference;
   }
 }
 
@@ -78,68 +123,78 @@ export async function checkBuiltLinks({
     return idsCache.get(file);
   }
 
+  async function checkReference(file, from, reference, isAnchorHref = false) {
+    if (!reference || reference.startsWith('//')) return;
+
+    let target;
+    try {
+      target = new URL(reference, from);
+    } catch {
+      errors.push(`${file}: invalid URL ${JSON.stringify(reference)}`);
+      return;
+    }
+
+    if (target.origin !== origin) return;
+    checked++;
+
+    if (!target.pathname.startsWith(basePath)) {
+      errors.push(`${file}: link escapes configured base: ${reference}`);
+      return;
+    }
+
+    let path;
+    try {
+      path = decodeURIComponent(target.pathname.slice(basePath.length));
+    } catch {
+      errors.push(`${file}: invalid encoded path: ${reference}`);
+      return;
+    }
+
+    const clean = path.replace(/\/+$/, '');
+    const candidates = clean
+      ? [clean, `${clean}/index.html`, `${clean}.html`]
+      : ['index.html'];
+    const matchedFile = candidates.find((candidate) => available.has(candidate));
+
+    if (!matchedFile) {
+      errors.push(`${file}: missing local target: ${reference}`);
+      return;
+    }
+
+    // Only HTML anchors should validate fragment IDs.
+    if (!isAnchorHref || !target.hash || !matchedFile.endsWith('.html')) return;
+
+    let fragment;
+    try {
+      fragment = decodeURIComponent(target.hash.slice(1));
+    } catch {
+      errors.push(`${file}: invalid encoded fragment: ${reference}`);
+      return;
+    }
+
+    if (!fragment) return;
+    fragmentsChecked++;
+
+    const ids = await getPageIds(matchedFile);
+    if (!ids.has(fragment)) {
+      errors.push(`${file}: missing fragment #${fragment} in ${matchedFile} (from ${reference})`);
+    }
+  }
+
   for (const file of htmlFiles) {
     const html = await readFile(join(root, file), 'utf8');
     const from = new URL(`${basePath}${file}`, origin);
-
     for (const { reference, isAnchorHref } of pageReferences(html)) {
-      if (!reference || reference.startsWith('//')) continue;
+      await checkReference(file, from, reference, isAnchorHref);
+    }
+  }
 
-      let target;
-      try {
-        target = new URL(reference, from);
-      } catch {
-        errors.push(`${file}: invalid URL ${JSON.stringify(reference)}`);
-        continue;
-      }
-
-      if (target.origin !== origin) continue;
-      checked++;
-
-      if (!target.pathname.startsWith(basePath)) {
-        errors.push(`${file}: link escapes configured base: ${reference}`);
-        continue;
-      }
-
-      let path;
-      try {
-        path = decodeURIComponent(target.pathname.slice(basePath.length));
-      } catch {
-        errors.push(`${file}: invalid encoded path: ${reference}`);
-        continue;
-      }
-
-      const clean = path.replace(/\/+$/, '');
-      const candidates = clean
-        ? [clean, `${clean}/index.html`, `${clean}.html`]
-        : ['index.html'];
-      const matchedFile = candidates.find((candidate) => available.has(candidate));
-
-      if (!matchedFile) {
-        errors.push(`${file}: missing local target: ${reference}`);
-        continue;
-      }
-
-      // Fragments on assets, empty hashes, and non-anchor elements are not HTML IDs.
-      if (!isAnchorHref || !target.hash || !matchedFile.endsWith('.html')) {
-        continue;
-      }
-
-      let fragment;
-      try {
-        fragment = decodeURIComponent(target.hash.slice(1));
-      } catch {
-        errors.push(`${file}: invalid encoded fragment: ${reference}`);
-        continue;
-      }
-
-      if (!fragment) continue;
-      fragmentsChecked++;
-
-      const ids = await getPageIds(matchedFile);
-      if (!ids.has(fragment)) {
-        errors.push(`${file}: missing fragment #${fragment} in ${matchedFile} (from ${reference})`);
-      }
+  // CSS URLs are relative to their stylesheet, not the page referencing it.
+  for (const file of files.filter((path) => path.endsWith('.css'))) {
+    const css = await readFile(join(root, file), 'utf8');
+    const from = new URL(`${basePath}${file}`, origin);
+    for (const reference of cssReferences(css)) {
+      await checkReference(file, from, reference);
     }
   }
 
@@ -151,7 +206,7 @@ if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.m
     const { default: config } = await import('../astro.config.mjs');
     const result = await checkBuiltLinks({ base: config.base, site: config.site });
     console.log(
-      `Checked ${result.checked} local links and ${result.fragmentsChecked} HTML fragments across ${result.pages} generated pages.`,
+      `Checked ${result.checked} local HTML/CSS references and ${result.fragmentsChecked} HTML fragments across ${result.pages} generated pages.`,
     );
     if (result.errors.length) {
       for (const error of result.errors) console.error(`- ${error}`);
