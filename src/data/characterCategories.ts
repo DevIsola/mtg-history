@@ -1,0 +1,103 @@
+export interface CharacterCategory {
+  id: string;
+  label: string;
+  characterIds: string[];
+}
+
+export const characterCategories: CharacterCategory[] = [
+  {
+    id: "planeswalkers",
+    label: "Planeswalkers",
+    characterIds: [
+      "urza",
+      "karn",
+      "jeska",
+      "teferi",
+      "freyalise",
+      "windgrace",
+      "tevesh-szat",
+      "jaya",
+      "nahiri",
+      "sorin",
+    ],
+  },
+
+  {
+    id: "artifice",
+    label: "Artifice and engineering",
+    characterIds: [
+      "urza",
+      "mishra",
+      "tocasia",
+      "karn",
+      "glacian",
+      "rebbec",
+      "jhoira",
+      "venser",
+      "hanna",
+      "tawnos",
+      "ashnod",
+    ],
+  },
+
+  {
+    id: "magic",
+    label: "Mages and spellcasters",
+    characterIds: [
+      "jodah",
+      "ertai",
+      "jaya",
+      "lim-dul",
+      "chainer",
+      "ixidor",
+      "braids",
+      "laquatus",
+      "cabal-patriarch",
+      "teferi",
+      "venser",
+      "freyalise",
+    ],
+  },
+
+  {
+    id: "warriors",
+    label: "Warriors and heroes",
+    characterIds: ["gerrard", "sisay", "mirri", "kamahl", "jeska", "akroma", "radha", "agrus-kos", "avacyn"],
+  },
+
+  {
+    id: "leaders",
+    label: "Leaders and guardians",
+    characterIds: [
+      "yawgmoth",
+      "mishra",
+      "gix",
+      "sisay",
+      "volrath",
+      "crovax",
+      "freyalise",
+      "windgrace",
+      "radha",
+      "kayla",
+      "cabal-patriarch",
+      "aboshan",
+      "laquatus",
+      "seton",
+      "szadek",
+      "teysa-karlov",
+      "avacyn",
+    ],
+  },
+
+  {
+    id: "otherworldly",
+    label: "Angels, demons, and Eldrazi",
+    characterIds: ["avacyn", "griselbrand", "emrakul"],
+  },
+
+  {
+    id: "phyrexia",
+    label: "Phyrexian figures",
+    characterIds: ["yawgmoth", "gix", "volrath", "crovax", "ertai"],
+  },
+];

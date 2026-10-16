@@ -22,15 +22,33 @@ const chapters = defineCollection({
       }),
     ),
 
+    chronology: z.object({
+      storyPeriod: z.string(),
+      storyDetail: z.string(),
+      publicationHistory: z.string(),
+    }),
+
     cards: z
       .array(
         z.object({
           name: z.string(),
           setCode: z.string(),
           collectorNumber: z.string(),
-          scryfallId: z.string().uuid(),
+          scryfallId: z.uuid(),
           artist: z.string(),
           significance: z.string(),
+        }),
+      )
+      .default([]),
+
+    sources: z
+      .array(
+        z.object({
+          title: z.string(),
+          kind: z.enum(["official", "book"]),
+          author: z.string().optional(),
+          year: z.number().int().optional(),
+          url: z.url().optional(),
         }),
       )
       .default([]),

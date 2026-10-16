@@ -1,0 +1,209 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+  hasSources?: boolean;
+}
+
+const { headings, hasSources = false } = Astro.props;
+const sections = headings.filter((heading) => heading.depth === 2);
+---
+
+<nav class="chapter-toc" aria-label="Chapter contents" data-chapter-toc>
+  <div class="chapter-toc__toolbar">
+    <p class="eyebrow">In this chapter</p>
+    <span class="chapter-toc__count" data-chapter-count>
+      01 / {String(sections.length).padStart(2, '0')}
+    </span>
+  </div>
+
+  <button
+    class="chapter-toc__mobile-toggle"
+    type="button"
+    aria-controls="chapter-toc-sections"
+    aria-expanded="false"
+    data-chapter-toggle
+  >
+    <span class="chapter-toc__mobile-label" data-chapter-label>
+      Jump to section
+    </span>
+    <span class="chapter-toc__chevron" aria-hidden="true">⌄</span>
+  </button>
+
+  <div class="chapter-toc__links" id="chapter-toc-sections">
+    <ol class="chapter-toc__list">
+      {sections.map((section, index) => (
+        <li>
+          <a
+            href={'#' + section.slug}
+            data-chapter-link
+            aria-current={index === 0 ? 'location' : undefined}
+          >
+            <span class="chapter-toc__index" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <span>{section.text}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+
+    {hasSources && (
+      <a
+        class="chapter-toc__sources"
+        href="#chapter-sources"
+        data-chapter-sources
+      >
+        Sources &amp; further reading
+      </a>
+    )}
+  </div>
+
+  <div class="chapter-toc__track" aria-hidden="true">
+    <span class="chapter-toc__fill" data-chapter-fill></span>
+  </div>
+</nav>
+
+<script>
+  const toc = document.querySelector<HTMLElement>('[data-chapter-toc]');
+
+  if (toc) {
+    const sectionLinks = Array.from(
+      toc.querySelectorAll<HTMLAnchorElement>('[data-chapter-link]'),
+    );
+    const sourceLink = toc.querySelector<HTMLAnchorElement>(
+      '[data-chapter-sources]',
+    );
+    const toggle = toc.querySelector<HTMLButtonElement>(
+      '[data-chapter-toggle]',
+    );
+    const label = toc.querySelector<HTMLElement>('[data-chapter-label]');
+    const count = toc.querySelector<HTMLElement>('[data-chapter-count]');
+    const fill = toc.querySelector<HTMLElement>('[data-chapter-fill]');
+    const header = document.querySelector<HTMLElement>('.site-header');
+
+    const sectionTargets = sectionLinks.map((link) => {
+      let id = link.hash.slice(1);
+      try {
+        id = decodeURIComponent(id);
+      } catch {
+        // Keep the original fragment if it contains invalid encoding.
+      }
+      return { link, heading: document.getElementById(id) };
+    });
+    const sources = document.getElementById('chapter-sources');
+    const mobileQuery = window.matchMedia('(max-width: 900px)');
+
+    // Without JavaScript, the complete table of contents remains accessible.
+    toc.dataset.tocReady = 'true';
+    toc.dataset.open = 'false';
+
+    const closeMenu = () => {
+      toc.dataset.open = 'false';
+      toggle?.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle?.addEventListener('click', () => {
+      const open = toc.dataset.open !== 'true';
+      toc.dataset.open = open ? 'true' : 'false';
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    for (const link of [...sectionLinks, ...(sourceLink ? [sourceLink] : [])]) {
+      link.addEventListener('click', () => closeMenu());
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toc.dataset.open === 'true') {
+        closeMenu();
+        toggle?.focus();
+      }
+    });
+
+    let pending = false;
+    const updateCurrentSection = () => {
+      pending = false;
+      if (!sectionTargets.length) return;
+
+      const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
+      const activationLine = headerBottom + (mobileQuery.matches ? 126 : 64);
+      let activeIndex = 0;
+
+      for (let index = 0; index < sectionTargets.length; index++) {
+        const heading = sectionTargets[index].heading;
+        if (heading && heading.getBoundingClientRect().top <= activationLine) {
+          activeIndex = index;
+        }
+      }
+
+      const sourcesTop = sources?.getBoundingClientRect().top ?? Infinity;
+      const atDocumentEnd =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 12;
+      const onSources = Boolean(
+        sourceLink && sources &&
+        (sourcesTop <= activationLine ||
+          (atDocumentEnd && sourcesTop < window.innerHeight - 16)),
+      );
+
+      for (const { link } of sectionTargets) {
+        link.removeAttribute('aria-current');
+      }
+      sourceLink?.removeAttribute('aria-current');
+
+      const activeLink = onSources ? sourceLink : sectionLinks[activeIndex];
+      activeLink?.setAttribute('aria-current', 'location');
+
+      if (count) {
+        count.textContent = onSources
+          ? 'Sources'
+          : String(activeIndex + 1).padStart(2, '0') + ' / ' +
+            String(sectionLinks.length).padStart(2, '0');
+      }
+
+      if (label) {
+        label.textContent = onSources
+          ? 'Sources & further reading'
+          : (sectionLinks[activeIndex]?.textContent ?? 'Jump to section')
+              .trim()
+              .replace(/^\d+\s*/, '');
+      }
+
+      if (fill) {
+        fill.style.width = String(
+          ((onSources ? sectionLinks.length : activeIndex + 1) /
+            sectionLinks.length) * 100,
+        ) + '%';
+      }
+
+      // Keep the active entry visible inside a long desktop TOC without
+      // calling scrollIntoView(), which could also move the article itself.
+      if (!mobileQuery.matches && activeLink) {
+        const tocRect = toc.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        const margin = 22;
+        if (linkRect.bottom > tocRect.bottom - margin) {
+          toc.scrollTop += linkRect.bottom - (tocRect.bottom - margin);
+        } else if (linkRect.top < tocRect.top + margin) {
+          toc.scrollTop -= tocRect.top + margin - linkRect.top;
+        }
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (pending) return;
+      pending = true;
+      window.requestAnimationFrame(updateCurrentSection);
+    };
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    window.addEventListener('pageshow', scheduleUpdate);
+    updateCurrentSection();
+  }
+</script>

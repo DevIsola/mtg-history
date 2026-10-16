@@ -9,7 +9,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "node --test scripts/*.test.mjs",
+    "check:links": "node scripts/check-built-links.mjs",
+    "check:content": "node --experimental-strip-types scripts/check-content-graph.mjs",
+    "verify": "pnpm run test && pnpm run check:content && pnpm run check:types && pnpm run build && pnpm run check:links",
+    "check:types": "astro check"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.3",
@@ -17,5 +22,9 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.8",
     "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "5.9.3"
   }
 }

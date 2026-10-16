@@ -1,0 +1,26 @@
+---
+import { characters } from '../data/characters';
+import { withBase } from '../utils/paths';
+import CardHoverPreview from './CardHoverPreview.astro';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+const character = characters.find((entry) => entry.id === id);
+
+if (!character) {
+  throw new Error(`Unknown historical character: ${id}`);
+}
+---
+
+<CardHoverPreview name={character.name} card={character.featuredCard}>
+  <a
+    class="character-inline-link"
+    href={withBase(`characters/${character.id}/`)}
+  >
+    <slot>{character.name}</slot>
+  </a>
+</CardHoverPreview>

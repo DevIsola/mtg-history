@@ -1,0 +1,90 @@
+
+<button
+  type="button"
+  class="theme-toggle"
+  data-theme-toggle
+  aria-label="Toggle color theme"
+  title="Toggle color theme"
+>
+  <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+  <span class="theme-toggle__label">Theme</span>
+</button>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>(
+    '[data-theme-toggle]'
+  );
+
+  const storageKey = 'mtg-history-theme';
+
+  function updateButton() {
+    if (!button) return;
+
+    const isDark =
+      document.documentElement.dataset.theme === 'dark';
+
+    const action = isDark
+      ? 'Switch to light theme'
+      : 'Switch to dark theme';
+
+    button.setAttribute('aria-label', action);
+    button.setAttribute('title', action);
+
+    const icon = button.querySelector<HTMLElement>(
+      '.theme-toggle__icon'
+    );
+
+    const label = button.querySelector<HTMLElement>(
+      '.theme-toggle__label'
+    );
+
+    if (icon) {
+      icon.textContent = isDark ? '☀' : '☾';
+    }
+
+    if (label) {
+      label.textContent = isDark ? 'Light' : 'Dark';
+    }
+  }
+
+  button?.addEventListener('click', () => {
+    const nextTheme =
+      document.documentElement.dataset.theme === 'dark'
+        ? 'light'
+        : 'dark';
+
+    document.documentElement.dataset.theme = nextTheme;
+
+    try {
+      localStorage.setItem(storageKey, nextTheme);
+    } catch {
+      // Theme switching still works for this page.
+    }
+
+    updateButton();
+  });
+
+  // Follow system changes until the user chooses a theme.
+  const systemPreference = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  );
+
+  systemPreference.addEventListener('change', (event) => {
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(storageKey);
+    } catch {
+      // Ignore unavailable storage.
+    }
+
+    if (savedTheme !== 'light' && savedTheme !== 'dark') {
+      document.documentElement.dataset.theme =
+        event.matches ? 'dark' : 'light';
+
+      updateButton();
+    }
+  });
+
+  updateButton();
+</script>

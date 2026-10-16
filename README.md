@@ -29,16 +29,16 @@ Magic's history has been told across decades of expansions, novels, short fictio
 
 ## Explore the history
 
-| Follow the story | Discover its sources |
-| :--- | :--- |
-| **[Historical timeline](https://devisola.github.io/mtg-history/timeline/)** — Explore the major eras in a guided narrative order. | **Expansions** — Connect fictional events to the sets that introduced or revisited them. *Planned archive section.* |
-| **[Illustrated chapters](https://devisola.github.io/mtg-history/chapters/brothers-war/)** — Read the stories behind the events, with selected cards beside the prose. | **Cards as artifacts** — Examine why a particular printing, image, or flavor reference matters to the history. |
+| Follow the story                                                                                                                                                      | Discover its sources                                                                                                |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| **[Historical timeline](https://devisola.github.io/mtg-history/timeline/)** — Explore the major eras in a guided narrative order.                                     | **Expansions** — Connect fictional events to the sets that introduced or revisited them. _Planned archive section._ |
+| **[Illustrated chapters](https://devisola.github.io/mtg-history/chapters/brothers-war/)** — Read the stories behind the events, with selected cards beside the prose. | **Cards as artifacts** — Examine why a particular printing, image, or flavor reference matters to the history.      |
 
 ### Two chronologies, one story
 
-> **Story chronology** tracks when an event took place *inside* the fictional Multiverse. **Publication chronology** tracks when Magic players first encountered, or later revisited, that event.
+> **Story chronology** tracks when an event took place _inside_ the fictional Multiverse. **Publication chronology** tracks when Magic players first encountered, or later revisited, that event.
 
-The Brothers' War, for example, appeared through the artifacts of *Antiquities* (1994), was developed extensively in fiction, and returned in *The Brothers' War* (2022). Our chapters connect those perspectives without confusing release dates with in-world history.
+The Brothers' War, for example, appeared through the artifacts of _Antiquities_ (1994), was developed extensively in fiction, and returned in _The Brothers' War_ (2022). Our chapters connect those perspectives without confusing release dates with in-world history.
 
 ## How a chapter is built
 
@@ -54,14 +54,14 @@ The writing is original. Official lore is prioritized, and retcons or uncertain 
 
 ## Behind the archive
 
-| | |
-| :--- | :--- |
-| **Framework** | [Astro](https://astro.build/) + TypeScript |
-| **Styling** | Tailwind CSS |
-| **Content** | Markdown / MDX + Astro Content Collections |
-| **Package manager** | pnpm |
-| **Hosting** | GitHub Pages |
-| **Deployment** | GitHub Actions |
+|                     |                                            |
+| :------------------ | :----------------------------------------- |
+| **Framework**       | [Astro](https://astro.build/) + TypeScript |
+| **Styling**         | Tailwind CSS                               |
+| **Content**         | Markdown / MDX + Astro Content Collections |
+| **Package manager** | pnpm                                       |
+| **Hosting**         | GitHub Pages                               |
+| **Deployment**      | GitHub Actions                             |
 
 This is a statically generated site: no accounts, database, or application server are required.
 
@@ -90,6 +90,31 @@ Pushing a reviewed change to `main` triggers the existing GitHub Pages deploymen
 **Under active development.** The timeline and chapter system establish the reading experience; historical articles, imagery, source references, and cross-links are being expanded incrementally.
 
 The first reference chapter is **[The Brothers' War](https://devisola.github.io/mtg-history/chapters/brothers-war/)**, a conflict portrayed in releases separated by decades. Future chapters will reach back to the Thran and forward through Dominaria's later history and other planes.
+
+## Support the archive
+
+Chronicles of the Multiverse is a free, independent fan project
+created and maintained by DevIsola.
+
+If you enjoy the historical research, original writing, and
+development that goes into this archive, you can support my work
+through Ko-fi.
+
+Your support helps me dedicate more time to expanding the
+chapters, improving the reading experience, and maintaining
+the project.
+
+**Donations are entirely optional. All historical content
+remains free to read and explore.**
+
+<p align="center">
+  <a href="https://ko-fi.com/B1H328PBAR">
+    <img
+      src="https://ko-fi.com/img/githubbutton_sm.svg"
+      alt="Support DevIsola on Ko-fi"
+    />
+  </a>
+</p>
 
 ## Curated by DevIsola
 

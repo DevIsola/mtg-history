@@ -4,6 +4,7 @@ import { eras } from '../data/eras';
 import { getCollection } from 'astro:content';
 import { withBase } from '../utils/paths';
 
+import ChapterChronology from '../components/ChapterChronology.astro';
 const chapters = await getCollection('chapters');
 
 const chaptersByEra = new Map(
@@ -24,13 +25,33 @@ const chaptersByEra = new Map(
       <p>Explore a guided reading order of pivotal stories across the Multiverse. Dates on set references describe publication, not necessarily when an event occurred in the lore.</p>
     </div>
   </section>
+
+<div class="chronology-band">
+  <div class="page-shell">
+    <ChapterChronology chapters={chapters} />
+  </div>
+</div>
+
   <section class="timeline-section section-spacing" aria-label="Historical eras">
     <div class="page-shell timeline-layout">
       <aside class="timeline-aside">
         <p class="eyebrow">Reading guide</p>
         <h2>History is not always linear.</h2>
         <p>Many stories occur simultaneously or revisit events told years earlier. These chapters are editorial groupings, designed as a starting point rather than an exhaustive in-universe calendar.</p>
-        <span class="timeline-count">{String(eras.length).padStart(2, '0')} eras planned</span>
+        
+<span class="timeline-count">
+  {String(eras.length).padStart(2, '0')} historical eras
+  · {eras.filter((era) => era.status === 'published').length} chapters available
+</span>
+
+<p class="timeline-events-link">
+  <a
+    class="text-link"
+    href={withBase('events/')}
+  >
+    Explore defining historical events →
+  </a>
+</p>
       </aside>
       <div class="timeline-list">
         {eras.map((era) => (
@@ -40,7 +61,15 @@ const chaptersByEra = new Map(
               <div class="timeline-entry__meta">
                 <span>{era.kicker}</span>
                 <span class:list={['chapter-status', era.status === 'in-progress' && 'chapter-status--progress']}>
-                  {era.status === 'in-progress' ? 'Chapter in progress' : 'Chapter planned'}
+                  
+{
+  era.status === 'published'
+    ? 'Chapter available'
+    : era.status === 'in-progress'
+      ? 'Chapter in progress'
+      : 'Chapter planned'
+}
+
                 </span>
               </div>
               <h3>{era.name}</h3>
@@ -55,7 +84,13 @@ const chaptersByEra = new Map(
       class="text-link"
       href={withBase(`chapters/${chaptersByEra.get(era.id)}/`)}
     >
-      Read chapter draft →
+      
+{
+  era.status === 'published'
+    ? 'Read chapter →'
+    : 'Read chapter draft →'
+}
+
     </a>
   )
 }

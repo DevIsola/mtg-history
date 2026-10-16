@@ -1,0 +1,344 @@
+/* =========================================
+   Phase 25 — Unified encyclopedia discovery
+   ========================================= */
+
+.discovery-directory {
+  background: var(--paper);
+}
+
+.discovery-intro {
+  max-width: 760px;
+}
+
+.discovery-intro > p:last-child {
+  margin-top: 1.2rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* Search and filters */
+
+.discovery-filters {
+  margin: 2.5rem 0 3.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  background: var(--paper-white);
+}
+
+.discovery-filters h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: normal;
+  color: var(--ink);
+}
+
+.discovery-filters__description {
+  margin-top: 0.7rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.discovery-filters__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.discovery-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.discovery-filter-field label {
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.discovery-filter-field input,
+.discovery-filter-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.discovery-filter-field input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+.discovery-filter-field input:hover,
+.discovery-filter-field select:hover {
+  border-color: var(--gold);
+}
+
+.discovery-filter-field input:focus-visible,
+.discovery-filter-field select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.discovery-filters__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.discovery-filters__footer p {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+#discovery-reset {
+  min-height: 40px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#discovery-reset:hover:not(:disabled) {
+  background: var(--paper-deep);
+}
+
+#discovery-reset:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#discovery-reset:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.discovery-empty {
+  margin: 2rem 0;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Record groups */
+
+.discovery-group {
+  margin-top: 3.5rem;
+}
+
+.discovery-group + .discovery-group {
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.discovery-group__heading {
+  margin-bottom: 1.8rem;
+}
+
+.discovery-group__heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: normal;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.discovery-group__heading p:last-child {
+  margin-top: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+/* Illustrated results */
+
+.discovery-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-white);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.discovery-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.discovery-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.discovery-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  background: var(--paper-deep);
+}
+
+.discovery-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 488 / 680;
+  object-fit: contain;
+  border-radius: 4%;
+}
+
+.discovery-card__placeholder {
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+}
+
+.discovery-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 1.3rem;
+}
+
+.discovery-card__type {
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.discovery-card__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: normal;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.discovery-card__context {
+  color: var(--jade);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.discovery-card__summary {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.discovery-card__action {
+  display: block;
+  align-self: stretch;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.discovery-card:hover .discovery-card__title {
+  color: var(--gold);
+}
+
+/* Required for the client-side filtering mechanism. */
+
+.discovery-directory [hidden] {
+  display: none !important;
+}
+
+.journey-discover-link {
+  margin-top: 2rem;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 1000px) {
+  .discovery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .discovery-filters__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .discovery-filter-field:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .discovery-filters__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .discovery-filter-field:first-child {
+    grid-column: auto;
+  }
+
+  .discovery-filters__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #discovery-reset {
+    width: 100%;
+  }
+
+  .discovery-card {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+
+  .discovery-card__body {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discovery-card {
+    transition: none;
+  }
+}

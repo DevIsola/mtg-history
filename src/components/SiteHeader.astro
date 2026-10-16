@@ -1,48 +1,83 @@
+
 ---
 import { withBase } from '../utils/paths';
+import ThemeToggle from './ThemeToggle.astro';
 
 const links = [
   { label: 'Home', href: withBase('') },
+  { label: 'Discover', href: withBase('discover/') },
   { label: 'Timeline', href: withBase('timeline/') },
+  { label: 'Characters', href: withBase('characters/') },
+  { label: 'Archive', href: withBase('archive/') },
   { label: 'About', href: withBase('about/') },
 ];
-const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+
+
+
+const current =
+  Astro.url.pathname.replace(/\/+$/, '') || '/';
 ---
 
 <header class="site-header">
   <div class="site-header__inner page-shell">
-    <a class="brand" href={withBase('')} aria-label="Chronicles of the Multiverse, home">
+    <a
+      class="brand"
+      href={withBase('')}
+      aria-label="Chronicles of the Multiverse, home"
+    >
       <span class="brand__sigil" aria-hidden="true">✦</span>
-      <span class="brand__name">Chronicles <span>of the Multiverse</span></span>
+
+      <span class="brand__name">
+        Chronicles <span>of the Multiverse</span>
+      </span>
     </a>
 
-    <nav class="desktop-navigation" aria-label="Main navigation">
-      {links.map((link) => (
-        <a
-          href={link.href}
-          aria-current={current === (link.href.replace(/\/+$/, '') || '/') ? 'page' : undefined}
-        >
-          {link.label}
-        </a>
-      ))}
-    </nav>
-
-    <details class="mobile-navigation">
-      <summary aria-label="Toggle navigation"><span>Menu</span><span aria-hidden="true">☰</span></summary>
-      <nav aria-label="Mobile navigation">
+    <div class="site-header__actions">
+      <nav
+        class="desktop-navigation"
+        aria-label="Main navigation"
+      >
         {links.map((link) => (
-  <a
-    href={link.href}
-    aria-current={
-      current === (link.href.replace(/\/+$/, '') || '/')
-        ? 'page'
-        : undefined
-    }
-  >
-    {link.label}
-  </a>
-))}
+          <a
+            href={link.href}
+            aria-current={
+              current === (
+                link.href.replace(/\/+$/, '') || '/'
+              )
+                ? 'page'
+                : undefined
+            }
+          >
+            {link.label}
+          </a>
+        ))}
       </nav>
-    </details>
+
+      <ThemeToggle />
+
+      <details class="mobile-navigation">
+        <summary aria-label="Toggle navigation">
+          <span>Menu</span>
+          <span aria-hidden="true">☰</span>
+        </summary>
+
+        <nav aria-label="Mobile navigation">
+          {links.map((link) => (
+            <a
+              href={link.href}
+              aria-current={
+                current === (
+                  link.href.replace(/\/+$/, '') || '/'
+                )
+                  ? 'page'
+                  : undefined
+              }
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </details>
+    </div>
   </div>
 </header>

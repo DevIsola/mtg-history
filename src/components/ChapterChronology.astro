@@ -1,0 +1,95 @@
+
+---
+import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  chapters: CollectionEntry<'chapters'>[];
+  activeId?: string;
+}
+
+const { chapters, activeId } = Astro.props;
+
+const orderedChapters = [...chapters].sort(
+  (a, b) =>
+    a.data.order - b.data.order ||
+    a.id.localeCompare(b.id)
+);
+---
+
+<nav
+  class="chronology-strip"
+  aria-label="Historical and publication chronology"
+>
+  <div class="chronology-strip__heading">
+    <p class="eyebrow">The historical record</p>
+    <h2>Two histories. One Multiverse.</h2>
+    <p>
+      Follow events in their fictional order, and discover
+      when Magic published the stories behind them.
+    </p>
+  </div>
+
+  <ol class="chronology-strip__entries">
+    {orderedChapters.map((chapter) => (
+      <li class="chronology-strip__entry">
+        <a
+          class:list={[
+            'chronology-strip__link',
+            activeId === chapter.id &&
+              'chronology-strip__link--current',
+          ]}
+          href={withBase(`chapters/${chapter.id}/`)}
+          aria-current={
+            activeId === chapter.id ? 'page' : undefined
+          }
+        >
+          <span class="chronology-strip__number">
+            Chapter {String(chapter.data.order).padStart(2, '0')}
+          </span>
+
+          <strong class="chronology-strip__title">
+            {chapter.data.title}
+          </strong>
+
+          <span class="chronology-strip__track">
+            <span class="chronology-strip__label">
+              In-universe chronology
+            </span>
+
+            <span class="chronology-strip__date">
+              {chapter.data.chronology.storyPeriod}
+            </span>
+
+            <span class="chronology-strip__detail">
+              {chapter.data.chronology.storyDetail}
+            </span>
+          </span>
+
+          <span class="chronology-strip__track chronology-strip__track--publication">
+            <span class="chronology-strip__label">
+              Real-world publication
+            </span>
+
+            <span class="chronology-strip__publication">
+              {chapter.data.chronology.publicationHistory}
+            </span>
+          </span>
+
+          <span class="chronology-strip__action">
+            {activeId === chapter.id
+              ? 'Currently reading'
+              : 'Explore chapter →'}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ol>
+
+  <p class="chronology-strip__note">
+    AR = Argivian Reckoning, the Dominarian calendar
+    beginning with the births of Urza and Mishra.
+    Dates are an approximate editorial guide.
+    Chapters are shown in reading order, not to scale.
+  </p>
+</nav>

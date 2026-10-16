@@ -1,0 +1,472 @@
+/* =========================================
+   Phase 17 — Historical Events Encyclopedia
+   ========================================= */
+
+.timeline-events-link {
+  margin-top: 1.5rem;
+}
+
+/* Event directory */
+
+.historical-events {
+  background: var(--paper);
+}
+
+.historical-events__intro {
+  max-width: 760px;
+}
+
+.historical-events__intro > p:last-child {
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-top: 1.2rem;
+}
+
+.historical-events__jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.historical-events__jumps a {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  background: var(--paper-white);
+  color: var(--ink);
+  font-size: 0.77rem;
+  text-decoration: none;
+}
+
+.historical-events__jumps a:hover,
+.historical-events__jumps a:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.historical-events__era {
+  padding-top: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.historical-events__era + .historical-events__era {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.historical-events__era-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.historical-events__era-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: normal;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+/* Event cards */
+
+.historical-events__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.historical-event-card {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  background: var(--paper-white);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  min-width: 0;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.historical-event-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.historical-event-card__image {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  background: var(--paper-deep);
+}
+
+.historical-event-card__image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 488 / 680;
+  object-fit: contain;
+  border-radius: 4%;
+}
+
+.historical-event-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+.historical-event-card__content .eyebrow {
+  margin-bottom: 0;
+}
+
+.historical-event-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: normal;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.historical-event-card h3 a {
+  text-decoration: none;
+}
+
+.historical-event-card h3 a:hover {
+  color: var(--gold);
+}
+
+.historical-event-card__content > p:not(.eyebrow) {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.historical-event-card__action {
+  display: block;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.historical-event-card__action:hover {
+  text-decoration: underline;
+}
+
+/* Individual event pages */
+
+.historical-event-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-top: 3rem;
+}
+
+.historical-event-detail__main {
+  min-width: 0;
+}
+
+.historical-event-detail__main > h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: normal;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.historical-event-detail__narrative {
+  margin-top: 1.5rem;
+}
+
+.historical-event-detail__narrative p {
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin-bottom: 1.3rem;
+}
+
+.historical-event-detail__related {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.historical-event-detail__related h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: normal;
+  margin-bottom: 1.3rem;
+}
+
+.historical-event-detail__chapter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--paper-white);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.historical-event-detail__chapter:hover {
+  border-color: var(--gold);
+}
+
+.historical-event-detail__chapter strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: normal;
+}
+
+.historical-event-detail__chapter span {
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+.historical-event-detail__people {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historical-event-detail__people a {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: var(--paper-white);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.historical-event-detail__people a:hover {
+  border-color: var(--gold);
+}
+
+.historical-event-detail__people strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.historical-event-detail__people span {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+.historical-event-detail__aside {
+  position: sticky;
+  top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--paper-white);
+}
+
+.historical-event-detail__aside .text-link {
+  margin-top: 1.5rem;
+}
+
+/* Previous / next event navigation */
+
+.historical-event-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.historical-event-pagination a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  background: var(--paper-white);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.historical-event-pagination a:hover {
+  border-color: var(--gold);
+}
+
+.historical-event-pagination a span {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.historical-event-pagination a strong {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.historical-event-pagination__next {
+  grid-column: 2;
+  text-align: right;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .historical-events__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .historical-event-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .historical-event-detail__aside {
+    position: static;
+    width: min(100%, 360px);
+  }
+}
+
+@media (max-width: 600px) {
+  .historical-events__era-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .historical-event-card {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+
+  .historical-event-card__content {
+    padding: 1rem;
+  }
+
+  .historical-event-pagination {
+    grid-template-columns: 1fr;
+  }
+
+  .historical-event-pagination__next {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .historical-event-card {
+    transition: none;
+  }
+}
+
+/* =========================================
+   Phase 19 — Character historical events
+   ========================================= */
+
+.character-profile__events {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.character-profile__events h2 {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.character-profile__events-intro {
+  margin-top: 1rem;
+  margin-bottom: 1.7rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.character-event-list {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.character-event-list li {
+  min-width: 0;
+}
+
+.character-event-list a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  background: var(--paper-white);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.character-event-list a:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.character-event-list__chapter {
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+}
+
+.character-event-list strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  font-weight: normal;
+  color: var(--ink);
+}
+
+.character-event-list__summary {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.character-event-list__action {
+  margin-top: 0.25rem;
+  color: var(--gold);
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.character-profile__events-all {
+  margin-top: 1.7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .character-event-list a {
+    transition: none;
+  }
+}
