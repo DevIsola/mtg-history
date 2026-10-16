@@ -1,0 +1,55 @@
+# Browser quality — Phase 3
+
+The browser suite complements the Node regression tests, content-graph validation,
+Astro type diagnostics, production build, and generated-link checker. It does
+not replace any of them. The new GitHub Actions workflow runs on pull requests
+against `main` and blocks approval/merge only if repository rules require it.
+
+## Local setup (macOS)
+
+Requirements: Node 22.12+ (CI uses Node 24), pnpm 10, and a current lockfile.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm exec playwright install chromium
+pnpm run verify
+pnpm exec playwright test
+```
+
+The Playwright configuration and starter smoke tests in the repository root
+(`playwright.config.mjs` and `tests/browser/site.spec.mjs`) are prerequisites.
+If you have not already added the dependency, run
+`pnpm add -D -E @playwright/test` and commit **both** `package.json` and
+`pnpm-lock.yaml` with the test changes. Never hand-edit lockfile resolutions.
+
+Use `pnpm exec playwright test --project=desktop-chromium` or
+`--project=mobile-chromium` for a focused run, and
+`pnpm exec playwright show-report` to inspect an HTML report if generated.
+Playwright starts a local Astro server through its `webServer` configuration;
+do not test against the public GitHub Pages deployment or rely on Scryfall image
+responses for correctness assertions.
+
+## Coverage
+
+- Base-prefixed routes and semantic landmarks (starter smoke suite).
+- Keyboard skip link and chapter TOC anchors (starter smoke suite).
+- Theme switching and persistence on navigation.
+- Character and unified encyclopedia search, empty states, and reset behavior.
+- Accessible card previews: keyboard focus, Escape, desktop pointer, mobile button.
+- Mobile navigation and TOC dismissal.
+- Representative chapter overflow on desktop and mobile (starter smoke suite).
+
+The tests use real source selectors instead of image pixels or third-party network
+assertions. Chromium desktop and emulated Pixel 7 mobile are included. Manual
+screen-reader assessment, WCAG audits, Safari/Firefox compatibility, and
+performance budgets are future work, not claimed by these tests.
+
+## CI behavior
+
+`.github/workflows/browser-quality.yaml` runs an independent pull-request job:
+install reproducible dependencies, install Chromium and Linux libraries,
+execute the browser suite, and upload Playwright traces/screenshots when a test
+fails. A failing suite must be fixed; do not suppress or skip checks to merge.
+
+`test-results/` and `playwright-report/` are generated diagnostics and should not
+be committed. If CI tests fail, open the run and inspect its uploaded artifact.

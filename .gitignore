@@ -24,3 +24,7 @@ backup/
 
 # jetbrains setting folder
 .idea/
+
+# browser test diagnostics (Playwright)
+playwright-report/
+test-results/
