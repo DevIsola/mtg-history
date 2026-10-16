@@ -120,7 +120,7 @@ export const eras: HistoricalEra[] = [
     summary:
       "Nicol Bolas draws planeswalkers into a confrontation whose consequences reach far beyond a single plane.",
     sets: ["War of the Spark · 2019"],
-    status: "planned",
+    status: "published",
   },
   {
     id: "march-of-the-machine",

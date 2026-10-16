@@ -9,6 +9,67 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 08 — the War of the Spark
+  {
+    id: "spark-ravnica-invasion",
+    title: "The Dreadhorde Invades Ravnica",
+    chapterId: "war-of-the-spark",
+    summary: "Bolas traps planeswalkers on Ravnica and transports an Eternal army to take their sparks.",
+    narrative: [
+      "The beacon drew planeswalkers to Ravnica, where the Immortal Sun prevented their escape.",
+      "Bolas used the Planar Bridge to transport the lazotep-clad Eternals from Amonkhet, threatening residents and hunting the gathered planeswalkers.",
+    ],
+    characterIds: ["nicol-bolas", "liliana-vess"],
+    cardName: "Bolas's Citadel",
+  },
+  {
+    id: "spark-elderspell",
+    title: "Bolas Begins the Elderspell",
+    chapterId: "war-of-the-spark",
+    summary: "The Eternals harvest planeswalker sparks to restore Bolas's lost power.",
+    narrative: [
+      "The invasion was designed to gather sparks from the captive planeswalkers, killing victims in the process.",
+      "The Elderspell redirected that stolen power toward Bolas, who sought the near-divine stature he remembered from before the Mending.",
+    ],
+    characterIds: ["nicol-bolas", "liliana-vess"],
+    cardName: "The Elderspell",
+  },
+  {
+    id: "spark-living-guildpact",
+    title: "The Firemind Becomes the Living Guildpact",
+    chapterId: "war-of-the-spark",
+    summary: "Niv-Mizzet's return provides a new political and magical focus for Ravnica's guilds.",
+    narrative: [
+      "Cooperation among the city's guilds became a crucial element of the resistance.",
+      "Niv-Mizzet was restored to life and invested with the mantle of the Living Guildpact, connecting the struggle with Ravnica's future governance.",
+    ],
+    characterIds: ["niv-mizzet", "nicol-bolas"],
+    cardName: "Niv-Mizzet Reborn",
+  },
+  {
+    id: "spark-gideons-sacrifice",
+    title: "Gideon Sacrifices Himself for Liliana",
+    chapterId: "war-of-the-spark",
+    summary: "Gideon bears Bolas's deadly punishment when Liliana chooses to rebel.",
+    narrative: [
+      "Liliana ordered the Eternals to attack Bolas despite the curse that would kill her for disobedience.",
+      "Gideon used his protective magic to take the fatal consequence himself, allowing Liliana to survive.",
+    ],
+    characterIds: ["gideon-jura", "liliana-vess", "nicol-bolas"],
+    cardName: "Gideon's Sacrifice",
+  },
+  {
+    id: "spark-bolas-defeated",
+    title: "Bolas Is Defeated and Imprisoned",
+    chapterId: "war-of-the-spark",
+    summary: "The stolen sparks are lost and Ugin confines the powerless Elder Dragon in the Meditation Realm.",
+    narrative: [
+      "Bontu drew away the stolen sparks Bolas had amassed, and the dragon's bid for godhood collapsed.",
+      "Bolas survived but lost his spark and freedom, remaining confined under Ugin's watch in the Meditation Realm.",
+    ],
+    characterIds: ["nicol-bolas", "liliana-vess"],
+    cardName: "Nicol Bolas, Dragon-God",
+  },
   // Chapter 07 — first major narratives beyond Dominaria
   {
     id: "ravnica-guildpact-collapse",

@@ -19,6 +19,9 @@ export const characterCategories: CharacterCategory[] = [
       "jaya",
       "nahiri",
       "sorin",
+      "nicol-bolas",
+      "liliana-vess",
+      "gideon-jura",
     ],
   },
 
@@ -86,6 +89,7 @@ export const characterCategories: CharacterCategory[] = [
       "szadek",
       "teysa-karlov",
       "avacyn",
+      "niv-mizzet",
     ],
   },
 
