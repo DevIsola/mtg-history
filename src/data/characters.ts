@@ -19,6 +19,99 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 08 — the Bolas arc and War of the Spark
+  {
+    id: "nicol-bolas",
+    name: "Nicol Bolas",
+    title: "The Elder Dragon",
+    origin: "Dominaria; later a traveler across the Multiverse",
+    role: "Planeswalker and architect of the War of the Spark",
+    summary: "An Elder Dragon who engineered an invasion to harvest other planeswalkers' sparks and regain his lost power.",
+    biography: [
+      "After the Mending diminished the near-godlike powers of older planeswalkers, Bolas sought a means of reversing the loss.",
+      "His agents obtained the Planar Bridge and the Immortal Sun; the Eternals prepared on Amonkhet became an army intended to harvest sparks on Ravnica.",
+      "He trapped planeswalkers on Ravnica and activated the Elderspell, but the resistance and Liliana's defiance denied him victory. His spark was removed, and Ugin confined him in the Meditation Realm.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Nicol Bolas, Dragon-God", setCode: "war", collectorNumber: "207",
+      scryfallId: "98b68dea-a7be-4f99-8a50-4c8cf0e0f7a9", artist: "Raymond Swanland",
+      significance: "Bolas at the apparent peak of his bid for restored divinity on Ravnica.",
+    },
+    source: {
+      title: "Wizards of the Coast — War Games",
+      url: "https://magic.wizards.com/en/news/making-magic/war-games-2019-04-22",
+    },
+  },
+  {
+    id: "liliana-vess",
+    name: "Liliana Vess",
+    title: "The Dreadhorde General",
+    origin: "Dominaria",
+    role: "Necromancer forced to command Bolas's Eternal army",
+    summary: "A planeswalker whose defiance of Bolas changed the battle and led to Gideon's sacrifice.",
+    biography: [
+      "Liliana pursued freedom from supernatural bargains but became bound to the Elder Dragon Nicol Bolas.",
+      "On Ravnica she commanded the Dreadhorde while knowing that Bolas's hold on her could kill her if she disobeyed.",
+      "She turned the Eternals against Bolas; Gideon absorbed the lethal consequence of her rebellion, leaving her alive with a difficult legacy.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Liliana, Dreadhorde General", setCode: "war", collectorNumber: "97",
+      scryfallId: "d75ebba8-34ca-47a0-bf13-8318ad73b343", artist: "Chris Rallis",
+      significance: "Liliana's contested command of the Eternal army during the invasion.",
+    },
+    source: {
+      title: "Wizards of the Coast — War of the Spark: Ravnica—Ashes",
+      url: "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12",
+    },
+  },
+  {
+    id: "gideon-jura",
+    name: "Gideon Jura",
+    title: "The Gatewatch's Shield",
+    origin: "Theros",
+    role: "Planeswalker and leader who gave his life for Liliana",
+    summary: "A defender of Ravnica whose final act spared Liliana from Bolas's deadly punishment.",
+    biography: [
+      "Gideon joined the Gatewatch in defense of a Multiverse that could not rely on planeswalkers' power alone.",
+      "Trapped on Ravnica with the other planeswalkers, he rallied resistance and fought to protect people endangered by Bolas's invasion.",
+      "When Liliana rebelled, Gideon interposed his own protective magic, taking the fatal consequence and saving her life.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Gideon's Sacrifice", setCode: "war", collectorNumber: "14",
+      scryfallId: "849c79ad-8bfc-4512-ab41-f213b6b285ab", artist: "Chris Rallis",
+      significance: "Gideon redirects the lethal effect of Liliana's rebellion onto himself.",
+    },
+    source: {
+      title: "Wizards of the Coast — War of the Spark: Ravnica—Ashes",
+      url: "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12",
+    },
+  },
+  {
+    id: "niv-mizzet",
+    name: "Niv-Mizzet",
+    title: "The Firemind Reborn",
+    origin: "Ravnica",
+    role: "Izzet guildmaster and later Living Guildpact",
+    summary: "Ravnica's Firemind whose rebirth made the city's guild alliance a new form of magical order.",
+    biography: [
+      "Niv-Mizzet led the Izzet League with formidable intellect and a long history of guild intrigue.",
+      "During the confrontation with Bolas, his dangerous plan required cooperation among Ravnica's factions and resulted in his death and rebirth.",
+      "He returned as the Living Guildpact, a central figure for Ravnica's attempted recovery from the war.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Niv-Mizzet Reborn", setCode: "war", collectorNumber: "208",
+      scryfallId: "56a2609d-b535-400b-81d9-72989a33c70f", artist: "Raymond Swanland",
+      significance: "The Firemind's transformation into the Living Guildpact.",
+    },
+    source: {
+      title: "Wizards of the Coast — War of the Spark: Ravnica—Ashes",
+      url: "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12",
+    },
+  },
   // Chapter 07 — early Ravnica, Zendikar and Innistrad
   {
     id: "agrus-kos",

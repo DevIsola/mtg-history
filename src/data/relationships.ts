@@ -20,6 +20,31 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 08 — the War of the Spark
+  {
+    a: "nicol-bolas", b: "liliana-vess", category: "rivalry",
+    labelForA: "Rebellious general", labelForB: "Coercive master",
+    context: "Bolas bound Liliana to command his Eternals; she ultimately turned that army against him.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "gideon-jura", b: "liliana-vess", category: "alliance",
+    labelForA: "Ally he protected", labelForB: "Ally who gave his life",
+    context: "Gideon took the lethal consequence intended for Liliana after she defied Bolas.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "gideon-jura", b: "nicol-bolas", category: "rivalry",
+    labelForA: "Enemy threatening Ravnica", labelForB: "Gatewatch opponent",
+    context: "Gideon helped defend Ravnica against Bolas's invasion and his attempt to harvest sparks.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "niv-mizzet", b: "nicol-bolas", category: "rivalry",
+    labelForA: "Invading Elder Dragon", labelForB: "Firemind and Living Guildpact",
+    context: "Niv-Mizzet's resistance and rebirth challenged Bolas's bid to dominate Ravnica.",
+    chapterId: "war-of-the-spark",
+  },
   // Chapter 07 — relationships across Ravnica, Zendikar, and Innistrad
   {
     a: "agrus-kos", b: "szadek", category: "rivalry",
