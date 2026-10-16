@@ -19,7 +19,7 @@
 
 ## The archive
 
-**Chronicles of the Multiverse** is an independent, non-commercial historical reading project about the lore of _Magic: The Gathering_. It's designed as an illustrated chronicle, **not a card database or deckbuilding guide**.
+**Chronicles of the Multiverse** is an independent, non-commercial historical reading project about the lore of *Magic: The Gathering*. It's designed as an illustrated chronicle, **not a card database or deckbuilding guide**.
 
 Magic's history has been told across decades of expansions, novels, short fiction, and flavor text. This project connects those scattered sources into readable chapters, with selected cards acting as **historical artifacts**: illustrations and references that bring each event into focus.
 
