@@ -20,6 +20,21 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 02 — royal and military consequences of the war
+  {
+    a: "kayla", b: "mishra", category: "rivalry",
+    labelForA: "Warlord whose forces destroyed Kroog",
+    labelForB: "Yotian queen affected by his campaign",
+    context: "Mishra's attack on Yotia destroyed Kayla's home and helped turn the brothers' private war into a catastrophe for civilians.",
+    chapterId: "brothers-war",
+  },
+  {
+    a: "mishra", b: "tawnos", category: "rivalry",
+    labelForA: "Opposing artificer and Urza's apprentice",
+    labelForB: "Commander aligned with the opposing army",
+    context: "Tawnos supplied Urza's effort while Mishra's forces threatened the Yotian kingdom; their positions were shaped by the rival war machines.",
+    chapterId: "brothers-war",
+  },
   // Chapter 01 — the Thran and the origins of Phyrexia
   {
     a: "gix", b: "glacian", category: "rivalry",
