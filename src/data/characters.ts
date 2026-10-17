@@ -19,6 +19,54 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 05 — the Order and the cost of the Mirari
+  {
+    id: "lieutenant-kirtar",
+    name: "Lieutenant Kirtar",
+    title: "The Order's Lieutenant",
+    origin: "Dominaria — Otaria",
+    role: "Order officer and early possessor of the Mirari",
+    summary: "An Order commander who took the Mirari from the Cabal but could not make its power serve his ideal of justice.",
+    biography: [
+      "Kirtar served the Order, which opposed the Cabal and claimed to act against the dangerous magic and cruelty associated with Cabal City.",
+      "When the Mirari passed from Cabal custody into the Order's hands, Kirtar hoped to direct its power toward his cause. The artifact instead demonstrated how dangerous certainty could become when amplified by overwhelming magic.",
+      "His failure is one phase of the Mirari's passage among rival Otarian powers, preceding Aboshan's disastrous use of the sphere.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Lieutenant Kirtar", setCode: "ody", collectorNumber: "29",
+      scryfallId: "e518750f-492d-4575-b4ee-c80c1f8e0a58", artist: "Paolo Parente",
+      significance: "Kirtar's original Odyssey portrait; the illustration identifies him rather than depicting his final attempt to wield the Mirari.",
+    },
+    source: {
+      title: "Lieutenant Kirtar — Odyssey printing",
+      url: "https://scryfall.com/card/ody/29/lieutenant-kirtar",
+    },
+  },
+  {
+    id: "balthor",
+    name: "Balthor",
+    title: "The Barbarian Mentor Reborn",
+    origin: "Dominaria — Otaria",
+    role: "Dwarven leader, mentor to Kamahl, and later an undead warrior",
+    summary: "A dwarven leader who mentored Kamahl and whose death and return were depicted on two separate cards.",
+    biography: [
+      "Balthor was a dwarf who led barbarians and acted as a mentor to Kamahl, giving the young fighter an example of leadership grounded in experience.",
+      "Balthor died during the Otarian conflicts and later returned in undead form. His two legendary creature cards were deliberately planned as depictions of the same character on opposite sides of death.",
+      "Torment portrayed him as Balthor the Stout, while Judgment portrayed him as Balthor the Defiled, emphasizing that transformation rather than introducing another person.",
+    ],
+    chapterIds: ["otaria"],
+    featuredCard: {
+      name: "Balthor the Defiled", setCode: "jud", collectorNumber: "61",
+      scryfallId: "ed4cc273-adc3-4f46-9743-134b552d1d56", artist: "Carl Critchlow",
+      significance: "Balthor after death and reanimation, paired in the story with the earlier Balthor the Stout card.",
+    },
+    source: {
+      title: "Wizards of the Coast — Building Balthor",
+      url: "https://magic.wizards.com/en/news/making-magic/thirty-two-short-columns-about-dwarves-2005-11-21",
+    },
+  },
+
   // Chapter 04 — the people behind the Legacy and its cost
   {
     id: "barrin",
