@@ -128,9 +128,16 @@ export const eras: HistoricalEra[] = [
     name: "The New Phyrexian Invasion",
     kicker: "A Multiverse at War",
     summary:
-      "Phyrexia launches a campaign across the planes, forcing old rivals and new allies to confront a shared threat.",
-    sets: ["Dominaria United · 2022", "March of the Machine · 2023"],
-    status: "planned",
+      "From Mirrodin's fall and Dominarian sleeper agents to Realmbreaker's invasion and Zhalfir's return, the Multiverse resists Elesh Norn.",
+    sets: [
+      "Scars of Mirrodin · 2010",
+      "New Phyrexia · 2011",
+      "Dominaria United · 2022",
+      "Phyrexia: All Will Be One · 2023",
+      "March of the Machine · 2023",
+      "March of the Machine: The Aftermath · 2023",
+    ],
+    status: "published",
   },
   {
     id: "omenpaths",

@@ -9,6 +9,91 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 09 — the New Phyrexian invasion and its aftermath
+  {
+    id: "phyrexia-dominaria-sleeper-war",
+    title: "Sheoldred Infiltrates Dominaria",
+    chapterId: "march-of-the-machine",
+    summary: "Sleeper agents and Ajani's compleation undermine Dominaria's defenses before the invasion.",
+    narrative: [
+      "Sheoldred's agents compromised trusted institutions on the world that had defeated Yawgmoth's Phyrexia centuries earlier.",
+      "The compleated Ajani betrayed the defenders, leading to Jaya Ballard's death and exposing the danger of allies who no longer controlled their actions.",
+    ],
+    characterIds: ["sheoldred", "ajani", "jaya", "teferi", "karn"],
+    cardName: "Sheoldred, the Apocalypse",
+  },
+  {
+    id: "phyrexia-seedcore-failure",
+    title: "The Sylex Mission Fails at the Seedcore",
+    chapterId: "march-of-the-machine",
+    summary: "The strike team's effort to prevent Realmbreaker's growth ends in corruption and a desperate rescue.",
+    narrative: [
+      "Planeswalkers attacked New Phyrexia with a new Sylex, but defenses and glistening oil fractured the mission; Nissa and other allies were compleated.",
+      "As Realmbreaker opened portals to other worlds, Elspeth carried the activated Sylex into the Blind Eternities rather than allow the blast to endanger already-linked planes.",
+    ],
+    characterIds: ["elspeth", "nissa", "koth"],
+    cardName: "Nissa, Ascended Animist",
+  },
+  {
+    id: "phyrexia-realmbreaker-invasion",
+    title: "Realmbreaker Breaches the Multiverse",
+    chapterId: "march-of-the-machine",
+    summary: "The Invasion Tree provides portals through which Phyrexia attacks many planes simultaneously.",
+    narrative: [
+      "Elesh Norn's forces grew Realmbreaker from Kaldheim's World Tree essence and used its branches to cross previously impassable planar boundaries.",
+      "Invasions unfolded across Kaldheim, Zendikar, Kamigawa, Kaladesh, and numerous other planes, whose peoples mounted different forms of resistance.",
+    ],
+    characterIds: ["elesh-norn", "nissa", "nahiri"],
+    cardName: "Realmbreaker, the Invasion Tree",
+  },
+  {
+    id: "phyrexia-elspeth-return",
+    title: "Elspeth Returns as an Angel",
+    chapterId: "march-of-the-machine",
+    summary: "Elspeth's transformed return protects the Mirran resistance and challenges Elesh Norn.",
+    narrative: [
+      "Elspeth returned from the Blind Eternities transformed, intervening as Norn threatened Chandra, Karn, Koth, and Wrenn.",
+      "She defied Norn and bought the defenders the opening needed for Wrenn's attempt to reach Realmbreaker.",
+    ],
+    characterIds: ["elspeth", "elesh-norn", "chandra", "karn", "koth", "wrenn"],
+    cardName: "Archangel Elspeth",
+  },
+  {
+    id: "phyrexia-zhalfir-return",
+    title: "Wrenn Opens a Path to Zhalfir",
+    chapterId: "march-of-the-machine",
+    summary: "Wrenn's union with Realmbreaker brings the isolated Zhalfirins into the battle and seals New Phyrexia away.",
+    narrative: [
+      "Wrenn joined the invasion tree's remnant, called Eight, and reconnected Teferi's lost homeland with the Multiverse.",
+      "Zhalfir's forces counterattacked, and the two planes exchanged positions: Zhalfir became reachable while New Phyrexia was placed beyond ordinary contact.",
+    ],
+    characterIds: ["wrenn", "teferi", "chandra", "koth"],
+    cardName: "Wrenn and Realmbreaker",
+  },
+  {
+    id: "phyrexia-norns-fall",
+    title: "Karn Ends Elesh Norn's Rule",
+    chapterId: "march-of-the-machine",
+    summary: "The invasion fails and Karn personally dismantles the Mother of Machines.",
+    narrative: [
+      "Elspeth's intervention and the Zhalfirin counterattack brought Norn's war to a halt as New Phyrexia became isolated.",
+      "Karn assumed personal responsibility for ending Norn's threat, dismantling her after years of guilt over the fate of his created plane.",
+    ],
+    characterIds: ["karn", "elesh-norn", "elspeth", "teferi"],
+    cardName: "Invasion of New Phyrexia",
+  },
+  {
+    id: "phyrexia-meliras-last-gift",
+    title: "Melira and Karn Save Nissa and Ajani",
+    chapterId: "march-of-the-machine",
+    summary: "A costly attempt to reverse compleation saves two survivors but takes Melira's life and Karn's remaining spark.",
+    narrative: [
+      "After New Phyrexia was shut away, Nissa and Ajani remained inert and severely altered by compleation.",
+      "Melira used her power to oppose the corruption while Karn expended the remaining spark he had received from Venser; the two planeswalkers survived, but Melira did not.",
+    ],
+    characterIds: ["nissa", "ajani", "karn", "chandra", "koth", "teferi"],
+    cardName: "Karn, Legacy Reforged",
+  },
   // Chapter 08 — the War of the Spark
   {
     id: "spark-ravnica-invasion",

@@ -20,6 +20,67 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 09 — loyalties, corruption, and resistance
+  {
+    a: "elesh-norn", b: "sheoldred", category: "rivalry",
+    labelForA: "Rival praetor", labelForB: "Orthodoxy's authoritarian leader",
+    context: "The two praetors pursued Phyrexian dominance with conflicting ambitions, exposing fractures beneath Norn's rhetoric of unity.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "elesh-norn", b: "elspeth", category: "rivalry",
+    labelForA: "Angelic opponent", labelForB: "Persecutor and architect of conquest",
+    context: "Elspeth returned transformed to confront Norn and keep the final resistance alive while Wrenn reached the tree.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "elesh-norn", b: "karn", category: "rivalry",
+    labelForA: "Mirrodin's creator", labelForB: "Praetor he finally dismantled",
+    context: "Karn assumed responsibility for the fate of the plane he made and personally ended Norn's attempt at multiversal conquest.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "ajani", b: "jaya", category: "rivalry",
+    labelForA: "Hero killed during his corruption", labelForB: "Trusted ally transformed into sleeper agent",
+    context: "Ajani's compleation enabled Phyrexia's betrayal of the Dominarian coalition and Jaya's death.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "jaya", b: "chandra", category: "mentorship",
+    labelForA: "Promising pyromancer", labelForB: "Mentor whose death drove her",
+    context: "Jaya's teachings shaped Chandra; her death during Dominaria United gave the final invasion an intensely personal cost.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "chandra", b: "nissa", category: "alliance",
+    labelForA: "Loved one lost to compleation", labelForB: "Partner who sought her recovery",
+    context: "Chandra fought Phyrexia while refusing to give up hope for Nissa, who later survived Melira and Karn's treatment.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "wrenn", b: "teferi", category: "alliance",
+    labelForA: "Guide to Zhalfir's lost people", labelForB: "Dryad who restored his homeland",
+    context: "Wrenn found a way through Realmbreaker to Zhalfir, completing Teferi's long struggle to reconnect his nation.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "wrenn", b: "chandra", category: "alliance",
+    labelForA: "Friend who helped her reach the tree", labelForB: "Dryad whose sacrifice ended the invasion",
+    context: "Chandra aided Wrenn's final attempt to bond with Realmbreaker and reverse the invaders' interplanar network.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "koth", b: "elspeth", category: "alliance",
+    labelForA: "Returned defender of the Mirrans", labelForB: "Unyielding Mirran resistance leader",
+    context: "Koth and Elspeth fought on Mirrodin's behalf, and her transformed return helped protect its surviving people.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "karn", b: "koth", category: "alliance",
+    labelForA: "Mirran who kept resisting", labelForB: "Creator reckoning with the plane's fall",
+    context: "The two survivors were bound by the loss of Mirrodin and its people, even after the victory made Zhalfir their refuge.",
+    chapterId: "march-of-the-machine",
+  },
   // Chapter 08 — the War of the Spark
   {
     a: "nicol-bolas", b: "liliana-vess", category: "rivalry",
