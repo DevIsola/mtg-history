@@ -9,6 +9,85 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 09 — the older conquest and the divided Phyrexian empire
+  {
+    id: "phyrexia-mirran-survival",
+    title: "Mirrodin's Survivors Organize Their Resistance",
+    chapterId: "march-of-the-machine",
+    summary: "Koth, Melira, and scattered Mirrans endure the conquest of their metal world.",
+    narrative: [
+      "The transformation of Mirrodin into New Phyrexia did not erase the identity or resistance of the original inhabitants.",
+      "Koth helped lead communities who refused to surrender their home while Melira's resistance to corruption made her a critical ally.",
+      "Their struggle preceded the wider invasion by years and continued after foreign planeswalkers failed to destroy Realmbreaker.",
+    ],
+    characterIds: ["koth", "melira"],
+    cardName: "Melira, Sylvok Outcast",
+  },
+  {
+    id: "phyrexia-vorinclex-world-tree",
+    title: "Vorinclex Steals the World Tree's Essence",
+    chapterId: "march-of-the-machine",
+    summary: "A Phyrexian mission to Kaldheim supplies the living foundation of Realmbreaker.",
+    narrative: [
+      "Vorinclex traveled to Kaldheim as part of Norn's broader effort to make interplanar conquest possible.",
+      "He obtained an essence of the World Tree, whose ability to connect realms could be transformed into Realmbreaker's world-piercing structure.",
+      "The later invasion did not spring into being at the Seedcore; its foundations were stolen from other planes long before the attack began.",
+    ],
+    characterIds: ["vorinclex", "elesh-norn"],
+    cardName: "Vorinclex, Voice of Hunger",
+  },
+  {
+    id: "phyrexia-jin-kamigawa",
+    title: "Jin-Gitaxias Compleats Tamiyo on Kamigawa",
+    chapterId: "march-of-the-machine",
+    summary: "Experiments on Kamigawa make spark-preserving planeswalker compleation possible.",
+    narrative: [
+      "Jin-Gitaxias studied the relationship between Kamigawan kami and living bodies to refine Phyrexian transformation.",
+      "Tamiyo's compleation showed that a planeswalker's spark could survive even as the person's agency was subsumed by Phyrexia.",
+      "This breakthrough made the later corruption of Ajani, Nissa, and other planeswalkers an existential threat to their allies.",
+    ],
+    characterIds: ["jin-gitaxias", "tamiyo", "elesh-norn"],
+    cardName: "Tamiyo, Compleated Sage",
+  },
+  {
+    id: "phyrexia-urabrask-dissent",
+    title: "Urabrask Defies the Machine Orthodoxy",
+    chapterId: "march-of-the-machine",
+    summary: "The furnace praetor shelters Mirrans and joins opposition to Norn's enforced conformity.",
+    narrative: [
+      "Urabrask's tolerance of Mirran refugees distinguished his furnaces from Norn's rigid Machine Orthodoxy.",
+      "His rebellion drew together enemies of Norn whose goals were not identical, including other Phyrexians.",
+      "His brutal punishment illustrated the internal violence concealed by Norn's promise of universal unity.",
+    ],
+    characterIds: ["urabrask", "elesh-norn", "koth", "sheoldred"],
+    cardName: "Urabrask the Hidden",
+  },
+  {
+    id: "phyrexia-melira-resistance",
+    title: "Melira Guides the Assault toward the Seedcore",
+    chapterId: "march-of-the-machine",
+    summary: "A Mirran survivor supplies knowledge the visiting planeswalkers need to cross occupied territory.",
+    narrative: [
+      "Melira explained the layered geography of New Phyrexia to the planeswalker strike team.",
+      "She understood both the dangers of the Phyrexian landscape and the resistance still fighting inside it.",
+      "Her role in the failed Seedcore mission arose from years of survival rather than from a sudden arrival on the plane.",
+    ],
+    characterIds: ["melira", "koth"],
+    cardName: "Melira, Sylvok Outcast",
+  },
+  {
+    id: "phyrexia-tamiyos-last-story",
+    title: "Tamiyo's Memory Survives Her Death",
+    chapterId: "march-of-the-machine",
+    summary: "The Wanderer stops the compleated moonfolk while her earlier enchanted memory remains for Nashi.",
+    narrative: [
+      "On Kamigawa, the compleated Tamiyo used her enchanted scrolls as weapons against her former home.",
+      "The Wanderer destroyed her body, preventing further devastation but bringing a terrible loss to her family.",
+      "A magical memory Tamiyo had prepared before her compleation appeared afterward; it preserved her story without undoing the harm or restoring her body.",
+    ],
+    characterIds: ["tamiyo"],
+    cardName: "Tamiyo, Compleated Sage",
+  },
   // Chapter 08 — constructing and dismantling the War of the Spark trap
   {
     id: "spark-planar-bridge-plot",

@@ -19,6 +19,107 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 09 — the competing praetors and the Mirran resistance
+  {
+    id: "jin-gitaxias",
+    name: "Jin-Gitaxias",
+    title: "Praetor of the Progress Engine",
+    origin: "New Phyrexia — the Surgical Bay",
+    role: "Chrome Host commander and architect of spark-preserving compleation",
+    summary: "A Phyrexian researcher whose Kamigawan experiments transformed planeswalkers into agents of the invasion.",
+    biography: [
+      "Jin-Gitaxias pursued an ideal of perfection through experimentation and the acquisition of knowledge, commanding the blue-aligned Chrome Host.",
+      "His studies of Kamigawa's kami helped produce a method of compleation that retained a planeswalker's spark; Tamiyo became a devastating example.",
+      "During the Multiversal invasion his soldiers exploited intelligence about each plane, although faulty assumptions made their attacks vulnerable to local resistance.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Jin-Gitaxias, Core Augur", setCode: "nph", collectorNumber: "37",
+      scryfallId: "bd46fc9f-5b92-44d7-8940-2f39b0962b8f", artist: "Eric Deschamps",
+      significance: "The original 2011 portrait of the scientist whose later work changed planeswalker compleation.",
+    },
+    source: { title: "Wizards of the Coast — March of the Machine Planeswalker's Guide", url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine" },
+  },
+  {
+    id: "vorinclex",
+    name: "Vorinclex",
+    title: "Praetor of the Vicious Swarm",
+    origin: "New Phyrexia — the Hunter Maze",
+    role: "Predatory praetor and thief of the World Tree's essence",
+    summary: "The green-aligned praetor whose mission to Kaldheim helped create the invasion's interplanar tree.",
+    biography: [
+      "Vorinclex embodied the vision that domination and survival should be determined by ruthless adaptation and predation.",
+      "Traveling to Kaldheim through Phyrexia's growing interplanar reach, he secured an essence of the World Tree needed for Realmbreaker.",
+      "His achievements helped Elesh Norn prepare a coordinated invasion despite the praetors' conflicting ideas of what perfection meant.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Vorinclex, Voice of Hunger", setCode: "nph", collectorNumber: "127",
+      scryfallId: "0806adab-6a08-411b-b249-e1c58ade354b", artist: "Karl Kopinski",
+      significance: "The original depiction of Vorinclex, published well before his World Tree mission.",
+    },
+    source: { title: "Wizards of the Coast — March of the Machine Planeswalker's Guide", url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine" },
+  },
+  {
+    id: "urabrask",
+    name: "Urabrask",
+    title: "Praetor of the Quiet Furnace",
+    origin: "New Phyrexia — the Furnace Layer",
+    role: "Dissenting red-aligned praetor and adversary of Elesh Norn",
+    summary: "A Phyrexian praetor who tolerated Mirran refugees and openly resisted Norn's forced unity.",
+    biography: [
+      "Unlike Norn, Urabrask allowed Mirran survivors to shelter within his furnaces and refused to impose a single form of obedience.",
+      "His opposition to the Machine Orthodoxy eventually became open rebellion, with alliances formed across deep ideological divisions.",
+      "Norn's brutal punishment of her rival showed the violence underlying her proclamation that all Phyrexians shared one will.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Urabrask the Hidden", setCode: "mul", collectorNumber: "23",
+      scryfallId: "0533d7e4-6b5b-4e2e-8407-279fe438c676", artist: "Flavio Girón",
+      significance: "A 2023 retrospective illustration of the furnace praetor first introduced in 2011.",
+    },
+    source: { title: "Wizards of the Coast — The Legends of Phyrexia: All Will Be One", url: "https://magic.wizards.com/en/news/feature/the-legends-of-phyrexia-all-will-be-one" },
+  },
+  {
+    id: "melira",
+    name: "Melira",
+    title: "Sylvok Outcast",
+    origin: "Mirrodin — the Sylvok",
+    role: "Mirran resistance fighter and protector against Phyrexian corruption",
+    summary: "A Mirran whose rare immunity gave the resistance hope and enabled a final sacrifice for two compleated planeswalkers.",
+    biography: [
+      "Melira's innate resistance to Phyrexian corruption made her valuable to the scattered Mirran survivors during the conquest of their world.",
+      "She helped the attempted expedition into New Phyrexia's Seedcore, guided by her knowledge of the plane's transformed regions.",
+      "After Elesh Norn's defeat she expended her life to help restore Nissa and Ajani, in a cure that also cost Karn his spark.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Melira, Sylvok Outcast", setCode: "nph", collectorNumber: "115",
+      scryfallId: "e83851a1-e4e8-49ec-af5c-4efe86fa51ad", artist: "Min Yum",
+      significance: "The original 2011 representation of Melira's immunity and her role in the resistance.",
+    },
+    source: { title: "Wizards of the Coast — Assault on New Phyrexia, Episode 2", url: "https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-2-unstable-foundations" },
+  },
+  {
+    id: "tamiyo",
+    name: "Tamiyo",
+    title: "Moon Sage and Keeper of Stories",
+    origin: "Kamigawa",
+    role: "Storyteller, first compleated planeswalker, and mother to Nashi",
+    summary: "A beloved historian transformed by Jin-Gitaxias, whose saved magical memory survived her death on Kamigawa.",
+    biography: [
+      "Tamiyo collected stories across the Multiverse and treasured her family on Kamigawa, recording memories within enchanted scrolls.",
+      "Phyrexian experimentation compleated her while preserving her spark, twisting her scholarship into an instrument of conquest.",
+      "During the invasion the Wanderer killed her to save others. A magical record of Tamiyo's memories survived and spoke with Nashi; this was not a complete restoration of her body.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Tamiyo, Compleated Sage", setCode: "neo", collectorNumber: "238",
+      scryfallId: "222a736e-d819-452d-aeda-eb848c4b2302", artist: "Chris Rahn",
+      significance: "The original 2022 portrayal of Tamiyo after Phyrexian compleation on Kamigawa.",
+    },
+    source: { title: "Wizards of the Coast — Mother, Son, and Story", url: "https://magic.wizards.com/en/news/magic-story/episode-3-mother-son-and-story" },
+  },
   // Chapter 08 — the machinery, resistance, and political capture of Ravnica
   {
     id: "tezzeret",

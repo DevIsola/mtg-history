@@ -20,6 +20,43 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 09 — praetor doctrines, coercion, and resistance
+  {
+    a: "elesh-norn", b: "jin-gitaxias", category: "alliance",
+    labelForA: "Chrome Host researcher", labelForB: "Overlord who used his discoveries",
+    context: "Jin-Gitaxias's work on Kamigawa and his strategic Chrome Host supported Norn's invasion, despite the praetors' different visions of perfection.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "elesh-norn", b: "vorinclex", category: "alliance",
+    labelForA: "World Tree emissary", labelForB: "Praetor who commissioned the theft",
+    context: "Vorinclex's expedition to Kaldheim gave Norn the World Tree essence that made Realmbreaker possible.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "elesh-norn", b: "urabrask", category: "rivalry",
+    labelForA: "Furnace dissident", labelForB: "Orthodoxy ruler he defied",
+    context: "Urabrask tolerated Mirran survivors and rebelled against Norn's forced conformity; her punishment of him revealed the empire's internal conflicts.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "koth", b: "melira", category: "alliance",
+    labelForA: "Corruption-resistant Mirran ally", labelForB: "Resistance leader who defended their home",
+    context: "Koth and Melira sustained Mirran resistance over years of occupation and guided allies toward the Seedcore.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "jin-gitaxias", b: "tamiyo", category: "rivalry",
+    labelForA: "Planeswalker subjected to compleation", labelForB: "Praetor whose experiments subjugated her",
+    context: "Jin-Gitaxias's forced transformation of Tamiyo preserved her spark while destroying her freedom; their connection was coercive, not an alliance.",
+    chapterId: "march-of-the-machine",
+  },
+  {
+    a: "karn", b: "melira", category: "alliance",
+    labelForA: "Mirran whose final gift saved the infected", labelForB: "Creator whose remaining spark enabled the cure",
+    context: "Karn and Melira ultimately sacrificed Karn's spark and Melira's life to save Ajani and Nissa, without restoring every Phyrexian victim.",
+    chapterId: "march-of-the-machine",
+  },
   // Chapter 08 — alliances and rivalries behind the invasion apparatus
   {
     a: "tezzeret", b: "nicol-bolas", category: "alliance",

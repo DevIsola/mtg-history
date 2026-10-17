@@ -149,6 +149,6 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "new-phyrexian-invasion",
     label: "The New Phyrexian Invasion",
-    characterIds: ["elesh-norn", "sheoldred", "koth", "ajani", "nissa", "chandra", "elspeth", "wrenn"],
+    characterIds: ["elesh-norn", "sheoldred", "jin-gitaxias", "vorinclex", "urabrask", "melira", "tamiyo", "koth", "ajani", "nissa", "chandra", "elspeth", "wrenn"],
   },
 ];
