@@ -9,6 +9,72 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 03 — the Conclave, Sarpadian artifice, and the Shard
+  {
+    id: "dark-conclave-usurpation",
+    title: "Mairsil Seizes the Conclave",
+    chapterId: "ice-age",
+    summary: "Mairsil deposes Lord Ith and turns a place of magical instruction into an instrument of control.",
+    narrative: [
+      "The Conclave of Mages offered refuge for learning amid the Dark Age's persecution of spellcasters.",
+      "Mairsil imprisoned its founder, Ith, in Barl's Cage, siphoning the captive wizard's magical power while ruling in his place.",
+      "His designs on Jodah's knowledge revealed how easily the defense of scholarship could become an excuse for exploitation.",
+    ],
+    characterIds: ["mairsil", "jodah"],
+    cardName: "Mairsil, the Pretender",
+  },
+  {
+    id: "dark-ith-freed",
+    title: "Jodah Helps Free Ith",
+    chapterId: "ice-age",
+    summary: "The release of the imprisoned founder ends Mairsil's control and shatters the Conclave.",
+    narrative: [
+      "Jodah and Sima uncovered the Conclave's hidden prisoner and helped free Ith from the cage that had consumed his power.",
+      "Ith's fury devastated the Conclave; the knowledge held by its students survived through those who departed for other places of study.",
+      "The episode contrasts the survival of magical learning with the collapse of an institution that misused it.",
+    ],
+    characterIds: ["jodah", "mairsil"],
+    cardName: "Jodah, Archmage Eternal",
+  },
+  {
+    id: "sarpadia-thelon-thallids",
+    title: "Thelon and Havenwood's Thallids",
+    chapterId: "ice-age",
+    summary: "The Havenwood elves' fungal creations become a destabilizing force on Sarpadia.",
+    narrative: [
+      "Thelon is linked with the development of thallids, whose spores gave rise to saprolings.",
+      "Fungal life offered the elves new possibilities amid scarcity, but the creations also became a source of upheaval in Havenwood.",
+      "Thelon's Time Spiral card retrospectively represents this character from the earlier Fallen Empires history.",
+    ],
+    characterIds: ["thelon-of-havenwood"],
+    cardName: "Thelon of Havenwood",
+  },
+  {
+    id: "sarpadia-endrek-breeding",
+    title: "Endrek Sahr and the Thrull Breeders",
+    chapterId: "ice-age",
+    summary: "The Ebon Hand breeds thrulls and becomes dependent on beings it cannot permanently control.",
+    narrative: [
+      "Endrek Sahr's breeding of thrulls helped the Order of the Ebon Hand exploit created servitors.",
+      "The Order's reliance on those creations laid the conditions for an internal revolt, separate from Havenwood's thallid crisis.",
+      "The later legendary card gives a name and portrait to a figure first known through Fallen Empires flavor text.",
+    ],
+    characterIds: ["endrek-sahr"],
+    cardName: "Endrek Sahr, Master Breeder",
+  },
+  {
+    id: "ice-age-shard-dissolves",
+    title: "The World Spell Changes the Shard",
+    chapterId: "ice-age",
+    summary: "Freyalise's World Spell ends the supernatural winter and changes the Multiverse's isolated Shard.",
+    narrative: [
+      "The Sylex catastrophe had contributed both to Dominaria's worsening climate and the interplanar isolation called the Shard of Twelve Worlds.",
+      "Freyalise's World Spell ended the long winter and helped dissolve that separation, with consequences beyond Terisiare.",
+      "The thaw remained disruptive to survivors even as it opened new possibilities for travel and exchange.",
+    ],
+    characterIds: ["freyalise", "jodah"],
+    cardName: "The World Spell",
+  },
   // Chapter 02 — the discoveries, political ascent, and legacy of the war
   {
     id: "brothers-koilos-stones",

@@ -19,6 +19,76 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 03 — the Conclave and Sarpadia's remembered creators
+  {
+    id: "mairsil",
+    name: "Mairsil",
+    title: "The Pretender",
+    origin: "Dominaria — Terisiare",
+    role: "Conclave usurper during the Dark Age",
+    summary: "A Conclave mage who imprisoned Ith and exploited forbidden magical knowledge for personal power.",
+    biography: [
+      "Mairsil displaced the Conclave's founder, Ith, and kept him in Barl's Cage, draining the captive wizard's magical power.",
+      "He tried to exploit Jodah's ancestry and knowledge as a route to greater power, illustrating how the Conclave's public mission of preserving magic could conceal coercion.",
+      "Jodah and Sima helped release Ith. The destruction that followed ended Mairsil's control of the institution, but the surviving scholars carried their knowledge onward.",
+    ],
+    chapterIds: ["ice-age"],
+    featuredCard: {
+      name: "Mairsil, the Pretender", setCode: "c17", collectorNumber: "41",
+      scryfallId: "87b71b08-668c-4b32-8243-8def1a9acf26", artist: "Izzy",
+      significance: "A Commander 2017 portrayal of the Dark Age usurper and his hunger for stolen power.",
+    },
+    source: {
+      title: "Wizards of the Coast — Commander (2017 Edition) Card Image Gallery",
+      url: "https://magic.wizards.com/en/news/card-image-gallery/commander-2017",
+    },
+  },
+  {
+    id: "thelon-of-havenwood",
+    name: "Thelon of Havenwood",
+    title: "Thelonite Druid",
+    origin: "Dominaria — Sarpadia, Havenwood",
+    role: "Druid associated with the cultivation of thallids",
+    summary: "A Havenwood druid whose fungal creations became central to the Sarpadian elves' struggle.",
+    biography: [
+      "Thelon is associated with the development of thallids, the fungal beings that could generate saprolings in the declining society of Havenwood.",
+      "The elves' attempts to enlist fungal life among their resources were followed by conflicts as the thallids expanded beyond expectations.",
+      "His later Time Spiral card recalls the Fallen Empires period rather than depicting an event contemporaneous with the 2006 expansion.",
+    ],
+    chapterIds: ["ice-age"],
+    featuredCard: {
+      name: "Thelon of Havenwood", setCode: "tsp", collectorNumber: "227",
+      scryfallId: "92b0be6d-9183-4938-b7a1-ae7f04ba78a0", artist: "Kev Walker",
+      significance: "A Time Spiral retrospective portrait of the druid connected with Sarpadia's thallids.",
+    },
+    source: {
+      title: "Wizards of the Coast — Name Dropping",
+      url: "https://magic.wizards.com/en/news/making-magic/name-dropping-2006-11-13",
+    },
+  },
+  {
+    id: "endrek-sahr",
+    name: "Endrek Sahr",
+    title: "Master Breeder",
+    origin: "Dominaria — Sarpadia",
+    role: "Creator of thrulls for the Order of the Ebon Hand",
+    summary: "A mage whose thrull breeding served the Ebon Hand before its creations helped overturn the Order's control.",
+    biography: [
+      "Endrek Sahr was remembered as the creator of thrulls used by the Order of the Ebon Hand on Sarpadia.",
+      "The Order's reliance on constructed servitors made it vulnerable when the thrulls grew beyond the obedient roles intended for them.",
+      "Endrek first received a legendary card in Time Spiral (2006); this archive uses a 2013 printing of that earlier illustration.",
+    ],
+    chapterIds: ["ice-age"],
+    featuredCard: {
+      name: "Endrek Sahr, Master Breeder", setCode: "c13", collectorNumber: "76",
+      scryfallId: "48eac047-f888-49c7-aa7e-339f900f558f", artist: "Mark Tedin",
+      significance: "A Commander 2013 reprint recalling the Sarpadian breeder of thrulls.",
+    },
+    source: {
+      title: "Wizards of the Coast — Name Dropping",
+      url: "https://magic.wizards.com/en/news/making-magic/name-dropping-2006-11-13",
+    },
+  },
   // Chapter 10 — the first Omenpath-era travelers and survivors
   {
     id: "will-kenrith",

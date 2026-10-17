@@ -6,6 +6,12 @@ export interface CharacterCategory {
 
 export const characterCategories: CharacterCategory[] = [
   {
+    id: "sarpadia",
+    label: "Sarpadian figures",
+    characterIds: ["thelon-of-havenwood", "endrek-sahr"],
+  },
+
+  {
     id: "post-invasion",
     label: "Post-invasion and Omenpath-era figures",
     characterIds: ["will-kenrith", "rowan-kenrith", "kellan", "oko", "jace-beleren", "vraska", "loot"],
@@ -71,6 +77,7 @@ export const characterCategories: CharacterCategory[] = [
       "teferi",
       "venser",
       "freyalise",
+      "mairsil",
     ],
   },
 
