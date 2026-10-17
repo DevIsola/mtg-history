@@ -145,8 +145,14 @@ export const eras: HistoricalEra[] = [
     name: "The Era of Omenpaths",
     kicker: "After the Invasion",
     summary:
-      "New routes between worlds reshape travel, relationships, and the possibilities of life in the Multiverse.",
-    sets: ["Wilds of Eldraine · 2023", "Later story releases"],
-    status: "planned",
+      "With sparks lost and Omenpaths opening, travelers like Kellan cross Eldraine, Ixalan, Ravnica, and Thunder Junction while survivors reshape their worlds.",
+    sets: [
+      "March of the Machine: The Aftermath · 2023",
+      "Wilds of Eldraine · 2023",
+      "The Lost Caverns of Ixalan · 2023",
+      "Murders at Karlov Manor · 2024",
+      "Outlaws of Thunder Junction · 2024",
+    ],
+    status: "published",
   },
 ];

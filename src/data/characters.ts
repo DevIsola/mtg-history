@@ -19,6 +19,168 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 10 — the first Omenpath-era travelers and survivors
+  {
+    id: "will-kenrith",
+    name: "Will Kenrith",
+    title: "Eldraine’s Young King",
+    origin: "Eldraine",
+    role: "Former planeswalker and claimant to Eldraine’s throne",
+    summary: "The desparked heir who attempted to guide Eldraine through the consequences of the Phyrexian invasion.",
+    biography: [
+      "Will and his twin Rowan lost King Kenrith and Queen Linden during the Phyrexian invasion, leaving the realm to rebuild amid grief and disorder.",
+      "With his planeswalker spark gone, Will remained committed to the difficult work of restoring institutions and uniting Eldraine after the Wicked Slumber.",
+      "His belief in negotiation clashed with Rowan’s conviction that only formidable magic could prevent the next catastrophe.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Will, Scion of Peace", setCode: "woe", collectorNumber: "218",
+      scryfallId: "162088ea-5f99-4244-9427-2fdfb2168fc3", artist: "Ryan Pancoast",
+      significance: "The legendary creature card captures Will’s responsibilities after losing his spark.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/announcements/a-first-look-at-wilds-of-eldraine",
+    },
+  },
+  {
+    id: "rowan-kenrith",
+    name: "Rowan Kenrith",
+    title: "The Scion of War",
+    origin: "Eldraine",
+    role: "Former planeswalker and royal heir pursuing dangerous power",
+    summary: "Will’s twin, whose grief and desire to protect Eldraine led her away from her brother’s vision of restoration.",
+    biography: [
+      "Rowan survived the Phyrexian invasion but lost her parents and her planeswalker spark, joining a kingdom struggling with the Wicked Slumber.",
+      "She came to distrust the slow political solutions Will favored and increasingly viewed power as the necessary answer to Eldraine’s vulnerability.",
+      "Her pursuit of dangerous magic placed her at odds with Will without erasing the family bond at the root of their conflict.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Rowan, Scion of War", setCode: "woe", collectorNumber: "300",
+      scryfallId: "844e29e9-e870-4433-ad63-0ff918a3e41a", artist: "Abigail Larson",
+      significance: "Alternate-art 2023 printing reflecting Rowan’s turn toward power in Eldraine.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-2-wandering-knight-budding-hero",
+    },
+  },
+  {
+    id: "kellan",
+    name: "Kellan",
+    title: "The Fae-Blooded Traveler",
+    origin: "Eldraine; later a traveler between planes",
+    role: "Half-fae adventurer who crossed Omenpaths in search of his father",
+    summary: "A young Eldraine hero whose quest became a journey across Ixalan, Ravnica, and Thunder Junction.",
+    biography: [
+      "Kellan’s encounters with the fae and the Wicked Slumber on Eldraine revealed that his father was the elusive planeswalker Oko.",
+      "The newly opened Omenpaths let him continue the search beyond his home despite not possessing a planeswalker spark.",
+      "His experiences as an explorer, investigator, and participant in the Thunder Junction heist tested what family and personal judgment meant to him.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Kellan, the Fae-Blooded", setCode: "woe", collectorNumber: "230",
+      scryfallId: "ec5e2680-8b42-4571-ab45-4936aec51901", artist: "Anna Steinbauer",
+      significance: "Kellan’s first legendary card precedes the later portrayals of his multiversal journey.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/feature/a-legendary-crew-for-an-unbelievable-heist-outlaws-of-thunder-junction",
+    },
+  },
+  {
+    id: "oko",
+    name: "Oko",
+    title: "The Fae Trickster",
+    origin: "Unknown fae origins; traveler across worlds",
+    role: "Planeswalker, shapeshifter, and organizer of the Thunder Junction vault heist",
+    summary: "Kellan’s father, a deceptive fae planeswalker whose elaborate plans led a crew toward an ancient vault.",
+    biography: [
+      "Oko’s skill with transformations and manipulation helped him evade consequences and assemble allies for high-risk schemes.",
+      "He organized an interplanar criminal crew around the Thunder Junction vault and its mysterious contents.",
+      "His reunion with Kellan confronted the young traveler with the difference between seeking a parent and trusting one.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Oko, the Ringleader", setCode: "otj", collectorNumber: "223",
+      scryfallId: "396df8d6-e85d-4486-8116-68841b7e1e2e", artist: "Magali Villeneuve",
+      significance: "The Thunder Junction planeswalker card depicts Oko as the architect of the vault heist.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/feature/a-legendary-crew-for-an-unbelievable-heist-outlaws-of-thunder-junction",
+    },
+  },
+  {
+    id: "jace-beleren",
+    name: "Jace Beleren",
+    title: "The Reawakened Mind Mage",
+    origin: "Vryn; later Ravnica and other planes",
+    role: "Telepathic planeswalker who survived Phyrexian compleation",
+    summary: "A surviving planeswalker whose rescue of Vraska and later plans reveal the unresolved stakes of the post-invasion era.",
+    biography: [
+      "Jace was compleated during the campaign against New Phyrexia but retained enough of himself to struggle against the corruption within his own mind.",
+      "He found Vraska on Ravnica during the invasion and worked to recover her, carrying the two of them to his mother on Vryn for help.",
+      "After the war, he and Vraska became involved in the plot surrounding Thunder Junction’s ancient vault and the being called Loot.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Jace Reawakened", setCode: "otj", collectorNumber: "271",
+      scryfallId: "fd17e8d4-499e-4005-ae3c-bc9c44dc5a67", artist: "Cristi Balanescu",
+      significance: "A 2024 planeswalker card demonstrating that desparking did not affect all planeswalkers.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/magic-story/epilogue-1-the-invasion-tree",
+    },
+  },
+  {
+    id: "vraska",
+    name: "Vraska",
+    title: "The Silencer",
+    origin: "Ravnica",
+    role: "Gorgon survivor, former guild leader, and ally of Jace",
+    summary: "A former compleated planeswalker whose survival and hidden aims complicate the Thunder Junction heist.",
+    biography: [
+      "Vraska’s history with Ravnica and Jace preceded the Phyrexian invasion, during which her body and mind were corrupted.",
+      "Jace sought her out during the war, protected her surviving self, and brought her toward recovery.",
+      "She returned to action among the Thunder Junction outlaws while concealing objectives beyond those Oko’s crew understood.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Vraska, the Silencer", setCode: "otj", collectorNumber: "237",
+      scryfallId: "b042abf2-c40b-4235-a4fa-2e4901c375c3", artist: "Kieran Yanner",
+      significance: "Her Thunder Junction legendary creature printing reflects a changed post-invasion status.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/magic-story/epilogue-1-the-invasion-tree",
+    },
+  },
+  {
+    id: "loot",
+    name: "Loot",
+    title: "The Key to Everything",
+    origin: "Ancient Thunder Junction vault",
+    role: "Mysterious young being tied to the vault’s multiversal secrets",
+    summary: "The living discovery at the heart of the vault heist, whose abilities drew attention beyond Thunder Junction.",
+    biography: [
+      "Loot was found inside a heavily defended ancient vault on Thunder Junction, rather than being an ordinary treasure seized by a criminal crew.",
+      "His unusual connection to the Multiverse made him important to the plans of Jace and Vraska.",
+      "His emergence turned the outcome of a heist into the beginning of a larger unresolved question about the future of interplanar travel.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Loot, the Key to Everything", setCode: "big", collectorNumber: "21",
+      scryfallId: "fb169fa2-c92e-45f7-89a2-0ca0e3910a1c", artist: "Rudy Siswanto",
+      significance: "The Big Score card presents the vault’s living prize, not an ordinary object.",
+    },
+    source: {
+      title: "Wizards of the Coast — Official Magic story",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-5-high-moon",
+    },
+  },
   // Chapter 09 — New Phyrexia and the Multiverse-wide invasion
   {
     id: "elesh-norn",

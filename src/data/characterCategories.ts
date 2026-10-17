@@ -6,6 +6,12 @@ export interface CharacterCategory {
 
 export const characterCategories: CharacterCategory[] = [
   {
+    id: "post-invasion",
+    label: "Post-invasion and Omenpath-era figures",
+    characterIds: ["will-kenrith", "rowan-kenrith", "kellan", "oko", "jace-beleren", "vraska", "loot"],
+  },
+
+  {
     id: "planeswalkers",
     label: "Planeswalkers",
     characterIds: [

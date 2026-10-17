@@ -9,6 +9,91 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 10 — the early Omenpath era
+  {
+    id: "omenpaths-sparks-and-roads",
+    title: "Desparking and the Emergence of Omenpaths",
+    chapterId: "omenpaths",
+    summary: "Many planeswalkers lose their sparks even as non-planeswalkers gain new ways to traverse worlds.",
+    narrative: [
+      "The consequences of Realmbreaker include the loss of sparks by many former planeswalkers and the appearance of unstable Omenpaths.",
+      "Nissa struggles through her recovery on Zhalfir, while Chandra continues to provide a personal point of connection to the war’s survivors.",
+    ],
+    characterIds: ["nissa", "chandra"],
+    cardName: "Nissa, Resurgent Animist",
+  },
+  {
+    id: "omenpaths-eldraine-mourning",
+    title: "Eldraine Mourns the Kenriths",
+    chapterId: "omenpaths",
+    summary: "Will and Rowan face a shattered kingdom after the deaths of their parents.",
+    narrative: [
+      "King Kenrith and Queen Linden died during the Phyrexian invasion, leaving Eldraine without its familiar rulers.",
+      "Their desparked children took different approaches to the realm’s rebuilding as the Wicked Slumber strained its people.",
+    ],
+    characterIds: ["will-kenrith", "rowan-kenrith"],
+    cardName: "The Kenriths' Royal Funeral",
+  },
+  {
+    id: "omenpaths-kellan-first-crossing",
+    title: "Kellan Leaves Eldraine by Omenpath",
+    chapterId: "omenpaths",
+    summary: "A half-fae youth begins crossing planes without a spark to search for Oko.",
+    narrative: [
+      "Kellan’s involvement in Eldraine’s fae crisis reveals his connection to Oko.",
+      "He follows Omenpaths toward other worlds, where the search for a parent begins to intersect with local histories.",
+    ],
+    characterIds: ["kellan", "oko"],
+    cardName: "Kellan, the Fae-Blooded",
+  },
+  {
+    id: "omenpaths-rowan-and-will-diverge",
+    title: "The Kenrith Twins Choose Different Paths",
+    chapterId: "omenpaths",
+    summary: "Will turns toward rebuilding while Rowan pursues increasingly dangerous power.",
+    narrative: [
+      "Neither heir can undo the invasion’s losses, and both see the Wicked Slumber as a threat to Eldraine’s survival.",
+      "Will emphasizes repair and legitimacy; Rowan becomes increasingly suspicious of patient compromise.",
+    ],
+    characterIds: ["will-kenrith", "rowan-kenrith"],
+    cardName: "Rowan, Scion of War",
+  },
+  {
+    id: "omenpaths-ravnica-investigation",
+    title: "A Murder Conspiracy Shakes Ravnica",
+    chapterId: "omenpaths",
+    summary: "Kellan helps investigators uncover a conspiracy amid the guilds’ post-invasion tensions.",
+    narrative: [
+      "After arriving from other planes, Kellan joins Kaya and detective Alquist Proft as they investigate high-profile murders.",
+      "The case reaches deep into Ravnica’s guild politics and unresolved injuries from the Phyrexian war.",
+    ],
+    characterIds: ["kellan", "teysa-karlov"],
+    cardName: "Kellan, Inquisitive Prodigy",
+  },
+  {
+    id: "omenpaths-thunder-junction-vault",
+    title: "Oko’s Crew Raids the Thunder Junction Vault",
+    chapterId: "omenpaths",
+    summary: "Interplanar outlaws converge on an ancient vault as Kellan encounters his father.",
+    narrative: [
+      "Oko organizes a criminal crew on Thunder Junction to claim the secrets of a guarded Fomori vault.",
+      "Kellan’s search brings him into the operation, forcing him to judge Oko by his choices rather than reputation or kinship.",
+    ],
+    characterIds: ["oko", "kellan", "vraska"],
+    cardName: "Oko, the Ringleader",
+  },
+  {
+    id: "omenpaths-loot-discovered",
+    title: "The Vault Reveals Loot",
+    chapterId: "omenpaths",
+    summary: "The treasure in Thunder Junction’s vault is a living being tied to broader multiversal mysteries.",
+    narrative: [
+      "Loot is discovered within the ancient vault as the heist’s participants struggle over its contents.",
+      "Jace and Vraska become central to Loot’s next steps, connecting the affair to ambitions extending beyond Thunder Junction.",
+    ],
+    characterIds: ["loot", "jace-beleren", "vraska"],
+    cardName: "Loot, the Key to Everything",
+  },
   // Chapter 09 — the New Phyrexian invasion and its aftermath
   {
     id: "phyrexia-dominaria-sleeper-war",

@@ -20,6 +20,37 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 10 — kinship and shifting alliances after the invasion
+  {
+    a: "will-kenrith", b: "rowan-kenrith", category: "family",
+    labelForA: "Twin sister", labelForB: "Twin brother",
+    context: "The heirs’ shared grief after the invasion developed into a disagreement over how Eldraine could be saved.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "kellan", b: "oko", category: "family",
+    labelForA: "Elusive father", labelForB: "Son searching for him",
+    context: "Kellan crossed Omenpaths to find Oko, only to confront the trickster’s methods on Thunder Junction.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "jace-beleren", b: "vraska", category: "alliance",
+    labelForA: "Partner and beloved", labelForB: "Partner and beloved",
+    context: "Jace and Vraska survived Phyrexian corruption and pursued a new plan after their recovery.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "jace-beleren", b: "loot", category: "alliance",
+    labelForA: "Young ward", labelForB: "Protector and planner",
+    context: "Jace took an interest in Loot after the discovery at the ancient vault on Thunder Junction.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "vraska", b: "loot", category: "alliance",
+    labelForA: "Young ward", labelForB: "Protector and ally",
+    context: "Vraska became part of Loot’s unfolding story following the vault heist.",
+    chapterId: "omenpaths",
+  },
   // Chapter 09 — loyalties, corruption, and resistance
   {
     a: "elesh-norn", b: "sheoldred", category: "rivalry",
