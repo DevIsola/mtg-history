@@ -39,7 +39,7 @@ const orderedChapters = [...chapters].sort(
             activeId === chapter.id &&
               'chronology-strip__link--current',
           ]}
-          href={withBase(`chapters/${chapter.id}/`)}
+          href={withBase(`chapters/${chapter.id}/#chapter-reader`)}
           aria-current={
             activeId === chapter.id ? 'page' : undefined
           }

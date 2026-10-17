@@ -1,0 +1,100 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  chapters: CollectionEntry<'chapters'>[];
+  activeId: string;
+}
+
+const { chapters, activeId } = Astro.props;
+const ordered = [...chapters].sort(
+  (a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id),
+);
+const activeIndex = ordered.findIndex((chapter) => chapter.id === activeId);
+if (activeIndex < 0) throw new Error(`Unknown chapter for switcher: ${activeId}`);
+const active = ordered[activeIndex];
+const previous = ordered[activeIndex - 1];
+const next = ordered[activeIndex + 1];
+const chapterHref = (id: string) => withBase(`chapters/${id}/#chapter-reader`);
+---
+
+<nav class="chapter-switcher" aria-label="Switch chapters" data-chapter-switcher>
+  <div class="chapter-switcher__identity">
+    <span class="chapter-switcher__eyebrow">
+      Historical record · {String(activeIndex + 1).padStart(2, '0')} / {String(ordered.length).padStart(2, '0')}
+    </span>
+    <strong class="chapter-switcher__title">{active.data.title}</strong>
+  </div>
+
+  <div class="chapter-switcher__actions">
+    {previous ? (
+      <a
+        class="chapter-switcher__step"
+        href={chapterHref(previous.id)}
+        aria-label={`Previous chapter: ${previous.data.title}`}
+        rel="prev"
+      ><span aria-hidden="true">←</span><span>Previous</span></a>
+    ) : <span class="chapter-switcher__step chapter-switcher__step--empty" aria-hidden="true"></span>}
+
+    <details class="chapter-switcher__menu" data-chapter-menu>
+      <summary>
+        <span>All chapters</span>
+        <span class="chapter-switcher__chevron" aria-hidden="true">⌄</span>
+      </summary>
+      <div class="chapter-switcher__panel">
+        <p class="chapter-switcher__panel-title">Choose a chapter</p>
+        <ol>
+          {ordered.map((chapter) => (
+            <li>
+              <a
+                href={chapterHref(chapter.id)}
+                aria-current={chapter.id === activeId ? 'page' : undefined}
+              >
+                <span class="chapter-switcher__index">
+                  {String(chapter.data.order).padStart(2, '0')}
+                </span>
+                <span class="chapter-switcher__item-copy">
+                  <strong>{chapter.data.title}</strong>
+                  <small>{chapter.data.chronology.storyPeriod}</small>
+                </span>
+                {chapter.id === activeId && (
+                  <span class="chapter-switcher__current">Reading</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ol>
+        <a class="chapter-switcher__timeline" href={withBase('timeline/')}>
+          Full historical timeline <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </details>
+
+    {next ? (
+      <a
+        class="chapter-switcher__step"
+        href={chapterHref(next.id)}
+        aria-label={`Next chapter: ${next.data.title}`}
+        rel="next"
+      ><span>Next</span><span aria-hidden="true">→</span></a>
+    ) : <span class="chapter-switcher__step chapter-switcher__step--empty" aria-hidden="true"></span>}
+  </div>
+</nav>
+
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('[data-chapter-menu]');
+  if (menu) {
+    document.addEventListener('pointerdown', (event) => {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) {
+        menu.open = false;
+      }
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.open) {
+        menu.open = false;
+        menu.querySelector('summary')?.focus();
+      }
+    });
+  }
+</script>
