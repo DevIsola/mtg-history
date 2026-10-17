@@ -19,6 +19,67 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 08 — the machinery, resistance, and political capture of Ravnica
+  {
+    id: "tezzeret",
+    name: "Tezzeret",
+    title: "Master of the Planar Bridge",
+    origin: "Alara — Esper",
+    role: "Artificer and carrier of Bolas's interplanar invasion device",
+    summary: "The planeswalker artificer whose Planar Bridge enabled Bolas to transport the lazotep-clad Eternals to Ravnica.",
+    biography: [
+      "Tezzeret's ambition and mastery of magical machinery made him an important agent in Nicol Bolas's plans.",
+      "After the Planar Bridge was taken from Kaladesh, Tezzeret became its bearer. Its movement of nonliving matter between planes gave Bolas a way to move the specially prepared Eternals from Amonkhet to Ravnica.",
+      "The bridge was one element of a larger operation that also depended on the Interplanar Beacon, Immortal Sun, and Elderspell. After Bolas's defeat, Ravnican guild leaders sought to hold Tezzeret accountable.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Tezzeret, Master of the Bridge", setCode: "war", collectorNumber: "275",
+      scryfallId: "9ee1eea2-961f-445d-b035-6baed454f289", artist: "Chase Stone",
+      significance: "War of the Spark buy-a-box portrait of the Planar Bridge's bearer.",
+    },
+    source: { title: "Wizards of the Coast — War of the Spark: Ravnica — Ashes", url: "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12" },
+  },
+  {
+    id: "ral-zarek",
+    name: "Ral Zarek",
+    title: "Izzet Storm Mage",
+    origin: "Ravnica",
+    role: "Izzet planeswalker and organizer of Ravnica's resistance",
+    summary: "An Izzet mage whose expertise with the Interplanar Beacon proved vital both to the invasion's trap and to countering it.",
+    biography: [
+      "Ral Zarek was a planeswalker and Izzet League mage closely tied to Ravnica's magical engineering and to Niv-Mizzet.",
+      "As Bolas's plot converged on Ravnica, the Interplanar Beacon became the means of attracting planeswalkers into a prison sealed by the Immortal Sun.",
+      "Ral helped organize resistance and disable the machinery supporting the invading army. After the battle, the guild leadership charged him with pursuing Tezzeret.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Ral, Storm Conduit", setCode: "war", collectorNumber: "211",
+      scryfallId: "678ce3bf-152d-45ca-87ae-ad46c921328b", artist: "Wesley Burt",
+      significance: "Ral Zarek during the War of the Spark, serving Ravnica's resistance.",
+    },
+    source: { title: "Wizards of the Coast — War of the Spark: Ravnica — Ashes", url: "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12" },
+  },
+  {
+    id: "dovin-baan",
+    name: "Dovin Baan",
+    title: "Azorius Grand Arbiter",
+    origin: "Kaladesh",
+    role: "Bolas-aligned administrator of the Azorius Senate",
+    summary: "The planeswalker who used Ravnica's legal institutions to obstruct opposition to Bolas.",
+    biography: [
+      "Dovin Baan was a Vedalken planeswalker known for his administrative precision and talent for finding flaws in systems.",
+      "He came to Ravnica and gained control of the Azorius Senate, using civic authority in ways that strengthened Bolas's conspiracy and obstructed its opponents.",
+      "His political control demonstrates why the War of the Spark was not only a magical battle: the city's own institutions had been compromised. Following the war, Vraska was asked to pursue him.",
+    ],
+    chapterIds: ["war-of-the-spark"],
+    featuredCard: {
+      name: "Dovin, Hand of Control", setCode: "pwar", collectorNumber: "229s",
+      scryfallId: "45abf8eb-c583-4eec-a91f-0e58424a8b1c", artist: "Kieran Yanner",
+      significance: "War of the Spark prerelease portrait of the Azorius collaborator.",
+    },
+    source: { title: "Wizards of the Coast — War of the Spark: Ravnica — Ashes", url: "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12" },
+  },
   // Chapter 06 — an old planeswalker's destructive ambitions
   {
     id: "leshrac",

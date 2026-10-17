@@ -20,6 +20,37 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 08 — alliances and rivalries behind the invasion apparatus
+  {
+    a: "tezzeret", b: "nicol-bolas", category: "alliance",
+    labelForA: "Dragon employer", labelForB: "Bearer of the Planar Bridge",
+    context: "Tezzeret carried the Planar Bridge that brought Bolas's lazotep-clad Eternals to Ravnica.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "dovin-baan", b: "nicol-bolas", category: "alliance",
+    labelForA: "Conspirator he supported", labelForB: "Azorius administrator",
+    context: "Dovin used Ravnica's Senate to suppress resistance and aid Bolas's plan.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "ral-zarek", b: "niv-mizzet", category: "alliance",
+    labelForA: "Izzet leader", labelForB: "Izzet planeswalker",
+    context: "Ral worked within the Izzet League and helped coordinate opposition as Niv-Mizzet returned as the Living Guildpact.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "ral-zarek", b: "tezzeret", category: "rivalry",
+    labelForA: "Artificer to pursue", labelForB: "Izzet pursuer",
+    context: "Following the invasion, Ral accepted the guilds' assignment to hunt Tezzeret.",
+    chapterId: "war-of-the-spark",
+  },
+  {
+    a: "ral-zarek", b: "dovin-baan", category: "rivalry",
+    labelForA: "Azorius collaborator", labelForB: "Izzet opponent",
+    context: "Ral helped Ravnica resist the plan that Dovin supported through control of the Azorius Senate.",
+    chapterId: "war-of-the-spark",
+  },
   // Chapter 06 — manipulation, rivalry, and collaboration
   {
     a: "leshrac", b: "jeska", category: "rivalry",
