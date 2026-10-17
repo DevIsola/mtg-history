@@ -7,7 +7,7 @@ import { withBase } from '../../utils/paths';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChapterToc from '../../components/ChapterToc.astro';
 import ChapterSources from '../../components/ChapterSources.astro';
-import ChapterChronology from '../../components/ChapterChronology.astro';
+import ChapterSwitcher from '../../components/ChapterSwitcher.astro';
 
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
@@ -53,19 +53,17 @@ const nextChapter = chapters[currentIndex + 1];
 
       <h1>{chapter.data.title}</h1>
       <p>{chapter.data.subtitle}</p>
+      <a class="chapter-banner__start" href="#chapter-reader">Begin reading <span aria-hidden="true">↓</span></a>
     </div>
   </section>
 
-<div class="chronology-band">
+<div class="chapter-switcher-band">
   <div class="page-shell">
-    <ChapterChronology
-      chapters={chapters}
-      activeId={chapter.id}
-    />
+    <ChapterSwitcher chapters={chapters} activeId={chapter.id} />
   </div>
 </div>
 
-  <section class="section-spacing">
+  <section id="chapter-reader" class="chapter-reader" tabindex="-1" aria-label="Chapter reading content">
     <div class="page-shell chapter-reading-grid">
 
       <!-- Chapter navigation sidebar -->
@@ -86,15 +84,19 @@ const nextChapter = chapters[currentIndex + 1];
           ← Return to timeline
         </a>
 
-        <div class="chapter-publications">
-          <p class="eyebrow">Related Expansions</p>
+        <p class="chapter-reader__context">Chapter {String(chapter.data.order).padStart(2, '0')} · {chapter.data.title}</p>
 
+        <details class="chapter-publications">
+          <summary>
+            <span>Related expansions</span>
+            <span class="chapter-publications__count">{chapter.data.relatedSets.length} publications <span aria-hidden="true">⌄</span></span>
+          </summary>
           <ul>
             {chapter.data.relatedSets.map((set) => (
               <li>{set.name} ({set.year})</li>
             ))}
           </ul>
-        </div>
+        </details>
 
         <!-- Historical narrative -->
         <article class="chapter-prose">
@@ -113,7 +115,7 @@ const nextChapter = chapters[currentIndex + 1];
             <a
               class="chapter-pagination__link"
               href={withBase(
-                `chapters/${previousChapter.id}/`
+                `chapters/${previousChapter.id}/#chapter-reader`
               )}
             >
               <span>← Previous chapter</span>
@@ -125,7 +127,7 @@ const nextChapter = chapters[currentIndex + 1];
             <a
               class="chapter-pagination__link"
               href={withBase(
-                `chapters/${nextChapter.id}/`
+                `chapters/${nextChapter.id}/#chapter-reader`
               )}
             >
               <span>Next chapter →</span>
