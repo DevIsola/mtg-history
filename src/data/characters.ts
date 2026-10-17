@@ -19,6 +19,191 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 09 — New Phyrexia and the Multiverse-wide invasion
+  {
+    id: "elesh-norn",
+    name: "Elesh Norn",
+    title: "Mother of Machines",
+    origin: "New Phyrexia — the Machine Orthodoxy",
+    role: "Grand praetor and architect of the multiversal invasion",
+    summary: "The praetor who used Realmbreaker to impose Phyrexian unity on the Multiverse.",
+    biography: [
+      "After Mirrodin's fall, Elesh Norn consolidated the Machine Orthodoxy and sought dominion over other praetors as well as other planes.",
+      "Agents recovered Kaldheim's World Tree essence and perfected planeswalker compleation, enabling Norn to grow Realmbreaker and open paths for invasion armies.",
+      "Her ambition failed when Elspeth returned, Wrenn brought Zhalfir into the fight, and Karn personally dismantled Norn after the counterattack.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Elesh Norn, Mother of Machines", setCode: "one", collectorNumber: "10",
+      scryfallId: "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087", artist: "Martina Fackova",
+      significance: "The original All Will Be One image of the praetor directing Phyrexia's attempt to conquer every plane.",
+    },
+    source: {
+      title: "Wizards of the Coast — Planeswalker's Guide to March of the Machine",
+      url: "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine",
+    },
+  },
+  {
+    id: "sheoldred",
+    name: "Sheoldred",
+    title: "The Apocalypse",
+    origin: "New Phyrexia — the Dross Pits",
+    role: "Praetor and organizer of Dominaria's sleeper-agent campaign",
+    summary: "A Phyrexian leader who weakened Dominaria through covert infiltration before the greater invasion.",
+    biography: [
+      "Sheoldred operated among the Steel Thanes and led a covert effort to destabilize Dominaria, the world where Phyrexia's earlier empire had been defeated.",
+      "Her sleeper agents turned trusted institutions and companions into possible threats; Ajani's compleation enabled a devastating betrayal and Jaya's death.",
+      "Sheoldred's interests were not identical to Elesh Norn's, and the praetors' struggle for power revealed the limits of Phyrexia's supposedly unified will.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Sheoldred, the Apocalypse", setCode: "dmu", collectorNumber: "107",
+      scryfallId: "d67be074-cdd4-41d9-ac89-0a0456c4e4b2", artist: "Chris Rahn",
+      significance: "The Dominaria United praetor portrait introduces the covert campaign behind the coming war.",
+    },
+    source: {
+      title: "Wizards of the Coast — The Legends You'll Find in Dominaria United",
+      url: "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01",
+    },
+  },
+  {
+    id: "koth",
+    name: "Koth",
+    title: "Fire of Resistance",
+    origin: "Mirrodin — the Vulshok of the Oxidda Chain",
+    role: "Geomancer and leader of the surviving Mirran resistance",
+    summary: "A native of Mirrodin who refused to yield to Phyrexia after it occupied his home plane.",
+    biography: [
+      "Koth fought the Phyrexians as their corruption swept Mirrodin and continued resisting long after the world was renamed New Phyrexia.",
+      "He helped guide returning planeswalkers and Mirran survivors through the Seedcore crisis and the final attempt to reach Realmbreaker.",
+      "The restoration of Zhalfir offered his people sanctuary, but victory did not return the metal world he had vowed to save.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Koth, Fire of Resistance", setCode: "pone", collectorNumber: "138",
+      scryfallId: "e38f63c4-1d35-451a-8778-2066ed874ff9", artist: "Eric Wilkerson",
+      significance: "A Phyrexia: All Will Be One promotional printing illustrating the Mirran resistance leader.",
+    },
+    source: {
+      title: "Wizards of the Coast — March of the Machine, Episode 10: The Rhythms of Life",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life",
+    },
+  },
+  {
+    id: "ajani",
+    name: "Ajani Goldmane",
+    title: "The Sleeper Agent",
+    origin: "Naya, Alara",
+    role: "Planeswalker, corrupted infiltrator, and survivor of compleation",
+    summary: "A trusted ally whose compleation drove a betrayal during Dominaria's defense.",
+    biography: [
+      "Ajani was widely trusted for his compassion and care for others before he was secretly compleated by Phyrexia.",
+      "His altered allegiance contributed to the death of Jaya during the Dominarian sleeper-agent crisis, showing how Phyrexia weaponized trust.",
+      "After New Phyrexia was isolated, Melira and Karn used a costly treatment to free Ajani from corruption; survival did not erase the damage done while he was controlled.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Ajani, Sleeper Agent", setCode: "dmu", collectorNumber: "370",
+      scryfallId: "7e2af6c1-fdf1-4d04-bd74-f07da939110a", artist: "Victor Adame Minguez",
+      significance: "A Phyrexian-language treatment of Ajani's Dominaria United card, revealing the betrayal.",
+    },
+    source: {
+      title: "Wizards of the Coast — March of the Machine, Episode 10: The Rhythms of Life",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life",
+    },
+  },
+  {
+    id: "nissa",
+    name: "Nissa Revane",
+    title: "The Ascended Animist",
+    origin: "Zendikar",
+    role: "Elemental mage, compleated planeswalker, and survivor",
+    summary: "A guardian of living worlds whose powers were turned against her allies after compleation.",
+    biography: [
+      "Nissa's relationship with Zendikar's lands and the Roil made her one of the Multiverse's most capable nature mages.",
+      "In the failed mission to the Seedcore, Phyrexian oil and coercive compleation turned her against the coalition; Chandra later faced her in the invasion's final stages.",
+      "On Zhalfir, Melira's sacrifice and the power Karn retained from Venser allowed Nissa's restoration, although scars and consequences remained.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Nissa, Ascended Animist", setCode: "one", collectorNumber: "175",
+      scryfallId: "1dd64b1d-bcef-476c-bf0b-3ac7df7cbed3", artist: "Chase Stone",
+      significance: "Her compleated portrait records the invasion's violation of an old bond with nature.",
+    },
+    source: {
+      title: "Wizards of the Coast — March of the Machine, Episode 10: The Rhythms of Life",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life",
+    },
+  },
+  {
+    id: "chandra",
+    name: "Chandra Nalaar",
+    title: "Hope's Beacon",
+    origin: "Kaladesh",
+    role: "Pyromancer and defender of the Multiverse",
+    summary: "A planeswalker who returned to New Phyrexia to fight Norn while struggling with Jaya's death and Nissa's corruption.",
+    biography: [
+      "Jaya Ballard mentored Chandra, whose fiery temperament concealed a deep loyalty to the people she loved.",
+      "After Ajani's betrayal killed Jaya and the Seedcore mission failed, Chandra helped the remaining defenders regroup and return to New Phyrexia.",
+      "She fought alongside Wrenn and Koth, and later stood by Nissa during the uncertain attempt to reverse compleation.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Chandra, Hope's Beacon", setCode: "mom", collectorNumber: "134",
+      scryfallId: "a146ea07-ec1c-448d-b67a-dd9f9e27c2e0", artist: "Kieran Yanner",
+      significance: "Chandra's March of the Machine appearance captures her resolve at the war's climax.",
+    },
+    source: {
+      title: "Wizards of the Coast — March of the Machine, Episode 7: Divine Intervention",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-7-divine-intervention",
+    },
+  },
+  {
+    id: "elspeth",
+    name: "Elspeth Tirel",
+    title: "Archangel of the Final Defense",
+    origin: "New Capenna; survivor of Phyrexian persecution",
+    role: "Planeswalker and angelic defender of New Phyrexia's victims",
+    summary: "A longtime opponent of Phyrexia who transformed after saving connected worlds from the Sylex.",
+    biography: [
+      "Elspeth survived the horrors of Phyrexia in childhood, fought alongside Mirran resistance forces, and searched for safety across worlds.",
+      "When the Seedcore plan threatened worlds already connected to Realmbreaker, she carried the Sylex into the Blind Eternities instead of allowing its detonation among them.",
+      "She returned transformed into an angel, defended the Mirrans, and held off Elesh Norn while Wrenn made the decisive connection to Zhalfir.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Archangel Elspeth", setCode: "mom", collectorNumber: "320",
+      scryfallId: "93f99e67-901f-4c8d-8a09-e443b7eb928f", artist: "Denys Tsiperko",
+      significance: "A borderless portrait of Elspeth's angelic return at the climax of March of the Machine.",
+    },
+    source: {
+      title: "Wizards of the Coast — March of the Machine, Episode 7: Divine Intervention",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-7-divine-intervention",
+    },
+  },
+  {
+    id: "wrenn",
+    name: "Wrenn",
+    title: "The Dryad Who Became Eight",
+    origin: "A planeswalking dryad bonded to successive host trees",
+    role: "Dryad planeswalker who redirected Realmbreaker to Zhalfir",
+    summary: "The dryad who joined with Phyrexia's invasion tree and exchanged New Phyrexia's place with Zhalfir.",
+    biography: [
+      "Wrenn survived by bonding with trees, each partnership unique; her relationship with host trees was personal rather than simply a source of magical power.",
+      "At the height of the multiversal invasion, she bonded with Realmbreaker's living remnant, naming her eighth partner Eight and reaching the isolated plane of Zhalfir.",
+      "She enabled a counterinvasion and exchanged the planes' positions, giving her life so that Zhalfir could return and New Phyrexia could be shut away.",
+    ],
+    chapterIds: ["march-of-the-machine"],
+    featuredCard: {
+      name: "Wrenn and Realmbreaker", setCode: "mom", collectorNumber: "217",
+      scryfallId: "6f807d91-b157-44e8-a431-49782184f876", artist: "Cristi Balanescu",
+      significance: "The card documents Wrenn's unique bond with the once-hostile Invasion Tree.",
+    },
+    source: {
+      title: "Wizards of the Coast — March of the Machine, Episode 8: Wrenn and Eight",
+      url: "https://magic.wizards.com/en/news/magic-story/episode-8-wrenn-and-eight",
+    },
+  },
   // Chapter 08 — the Bolas arc and War of the Spark
   {
     id: "nicol-bolas",
@@ -185,8 +370,9 @@ export const characters: CharacterProfile[] = [
       "Nahiri's talent for shaping stone made it possible to construct Zendikar's planet-spanning prison for the Eldrazi titans.",
       "She agreed to defend her home plane after Ugin and Sorin helped lure the Eldrazi into confinement.",
       "Her later conflict with Sorin and actions on Innistrad belong to subsequent stories, not the first Eldrazi awakening.",
+      "Much later she was compleated during the attack on New Phyrexia and turned her lithomancy against Zendikar during the invasion.",
     ],
-    chapterIds: ["many-worlds"],
+    chapterIds: ["many-worlds", "march-of-the-machine"],
     featuredCard: {
       name: "Nahiri, the Harbinger", setCode: "warm", collectorNumber: "7",
       scryfallId: "45f43bd0-d4d9-4a64-a829-f1ea3dfc9e90", artist: "Kieran Yanner",
@@ -496,8 +682,9 @@ export const characters: CharacterProfile[] = [
       "Her friendship with Jodah endured across centuries. Together, they played a crucial role in bringing the Kjeldoran and Balduvian factions into cooperation against the necromancer Lim-Dûl.",
       "Jaya's life extended beyond the end of the Ice Age. Her planeswalker spark eventually ignited, beginning another chapter in a career that connected several distinct eras of Dominarian history.",
       "Although her name first appeared in Ice Age card flavor text, Jaya received a legendary creature card in Time Spiral, followed by later cards depicting her as a planeswalker.",
+      "She later mentored Chandra Nalaar and died defending Dominaria amid Sheoldred’s sleeper-agent conspiracy.",
     ],
-    chapterIds: ["ice-age"],
+    chapterIds: ["ice-age", "march-of-the-machine"],
     featuredCard: {
       name: "Jaya Ballard, Task Mage",
       setCode: "tsp",
@@ -826,8 +1013,9 @@ export const characters: CharacterProfile[] = [
       "Karn was created by Urza as a silver golem and became an important component of the Legacy. His gentle disposition contrasted with the destructive purposes of many machines around him.",
       "As part of the Weatherlight crew, Karn was drawn into the struggle against Phyrexia. His role in the Legacy helped make the final confrontation with Yawgmoth possible.",
       "Karn survived that conflict and became a planeswalker. His later creation of an artificial world would have consequences for another era of Magic’s history.",
+      "As New Phyrexia tried to invade every plane, Karn helped end Elesh Norn’s rule and later sacrificed his remaining spark to help save Nissa and Ajani.",
     ],
-    chapterIds: ["weatherlight", "otaria", "mending"],
+    chapterIds: ["weatherlight", "otaria", "mending", "march-of-the-machine"],
     featuredCard: {
       name: "Karn, Silver Golem",
       setCode: "usg",
@@ -1264,8 +1452,9 @@ export const characters: CharacterProfile[] = [
       "A gifted student of the Tolarian Academy, Teferi mastered temporal magic and eventually became a planeswalker. During the Phyrexian invasion he phased Zhalfir and Shiv out of ordinary reality to spare them from conquest.",
       "Returning to Dominaria centuries later, he found a dying plane whose time rifts were partly the legacy of those drastic interventions. He worked with Jhoira, Venser, and Radha to understand how they could be sealed.",
       "Teferi spent his spark restoring Shiv and healing its rift. Zhalfir, however, remained absent—one of the most enduring costs of his earlier decision.",
+      "When Wrenn reached Realmbreaker, the Zhalfirin armies returned to the fight and the displaced nation regained its place in the Multiverse.",
     ],
-    chapterIds: ["mending"],
+    chapterIds: ["mending", "march-of-the-machine"],
     featuredCard: {
       name: "Teferi, Mage of Zhalfir",
       setCode: "tsp",

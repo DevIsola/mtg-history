@@ -22,6 +22,12 @@ export const characterCategories: CharacterCategory[] = [
       "nicol-bolas",
       "liliana-vess",
       "gideon-jura",
+      "ajani",
+      "nissa",
+      "chandra",
+      "elspeth",
+      "wrenn",
+      "koth",
     ],
   },
 
@@ -102,6 +108,11 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "phyrexia",
     label: "Phyrexian figures",
-    characterIds: ["yawgmoth", "gix", "volrath", "crovax", "ertai"],
+    characterIds: ["yawgmoth", "gix", "volrath", "crovax", "ertai", "elesh-norn", "sheoldred", "ajani", "nissa"],
+  },
+  {
+    id: "new-phyrexian-invasion",
+    label: "The New Phyrexian Invasion",
+    characterIds: ["elesh-norn", "sheoldred", "koth", "ajani", "nissa", "chandra", "elspeth", "wrenn"],
   },
 ];
