@@ -20,6 +20,19 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 01 — the Thran and the origins of Phyrexia
+  {
+    a: "gix", b: "glacian", category: "rivalry",
+    labelForA: "Powerstone engineer he attacked", labelForB: "Rebel who wounded him",
+    context: "Before his compleation, Gix fought for Halcyon's excluded Untouchables and wounded Glacian with a powerstone shard during their uprising.",
+    chapterId: "thran",
+  },
+  {
+    a: "glacian", b: "yawgmoth", category: "rivalry",
+    labelForA: "Physician who exploited his illness", labelForB: "Patient and engineering pioneer",
+    context: "Yawgmoth gained political access by treating Glacian's phthisis, then manipulated the inventor and the divided powerstone tied to his fate.",
+    chapterId: "thran",
+  },
   // Chapter 10 — kinship and shifting alliances after the invasion
   {
     a: "will-kenrith", b: "rowan-kenrith", category: "family",

@@ -1070,17 +1070,19 @@ export const characters: CharacterProfile[] = [
     id: "gix",
     name: "Gix",
     title: "Praetor of Old Phyrexia",
-    origin: "Phyrexia",
-    role: "Phyrexian praetor and agent of Yawgmoth",
+    origin: "Dominaria (Thran Empire); later Phyrexia",
+    role: "Former Thran rebel, later Phyrexian praetor and agent of Yawgmoth",
     summary:
-      "A powerful Phyrexian agent whose interference in the Brothers' War helped corrupt Mishra and advance Yawgmoth's interests.",
+      "A former Untouchable rebel from Halcyon who became a Phyrexian praetor and later helped corrupt Mishra during the Brothers' War.",
     biography: [
+      "In Halcyon, Gix began as a human among the Untouchables, whose sickness and exclusion were linked to the Thran Empire's dependence on powerstones. He attacked Glacian with a powerstone shard during unrest at the Mana Rig.",
+      "Yawgmoth later used access to phthisis treatment as leverage over the outcasts and their leaders. Gix was drawn into his growing power before being transformed into a Phyrexian servant.",
       "Gix was a powerful servant of Yawgmoth and one of the major Phyrexian figures involved in the events surrounding the Brothers' War.",
       "His influence reached Dominaria while Urza and Mishra were fighting for control of Terisiare. Rather than acting as an ordinary military commander, Gix worked to extend Phyrexian power through the conflict already underway.",
       "Mishra's growing dependence on Phyrexian forces enabled Gix's influence to become part of the war's central story. The brother's ultimate corruption reflected the danger of treating those forces as instruments of personal ambition.",
       "Gix's involvement helped connect the ancient origins of Phyrexia to the later struggles against Yawgmoth, making the Brothers' War an important chapter in a much longer conflict.",
     ],
-    chapterIds: ["brothers-war"],
+    chapterIds: ["thran", "brothers-war"],
     featuredCard: {
       name: "Gix, Yawgmoth Praetor",
       setCode: "bro",

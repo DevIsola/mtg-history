@@ -20,8 +20,8 @@ export const eras: HistoricalEra[] = [
     name: "The Thran and the Origins of Phyrexia",
     kicker: "Before the Brothers",
     summary:
-      "Discover the rise and fall of the Thran Empire, the genius of Glacian, the sacrifice of Rebbec, and the origins of Yawgmoth’s Phyrexia.",
-    sets: ["Modern Horizons · 2019", "Commander Legends · 2020"],
+      "Explore Halcyon's powerstone society, the Untouchables' uprising, Yawgmoth's rise, Dyfed's gateway, Rebbec's sacrifice, and the stones that shaped the Brothers' War.",
+    sets: ["Urza's Destiny · 1999", "Modern Horizons · 2019", "Commander Legends · 2020", "The Brothers' War · 2022"],
     status: "published",
   },
 

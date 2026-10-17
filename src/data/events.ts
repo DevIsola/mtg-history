@@ -9,6 +9,70 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 01 — deeper Thran history
+  {
+    id: "thran-untouchables-uprising",
+    title: "Gix and the Untouchables Rise Against Halcyon",
+    chapterId: "thran",
+    summary: "Outcasts harmed by powerstone exposure revolt against Halcyon's inequality, drawing Glacian and Gix into a fateful confrontation.",
+    narrative: [
+      "The Thran capital's extraordinary technology concealed serious divisions: the Untouchables were confined in the Caves of the Damned, where phthisis was widespread.",
+      "Before he became a Phyrexian praetor, Gix was a human rebel. He attacked Glacian with a powerstone shard amid the unrest, precipitating the illness that brought Yawgmoth back to the city.",
+      "Gix's later identity as a Phyrexian commander belongs to a subsequent phase of the story, not the initial uprising.",
+    ],
+    characterIds: ["gix", "glacian", "yawgmoth"],
+    cardName: "Gix, Yawgmoth Praetor",
+  },
+  {
+    id: "thran-phthisis-and-power",
+    title: "Phthisis Becomes an Instrument of Power",
+    chapterId: "thran",
+    summary: "Yawgmoth uses treatment of a powerstone-linked sickness to gain political authority over Halcyon and its excluded people.",
+    narrative: [
+      "Powerstone exposure lay behind the illness that ravaged the Thran, with the Untouchables suffering disproportionately from the city's dependence on its energy infrastructure.",
+      "Yawgmoth's medical expertise and provision of treatment increased his credibility; his control over diagnosis, confinement, and care became a way to manipulate political loyalties.",
+      "The card Thran Dynamo is a later image of Thran-derived artifice, not a literal picture of the Mana Rig or its victims.",
+    ],
+    characterIds: ["yawgmoth", "glacian", "rebbec", "gix"],
+    cardName: "Thran Dynamo",
+  },
+  {
+    id: "thran-dyfed-portal",
+    title: "Dyfed Opens a Passage to Phyrexia",
+    chapterId: "thran",
+    summary: "A planeswalker introduces Yawgmoth to an existing artificial plane and creates the route that enables his experiments.",
+    narrative: [
+      "Dyfed took Yawgmoth to a world created earlier by an unnamed planeswalker. He did not originate that plane.",
+      "The portal between Dominaria and Phyrexia allowed Yawgmoth to move patients and followers into a setting where his program of enforced transformation could grow.",
+    ],
+    characterIds: ["yawgmoth", "rebbec"],
+    cardName: "Yawgmoth, Thran Physician",
+  },
+  {
+    id: "thran-war-for-halcyon",
+    title: "The Thran-Phyrexian War Destroys Halcyon",
+    chapterId: "thran",
+    summary: "The struggle against Yawgmoth destroys the capital; Rebbec seals the passage, but cannot restore the empire.",
+    narrative: [
+      "Yawgmoth's expanding power and the forces emerging from Phyrexia led to a war involving resistance beyond the original ruling circles of Halcyon.",
+      "Rebbec sacrificed herself to close the gate after the capital was devastated, separating Dominaria from an entrenched Phyrexian threat.",
+    ],
+    characterIds: ["rebbec", "yawgmoth", "glacian", "gix"],
+    cardName: "Rebbec, Architect of Ascension",
+  },
+  {
+    id: "thran-stones-rediscovered",
+    title: "The Powerstones Return as the Mightstone and Weakstone",
+    chapterId: "thran",
+    summary: "Glacian's divided powerstone survives the Thran catastrophe and becomes central to Urza and Mishra's later history.",
+    narrative: [
+      "The two powerstone halves associated with Glacian and the sealing of Phyrexia outlasted the destruction of Thran society.",
+      "Millennia later, Urza and Mishra found the stones amid the ruins. What they named the Mightstone and Weakstone linked their rivalry to a catastrophe long before their time.",
+      "The Brothers' War card printing is a 2022 illustration of this later discovery, not a card printed during the fictional Thran era.",
+    ],
+    characterIds: ["glacian", "rebbec", "urza", "mishra"],
+    cardName: "The Mightstone and Weakstone",
+  },
   // Chapter 10 — the early Omenpath era
   {
     id: "omenpaths-sparks-and-roads",
