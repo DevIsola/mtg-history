@@ -41,13 +41,15 @@ export const eras: HistoricalEra[] = [
     name: "The Dark and the Ice Age",
     kicker: "From Darkness to the Thaw",
     summary:
-      "After the Sylex Blast, Dominaria enters centuries of turmoil. Jodah, Lim-Dûl, and Freyalise become central figures in the struggle through the Ice Age.",
+      "From Talite persecution and Mairsil's Conclave to Sarpadia's thrulls and thallids, Lim-Dûl's armies, and Freyalise's World Spell, Dominaria survives the long winter.",
     sets: [
       "The Dark · 1994",
       "Fallen Empires · 1994",
       "Ice Age · 1995",
       "Alliances · 1996",
       "Coldsnap · 2006",
+      "Time Spiral · 2006",
+      "Commander 2017 · 2017",
     ],
     status: "published",
   },

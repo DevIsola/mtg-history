@@ -20,6 +20,13 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 03 — the Conclave's betrayal
+  {
+    a: "jodah", b: "mairsil", category: "rivalry",
+    labelForA: "Conclave usurper", labelForB: "Young mage he tried to exploit",
+    context: "Mairsil sought to use Jodah's ancestry and learning for his plans; Jodah later helped free the Conclave's imprisoned founder Ith.",
+    chapterId: "ice-age",
+  },
   // Chapter 02 — royal and military consequences of the war
   {
     a: "kayla", b: "mishra", category: "rivalry",
