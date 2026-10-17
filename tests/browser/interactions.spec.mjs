@@ -9,6 +9,13 @@ test('theme choice persists between pages', async ({ page }) => {
   const html = page.locator('html');
   const toggle = page.locator('[data-theme-toggle]');
   await expect(toggle).toBeVisible();
+  // Astro renders the button before its component script attaches the click
+  // handler. Wait until updateButton() replaces the initial accessible label;
+  // otherwise a fast click (especially under parallel test load) does nothing.
+  await expect(toggle).toHaveAttribute(
+    'aria-label',
+    /^(Switch to light theme|Switch to dark theme)$/,
+  );
 
   const original = await html.getAttribute('data-theme');
   expect(['light', 'dark']).toContain(original);

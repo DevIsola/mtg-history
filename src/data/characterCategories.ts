@@ -6,6 +6,11 @@ export interface CharacterCategory {
 
 export const characterCategories: CharacterCategory[] = [
   {
+    id: "war-of-the-spark",
+    label: "The War of the Spark",
+    characterIds: ["nicol-bolas", "tezzeret", "ral-zarek", "dovin-baan", "liliana-vess", "gideon-jura", "niv-mizzet", "jace-beleren", "vraska"],
+  },
+  {
     id: "temporal-rifts",
     label: "Time Spiral and the Mending",
     characterIds: ["leshrac", "teferi", "jhoira", "venser", "radha", "jeska", "freyalise", "windgrace", "multani"],

@@ -9,6 +9,85 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 08 — constructing and dismantling the War of the Spark trap
+  {
+    id: "spark-planar-bridge-plot",
+    title: "Tezzeret Carries the Planar Bridge",
+    chapterId: "war-of-the-spark",
+    summary: "Bolas's artificer joins Kaladesh's stolen technology to Amonkhet's lazotep-coated armies.",
+    narrative: [
+      "The Planar Bridge originated on Kaladesh, but Bolas's agents secured it for a much larger operation.",
+      "Tezzeret became its bearer, allowing the undead Eternals, clad in protective lazotep, to move to the chosen battlefield on Ravnica.",
+      "The bridge could not replace the Immortal Sun or the beacon: each device played a different role in the same conspiracy.",
+    ],
+    characterIds: ["tezzeret", "nicol-bolas"],
+    cardName: "Tezzeret, Master of the Bridge",
+  },
+  {
+    id: "spark-dovin-azorius-control",
+    title: "Dovin Turns the Azorius Against Ravnica's Defenders",
+    chapterId: "war-of-the-spark",
+    summary: "Bolas's ally uses the Senate's civic authority to suppress opposition before the invasion.",
+    narrative: [
+      "Dovin Baan's rise within the Azorius Senate gave Bolas a powerful accomplice in Ravnica's political institutions.",
+      "Administrative obstruction and the misuse of order weakened the city's ability to act together before the Eternals arrived.",
+      "His role illustrates how the conspiracy exploited internal division alongside interplanar magic.",
+    ],
+    characterIds: ["dovin-baan", "nicol-bolas", "ral-zarek"],
+    cardName: "Dovin, Hand of Control",
+  },
+  {
+    id: "spark-beacon-and-immortal-sun",
+    title: "The Interplanar Beacon Becomes a Trap",
+    chapterId: "war-of-the-spark",
+    summary: "The beacon calls planeswalkers to Ravnica while the Immortal Sun prevents their departure.",
+    narrative: [
+      "The Izzet-made Interplanar Beacon drew walkers toward Ravnica, where Bolas intended to harvest their sparks.",
+      "The Immortal Sun completed the trap by preventing its victims from leaving by planeswalking.",
+      "Ral Zarek's engineering skills mattered both to the city's preparations and to resistance against Bolas.",
+    ],
+    characterIds: ["ral-zarek", "nicol-bolas"],
+    cardName: "Interplanar Beacon",
+  },
+  {
+    id: "spark-domri-first-harvest",
+    title: "The Elderspell Claims Domri Rade",
+    chapterId: "war-of-the-spark",
+    summary: "Domri becomes an early planeswalker casualty as the Eternals begin harvesting sparks.",
+    narrative: [
+      "The Elderspell's promised ascension required the deaths of the planeswalkers gathered and trapped on Ravnica.",
+      "Domri Rade's spark was harvested as Bolas's plan moved from preparation into lethal action.",
+      "The original Spark Harvest card names Domri's fate in its flavor text, linking a representative card directly to the storyline.",
+    ],
+    characterIds: ["nicol-bolas"],
+    cardName: "Spark Harvest",
+  },
+  {
+    id: "spark-invasion-devices-disabled",
+    title: "The Defenders Disable Bolas's Invasion Machinery",
+    chapterId: "war-of-the-spark",
+    summary: "Ravnica's defenders cut off the beacon, the Immortal Sun, and the Planar Bridge's flow of Eternals.",
+    narrative: [
+      "Defeating individual Eternals could not stop the conspiracy while Bolas's machines continued to summon victims and reinforcements.",
+      "Allied defenders neutralized the beacon, Immortal Sun, and Planar Bridge during the fighting.",
+      "The shutdowns removed vital advantages from the invading dragon, though the city was still endangered by his magic and the Eternals already on the battlefield.",
+    ],
+    characterIds: ["ral-zarek", "tezzeret", "nicol-bolas"],
+    cardName: "Interplanar Beacon",
+  },
+  {
+    id: "spark-postwar-accountability",
+    title: "Ravnica Assigns Pursuit of Bolas's Collaborators",
+    chapterId: "war-of-the-spark",
+    summary: "Ravnica's restored leadership seeks accountability from the walkers who aided the invasion.",
+    narrative: [
+      "After Bolas's fall, the guilds considered the role played by people who had helped the dragon bring devastation to the city.",
+      "Ral Zarek agreed to pursue Tezzeret, Vraska was tasked with finding Dovin Baan, and Kaya was asked to hunt Liliana Vess.",
+      "Liliana's rebellion and Gideon's sacrifice complicated the question of responsibility, demonstrating that the war's moral consequences did not end with its last battle.",
+    ],
+    characterIds: ["ral-zarek", "tezzeret", "dovin-baan", "vraska", "liliana-vess"],
+    cardName: "Ral, Storm Conduit",
+  },
   // Chapter 06 — temporal intrusions and the people behind the Mending
   {
     id: "mending-jhoira-timekeeping",

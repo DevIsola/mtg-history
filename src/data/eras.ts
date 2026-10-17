@@ -122,7 +122,7 @@ export const eras: HistoricalEra[] = [
     name: "The War of the Spark",
     kicker: "The Fate of Ravnica",
     summary:
-      "Nicol Bolas draws planeswalkers into a confrontation whose consequences reach far beyond a single plane.",
+      "Bolas's Planar Bridge, beacon, Immortal Sun, and Elderspell trap planeswalkers on Ravnica; guild defenders resist his Dreadhorde, while Gideon's sacrifice and Niv-Mizzet's rebirth shape the aftermath.",
     sets: ["War of the Spark · 2019"],
     status: "published",
   },
