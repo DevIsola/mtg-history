@@ -9,6 +9,73 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 10 — the new road network, Ixalan's past, and Ravnica's reckoning
+  {
+    id: "omenpaths-desparking-consequences",
+    title: "Loss of Sparks Changes the Balance of Travel",
+    chapterId: "omenpaths",
+    summary: "Former planeswalkers learn that magic can endure after desparking while Omenpaths let others cross worlds.",
+    narrative: [
+      "The aftermath of Realmbreaker's defeat left some planeswalkers without their sparks, while other travelers began using unpredictable passages between planes.",
+      "Desparking did not erase other forms of magic, just as entering an Omenpath did not grant a traveler control over interplanar destinations.",
+      "The consequences forced individuals and societies to reconsider their mobility, security, and responsibility toward people who arrived from elsewhere.",
+    ],
+    characterIds: ["nissa", "will-kenrith", "rowan-kenrith", "kellan"],
+    cardName: "Nissa, Resurgent Animist",
+  },
+  {
+    id: "omenpaths-quintorius-expedition",
+    title: "Quintorius Joins Ixalan's Archaeological Expedition",
+    chapterId: "omenpaths",
+    summary: "A newly sparked scholar from Arcavios joins Saheeli and Huatli in interpreting the ruins of Ixalan.",
+    narrative: [
+      "Quintorius traveled to Ixalan to assist the study of Orazca's puzzle-door and older civilizations below the surface.",
+      "Huatli's local knowledge and Saheeli's work made the expedition a collaboration rather than a discovery credited only to an outsider.",
+      "Quintorius could planeswalk while Kellan used the new planar roads, illustrating distinct forms of travel in the same historical period.",
+    ],
+    characterIds: ["quintorius-kand", "kellan"],
+    cardName: "Quintorius Kand",
+  },
+  {
+    id: "omenpaths-proft-uncovers-oba",
+    title: "Proft Exposes Oba's Murder Conspiracy",
+    chapterId: "omenpaths",
+    summary: "A Ravnican investigation reveals that magical coercion and Oba's post-invasion vengeance drove the murders.",
+    narrative: [
+      "Proft investigated the killings with help from Kellan, Kaya, and Etrata, refusing to treat coerced action as proof of willing guilt.",
+      "The evidence exposed Oba's use of mind-controlling flowers and the suffering she had absorbed during the Phyrexian invasion.",
+      "Cim and Ses were not knowing accomplices; the case fractured the image of a united Trostani and ended in a confrontation at Vitu-Ghazi.",
+    ],
+    characterIds: ["alquist-proft", "trostani", "kellan", "teysa-karlov"],
+    cardName: "Trostani, Three Whispers",
+  },
+  {
+    id: "omenpaths-thunder-crossroads",
+    title: "Thunder Junction Becomes a Meeting Place Across Planes",
+    chapterId: "omenpaths",
+    summary: "Travelers and outlaws converge at a new crossroads while an ancient Fomori vault draws rival ambitions.",
+    narrative: [
+      "New routes connected visitors from separate worlds at Thunder Junction without giving them a shared government or set of loyalties.",
+      "Oko assembled a crew around an old Fomori vault while Kellan followed a more personal search for his father.",
+      "The resulting heist demonstrated both economic opportunity and the danger of treating ancient local treasures as unclaimed spoils.",
+    ],
+    characterIds: ["oko", "kellan", "vraska"],
+    cardName: "Oko, the Ringleader",
+  },
+  {
+    id: "omenpaths-loot-and-the-future",
+    title: "The Living Treasure Reframes the Vault's Legacy",
+    chapterId: "omenpaths",
+    summary: "Jace and Vraska's interest in Loot turns a heist's prize into a question of responsibility toward a living being.",
+    narrative: [
+      "Loot emerged as the vault's living secret and became central to the plans of Jace and Vraska.",
+      "Their history of compleation shaped their conviction that the future needed protection, although their choices raised new questions about another being's agency.",
+      "The story pointed beyond Thunder Junction to a Multiverse where travel, knowledge, and power were no longer controlled only by planeswalkers.",
+    ],
+    characterIds: ["jace-beleren", "vraska", "loot"],
+    cardName: "Loot, the Key to Everything",
+  },
+
   // Chapter 09 — the older conquest and the divided Phyrexian empire
   {
     id: "phyrexia-mirran-survival",

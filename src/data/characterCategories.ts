@@ -37,7 +37,7 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "post-invasion",
     label: "Post-invasion and Omenpath-era figures",
-    characterIds: ["will-kenrith", "rowan-kenrith", "kellan", "oko", "jace-beleren", "vraska", "loot"],
+    characterIds: ["will-kenrith", "rowan-kenrith", "kellan", "quintorius-kand", "alquist-proft", "trostani", "oko", "jace-beleren", "vraska", "loot"],
   },
 
   {

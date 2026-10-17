@@ -19,6 +19,68 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 10 — archaeology, investigation, and Ravnica's damaged institutions
+  {
+    id: "quintorius-kand",
+    name: "Quintorius Kand",
+    title: "Archaeologist of Arcavios",
+    origin: "Arcavios — Lorehold College; expedition to Ixalan",
+    role: "Newly sparked planeswalker and scholar of ancient civilizations",
+    summary: "An archaeologist whose work with Huatli and Saheeli reveals older histories beneath Ixalan.",
+    biography: [
+      "Quintorius studied history on Arcavios before discovering that he possessed a planeswalker spark.",
+      "He accepted Saheeli and Huatli's invitation to help interpret Orazca's puzzle-door and evidence of Ixalan's buried civilizations.",
+      "His presence illustrates how a still-active spark and recurring Omenpaths could connect researchers without erasing the local history they sought to understand.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Quintorius Kand", setCode: "lci", collectorNumber: "238",
+      scryfallId: "4382fa49-9e34-45b3-8495-4916dcd995ec", artist: "Zoltan Boros",
+      significance: "The original Lost Caverns of Ixalan planeswalker portrait of Quintorius.",
+    },
+    source: { title: "Wizards of the Coast — Lost Caverns of Ixalan Story Spotlight Cards", url: "https://magic.wizards.com/en/news/card-preview/story-spotlight-cards-for-the-lost-caverns-of-ixalan" },
+  },
+  {
+    id: "alquist-proft",
+    name: "Alquist Proft",
+    title: "Ravnican Master Sleuth",
+    origin: "Ravnica",
+    role: "Detective investigating the Karlov Manor murders",
+    summary: "A detective whose work exposed mind control and Oba's hidden vengeance following Phyrexia's invasion.",
+    biography: [
+      "Proft investigated the Ravnican murders when initial evidence pointed toward the assassin Etrata.",
+      "He distinguished coerced acts from willing culpability and worked with Etrata, Kaya, and Kellan to test the evidence.",
+      "The investigation uncovered Oba's use of mind-controlling flowers and the grief beneath the Trostani leadership's public unity.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Alquist Proft, Master Sleuth", setCode: "mkm", collectorNumber: "185",
+      scryfallId: "41129b44-4fa7-473b-b2b7-48c6a58be03c", artist: "Andreas Zafiratos",
+      significance: "Proft's original Murders at Karlov Manor card.",
+    },
+    source: { title: "Wizards of the Coast — Murders at Karlov Manor: Roots of Decay", url: "https://magic.wizards.com/en/news/magic-story/episode-10-roots-of-decay" },
+  },
+  {
+    id: "trostani",
+    name: "Trostani",
+    title: "Three Voices of the Selesnya Conclave",
+    origin: "Ravnica — Vitu-Ghazi",
+    role: "Shared dryad leadership, including Oba, Cim, and Ses",
+    summary: "The triune leader whose internal division concealed Oba's murder campaign after the Phyrexian invasion.",
+    biography: [
+      "The Selesnya Conclave's leader consisted of three dryads: Oba, Cim, and Ses, presenting a shared voice despite different experiences.",
+      "Oba protected her sisters from the invasion's suffering, then pursued revenge through violence and magical coercion.",
+      "Cim and Ses were not knowing participants in those murders; the case exposed how the appearance of unity could conceal a dangerous division.",
+    ],
+    chapterIds: ["omenpaths"],
+    featuredCard: {
+      name: "Trostani, Three Whispers", setCode: "mkm", collectorNumber: "238",
+      scryfallId: "329f3aca-6db7-41d3-95b2-c479d14b7fa3", artist: "Jodie Muir",
+      significance: "The three dryads depicted together during the Karlov Manor crisis.",
+    },
+    source: { title: "Wizards of the Coast — Murders at Karlov Manor: Beauty in Destruction", url: "https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction" },
+  },
+
   // Chapter 09 — the competing praetors and the Mirran resistance
   {
     id: "jin-gitaxias",
