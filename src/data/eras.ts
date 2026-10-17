@@ -132,10 +132,13 @@ export const eras: HistoricalEra[] = [
     name: "The New Phyrexian Invasion",
     kicker: "A Multiverse at War",
     summary:
-      "From Mirrodin's fall and Dominarian sleeper agents to Realmbreaker's invasion and Zhalfir's return, the Multiverse resists Elesh Norn.",
+      "From Mirrodin's fall and the praetors' competing agendas to Tamiyo's compleation, Mirran resistance, Realmbreaker, and Zhalfir's return, the Multiverse confronts Elesh Norn.",
     sets: [
       "Scars of Mirrodin · 2010",
       "New Phyrexia · 2011",
+      "Kaldheim · 2021",
+      "Kamigawa: Neon Dynasty · 2022",
+      "Streets of New Capenna · 2022",
       "Dominaria United · 2022",
       "Phyrexia: All Will Be One · 2023",
       "March of the Machine · 2023",
