@@ -20,6 +20,49 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 04 — family, mentorship, and sacrifice around the Legacy
+  {
+    a: "barrin", b: "hanna", category: "family",
+    labelForA: "Daughter and navigator", labelForB: "Father and Tolarian headmaster",
+    context: "Barrin's work with Urza's Academy intersected with Hanna's service aboard the Weatherlight; her death was central to his final spell.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "gerrard", b: "multani", category: "mentorship",
+    labelForA: "Yavimayan teacher", labelForB: "Former pupil",
+    context: "Multani instructed Gerrard in Yavimaya before the Weatherlight's rescue mission forced Gerrard to face his destiny.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "gerrard", b: "rofellos", category: "friendship",
+    labelForA: "Lost companion", labelForB: "Friend who left the ship after his death",
+    context: "The two studied together under Multani; Rofellos's death contributed to Gerrard's estrangement from the ship.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "mirri", b: "multani", category: "mentorship",
+    labelForA: "Yavimayan teacher", labelForB: "Former pupil",
+    context: "Mirri learned alongside Gerrard and Rofellos while training with Multani in Yavimaya.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "radiant", b: "urza", category: "rivalry",
+    labelForA: "Planeswalker who collapsed her realm", labelForB: "Guardian of Serra's dying realm",
+    context: "Radiant opposed the events that culminated in the destruction of Serra's Realm, whose power Urza gathered for the Weatherlight.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "sisay", b: "squee", category: "alliance",
+    labelForA: "Loyal cabin boy", labelForB: "Weatherlight captain",
+    context: "Squee served aboard Sisay's Weatherlight, contributing loyalty and resilience to a crew divided by rank and origin.",
+    chapterId: "weatherlight",
+  },
+  {
+    a: "karn", b: "squee", category: "friendship",
+    labelForA: "Fellow survivor", labelForB: "Compassionate Legacy guardian",
+    context: "Karn and Squee survived the original war as unusual companions whose lives carried into later Dominarian history.",
+    chapterId: "weatherlight",
+  },
   // Chapter 03 — the Conclave's betrayal
   {
     a: "jodah", b: "mairsil", category: "rivalry",
