@@ -6,6 +6,12 @@ export interface CharacterCategory {
 
 export const characterCategories: CharacterCategory[] = [
   {
+    id: "temporal-rifts",
+    label: "Time Spiral and the Mending",
+    characterIds: ["leshrac", "teferi", "jhoira", "venser", "radha", "jeska", "freyalise", "windgrace", "multani"],
+  },
+
+  {
     id: "otarian-mirari-crisis",
     label: "The Mirari and Otaria",
     characterIds: ["lieutenant-kirtar", "balthor", "kamahl", "chainer", "jeska", "ixidor", "akroma", "cabal-patriarch", "braids", "aboshan", "laquatus", "seton"],

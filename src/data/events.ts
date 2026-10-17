@@ -9,6 +9,73 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 06 — temporal intrusions and the people behind the Mending
+  {
+    id: "mending-jhoira-timekeeping",
+    title: "Jhoira Applies Artifice to the Temporal Crisis",
+    chapterId: "mending",
+    summary: "Jhoira's experience of Tolaria and practical understanding of artifice give the travelers crucial help.",
+    narrative: [
+      "Jhoira had survived the earlier Tolarian age and understood the consequences of poorly controlled time experiments.",
+      "Working beside Teferi, she approached the rifts as problems requiring careful observation and collaboration rather than only planeswalker power.",
+      "Jhoira's Timebug is a named, contemporary thematic card. It is not presented as a recorded component of a particular rift-sealing ritual.",
+    ],
+    characterIds: ["jhoira", "teferi"],
+    cardName: "Jhoira's Timebug",
+  },
+  {
+    id: "mending-venser-first-walk",
+    title: "Venser Crosses a Divergent Dominaria",
+    chapterId: "mending",
+    summary: "A journey through an alternate history reveals Venser's latent ability to planeswalk.",
+    narrative: [
+      "Temporal instability drew the travelers into another version of Dominaria whose past had taken a different course.",
+      "Venser's inventions alone could not explain or safely navigate the crisis. Teferi and Jhoira helped him recognize and use his own latent spark to return.",
+      "His first crossing signaled the emergence of a new kind of planeswalker: talented yet vulnerable, rather than an ancient, nearly omnipotent being.",
+    ],
+    characterIds: ["venser", "jhoira", "teferi"],
+    cardName: "Venser, Shaper Savant",
+  },
+  {
+    id: "mending-alternate-reality-incursion",
+    title: "Alternate Histories Intrude on Dominaria",
+    chapterId: "mending",
+    summary: "Rifts make the boundary between the known world and divergent histories dangerously unstable.",
+    narrative: [
+      "The temporal rifts did not merely return fragments of earlier eras. They could open onto alternate versions of Dominaria.",
+      "The travelers confronted histories in which major events, including the Ice Age and Phyrexian conflict, had unfolded differently.",
+      "Reality Acid is used as a thematic Planar Chaos illustration, not evidence that every alternate-world card depicts an event in the principal timeline.",
+    ],
+    characterIds: ["venser", "jhoira", "teferi"],
+    cardName: "Reality Acid",
+  },
+  {
+    id: "mending-yavimaya-rift-cost",
+    title: "Yavimaya Pays for Another Rift's Repair",
+    chapterId: "mending",
+    summary: "Jeska's approach to the Yavimayan fracture has grave consequences for the forest and Multani.",
+    narrative: [
+      "After sealing Zhalfir's fracture, Jeska sought to heal a dangerous wound associated with Yavimaya.",
+      "The effort came at a terrible cost to Multani, the ancient guardian of the forest and mentor of several Weatherlight heroes.",
+      "The episode linked her choices to the same old stories she believed she was trying to heal; the consequences could not be reduced to a tally of closed rifts.",
+    ],
+    characterIds: ["jeska", "multani", "radha"],
+    cardName: "Rift Elemental",
+  },
+  {
+    id: "mending-leshrac-deceives-jeska",
+    title: "Leshrac Manipulates Jeska's Attempt to Save Dominaria",
+    chapterId: "mending",
+    summary: "Leshrac uses Jeska's grief and Radha's potential for his own pursuit of power.",
+    narrative: [
+      "The ancient planeswalker Leshrac proposed that Jeska could draw on the unusual abilities of Venser and Radha rather than sacrifice herself.",
+      "His supposed help concealed an attempt to appropriate the dark power connected to her time as Phage.",
+      "The conflict ultimately led Leshrac to challenge Nicol Bolas, who defeated him and used his power to close Madara's rift.",
+    ],
+    characterIds: ["leshrac", "jeska", "radha", "nicol-bolas"],
+    cardName: "Leshrac's Sigil",
+  },
+
   // Chapter 05 — competing claims, mentorship, and the human cost of transformation
   {
     id: "otaria-kirtar-and-the-order",

@@ -20,6 +20,26 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 06 — manipulation, rivalry, and collaboration
+  {
+    a: "leshrac", b: "jeska", category: "rivalry",
+    labelForA: "Planeswalker he deceived", labelForB: "Manipulative old planeswalker",
+    context: "Leshrac exploited Jeska's grief and the rift crisis to pursue power connected to her earlier Phage identity.",
+    chapterId: "mending",
+  },
+  {
+    a: "leshrac", b: "nicol-bolas", category: "rivalry",
+    labelForA: "Dragon who defeated him", labelForB: "Defeated rival",
+    context: "Their struggle ended with Bolas using Leshrac's remaining power to seal the Madaran rift.",
+    chapterId: "mending",
+  },
+  {
+    a: "venser", b: "radha", category: "alliance",
+    labelForA: "Warrior and rift-linked ally", labelForB: "Inventor and fellow survivor",
+    context: "Venser and Radha survived the final Otarian ritual after Jeska chose to bear the last sacrifice herself.",
+    chapterId: "mending",
+  },
+
   // Chapter 05 — competing ideals and inherited responsibility
   {
     a: "balthor", b: "kamahl", category: "mentorship",

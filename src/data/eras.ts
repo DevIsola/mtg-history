@@ -98,7 +98,7 @@ export const eras: HistoricalEra[] = [
     name: "Time Spiral and the Mending",
     kicker: "The Cost of Repairing Reality",
     summary:
-      "Time rifts threaten Dominaria and the Multiverse; Teferi, Jeska, Freyalise, Windgrace, and their allies pay the price of the Mending.",
+      "Temporal rifts bring alternate histories into Dominaria; Jhoira and Venser confront broken time while Leshrac exploits Jeska before the sacrifices that complete the Mending.",
     sets: [
       "Time Spiral · 2006",
       "Planar Chaos · 2007",
