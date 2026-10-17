@@ -19,6 +19,108 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 04 — the people behind the Legacy and its cost
+  {
+    id: "barrin",
+    name: "Barrin",
+    title: "Master Wizard of Tolaria",
+    origin: "Dominaria — Tolaria",
+    role: "Tolarian headmaster, Urza's ally, and Hanna's father",
+    summary: "An academy leader whose final spell destroyed Phyrexian-occupied Tolaria after the death of his family.",
+    biography: [
+      "Barrin led the Tolarian Academy while working with Urza to prepare mages and artificers for a future confrontation with Phyrexia.",
+      "He was the father of Hanna, the Weatherlight's navigator. Her independent career tied the Academy's research to the living crew Urza expected to assemble the Legacy.",
+      "The invasion killed his wife Rayne and daughter Hanna. Finding Tolaria overrun, Barrin cast Obliterate, destroying the area and himself.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Barrin, Master Wizard", setCode: "usg", collectorNumber: "63",
+      scryfallId: "ec79e35f-9e78-462d-8b71-4f044e2eff90", artist: "Michael Sutfin",
+      significance: "A portrait of the Tolarian mage whose final sacrifice came during the Phyrexian invasion.",
+    },
+    source: { title: "Wizards of the Coast — From the Vault: Lore", url: "https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01" },
+  },
+  {
+    id: "radiant",
+    name: "Radiant",
+    title: "Serra's Archangel",
+    origin: "Serra's Realm",
+    role: "Angelic guardian of Serra's artificial plane",
+    summary: "The guardian whose increasingly severe rule preceded the collapse of Serra's Realm and the creation of the Weatherlight's power source.",
+    biography: [
+      "Serra entrusted her realm to Radiant when Phyrexian corruption drove its creator away.",
+      "Radiant's determination to eliminate infiltration hardened into suspicion of her own people, while the realm without Serra continued to deteriorate.",
+      "The Weatherlight helped rescue inhabitants before the plane collapsed. Its mana and Radiant's divine light became part of the powerstone fueling the skyship.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Radiant, Archangel", setCode: "ulg", collectorNumber: "20",
+      scryfallId: "99509da7-3e11-4c38-804b-286ce572f36e", artist: "Michael Sutfin",
+      significance: "The original Urza's Legacy depiction of the archangel who guarded Serra's failing realm.",
+    },
+    source: { title: "Wizards of the Coast — Commander Legends Character Stories", url: "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30" },
+  },
+  {
+    id: "multani",
+    name: "Multani",
+    title: "Maro-Sorcerer of Yavimaya",
+    origin: "Dominaria — Yavimaya",
+    role: "Ancient nature spirit and mentor",
+    summary: "The maro who guided Gerrard, Mirri, and Rofellos before their intertwined Weatherlight journeys.",
+    biography: [
+      "Multani was an ancient elemental tied to Yavimaya's forests and their living magic.",
+      "He instructed the young Gerrard, Mirri, and Rofellos, whose friendship long predated the mission to rescue Sisay from Rath.",
+      "His teachings provide a human-scale counterweight to Urza's manipulation of bloodlines and the Legacy: Gerrard's loyalties were formed by lived experience, not merely design.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Multani, Maro-Sorcerer", setCode: "ulg", collectorNumber: "107",
+      scryfallId: "0d6cc98b-b376-40af-8308-198bab00b2b1", artist: "Daren Bader",
+      significance: "The Urza's Legacy printing of Gerrard's Yavimayan teacher.",
+    },
+    source: { title: "Wizards of the Coast — Stories from Dominaria, Part 3", url: "https://magic.wizards.com/en/news/making-magic/stories-dominaria-part-3-2018-04-30" },
+  },
+  {
+    id: "rofellos",
+    name: "Rofellos",
+    title: "Llanowar Emissary",
+    origin: "Dominaria — Llanowar",
+    role: "Elvish mage and Gerrard's fallen companion",
+    summary: "A friend of Gerrard and Mirri whose death aboard the Weatherlight helped turn Gerrard against his inherited mission.",
+    biography: [
+      "Rofellos studied under Multani alongside Gerrard and Mirri, becoming part of their closest circle of friends.",
+      "He later joined the Weatherlight crew and died before Sisay's kidnapping. His loss helped drive Gerrard and Mirri away from the ship.",
+      "Although he was absent from the main rescue narrative, Urza's Destiny later gave him a card because its flashback period could depict his earlier life.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Rofellos, Llanowar Emissary", setCode: "uds", collectorNumber: "118",
+      scryfallId: "6aa5cc65-f8f1-4f6f-8b4e-2fedccbda684", artist: "Michael Sutfin",
+      significance: "A retrospective card of the Llanowar elf who influenced Gerrard's departure from the Weatherlight.",
+    },
+    source: { title: "Wizards of the Coast — Magic Design A to Z, Part 3", url: "https://magic.wizards.com/en/news/making-magic/magic-design-a-to-z-part-3" },
+  },
+  {
+    id: "squee",
+    name: "Squee",
+    title: "Goblin Nabob",
+    origin: "Dominaria",
+    role: "Weatherlight cabin boy and unlikely immortal",
+    summary: "A goblin companion whose loyalty and strange Phyrexian-granted immortality extended his story far beyond the original invasion.",
+    biography: [
+      "Squee joined the Weatherlight as an apparently insignificant goblin cabin boy and became a loyal member of its varied company.",
+      "During the original Phyrexian war, Yawgmoth's magic granted him a regenerative immortality that caused his body to be rebuilt after death.",
+      "Many centuries later, the official story Death and Salvation revealed the deeper consequences of that spell and the protection of his soul.",
+    ],
+    chapterIds: ["weatherlight"],
+    featuredCard: {
+      name: "Squee, Goblin Nabob", setCode: "mmq", collectorNumber: "214",
+      scryfallId: "4ba8325a-1203-4125-9111-94d9e2b1f14b", artist: "David Monette",
+      significance: "Squee's original Mercadian Masques portrait from the Weatherlight era.",
+    },
+    source: { title: "Wizards of the Coast — Death and Salvation", url: "https://magic.wizards.com/en/news/magic-story/death-and-salvation-2022-08-16" },
+  },
+
   // Chapter 03 — the Conclave and Sarpadia's remembered creators
   {
     id: "mairsil",

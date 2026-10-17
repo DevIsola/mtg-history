@@ -60,11 +60,13 @@ export const eras: HistoricalEra[] = [
     name: "The Weatherlight Saga",
     kicker: "The Legacy and the Invasion",
     summary:
-      "Follow Gerrard Capashen, Captain Sisay, Karn, and the Weatherlight crew through Rath, Mercadia, and the final struggle against Yawgmoth's Phyrexia.",
+      "From Urza's Bloodlines project and Serra's Realm to Gerrard's crew, Mercadia, the Coalition, and Barrin's final spell, the Legacy ends Yawgmoth's invasion at immense personal cost.",
     sets: [
       "Weatherlight · 1997",
       "Tempest · 1997",
       "Urza's Saga · 1998",
+      "Urza's Legacy · 1999",
+      "Urza's Destiny · 1999",
       "Mercadian Masques · 1999",
       "Invasion · 2000",
       "Planeshift · 2001",

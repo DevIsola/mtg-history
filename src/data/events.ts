@@ -9,6 +9,98 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 04 — the hidden costs and human stories of the Legacy
+  {
+    id: "weatherlight-bloodlines-project",
+    title: "Urza Shapes the Legacy's Future",
+    chapterId: "weatherlight",
+    summary: "Bloodlines, academy research, and engineered artifacts prepare a future generation for Phyrexia.",
+    narrative: [
+      "Urza's war against Phyrexia extended beyond battlefield tactics to the bloodlines of future defenders and the technology of the Tolarian Academy.",
+      "Barrin directed students and researchers while Karn, Gerrard, and the components of the Legacy became part of a design stretching across generations.",
+      "The plan's moral cost arose from treating people and their choices as parts of a weapon to be assembled later.",
+    ],
+    characterIds: ["urza", "barrin", "karn", "gerrard"],
+    cardName: "Barrin, Master Wizard",
+  },
+  {
+    id: "weatherlight-serras-realm",
+    title: "Serra's Realm Becomes the Weatherlight's Power",
+    chapterId: "weatherlight",
+    summary: "Radiant struggles against Phyrexian infiltration as the collapsing realm's mana is gathered to power the skyship.",
+    narrative: [
+      "After the Phyrexians tainted Serra's artificial realm and Serra departed, Radiant inherited its defense and grew increasingly severe.",
+      "The Weatherlight's intervention evacuated inhabitants who wished to leave before Urza collapsed the remaining realm into a powerstone.",
+      "The resulting engine linked a celebrated symbol of multiversal hope to the death of an entire artificial world.",
+    ],
+    characterIds: ["radiant", "urza"],
+    cardName: "Radiant, Archangel",
+  },
+  {
+    id: "weatherlight-yavimaya-training",
+    title: "The Friends Who Studied Under Multani",
+    chapterId: "weatherlight",
+    summary: "Gerrard, Mirri, and Rofellos become companions while learning from Yavimaya's maro-sorcerer.",
+    narrative: [
+      "Multani trained Gerrard alongside Mirri and the Llanowar elf Rofellos in Yavimaya.",
+      "Their friendship and shared education existed before Sisay's later attempt to reunite the Weatherlight crew.",
+      "Multani's lessons contrasted with the destiny Urza intended to impose through the Legacy.",
+    ],
+    characterIds: ["multani", "gerrard", "mirri", "rofellos"],
+    cardName: "Multani, Maro-Sorcerer",
+  },
+  {
+    id: "weatherlight-rofellos-loss",
+    title: "Rofellos Dies Before the Rescue of Sisay",
+    chapterId: "weatherlight",
+    summary: "The death of a close companion fractures Gerrard's relationship with the ship and its assigned destiny.",
+    narrative: [
+      "Rofellos joined the Weatherlight after studying with Gerrard and Mirri.",
+      "His loss was central to Gerrard's decision to abandon the voyage; it occurred before the Rath rescue mission that opens the published saga.",
+      "A later Urza's Destiny card depicts Rofellos alive, reflecting the storytelling shift into the past.",
+    ],
+    characterIds: ["rofellos", "gerrard", "mirri", "sisay"],
+    cardName: "Rofellos, Llanowar Emissary",
+  },
+  {
+    id: "weatherlight-mercadian-fleet",
+    title: "The Phyrexian Fleet Beneath Mercadia",
+    chapterId: "weatherlight",
+    summary: "The crew uncovers the Kyren rulers' hidden preparation for the invasion of Dominaria.",
+    narrative: [
+      "The ship's arrival on Mercadia entangled its crew with the commercial rulers and their opposition, including the Cho-Arrim.",
+      "Beneath the city's inverted mountain, the Kyren had concealed a vast fleet that could support Phyrexia's assault on Dominaria.",
+      "The Weatherlight escaped to warn its home plane, underscoring that the invasion involved preparations across multiple worlds.",
+    ],
+    characterIds: ["gerrard", "sisay", "squee", "volrath"],
+    cardName: "Skyship Weatherlight",
+  },
+  {
+    id: "weatherlight-barrin-obliteration",
+    title: "Barrin Obliterates Phyrexian-Occupied Tolaria",
+    chapterId: "weatherlight",
+    summary: "After losing his family, Barrin unleashes a forbidden spell that destroys Tolaria's occupied academy and himself.",
+    narrative: [
+      "Barrin's wife Rayne died during the invasion, followed by their daughter Hanna, the Weatherlight's navigator, who succumbed to Phyrexian plague.",
+      "Returning to the academy and finding it overrun, the bereaved master wizard cast Obliterate against the invaders.",
+      "The spell destroyed the area and Barrin himself, showing how victory over Phyrexia could demand a terrible local cost.",
+    ],
+    characterIds: ["barrin", "hanna", "urza"],
+    cardName: "Barrin, Master Wizard",
+  },
+  {
+    id: "weatherlight-squee-immortality",
+    title: "Squee Survives with Yawgmoth's Curse",
+    chapterId: "weatherlight",
+    summary: "The cabin boy's Phyrexian-altered immortality makes him a witness to centuries beyond the original war.",
+    narrative: [
+      "Squee was a loyal Weatherlight companion during the war against Yawgmoth.",
+      "Yawgmoth's spell repeatedly restored his body after death, leaving consequences far beyond the immediate invasion.",
+      "The 2022 story Death and Salvation later explained the entanglement of the spell with Squee's soul.",
+    ],
+    characterIds: ["squee", "yawgmoth", "karn"],
+    cardName: "Squee, Goblin Nabob",
+  },
   // Chapter 03 — the Conclave, Sarpadian artifice, and the Shard
   {
     id: "dark-conclave-usurpation",
