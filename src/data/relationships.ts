@@ -51,12 +51,6 @@ export const characterRelationships: CharacterRelationship[] = [
     context: "Vraska became part of Loot’s unfolding story following the vault heist.",
     chapterId: "omenpaths",
   },
-  {
-    a: "chandra", b: "nissa", category: "alliance",
-    labelForA: "Survivor she supported", labelForB: "Companion during recovery",
-    context: "Chandra supported Nissa through the profound aftermath of compleation and the loss of her planeswalker spark.",
-    chapterId: "omenpaths",
-  },
   // Chapter 09 — loyalties, corruption, and resistance
   {
     a: "elesh-norn", b: "sheoldred", category: "rivalry",
