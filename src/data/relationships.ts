@@ -20,6 +20,32 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 10 — archaeologists, investigators, and accountability after invasion
+  {
+    a: "quintorius-kand", b: "kellan", category: "alliance",
+    labelForA: "Omenpath traveler on Ixalan", labelForB: "Archaeologist exploring Ixalan",
+    context: "Both took part in the Lost Caverns of Ixalan story as visitors with different means of moving between worlds.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "alquist-proft", b: "kellan", category: "alliance",
+    labelForA: "Young investigative ally", labelForB: "Ravnican detective and guide",
+    context: "Kellan worked with Alquist Proft amid the Karlov Manor murders, connecting his Omenpath travels with the city's own legal crisis.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "alquist-proft", b: "trostani", category: "rivalry",
+    labelForA: "Oba, exposed as murderer", labelForB: "Investigator who revealed Oba's actions",
+    context: "Proft's investigation uncovered Oba's culpability within Trostani without making Cim and Ses knowing accomplices.",
+    chapterId: "omenpaths",
+  },
+  {
+    a: "trostani", b: "teysa-karlov", category: "rivalry",
+    labelForA: "Victim of Oba's revenge", labelForB: "Oba, the guilty member of Trostani",
+    context: "Oba's vengeance after the Phyrexian invasion claimed Teysa Karlov's life; the other Trostani dryads were not willing participants.",
+    chapterId: "omenpaths",
+  },
+
   // Chapter 09 — praetor doctrines, coercion, and resistance
   {
     a: "elesh-norn", b: "jin-gitaxias", category: "alliance",
