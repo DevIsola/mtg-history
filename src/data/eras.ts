@@ -31,8 +31,8 @@ export const eras: HistoricalEra[] = [
     name: "The Brothers’ War",
     kicker: "A World Divided",
     summary:
-      "Urza and Mishra turn rivalry into catastrophe. Their war changes Dominaria and echoes through stories released decades apart.",
-    sets: ["Antiquities · 1994", "The Brothers’ War · 2022"],
+      "From the Koilos stones and Tocasia’s death to the rival empires, Kroog’s fall, the Third Path, Argoth, and Kayla’s recovery, the brothers’ conflict remakes Terisiare.",
+    sets: ["Antiquities · 1994", "Urza’s Saga · 1998", "The Brothers’ War · 2022"],
     status: "published",
   },
   {

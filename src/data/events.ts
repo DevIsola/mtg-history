@@ -9,6 +9,59 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 02 — the discoveries, political ascent, and legacy of the war
+  {
+    id: "brothers-koilos-stones",
+    title: "The Brothers Claim the Ancient Stones",
+    chapterId: "brothers-war",
+    summary: "The Koilos discovery divides Glacian's ancient powerstone between Urza and Mishra, transforming study into rivalry.",
+    narrative: [
+      "At the Caves of Koilos, the two students recovered the fragments of a Thran powerstone whose history reached back to Glacian and Rebbec.",
+      "Urza held the Mightstone and Mishra the Weakstone. Each possessed real power, but their distrust turned the division into an enduring grievance.",
+      "The stones connected their personal choices to a much older history of Thran technology and Phyrexian influence.",
+    ],
+    characterIds: ["urza", "mishra", "tocasia", "glacian"],
+    cardName: "The Mightstone and Weakstone",
+  },
+  {
+    id: "brothers-fallaji-ascent",
+    title: "Mishra Rises Among the Fallaji",
+    chapterId: "brothers-war",
+    summary: "Mishra's knowledge of Thran machines becomes political and military influence among the Fallaji.",
+    narrative: [
+      "Separated from Urza after Tocasia's death, Mishra traveled among the Fallaji of Terisiare's desert regions.",
+      "His archaeological knowledge and command of ancient machines made him valuable to an existing society with its own leaders, ambitions, and alliances.",
+      "By gaining influence over armed forces, Mishra transformed an argument between brothers into a continental struggle.",
+    ],
+    characterIds: ["mishra", "urza"],
+    cardName: "Mishra, Tamer of Mak Fawa",
+  },
+  {
+    id: "brothers-argoth-ruin",
+    title: "Argoth Becomes the Last Battlefield",
+    chapterId: "brothers-war",
+    summary: "The final confrontation devastates Argoth's living landscape and sets the stage for the Sylex catastrophe.",
+    narrative: [
+      "Argoth's forests became a battleground despite having no stake in the original dispute between Urza and Mishra.",
+      "The discovery of Mishra's Phyrexian transformation raised the stakes of the final battle, but did not erase the earlier destruction caused by both brothers.",
+      "Urza's Sylex ended the battle at an ecological and magical price that echoed into Dominaria's long climatic crisis.",
+    ],
+    characterIds: ["urza", "mishra", "gix"],
+    cardName: "Urza's Sylex",
+  },
+  {
+    id: "brothers-kaylas-reconstruction",
+    title: "Kayla Faces the Aftermath of War",
+    chapterId: "brothers-war",
+    summary: "Kayla bin-Kroog and Tawnos confront the human cost of the conflict and the uncertain future of artifice.",
+    narrative: [
+      "The fall of Kroog and the Sylex catastrophe left Kayla to govern and protect people who had survived the brothers' war.",
+      "Tawnos later proposed peaceful applications of machinery, but Kayla questioned whether technology could be separated from its uses in warfare.",
+      "Her record and the later accounts of Terisiare's recovery preserve a perspective centered on survivors rather than the rival commanders.",
+    ],
+    characterIds: ["kayla", "tawnos", "urza"],
+    cardName: "Queen Kayla bin-Kroog",
+  },
   // Chapter 01 — deeper Thran history
   {
     id: "thran-untouchables-uprising",
