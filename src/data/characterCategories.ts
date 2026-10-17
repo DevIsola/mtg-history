@@ -6,6 +6,12 @@ export interface CharacterCategory {
 
 export const characterCategories: CharacterCategory[] = [
   {
+    id: "otarian-mirari-crisis",
+    label: "The Mirari and Otaria",
+    characterIds: ["lieutenant-kirtar", "balthor", "kamahl", "chainer", "jeska", "ixidor", "akroma", "cabal-patriarch", "braids", "aboshan", "laquatus", "seton"],
+  },
+
+  {
     id: "weatherlight-legacy",
     label: "The Weatherlight and the Legacy",
     characterIds: ["barrin", "radiant", "multani", "rofellos", "squee", "gerrard", "sisay", "hanna", "mirri", "karn"],

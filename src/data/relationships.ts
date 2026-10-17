@@ -20,6 +20,20 @@ export interface CharacterRelationship {
 }
 
 export const characterRelationships: CharacterRelationship[] = [
+  // Chapter 05 — competing ideals and inherited responsibility
+  {
+    a: "balthor", b: "kamahl", category: "mentorship",
+    labelForA: "Barbarian pupil", labelForB: "Dwarven leader and mentor",
+    context: "Balthor led the barbarian warriors and mentored Kamahl before death and reanimation changed his place in Otaria's history.",
+    chapterId: "otaria",
+  },
+  {
+    a: "lieutenant-kirtar", b: "cabal-patriarch", category: "rivalry",
+    labelForA: "Cabal ruler and rival", labelForB: "Officer of the Order",
+    context: "Kirtar's Order opposed the Cabal, and his claim to the Mirari carried that rivalry into the artifact's dangerous struggle for custody.",
+    chapterId: "otaria",
+  },
+
   // Chapter 04 — family, mentorship, and sacrifice around the Legacy
   {
     a: "barrin", b: "hanna", category: "family",

@@ -81,7 +81,7 @@ export const eras: HistoricalEra[] = [
     name: "The Mirari and Otaria",
     kicker: "Ambition, Redemption, and Rebirth",
     summary:
-      "The Mirari draws Kamahl, Chainer, and rival Otarian powers into conflict; Jeska's transformation and the emergence of Karona reshape Dominaria.",
+      "From the Order and Cabal to Kamahl, Chainer, and Balthor, the Mirari corrupts Otaria's rival powers before Jeska, Akroma, and Zagorka converge as Karona.",
     sets: [
       "Odyssey · 2001",
       "Torment · 2002",

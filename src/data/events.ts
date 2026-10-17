@@ -9,6 +9,73 @@ export interface HistoricalEvent {
 }
 
 export const historicalEvents: HistoricalEvent[] = [
+  // Chapter 05 — competing claims, mentorship, and the human cost of transformation
+  {
+    id: "otaria-kirtar-and-the-order",
+    title: "Kirtar Takes the Mirari for the Order",
+    chapterId: "otaria",
+    summary: "An Order officer tries to turn the Mirari into a tool of justice and demonstrates its power to corrupt good intentions.",
+    narrative: [
+      "After the sphere left Cabal custody, Lieutenant Kirtar claimed it for the Order in the hope of containing or redirecting its power.",
+      "His confidence could not overcome the Mirari's tendency to magnify the desires of its wielder. The Order's claim of righteous purpose was no guarantee of safety.",
+      "The episode preceded the sphere's passage to the cephalid empire and another disastrous attempt to control it.",
+    ],
+    characterIds: ["lieutenant-kirtar", "cabal-patriarch"],
+    cardName: "Lieutenant Kirtar",
+  },
+  {
+    id: "otaria-skellums-dementia-training",
+    title: "Skellum Trains Chainer in Dementia Magic",
+    chapterId: "otaria",
+    summary: "Chainer's apprenticeship equips him to summon nightmares, but Cabal politics and the Mirari later push that ability beyond control.",
+    narrative: [
+      "The mentor Skellum trained Chainer to draw terrifying creations from his own mind and direct them in the Cabal's arenas.",
+      "Summoning depended on both imagination and discipline. Success within the pits encouraged Chainer's confidence while strengthening the Cabal's investment in his power.",
+      "When the Mirari later amplified this magic, Chainer's ability to control his creations failed with lethal consequences.",
+    ],
+    characterIds: ["chainer", "cabal-patriarch"],
+    cardName: "Chainer, Dementia Master",
+  },
+  {
+    id: "otaria-balthors-two-lives",
+    title: "Balthor Dies and Returns Transformed",
+    chapterId: "otaria",
+    summary: "Kamahl's dwarven mentor survives in the historical record as both a living barbarian and an undead warrior.",
+    narrative: [
+      "Balthor was a dwarven barbarian leader and a mentor to Kamahl amid the violence of Otaria.",
+      "His death did not end his story: Balthor later appeared in an undead form, altering his identity without erasing the connection to his living past.",
+      "The original Torment and Judgment legendary cards were intentionally designed together to portray the two phases of the same character.",
+    ],
+    characterIds: ["balthor", "kamahl"],
+    cardName: "Balthor the Defiled",
+  },
+  {
+    id: "otaria-nivea-and-akroma",
+    title: "Nivea's Death Drives Akroma's Creation",
+    chapterId: "otaria",
+    summary: "Ixidor's grief over Nivea drives him to create an angel dedicated to vengeance against Phage.",
+    narrative: [
+      "Nivea died during the conflict surrounding Phage, leaving the illusionist Ixidor consumed by loss.",
+      "Ixidor turned his reality-shaping power into a means of revenge, creating Akroma and directing the angel against the figure he blamed for Nivea's death.",
+      "The later ideological struggle between Akroma and Phage cannot be understood without this personal cause or Jeska's unwilling transformation into Phage.",
+    ],
+    characterIds: ["ixidor", "akroma", "jeska"],
+    cardName: "Ixidor, Reality Sculptor",
+  },
+  {
+    id: "otaria-zagorkas-convergence",
+    title: "Zagorka Becomes Part of Karona",
+    chapterId: "otaria",
+    summary: "The merger that creates the False God incorporates Zagorka as well as Akroma and Phage.",
+    narrative: [
+      "At the climax of the conflict, Kamahl's strike brought together Phage, Akroma, and the elderly Zagorka into Karona, the False God.",
+      "Zagorka's inclusion matters: Karona was not simply an angel fused with a Cabal champion, but a new being produced from three distinct lives.",
+      "Devotion to Karona could not stabilize the resulting power. Her eventual destruction allowed Jeska's spark to ignite, while Akroma and Zagorka died.",
+    ],
+    characterIds: ["kamahl", "jeska", "akroma"],
+    cardName: "Karona, False God",
+  },
+
   // Chapter 04 — the hidden costs and human stories of the Legacy
   {
     id: "weatherlight-bloodlines-project",
