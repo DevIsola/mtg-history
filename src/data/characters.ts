@@ -19,6 +19,31 @@ export interface CharacterProfile {
 }
 
 export const characters: CharacterProfile[] = [
+  // Chapter 06 — an old planeswalker's destructive ambitions
+  {
+    id: "leshrac",
+    name: "Leshrac",
+    title: "The Night Walker",
+    origin: "The Multiverse — active on Dominaria",
+    role: "Ancient planeswalker and manipulator during the Mending",
+    summary: "An old planeswalker who exploited Jeska's fear of losing her spark and was ultimately defeated by Nicol Bolas.",
+    biography: [
+      "Leshrac was an ancient and dangerous planeswalker whose name had been associated with dark magic on Dominaria since the time of Lim-Dûl.",
+      "During the temporal crisis he offered Jeska advice that appeared to let her close rifts without giving up her own spark, while drawing on Radha's extraordinary bond to rift mana.",
+      "His motives were predatory: he sought the power connected to Jeska's Phage identity and challenged Nicol Bolas. Bolas defeated him and used the remaining power to close the Madaran rift.",
+    ],
+    chapterIds: ["mending"],
+    featuredCard: {
+      name: "Leshrac's Sigil", setCode: "ice", collectorNumber: "144",
+      scryfallId: "ad5ba7ee-d6df-4b62-a8a1-c81e6fca392a", artist: "Drew Tucker",
+      significance: "An Ice Age card named after Leshrac; thematic evidence of his earlier influence rather than a portrait of the planeswalker.",
+    },
+    source: {
+      title: "Wizards of the Coast — The Known Multiverse",
+      url: "https://magic.wizards.com/en/news/feature/known-mutliverse-2008-03-19",
+    },
+  },
+
   // Chapter 05 — the Order and the cost of the Mirari
   {
     id: "lieutenant-kirtar",
@@ -120,7 +145,7 @@ export const characters: CharacterProfile[] = [
       "He instructed the young Gerrard, Mirri, and Rofellos, whose friendship long predated the mission to rescue Sisay from Rath.",
       "His teachings provide a human-scale counterweight to Urza's manipulation of bloodlines and the Legacy: Gerrard's loyalties were formed by lived experience, not merely design.",
     ],
-    chapterIds: ["weatherlight"],
+    chapterIds: ["weatherlight", "mending"],
     featuredCard: {
       name: "Multani, Maro-Sorcerer", setCode: "ulg", collectorNumber: "107",
       scryfallId: "0d6cc98b-b376-40af-8308-198bab00b2b1", artist: "Daren Bader",
