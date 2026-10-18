@@ -449,15 +449,16 @@ export const historicalEvents: HistoricalEvent[] = [
   },
   {
     id: "weatherlight-squee-immortality",
-    title: "Squee Survives with Yawgmoth's Curse",
+    title: "Squee's Resurrection Curse and Final Choice",
     chapterId: "weatherlight",
-    summary: "The cabin boy's Phyrexian-altered immortality makes him a witness to centuries beyond the original war.",
+    summary: "Yawgmoth's curse keeps Squee alive for centuries, until the renewed Phyrexian conflict leads him to choose one final life.",
     narrative: [
       "Squee was a loyal Weatherlight companion during the war against Yawgmoth.",
       "Yawgmoth's spell repeatedly restored his body after death, leaving consequences far beyond the immediate invasion.",
-      "The 2022 story Death and Salvation later explained the entanglement of the spell with Squee's soul.",
+      "The 2022 story Death and Salvation reveals that Ertai's compleation of Squee broke his soul's resurrection loop.",
+      "Rather than return to endless immortality or pass on, Squee asked Salvation for one last life, and returned to oppose Phyrexia.",
     ],
-    characterIds: ["squee", "yawgmoth", "karn"],
+    characterIds: ["squee", "yawgmoth", "ertai"],
     cardName: "Squee, Goblin Nabob",
   },
   // Chapter 03 — the Conclave, Sarpadian artifice, and the Shard
