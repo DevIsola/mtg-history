@@ -21,6 +21,23 @@ test('compares the exact printing and artist, not just a matching title', () => 
   assert.deepEqual(changes.map((change) => change.field), ['collectorNumber', 'artist']);
 });
 
+test('accepts the verified front face of battles and Adventure cards only', () => {
+  for (const [front, back] of [
+    ['Invasion of Kaldheim', 'Pyre of the World Tree'],
+    ['Invasion of New Phyrexia', 'Teferi Akosa of Zhalfir'],
+    ['Kellan, the Fae-Blooded', 'Birthright Boon'],
+    ['Kellan, Inquisitive Prodigy', 'Tail the Suspect'],
+  ]) {
+    const printing = { ...actual, name: `${front} // ${back}`,
+      card_faces: [{ name: front }, { name: back }] };
+    assert.deepEqual(comparePrinting({ ...card, name: front }, printing), []);
+    assert.deepEqual(comparePrinting({ ...card, name: back }, printing).map((x) => x.field), ['name']);
+    assert.deepEqual(comparePrinting({ ...card, name: front + ' (wrong)' }, printing).map((x) => x.field), ['name']);
+    assert.deepEqual(comparePrinting({ ...card, name: front }, { ...printing, card_faces: undefined }).map((x) => x.field), ['name']);
+    assert.deepEqual(comparePrinting({ ...card, name: front }, { ...printing, name: front + ' // Different Back' }).map((x) => x.field), ['name']);
+  }
+});
+
 test('batches unique Scryfall IDs and verifies every chapter use', async () => {
   let seen;
   const result = await auditScryfall(chapters(), { fetchImpl: async (url, options) => {
@@ -88,7 +105,7 @@ test('a source network failure remains unverified, not evidence of a broken cita
 
 test('defaults to card verification and allows an explicitly source-only audit', async () => {
   const calls = [];
-  const fetchImpl = async (url, options) => {
+  const fetchImpl = async (url) => {
     calls.push(url);
     if (url.includes('scryfall')) return response(200, { data: [actual], not_found: [] });
     return response(200, {}, url);

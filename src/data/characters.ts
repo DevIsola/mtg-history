@@ -667,7 +667,7 @@ export const characters: CharacterProfile[] = [
     chapterIds: ["march-of-the-machine"],
     featuredCard: {
       name: "Elesh Norn, Mother of Machines", setCode: "one", collectorNumber: "10",
-      scryfallId: "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087", artist: "Martina Fackova",
+      scryfallId: "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087", artist: "Martina Fačková",
       significance: "The original All Will Be One image of the praetor directing Phyrexia's attempt to conquer every plane.",
     },
     source: {
@@ -712,7 +712,7 @@ export const characters: CharacterProfile[] = [
     ],
     chapterIds: ["march-of-the-machine"],
     featuredCard: {
-      name: "Koth, Fire of Resistance", setCode: "pone", collectorNumber: "138",
+      name: "Koth, Fire of Resistance", setCode: "pone", collectorNumber: "138p",
       scryfallId: "e38f63c4-1d35-451a-8778-2066ed874ff9", artist: "Eric Wilkerson",
       significance: "A Phyrexia: All Will Be One promotional printing illustrating the Mirran resistance leader.",
     },
@@ -1006,7 +1006,7 @@ export const characters: CharacterProfile[] = [
     ],
     chapterIds: ["many-worlds", "march-of-the-machine"],
     featuredCard: {
-      name: "Nahiri, the Harbinger", setCode: "warm", collectorNumber: "7",
+      name: "Nahiri, the Harbinger", setCode: "med", collectorNumber: "WS7",
       scryfallId: "45f43bd0-d4d9-4a64-a829-f1ea3dfc9e90", artist: "Kieran Yanner",
       significance: "A 2019 retrospective portrait of the ancient Zendikari lithomancer.",
     },
@@ -1256,7 +1256,7 @@ export const characters: CharacterProfile[] = [
     chapterIds: ["weatherlight"],
     featuredCard: {
       name: "Volrath the Fallen",
-      setCode: "nms",
+      setCode: "nem",
       collectorNumber: "75",
       scryfallId: "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56",
       artist: "Kev Walker",
