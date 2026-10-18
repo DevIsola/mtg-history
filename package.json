@@ -15,7 +15,9 @@
     "check:content": "node --experimental-strip-types scripts/check-content-graph.mjs",
     "check:editorial": "node scripts/check-editorial-metadata.mjs",
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
-    "verify": "pnpm run test && pnpm run check:content && pnpm run check:editorial && pnpm run check:types && pnpm run build && pnpm run check:links",
+    "check:artwork": "node scripts/check-artwork-fidelity.mjs",
+    "review:artwork": "node scripts/check-artwork-fidelity.mjs",
+    "verify": "pnpm run test && pnpm run check:content && pnpm run check:editorial && pnpm run check:artwork && pnpm run check:types && pnpm run build && pnpm run check:links",
     "check:types": "astro check"
   },
   "dependencies": {
