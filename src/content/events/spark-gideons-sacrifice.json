@@ -1,0 +1,15 @@
+{
+  "title": "Gideon Sacrifices Himself for Liliana",
+  "chapterId": "war-of-the-spark",
+  "summary": "Gideon bears Bolas's deadly punishment when Liliana chooses to rebel.",
+  "narrative": [
+    "Liliana ordered the Eternals to attack Bolas despite the curse that would kill her for disobedience.",
+    "Gideon used his protective magic to take the fatal consequence himself, allowing Liliana to survive."
+  ],
+  "characterIds": [
+    "gideon-jura",
+    "liliana-vess",
+    "nicol-bolas"
+  ],
+  "cardName": "Gideon's Sacrifice"
+}

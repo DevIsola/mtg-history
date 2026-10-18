@@ -1,0 +1,28 @@
+{
+  "name": "Glacian",
+  "title": "The Father of Powerstone Artifice",
+  "origin": "Dominaria",
+  "role": "Thran engineer and powerstone inventor",
+  "summary": "The brilliant Thran engineer whose powerstones powered an empire and whose inventions shaped the conflicts of later ages.",
+  "biography": [
+    "Glacian discovered how to create powerstones, crystals capable of storing extraordinary amounts of magical energy. His inventions became fundamental to the machines, infrastructure, and achievements of the ancient Thran Empire.",
+    "Glacian was married to Rebbec, one of the empire's greatest architects. Their accomplishments were closely intertwined: powerstones supported the extraordinary structures Rebbec designed, including the floating Thran Temple above Halcyon.",
+    "The technologies Glacian pioneered were also linked to phthisis, a devastating illness afflicting the Thran. When Glacian became gravely ill, Rebbec used her influence to bring the physician Yawgmoth to Halcyon.",
+    "Yawgmoth implanted two halves of a broken powerstone in Glacian's body, draining his life force. Rebbec later used those stones to seal the gateway to Phyrexia. Millennia afterward, Urza and Mishra discovered them and named them the Mightstone and Weakstone."
+  ],
+  "chapterIds": [
+    "thran"
+  ],
+  "featuredCard": {
+    "name": "Glacian, Powerstone Engineer",
+    "setCode": "cmr",
+    "collectorNumber": "72",
+    "scryfallId": "a736df42-18e9-4259-b0b8-54d21143e72e",
+    "artist": "Magali Villeneuve",
+    "significance": "A Commander Legends depiction of Glacian, whose inventions powered Thran civilization and influenced generations of later artificers."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Legendary Characters of Commander Legends, Part 2",
+    "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-2-2020-11-06"
+  }
+}

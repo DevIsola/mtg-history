@@ -1,0 +1,15 @@
+{
+  "title": "Oko’s Crew Raids the Thunder Junction Vault",
+  "chapterId": "omenpaths",
+  "summary": "Interplanar outlaws converge on an ancient vault as Kellan encounters his father.",
+  "narrative": [
+    "Oko organizes a criminal crew on Thunder Junction to claim the secrets of a guarded Fomori vault.",
+    "Kellan’s search brings him into the operation, forcing him to judge Oko by his choices rather than reputation or kinship."
+  ],
+  "characterIds": [
+    "oko",
+    "kellan",
+    "vraska"
+  ],
+  "cardName": "Oko, the Ringleader"
+}

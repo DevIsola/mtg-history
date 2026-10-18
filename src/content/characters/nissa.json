@@ -1,0 +1,27 @@
+{
+  "name": "Nissa Revane",
+  "title": "The Ascended Animist",
+  "origin": "Zendikar",
+  "role": "Elemental mage, compleated planeswalker, and survivor",
+  "summary": "A guardian of living worlds whose powers were turned against her allies after compleation.",
+  "biography": [
+    "Nissa's relationship with Zendikar's lands and the Roil made her one of the Multiverse's most capable nature mages.",
+    "In the failed mission to the Seedcore, Phyrexian oil and coercive compleation turned her against the coalition; Chandra later faced her in the invasion's final stages.",
+    "On Zhalfir, Melira's sacrifice and the power Karn retained from Venser allowed Nissa's restoration, although scars and consequences remained."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Nissa, Ascended Animist",
+    "setCode": "one",
+    "collectorNumber": "175",
+    "scryfallId": "1dd64b1d-bcef-476c-bf0b-3ac7df7cbed3",
+    "artist": "Chase Stone",
+    "significance": "Her compleated portrait records the invasion's violation of an old bond with nature."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine, Episode 10: The Rhythms of Life",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life"
+  }
+}

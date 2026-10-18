@@ -1,0 +1,15 @@
+{
+  "title": "Skellum Trains Chainer in Dementia Magic",
+  "chapterId": "otaria",
+  "summary": "Chainer's apprenticeship equips him to summon nightmares, but Cabal politics and the Mirari later push that ability beyond control.",
+  "narrative": [
+    "The mentor Skellum trained Chainer to draw terrifying creations from his own mind and direct them in the Cabal's arenas.",
+    "Summoning depended on both imagination and discipline. Success within the pits encouraged Chainer's confidence while strengthening the Cabal's investment in his power.",
+    "When the Mirari later amplified this magic, Chainer's ability to control his creations failed with lethal consequences."
+  ],
+  "characterIds": [
+    "chainer",
+    "cabal-patriarch"
+  ],
+  "cardName": "Chainer, Dementia Master"
+}

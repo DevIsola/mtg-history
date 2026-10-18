@@ -1,0 +1,14 @@
+{
+  "title": "The Brothers Become Enemies",
+  "chapterId": "brothers-war",
+  "summary": "Urza and Mishra turn a personal rivalry into a conflict that engulfs Terisiare.",
+  "narrative": [
+    "The brothers began as students fascinated by the remnants of ancient Thran technology. Their discovery of powerful artifacts contributed to a growing rivalry.",
+    "Their separate ambitions eventually drew nations and armies into a destructive struggle, transforming the political and physical landscape of Dominaria."
+  ],
+  "characterIds": [
+    "urza",
+    "mishra"
+  ],
+  "cardName": "Mishra, Tamer of Mak Fawa"
+}

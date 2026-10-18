@@ -1,0 +1,27 @@
+{
+  "name": "Seton",
+  "title": "Protector of Krosa",
+  "origin": "Dominaria — Krosan Forest",
+  "role": "Centaur druid and guardian",
+  "summary": "A Krosan defender who represented the values of a living forest in contrast with Otaria's arena politics.",
+  "biography": [
+    "Seton was a centaur associated with the Krosan Forest and its traditions of guardianship and druidic magic.",
+    "His friendship with Kamahl helped connect the former pit fighter to a world where power could be exercised in service to living things rather than personal conquest.",
+    "Kamahl's principal Nantuko teacher was Thriss; Seton is best understood as an ally and representative of the wider Krosan tradition, not as a replacement for Thriss in the narrative."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Seton, Krosan Protector",
+    "setCode": "ody",
+    "collectorNumber": "267",
+    "scryfallId": "641a3bae-9146-4e70-862a-86a56f7c3816",
+    "artist": "Greg Staples",
+    "significance": "Seton's original Odyssey portrait, showing the guardians of Krosa before Kamahl's transformation."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Kamahl, Heart of Krosa",
+    "url": "https://magic.wizards.com/en/news/card-preview/kamahl-heart-krosa-2020-10-28"
+  }
+}

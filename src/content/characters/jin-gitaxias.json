@@ -1,0 +1,27 @@
+{
+  "name": "Jin-Gitaxias",
+  "title": "Praetor of the Progress Engine",
+  "origin": "New Phyrexia — the Surgical Bay",
+  "role": "Chrome Host commander and architect of spark-preserving compleation",
+  "summary": "A Phyrexian researcher whose Kamigawan experiments transformed planeswalkers into agents of the invasion.",
+  "biography": [
+    "Jin-Gitaxias pursued an ideal of perfection through experimentation and the acquisition of knowledge, commanding the blue-aligned Chrome Host.",
+    "His studies of Kamigawa's kami helped produce a method of compleation that retained a planeswalker's spark; Tamiyo became a devastating example.",
+    "During the Multiversal invasion his soldiers exploited intelligence about each plane, although faulty assumptions made their attacks vulnerable to local resistance."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Jin-Gitaxias, Core Augur",
+    "setCode": "nph",
+    "collectorNumber": "37",
+    "scryfallId": "bd46fc9f-5b92-44d7-8940-2f39b0962b8f",
+    "artist": "Eric Deschamps",
+    "significance": "The original 2011 portrait of the scientist whose later work changed planeswalker compleation."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine Planeswalker's Guide",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine"
+  }
+}

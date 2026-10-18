@@ -1,0 +1,15 @@
+{
+  "title": "Mishra Rises Among the Fallaji",
+  "chapterId": "brothers-war",
+  "summary": "Mishra's knowledge of Thran machines becomes political and military influence among the Fallaji.",
+  "narrative": [
+    "Separated from Urza after Tocasia's death, Mishra traveled among the Fallaji of Terisiare's desert regions.",
+    "His archaeological knowledge and command of ancient machines made him valuable to an existing society with its own leaders, ambitions, and alliances.",
+    "By gaining influence over armed forces, Mishra transformed an argument between brothers into a continental struggle."
+  ],
+  "characterIds": [
+    "mishra",
+    "urza"
+  ],
+  "cardName": "Mishra, Tamer of Mak Fawa"
+}

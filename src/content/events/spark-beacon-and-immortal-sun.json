@@ -1,0 +1,15 @@
+{
+  "title": "The Interplanar Beacon Becomes a Trap",
+  "chapterId": "war-of-the-spark",
+  "summary": "The beacon calls planeswalkers to Ravnica while the Immortal Sun prevents their departure.",
+  "narrative": [
+    "The Izzet-made Interplanar Beacon drew walkers toward Ravnica, where Bolas intended to harvest their sparks.",
+    "The Immortal Sun completed the trap by preventing its victims from leaving by planeswalking.",
+    "Ral Zarek's engineering skills mattered both to the city's preparations and to resistance against Bolas."
+  ],
+  "characterIds": [
+    "ral-zarek",
+    "nicol-bolas"
+  ],
+  "cardName": "Interplanar Beacon"
+}

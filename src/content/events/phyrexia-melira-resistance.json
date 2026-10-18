@@ -1,0 +1,15 @@
+{
+  "title": "Melira Guides the Assault toward the Seedcore",
+  "chapterId": "march-of-the-machine",
+  "summary": "A Mirran survivor supplies knowledge the visiting planeswalkers need to cross occupied territory.",
+  "narrative": [
+    "Melira explained the layered geography of New Phyrexia to the planeswalker strike team.",
+    "She understood both the dangers of the Phyrexian landscape and the resistance still fighting inside it.",
+    "Her role in the failed Seedcore mission arose from years of survival rather than from a sudden arrival on the plane."
+  ],
+  "characterIds": [
+    "melira",
+    "koth"
+  ],
+  "cardName": "Melira, Sylvok Outcast"
+}

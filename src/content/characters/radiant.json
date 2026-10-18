@@ -1,0 +1,27 @@
+{
+  "name": "Radiant",
+  "title": "Serra's Archangel",
+  "origin": "Serra's Realm",
+  "role": "Angelic guardian of Serra's artificial plane",
+  "summary": "The guardian whose increasingly severe rule preceded the collapse of Serra's Realm and the creation of the Weatherlight's power source.",
+  "biography": [
+    "Serra entrusted her realm to Radiant when Phyrexian corruption drove its creator away.",
+    "Radiant's determination to eliminate infiltration hardened into suspicion of her own people, while the realm without Serra continued to deteriorate.",
+    "The Weatherlight helped rescue inhabitants before the plane collapsed. Its mana and Radiant's divine light became part of the powerstone fueling the skyship."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Radiant, Archangel",
+    "setCode": "ulg",
+    "collectorNumber": "20",
+    "scryfallId": "99509da7-3e11-4c38-804b-286ce572f36e",
+    "artist": "Michael Sutfin",
+    "significance": "The original Urza's Legacy depiction of the archangel who guarded Serra's failing realm."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Commander Legends Character Stories",
+    "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30"
+  }
+}

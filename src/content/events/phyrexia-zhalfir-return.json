@@ -1,0 +1,16 @@
+{
+  "title": "Wrenn Opens a Path to Zhalfir",
+  "chapterId": "march-of-the-machine",
+  "summary": "Wrenn's union with Realmbreaker brings the isolated Zhalfirins into the battle and seals New Phyrexia away.",
+  "narrative": [
+    "Wrenn joined the invasion tree's remnant, called Eight, and reconnected Teferi's lost homeland with the Multiverse.",
+    "Zhalfir's forces counterattacked, and the two planes exchanged positions: Zhalfir became reachable while New Phyrexia was placed beyond ordinary contact."
+  ],
+  "characterIds": [
+    "wrenn",
+    "teferi",
+    "chandra",
+    "koth"
+  ],
+  "cardName": "Wrenn and Realmbreaker"
+}

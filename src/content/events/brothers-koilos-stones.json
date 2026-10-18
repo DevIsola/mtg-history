@@ -1,0 +1,17 @@
+{
+  "title": "The Brothers Claim the Ancient Stones",
+  "chapterId": "brothers-war",
+  "summary": "The Koilos discovery divides Glacian's ancient powerstone between Urza and Mishra, transforming study into rivalry.",
+  "narrative": [
+    "At the Caves of Koilos, the two students recovered the fragments of a Thran powerstone whose history reached back to Glacian and Rebbec.",
+    "Urza held the Mightstone and Mishra the Weakstone. Each possessed real power, but their distrust turned the division into an enduring grievance.",
+    "The stones connected their personal choices to a much older history of Thran technology and Phyrexian influence."
+  ],
+  "characterIds": [
+    "urza",
+    "mishra",
+    "tocasia",
+    "glacian"
+  ],
+  "cardName": "The Mightstone and Weakstone"
+}

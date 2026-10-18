@@ -1,0 +1,17 @@
+{
+  "title": "Proft Exposes Oba's Murder Conspiracy",
+  "chapterId": "omenpaths",
+  "summary": "A Ravnican investigation reveals that magical coercion and Oba's post-invasion vengeance drove the murders.",
+  "narrative": [
+    "Proft investigated the killings with help from Kellan, Kaya, and Etrata, refusing to treat coerced action as proof of willing guilt.",
+    "The evidence exposed Oba's use of mind-controlling flowers and the suffering she had absorbed during the Phyrexian invasion.",
+    "Cim and Ses were not knowing accomplices; the case fractured the image of a united Trostani and ended in a confrontation at Vitu-Ghazi."
+  ],
+  "characterIds": [
+    "alquist-proft",
+    "trostani",
+    "kellan",
+    "teysa-karlov"
+  ],
+  "cardName": "Trostani, Three Whispers"
+}

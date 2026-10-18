@@ -1,0 +1,27 @@
+{
+  "name": "Lieutenant Kirtar",
+  "title": "The Order's Lieutenant",
+  "origin": "Dominaria — Otaria",
+  "role": "Order officer and early possessor of the Mirari",
+  "summary": "An Order commander who took the Mirari from the Cabal but could not make its power serve his ideal of justice.",
+  "biography": [
+    "Kirtar served the Order, which opposed the Cabal and claimed to act against the dangerous magic and cruelty associated with Cabal City.",
+    "When the Mirari passed from Cabal custody into the Order's hands, Kirtar hoped to direct its power toward his cause. The artifact instead demonstrated how dangerous certainty could become when amplified by overwhelming magic.",
+    "His failure is one phase of the Mirari's passage among rival Otarian powers, preceding Aboshan's disastrous use of the sphere."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Lieutenant Kirtar",
+    "setCode": "ody",
+    "collectorNumber": "29",
+    "scryfallId": "e518750f-492d-4575-b4ee-c80c1f8e0a58",
+    "artist": "Paolo Parente",
+    "significance": "Kirtar's original Odyssey portrait; the illustration identifies him rather than depicting his final attempt to wield the Mirari."
+  },
+  "source": {
+    "title": "Lieutenant Kirtar — Odyssey printing",
+    "url": "https://scryfall.com/card/ody/29/lieutenant-kirtar"
+  }
+}

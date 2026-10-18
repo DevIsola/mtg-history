@@ -1,0 +1,28 @@
+{
+  "name": "Mishra",
+  "title": "The Brother Lost to Phyrexia",
+  "origin": "Dominaria — Terisiare",
+  "role": "Artificer, Fallaji commander, and war leader",
+  "summary": "Urza's gifted younger brother, whose rivalry, military ambitions, and Phyrexian corruption helped devastate Terisiare.",
+  "biography": [
+    "Mishra studied ancient Thran artifacts alongside his brother Urza under the archaeologist Tocasia. Their discovery of two halves of a powerful stone helped ignite the rivalry that would define both their lives.",
+    "After Tocasia's death, Mishra separated from Urza and rose to prominence among the Fallaji. His talents as an artificer and his growing influence turned a family conflict into a struggle between powerful factions.",
+    "As the war continued, the Phyrexian praetor Gix took advantage of Mishra's ambitions. Mishra became increasingly entangled with Phyrexian influence, and his eventual transformation symbolized how far the conflict had moved beyond its original causes.",
+    "Mishra's final confrontation with Urza took place on Argoth. Urza's activation of the Golgothian Sylex brought the war to a catastrophic end, leaving the brothers' legacy inseparable from the devastation of Dominaria."
+  ],
+  "chapterIds": [
+    "brothers-war"
+  ],
+  "featuredCard": {
+    "name": "Mishra, Tamer of Mak Fawa",
+    "setCode": "bro",
+    "collectorNumber": "217",
+    "scryfallId": "585a753d-a692-474a-bc28-48dd93b73ace",
+    "artist": "Darren Tan",
+    "significance": "Mishra as a powerful artificer and leader before the ultimate consequences of his Phyrexian corruption."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Brothers' War Card Stories, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/the-brothers-war-card-stories-part-1"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Cabal Patriarch",
+  "title": "The First of the Cabal",
+  "origin": "Dominaria — Otaria",
+  "role": "Leader of the Cabal and ruler of its arena establishment",
+  "summary": "The First made the Mirari a public prize and manipulated Cabal City through spectacle, patronage, and dark magic.",
+  "biography": [
+    "The Cabal Patriarch, known as the First, wielded political power through the profitable, violent arena culture of Cabal City.",
+    "Chainer brought the Mirari to him after its discovery. The First recognized its potential and offered it as a prize that would draw ambitious combatants and rival factions to the games.",
+    "Chainer eventually seized the Mirari and temporarily displaced the Patriarch, but the First's wider influence survived this rebellion and later extended to Jeska's transformation into Phage."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Cabal Patriarch",
+    "setCode": "cmm",
+    "collectorNumber": "140",
+    "scryfallId": "9e9a1276-5ad5-44ee-83e5-2d1ab728946e",
+    "artist": "Mark Zug",
+    "significance": "A Commander Masters reprint of the original Odyssey-era portrait of the Cabal's First."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Commander Masters Storyteller, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1"
+  }
+}

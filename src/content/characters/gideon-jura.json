@@ -1,0 +1,27 @@
+{
+  "name": "Gideon Jura",
+  "title": "The Gatewatch's Shield",
+  "origin": "Theros",
+  "role": "Planeswalker and leader who gave his life for Liliana",
+  "summary": "A defender of Ravnica whose final act spared Liliana from Bolas's deadly punishment.",
+  "biography": [
+    "Gideon joined the Gatewatch in defense of a Multiverse that could not rely on planeswalkers' power alone.",
+    "Trapped on Ravnica with the other planeswalkers, he rallied resistance and fought to protect people endangered by Bolas's invasion.",
+    "When Liliana rebelled, Gideon interposed his own protective magic, taking the fatal consequence and saving her life."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Gideon's Sacrifice",
+    "setCode": "war",
+    "collectorNumber": "14",
+    "scryfallId": "849c79ad-8bfc-4512-ab41-f213b6b285ab",
+    "artist": "Chris Rallis",
+    "significance": "Gideon redirects the lethal effect of Liliana's rebellion onto himself."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War of the Spark: Ravnica—Ashes",
+    "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12"
+  }
+}

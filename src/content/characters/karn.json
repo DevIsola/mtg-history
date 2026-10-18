@@ -1,0 +1,31 @@
+{
+  "name": "Karn",
+  "title": "The Silver Golem",
+  "origin": "Dominaria",
+  "role": "Construct, Legacy component, and planeswalker",
+  "summary": "Created by Urza, Karn became a compassionate member of the Weatherlight crew and later a planeswalker.",
+  "biography": [
+    "Karn was created by Urza as a silver golem and became an important component of the Legacy. His gentle disposition contrasted with the destructive purposes of many machines around him.",
+    "As part of the Weatherlight crew, Karn was drawn into the struggle against Phyrexia. His role in the Legacy helped make the final confrontation with Yawgmoth possible.",
+    "Karn survived that conflict and became a planeswalker. His later creation of an artificial world would have consequences for another era of Magic’s history.",
+    "As New Phyrexia tried to invade every plane, Karn helped end Elesh Norn’s rule and later sacrificed his remaining spark to help save Nissa and Ajani."
+  ],
+  "chapterIds": [
+    "weatherlight",
+    "otaria",
+    "mending",
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Karn, Silver Golem",
+    "setCode": "usg",
+    "collectorNumber": "298",
+    "scryfallId": "811a0988-2900-426c-9413-8f1778d99678",
+    "artist": "Mark Zug",
+    "significance": "Karn’s original legendary creature card, released during the Urza’s Saga block."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Face Cards, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/face-cards-part-1-2018-11-19"
+  }
+}

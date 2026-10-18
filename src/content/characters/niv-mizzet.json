@@ -1,0 +1,27 @@
+{
+  "name": "Niv-Mizzet",
+  "title": "The Firemind Reborn",
+  "origin": "Ravnica",
+  "role": "Izzet guildmaster and later Living Guildpact",
+  "summary": "Ravnica's Firemind whose rebirth made the city's guild alliance a new form of magical order.",
+  "biography": [
+    "Niv-Mizzet led the Izzet League with formidable intellect and a long history of guild intrigue.",
+    "During the confrontation with Bolas, his dangerous plan required cooperation among Ravnica's factions and resulted in his death and rebirth.",
+    "He returned as the Living Guildpact, a central figure for Ravnica's attempted recovery from the war."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Niv-Mizzet Reborn",
+    "setCode": "war",
+    "collectorNumber": "208",
+    "scryfallId": "56a2609d-b535-400b-81d9-72989a33c70f",
+    "artist": "Raymond Swanland",
+    "significance": "The Firemind's transformation into the Living Guildpact."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War of the Spark: Ravnica—Ashes",
+    "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12"
+  }
+}

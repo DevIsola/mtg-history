@@ -1,0 +1,17 @@
+{
+  "title": "The Phyrexian Fleet Beneath Mercadia",
+  "chapterId": "weatherlight",
+  "summary": "The crew uncovers the Kyren rulers' hidden preparation for the invasion of Dominaria.",
+  "narrative": [
+    "The ship's arrival on Mercadia entangled its crew with the commercial rulers and their opposition, including the Cho-Arrim.",
+    "Beneath the city's inverted mountain, the Kyren had concealed a vast fleet that could support Phyrexia's assault on Dominaria.",
+    "The Weatherlight escaped to warn its home plane, underscoring that the invasion involved preparations across multiple worlds."
+  ],
+  "characterIds": [
+    "gerrard",
+    "sisay",
+    "squee",
+    "volrath"
+  ],
+  "cardName": "Skyship Weatherlight"
+}

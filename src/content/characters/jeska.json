@@ -1,0 +1,28 @@
+{
+  "name": "Jeska",
+  "title": "The Thrice-Reborn Planeswalker",
+  "origin": "Dominaria — Otaria",
+  "role": "Pardic warrior, Phage, Karona, and planeswalker",
+  "summary": "Kamahl's sister survived a terrible wound and multiple transformations before becoming a planeswalker.",
+  "biography": [
+    "Jeska was a Pardic warrior and the younger sister of Kamahl. Her life changed when he struck her with a sword influenced by the Mirari.",
+    "The wound led to her transformation into Phage the Untouchable. A later confrontation combined Phage, Akroma, and Zagorka into Karona, the False God.",
+    "When Karona was stabbed with the Mirari sword, Akroma and Zagorka died, but Jeska survived and her planeswalker spark ignited. Karn became her guide, and she would later return to Dominaria during the crisis of the temporal rifts."
+  ],
+  "chapterIds": [
+    "otaria",
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Jeska, Warrior Adept",
+    "setCode": "jud",
+    "collectorNumber": "93",
+    "scryfallId": "1cf96a59-8b7d-4a5b-adfd-17eeedd95db5",
+    "artist": "rk post",
+    "significance": "Jeska's original legendary card shows the Pardic warrior before the identities of Phage, Karona, and planeswalker."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Legendary Characters of Commander Legends, Part 1",
+    "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30"
+  }
+}

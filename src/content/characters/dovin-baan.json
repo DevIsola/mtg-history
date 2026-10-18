@@ -1,0 +1,27 @@
+{
+  "name": "Dovin Baan",
+  "title": "Azorius Grand Arbiter",
+  "origin": "Kaladesh",
+  "role": "Bolas-aligned administrator of the Azorius Senate",
+  "summary": "The planeswalker who used Ravnica's legal institutions to obstruct opposition to Bolas.",
+  "biography": [
+    "Dovin Baan was a Vedalken planeswalker known for his administrative precision and talent for finding flaws in systems.",
+    "He came to Ravnica and gained control of the Azorius Senate, using civic authority in ways that strengthened Bolas's conspiracy and obstructed its opponents.",
+    "His political control demonstrates why the War of the Spark was not only a magical battle: the city's own institutions had been compromised. Following the war, Vraska was asked to pursue him."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Dovin, Hand of Control",
+    "setCode": "pwar",
+    "collectorNumber": "229s",
+    "scryfallId": "45abf8eb-c583-4eec-a91f-0e58424a8b1c",
+    "artist": "Kieran Yanner",
+    "significance": "War of the Spark prerelease portrait of the Azorius collaborator."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War of the Spark: Ravnica — Ashes",
+    "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12"
+  }
+}

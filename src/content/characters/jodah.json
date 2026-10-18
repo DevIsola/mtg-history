@@ -1,0 +1,28 @@
+{
+  "name": "Jodah",
+  "title": "The Eternal Archmage",
+  "origin": "Dominaria",
+  "role": "Archmage and historian",
+  "summary": "An exceptionally long-lived wizard who preserved magical knowledge across the Dark Age and Ice Age.",
+  "biography": [
+    "Jodah emerged during the troubled centuries that followed the Brothers’ War. His early experiences took place when magical knowledge was feared and its practitioners could face persecution.",
+    "His remarkable lifespan allowed him to witness centuries of Dominarian history. Alongside Jaya Ballard, he played an important role in the struggle against Lim-Dûl during the Ice Age.",
+    "Jodah survived into much later ages, becoming a living connection between the ancient history of Dominaria and its newer generations."
+  ],
+  "chapterIds": [
+    "ice-age",
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Jodah, Archmage Eternal",
+    "setCode": "dom",
+    "collectorNumber": "198",
+    "scryfallId": "1ee86efa-248e-4251-b734-f8ad3e8a0344",
+    "artist": "Yongjae Choi",
+    "significance": "A later depiction of Jodah, whose life spans multiple major historical periods."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Legends of Dominaria United",
+    "url": "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01"
+  }
+}

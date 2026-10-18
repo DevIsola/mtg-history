@@ -1,0 +1,29 @@
+{
+  "name": "Tevesh Szat",
+  "title": "The Traitor Among the Nine Titans",
+  "origin": "Dominaria",
+  "role": "Ancient planeswalker, manipulator, and member of the Nine Titans",
+  "summary": "A ruthless planeswalker whose betrayal of Urza's Nine Titans exposed the desperate compromises behind the assault on Phyrexia.",
+  "biography": [
+    "Before the Phyrexian Invasion, Tevesh Szat was an ancient and destructive force in Dominaria's history. His schemes contributed to upheaval in Sarpadia and other civilizations long before the Weatherlight's final campaign.",
+    "Urza recruited Szat into the Nine Titans, nine planeswalkers who attacked Phyrexia in Titan Engines. The arrangement was strategically useful but profoundly dangerous because Szat had never abandoned his own ambitions.",
+    "Szat betrayed the mission and murdered the planeswalkers Daria and Kristina. Urza had anticipated the betrayal and killed Szat, using his life essence to power the soul bombs meant to devastate Phyrexia.",
+    "His story illustrates both the threat of treachery within the Nine Titans and Urza's willingness to weaponize the death of an ally. Tevesh Szat later received a planeswalker card in Commander Legends, long after the events it recalls."
+  ],
+  "chapterIds": [
+    "ice-age",
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Tevesh Szat, Doom of Fools",
+    "setCode": "cmr",
+    "collectorNumber": "153",
+    "scryfallId": "8f244716-78ab-46f5-b6e9-fc1e6db28052",
+    "artist": "Livia Prima",
+    "significance": "Tevesh Szat's later legendary planeswalker card, representing a villain whose betrayal damaged Urza's Nine Titans."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Legendary Characters of Commander Legends, Part 1",
+    "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30"
+  }
+}

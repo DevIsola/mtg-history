@@ -1,0 +1,27 @@
+{
+  "name": "Liliana Vess",
+  "title": "The Dreadhorde General",
+  "origin": "Dominaria",
+  "role": "Necromancer forced to command Bolas's Eternal army",
+  "summary": "A planeswalker whose defiance of Bolas changed the battle and led to Gideon's sacrifice.",
+  "biography": [
+    "Liliana pursued freedom from supernatural bargains but became bound to the Elder Dragon Nicol Bolas.",
+    "On Ravnica she commanded the Dreadhorde while knowing that Bolas's hold on her could kill her if she disobeyed.",
+    "She turned the Eternals against Bolas; Gideon absorbed the lethal consequence of her rebellion, leaving her alive with a difficult legacy."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Liliana, Dreadhorde General",
+    "setCode": "war",
+    "collectorNumber": "97",
+    "scryfallId": "d75ebba8-34ca-47a0-bf13-8318ad73b343",
+    "artist": "Chris Rallis",
+    "significance": "Liliana's contested command of the Eternal army during the invasion."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War of the Spark: Ravnica—Ashes",
+    "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Freyalise",
+  "title": "Guardian of Elvenkind",
+  "origin": "Dominaria",
+  "role": "Ancient planeswalker and protector of Skyshroud",
+  "summary": "A formidable guardian who ended Dominaria's Ice Age and died sealing the Skyshroud rift.",
+  "biography": [
+    "Freyalise had wielded extraordinary power since the age of the Ice Age, when her magic helped end the long supernatural winter. She became particularly associated with elven communities and the defense of their forests.",
+    "After the Rathi Overlay transplanted Skyshroud into Keld, Freyalise continued to protect its inhabitants from threats even while the growing temporal rift weakened the plane.",
+    "Recognizing the threat to all of Dominaria, she sacrificed her life and power to heal the fracture above Skyshroud."
+  ],
+  "chapterIds": [
+    "ice-age",
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Freyalise, Llanowar's Fury",
+    "setCode": "c14",
+    "collectorNumber": "43",
+    "scryfallId": "6c6ef042-1a69-4b16-abae-4f436dbadbbd",
+    "artist": "Adam Paquette",
+    "significance": "A later planeswalker card representing the elven protector who sacrificed herself during the Mending."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Freyalise",
+    "url": "https://magic.wizards.com/en/story/freyalise-planeswalker"
+  }
+}

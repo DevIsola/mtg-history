@@ -1,0 +1,27 @@
+{
+  "name": "Vorinclex",
+  "title": "Praetor of the Vicious Swarm",
+  "origin": "New Phyrexia — the Hunter Maze",
+  "role": "Predatory praetor and thief of the World Tree's essence",
+  "summary": "The green-aligned praetor whose mission to Kaldheim helped create the invasion's interplanar tree.",
+  "biography": [
+    "Vorinclex embodied the vision that domination and survival should be determined by ruthless adaptation and predation.",
+    "Traveling to Kaldheim through Phyrexia's growing interplanar reach, he secured an essence of the World Tree needed for Realmbreaker.",
+    "His achievements helped Elesh Norn prepare a coordinated invasion despite the praetors' conflicting ideas of what perfection meant."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Vorinclex, Voice of Hunger",
+    "setCode": "nph",
+    "collectorNumber": "127",
+    "scryfallId": "0806adab-6a08-411b-b249-e1c58ade354b",
+    "artist": "Karl Kopinski",
+    "significance": "The original depiction of Vorinclex, published well before his World Tree mission."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine Planeswalker's Guide",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Elesh Norn",
+  "title": "Mother of Machines",
+  "origin": "New Phyrexia — the Machine Orthodoxy",
+  "role": "Grand praetor and architect of the multiversal invasion",
+  "summary": "The praetor who used Realmbreaker to impose Phyrexian unity on the Multiverse.",
+  "biography": [
+    "After Mirrodin's fall, Elesh Norn consolidated the Machine Orthodoxy and sought dominion over other praetors as well as other planes.",
+    "Agents recovered Kaldheim's World Tree essence and perfected planeswalker compleation, enabling Norn to grow Realmbreaker and open paths for invasion armies.",
+    "Her ambition failed when Elspeth returned, Wrenn brought Zhalfir into the fight, and Karn personally dismantled Norn after the counterattack."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Elesh Norn, Mother of Machines",
+    "setCode": "one",
+    "collectorNumber": "10",
+    "scryfallId": "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087",
+    "artist": "Martina Fačková",
+    "significance": "The original All Will Be One image of the praetor directing Phyrexia's attempt to conquer every plane."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Planeswalker's Guide to March of the Machine",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine"
+  }
+}

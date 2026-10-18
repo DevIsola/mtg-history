@@ -1,0 +1,15 @@
+{
+  "title": "The Talite Siege of Penregon",
+  "chapterId": "ice-age",
+  "summary": "The Church of Tal assaults Penregon as postwar communities struggle over the future of magic and artifice.",
+  "narrative": [
+    "In 69 AR, followers of Tal attempted to seize Penregon. Their opposition to magic and artifice made the surviving machines of Urza's age an object of hostility, even where those machines supported civilian life.",
+    "The crusaders attacked the city's defenses while sympathizers within its walls spread violence and destruction. Kayla bin-Kroog worked with Penregon's commanders to organize resistance and make decisions about its survival.",
+    "Tawnos, troubled by the conversion of his civilian machines back into weapons, had destroyed his workshop. The siege and its aftermath exposed the fragile balance between technological dependence, political fear, and responsibility after the Brothers' War."
+  ],
+  "characterIds": [
+    "kayla",
+    "tawnos"
+  ],
+  "cardName": "Witch Hunter"
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Karona Falls and Jeska Ascends",
+  "chapterId": "otaria",
+  "summary": "The Mirari sword breaks Karona apart; Akroma and Zagorka die while Jeska becomes a planeswalker.",
+  "narrative": [
+    "Sash and Waistcoat betrayed Karona and stabbed her with the Mirari sword, separating the three beings whose fusion had created the false god.",
+    "Akroma and Zagorka died, but Jeska survived and her planeswalker spark ignited. Karn became her mentor, linking the Otarian saga to later events on Dominaria."
+  ],
+  "characterIds": [
+    "jeska",
+    "akroma",
+    "kamahl",
+    "karn"
+  ],
+  "cardName": "Jeska, Thrice Reborn"
+}

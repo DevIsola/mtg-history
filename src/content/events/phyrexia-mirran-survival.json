@@ -1,0 +1,15 @@
+{
+  "title": "Mirrodin's Survivors Organize Their Resistance",
+  "chapterId": "march-of-the-machine",
+  "summary": "Koth, Melira, and scattered Mirrans endure the conquest of their metal world.",
+  "narrative": [
+    "The transformation of Mirrodin into New Phyrexia did not erase the identity or resistance of the original inhabitants.",
+    "Koth helped lead communities who refused to surrender their home while Melira's resistance to corruption made her a critical ally.",
+    "Their struggle preceded the wider invasion by years and continued after foreign planeswalkers failed to destroy Realmbreaker."
+  ],
+  "characterIds": [
+    "koth",
+    "melira"
+  ],
+  "cardName": "Melira, Sylvok Outcast"
+}

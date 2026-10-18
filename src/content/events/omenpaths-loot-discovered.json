@@ -1,0 +1,15 @@
+{
+  "title": "The Vault Reveals Loot",
+  "chapterId": "omenpaths",
+  "summary": "The treasure in Thunder Junction’s vault is a living being tied to broader multiversal mysteries.",
+  "narrative": [
+    "Loot is discovered within the ancient vault as the heist’s participants struggle over its contents.",
+    "Jace and Vraska become central to Loot’s next steps, connecting the affair to ambitions extending beyond Thunder Junction."
+  ],
+  "characterIds": [
+    "loot",
+    "jace-beleren",
+    "vraska"
+  ],
+  "cardName": "Loot, the Key to Everything"
+}

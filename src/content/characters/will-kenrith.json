@@ -1,0 +1,27 @@
+{
+  "name": "Will Kenrith",
+  "title": "Eldraine’s Young King",
+  "origin": "Eldraine",
+  "role": "Former planeswalker and claimant to Eldraine’s throne",
+  "summary": "The desparked heir who attempted to guide Eldraine through the consequences of the Phyrexian invasion.",
+  "biography": [
+    "Will and his twin Rowan lost King Kenrith and Queen Linden during the Phyrexian invasion, leaving the realm to rebuild amid grief and disorder.",
+    "With his planeswalker spark gone, Will remained committed to the difficult work of restoring institutions and uniting Eldraine after the Wicked Slumber.",
+    "His belief in negotiation clashed with Rowan’s conviction that only formidable magic could prevent the next catastrophe."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Will, Scion of Peace",
+    "setCode": "woe",
+    "collectorNumber": "218",
+    "scryfallId": "162088ea-5f99-4244-9427-2fdfb2168fc3",
+    "artist": "Ryan Pancoast",
+    "significance": "The legendary creature card captures Will’s responsibilities after losing his spark."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/announcements/a-first-look-at-wilds-of-eldraine"
+  }
+}

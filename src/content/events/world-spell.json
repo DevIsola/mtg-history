@@ -1,0 +1,14 @@
+{
+  "title": "Freyalise Casts the World Spell",
+  "chapterId": "ice-age",
+  "summary": "A vast magical undertaking helps bring Dominaria’s Ice Age to an end.",
+  "narrative": [
+    "The Ice Age was sustained by more than ordinary climate conditions. Magical disruptions continued to affect the plane long after the Brothers’ War.",
+    "Freyalise’s World Spell played a decisive role in ending that era, allowing Dominaria to move toward a period of thaw and renewal."
+  ],
+  "characterIds": [
+    "freyalise",
+    "jodah"
+  ],
+  "cardName": "The World Spell"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "The Sylex Mission Fails at the Seedcore",
+  "chapterId": "march-of-the-machine",
+  "summary": "The strike team's effort to prevent Realmbreaker's growth ends in corruption and a desperate rescue.",
+  "narrative": [
+    "Planeswalkers attacked New Phyrexia with a new Sylex, but defenses and glistening oil fractured the mission; Nissa and other allies were compleated.",
+    "As Realmbreaker opened portals to other worlds, Elspeth carried the activated Sylex into the Blind Eternities rather than allow the blast to endanger already-linked planes."
+  ],
+  "characterIds": [
+    "elspeth",
+    "nissa",
+    "koth"
+  ],
+  "cardName": "Nissa, Ascended Animist"
+}

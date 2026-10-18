@@ -1,0 +1,27 @@
+{
+  "name": "Sheoldred",
+  "title": "The Apocalypse",
+  "origin": "New Phyrexia — the Dross Pits",
+  "role": "Praetor and organizer of Dominaria's sleeper-agent campaign",
+  "summary": "A Phyrexian leader who weakened Dominaria through covert infiltration before the greater invasion.",
+  "biography": [
+    "Sheoldred operated among the Steel Thanes and led a covert effort to destabilize Dominaria, the world where Phyrexia's earlier empire had been defeated.",
+    "Her sleeper agents turned trusted institutions and companions into possible threats; Ajani's compleation enabled a devastating betrayal and Jaya's death.",
+    "Sheoldred's interests were not identical to Elesh Norn's, and the praetors' struggle for power revealed the limits of Phyrexia's supposedly unified will."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Sheoldred, the Apocalypse",
+    "setCode": "dmu",
+    "collectorNumber": "107",
+    "scryfallId": "d67be074-cdd4-41d9-ac89-0a0456c4e4b2",
+    "artist": "Chris Rahn",
+    "significance": "The Dominaria United praetor portrait introduces the covert campaign behind the coming war."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Legends You'll Find in Dominaria United",
+    "url": "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01"
+  }
+}

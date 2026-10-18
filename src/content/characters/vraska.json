@@ -1,0 +1,27 @@
+{
+  "name": "Vraska",
+  "title": "The Silencer",
+  "origin": "Ravnica",
+  "role": "Gorgon survivor, former guild leader, and ally of Jace",
+  "summary": "A former compleated planeswalker whose survival and hidden aims complicate the Thunder Junction heist.",
+  "biography": [
+    "Vraska’s history with Ravnica and Jace preceded the Phyrexian invasion, during which her body and mind were corrupted.",
+    "Jace sought her out during the war, protected her surviving self, and brought her toward recovery.",
+    "She returned to action among the Thunder Junction outlaws while concealing objectives beyond those Oko’s crew understood."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Vraska, the Silencer",
+    "setCode": "otj",
+    "collectorNumber": "237",
+    "scryfallId": "b042abf2-c40b-4235-a4fa-2e4901c375c3",
+    "artist": "Kieran Yanner",
+    "significance": "Her Thunder Junction legendary creature printing reflects a changed post-invasion status."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/magic-story/epilogue-1-the-invasion-tree"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Multani",
+  "title": "Maro-Sorcerer of Yavimaya",
+  "origin": "Dominaria — Yavimaya",
+  "role": "Ancient nature spirit and mentor",
+  "summary": "The maro who guided Gerrard, Mirri, and Rofellos before their intertwined Weatherlight journeys.",
+  "biography": [
+    "Multani was an ancient elemental tied to Yavimaya's forests and their living magic.",
+    "He instructed the young Gerrard, Mirri, and Rofellos, whose friendship long predated the mission to rescue Sisay from Rath.",
+    "His teachings provide a human-scale counterweight to Urza's manipulation of bloodlines and the Legacy: Gerrard's loyalties were formed by lived experience, not merely design."
+  ],
+  "chapterIds": [
+    "weatherlight",
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Multani, Maro-Sorcerer",
+    "setCode": "ulg",
+    "collectorNumber": "107",
+    "scryfallId": "0d6cc98b-b376-40af-8308-198bab00b2b1",
+    "artist": "Daren Bader",
+    "significance": "The Urza's Legacy printing of Gerrard's Yavimayan teacher."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Stories from Dominaria, Part 3",
+    "url": "https://magic.wizards.com/en/news/making-magic/stories-dominaria-part-3-2018-04-30"
+  }
+}

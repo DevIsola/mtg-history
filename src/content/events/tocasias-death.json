@@ -1,0 +1,16 @@
+{
+  "title": "The Death of Tocasia",
+  "chapterId": "brothers-war",
+  "summary": "A confrontation between Urza and Mishra kills their mentor and destroys the brothers' shared life.",
+  "narrative": [
+    "Under Tocasia's guidance, Urza and Mishra explored ancient Thran ruins and developed their talents as artificers. Their discovery of the Mightstone and Weakstone eventually caused a bitter rivalry to emerge.",
+    "During a violent confrontation between the brothers, Tocasia attempted to intervene. The power unleashed in their struggle killed the archaeologist who had raised and guided them.",
+    "Her death became a decisive personal tragedy. Urza and Mishra separated, and the ambitions that once centered on ancient artifacts eventually grew into a war between nations."
+  ],
+  "characterIds": [
+    "tocasia",
+    "urza",
+    "mishra"
+  ],
+  "cardName": "Brotherhood's End"
+}

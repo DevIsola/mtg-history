@@ -1,0 +1,15 @@
+{
+  "title": "Vorinclex Steals the World Tree's Essence",
+  "chapterId": "march-of-the-machine",
+  "summary": "A Phyrexian mission to Kaldheim supplies the living foundation of Realmbreaker.",
+  "narrative": [
+    "Vorinclex traveled to Kaldheim as part of Norn's broader effort to make interplanar conquest possible.",
+    "He obtained an essence of the World Tree, whose ability to connect realms could be transformed into Realmbreaker's world-piercing structure.",
+    "The later invasion did not spring into being at the Seedcore; its foundations were stolen from other planes long before the attack began."
+  ],
+  "characterIds": [
+    "vorinclex",
+    "elesh-norn"
+  ],
+  "cardName": "Vorinclex, Voice of Hunger"
+}

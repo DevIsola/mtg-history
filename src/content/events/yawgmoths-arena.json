@@ -1,0 +1,16 @@
+{
+  "title": "Gerrard and Urza in Yawgmoth's Arena",
+  "chapterId": "weatherlight",
+  "summary": "Yawgmoth turns two of Dominaria's central defenders against each other, and Gerrard beheads Urza.",
+  "narrative": [
+    "Yawgmoth tempted Gerrard with the possibility of recovering Hanna and appealed to Urza's obsession with understanding Phyrexia. Under his control, the two adversaries fought in a dreadful arena.",
+    "Gerrard eventually beheaded Urza, though the planeswalker continued to survive as a living head containing the Mightstone and Weakstone.",
+    "The arena scene is represented by the original Apocalypse printing of Phyrexian Arena. The confrontation did not end the invasion; it preceded the Legacy's final activation."
+  ],
+  "characterIds": [
+    "gerrard",
+    "urza",
+    "yawgmoth"
+  ],
+  "cardName": "Phyrexian Arena"
+}

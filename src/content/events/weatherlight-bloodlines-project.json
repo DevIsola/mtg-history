@@ -1,0 +1,17 @@
+{
+  "title": "Urza Shapes the Legacy's Future",
+  "chapterId": "weatherlight",
+  "summary": "Bloodlines, academy research, and engineered artifacts prepare a future generation for Phyrexia.",
+  "narrative": [
+    "Urza's war against Phyrexia extended beyond battlefield tactics to the bloodlines of future defenders and the technology of the Tolarian Academy.",
+    "Barrin directed students and researchers while Karn, Gerrard, and the components of the Legacy became part of a design stretching across generations.",
+    "The plan's moral cost arose from treating people and their choices as parts of a weapon to be assembled later."
+  ],
+  "characterIds": [
+    "urza",
+    "barrin",
+    "karn",
+    "gerrard"
+  ],
+  "cardName": "Barrin, Master Wizard"
+}

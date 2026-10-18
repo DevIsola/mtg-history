@@ -1,0 +1,14 @@
+{
+  "title": "Bolas Begins the Elderspell",
+  "chapterId": "war-of-the-spark",
+  "summary": "The Eternals harvest planeswalker sparks to restore Bolas's lost power.",
+  "narrative": [
+    "The invasion was designed to gather sparks from the captive planeswalkers, killing victims in the process.",
+    "The Elderspell redirected that stolen power toward Bolas, who sought the near-divine stature he remembered from before the Mending."
+  ],
+  "characterIds": [
+    "nicol-bolas",
+    "liliana-vess"
+  ],
+  "cardName": "The Elderspell"
+}

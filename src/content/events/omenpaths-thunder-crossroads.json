@@ -1,0 +1,16 @@
+{
+  "title": "Thunder Junction Becomes a Meeting Place Across Planes",
+  "chapterId": "omenpaths",
+  "summary": "Travelers and outlaws converge at a new crossroads while an ancient Fomori vault draws rival ambitions.",
+  "narrative": [
+    "New routes connected visitors from separate worlds at Thunder Junction without giving them a shared government or set of loyalties.",
+    "Oko assembled a crew around an old Fomori vault while Kellan followed a more personal search for his father.",
+    "The resulting heist demonstrated both economic opportunity and the danger of treating ancient local treasures as unclaimed spoils."
+  ],
+  "characterIds": [
+    "oko",
+    "kellan",
+    "vraska"
+  ],
+  "cardName": "Oko, the Ringleader"
+}

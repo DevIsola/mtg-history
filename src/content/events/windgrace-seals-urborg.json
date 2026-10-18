@@ -1,0 +1,15 @@
+{
+  "title": "Windgrace Seals the Urborg Rift",
+  "chapterId": "mending",
+  "summary": "The protector of Urborg surrenders his life to close the wound left by the Rathi Overlay.",
+  "narrative": [
+    "Urborg's fracture was bound to the geographic upheaval and machinery that had arrived during Phyrexia's invasion.",
+    "Lord Windgrace's final act healed the rift while leaving his legacy tied to the land."
+  ],
+  "characterIds": [
+    "windgrace",
+    "venser",
+    "jhoira"
+  ],
+  "cardName": "Lord Windgrace"
+}

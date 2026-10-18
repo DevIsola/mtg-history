@@ -1,0 +1,17 @@
+{
+  "title": "Loss of Sparks Changes the Balance of Travel",
+  "chapterId": "omenpaths",
+  "summary": "Former planeswalkers learn that magic can endure after desparking while Omenpaths let others cross worlds.",
+  "narrative": [
+    "The aftermath of Realmbreaker's defeat left some planeswalkers without their sparks, while other travelers began using unpredictable passages between planes.",
+    "Desparking did not erase other forms of magic, just as entering an Omenpath did not grant a traveler control over interplanar destinations.",
+    "The consequences forced individuals and societies to reconsider their mobility, security, and responsibility toward people who arrived from elsewhere."
+  ],
+  "characterIds": [
+    "nissa",
+    "will-kenrith",
+    "rowan-kenrith",
+    "kellan"
+  ],
+  "cardName": "Nissa, Resurgent Animist"
+}

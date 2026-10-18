@@ -1,0 +1,18 @@
+{
+  "title": "The Coalition's Victory at Koilos",
+  "chapterId": "weatherlight",
+  "summary": "Dominaria's allied defenders secure a crucial victory at Koilos, though the Phyrexian invasion is far from over.",
+  "narrative": [
+    "As Phyrexian forces invaded Dominaria, peoples and military leaders from across the world formed the Coalition. Their combined strength contested the enemy's ancient foothold at Koilos.",
+    "The victory at Koilos demonstrated the power of cooperation among former rivals and became an important source of hope for the defenders.",
+    "That triumph was not the end of the conflict. Rath had been prepared to overlay Dominaria, allowing another vast army to enter the war and transforming the battlefield itself.",
+    "The original Invasion card Coalition Victory represents the unity of the Coalition and the celebration after Koilos; it must not be mistaken for the later, final defeat of Yawgmoth."
+  ],
+  "characterIds": [
+    "gerrard",
+    "sisay",
+    "urza",
+    "karn"
+  ],
+  "cardName": "Coalition Victory"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Bolas Is Defeated and Imprisoned",
+  "chapterId": "war-of-the-spark",
+  "summary": "The stolen sparks are lost and Ugin confines the powerless Elder Dragon in the Meditation Realm.",
+  "narrative": [
+    "Bontu drew away the stolen sparks Bolas had amassed, and the dragon's bid for godhood collapsed.",
+    "Bolas survived but lost his spark and freedom, remaining confined under Ugin's watch in the Meditation Realm."
+  ],
+  "characterIds": [
+    "nicol-bolas",
+    "liliana-vess"
+  ],
+  "cardName": "Nicol Bolas, Dragon-God"
+}

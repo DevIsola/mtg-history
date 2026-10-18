@@ -1,0 +1,28 @@
+{
+  "name": "Lim-Dûl",
+  "title": "The Necromancer of the Ice Age",
+  "origin": "Dominaria — Terisiare",
+  "role": "Necromancer and commander of undead armies",
+  "summary": "A powerful necromancer whose ambitions and undead forces threatened the kingdoms of Terisiare during Dominaria's long winter.",
+  "biography": [
+    "Lim-Dûl pursued magical and political power during Dominaria's Ice Age, when the kingdoms of Terisiare were already strained by generations of environmental hardship and warfare.",
+    "His mastery of necromancy allowed him to raise and command undead forces, adding a supernatural threat to the conflicts of the frozen kingdoms.",
+    "Jodah and Jaya Ballard became important opponents of Lim-Dûl. Resistance to his ambitions encouraged cooperation between the rival Kjeldoran and Balduvian factions.",
+    "Lim-Dûl became one of the enduring figures associated with the Ice Age storyline. His legendary creature card appeared in Time Spiral, years after the original Ice Age expansion."
+  ],
+  "chapterIds": [
+    "ice-age"
+  ],
+  "featuredCard": {
+    "name": "Lim-Dûl the Necromancer",
+    "setCode": "tsp",
+    "collectorNumber": "114",
+    "scryfallId": "b8a3cdfe-0289-474b-b9c4-07e8c6588ec5",
+    "artist": "Matt Cavotta",
+    "significance": "A Time Spiral depiction of Lim-Dûl, whose undead armies threatened Terisiare."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Legends You'll Find in Dominaria United",
+    "url": "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01"
+  }
+}

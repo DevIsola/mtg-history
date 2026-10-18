@@ -1,0 +1,16 @@
+{
+  "title": "Gix and the Untouchables Rise Against Halcyon",
+  "chapterId": "thran",
+  "summary": "Outcasts harmed by powerstone exposure revolt against Halcyon's inequality, drawing Glacian and Gix into a fateful confrontation.",
+  "narrative": [
+    "The Thran capital's extraordinary technology concealed serious divisions: the Untouchables were confined in the Caves of the Damned, where phthisis was widespread.",
+    "Before he became a Phyrexian praetor, Gix was a human rebel. He attacked Glacian with a powerstone shard amid the unrest, precipitating the illness that brought Yawgmoth back to the city.",
+    "Gix's later identity as a Phyrexian commander belongs to a subsequent phase of the story, not the initial uprising."
+  ],
+  "characterIds": [
+    "gix",
+    "glacian",
+    "yawgmoth"
+  ],
+  "cardName": "Gix, Yawgmoth Praetor"
+}

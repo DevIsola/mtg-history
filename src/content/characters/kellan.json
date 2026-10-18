@@ -1,0 +1,27 @@
+{
+  "name": "Kellan",
+  "title": "The Fae-Blooded Traveler",
+  "origin": "Eldraine; later a traveler between planes",
+  "role": "Half-fae adventurer who crossed Omenpaths in search of his father",
+  "summary": "A young Eldraine hero whose quest became a journey across Ixalan, Ravnica, and Thunder Junction.",
+  "biography": [
+    "Kellan’s encounters with the fae and the Wicked Slumber on Eldraine revealed that his father was the elusive planeswalker Oko.",
+    "The newly opened Omenpaths let him continue the search beyond his home despite not possessing a planeswalker spark.",
+    "His experiences as an explorer, investigator, and participant in the Thunder Junction heist tested what family and personal judgment meant to him."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Kellan, the Fae-Blooded",
+    "setCode": "woe",
+    "collectorNumber": "230",
+    "scryfallId": "ec5e2680-8b42-4571-ab45-4936aec51901",
+    "artist": "Anna Steinbauer",
+    "significance": "Kellan’s first legendary card precedes the later portrayals of his multiversal journey."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/feature/a-legendary-crew-for-an-unbelievable-heist-outlaws-of-thunder-junction"
+  }
+}

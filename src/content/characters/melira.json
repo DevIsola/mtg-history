@@ -1,0 +1,27 @@
+{
+  "name": "Melira",
+  "title": "Sylvok Outcast",
+  "origin": "Mirrodin — the Sylvok",
+  "role": "Mirran resistance fighter and protector against Phyrexian corruption",
+  "summary": "A Mirran whose rare immunity gave the resistance hope and enabled a final sacrifice for two compleated planeswalkers.",
+  "biography": [
+    "Melira's innate resistance to Phyrexian corruption made her valuable to the scattered Mirran survivors during the conquest of their world.",
+    "She helped the attempted expedition into New Phyrexia's Seedcore, guided by her knowledge of the plane's transformed regions.",
+    "After Elesh Norn's defeat she expended her life to help restore Nissa and Ajani, in a cure that also cost Karn his spark."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Melira, Sylvok Outcast",
+    "setCode": "nph",
+    "collectorNumber": "115",
+    "scryfallId": "e83851a1-e4e8-49ec-af5c-4efe86fa51ad",
+    "artist": "Min Yum",
+    "significance": "The original 2011 representation of Melira's immunity and her role in the resistance."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Assault on New Phyrexia, Episode 2",
+    "url": "https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-2-unstable-foundations"
+  }
+}

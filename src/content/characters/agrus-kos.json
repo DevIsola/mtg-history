@@ -1,0 +1,27 @@
+{
+  "name": "Agrus Kos",
+  "title": "Wojek Investigator",
+  "origin": "Ravnica",
+  "role": "Boros veteran and investigator",
+  "summary": "A determined wojek whose pursuit of a secret guildmaster helped unmake Ravnica's first Guildpact.",
+  "biography": [
+    "Agrus Kos served the Boros Legion as a veteran wojek, pursuing crimes that exposed the fault lines between Ravnica's ten guilds.",
+    "His investigation into Szadek helped reveal House Dimir's conspiracy, but the vampire's arrest was also the trigger for the original Guildpact's collapse.",
+    "Agrus continued to confront the consequences of the broken pact alongside allies such as Teysa Karlov."
+  ],
+  "chapterIds": [
+    "many-worlds"
+  ],
+  "featuredCard": {
+    "name": "Agrus Kos, Wojek Veteran",
+    "setCode": "gk1",
+    "collectorNumber": "83",
+    "scryfallId": "e525be2e-26e6-4082-b713-ac74fcbd13d3",
+    "artist": "Donato Giancola",
+    "significance": "A later printing of the Boros investigator introduced in Ravnica's first story cycle."
+  },
+  "source": {
+    "title": "Wizards — Ravnica, Then and Now",
+    "url": "https://magic.wizards.com/en/news/feature/ravnica-then-and-now-2012-08-29-0"
+  }
+}

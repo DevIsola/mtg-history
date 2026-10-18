@@ -1,0 +1,15 @@
+{
+  "title": "Chainer Discovers the Mirari",
+  "chapterId": "otaria",
+  "summary": "Chainer finds Karn's enigmatic probe and presents it to the Cabal Patriarch, setting the Otarian struggle in motion.",
+  "narrative": [
+    "In an abandoned mansion near Cabal City, the young dementia caster Chainer encountered the Mirari. He delivered it to the First rather than claiming the device for himself.",
+    "The Patriarch placed the object among the Cabal's treasures and made it a prize, attracting champions and ambitious powers into a struggle for possession. Its origin as Karn's probe would be revealed only later."
+  ],
+  "characterIds": [
+    "chainer",
+    "cabal-patriarch",
+    "karn"
+  ],
+  "cardName": "Mirari"
+}

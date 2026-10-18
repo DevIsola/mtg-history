@@ -1,0 +1,17 @@
+{
+  "title": "Sheoldred Infiltrates Dominaria",
+  "chapterId": "march-of-the-machine",
+  "summary": "Sleeper agents and Ajani's compleation undermine Dominaria's defenses before the invasion.",
+  "narrative": [
+    "Sheoldred's agents compromised trusted institutions on the world that had defeated Yawgmoth's Phyrexia centuries earlier.",
+    "The compleated Ajani betrayed the defenders, leading to Jaya Ballard's death and exposing the danger of allies who no longer controlled their actions."
+  ],
+  "characterIds": [
+    "sheoldred",
+    "ajani",
+    "jaya",
+    "teferi",
+    "karn"
+  ],
+  "cardName": "Sheoldred, the Apocalypse"
+}

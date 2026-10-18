@@ -1,0 +1,15 @@
+{
+  "title": "Nahiri Builds the Hedron Prison",
+  "chapterId": "many-worlds",
+  "summary": "Nahiri, Sorin, and Ugin construct an immense prison to bind the Eldrazi titans to Zendikar.",
+  "narrative": [
+    "Ugin devised a network of magical leylines and floating stone hedrons to draw the Eldrazi into confinement.",
+    "Nahiri built the prison on her home plane with the help of Sorin. The arrangement contained three titans, but made Zendikar bear the danger on behalf of other worlds."
+  ],
+  "characterIds": [
+    "nahiri",
+    "sorin",
+    "emrakul"
+  ],
+  "cardName": "Nahiri, the Harbinger"
+}

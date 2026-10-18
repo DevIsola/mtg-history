@@ -1,0 +1,13 @@
+{
+  "title": "Karn Reclaims the Mirari",
+  "chapterId": "otaria",
+  "summary": "Karn retrieves the probe and transforms it into Memnarch, connecting the Otarian crisis to the future of Mirrodin.",
+  "narrative": [
+    "Karn returned to collect the Mirari, an object originally intended to observe the world rather than amplify the ambitions of its inhabitants.",
+    "On his artificial plane Argentum, he reshaped the device into Memnarch. That new guardian's subsequent history would become central to the Mirrodin storyline."
+  ],
+  "characterIds": [
+    "karn"
+  ],
+  "cardName": "Mirari"
+}

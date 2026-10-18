@@ -1,0 +1,15 @@
+{
+  "title": "Chainer's Nightmare Catastrophe",
+  "chapterId": "otaria",
+  "summary": "After seizing the Mirari and Cabal City, Chainer loses control of a tide of nightmares and dies in a confrontation with Kamahl.",
+  "narrative": [
+    "Chainer used the Mirari to drive the Cabal Patriarch from the city and magnify dementia summoning beyond his ability to contain it.",
+    "Kamahl tried to halt his friend, but Chainer was overwhelmed as the nightmares he had summoned merged with his body. Kamahl ended Chainer's suffering, inheriting the artifact that had destroyed him."
+  ],
+  "characterIds": [
+    "chainer",
+    "kamahl",
+    "cabal-patriarch"
+  ],
+  "cardName": "Chainer, Dementia Master"
+}

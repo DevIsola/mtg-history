@@ -1,0 +1,28 @@
+{
+  "name": "Crovax",
+  "title": "The Cursed Nobleman",
+  "origin": "Dominaria",
+  "role": "Weatherlight companion, vampire, and later evincar of Rath",
+  "summary": "A former Weatherlight companion whose bond with Selenia brought a vampiric curse and whose fall led him to rule Rath.",
+  "biography": [
+    "Crovax was a Dominarian nobleman whose household was afflicted by a curse bound to the angel Selenia. After releasing her from the artifact that held her, he lost her to Volrath and joined the Weatherlight's journey to Rath in hopes of finding her.",
+    "During the rescue mission at Volrath's Stronghold, Selenia attacked Mirri. To save his companion, Crovax killed the angel, unwittingly fulfilling the curse that transformed him into a vampire.",
+    "The change consumed his former loyalties. After an injured Mirri followed him when he left the Weatherlight, Crovax killed her, severing another bond to the crew and Gerrard's life.",
+    "Crovax later served Phyrexian interests on Rath. With Ertai's assistance, he killed the returning Volrath and claimed the title of evincar, a transformation represented by the later card Ascendant Evincar."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Crovax the Cursed",
+    "setCode": "sth",
+    "collectorNumber": "55",
+    "scryfallId": "88a9b76d-6ce1-40d4-bc04-7ae6237f5eaf",
+    "artist": "Pete Venters",
+    "significance": "A Stronghold depiction of Crovax following his transformation into a vampire through Selenia's death."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Face Cards, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/face-cards-part-1-2018-11-19"
+  }
+}

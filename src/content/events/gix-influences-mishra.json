@@ -1,0 +1,16 @@
+{
+  "title": "Gix and the Corruption of Mishra",
+  "chapterId": "brothers-war",
+  "summary": "Phyrexian influence transforms Mishra's ambitions and draws the Brothers' War into Yawgmoth's larger conflict.",
+  "narrative": [
+    "The rivalry between Urza and Mishra created an opening for Phyrexian interference on Dominaria. Gix, a servant of Yawgmoth, worked to expand Phyrexian influence through the conflict.",
+    "Mishra's pursuit of power became increasingly entangled with the forces Gix represented. The Phyrexian presence deepened a war that was already consuming Terisiare.",
+    "By the war's final confrontation, Mishra had undergone a terrible transformation. His fate demonstrated that the struggle between the brothers had become part of a much older threat to Dominaria."
+  ],
+  "characterIds": [
+    "mishra",
+    "gix",
+    "yawgmoth"
+  ],
+  "cardName": "Gix, Yawgmoth Praetor"
+}

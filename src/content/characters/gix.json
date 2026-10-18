@@ -1,0 +1,31 @@
+{
+  "name": "Gix",
+  "title": "Praetor of Old Phyrexia",
+  "origin": "Dominaria (Thran Empire); later Phyrexia",
+  "role": "Former Thran rebel, later Phyrexian praetor and agent of Yawgmoth",
+  "summary": "A former Untouchable rebel from Halcyon who became a Phyrexian praetor and later helped corrupt Mishra during the Brothers' War.",
+  "biography": [
+    "In Halcyon, Gix began as a human among the Untouchables, whose sickness and exclusion were linked to the Thran Empire's dependence on powerstones. He attacked Glacian with a powerstone shard during unrest at the Mana Rig.",
+    "Yawgmoth later used access to phthisis treatment as leverage over the outcasts and their leaders. Gix was drawn into his growing power before being transformed into a Phyrexian servant.",
+    "Gix was a powerful servant of Yawgmoth and one of the major Phyrexian figures involved in the events surrounding the Brothers' War.",
+    "His influence reached Dominaria while Urza and Mishra were fighting for control of Terisiare. Rather than acting as an ordinary military commander, Gix worked to extend Phyrexian power through the conflict already underway.",
+    "Mishra's growing dependence on Phyrexian forces enabled Gix's influence to become part of the war's central story. The brother's ultimate corruption reflected the danger of treating those forces as instruments of personal ambition.",
+    "Gix's involvement helped connect the ancient origins of Phyrexia to the later struggles against Yawgmoth, making the Brothers' War an important chapter in a much longer conflict."
+  ],
+  "chapterIds": [
+    "thran",
+    "brothers-war"
+  ],
+  "featuredCard": {
+    "name": "Gix, Yawgmoth Praetor",
+    "setCode": "bro",
+    "collectorNumber": "95",
+    "scryfallId": "2c76f7e0-37e7-4e87-93a3-a25ba0674645",
+    "artist": "Anna Podedworna",
+    "significance": "Gix as a legendary Phyrexian praetor in The Brothers' War."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Brothers' War Card Stories, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/the-brothers-war-card-stories-part-1"
+  }
+}

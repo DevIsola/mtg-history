@@ -1,0 +1,16 @@
+{
+  "title": "Crovax Becomes the Evincar of Rath",
+  "chapterId": "weatherlight",
+  "summary": "Crovax defeats the returning Volrath with Ertai's help and assumes control of Rath in Phyrexia's service.",
+  "narrative": [
+    "After becoming a vampire, Crovax abandoned his former companions and turned toward power within the Phyrexian-controlled plane of Rath.",
+    "When Volrath returned from Mercadia, the two competed for the role of evincar. With assistance from the corrupted wizard Ertai, Crovax killed Volrath and took control of Rath.",
+    "The Nemesis card Ascendant Evincar depicts Crovax in this new role. His transformation completed the fall of a former Weatherlight companion into a central figure in the enemy's regime."
+  ],
+  "characterIds": [
+    "crovax",
+    "ertai",
+    "volrath"
+  ],
+  "cardName": "Ascendant Evincar"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Volrath",
+  "title": "Evincar of Rath",
+  "origin": "Dominaria — Jamuraa; later Rath",
+  "role": "Phyrexian shapeshifter and ruler of Rath",
+  "summary": "Once Gerrard's foster brother Vuel, Volrath ruled Rath for Phyrexia and infiltrated the Weatherlight crew through a dangerous disguise.",
+  "biography": [
+    "Known as Vuel in his youth, Volrath grew up alongside Gerrard under Sidar Kondo's care. His resentment toward Gerrard helped turn their personal bond into a lasting enmity.",
+    "As evincar of Rath, Volrath ruled from the Stronghold and served the Phyrexian plan to use the artificial plane as a staging ground for the invasion of Dominaria.",
+    "He abducted Captain Sisay, bringing Gerrard back into the Weatherlight's mission. When the crew freed its captives, Volrath escaped Rath disguised as Takara, Starke's daughter, and traveled with the group to Mercadia.",
+    "On Mercadia, Volrath's deception led to Starke's murder and further fractured the crew's trust. His schemes were part of a wider campaign stretching beyond one plane or one rivalry."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Volrath the Fallen",
+    "setCode": "nem",
+    "collectorNumber": "75",
+    "scryfallId": "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56",
+    "artist": "Kev Walker",
+    "significance": "A Nemesis depiction of the Phyrexian shapeshifter who ruled Rath and deceived the Weatherlight crew."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Face Cards, Part 2",
+    "url": "https://magic.wizards.com/en/news/making-magic/face-cards-part-2-2018-12-03"
+  }
+}

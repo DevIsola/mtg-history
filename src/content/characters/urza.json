@@ -1,0 +1,28 @@
+{
+  "name": "Urza",
+  "title": "The Architect of Destiny",
+  "origin": "Dominaria",
+  "role": "Artificer and planeswalker",
+  "summary": "A master artificer whose rivalry with Mishra and long war against Phyrexia reshaped Dominaria.",
+  "biography": [
+    "Urza and his brother Mishra discovered ancient Thran powerstones that would divide their family. Their rivalry escalated into the Brothers’ War, ending with the devastation of Argoth and the ignition of Urza’s planeswalker spark.",
+    "Urza dedicated the following centuries to defeating Yawgmoth and Phyrexia. He developed elaborate plans, including the Legacy and preparations that ultimately involved the Weatherlight and its crew.",
+    "His achievements carried immense costs. Urza was willing to sacrifice others in pursuit of victory, making his legacy both historically significant and morally complicated."
+  ],
+  "chapterIds": [
+    "brothers-war",
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Urza, Lord Protector",
+    "setCode": "bro",
+    "collectorNumber": "225",
+    "scryfallId": "8aefe8bd-216a-4ec1-9362-3f9dbf7fd083",
+    "artist": "Ryan Pancoast",
+    "significance": "Urza during the Brothers’ War, before the Sylex Blast transformed his existence."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Urza",
+    "url": "https://magic.wizards.com/en/story/urza-planeswalker"
+  }
+}

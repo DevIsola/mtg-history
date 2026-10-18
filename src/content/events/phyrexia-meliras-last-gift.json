@@ -1,0 +1,18 @@
+{
+  "title": "Melira and Karn Save Nissa and Ajani",
+  "chapterId": "march-of-the-machine",
+  "summary": "A costly attempt to reverse compleation saves two survivors but takes Melira's life and Karn's remaining spark.",
+  "narrative": [
+    "After New Phyrexia was shut away, Nissa and Ajani remained inert and severely altered by compleation.",
+    "Melira used her power to oppose the corruption while Karn expended the remaining spark he had received from Venser; the two planeswalkers survived, but Melira did not."
+  ],
+  "characterIds": [
+    "nissa",
+    "ajani",
+    "karn",
+    "chandra",
+    "koth",
+    "teferi"
+  ],
+  "cardName": "Karn, Legacy Reforged"
+}

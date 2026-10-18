@@ -1,0 +1,26 @@
+{
+  "name": "Szadek",
+  "title": "Lord of Secrets",
+  "origin": "Ravnica",
+  "role": "Vampire founder of House Dimir",
+  "summary": "The hidden guildmaster whose manipulation of the Decamillennial crisis shattered the ancient Guildpact.",
+  "biography": [
+    "Szadek was the elusive founder of House Dimir, the guild that cultivated secrecy and misinformation across Ravnica.",
+    "During the Decamillennial crisis, his machinations led Agrus Kos to discover and arrest him, triggering the Guildpact's collapse."
+  ],
+  "chapterIds": [
+    "many-worlds"
+  ],
+  "featuredCard": {
+    "name": "Szadek, Lord of Secrets",
+    "setCode": "rav",
+    "collectorNumber": "234",
+    "scryfallId": "2882793e-5d7d-47f0-9308-652a5e036c2c",
+    "artist": "Donato Giancola",
+    "significance": "The original depiction of Ravnica's hidden Dimir founder."
+  },
+  "source": {
+    "title": "Wizards — A Flavorful Guide to the Guilds of Ravnica",
+    "url": "https://magic.wizards.com/en/news/feature/flavorful-guide-guilds-ravnica-2018-10-03"
+  }
+}

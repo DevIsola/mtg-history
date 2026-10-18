@@ -1,0 +1,27 @@
+{
+  "name": "Thelon of Havenwood",
+  "title": "Thelonite Druid",
+  "origin": "Dominaria — Sarpadia, Havenwood",
+  "role": "Druid associated with the cultivation of thallids",
+  "summary": "A Havenwood druid whose fungal creations became central to the Sarpadian elves' struggle.",
+  "biography": [
+    "Thelon is associated with the development of thallids, the fungal beings that could generate saprolings in the declining society of Havenwood.",
+    "The elves' attempts to enlist fungal life among their resources were followed by conflicts as the thallids expanded beyond expectations.",
+    "His later Time Spiral card recalls the Fallen Empires period rather than depicting an event contemporaneous with the 2006 expansion."
+  ],
+  "chapterIds": [
+    "ice-age"
+  ],
+  "featuredCard": {
+    "name": "Thelon of Havenwood",
+    "setCode": "tsp",
+    "collectorNumber": "227",
+    "scryfallId": "92b0be6d-9183-4938-b7a1-ae7f04ba78a0",
+    "artist": "Kev Walker",
+    "significance": "A Time Spiral retrospective portrait of the druid connected with Sarpadia's thallids."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Name Dropping",
+    "url": "https://magic.wizards.com/en/news/making-magic/name-dropping-2006-11-13"
+  }
+}

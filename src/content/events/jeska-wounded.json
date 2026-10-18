@@ -1,0 +1,14 @@
+{
+  "title": "The Mirari Sword Wounds Jeska",
+  "chapterId": "otaria",
+  "summary": "Under the Mirari's influence, Kamahl nearly kills Jeska, beginning a transformation he cannot reverse.",
+  "narrative": [
+    "The Mirari amplified Kamahl's violent ambition as he attempted to assert leadership among the Pardic tribes.",
+    "When Jeska confronted him, he stabbed her with his Mirari sword. The wound resisted ordinary healing and eventually contributed to her transformation into Phage."
+  ],
+  "characterIds": [
+    "kamahl",
+    "jeska"
+  ],
+  "cardName": "Jeska, Warrior Adept"
+}

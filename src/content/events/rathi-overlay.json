@@ -1,0 +1,17 @@
+{
+  "title": "The Rathi Overlay",
+  "chapterId": "weatherlight",
+  "summary": "The artificial plane of Rath merges with Dominaria, delivering Phyrexian forces and transforming the landscape.",
+  "narrative": [
+    "Phyrexia had constructed Rath as more than a fortress world. Its flowstone substrate and accumulating mass allowed the entire plane to be used as an invasion mechanism against Dominaria.",
+    "During the Rathi Overlay, territory, peoples, and armies from Rath were superimposed upon Dominaria. The maneuver deployed enemy forces across the world and changed familiar landscapes.",
+    "The Stronghold and other features of Rath appeared on Dominaria, leaving consequences that would endure beyond the end of the invasion."
+  ],
+  "characterIds": [
+    "gerrard",
+    "sisay",
+    "karn",
+    "yawgmoth"
+  ],
+  "cardName": "Skyship Weatherlight"
+}

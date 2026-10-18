@@ -1,0 +1,18 @@
+{
+  "title": "Elspeth Returns as an Angel",
+  "chapterId": "march-of-the-machine",
+  "summary": "Elspeth's transformed return protects the Mirran resistance and challenges Elesh Norn.",
+  "narrative": [
+    "Elspeth returned from the Blind Eternities transformed, intervening as Norn threatened Chandra, Karn, Koth, and Wrenn.",
+    "She defied Norn and bought the defenders the opening needed for Wrenn's attempt to reach Realmbreaker."
+  ],
+  "characterIds": [
+    "elspeth",
+    "elesh-norn",
+    "chandra",
+    "karn",
+    "koth",
+    "wrenn"
+  ],
+  "cardName": "Archangel Elspeth"
+}

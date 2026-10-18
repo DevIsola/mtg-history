@@ -1,0 +1,27 @@
+{
+  "name": "Tezzeret",
+  "title": "Master of the Planar Bridge",
+  "origin": "Alara — Esper",
+  "role": "Artificer and carrier of Bolas's interplanar invasion device",
+  "summary": "The planeswalker artificer whose Planar Bridge enabled Bolas to transport the lazotep-clad Eternals to Ravnica.",
+  "biography": [
+    "Tezzeret's ambition and mastery of magical machinery made him an important agent in Nicol Bolas's plans.",
+    "After the Planar Bridge was taken from Kaladesh, Tezzeret became its bearer. Its movement of nonliving matter between planes gave Bolas a way to move the specially prepared Eternals from Amonkhet to Ravnica.",
+    "The bridge was one element of a larger operation that also depended on the Interplanar Beacon, Immortal Sun, and Elderspell. After Bolas's defeat, Ravnican guild leaders sought to hold Tezzeret accountable."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Tezzeret, Master of the Bridge",
+    "setCode": "war",
+    "collectorNumber": "275",
+    "scryfallId": "9ee1eea2-961f-445d-b035-6baed454f289",
+    "artist": "Chase Stone",
+    "significance": "War of the Spark buy-a-box portrait of the Planar Bridge's bearer."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War of the Spark: Ravnica — Ashes",
+    "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12"
+  }
+}

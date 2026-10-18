@@ -1,0 +1,16 @@
+{
+  "title": "Mirri's Final Confrontation",
+  "chapterId": "weatherlight",
+  "summary": "The wounded Weatherlight warrior follows Crovax and is killed by the companion she had tried to protect.",
+  "narrative": [
+    "Mirri was Gerrard's longtime companion and one of the most capable fighters aboard the Weatherlight. During the Stronghold mission, she was wounded while confronting Selenia.",
+    "Crovax killed Selenia to save Mirri but became a vampire as a result. His curse changed the relationship between two people who had once served the same cause.",
+    "After Crovax left the Weatherlight, Mirri followed him. Crovax killed her, making the escape from Rath an irreversible tragedy for the crew and for Gerrard."
+  ],
+  "characterIds": [
+    "mirri",
+    "crovax",
+    "gerrard"
+  ],
+  "cardName": "Mirri, Cat Warrior"
+}

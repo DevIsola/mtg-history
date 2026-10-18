@@ -1,0 +1,28 @@
+{
+  "name": "Hanna",
+  "title": "The Weatherlight's Navigator",
+  "origin": "Dominaria — Tolaria",
+  "role": "Navigator, artificer, and magical engineer",
+  "summary": "A gifted Tolarian artificer who maintained the Weatherlight's technology and whose death in the Phyrexian invasion devastated its crew.",
+  "biography": [
+    "Hanna was the daughter of Barrin and Rayne and studied at Tolaria. Though her father wanted her to pursue spellcraft, her own strengths and interests lay with magical objects and engineering.",
+    "She served aboard the Weatherlight as navigator and artificer, using her expertise to maintain its extraordinary machinery and the artifacts tied to the Legacy.",
+    "Hanna and Gerrard had shared a close romantic relationship before his departure from the ship. His return after Sisay's abduction forced them to confront the consequences of that earlier separation.",
+    "During the Phyrexian invasion, Hanna died from a Phyrexian plague. Her loss represented both a personal tragedy and a severe blow to the crew's knowledge and experience."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Hanna, Ship's Navigator",
+    "setCode": "inv",
+    "collectorNumber": "249",
+    "scryfallId": "83a4e48d-6452-4245-bdad-63fe3263550e",
+    "artist": "Dave Dorman",
+    "significance": "Hanna's Invasion card commemorates the artificer and navigator whose life ended during the war against Phyrexia."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Face Cards, Part 2",
+    "url": "https://magic.wizards.com/en/news/making-magic/face-cards-part-2-2018-12-03"
+  }
+}

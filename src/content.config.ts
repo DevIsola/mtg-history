@@ -1,4 +1,4 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
@@ -55,6 +55,55 @@ const chapters = defineCollection({
   }),
 });
 
-export const collections = {
-  chapters,
-};
+/**
+ * Canonical entity records live in one JSON file per character, event, or tie.
+ * Existing src/data/*.ts imports remain as generated compatibility adapters.
+ */
+const characters = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/characters" }),
+  schema: z.object({
+    name: z.string().min(1),
+    title: z.string(),
+    origin: z.string(),
+    role: z.string(),
+    summary: z.string(),
+    biography: z.array(z.string()),
+    chapterIds: z.array(reference("chapters")).min(1),
+    featuredCard: z.object({
+      name: z.string(),
+      setCode: z.string(),
+      collectorNumber: z.string(),
+      scryfallId: z.uuid(),
+      artist: z.string(),
+      significance: z.string(),
+    }),
+    source: z.object({ title: z.string(), url: z.url() }),
+  }),
+});
+
+const events = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/events" }),
+  schema: z.object({
+    title: z.string().min(1),
+    chapterId: reference("chapters"),
+    summary: z.string(),
+    narrative: z.array(z.string()),
+    characterIds: z.array(reference("characters")),
+    cardName: z.string(),
+  }),
+});
+
+const relationships = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/relationships" }),
+  schema: z.object({
+    a: reference("characters"),
+    b: reference("characters"),
+    category: z.enum(["family", "friendship", "alliance", "rivalry", "mentorship", "creation"]),
+    labelForA: z.string(),
+    labelForB: z.string(),
+    context: z.string(),
+    chapterId: reference("chapters"),
+  }),
+});
+
+export const collections = { chapters, characters, events, relationships };

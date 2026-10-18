@@ -1,0 +1,27 @@
+{
+  "name": "Ral Zarek",
+  "title": "Izzet Storm Mage",
+  "origin": "Ravnica",
+  "role": "Izzet planeswalker and organizer of Ravnica's resistance",
+  "summary": "An Izzet mage whose expertise with the Interplanar Beacon proved vital both to the invasion's trap and to countering it.",
+  "biography": [
+    "Ral Zarek was a planeswalker and Izzet League mage closely tied to Ravnica's magical engineering and to Niv-Mizzet.",
+    "As Bolas's plot converged on Ravnica, the Interplanar Beacon became the means of attracting planeswalkers into a prison sealed by the Immortal Sun.",
+    "Ral helped organize resistance and disable the machinery supporting the invading army. After the battle, the guild leadership charged him with pursuing Tezzeret."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Ral, Storm Conduit",
+    "setCode": "war",
+    "collectorNumber": "211",
+    "scryfallId": "678ce3bf-152d-45ca-87ae-ad46c921328b",
+    "artist": "Wesley Burt",
+    "significance": "Ral Zarek during the War of the Spark, serving Ravnica's resistance."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War of the Spark: Ravnica — Ashes",
+    "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12"
+  }
+}

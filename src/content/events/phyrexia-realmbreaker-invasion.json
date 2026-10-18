@@ -1,0 +1,15 @@
+{
+  "title": "Realmbreaker Breaches the Multiverse",
+  "chapterId": "march-of-the-machine",
+  "summary": "The Invasion Tree provides portals through which Phyrexia attacks many planes simultaneously.",
+  "narrative": [
+    "Elesh Norn's forces grew Realmbreaker from Kaldheim's World Tree essence and used its branches to cross previously impassable planar boundaries.",
+    "Invasions unfolded across Kaldheim, Zendikar, Kamigawa, Kaladesh, and numerous other planes, whose peoples mounted different forms of resistance."
+  ],
+  "characterIds": [
+    "elesh-norn",
+    "nissa",
+    "nahiri"
+  ],
+  "cardName": "Realmbreaker, the Invasion Tree"
+}

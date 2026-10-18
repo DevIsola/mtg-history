@@ -1,0 +1,15 @@
+{
+  "title": "Teferi Repairs the Shivan Rift",
+  "chapterId": "mending",
+  "summary": "Teferi sacrifices his old planeswalker powers to help restore a fractured Dominaria.",
+  "narrative": [
+    "Centuries of planar disturbances had left dangerous temporal rifts across Dominaria. The effort to close them demanded unprecedented sacrifices.",
+    "Teferi helped repair the rift at Shiv, losing his planeswalker spark in the process and demonstrating the personal cost of healing reality."
+  ],
+  "characterIds": [
+    "teferi",
+    "jhoira",
+    "venser"
+  ],
+  "cardName": "Teferi, Mage of Zhalfir"
+}

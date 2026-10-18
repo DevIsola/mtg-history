@@ -1,0 +1,14 @@
+{
+  "title": "Jeska Becomes Phage",
+  "chapterId": "otaria",
+  "summary": "Dark Cabal intervention remakes the wounded Jeska as Phage the Untouchable, whose touch brings death.",
+  "narrative": [
+    "Jeska did not recover from the injury caused by Kamahl's Mirari sword. The Cabal's intervention transformed her into Phage rather than restoring her original condition.",
+    "Her deadly power became central to the arena culture and political designs of the Cabal Patriarch, drawing her into new conflicts across Otaria."
+  ],
+  "characterIds": [
+    "jeska",
+    "cabal-patriarch"
+  ],
+  "cardName": "Phage the Untouchable"
+}

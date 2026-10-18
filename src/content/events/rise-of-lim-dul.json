@@ -1,0 +1,15 @@
+{
+  "title": "The Rise of Lim-Dûl",
+  "chapterId": "ice-age",
+  "summary": "Necromancy and political ambition threaten the frozen kingdoms of Dominaria.",
+  "narrative": [
+    "During the Ice Age, Lim-Dûl assembled undead forces and pursued power amid the turmoil of the frozen world.",
+    "His ambitions brought him into conflict with those attempting to protect magical knowledge and resist the growing influence of necromancy."
+  ],
+  "characterIds": [
+    "jodah",
+    "jaya",
+    "lim-dul"
+  ],
+  "cardName": "Lim-Dûl the Necromancer"
+}

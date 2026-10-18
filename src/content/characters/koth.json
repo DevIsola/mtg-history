@@ -1,0 +1,27 @@
+{
+  "name": "Koth",
+  "title": "Fire of Resistance",
+  "origin": "Mirrodin — the Vulshok of the Oxidda Chain",
+  "role": "Geomancer and leader of the surviving Mirran resistance",
+  "summary": "A native of Mirrodin who refused to yield to Phyrexia after it occupied his home plane.",
+  "biography": [
+    "Koth fought the Phyrexians as their corruption swept Mirrodin and continued resisting long after the world was renamed New Phyrexia.",
+    "He helped guide returning planeswalkers and Mirran survivors through the Seedcore crisis and the final attempt to reach Realmbreaker.",
+    "The restoration of Zhalfir offered his people sanctuary, but victory did not return the metal world he had vowed to save."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Koth, Fire of Resistance",
+    "setCode": "pone",
+    "collectorNumber": "138p",
+    "scryfallId": "e38f63c4-1d35-451a-8778-2066ed874ff9",
+    "artist": "Eric Wilkerson",
+    "significance": "A Phyrexia: All Will Be One promotional printing illustrating the Mirran resistance leader."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine, Episode 10: The Rhythms of Life",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life"
+  }
+}

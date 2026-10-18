@@ -1,0 +1,16 @@
+{
+  "title": "Nivea's Death Drives Akroma's Creation",
+  "chapterId": "otaria",
+  "summary": "Ixidor's grief over Nivea drives him to create an angel dedicated to vengeance against Phage.",
+  "narrative": [
+    "Nivea died during the conflict surrounding Phage, leaving the illusionist Ixidor consumed by loss.",
+    "Ixidor turned his reality-shaping power into a means of revenge, creating Akroma and directing the angel against the figure he blamed for Nivea's death.",
+    "The later ideological struggle between Akroma and Phage cannot be understood without this personal cause or Jeska's unwilling transformation into Phage."
+  ],
+  "characterIds": [
+    "ixidor",
+    "akroma",
+    "jeska"
+  ],
+  "cardName": "Ixidor, Reality Sculptor"
+}

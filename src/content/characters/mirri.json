@@ -1,0 +1,28 @@
+{
+  "name": "Mirri",
+  "title": "The Weatherlight's Cat Warrior",
+  "origin": "Dominaria — Llanowar",
+  "role": "Cat warrior and Weatherlight crew member",
+  "summary": "A skilled fighter and Gerrard's longtime friend whose loyalty could not save her from Crovax's curse and betrayal.",
+  "biography": [
+    "Mirri was a cat warrior raised among the elves of Llanowar, where her friendship with Gerrard formed an important part of her life. Her speed and combat abilities made her a valued member of the Weatherlight crew.",
+    "When the crew invaded Volrath's Stronghold to rescue Sisay, Mirri intervened during an encounter with the angel Selenia and was badly injured. Crovax killed Selenia to protect her, completing the curse that made him a vampire.",
+    "Mirri remained loyal to her companions. After the encounter, she followed Crovax when he departed the Weatherlight, and he killed her. Her death was one of the defining personal losses of the Rath expedition.",
+    "The original Exodus card Mirri, Cat Warrior depicts her as part of the main Weatherlight continuity. Mirri the Cursed, published later in Planar Chaos, depicts an alternative reality and not her canonical fate."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Mirri, Cat Warrior",
+    "setCode": "exo",
+    "collectorNumber": "114",
+    "scryfallId": "6d1682dd-5a99-4bee-a2c2-c8735047e1a9",
+    "artist": "Daren Bader",
+    "significance": "Mirri's Exodus legendary card, issued during the story of the crew's escape from Rath."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Making of a Legend",
+    "url": "https://magic.wizards.com/en/news/making-magic/making-legend-2003-08-25"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Radha",
+  "title": "Heir to Keld",
+  "origin": "Dominaria — Keld and Skyshroud",
+  "role": "Half-elven warrior and Keldon leader",
+  "summary": "A formidable warrior whose connection to Skyshroud's rift helped reshape attempts to save Dominaria.",
+  "biography": [
+    "Radha was raised between the heritage of Skyshroud's elves and the fierce traditions of Keld. She sought recognition as a Keldon warrior rather than simply accepting the identity others assigned her.",
+    "Her unusual bond with rift mana made her central to Teferi's investigation and later to Jeska's attempts to heal the damaged plane. Both planeswalkers had to confront Radha's independence and the dangers of using another person as a tool.",
+    "She survived the Mending and became an influential leader in Keld during Dominaria's subsequent recovery."
+  ],
+  "chapterIds": [
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Radha, Heir to Keld",
+    "setCode": "plc",
+    "collectorNumber": "162",
+    "scryfallId": "7fc23b2e-9124-4f88-b93e-8bfe90e6eb41",
+    "artist": "Jim Murray",
+    "significance": "Radha's original Planar Chaos printing captures her Keldon identity and link to the forest."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Planeswalker's Guide to Dominaria",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31"
+  }
+}

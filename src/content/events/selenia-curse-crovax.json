@@ -1,0 +1,15 @@
+{
+  "title": "Crovax Kills Selenia",
+  "chapterId": "weatherlight",
+  "summary": "To save Mirri in Volrath's Stronghold, Crovax kills Selenia and fulfills a curse that turns him into a vampire.",
+  "narrative": [
+    "Crovax had once freed the angel Selenia from a cursed artifact. Their bond became a source of pain after she was taken into Volrath's service on Rath.",
+    "At the Stronghold, Selenia attacked members of the Weatherlight crew. Mirri intervened and was badly hurt, forcing Crovax to choose between the angel he loved and the companion he hoped to save.",
+    "Crovax killed Selenia. The act completed the curse placed on him, transforming him into a vampire and beginning the collapse of his remaining loyalties to the crew."
+  ],
+  "characterIds": [
+    "crovax",
+    "mirri"
+  ],
+  "cardName": "Selenia, Dark Angel"
+}

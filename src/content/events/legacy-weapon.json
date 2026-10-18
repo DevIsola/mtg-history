@@ -1,0 +1,19 @@
+{
+  "title": "The Legacy Defeats Yawgmoth",
+  "chapterId": "weatherlight",
+  "summary": "Gerrard, Urza, Karn, and the Legacy's accumulated power bring Yawgmoth's original invasion to an end.",
+  "narrative": [
+    "The crisis culminated after Gerrard's confrontation with Urza in Yawgmoth's arena. Urza's living head still held the Mightstone and Weakstone, ancient fragments whose history reached back to the Thran and the Brothers' War.",
+    "Karn, the Weatherlight, Gerrard, the powerstones, and other components of the Legacy converged in a final release of power. Yawgmoth's destructive manifestation was destroyed, and the invading forces lost their central master.",
+    "The victory demanded the deaths of Gerrard and Urza and the loss of the Weatherlight as it had been known. Karn survived the activation and emerged as a planeswalker.",
+    "The original Apocalypse card Legacy Weapon depicts the assembled artifact; Vindicate provides a complementary illustration associated with Gerrard's ultimate sacrifice."
+  ],
+  "characterIds": [
+    "urza",
+    "yawgmoth",
+    "gerrard",
+    "karn",
+    "sisay"
+  ],
+  "cardName": "Legacy Weapon"
+}

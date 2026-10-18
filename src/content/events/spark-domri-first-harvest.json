@@ -1,0 +1,14 @@
+{
+  "title": "The Elderspell Claims Domri Rade",
+  "chapterId": "war-of-the-spark",
+  "summary": "Domri becomes an early planeswalker casualty as the Eternals begin harvesting sparks.",
+  "narrative": [
+    "The Elderspell's promised ascension required the deaths of the planeswalkers gathered and trapped on Ravnica.",
+    "Domri Rade's spark was harvested as Bolas's plan moved from preparation into lethal action.",
+    "The original Spark Harvest card names Domri's fate in its flavor text, linking a representative card directly to the storyline."
+  ],
+  "characterIds": [
+    "nicol-bolas"
+  ],
+  "cardName": "Spark Harvest"
+}

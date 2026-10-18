@@ -1,0 +1,27 @@
+{
+  "name": "Oko",
+  "title": "The Fae Trickster",
+  "origin": "Unknown fae origins; traveler across worlds",
+  "role": "Planeswalker, shapeshifter, and organizer of the Thunder Junction vault heist",
+  "summary": "Kellan’s father, a deceptive fae planeswalker whose elaborate plans led a crew toward an ancient vault.",
+  "biography": [
+    "Oko’s skill with transformations and manipulation helped him evade consequences and assemble allies for high-risk schemes.",
+    "He organized an interplanar criminal crew around the Thunder Junction vault and its mysterious contents.",
+    "His reunion with Kellan confronted the young traveler with the difference between seeking a parent and trusting one."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Oko, the Ringleader",
+    "setCode": "otj",
+    "collectorNumber": "223",
+    "scryfallId": "396df8d6-e85d-4486-8116-68841b7e1e2e",
+    "artist": "Magali Villeneuve",
+    "significance": "The Thunder Junction planeswalker card depicts Oko as the architect of the vault heist."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/feature/a-legendary-crew-for-an-unbelievable-heist-outlaws-of-thunder-junction"
+  }
+}

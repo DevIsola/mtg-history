@@ -1,0 +1,26 @@
+{
+  "name": "Griselbrand",
+  "title": "Demon of the Helvault",
+  "origin": "Innistrad",
+  "role": "Demon and adversary of Avacyn",
+  "summary": "A demon who drew Avacyn into the Helvault, becoming the target of Liliana Vess's pursuit.",
+  "biography": [
+    "Griselbrand tricked Avacyn into the Helvault, taking Innistrad's protector out of the conflict.",
+    "He was also one of the demon creditors to whom Liliana Vess owed a terrible magical bargain."
+  ],
+  "chapterIds": [
+    "many-worlds"
+  ],
+  "featuredCard": {
+    "name": "Griselbrand",
+    "setCode": "avr",
+    "collectorNumber": "106",
+    "scryfallId": "b51666ae-2aef-4cb1-9cd4-44aec81530f8",
+    "artist": "Igor Kieryluk",
+    "significance": "The Avacyn Restored depiction of the demon who helped cause the Helvault crisis."
+  },
+  "source": {
+    "title": "Wizards — Planeswalker's Guide to Avacyn Restored, Part 2",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-avacyn-restored-part-2"
+  }
+}

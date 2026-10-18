@@ -1,0 +1,27 @@
+{
+  "name": "Sorin Markov",
+  "title": "Vampire Planeswalker of Innistrad",
+  "origin": "Innistrad",
+  "role": "Planeswalker and creator of Avacyn",
+  "summary": "An ancient vampire who helped imprison the Eldrazi and created Avacyn to preserve Innistrad's humanity.",
+  "biography": [
+    "Sorin helped Nahiri and Ugin build the system that imprisoned the Eldrazi on Zendikar.",
+    "On his home plane of Innistrad he created the angel Avacyn to preserve humanity and a workable balance between prey and predator.",
+    "The imprisonment of Avacyn in the Helvault threatened that balance and forced Sorin to confront the limits of his intervention."
+  ],
+  "chapterIds": [
+    "many-worlds"
+  ],
+  "featuredCard": {
+    "name": "Sorin, Lord of Innistrad",
+    "setCode": "dka",
+    "collectorNumber": "142",
+    "scryfallId": "27bb371f-d49f-41bd-bbe0-d5e1e2067e36",
+    "artist": "Michael Komarck",
+    "significance": "The Dark Ascension portrait of Innistrad's vampire planeswalker."
+  },
+  "source": {
+    "title": "Wizards — Innistrad Plane Guide",
+    "url": "https://magic.wizards.com/en/story/innistrad-plane"
+  }
+}

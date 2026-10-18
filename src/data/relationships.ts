@@ -19,966 +19,239 @@ export interface CharacterRelationship {
   chapterId: string;
 }
 
+// Generated compatibility adapter. Edit src/content/relationships/*.json instead.
+import entry0 from '../content/relationships/kellan--quintorius-kand--alliance--omenpaths.json' with { type: 'json' };
+import entry1 from '../content/relationships/alquist-proft--kellan--alliance--omenpaths.json' with { type: 'json' };
+import entry2 from '../content/relationships/alquist-proft--trostani--rivalry--omenpaths.json' with { type: 'json' };
+import entry3 from '../content/relationships/teysa-karlov--trostani--rivalry--omenpaths.json' with { type: 'json' };
+import entry4 from '../content/relationships/elesh-norn--jin-gitaxias--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry5 from '../content/relationships/elesh-norn--vorinclex--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry6 from '../content/relationships/elesh-norn--urabrask--rivalry--march-of-the-machine.json' with { type: 'json' };
+import entry7 from '../content/relationships/koth--melira--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry8 from '../content/relationships/jin-gitaxias--tamiyo--rivalry--march-of-the-machine.json' with { type: 'json' };
+import entry9 from '../content/relationships/karn--melira--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry10 from '../content/relationships/nicol-bolas--tezzeret--alliance--war-of-the-spark.json' with { type: 'json' };
+import entry11 from '../content/relationships/dovin-baan--nicol-bolas--alliance--war-of-the-spark.json' with { type: 'json' };
+import entry12 from '../content/relationships/niv-mizzet--ral-zarek--alliance--war-of-the-spark.json' with { type: 'json' };
+import entry13 from '../content/relationships/ral-zarek--tezzeret--rivalry--war-of-the-spark.json' with { type: 'json' };
+import entry14 from '../content/relationships/dovin-baan--ral-zarek--rivalry--war-of-the-spark.json' with { type: 'json' };
+import entry15 from '../content/relationships/jeska--leshrac--rivalry--mending.json' with { type: 'json' };
+import entry16 from '../content/relationships/leshrac--nicol-bolas--rivalry--mending.json' with { type: 'json' };
+import entry17 from '../content/relationships/radha--venser--alliance--mending.json' with { type: 'json' };
+import entry18 from '../content/relationships/balthor--kamahl--mentorship--otaria.json' with { type: 'json' };
+import entry19 from '../content/relationships/cabal-patriarch--lieutenant-kirtar--rivalry--otaria.json' with { type: 'json' };
+import entry20 from '../content/relationships/barrin--hanna--family--weatherlight.json' with { type: 'json' };
+import entry21 from '../content/relationships/gerrard--multani--mentorship--weatherlight.json' with { type: 'json' };
+import entry22 from '../content/relationships/gerrard--rofellos--friendship--weatherlight.json' with { type: 'json' };
+import entry23 from '../content/relationships/mirri--multani--mentorship--weatherlight.json' with { type: 'json' };
+import entry24 from '../content/relationships/radiant--urza--rivalry--weatherlight.json' with { type: 'json' };
+import entry25 from '../content/relationships/sisay--squee--alliance--weatherlight.json' with { type: 'json' };
+import entry26 from '../content/relationships/karn--squee--friendship--weatherlight.json' with { type: 'json' };
+import entry27 from '../content/relationships/jodah--mairsil--rivalry--ice-age.json' with { type: 'json' };
+import entry28 from '../content/relationships/kayla--mishra--rivalry--brothers-war.json' with { type: 'json' };
+import entry29 from '../content/relationships/mishra--tawnos--rivalry--brothers-war.json' with { type: 'json' };
+import entry30 from '../content/relationships/gix--glacian--rivalry--thran.json' with { type: 'json' };
+import entry31 from '../content/relationships/glacian--yawgmoth--rivalry--thran.json' with { type: 'json' };
+import entry32 from '../content/relationships/rowan-kenrith--will-kenrith--family--omenpaths.json' with { type: 'json' };
+import entry33 from '../content/relationships/kellan--oko--family--omenpaths.json' with { type: 'json' };
+import entry34 from '../content/relationships/jace-beleren--vraska--alliance--omenpaths.json' with { type: 'json' };
+import entry35 from '../content/relationships/jace-beleren--loot--alliance--omenpaths.json' with { type: 'json' };
+import entry36 from '../content/relationships/loot--vraska--alliance--omenpaths.json' with { type: 'json' };
+import entry37 from '../content/relationships/elesh-norn--sheoldred--rivalry--march-of-the-machine.json' with { type: 'json' };
+import entry38 from '../content/relationships/elesh-norn--elspeth--rivalry--march-of-the-machine.json' with { type: 'json' };
+import entry39 from '../content/relationships/elesh-norn--karn--rivalry--march-of-the-machine.json' with { type: 'json' };
+import entry40 from '../content/relationships/ajani--jaya--rivalry--march-of-the-machine.json' with { type: 'json' };
+import entry41 from '../content/relationships/chandra--jaya--mentorship--march-of-the-machine.json' with { type: 'json' };
+import entry42 from '../content/relationships/chandra--nissa--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry43 from '../content/relationships/teferi--wrenn--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry44 from '../content/relationships/chandra--wrenn--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry45 from '../content/relationships/elspeth--koth--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry46 from '../content/relationships/karn--koth--alliance--march-of-the-machine.json' with { type: 'json' };
+import entry47 from '../content/relationships/liliana-vess--nicol-bolas--rivalry--war-of-the-spark.json' with { type: 'json' };
+import entry48 from '../content/relationships/gideon-jura--liliana-vess--alliance--war-of-the-spark.json' with { type: 'json' };
+import entry49 from '../content/relationships/gideon-jura--nicol-bolas--rivalry--war-of-the-spark.json' with { type: 'json' };
+import entry50 from '../content/relationships/nicol-bolas--niv-mizzet--rivalry--war-of-the-spark.json' with { type: 'json' };
+import entry51 from '../content/relationships/agrus-kos--szadek--rivalry--many-worlds.json' with { type: 'json' };
+import entry52 from '../content/relationships/agrus-kos--teysa-karlov--alliance--many-worlds.json' with { type: 'json' };
+import entry53 from '../content/relationships/nahiri--sorin--alliance--many-worlds.json' with { type: 'json' };
+import entry54 from '../content/relationships/emrakul--nahiri--rivalry--many-worlds.json' with { type: 'json' };
+import entry55 from '../content/relationships/avacyn--sorin--creation--many-worlds.json' with { type: 'json' };
+import entry56 from '../content/relationships/avacyn--griselbrand--rivalry--many-worlds.json' with { type: 'json' };
+import entry57 from '../content/relationships/cabal-patriarch--chainer--alliance--otaria.json' with { type: 'json' };
+import entry58 from '../content/relationships/braids--cabal-patriarch--alliance--otaria.json' with { type: 'json' };
+import entry59 from '../content/relationships/braids--chainer--alliance--otaria.json' with { type: 'json' };
+import entry60 from '../content/relationships/aboshan--laquatus--rivalry--otaria.json' with { type: 'json' };
+import entry61 from '../content/relationships/cabal-patriarch--laquatus--rivalry--otaria.json' with { type: 'json' };
+import entry62 from '../content/relationships/kamahl--seton--friendship--otaria.json' with { type: 'json' };
+import entry63 from '../content/relationships/cabal-patriarch--jeska--rivalry--otaria.json' with { type: 'json' };
+import entry64 from '../content/relationships/akroma--ixidor--creation--otaria.json' with { type: 'json' };
+import entry65 from '../content/relationships/akroma--jeska--rivalry--otaria.json' with { type: 'json' };
+import entry66 from '../content/relationships/ixidor--jeska--rivalry--otaria.json' with { type: 'json' };
+import entry67 from '../content/relationships/akroma--kamahl--rivalry--otaria.json' with { type: 'json' };
+import entry68 from '../content/relationships/tevesh-szat--urza--rivalry--weatherlight.json' with { type: 'json' };
+import entry69 from '../content/relationships/gerrard--urza--rivalry--weatherlight.json' with { type: 'json' };
+import entry70 from '../content/relationships/gerrard--mirri--friendship--weatherlight.json' with { type: 'json' };
+import entry71 from '../content/relationships/crovax--mirri--rivalry--weatherlight.json' with { type: 'json' };
+import entry72 from '../content/relationships/crovax--gerrard--rivalry--weatherlight.json' with { type: 'json' };
+import entry73 from '../content/relationships/ertai--sisay--alliance--weatherlight.json' with { type: 'json' };
+import entry74 from '../content/relationships/ertai--hanna--alliance--weatherlight.json' with { type: 'json' };
+import entry75 from '../content/relationships/crovax--ertai--alliance--weatherlight.json' with { type: 'json' };
+import entry76 from '../content/relationships/crovax--volrath--rivalry--weatherlight.json' with { type: 'json' };
+import entry77 from '../content/relationships/gerrard--sisay--alliance--weatherlight.json' with { type: 'json' };
+import entry78 from '../content/relationships/gerrard--hanna--friendship--weatherlight.json' with { type: 'json' };
+import entry79 from '../content/relationships/gerrard--volrath--rivalry--weatherlight.json' with { type: 'json' };
+import entry80 from '../content/relationships/hanna--sisay--alliance--weatherlight.json' with { type: 'json' };
+import entry81 from '../content/relationships/karn--sisay--alliance--weatherlight.json' with { type: 'json' };
+import entry82 from '../content/relationships/volrath--yawgmoth--alliance--weatherlight.json' with { type: 'json' };
+import entry83 from '../content/relationships/jaya--jodah--friendship--ice-age.json' with { type: 'json' };
+import entry84 from '../content/relationships/jodah--lim-dul--rivalry--ice-age.json' with { type: 'json' };
+import entry85 from '../content/relationships/jaya--lim-dul--rivalry--ice-age.json' with { type: 'json' };
+import entry86 from '../content/relationships/freyalise--jodah--alliance--ice-age.json' with { type: 'json' };
+import entry87 from '../content/relationships/kayla--urza--family--brothers-war.json' with { type: 'json' };
+import entry88 from '../content/relationships/tawnos--urza--mentorship--brothers-war.json' with { type: 'json' };
+import entry89 from '../content/relationships/ashnod--mishra--alliance--brothers-war.json' with { type: 'json' };
+import entry90 from '../content/relationships/ashnod--tawnos--friendship--brothers-war.json' with { type: 'json' };
+import entry91 from '../content/relationships/kayla--tawnos--alliance--brothers-war.json' with { type: 'json' };
+import entry92 from '../content/relationships/mishra--urza--family--brothers-war.json' with { type: 'json' };
+import entry93 from '../content/relationships/tocasia--urza--mentorship--brothers-war.json' with { type: 'json' };
+import entry94 from '../content/relationships/mishra--tocasia--mentorship--brothers-war.json' with { type: 'json' };
+import entry95 from '../content/relationships/gix--mishra--alliance--brothers-war.json' with { type: 'json' };
+import entry96 from '../content/relationships/gix--yawgmoth--alliance--brothers-war.json' with { type: 'json' };
+import entry97 from '../content/relationships/glacian--rebbec--family--thran.json' with { type: 'json' };
+import entry98 from '../content/relationships/rebbec--yawgmoth--rivalry--thran.json' with { type: 'json' };
+import entry99 from '../content/relationships/urza--yawgmoth--rivalry--weatherlight.json' with { type: 'json' };
+import entry100 from '../content/relationships/karn--urza--creation--weatherlight.json' with { type: 'json' };
+import entry101 from '../content/relationships/gerrard--karn--alliance--weatherlight.json' with { type: 'json' };
+import entry102 from '../content/relationships/jeska--kamahl--family--otaria.json' with { type: 'json' };
+import entry103 from '../content/relationships/chainer--kamahl--friendship--otaria.json' with { type: 'json' };
+import entry104 from '../content/relationships/jeska--karn--mentorship--otaria.json' with { type: 'json' };
+import entry105 from '../content/relationships/jhoira--karn--friendship--mending.json' with { type: 'json' };
+import entry106 from '../content/relationships/jhoira--teferi--friendship--mending.json' with { type: 'json' };
+import entry107 from '../content/relationships/teferi--venser--alliance--mending.json' with { type: 'json' };
+import entry108 from '../content/relationships/jhoira--venser--alliance--mending.json' with { type: 'json' };
+import entry109 from '../content/relationships/radha--teferi--alliance--mending.json' with { type: 'json' };
+import entry110 from '../content/relationships/venser--windgrace--alliance--mending.json' with { type: 'json' };
+import entry111 from '../content/relationships/freyalise--radha--alliance--mending.json' with { type: 'json' };
+import entry112 from '../content/relationships/teferi--windgrace--alliance--mending.json' with { type: 'json' };
+import entry113 from '../content/relationships/jeska--radha--rivalry--mending.json' with { type: 'json' };
+import entry114 from '../content/relationships/jeska--venser--alliance--mending.json' with { type: 'json' };
+import entry115 from '../content/relationships/jeska--teferi--rivalry--mending.json' with { type: 'json' };
+
 export const characterRelationships: CharacterRelationship[] = [
-  // Chapter 10 — archaeologists, investigators, and accountability after invasion
-  {
-    a: "quintorius-kand", b: "kellan", category: "alliance",
-    labelForA: "Omenpath traveler on Ixalan", labelForB: "Archaeologist exploring Ixalan",
-    context: "Both took part in the Lost Caverns of Ixalan story as visitors with different means of moving between worlds.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "alquist-proft", b: "kellan", category: "alliance",
-    labelForA: "Young investigative ally", labelForB: "Ravnican detective and guide",
-    context: "Kellan worked with Alquist Proft amid the Karlov Manor murders, connecting his Omenpath travels with the city's own legal crisis.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "alquist-proft", b: "trostani", category: "rivalry",
-    labelForA: "Oba, exposed as murderer", labelForB: "Investigator who revealed Oba's actions",
-    context: "Proft's investigation uncovered Oba's culpability within Trostani without making Cim and Ses knowing accomplices.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "trostani", b: "teysa-karlov", category: "rivalry",
-    labelForA: "Victim of Oba's revenge", labelForB: "Oba, the guilty member of Trostani",
-    context: "Oba's vengeance after the Phyrexian invasion claimed Teysa Karlov's life; the other Trostani dryads were not willing participants.",
-    chapterId: "omenpaths",
-  },
-
-  // Chapter 09 — praetor doctrines, coercion, and resistance
-  {
-    a: "elesh-norn", b: "jin-gitaxias", category: "alliance",
-    labelForA: "Chrome Host researcher", labelForB: "Overlord who used his discoveries",
-    context: "Jin-Gitaxias's work on Kamigawa and his strategic Chrome Host supported Norn's invasion, despite the praetors' different visions of perfection.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "elesh-norn", b: "vorinclex", category: "alliance",
-    labelForA: "World Tree emissary", labelForB: "Praetor who commissioned the theft",
-    context: "Vorinclex's expedition to Kaldheim gave Norn the World Tree essence that made Realmbreaker possible.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "elesh-norn", b: "urabrask", category: "rivalry",
-    labelForA: "Furnace dissident", labelForB: "Orthodoxy ruler he defied",
-    context: "Urabrask tolerated Mirran survivors and rebelled against Norn's forced conformity; her punishment of him revealed the empire's internal conflicts.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "koth", b: "melira", category: "alliance",
-    labelForA: "Corruption-resistant Mirran ally", labelForB: "Resistance leader who defended their home",
-    context: "Koth and Melira sustained Mirran resistance over years of occupation and guided allies toward the Seedcore.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "jin-gitaxias", b: "tamiyo", category: "rivalry",
-    labelForA: "Planeswalker subjected to compleation", labelForB: "Praetor whose experiments subjugated her",
-    context: "Jin-Gitaxias's forced transformation of Tamiyo preserved her spark while destroying her freedom; their connection was coercive, not an alliance.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "karn", b: "melira", category: "alliance",
-    labelForA: "Mirran whose final gift saved the infected", labelForB: "Creator whose remaining spark enabled the cure",
-    context: "Karn and Melira ultimately sacrificed Karn's spark and Melira's life to save Ajani and Nissa, without restoring every Phyrexian victim.",
-    chapterId: "march-of-the-machine",
-  },
-  // Chapter 08 — alliances and rivalries behind the invasion apparatus
-  {
-    a: "tezzeret", b: "nicol-bolas", category: "alliance",
-    labelForA: "Dragon employer", labelForB: "Bearer of the Planar Bridge",
-    context: "Tezzeret carried the Planar Bridge that brought Bolas's lazotep-clad Eternals to Ravnica.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "dovin-baan", b: "nicol-bolas", category: "alliance",
-    labelForA: "Conspirator he supported", labelForB: "Azorius administrator",
-    context: "Dovin used Ravnica's Senate to suppress resistance and aid Bolas's plan.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "ral-zarek", b: "niv-mizzet", category: "alliance",
-    labelForA: "Izzet leader", labelForB: "Izzet planeswalker",
-    context: "Ral worked within the Izzet League and helped coordinate opposition as Niv-Mizzet returned as the Living Guildpact.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "ral-zarek", b: "tezzeret", category: "rivalry",
-    labelForA: "Artificer to pursue", labelForB: "Izzet pursuer",
-    context: "Following the invasion, Ral accepted the guilds' assignment to hunt Tezzeret.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "ral-zarek", b: "dovin-baan", category: "rivalry",
-    labelForA: "Azorius collaborator", labelForB: "Izzet opponent",
-    context: "Ral helped Ravnica resist the plan that Dovin supported through control of the Azorius Senate.",
-    chapterId: "war-of-the-spark",
-  },
-  // Chapter 06 — manipulation, rivalry, and collaboration
-  {
-    a: "leshrac", b: "jeska", category: "rivalry",
-    labelForA: "Planeswalker he deceived", labelForB: "Manipulative old planeswalker",
-    context: "Leshrac exploited Jeska's grief and the rift crisis to pursue power connected to her earlier Phage identity.",
-    chapterId: "mending",
-  },
-  {
-    a: "leshrac", b: "nicol-bolas", category: "rivalry",
-    labelForA: "Dragon who defeated him", labelForB: "Defeated rival",
-    context: "Their struggle ended with Bolas using Leshrac's remaining power to seal the Madaran rift.",
-    chapterId: "mending",
-  },
-  {
-    a: "venser", b: "radha", category: "alliance",
-    labelForA: "Warrior and rift-linked ally", labelForB: "Inventor and fellow survivor",
-    context: "Venser and Radha survived the final Otarian ritual after Jeska chose to bear the last sacrifice herself.",
-    chapterId: "mending",
-  },
-
-  // Chapter 05 — competing ideals and inherited responsibility
-  {
-    a: "balthor", b: "kamahl", category: "mentorship",
-    labelForA: "Barbarian pupil", labelForB: "Dwarven leader and mentor",
-    context: "Balthor led the barbarian warriors and mentored Kamahl before death and reanimation changed his place in Otaria's history.",
-    chapterId: "otaria",
-  },
-  {
-    a: "lieutenant-kirtar", b: "cabal-patriarch", category: "rivalry",
-    labelForA: "Cabal ruler and rival", labelForB: "Officer of the Order",
-    context: "Kirtar's Order opposed the Cabal, and his claim to the Mirari carried that rivalry into the artifact's dangerous struggle for custody.",
-    chapterId: "otaria",
-  },
-
-  // Chapter 04 — family, mentorship, and sacrifice around the Legacy
-  {
-    a: "barrin", b: "hanna", category: "family",
-    labelForA: "Daughter and navigator", labelForB: "Father and Tolarian headmaster",
-    context: "Barrin's work with Urza's Academy intersected with Hanna's service aboard the Weatherlight; her death was central to his final spell.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "gerrard", b: "multani", category: "mentorship",
-    labelForA: "Yavimayan teacher", labelForB: "Former pupil",
-    context: "Multani instructed Gerrard in Yavimaya before the Weatherlight's rescue mission forced Gerrard to face his destiny.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "gerrard", b: "rofellos", category: "friendship",
-    labelForA: "Lost companion", labelForB: "Friend who left the ship after his death",
-    context: "The two studied together under Multani; Rofellos's death contributed to Gerrard's estrangement from the ship.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "mirri", b: "multani", category: "mentorship",
-    labelForA: "Yavimayan teacher", labelForB: "Former pupil",
-    context: "Mirri learned alongside Gerrard and Rofellos while training with Multani in Yavimaya.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "radiant", b: "urza", category: "rivalry",
-    labelForA: "Planeswalker who collapsed her realm", labelForB: "Guardian of Serra's dying realm",
-    context: "Radiant opposed the events that culminated in the destruction of Serra's Realm, whose power Urza gathered for the Weatherlight.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "sisay", b: "squee", category: "alliance",
-    labelForA: "Loyal cabin boy", labelForB: "Weatherlight captain",
-    context: "Squee served aboard Sisay's Weatherlight, contributing loyalty and resilience to a crew divided by rank and origin.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "karn", b: "squee", category: "friendship",
-    labelForA: "Fellow survivor", labelForB: "Compassionate Legacy guardian",
-    context: "Karn and Squee survived the original war as unusual companions whose lives carried into later Dominarian history.",
-    chapterId: "weatherlight",
-  },
-  // Chapter 03 — the Conclave's betrayal
-  {
-    a: "jodah", b: "mairsil", category: "rivalry",
-    labelForA: "Conclave usurper", labelForB: "Young mage he tried to exploit",
-    context: "Mairsil sought to use Jodah's ancestry and learning for his plans; Jodah later helped free the Conclave's imprisoned founder Ith.",
-    chapterId: "ice-age",
-  },
-  // Chapter 02 — royal and military consequences of the war
-  {
-    a: "kayla", b: "mishra", category: "rivalry",
-    labelForA: "Warlord whose forces destroyed Kroog",
-    labelForB: "Yotian queen affected by his campaign",
-    context: "Mishra's attack on Yotia destroyed Kayla's home and helped turn the brothers' private war into a catastrophe for civilians.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "mishra", b: "tawnos", category: "rivalry",
-    labelForA: "Opposing artificer and Urza's apprentice",
-    labelForB: "Commander aligned with the opposing army",
-    context: "Tawnos supplied Urza's effort while Mishra's forces threatened the Yotian kingdom; their positions were shaped by the rival war machines.",
-    chapterId: "brothers-war",
-  },
-  // Chapter 01 — the Thran and the origins of Phyrexia
-  {
-    a: "gix", b: "glacian", category: "rivalry",
-    labelForA: "Powerstone engineer he attacked", labelForB: "Rebel who wounded him",
-    context: "Before his compleation, Gix fought for Halcyon's excluded Untouchables and wounded Glacian with a powerstone shard during their uprising.",
-    chapterId: "thran",
-  },
-  {
-    a: "glacian", b: "yawgmoth", category: "rivalry",
-    labelForA: "Physician who exploited his illness", labelForB: "Patient and engineering pioneer",
-    context: "Yawgmoth gained political access by treating Glacian's phthisis, then manipulated the inventor and the divided powerstone tied to his fate.",
-    chapterId: "thran",
-  },
-  // Chapter 10 — kinship and shifting alliances after the invasion
-  {
-    a: "will-kenrith", b: "rowan-kenrith", category: "family",
-    labelForA: "Twin sister", labelForB: "Twin brother",
-    context: "The heirs’ shared grief after the invasion developed into a disagreement over how Eldraine could be saved.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "kellan", b: "oko", category: "family",
-    labelForA: "Elusive father", labelForB: "Son searching for him",
-    context: "Kellan crossed Omenpaths to find Oko, only to confront the trickster’s methods on Thunder Junction.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "jace-beleren", b: "vraska", category: "alliance",
-    labelForA: "Partner and beloved", labelForB: "Partner and beloved",
-    context: "Jace and Vraska survived Phyrexian corruption and pursued a new plan after their recovery.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "jace-beleren", b: "loot", category: "alliance",
-    labelForA: "Young ward", labelForB: "Protector and planner",
-    context: "Jace took an interest in Loot after the discovery at the ancient vault on Thunder Junction.",
-    chapterId: "omenpaths",
-  },
-  {
-    a: "vraska", b: "loot", category: "alliance",
-    labelForA: "Young ward", labelForB: "Protector and ally",
-    context: "Vraska became part of Loot’s unfolding story following the vault heist.",
-    chapterId: "omenpaths",
-  },
-  // Chapter 09 — loyalties, corruption, and resistance
-  {
-    a: "elesh-norn", b: "sheoldred", category: "rivalry",
-    labelForA: "Rival praetor", labelForB: "Orthodoxy's authoritarian leader",
-    context: "The two praetors pursued Phyrexian dominance with conflicting ambitions, exposing fractures beneath Norn's rhetoric of unity.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "elesh-norn", b: "elspeth", category: "rivalry",
-    labelForA: "Angelic opponent", labelForB: "Persecutor and architect of conquest",
-    context: "Elspeth returned transformed to confront Norn and keep the final resistance alive while Wrenn reached the tree.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "elesh-norn", b: "karn", category: "rivalry",
-    labelForA: "Mirrodin's creator", labelForB: "Praetor he finally dismantled",
-    context: "Karn assumed responsibility for the fate of the plane he made and personally ended Norn's attempt at multiversal conquest.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "ajani", b: "jaya", category: "rivalry",
-    labelForA: "Hero killed during his corruption", labelForB: "Trusted ally transformed into sleeper agent",
-    context: "Ajani's compleation enabled Phyrexia's betrayal of the Dominarian coalition and Jaya's death.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "jaya", b: "chandra", category: "mentorship",
-    labelForA: "Promising pyromancer", labelForB: "Mentor whose death drove her",
-    context: "Jaya's teachings shaped Chandra; her death during Dominaria United gave the final invasion an intensely personal cost.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "chandra", b: "nissa", category: "alliance",
-    labelForA: "Loved one lost to compleation", labelForB: "Partner who sought her recovery",
-    context: "Chandra fought Phyrexia while refusing to give up hope for Nissa, who later survived Melira and Karn's treatment.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "wrenn", b: "teferi", category: "alliance",
-    labelForA: "Guide to Zhalfir's lost people", labelForB: "Dryad who restored his homeland",
-    context: "Wrenn found a way through Realmbreaker to Zhalfir, completing Teferi's long struggle to reconnect his nation.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "wrenn", b: "chandra", category: "alliance",
-    labelForA: "Friend who helped her reach the tree", labelForB: "Dryad whose sacrifice ended the invasion",
-    context: "Chandra aided Wrenn's final attempt to bond with Realmbreaker and reverse the invaders' interplanar network.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "koth", b: "elspeth", category: "alliance",
-    labelForA: "Returned defender of the Mirrans", labelForB: "Unyielding Mirran resistance leader",
-    context: "Koth and Elspeth fought on Mirrodin's behalf, and her transformed return helped protect its surviving people.",
-    chapterId: "march-of-the-machine",
-  },
-  {
-    a: "karn", b: "koth", category: "alliance",
-    labelForA: "Mirran who kept resisting", labelForB: "Creator reckoning with the plane's fall",
-    context: "The two survivors were bound by the loss of Mirrodin and its people, even after the victory made Zhalfir their refuge.",
-    chapterId: "march-of-the-machine",
-  },
-  // Chapter 08 — the War of the Spark
-  {
-    a: "nicol-bolas", b: "liliana-vess", category: "rivalry",
-    labelForA: "Rebellious general", labelForB: "Coercive master",
-    context: "Bolas bound Liliana to command his Eternals; she ultimately turned that army against him.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "gideon-jura", b: "liliana-vess", category: "alliance",
-    labelForA: "Ally he protected", labelForB: "Ally who gave his life",
-    context: "Gideon took the lethal consequence intended for Liliana after she defied Bolas.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "gideon-jura", b: "nicol-bolas", category: "rivalry",
-    labelForA: "Enemy threatening Ravnica", labelForB: "Gatewatch opponent",
-    context: "Gideon helped defend Ravnica against Bolas's invasion and his attempt to harvest sparks.",
-    chapterId: "war-of-the-spark",
-  },
-  {
-    a: "niv-mizzet", b: "nicol-bolas", category: "rivalry",
-    labelForA: "Invading Elder Dragon", labelForB: "Firemind and Living Guildpact",
-    context: "Niv-Mizzet's resistance and rebirth challenged Bolas's bid to dominate Ravnica.",
-    chapterId: "war-of-the-spark",
-  },
-  // Chapter 07 — relationships across Ravnica, Zendikar, and Innistrad
-  {
-    a: "agrus-kos", b: "szadek", category: "rivalry",
-    labelForA: "Conspiracy suspect", labelForB: "Wojek investigator",
-    context: "Agrus Kos pursued Szadek's hidden conspiracy, but the vampire's arrest was entangled with the first Guildpact's destruction.",
-    chapterId: "many-worlds",
-  },
-  {
-    a: "agrus-kos", b: "teysa-karlov", category: "alliance",
-    labelForA: "Orzhov political ally", labelForB: "Boros investigator",
-    context: "Agrus and Teysa worked across guild boundaries as Ravnica confronted the consequences of the broken Guildpact.",
-    chapterId: "many-worlds",
-  },
-  {
-    a: "nahiri", b: "sorin", category: "alliance",
-    labelForA: "Eldrazi prison ally", labelForB: "Lithomancer ally",
-    context: "Nahiri and Sorin cooperated with Ugin to imprison the Eldrazi on Zendikar; their later rupture was not part of the prison's founding.",
-    chapterId: "many-worlds",
-  },
-  {
-    a: "nahiri", b: "emrakul", category: "rivalry",
-    labelForA: "Imprisoned titan", labelForB: "Hedron prison architect",
-    context: "Nahiri helped construct the ward network that confined Emrakul and the other Eldrazi titans to Zendikar.",
-    chapterId: "many-worlds",
-  },
-  {
-    a: "sorin", b: "avacyn", category: "creation",
-    labelForA: "Created angelic guardian", labelForB: "Creator and protector",
-    context: "Sorin created Avacyn to preserve Innistrad's humanity and the balance between its peoples and monsters.",
-    chapterId: "many-worlds",
-  },
-  {
-    a: "avacyn", b: "griselbrand", category: "rivalry",
-    labelForA: "Demon who trapped her", labelForB: "Angelic adversary",
-    context: "Griselbrand lured Avacyn into the Helvault, imprisoning himself and the angel while the church's protections collapsed.",
-    chapterId: "many-worlds",
-  },
-  // Chapter 05 — Mirari Saga relationships
-  {
-    a: "chainer",
-    b: "cabal-patriarch",
-    category: "alliance",
-    labelForA: "Cabal patron and eventual rival",
-    labelForB: "Protégé turned usurper",
-    context:
-      "Chainer initially delivered the newly discovered Mirari to the First, then ultimately used its power to remove the Patriarch from Cabal City.",
-    chapterId: "otaria",
-  },
-  {
-    a: "braids",
-    b: "cabal-patriarch",
-    category: "alliance",
-    labelForA: "Leader of the Cabal",
-    labelForB: "Unpredictable operative",
-    context:
-      "Braids operated within the Cabal's sphere of influence and helped return the Mirari to the institution's control after its passage through rival hands.",
-    chapterId: "otaria",
-  },
-  {
-    a: "chainer",
-    b: "braids",
-    category: "alliance",
-    labelForA: "Fellow Cabal operative",
-    labelForB: "Dementia summoner colleague",
-    context:
-      "Chainer and Braids were members of the Cabal whose separate activities brought them into the Mirari crisis as the artifact returned to Cabal City.",
-    chapterId: "otaria",
-  },
-  {
-    a: "laquatus",
-    b: "aboshan",
-    category: "rivalry",
-    labelForA: "Emperor and political obstacle",
-    labelForB: "Ambitious court diplomat",
-    context:
-      "Laquatus schemed around Aboshan's rule and the Mirari, while the emperor's disastrous use of the artifact damaged the underwater empire.",
-    chapterId: "otaria",
-  },
-  {
-    a: "laquatus",
-    b: "cabal-patriarch",
-    category: "rivalry",
-    labelForA: "Cabal political rival",
-    labelForB: "Manipulative merfolk contender",
-    context:
-      "Laquatus and the Cabal Patriarch pursued conflicting ambitions for the Mirari and maneuvered to exploit one another's vulnerabilities.",
-    chapterId: "otaria",
-  },
-  {
-    a: "kamahl",
-    b: "seton",
-    category: "friendship",
-    labelForA: "Krosan friend and ally",
-    labelForB: "Pardic warrior turned defender",
-    context:
-      "Seton's alliance with Kamahl connected the former pit fighter to the living forest and its values as he abandoned the Mirari's corrupting influence.",
-    chapterId: "otaria",
-  },
-  {
-    a: "cabal-patriarch",
-    b: "jeska",
-    category: "rivalry",
-    labelForA: "Wounded warrior made into Phage",
-    labelForB: "Cabal authority behind her transformation",
-    context:
-      "Cabal intervention transformed the Mirari-wounded Jeska into Phage, whose deadly power became useful to the Patriarch's arenas and political aims.",
-    chapterId: "otaria",
-  },
-  {
-    a: "ixidor",
-    b: "akroma",
-    category: "creation",
-    labelForA: "Angel created from grief",
-    labelForB: "Reality-sculpting creator",
-    context:
-      "Ixidor created Akroma with his reality-shaping magic after Nivea's death and directed her toward vengeance against Phage.",
-    chapterId: "otaria",
-  },
-  {
-    a: "akroma",
-    b: "jeska",
-    category: "rivalry",
-    labelForA: "Phage, target of her vengeance",
-    labelForB: "Angel seeking her death",
-    context:
-      "As Phage, Jeska became Akroma's enemy. Their escalating conflict culminated in their fusion with Zagorka into Karona.",
-    chapterId: "otaria",
-  },
-  {
-    a: "ixidor",
-    b: "jeska",
-    category: "rivalry",
-    labelForA: "Phage, blamed for Nivea's death",
-    labelForB: "Vengeful illusionist",
-    context:
-      "Ixidor blamed Phage for the death of Nivea and created Akroma as the agent of his retribution.",
-    chapterId: "otaria",
-  },
-  {
-    a: "kamahl",
-    b: "akroma",
-    category: "rivalry",
-    labelForA: "Vengeful angel and threat to Krosa",
-    labelForB: "Druid defending his sister and forest",
-    context:
-      "Kamahl opposed the destructive conflict involving Akroma and Phage and ultimately struck both with the Soul Reaper axe during the confrontation that created Karona.",
-    chapterId: "otaria",
-  },
-
-  // Phase 36 — the final Phyrexian campaign
-  {
-    a: "urza",
-    b: "tevesh-szat",
-    category: "rivalry",
-    labelForA: "Traitor among the Titans",
-    labelForB: "Leader and executioner",
-    context:
-      "Urza recruited Tevesh Szat into the Nine Titans but expected his betrayal. After Szat killed Daria and Kristina, Urza used the traitor's life essence to power the soul bombs against Phyrexia.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "urza",
-    b: "gerrard",
-    category: "rivalry",
-    labelForA: "Legacy hero and arena opponent",
-    labelForB: "Architect of the Legacy and arena opponent",
-    context:
-      "Urza engineered the Legacy that shaped Gerrard's life. Under Yawgmoth's influence, the two fought each other in an arena, where Gerrard beheaded Urza.",
-    chapterId: "weatherlight",
-  },
-
-  // Phase 35 — the loss and corruption of three Weatherlight companions
-  {
-    a: "gerrard",
-    b: "mirri",
-    category: "friendship",
-    labelForA: "Longtime friend and companion",
-    labelForB: "Longtime friend and companion",
-    context:
-      "Gerrard and Mirri grew up together, and she accompanied him aboard the Weatherlight until her death at the hands of Crovax.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "crovax",
-    b: "mirri",
-    category: "rivalry",
-    labelForA: "Former shipmate and victim",
-    labelForB: "Former ally and killer",
-    context:
-      "Crovax killed Selenia to save Mirri but became cursed; after she followed him away from the Weatherlight, he killed her.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "gerrard",
-    b: "crovax",
-    category: "rivalry",
-    labelForA: "Fallen crew companion",
-    labelForB: "Former shipmate and adversary",
-    context:
-      "Crovax once sailed with Gerrard but betrayed the crew after his transformation into a vampire, killing Mirri and later serving Phyrexia.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "sisay",
-    b: "ertai",
-    category: "alliance",
-    labelForA: "Crew wizard",
-    labelForB: "Captain",
-    context:
-      "Ertai served the Weatherlight's mission and kept open the portal the crew used to escape Rath, but was left stranded there.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "hanna",
-    b: "ertai",
-    category: "alliance",
-    labelForA: "Tolarian crew mage",
-    labelForB: "Navigator and artificer",
-    context:
-      "Hanna and Ertai both brought Tolarian knowledge aboard the Weatherlight during the rescue mission to Rath.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "crovax",
-    b: "ertai",
-    category: "alliance",
-    labelForA: "Corrupted wizard and aide",
-    labelForB: "Evincar and Phyrexian master",
-    context:
-      "Ertai's transformation on Rath brought him into Crovax's service; he aided Crovax in defeating Volrath and claiming the title of evincar.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "crovax",
-    b: "volrath",
-    category: "rivalry",
-    labelForA: "Former evincar and rival",
-    labelForB: "Successor and killer",
-    context:
-      "With Ertai's help, Crovax killed Volrath after the shapeshifter's return from Mercadia and became the new evincar of Rath.",
-    chapterId: "weatherlight",
-  },
-  // Phase 34 — Weatherlight companions and adversaries
-  {
-    a: "gerrard",
-    b: "sisay",
-    category: "alliance",
-    labelForA: "Captain and trusted ally",
-    labelForB: "Legacy hero and crew member",
-    context:
-      "Sisay believed in Gerrard's part in the Legacy, and her abduction drew him back into the Weatherlight's mission.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "gerrard",
-    b: "hanna",
-    category: "friendship",
-    labelForA: "Former partner and shipmate",
-    labelForB: "Former partner and shipmate",
-    context:
-      "Hanna and Gerrard shared a romantic past, strained when Gerrard abandoned the Weatherlight; his return brought them together again before the invasion took Hanna's life.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "gerrard",
-    b: "volrath",
-    category: "rivalry",
-    labelForA: "Foster brother and enemy",
-    labelForB: "Foster brother and rival",
-    context:
-      "The boys Gerrard and Vuel grew up together, but Vuel later became Volrath, evincar of Rath and the chief antagonist of the Weatherlight's rescue mission.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "sisay",
-    b: "hanna",
-    category: "alliance",
-    labelForA: "Navigator and artificer",
-    labelForB: "Captain",
-    context:
-      "Sisay led the Weatherlight and relied on Hanna's command of its machinery and magical artifacts.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "sisay",
-    b: "karn",
-    category: "alliance",
-    labelForA: "Legacy companion",
-    labelForB: "Captain",
-    context:
-      "Sisay and Karn served aboard the Weatherlight as the crew pursued the pieces of the Legacy.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "volrath",
-    b: "yawgmoth",
-    category: "alliance",
-    labelForA: "Master of Phyrexia",
-    labelForB: "Evincar and agent",
-    context:
-      "Volrath ruled Rath as a Phyrexian evincar and worked to advance Yawgmoth's invasion plans.",
-    chapterId: "weatherlight",
-  },
-
-  {
-    a: "jodah",
-    b: "jaya",
-    category: "friendship",
-    labelForA: "Longtime friend and ally",
-    labelForB: "Longtime friend and ally",
-    context:
-      "Jodah and Jaya maintained an enduring friendship and helped bring Kjeldoran and Balduvian forces together against Lim-Dûl.",
-    chapterId: "ice-age",
-  },
-  {
-    a: "jodah",
-    b: "lim-dul",
-    category: "rivalry",
-    labelForA: "Necromancer adversary",
-    labelForB: "Archmage adversary",
-    context:
-      "Jodah opposed Lim-Dûl's ambitions and helped build resistance to his undead armies.",
-    chapterId: "ice-age",
-  },
-  {
-    a: "jaya",
-    b: "lim-dul",
-    category: "rivalry",
-    labelForA: "Necromancer adversary",
-    labelForB: "Pyromancer adversary",
-    context:
-      "Jaya joined Jodah in resisting Lim-Dûl and the threat his forces posed to Terisiare.",
-    chapterId: "ice-age",
-  },
-  {
-    a: "jodah",
-    b: "freyalise",
-    category: "alliance",
-    labelForA: "World Spell caster",
-    labelForB: "Mirror bearer",
-    context:
-      "Jodah possessed an enchanted mirror that helped Freyalise cast the World Spell and bring Dominaria's Ice Age to an end.",
-    chapterId: "ice-age",
-  },
-
-  {
-    a: "urza",
-    b: "kayla",
-    category: "family",
-    labelForA: "Wife",
-    labelForB: "Husband",
-    context:
-      "Urza's marriage to Kayla connected him to Yotia's ruling family. Their relationship was profoundly affected by the war and its aftermath.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "urza",
-    b: "tawnos",
-    category: "mentorship",
-    labelForA: "Apprentice",
-    labelForB: "Mentor",
-    context:
-      "Tawnos studied under Urza and contributed to his mechanical inventions, later questioning the destructive uses of their technology.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "mishra",
-    b: "ashnod",
-    category: "alliance",
-    labelForA: "Artificer and lieutenant",
-    labelForB: "Commander and patron",
-    context:
-      "Ashnod worked within Mishra's war effort, but her independence and decisions eventually brought her into conflict with his ambitions.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "ashnod",
-    b: "tawnos",
-    category: "friendship",
-    labelForA: "Friend across enemy lines",
-    labelForB: "Friend across enemy lines",
-    context:
-      "Despite serving opposing armies, Ashnod and Tawnos developed an important personal connection. Ashnod later helped Tawnos escape captivity.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "kayla",
-    b: "tawnos",
-    category: "alliance",
-    labelForA: "Trusted artificer",
-    labelForB: "Queen and political ally",
-    context:
-      "Kayla and Tawnos survived the war's devastation and later worked to protect communities struggling with its consequences.",
-    chapterId: "brothers-war",
-  },
-
-  {
-    a: "urza",
-    b: "mishra",
-    category: "family",
-    labelForA: "Brother and rival",
-    labelForB: "Brother and rival",
-    context:
-      "Urza and Mishra were brothers whose shared interest in Thran artifacts developed into a rivalry that devastated Terisiare.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "tocasia",
-    b: "urza",
-    category: "mentorship",
-    labelForA: "Student",
-    labelForB: "Mentor",
-    context:
-      "Tocasia guided Urza's early studies of ancient Thran technology before her death separated the brothers.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "tocasia",
-    b: "mishra",
-    category: "mentorship",
-    labelForA: "Student",
-    labelForB: "Mentor",
-    context:
-      "Tocasia taught Mishra alongside Urza and died attempting to intervene in their conflict.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "mishra",
-    b: "gix",
-    category: "alliance",
-    labelForA: "Phyrexian patron",
-    labelForB: "Manipulated ally",
-    context:
-      "Gix exploited the Brothers' War to extend Phyrexian influence, drawing Mishra further into its machinery and ambitions.",
-    chapterId: "brothers-war",
-  },
-  {
-    a: "yawgmoth",
-    b: "gix",
-    category: "alliance",
-    labelForA: "Praetor and agent",
-    labelForB: "Master",
-    context:
-      "Gix served Yawgmoth and advanced Phyrexian interests on Dominaria during the Brothers' War.",
-    chapterId: "brothers-war",
-  },
-
-  {
-    a: "glacian",
-    b: "rebbec",
-    category: "family",
-    labelForA: "Wife",
-    labelForB: "Husband",
-    context:
-      "Glacian and Rebbec were married and stood among the Thran Empire's most accomplished figures. Glacian's powerstones supported Rebbec's architectural achievements, and his illness led her to seek treatment from Yawgmoth.",
-    chapterId: "thran",
-  },
-
-  {
-    a: "rebbec",
-    b: "yawgmoth",
-    category: "rivalry",
-    labelForA: "Adversary",
-    labelForB: "Adversary",
-    context:
-      "Rebbec brought Yawgmoth to Halcyon but ultimately opposed his ambitions and sealed the gateway to Phyrexia.",
-    chapterId: "thran",
-  },
-  {
-    a: "urza",
-    b: "yawgmoth",
-    category: "rivalry",
-    labelForA: "Enemy",
-    labelForB: "Enemy",
-    context:
-      "Urza spent centuries preparing to defeat Yawgmoth and the Phyrexian empire he controlled.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "urza",
-    b: "karn",
-    category: "creation",
-    labelForA: "Created construct",
-    labelForB: "Creator",
-    context:
-      "Urza created Karn as a silver golem who eventually became a central component of the Legacy.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "karn",
-    b: "gerrard",
-    category: "alliance",
-    labelForA: "Weatherlight companion",
-    labelForB: "Weatherlight companion",
-    context:
-      "Karn and Gerrard served aboard the Weatherlight and helped bring the Legacy to its final purpose.",
-    chapterId: "weatherlight",
-  },
-  {
-    a: "kamahl",
-    b: "jeska",
-    category: "family",
-    labelForA: "Sister",
-    labelForB: "Brother",
-    context:
-      "Kamahl and Jeska were siblings whose lives changed dramatically after the Mirari influenced Kamahl.",
-    chapterId: "otaria",
-  },
-  {
-    a: "kamahl",
-    b: "chainer",
-    category: "friendship",
-    labelForA: "Friend",
-    labelForB: "Friend",
-    context:
-      "Kamahl and Chainer formed an unlikely friendship during the conflicts surrounding the Mirari.",
-    chapterId: "otaria",
-  },
-  {
-    a: "karn",
-    b: "jeska",
-    category: "mentorship",
-    labelForA: "Student",
-    labelForB: "Mentor",
-    context:
-      "Following Jeska’s transformation into a planeswalker, Karn became an important guide in her new existence.",
-    chapterId: "otaria",
-  },
-  {
-    a: "karn",
-    b: "jhoira",
-    category: "friendship",
-    labelForA: "Longtime friend",
-    labelForB: "Longtime friend",
-    context:
-      "Karn and Jhoira shared a long history through the Tolarian Academy and the events that followed.",
-    chapterId: "mending",
-  },
-  {
-    a: "teferi",
-    b: "jhoira",
-    category: "friendship",
-    labelForA: "Longtime friend",
-    labelForB: "Longtime friend",
-    context:
-      "Teferi and Jhoira maintained an enduring friendship through the Tolarian era and the temporal crisis.",
-    chapterId: "mending",
-  },
-  {
-    a: "teferi",
-    b: "venser",
-    category: "alliance",
-    labelForA: "Rift-repair ally",
-    labelForB: "Rift-repair ally",
-    context:
-      "Venser joined Teferi’s efforts to understand and close the temporal rifts threatening Dominaria.",
-    chapterId: "mending",
-  },
-  {
-    a: "jhoira",
-    b: "venser",
-    category: "alliance",
-    labelForA: "Collaborator",
-    labelForB: "Collaborator",
-    context:
-      "Jhoira and Venser contributed their knowledge of artifice and magical displacement to the effort to repair Dominaria.",
-    chapterId: "mending",
-  },
-  {
-    a: "teferi",
-    b: "radha",
-    category: "alliance",
-    labelForA: "Uneasy ally",
-    labelForB: "Uneasy ally",
-    context:
-      "Radha’s connection to the Skyshroud rift helped Teferi investigate how damaged reality might be restored.",
-    chapterId: "mending",
-  },
-  {
-    a: "venser",
-    b: "windgrace",
-    category: "alliance",
-    labelForA: "Uneasy ally",
-    labelForB: "Uneasy ally",
-    context:
-      "Venser’s experiments drew the attention of Lord Windgrace, whose distrust of artifice complicated their involvement in the temporal crisis.",
-    chapterId: "mending",
-  },
-  {
-    a: "freyalise",
-    b: "radha",
-    category: "alliance",
-    labelForA: "Keldon-elf warrior tied to Skyshroud",
-    labelForB: "Guardian of the forest",
-    context:
-      "Radha's connection to rift mana placed her in the struggle over Skyshroud, the displaced forest Freyalise sacrificed herself to protect.",
-    chapterId: "mending",
-  },
-  {
-    a: "teferi",
-    b: "windgrace",
-    category: "alliance",
-    labelForA: "Urborg's wary protector",
-    labelForB: "Time mage seeking to close rifts",
-    context:
-      "The temporal crisis ultimately aligned the work of Teferi and the fiercely independent Windgrace, despite the latter's suspicion of outside interventions.",
-    chapterId: "mending",
-  },
-  {
-    a: "jeska",
-    b: "radha",
-    category: "rivalry",
-    labelForA: "Rift-linked warrior whose autonomy she endangered",
-    labelForB: "Planeswalker who tried to exploit her link to rifts",
-    context:
-      "Jeska attempted to use Radha's connection to the temporal fractures before finally refusing to sacrifice her in the last repair.",
-    chapterId: "mending",
-  },
-  {
-    a: "jeska",
-    b: "venser",
-    category: "alliance",
-    labelForA: "Artificer and final-rift collaborator",
-    labelForB: "Planeswalker and final-rift collaborator",
-    context:
-      "Venser and Jeska converged at Otaria's final rift; Jeska chose to send him to safety rather than force him to pay for its closure.",
-    chapterId: "mending",
-  },
-  {
-    a: "jeska",
-    b: "teferi",
-    category: "rivalry",
-    labelForA: "Time mage whose home she could not restore",
-    labelForB: "Planeswalker who closed Zhalfir's remaining route",
-    context:
-      "Jeska's sealing of the Zhalfirin rift prevented Teferi from using that opening to retrieve Zhalfir, revealing the conflicting costs of repairing the world.",
-    chapterId: "mending",
-  },
+  entry0 as CharacterRelationship,
+  entry1 as CharacterRelationship,
+  entry2 as CharacterRelationship,
+  entry3 as CharacterRelationship,
+  entry4 as CharacterRelationship,
+  entry5 as CharacterRelationship,
+  entry6 as CharacterRelationship,
+  entry7 as CharacterRelationship,
+  entry8 as CharacterRelationship,
+  entry9 as CharacterRelationship,
+  entry10 as CharacterRelationship,
+  entry11 as CharacterRelationship,
+  entry12 as CharacterRelationship,
+  entry13 as CharacterRelationship,
+  entry14 as CharacterRelationship,
+  entry15 as CharacterRelationship,
+  entry16 as CharacterRelationship,
+  entry17 as CharacterRelationship,
+  entry18 as CharacterRelationship,
+  entry19 as CharacterRelationship,
+  entry20 as CharacterRelationship,
+  entry21 as CharacterRelationship,
+  entry22 as CharacterRelationship,
+  entry23 as CharacterRelationship,
+  entry24 as CharacterRelationship,
+  entry25 as CharacterRelationship,
+  entry26 as CharacterRelationship,
+  entry27 as CharacterRelationship,
+  entry28 as CharacterRelationship,
+  entry29 as CharacterRelationship,
+  entry30 as CharacterRelationship,
+  entry31 as CharacterRelationship,
+  entry32 as CharacterRelationship,
+  entry33 as CharacterRelationship,
+  entry34 as CharacterRelationship,
+  entry35 as CharacterRelationship,
+  entry36 as CharacterRelationship,
+  entry37 as CharacterRelationship,
+  entry38 as CharacterRelationship,
+  entry39 as CharacterRelationship,
+  entry40 as CharacterRelationship,
+  entry41 as CharacterRelationship,
+  entry42 as CharacterRelationship,
+  entry43 as CharacterRelationship,
+  entry44 as CharacterRelationship,
+  entry45 as CharacterRelationship,
+  entry46 as CharacterRelationship,
+  entry47 as CharacterRelationship,
+  entry48 as CharacterRelationship,
+  entry49 as CharacterRelationship,
+  entry50 as CharacterRelationship,
+  entry51 as CharacterRelationship,
+  entry52 as CharacterRelationship,
+  entry53 as CharacterRelationship,
+  entry54 as CharacterRelationship,
+  entry55 as CharacterRelationship,
+  entry56 as CharacterRelationship,
+  entry57 as CharacterRelationship,
+  entry58 as CharacterRelationship,
+  entry59 as CharacterRelationship,
+  entry60 as CharacterRelationship,
+  entry61 as CharacterRelationship,
+  entry62 as CharacterRelationship,
+  entry63 as CharacterRelationship,
+  entry64 as CharacterRelationship,
+  entry65 as CharacterRelationship,
+  entry66 as CharacterRelationship,
+  entry67 as CharacterRelationship,
+  entry68 as CharacterRelationship,
+  entry69 as CharacterRelationship,
+  entry70 as CharacterRelationship,
+  entry71 as CharacterRelationship,
+  entry72 as CharacterRelationship,
+  entry73 as CharacterRelationship,
+  entry74 as CharacterRelationship,
+  entry75 as CharacterRelationship,
+  entry76 as CharacterRelationship,
+  entry77 as CharacterRelationship,
+  entry78 as CharacterRelationship,
+  entry79 as CharacterRelationship,
+  entry80 as CharacterRelationship,
+  entry81 as CharacterRelationship,
+  entry82 as CharacterRelationship,
+  entry83 as CharacterRelationship,
+  entry84 as CharacterRelationship,
+  entry85 as CharacterRelationship,
+  entry86 as CharacterRelationship,
+  entry87 as CharacterRelationship,
+  entry88 as CharacterRelationship,
+  entry89 as CharacterRelationship,
+  entry90 as CharacterRelationship,
+  entry91 as CharacterRelationship,
+  entry92 as CharacterRelationship,
+  entry93 as CharacterRelationship,
+  entry94 as CharacterRelationship,
+  entry95 as CharacterRelationship,
+  entry96 as CharacterRelationship,
+  entry97 as CharacterRelationship,
+  entry98 as CharacterRelationship,
+  entry99 as CharacterRelationship,
+  entry100 as CharacterRelationship,
+  entry101 as CharacterRelationship,
+  entry102 as CharacterRelationship,
+  entry103 as CharacterRelationship,
+  entry104 as CharacterRelationship,
+  entry105 as CharacterRelationship,
+  entry106 as CharacterRelationship,
+  entry107 as CharacterRelationship,
+  entry108 as CharacterRelationship,
+  entry109 as CharacterRelationship,
+  entry110 as CharacterRelationship,
+  entry111 as CharacterRelationship,
+  entry112 as CharacterRelationship,
+  entry113 as CharacterRelationship,
+  entry114 as CharacterRelationship,
+  entry115 as CharacterRelationship,
 ];

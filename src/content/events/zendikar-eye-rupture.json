@@ -1,0 +1,14 @@
+{
+  "title": "The Eye of Ugin Is Disturbed",
+  "chapterId": "many-worlds",
+  "summary": "A confrontation at the Eye damages the prison and begins the Eldrazi awakening.",
+  "narrative": [
+    "Jace, Chandra, and Sarkhan converged on the Eye of Ugin amid Nicol Bolas's larger schemes.",
+    "The resulting disruption weakened the prison, allowing Eldrazi spawn to emerge across Zendikar."
+  ],
+  "characterIds": [
+    "nahiri",
+    "emrakul"
+  ],
+  "cardName": "Eye of Ugin"
+}

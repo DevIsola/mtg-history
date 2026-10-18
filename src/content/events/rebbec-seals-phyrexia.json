@@ -1,0 +1,14 @@
+{
+  "title": "Rebbec Seals the Gateway",
+  "chapterId": "thran",
+  "summary": "Rebbec makes a final sacrifice to separate Dominaria from Phyrexia.",
+  "narrative": [
+    "As the Thran civilization collapsed, Rebbec recognized the danger posed by Yawgmoth and his Phyrexian domain.",
+    "Her decision to seal the gateway prevented Yawgmoth from freely returning to Dominaria, though the consequences of his rise would endure."
+  ],
+  "characterIds": [
+    "rebbec",
+    "yawgmoth"
+  ],
+  "cardName": "Rebbec, Architect of Ascension"
+}

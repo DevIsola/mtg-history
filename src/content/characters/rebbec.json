@@ -1,0 +1,27 @@
+{
+  "name": "Rebbec",
+  "title": "Architect of Ascension",
+  "origin": "Dominaria",
+  "role": "Thran architect",
+  "summary": "A celebrated Thran architect whose final choice separated Dominaria from Yawgmoth’s Phyrexia.",
+  "biography": [
+    "Rebbec was one of the greatest architects of the ancient Thran civilization. She incorporated powerstones into extraordinary structures, including the floating Thran Temple above Halcyon.",
+    "When her husband Glacian fell ill, Rebbec helped bring the physician Yawgmoth to Halcyon. His growing influence contributed to the destruction of the civilization she had helped build.",
+    "Recognizing the threat posed by Phyrexia, Rebbec sealed the gateway between the planes, cutting off Yawgmoth’s immediate path back to Dominaria."
+  ],
+  "chapterIds": [
+    "thran"
+  ],
+  "featuredCard": {
+    "name": "Rebbec, Architect of Ascension",
+    "setCode": "cmr",
+    "collectorNumber": "42",
+    "scryfallId": "46975250-950f-4f5d-a7c5-f61aec8e40ad",
+    "artist": "Magali Villeneuve",
+    "significance": "Depicts the influential Thran architect whose choices shaped Dominaria’s ancient history."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Commander Legends Characters",
+    "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Ertai",
+  "title": "The Wizard Left Behind",
+  "origin": "Dominaria — Tolaria",
+  "role": "Tolarian wizard and later Phyrexian agent",
+  "summary": "A talented, boastful Weatherlight mage whose efforts to open an escape portal left him stranded on Rath and vulnerable to corruption.",
+  "biography": [
+    "Ertai was a talented Tolarian wizard known for his mastery of countermagic and his considerable confidence in his own abilities. He joined the Weatherlight during the search for Captain Sisay.",
+    "After the Predator damaged the Weatherlight's ability to cross planes, Ertai helped open an escape portal on Rath. The crew used the Legacy's Skyshaper to reach it before it closed, but the escape left Ertai stranded on the enemy plane.",
+    "His isolation and subsequent experiences under Phyrexian influence transformed him. Ertai aided Crovax during the struggle for leadership of Rath and was depicted as Ertai, the Corrupted in Planeshift.",
+    "The later Dominaria United storyline resurrected Ertai centuries after his original death. His original Exodus and Planeshift cards record the much earlier journey from young wizard to fallen antagonist."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Ertai, Wizard Adept",
+    "setCode": "exo",
+    "collectorNumber": "33",
+    "scryfallId": "91971e19-61ce-45ac-b700-9ffca5091a27",
+    "artist": "Terese Nielsen",
+    "significance": "Ertai as a talented young mage before being stranded on Rath and later transformed by Phyrexia."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Face Cards, Part 2",
+    "url": "https://magic.wizards.com/en/news/making-magic/face-cards-part-2-2018-12-03"
+  }
+}

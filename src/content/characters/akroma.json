@@ -1,0 +1,27 @@
+{
+  "name": "Akroma",
+  "title": "The Angel of Wrath",
+  "origin": "Dominaria — Otaria",
+  "role": "Reality-sculpted angel and adversary of Phage",
+  "summary": "Created by Ixidor in grief, Akroma became a symbol of vengeance whose conflict with Phage culminated in Karona.",
+  "biography": [
+    "Akroma was a powerful angel made real by Ixidor after the death of Nivea in the Cabal pits.",
+    "Her purpose was vengeance against Phage, Jeska's transformed identity. Their confrontation grew beyond a personal feud as competing supporters rallied to them.",
+    "Kamahl's Soul Reaper strike joined Akroma, Phage, and Zagorka into Karona. Akroma died when that composite being was later broken apart."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Akroma, Angel of Wrath",
+    "setCode": "lgn",
+    "collectorNumber": "1",
+    "scryfallId": "814245de-6105-43ef-acbf-d12d304b6331",
+    "artist": "Ron Spears",
+    "significance": "The original Legions depiction of the angel created by Ixidor to avenge Nivea."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Quite Some Characters",
+    "url": "https://magic.wizards.com/en/news/making-magic/quite-some-characters-2020-11-09"
+  }
+}

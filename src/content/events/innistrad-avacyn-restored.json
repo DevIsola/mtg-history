@@ -1,0 +1,15 @@
+{
+  "title": "The Helvault Breaks and Avacyn Returns",
+  "chapterId": "many-worlds",
+  "summary": "Breaking the Helvault frees Avacyn and its demons, transforming the balance of hope and danger.",
+  "narrative": [
+    "Liliana's search for Griselbrand intersected with the desperate efforts of Innistrad's human defenders.",
+    "The Helvault's destruction released Avacyn and the imprisoned demons. The angel's return restored hope, but did not remove the supernatural threats to humanity."
+  ],
+  "characterIds": [
+    "avacyn",
+    "griselbrand",
+    "sorin"
+  ],
+  "cardName": "Avacyn, Angel of Hope"
+}

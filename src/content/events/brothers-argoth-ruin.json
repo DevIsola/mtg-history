@@ -1,0 +1,16 @@
+{
+  "title": "Argoth Becomes the Last Battlefield",
+  "chapterId": "brothers-war",
+  "summary": "The final confrontation devastates Argoth's living landscape and sets the stage for the Sylex catastrophe.",
+  "narrative": [
+    "Argoth's forests became a battleground despite having no stake in the original dispute between Urza and Mishra.",
+    "The discovery of Mishra's Phyrexian transformation raised the stakes of the final battle, but did not erase the earlier destruction caused by both brothers.",
+    "Urza's Sylex ended the battle at an ecological and magical price that echoed into Dominaria's long climatic crisis."
+  ],
+  "characterIds": [
+    "urza",
+    "mishra",
+    "gix"
+  ],
+  "cardName": "Urza's Sylex"
+}

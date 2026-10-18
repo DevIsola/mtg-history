@@ -1,0 +1,27 @@
+{
+  "name": "Braids",
+  "title": "An Agent of the Cabal",
+  "origin": "Dominaria — Otaria",
+  "role": "Cabal operative and dementia caster",
+  "summary": "A ruthless and unpredictable figure whose activities helped the Cabal maintain its reach during the Mirari crisis.",
+  "biography": [
+    "Braids served the Cabal in the era when its pit games and dementia magic shaped Otaria's political life.",
+    "She was involved in the movements and return of the Mirari after the artifact passed through the hands of rival powers.",
+    "Her original Odyssey card depicts the Cabal's uncompromising methods and the lives sacrificed to preserve its influence."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Braids, Cabal Minion",
+    "setCode": "ody",
+    "collectorNumber": "117",
+    "scryfallId": "4dcdcad5-e4fb-480e-984f-1ac5cdc986b9",
+    "artist": "Eric Peterson",
+    "significance": "Braids's original Odyssey portrait, representing the Cabal's harsh internal culture."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Commander Masters Storyteller, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1"
+  }
+}

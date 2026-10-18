@@ -1,0 +1,16 @@
+{
+  "title": "Yavimaya Pays for Another Rift's Repair",
+  "chapterId": "mending",
+  "summary": "Jeska's approach to the Yavimayan fracture has grave consequences for the forest and Multani.",
+  "narrative": [
+    "After sealing Zhalfir's fracture, Jeska sought to heal a dangerous wound associated with Yavimaya.",
+    "The effort came at a terrible cost to Multani, the ancient guardian of the forest and mentor of several Weatherlight heroes.",
+    "The episode linked her choices to the same old stories she believed she was trying to heal; the consequences could not be reduced to a tally of closed rifts."
+  ],
+  "characterIds": [
+    "jeska",
+    "multani",
+    "radha"
+  ],
+  "cardName": "Rift Elemental"
+}
