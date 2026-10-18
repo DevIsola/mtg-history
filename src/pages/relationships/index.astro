@@ -47,7 +47,7 @@ const categoryLabels = {
         <div class="network-field">
           <label for="network-person">Focus on a character</label>
           <select id="network-person">
-            {people.map((person) => <option value={person.id} selected={person.id === initialId}>{person.name}</option>)}
+            {people.map((person) => <option value={person.id} data-summary={person.summary} selected={person.id === initialId}>{person.name}</option>)}
           </select>
         </div>
         <div class="network-field">
@@ -87,6 +87,31 @@ const categoryLabels = {
             <button type="button" id="network-fit">Fit graph</button>
           </div>
         </div>
+        <div class="network-explore-tools" id="network-explore-tools">
+          <div class="network-explore-tools__field">
+            <label for="network-scope">Explore</label>
+            <select id="network-scope">
+              <option value="global">Entire network</option>
+              <option value="local">Connections around focus</option>
+            </select>
+          </div>
+          <div class="network-explore-tools__field">
+            <label for="network-depth">Connection depth</label>
+            <select id="network-depth" disabled>
+              <option value="1">1 step — direct ties</option>
+              <option value="2">2 steps</option>
+              <option value="3">3 steps</option>
+            </select>
+          </div>
+          <form id="network-search-form" class="network-explore-tools__search" role="search">
+            <label for="network-search">Find a character</label>
+            <div>
+              <input type="search" id="network-search" placeholder="Search character names" autocomplete="off" />
+              <button type="submit" id="network-find">Find</button>
+            </div>
+            <p id="network-search-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
         <ul class="network-visual__legend" aria-label="Relationship color legend">
           {Object.entries(categoryLabels).map(([key, label]) => (
             <li class={'network-legend--' + key}>{label}</li>
@@ -94,6 +119,22 @@ const categoryLabels = {
         </ul>
         <p id="network-graph-status" role="status" aria-live="polite">Loading relationship graph…</p>
         <div id="network-canvas" role="img" aria-label="Interactive character relationship graph"></div>
+        <aside id="network-inspector" class="network-inspector" aria-labelledby="network-inspector-heading">
+          <div class="network-inspector__content">
+            <p class="eyebrow" id="network-inspector-kind">Selected character</p>
+            <h4 id="network-inspector-heading">Character details</h4>
+            <p id="network-inspector-summary"></p>
+            <p id="network-inspector-count"></p>
+            <div class="network-inspector__chooser">
+              <label for="network-inspector-relation">Inspect a direct relationship</label>
+              <select id="network-inspector-relation">
+                <option value="">Selected character overview</option>
+              </select>
+            </div>
+          </div>
+          <a id="network-inspector-link" href={withBase('characters/' + initialId + '/')}>Read biography →</a>
+          <a id="network-inspector-chapter" href={withBase('timeline/')} hidden>Read historical chapter →</a>
+        </aside>
       </section>
       <p class="network-graph-error" id="network-graph-error" role="status" hidden>The interactive graph could not be loaded. All historical connections remain available in the relationship cards below.</p>
 
