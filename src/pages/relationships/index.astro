@@ -128,12 +128,20 @@ const categoryLabels = {
     const edges = Array.from(root.querySelectorAll<HTMLElement>('[data-network-edge]'));
 
     if (controls && select && type && reset && focus && name && count && profile && empty) {
-      const params = new URLSearchParams(window.location.search);
-      const requested = params.get('person');
-      if (requested && Array.from(select.options).some((option) => option.value === requested)) select.value = requested;
+      const validPeople = new Set(Array.from(select.options, (option) => option.value));
+      const validCategories = new Set(Array.from(type.options, (option) => option.value));
+      const restoreFromUrl = () => {
+        const params = new URLSearchParams(window.location.search);
+        const requested = params.get('person');
+        const category = params.get('type');
+        select.value = requested && validPeople.has(requested) ? requested : select.options[0]?.value ?? '';
+        type.value = category && validCategories.has(category) ? category : '';
+      };
+      restoreFromUrl();
       const initial = select.value;
-      const base = profile.href.slice(0, profile.href.indexOf('/characters/') + '/characters/'.length);
-      const update = (persist = true) => {
+      const base = profile.href.slice(0, profile.href.lastIndexOf('/') + 1)
+        .replace(/[^/]+\/$/, '');
+      const update = (persist = false) => {
         const person = select.value;
         const category = type.value;
         const selected = select.selectedOptions[0];
@@ -159,12 +167,17 @@ const categoryLabels = {
         if (persist) {
           const url = new URL(window.location.href);
           url.searchParams.set('person', person);
-          window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+          if (category) url.searchParams.set('type', category);
+          else url.searchParams.delete('type');
+          if (url.href !== window.location.href) {
+            window.history.pushState(null, '', url.pathname + url.search + url.hash);
+          }
         }
       };
-      select.addEventListener('change', () => update());
-      type.addEventListener('change', () => update());
-      reset.addEventListener('click', () => { select.value = initial; type.value = ''; update(); select.focus(); });
+      select.addEventListener('change', () => update(true));
+      type.addEventListener('change', () => update(true));
+      reset.addEventListener('click', () => { select.value = initial; type.value = ''; update(true); select.focus(); });
+      window.addEventListener('popstate', () => { restoreFromUrl(); update(false); });
       root.addEventListener('click', (event) => {
         const target = event.target;
         if (!(target instanceof Element)) return;
@@ -173,7 +186,7 @@ const categoryLabels = {
         const person = button.dataset.networkFocus;
         if (person && Array.from(select.options).some((option) => option.value === person)) {
           select.value = person;
-          update();
+          update(true);
           select.focus();
         }
       });

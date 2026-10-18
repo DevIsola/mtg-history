@@ -20,7 +20,7 @@ const enforce = process.env.A11Y_ENFORCE === '1';
 
 for (const [name, route] of routes) {
   test(`${name}: capture WCAG accessibility baseline`, async ({ page }, testInfo) => {
-    const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+    const response = await page.goto(route, { waitUntil: 'load' });
     expect(response?.ok()).toBeTruthy();
     await expect(page.locator('main h1').first()).toBeVisible();
 

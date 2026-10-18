@@ -382,6 +382,7 @@ const setCodes = [
         const compact = button.dataset.archiveView === 'compact';
         directory.classList.toggle('archive-directory--compact', compact);
         viewButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        applyFilters();
       });
     }
 
@@ -437,13 +438,14 @@ const setCodes = [
 
       jumpLinks.hidden = isFiltering;
       empty.hidden = visibleCount !== 0;
-      reset.disabled = !isFiltering;
+      reset.disabled = !(isFiltering || sort.value !== 'editorial' ||
+        directory.classList.contains('archive-directory--compact'));
 
       status.textContent =
         `Showing ${visibleCount} of ${cards.length} illustrated references`;
     };
 
-    sort.addEventListener('change', applySort);
+    sort.addEventListener('change', () => { applySort(); applyFilters(); });
     applySort();
     search.addEventListener('input', applyFilters);
     chapter.addEventListener('change', applyFilters);
@@ -453,6 +455,12 @@ const setCodes = [
       search.value = '';
       chapter.value = '';
       set.value = '';
+      sort.value = 'editorial';
+      applySort();
+      directory.classList.remove('archive-directory--compact');
+      for (const button of viewButtons) {
+        button.setAttribute('aria-pressed', String(button.dataset.archiveView === 'grid'));
+      }
 
       applyFilters();
       search.focus();

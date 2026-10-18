@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const port = 4321;
+// Dedicated production-preview port: never reuse an Astro dev/HMR server.
+const port = 4323;
 const baseURL = `http://127.0.0.1:${port}`;
 
 export default defineConfig({
@@ -16,9 +17,10 @@ export default defineConfig({
     { name: 'mobile-chromium', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: 'pnpm exec astro dev --host 127.0.0.1 --port 4321',
+    // Build here so standalone Playwright runs test the current source too.
+    command: `pnpm run build && pnpm exec astro preview --host 127.0.0.1 --port ${port}`,
     url: `${baseURL}/mtg-history/`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 120_000,
   },
 });
