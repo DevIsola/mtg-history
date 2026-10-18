@@ -7,6 +7,7 @@ const routes = [
   ['home', base],
   ['timeline', `${base}timeline/`],
   ['characters', `${base}characters/`],
+  ['relationships', `${base}relationships/`],
   ['events', `${base}events/`],
   ['archive', `${base}archive/`],
   ['discovery', `${base}discover/`],

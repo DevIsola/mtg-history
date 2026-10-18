@@ -133,6 +133,10 @@ const related = characterRelationships
       or shared historical events.
     </p>
 
+    <a class="text-link character-relations__explore" href={withBase('relationships/?person=' + id)}>
+      Explore this character's relationship network →
+    </a>
+
     <ul class="character-relations__list">
       {related.map((relationship) => (
         <li class="character-relations__item">
