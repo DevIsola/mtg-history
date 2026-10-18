@@ -223,3 +223,124 @@ test('relationship graph fits narrow mobile screens without page overflow', asyn
     document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(overflow).toBeLessThanOrEqual(1);
 });
+
+// Phase 2: local graph traversal is based strictly on curated relationship edges.
+test('relationship graph switches between global and one-to-three-hop local views', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  const atlas = page.locator('[data-relationship-explorer]');
+  await expect(atlas).toHaveAttribute('data-graph-state', 'ready');
+  const totalEdges = await page.locator('[data-network-edge]').count();
+  expect(Number(await atlas.getAttribute('data-graph-visible-edges'))).toBe(totalEdges);
+  const globalNodes = Number(await atlas.getAttribute('data-graph-visible-nodes'));
+
+  await page.locator('#network-scope').selectOption('local');
+  await expect(page.locator('#network-depth')).toBeEnabled();
+  await expect(atlas).toHaveAttribute('data-network-scope', 'local');
+  await expect(page).toHaveURL(/mode=local/);
+  const oneHop = Number(await atlas.getAttribute('data-graph-visible-nodes'));
+  expect(oneHop).toBeGreaterThan(1);
+  expect(oneHop).toBeLessThan(globalNodes);
+
+  await page.locator('#network-depth').selectOption('2');
+  await expect(page).toHaveURL(/depth=2/);
+  const twoHops = Number(await atlas.getAttribute('data-graph-visible-nodes'));
+  expect(twoHops).toBeGreaterThanOrEqual(oneHop);
+  await page.locator('#network-depth').selectOption('3');
+  const threeHops = Number(await atlas.getAttribute('data-graph-visible-nodes'));
+  expect(threeHops).toBeGreaterThanOrEqual(twoHops);
+  expect(threeHops).toBeLessThanOrEqual(globalNodes);
+
+  await page.locator('#network-scope').selectOption('global');
+  await expect(page.locator('#network-depth')).toBeDisabled();
+  expect(Number(await atlas.getAttribute('data-graph-visible-edges'))).toBe(totalEdges);
+});
+
+test('relationship graph finds named characters and handles missing searches', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  await expect(page.locator('[data-relationship-explorer]')).toHaveAttribute('data-graph-state', 'ready');
+  await page.locator('#network-search').fill('yawgm');
+  await expect(page.locator('#network-search-status')).toContainText('matching character');
+  await page.locator('#network-find').click();
+  await expect(page.locator('#network-person')).toHaveValue('yawgmoth');
+  await expect(page.locator('#network-inspector-heading')).toContainText('Yawgmoth');
+  await expect(page).toHaveURL(/person=yawgmoth/);
+  await page.locator('#network-search').fill('a-name-that-is-not-an-mtg-character');
+  await expect(page.locator('#network-search-status')).toContainText('0 matching characters');
+  await page.locator('#network-find').click();
+  await expect(page.locator('#network-person')).toHaveValue('yawgmoth');
+});
+
+test('relationship inspector provides character summaries and source-chapter links', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza&mode=local`);
+  await expect(page.locator('[data-relationship-explorer]')).toHaveAttribute('data-graph-state', 'ready');
+  await expect(page.locator('#network-inspector-summary')).not.toBeEmpty();
+  await expect(page.locator('#network-inspector-link')).toHaveAttribute('href', /\/characters\/urza\//);
+  const chooser = page.locator('#network-inspector-relation');
+  expect(await chooser.locator('option').count()).toBeGreaterThan(1);
+  await chooser.selectOption({ index: 1 });
+  await expect(page.locator('#network-inspector-kind')).toContainText('Documented');
+  await expect(page.locator('#network-inspector-summary')).not.toBeEmpty();
+  await expect(page.locator('#network-inspector-chapter')).toBeVisible();
+  await expect(page.locator('#network-inspector-chapter')).toHaveAttribute('href', /\/chapters\//);
+  await chooser.selectOption('');
+  await expect(page.locator('#network-inspector-kind')).toHaveText('Selected character');
+  await expect(page.locator('#network-inspector-link')).toBeVisible();
+});
+
+test('relationship scope and graph/card mode survive browser history and deep links', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza&mode=local&depth=2&view=cards`);
+  const atlas = page.locator('[data-relationship-explorer]');
+  await expect(atlas).toHaveAttribute('data-graph-state', 'ready');
+  await expect(page.locator('#network-scope')).toHaveValue('local');
+  await expect(page.locator('#network-depth')).toHaveValue('2');
+  await expect(page.locator('#network-show-cards')).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('#network-show-graph').click();
+  await expect(page).not.toHaveURL(/view=cards/);
+  await page.locator('#network-depth').selectOption('3');
+  await expect(page).toHaveURL(/depth=3/);
+  await page.goBack();
+  await expect(page.locator('#network-depth')).toHaveValue('2');
+  await expect(page.locator('#network-show-graph')).toHaveAttribute('aria-pressed', 'true');
+  await page.goBack();
+  await expect(page.locator('#network-show-cards')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#network-grid')).toBeVisible();
+  await page.goForward();
+  await expect(page.locator('#network-visual')).toBeVisible();
+});
+
+test('local graph rivalry filter uses exactly the source direct ties', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  const explorer = page.locator('[data-relationship-explorer]');
+  await expect(explorer).toHaveAttribute('data-graph-state', 'ready');
+  const expected = await page.locator('[data-network-edge]').evaluateAll((elements) => {
+    const hits = elements.filter((element) =>
+      element.dataset.category === 'rivalry' &&
+      (element.dataset.a === 'urza' || element.dataset.b === 'urza'));
+    const ids = new Set(['urza']);
+    for (const hit of hits) {
+      ids.add(hit.dataset.a);
+      ids.add(hit.dataset.b);
+    }
+    return { nodes: ids.size, edges: hits.length };
+  });
+  await page.locator('#network-scope').selectOption('local');
+  await page.locator('#network-category').selectOption('rivalry');
+  expect(Number(await explorer.getAttribute('data-graph-visible-nodes'))).toBe(expected.nodes);
+  expect(Number(await explorer.getAttribute('data-graph-visible-edges'))).toBe(expected.edges);
+});
+
+test('relationship reset restores the default global graph controls', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  await expect(page.locator('[data-relationship-explorer]')).toHaveAttribute('data-graph-state', 'ready');
+  await page.locator('#network-scope').selectOption('local');
+  await page.locator('#network-depth').selectOption('3');
+  await page.locator('#network-search').fill('Yawgmoth');
+  await page.locator('#network-show-cards').click();
+  await page.locator('#network-reset').click();
+  await expect(page.locator('#network-scope')).toHaveValue('global');
+  await expect(page.locator('#network-depth')).toHaveValue('1');
+  await expect(page.locator('#network-depth')).toBeDisabled();
+  await expect(page.locator('#network-search')).toHaveValue('');
+  await expect(page.locator('#network-show-graph')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page).not.toHaveURL(/mode=|depth=|view=/);
+});
