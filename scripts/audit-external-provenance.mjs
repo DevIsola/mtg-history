@@ -19,6 +19,20 @@ function normalized(value) {
   return String(value ?? '').normalize('NFC').trim().replace(/\s+/g, ' ');
 }
 
+// A chapter may intentionally display the first face of a battle or Adventure
+// while Scryfall identifies that exact printing by both faces' combined name.
+// Require both an actual multi-face record and the full composed name so an
+// unrelated partial title is never silently accepted as a matching printing.
+function printingNameMatches(displayName, printing) {
+  const name = normalized(displayName).toLowerCase();
+  const printedName = normalized(printing?.name).toLowerCase();
+  if (name === printedName) return true;
+  const faces = printing?.card_faces;
+  return Array.isArray(faces) && faces.length > 1 &&
+    normalized(faces[0]?.name).toLowerCase() === name &&
+    printedName === faces.map((face) => normalized(face.name).toLowerCase()).join(' // ');
+}
+
 /** Compare a specific printed card, not just the Oracle card or its general title. */
 export function comparePrinting(expected, actual) {
   const fields = [
@@ -28,9 +42,12 @@ export function comparePrinting(expected, actual) {
     ['name', 'name'],
     ['artist', 'artist'],
   ];
-  return fields.flatMap(([local, remote]) =>
-    normalized(expected[local]).toLowerCase() === normalized(actual?.[remote]).toLowerCase()
-      ? [] : [{ field: local, expected: expected[local] ?? null, actual: actual?.[remote] ?? null }]);
+  return fields.flatMap(([local, remote]) => {
+    const matches = local === 'name'
+      ? printingNameMatches(expected.name, actual)
+      : normalized(expected[local]).toLowerCase() === normalized(actual?.[remote]).toLowerCase();
+    return matches ? [] : [{ field: local, expected: expected[local] ?? null, actual: actual?.[remote] ?? null }];
+  });
 }
 
 function uniqueCardUses(chapters) {
