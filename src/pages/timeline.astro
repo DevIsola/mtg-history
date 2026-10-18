@@ -16,14 +16,22 @@ const entries = eras.map((era) => {
   const chapter = byEra.get(era.id);
   const events = historicalEvents.filter((event) => event.chapterId === era.id);
   const people = new Set(events.flatMap((event) => event.characterIds));
-  const searchText = [
+  const eraSearch = [
     era.name, era.kicker, era.summary, ...era.sets,
     chapter?.data.chronology.storyPeriod ?? '',
     chapter?.data.chronology.storyDetail ?? '',
-    ...events.flatMap((event) => [event.title, event.summary]),
+    chapter?.data.chronology.publicationHistory ?? '',
+  ].join(' ');
+  const eventRecords = events.map((event) => ({
+    event,
+    search: [event.title, event.summary,
+      ...event.characterIds.map((id) => characterNames.get(id) ?? ''),
+    ].join(' '),
+  }));
+  const searchText = [eraSearch, ...eventRecords.map(({ search }) => search),
     ...[...people].map((id) => characterNames.get(id) ?? ''),
   ].join(' ');
-  return { era, chapter, events, searchText };
+  return { era, chapter, eventRecords, eraSearch, searchText };
 });
 ---
 <BaseLayout
@@ -59,7 +67,7 @@ const entries = eras.map((era) => {
           <input id="timeline-search" type="search" placeholder="A person, place, event, or card set..." autocomplete="off" />
         </div>
         <div class="atlas-tools__field">
-          <label for="timeline-era">Jump to a historical era</label>
+          <label for="timeline-era">Filter by historical era</label>
           <select id="timeline-era">
             <option value="">All historical eras</option>
             {eras.map((era) => <option value={era.id}>{era.chapter} · {era.name}</option>)}
@@ -79,8 +87,8 @@ const entries = eras.map((era) => {
       <p class="atlas-empty" id="timeline-empty" hidden>No eras match those terms. Try a different search or clear the filters.</p>
 
       <div class="atlas-track">
-        {entries.map(({ era, chapter, events, searchText }) => (
-          <article class="atlas-era" id={era.id} data-timeline-era data-id={era.id} data-search={searchText}>
+        {entries.map(({ era, chapter, eventRecords, eraSearch, searchText }) => (
+          <article class="atlas-era" id={era.id} data-timeline-era data-id={era.id} data-search={searchText} data-era-search={eraSearch}>
             <div class="atlas-era__rail" aria-hidden="true"><span>{era.chapter}</span></div>
             <div class="atlas-era__content">
               <div class="atlas-era__topline">
@@ -99,12 +107,12 @@ const entries = eras.map((era) => {
                 {chapter && <a class="atlas-primary-link" href={withBase('chapters/' + chapter.id + '/#chapter-reader')}>Read the chapter →</a>}
                 <a class="text-link" href={withBase('events/') + '#' + era.id}>Browse events in context →</a>
               </div>
-              {events.length > 0 && (
+              {eventRecords.length > 0 && (
                 <details class="atlas-era__events" data-timeline-details>
-                  <summary><span>Defining historical events</span><small>{events.length} records</small></summary>
+                  <summary><span>Defining historical events</span><small data-timeline-event-count>{eventRecords.length} records</small></summary>
                   <ol>
-                    {events.map((event) => (
-                      <li>
+                    {eventRecords.map(({ event, search }) => (
+                      <li data-timeline-event data-search={search}>
                         <a href={withBase('events/' + event.id + '/')}>
                           <strong>{event.title}</strong>
                           <span>{event.summary}</span>
@@ -146,7 +154,22 @@ const entries = eras.map((era) => {
     const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
     if (controls && search && eraSelect && reset && expand && status && empty && jumps) {
-      const indexed = records.map((element) => ({ element, text: normalize(element.dataset.search ?? '') }));
+      const indexed = records.map((element) => ({
+        element,
+        text: normalize(element.dataset.search ?? ''),
+        eraText: normalize(element.dataset.eraSearch ?? ''),
+        details: element.querySelector<HTMLDetailsElement>('[data-timeline-details]'),
+        events: Array.from(element.querySelectorAll<HTMLElement>('[data-timeline-event]'))
+          .map((row) => ({ row, text: normalize(row.dataset.search ?? '') })),
+      }));
+
+      const syncExpand = () => {
+        const visible = details.filter((detail) => !detail.closest<HTMLElement>('[data-timeline-era]')?.hidden);
+        const allOpen = visible.length > 0 && visible.every((detail) => detail.open);
+        expand.setAttribute('aria-pressed', String(allOpen));
+        expand.textContent = allOpen ? 'Collapse all event lists' : 'Expand all event lists';
+      };
+
       const update = () => {
         const words = normalize(search.value).split(/\s+/).filter(Boolean);
         const selected = eraSelect.value;
@@ -155,15 +178,31 @@ const entries = eras.map((era) => {
           const match = (!selected || record.element.dataset.id === selected)
             && words.every((word) => record.text.includes(word));
           record.element.hidden = !match;
-          if (match) {
-            count++;
-            if (words.length) record.element.querySelector<HTMLDetailsElement>('[data-timeline-details]')?.setAttribute('open', '');
+          if (!match) continue;
+          count++;
+
+          // When an event matches but the era itself does not, surface the
+          // matching records rather than opening a lengthy unfiltered list.
+          const eraMatches = words.every((word) => record.eraText.includes(word));
+          const matchingEvents = record.events.filter(({ text }) =>
+            words.every((word) => text.includes(word)));
+          const narrowEvents = words.length > 0 && !eraMatches && matchingEvents.length > 0;
+          for (const { row } of record.events) {
+            row.hidden = narrowEvents && !matchingEvents.some((match) => match.row === row);
           }
+          const countLabel = record.details?.querySelector<HTMLElement>('[data-timeline-event-count]');
+          if (countLabel) {
+            countLabel.textContent = narrowEvents
+              ? matchingEvents.length + ' matching records'
+              : record.events.length + ' records';
+          }
+          if (narrowEvents && record.details) record.details.open = true;
         }
         status.textContent = 'Showing ' + count + ' of ' + records.length + ' historical eras';
         empty.hidden = count > 0;
         jumps.hidden = Boolean(selected || words.length);
         reset.disabled = !(selected || words.length);
+        syncExpand();
       };
       search.addEventListener('input', update);
       eraSelect.addEventListener('change', update);
@@ -173,11 +212,13 @@ const entries = eras.map((era) => {
         update();
         search.focus();
       });
+      for (const detail of details) detail.addEventListener('toggle', syncExpand);
       expand.addEventListener('click', () => {
         const open = expand.getAttribute('aria-pressed') !== 'true';
-        for (const detail of details) detail.open = open;
-        expand.setAttribute('aria-pressed', String(open));
-        expand.textContent = open ? 'Collapse all event lists' : 'Expand all event lists';
+        for (const detail of details) {
+          if (!detail.closest<HTMLElement>('[data-timeline-era]')?.hidden) detail.open = open;
+        }
+        syncExpand();
       });
       controls.hidden = false;
       update();

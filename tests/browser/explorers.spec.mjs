@@ -85,3 +85,93 @@ test('discover category navigation and alphabetical order work together', async 
   await page.locator('#discovery-reset').click();
   await expect(page.locator('#discovery-type')).toHaveValue('');
 });
+
+
+test('timeline event search narrows visible event records and restores them on clear', async ({ page }) => {
+  await page.goto(`${root}timeline/`);
+  const firstEra = page.locator('[data-timeline-era]').first();
+  const titles = await firstEra.locator('[data-timeline-event] strong').allTextContents();
+  const eraText = (await firstEra.getAttribute('data-era-search') ?? '').toLowerCase();
+  const title = titles.find((value) => !eraText.includes(value.trim().toLowerCase()))?.trim();
+  expect(title).toBeTruthy();
+  const total = await firstEra.locator('[data-timeline-event]').count();
+  expect(total).toBeGreaterThan(1);
+  await page.locator('#timeline-search').fill(title);
+  await expect(firstEra).toBeVisible();
+  await expect(firstEra.locator('[data-timeline-details]')).toHaveAttribute('open', '');
+  await expect(firstEra.locator('[data-timeline-event]:visible').first()).toContainText(title);
+  const narrowed = await firstEra.locator('[data-timeline-event]:visible').count();
+  expect(narrowed).toBeLessThan(total);
+  await page.locator('#timeline-reset').click();
+  await expect(firstEra.locator('[data-timeline-event]:visible')).toHaveCount(total);
+});
+
+test('relationship category and focused character are restored by browser history', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  const selected = page.locator('[data-network-edge]:visible').first();
+  const category = await selected.getAttribute('data-category');
+  expect(category).toBeTruthy();
+  await page.locator('#network-category').selectOption(category);
+  await expect(page).toHaveURL(new RegExp(`type=${category}`));
+  await page.goBack();
+  await expect(page.locator('#network-category')).toHaveValue('');
+  await expect(page.locator('#network-person')).toHaveValue('urza');
+  await page.goForward();
+  await expect(page.locator('#network-category')).toHaveValue(category);
+});
+
+test('archive reset restores layout and editorial sorting', async ({ page }) => {
+  await page.goto(`${root}archive/`);
+  await page.locator('#archive-sort').selectOption('title');
+  await page.locator('[data-archive-view="compact"]').click();
+  await expect(page.locator('#archive-reset')).toBeEnabled();
+  await page.locator('#archive-reset').click();
+  await expect(page.locator('#archive-sort')).toHaveValue('editorial');
+  await expect(page.locator('[data-archive-view="grid"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('.archive-directory')).not.toHaveClass(/archive-directory--compact/);
+});
+
+test('discover reset restores editorial sorting, and category links navigate', async ({ page }) => {
+  await page.goto(`${root}discover/`);
+  await page.locator('#discovery-sort').selectOption('alphabetical');
+  await expect(page.locator('#discovery-reset')).toBeEnabled();
+  await page.locator('#discovery-reset').click();
+  await expect(page.locator('#discovery-sort')).toHaveValue('editorial');
+  await page.locator('[data-discovery-tab][data-type="character"]').click();
+  await expect(page).toHaveURL(/#discovery-heading-character$/);
+  await expect(page.locator('#discovery-type')).toHaveValue('character');
+});
+
+for (const route of ['timeline/', 'relationships/', 'archive/', 'discover/']) {
+  test(`${route}: 320px narrow viewport has no horizontal page overflow`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 700 });
+    await page.goto(root + route);
+    await expect(page.locator('main h1')).toBeVisible();
+    const overflow = await page.evaluate(() =>
+      document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
+  });
+}
+
+test.describe('no-JavaScript fallback', () => {
+  test.use({ javaScriptEnabled: false });
+
+  test('timeline eras and native event disclosures remain readable', async ({ page }) => {
+    await page.goto(`${root}timeline/`);
+    await expect(page.locator('#timeline-controls')).toBeHidden();
+    const entry = page.locator('[data-timeline-era]').first();
+    await expect(entry).toBeVisible();
+    const details = entry.locator('details[data-timeline-details]');
+    await details.locator('summary').click();
+    await expect(details).toHaveAttribute('open', '');
+    await expect(details.locator('a').first()).toHaveAttribute('href', /\/events\//);
+  });
+
+  test('relationship records provide accessible static character links', async ({ page }) => {
+    await page.goto(`${root}relationships/`);
+    await expect(page.locator('#network-controls')).toBeHidden();
+    const edge = page.locator('[data-network-edge]').first();
+    await expect(edge).toBeVisible();
+    await expect(edge.locator('a').first()).toHaveAttribute('href', /\/characters\//);
+  });
+});
