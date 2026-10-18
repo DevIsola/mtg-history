@@ -228,6 +228,7 @@ const typeLabels: Record<RecordType, string> = {
 
   <section
     class="section-spacing discovery-directory"
+    id="discovery-directory"
     data-discovery-directory
   >
     <div class="page-shell">
@@ -245,6 +246,23 @@ const typeLabels: Record<RecordType, string> = {
           here, then follow its links into the narrative.
         </p>
       </div>
+
+      <div class="discovery-overview" aria-label="Encyclopedia coverage">
+        <div><strong>{chapterRecords.length}</strong><span>chapters</span></div>
+        <div><strong>{characterRecords.length}</strong><span>characters</span></div>
+        <div><strong>{eventRecords.length}</strong><span>events</span></div>
+      </div>
+
+      <nav class="discovery-tabs" aria-label="Browse encyclopedia sections">
+        <a href="#discovery-directory" data-discovery-tab data-type="">All records <strong>{recordCount}</strong></a>
+        <a href="#discovery-heading-chapter" data-discovery-tab data-type="chapter">Chapters <strong>{chapterRecords.length}</strong></a>
+        <a href="#discovery-heading-character" data-discovery-tab data-type="character">Characters <strong>{characterRecords.length}</strong></a>
+        <a href="#discovery-heading-event" data-discovery-tab data-type="event">Events <strong>{eventRecords.length}</strong></a>
+      </nav>
+
+      <a class="discovery-relationships-link" href={withBase('relationships/')}>
+        Explore interactive character relationships →
+      </a>
 
       <!-- The controls appear only after JavaScript loads. -->
       <div
@@ -303,6 +321,13 @@ const typeLabels: Record<RecordType, string> = {
               ))}
             </select>
           </div>
+          <div class="discovery-filter-field">
+            <label for="discovery-sort">Order results</label>
+            <select id="discovery-sort">
+              <option value="editorial">Curated archive order</option>
+              <option value="alphabetical">Title A–Z</option>
+            </select>
+          </div>
         </div>
 
         <div class="discovery-filters__footer">
@@ -343,7 +368,7 @@ const typeLabels: Record<RecordType, string> = {
           <div class="discovery-group__heading">
             <div>
               <p class="eyebrow">
-                {String(group.records.length).padStart(2, '0')}
+                <span data-discovery-group-count>{group.records.length}</span>
                 {' indexed records'}
               </p>
 
@@ -362,6 +387,7 @@ const typeLabels: Record<RecordType, string> = {
                 href={record.url}
                 data-discovery-record
                 data-type={record.type}
+                data-title={record.title}
                 data-chapters={record.chapterIds.join(' ')}
                 data-search={record.searchText}
               >
@@ -434,6 +460,8 @@ const typeLabels: Record<RecordType, string> = {
     const chapter = root.querySelector<HTMLSelectElement>(
       '#discovery-chapter'
     );
+    const sort = root.querySelector<HTMLSelectElement>('#discovery-sort');
+    const tabs = Array.from(root.querySelectorAll<HTMLAnchorElement>('[data-discovery-tab]'));
     const reset = root.querySelector<HTMLButtonElement>(
       '#discovery-reset'
     );
@@ -468,10 +496,26 @@ const typeLabels: Record<RecordType, string> = {
       search &&
       type &&
       chapter &&
+      sort &&
       reset &&
       status &&
       empty
     ) {
+      const originalOrder = new Map(groups.map((group) => [
+        group,
+        Array.from(group.querySelectorAll<HTMLElement>('[data-discovery-record]')),
+      ]));
+      const applySort = () => {
+        for (const [group, original] of originalOrder) {
+          const next = [...original];
+          if (sort.value === 'alphabetical') {
+            next.sort((a, b) => (a.dataset.title ?? '').localeCompare(b.dataset.title ?? ''));
+          }
+          const grid = group.querySelector<HTMLElement>('.discovery-grid');
+          if (grid) next.forEach((record) => grid.appendChild(record));
+        }
+      };
+
       const indexed = cards.map((card) => ({
         card,
         text: normalize(card.dataset.search ?? ''),
@@ -526,7 +570,14 @@ const typeLabels: Record<RecordType, string> = {
             )
           );
 
-          group.hidden = !items.some((item) => !item.hidden);
+          const visible = items.filter((item) => !item.hidden).length;
+          group.hidden = visible === 0;
+          const countLabel = group.querySelector<HTMLElement>('[data-discovery-group-count]');
+          if (countLabel) countLabel.textContent = String(visible);
+        }
+        for (const tab of tabs) {
+          if (tab.dataset.type === selectedType) tab.setAttribute('aria-current', 'true');
+          else tab.removeAttribute('aria-current');
         }
 
         status.textContent =
@@ -536,6 +587,15 @@ const typeLabels: Record<RecordType, string> = {
         reset.disabled = !isFiltering;
       };
 
+      for (const tab of tabs) {
+        tab.addEventListener('click', (event) => {
+          event.preventDefault();
+          type.value = tab.dataset.type ?? '';
+          applyFilters();
+        });
+      }
+      sort.addEventListener('change', applySort);
+      applySort();
       search.addEventListener('input', applyFilters);
       type.addEventListener('change', applyFilters);
       chapter.addEventListener('change', applyFilters);

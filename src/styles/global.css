@@ -23,3 +23,6 @@
 
 /* Unified encyclopedia search */
 @import "./discovery.css";
+
+/* Progressive interactive explorers and updated directories */
+@import "./interactive-explorers.css";

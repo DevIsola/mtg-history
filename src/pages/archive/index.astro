@@ -78,7 +78,7 @@ const setCodes = [
   <section class="page-banner">
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">
-        The historical collection``
+        The historical collection
       </p>
 
       <h1>The illustrated <em>archive.</em></h1>
@@ -107,6 +107,12 @@ const setCodes = [
           Each card links to its printing and the
           chapter where its story is told.
         </p>
+      </div>
+
+      <div class="archive-overview" aria-label="Collection coverage">
+        <div><strong>{cardCount}</strong><span>curated cards</span></div>
+        <div><strong>{sections.length}</strong><span>historical chapters</span></div>
+        <div><strong>{setCodes.length}</strong><span>illustrated sets</span></div>
       </div>
 
       <!-- Progressive enhancement: hidden without JavaScript -->
@@ -161,6 +167,14 @@ const setCodes = [
               ))}
             </select>
           </div>
+          <div class="archive-filter-field">
+            <label for="archive-sort">Sort within chapters</label>
+            <select id="archive-sort">
+              <option value="editorial">Curated story order</option>
+              <option value="title">Card name A–Z</option>
+              <option value="set">Card set A–Z</option>
+            </select>
+          </div>
         </div>
 
         <div class="archive-filters__footer">
@@ -173,6 +187,10 @@ const setCodes = [
             Showing {cardCount} of {cardCount} illustrated references
           </p>
 
+          <div class="archive-view-tools" role="group" aria-label="Card layout">
+            <button class="archive-view-button" type="button" data-archive-view="grid" aria-pressed="true">Gallery</button>
+            <button class="archive-view-button" type="button" data-archive-view="compact" aria-pressed="false">Compact</button>
+          </div>
           <button
             id="archive-reset"
             type="button"
@@ -244,6 +262,7 @@ const setCodes = [
                 data-archive-card
                 data-chapter={section.id}
                 data-set={card.setCode.toLowerCase()}
+                data-card-title={card.name}
                 data-search={`${section.title} ${card.name} ${card.significance} ${card.artist} ${formatSet(card.setCode)}`}
               >
                 <a
@@ -301,10 +320,14 @@ const setCodes = [
   const search = document.querySelector<HTMLInputElement>('#archive-search');
   const chapter = document.querySelector<HTMLSelectElement>('#archive-chapter');
   const set = document.querySelector<HTMLSelectElement>('#archive-set');
+  const sort = document.querySelector<HTMLSelectElement>('#archive-sort');
   const reset = document.querySelector<HTMLButtonElement>('#archive-reset');
   const status = document.querySelector<HTMLElement>('#archive-filter-status');
   const empty = document.querySelector<HTMLElement>('#archive-no-results');
   const jumpLinks = document.querySelector<HTMLElement>('#archive-jump-links');
+
+  const viewButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-archive-view]'));
+  const directory = document.querySelector<HTMLElement>('.archive-directory');
 
   const cards = Array.from(
     document.querySelectorAll<HTMLElement>('[data-archive-card]')
@@ -326,12 +349,41 @@ const setCodes = [
     search &&
     chapter &&
     set &&
+    sort &&
+    directory &&
     reset &&
     status &&
     empty &&
     jumpLinks
   ) {
     panel.hidden = false;
+
+    const editorialOrder = new Map(sections.map((section) => [
+      section,
+      Array.from(section.querySelectorAll<HTMLElement>('[data-archive-card]')),
+    ]));
+
+    const applySort = () => {
+      for (const [section, original] of editorialOrder) {
+        const sorted = [...original];
+        if (sort.value === 'title') {
+          sorted.sort((a, b) => (a.dataset.cardTitle ?? '').localeCompare(b.dataset.cardTitle ?? ''));
+        } else if (sort.value === 'set') {
+          sorted.sort((a, b) => (a.dataset.set ?? '').localeCompare(b.dataset.set ?? '') ||
+            (a.dataset.cardTitle ?? '').localeCompare(b.dataset.cardTitle ?? ''));
+        }
+        const grid = section.querySelector<HTMLElement>('.archive-card-grid');
+        if (grid) sorted.forEach((card) => grid.appendChild(card));
+      }
+    };
+
+    for (const button of viewButtons) {
+      button.addEventListener('click', () => {
+        const compact = button.dataset.archiveView === 'compact';
+        directory.classList.toggle('archive-directory--compact', compact);
+        viewButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      });
+    }
 
     const applyFilters = () => {
       const query = normalize(search.value);
@@ -391,6 +443,8 @@ const setCodes = [
         `Showing ${visibleCount} of ${cards.length} illustrated references`;
     };
 
+    sort.addEventListener('change', applySort);
+    applySort();
     search.addEventListener('input', applyFilters);
     chapter.addEventListener('change', applyFilters);
     set.addEventListener('change', applyFilters);
