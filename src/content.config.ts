@@ -28,6 +28,8 @@ const chapters = defineCollection({
       publicationHistory: z.string(),
     }),
 
+    cardIds: z.array(reference("cards")).min(1),
+
     cards: z
       .array(
         z.object({
@@ -59,6 +61,17 @@ const chapters = defineCollection({
  * Canonical entity records live in one JSON file per character, event, or tie.
  * Existing src/data/*.ts imports remain as generated compatibility adapters.
  */
+// A card is an exact Scryfall printing (not an Oracle card). File IDs are UUIDs.
+const cards = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/cards" }),
+  schema: z.object({
+    name: z.string().min(1),
+    setCode: z.string().min(2),
+    collectorNumber: z.string().min(1),
+    artist: z.string().min(1),
+  }),
+});
+
 const characters = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/characters" }),
   schema: z.object({
@@ -69,6 +82,7 @@ const characters = defineCollection({
     summary: z.string(),
     biography: z.array(z.string()),
     chapterIds: z.array(reference("chapters")).min(1),
+    featuredCardId: reference("cards"),
     featuredCard: z.object({
       name: z.string(),
       setCode: z.string(),
@@ -90,6 +104,7 @@ const events = defineCollection({
     narrative: z.array(z.string()),
     characterIds: z.array(reference("characters")),
     cardName: z.string(),
+    cardId: reference("cards"),
   }),
 });
 
@@ -106,4 +121,4 @@ const relationships = defineCollection({
   }),
 });
 
-export const collections = { chapters, characters, events, relationships };
+export const collections = { chapters, cards, characters, events, relationships };

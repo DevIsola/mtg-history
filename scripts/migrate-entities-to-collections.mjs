@@ -1,5 +1,5 @@
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
-import { join, resolve } from 'node:path';
+import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
 import { entitySpecs, prepareRecords, renderAdapter } from './entity-collection-tools.mjs';
