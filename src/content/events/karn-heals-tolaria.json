@@ -1,0 +1,15 @@
+{
+  "title": "Karn Heals the Tolarian Rift",
+  "chapterId": "mending",
+  "summary": "Karn confronts the Academy's temporal catastrophe and disappears after repairing the fracture.",
+  "narrative": [
+    "Tolaria's rift emerged from Urza's temporal research and the disaster that struck his Academy.",
+    "Karn traveled into the past to address its origin and vanished afterward, leaving Jeska without her mentor during the remaining crisis."
+  ],
+  "characterIds": [
+    "karn",
+    "jeska",
+    "jhoira"
+  ],
+  "cardName": "The Mending of Dominaria"
+}

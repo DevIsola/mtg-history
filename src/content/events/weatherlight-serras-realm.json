@@ -1,0 +1,15 @@
+{
+  "title": "Serra's Realm Becomes the Weatherlight's Power",
+  "chapterId": "weatherlight",
+  "summary": "Radiant struggles against Phyrexian infiltration as the collapsing realm's mana is gathered to power the skyship.",
+  "narrative": [
+    "After the Phyrexians tainted Serra's artificial realm and Serra departed, Radiant inherited its defense and grew increasingly severe.",
+    "The Weatherlight's intervention evacuated inhabitants who wished to leave before Urza collapsed the remaining realm into a powerstone.",
+    "The resulting engine linked a celebrated symbol of multiversal hope to the death of an entire artificial world."
+  ],
+  "characterIds": [
+    "radiant",
+    "urza"
+  ],
+  "cardName": "Radiant, Archangel"
+}

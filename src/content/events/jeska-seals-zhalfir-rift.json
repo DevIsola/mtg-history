@@ -1,0 +1,15 @@
+{
+  "title": "Jeska Closes the Zhalfirin Rift",
+  "chapterId": "mending",
+  "summary": "A dangerous fracture is closed, but Teferi's remaining route to Zhalfir is cut off.",
+  "narrative": [
+    "Jeska tried to repair the damage to Dominaria while relying upon others' connections to the rifts.",
+    "Closing the Zhalfirin wound preserved reality but eliminated the route through which Teferi hoped to recover the phased-out homeland."
+  ],
+  "characterIds": [
+    "jeska",
+    "teferi",
+    "radha"
+  ],
+  "cardName": "Jeska, Thrice Reborn"
+}

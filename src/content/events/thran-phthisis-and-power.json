@@ -1,0 +1,17 @@
+{
+  "title": "Phthisis Becomes an Instrument of Power",
+  "chapterId": "thran",
+  "summary": "Yawgmoth uses treatment of a powerstone-linked sickness to gain political authority over Halcyon and its excluded people.",
+  "narrative": [
+    "Powerstone exposure lay behind the illness that ravaged the Thran, with the Untouchables suffering disproportionately from the city's dependence on its energy infrastructure.",
+    "Yawgmoth's medical expertise and provision of treatment increased his credibility; his control over diagnosis, confinement, and care became a way to manipulate political loyalties.",
+    "The card Thran Dynamo is a later image of Thran-derived artifice, not a literal picture of the Mana Rig or its victims."
+  ],
+  "characterIds": [
+    "yawgmoth",
+    "glacian",
+    "rebbec",
+    "gix"
+  ],
+  "cardName": "Thran Dynamo"
+}

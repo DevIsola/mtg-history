@@ -1,0 +1,16 @@
+{
+  "title": "The Mending of the Multiverse",
+  "chapterId": "mending",
+  "summary": "The restoration of reality fundamentally changes the nature of planeswalkers.",
+  "narrative": [
+    "The repair of Dominaria’s temporal rifts required the intervention and sacrifice of several powerful figures, including Freyalise and Lord Windgrace.",
+    "The final restoration, associated with Jeska’s actions, transformed the nature of the planeswalker spark and ended the era of near-omnipotent oldwalkers."
+  ],
+  "characterIds": [
+    "jeska",
+    "teferi",
+    "freyalise",
+    "windgrace"
+  ],
+  "cardName": "The Mending of Dominaria"
+}

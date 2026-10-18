@@ -1,0 +1,14 @@
+{
+  "title": "Sorin Creates Avacyn",
+  "chapterId": "many-worlds",
+  "summary": "Sorin fashions an angel to protect humanity and sustain Innistrad's fragile balance.",
+  "narrative": [
+    "Sorin understood that unconstrained predation would eventually threaten the vampires alongside their human prey.",
+    "He created Avacyn as a guardian and the focus of a protective church, giving human communities a chance to survive."
+  ],
+  "characterIds": [
+    "sorin",
+    "avacyn"
+  ],
+  "cardName": "Sorin, Lord of Innistrad"
+}

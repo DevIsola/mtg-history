@@ -1,0 +1,15 @@
+{
+  "title": "The Origins of Dominaria's Temporal Rifts",
+  "chapterId": "mending",
+  "summary": "Separate catastrophes at Tolaria, Shiv, Zhalfir, Urborg, Skyshroud, and Otaria weaken a single world.",
+  "narrative": [
+    "The Sylex Blast, Urza's Tolarian experiments, Teferi's phasing, the Rathi Overlay, and Karona's emergence left different kinds of damage in Dominaria's history.",
+    "The wounds accumulated and accelerated the loss of mana, so a local solution could have consequences for other regions."
+  ],
+  "characterIds": [
+    "teferi",
+    "karn",
+    "jeska"
+  ],
+  "cardName": "The Mending of Dominaria"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Leshrac",
+  "title": "The Night Walker",
+  "origin": "The Multiverse — active on Dominaria",
+  "role": "Ancient planeswalker and manipulator during the Mending",
+  "summary": "An old planeswalker who exploited Jeska's fear of losing her spark and was ultimately defeated by Nicol Bolas.",
+  "biography": [
+    "Leshrac was an ancient and dangerous planeswalker whose name had been associated with dark magic on Dominaria since the time of Lim-Dûl.",
+    "During the temporal crisis he offered Jeska advice that appeared to let her close rifts without giving up her own spark, while drawing on Radha's extraordinary bond to rift mana.",
+    "His motives were predatory: he sought the power connected to Jeska's Phage identity and challenged Nicol Bolas. Bolas defeated him and used the remaining power to close the Madaran rift."
+  ],
+  "chapterIds": [
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Leshrac's Sigil",
+    "setCode": "ice",
+    "collectorNumber": "144",
+    "scryfallId": "ad5ba7ee-d6df-4b62-a8a1-c81e6fca392a",
+    "artist": "Drew Tucker",
+    "significance": "An Ice Age card named after Leshrac; thematic evidence of his earlier influence rather than a portrait of the planeswalker."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Known Multiverse",
+    "url": "https://magic.wizards.com/en/news/feature/known-mutliverse-2008-03-19"
+  }
+}

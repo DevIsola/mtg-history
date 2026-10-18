@@ -1,0 +1,15 @@
+{
+  "title": "Kamahl Releases Mirari's Wake",
+  "chapterId": "otaria",
+  "summary": "Kamahl abandons the Mirari sword in Krosa, releasing transformative magical energy into the forest.",
+  "narrative": [
+    "After learning from the Krosan druids and turning away from his old life, Kamahl confronted the continuing danger of the Mirari and the ambitions of Laquatus.",
+    "He planted the Mirari sword in Krosa. The land absorbed and radiated its power, creating Mirari's Wake and changing the forest's fate."
+  ],
+  "characterIds": [
+    "kamahl",
+    "seton",
+    "laquatus"
+  ],
+  "cardName": "Mirari's Wake"
+}

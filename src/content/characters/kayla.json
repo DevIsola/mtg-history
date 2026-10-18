@@ -1,0 +1,29 @@
+{
+  "name": "Kayla bin-Kroog",
+  "title": "The Queen Who Endured",
+  "origin": "Dominaria — Yotia and Argive",
+  "role": "Yotian noble, queen, and historical chronicler",
+  "summary": "A royal figure whose life was transformed by Urza's war with Mishra, and whose leadership helped preserve her people after catastrophe.",
+  "biography": [
+    "Kayla bin-Kroog belonged to the ruling family of Yotia. Her marriage to Urza connected the artificer to Yotian political power, placing her close to the origins and escalation of the Brothers' War.",
+    "The destruction of Kroog devastated the world Kayla had known. She survived the attack and became a leader for people displaced by the war, facing political and humanitarian consequences that neither brother's inventions could solve.",
+    "Kayla's experiences continued beyond the final battle on Argoth. As the climate deteriorated and surviving communities struggled to adapt, she worked to preserve order and protect the people under her care.",
+    "Her account, The Antiquities War, became an important historical record of the conflict. Her perspective preserved not simply the actions of Urza and Mishra but the suffering and resilience of those who lived through their decisions."
+  ],
+  "chapterIds": [
+    "brothers-war",
+    "ice-age"
+  ],
+  "featuredCard": {
+    "name": "Queen Kayla bin-Kroog",
+    "setCode": "bro",
+    "collectorNumber": "218",
+    "scryfallId": "685c9767-eaa7-4e16-b245-816181e2fc36",
+    "artist": "Cristi Balanescu",
+    "significance": "A depiction of Kayla as a leader whose role continued beyond the military conflict between Urza and Mishra."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Brothers' War, Episode 1: The End",
+    "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end"
+  }
+}

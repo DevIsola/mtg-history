@@ -1,0 +1,15 @@
+{
+  "title": "The Rise of Yawgmoth",
+  "chapterId": "thran",
+  "summary": "A physician gains control of Phyrexia and becomes an existential threat to Dominaria.",
+  "narrative": [
+    "Yawgmoth gained influence during a crisis in the ancient Thran civilization. His ambition and increasingly ruthless medical experiments helped destabilize an already divided society.",
+    "With access to the artificial plane of Phyrexia, he established the foundations of an empire that would threaten Dominaria for thousands of years."
+  ],
+  "characterIds": [
+    "yawgmoth",
+    "rebbec",
+    "glacian"
+  ],
+  "cardName": "Yawgmoth, Thran Physician"
+}

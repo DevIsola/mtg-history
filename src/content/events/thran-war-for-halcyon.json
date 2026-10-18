@@ -1,0 +1,16 @@
+{
+  "title": "The Thran-Phyrexian War Destroys Halcyon",
+  "chapterId": "thran",
+  "summary": "The struggle against Yawgmoth destroys the capital; Rebbec seals the passage, but cannot restore the empire.",
+  "narrative": [
+    "Yawgmoth's expanding power and the forces emerging from Phyrexia led to a war involving resistance beyond the original ruling circles of Halcyon.",
+    "Rebbec sacrificed herself to close the gate after the capital was devastated, separating Dominaria from an entrenched Phyrexian threat."
+  ],
+  "characterIds": [
+    "rebbec",
+    "yawgmoth",
+    "glacian",
+    "gix"
+  ],
+  "cardName": "Rebbec, Architect of Ascension"
+}

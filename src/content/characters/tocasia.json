@@ -1,0 +1,28 @@
+{
+  "name": "Tocasia",
+  "title": "Mentor of the Brothers",
+  "origin": "Dominaria — Terisiare",
+  "role": "Archaeologist, artificer, and teacher",
+  "summary": "An archaeologist who guided Urza and Mishra through the ruins of the Thran before their rivalry brought tragedy to her camp.",
+  "biography": [
+    "Tocasia was an experienced archaeologist whose investigations of ancient Thran ruins provided the setting for Urza and Mishra's early studies. She helped nurture their interest in artifice and the forgotten civilizations of Dominaria.",
+    "The brothers' discoveries at the Caves of Koilos brought them into possession of the Mightstone and Weakstone. As their rivalry grew, the artifacts increasingly became objects of conflict rather than shared curiosity.",
+    "Tocasia died when she attempted to intervene in a confrontation between the brothers. Her death ended their life together under her guidance and became one of the defining tragedies preceding the Brothers' War.",
+    "The Brothers' War expansion later depicted Tocasia on a legendary creature card, giving an important early figure in the story her own representation in the illustrated historical record."
+  ],
+  "chapterIds": [
+    "brothers-war"
+  ],
+  "featuredCard": {
+    "name": "Tocasia, Dig Site Mentor",
+    "setCode": "bro",
+    "collectorNumber": "360",
+    "scryfallId": "25d759dc-0501-481a-8330-005f83b999d7",
+    "artist": "Lie Setiawan",
+    "significance": "An extended-art depiction of Tocasia, the archaeologist who mentored Urza and Mishra."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Act of War, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/act-of-war-part-1"
+  }
+}

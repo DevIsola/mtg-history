@@ -1,0 +1,27 @@
+{
+  "name": "Lord Windgrace",
+  "title": "Protector of Urborg",
+  "origin": "Dominaria — Urborg",
+  "role": "Planeswalker and guardian of Urborg",
+  "summary": "An ancient protector who surrendered his life to close Urborg's temporal rift.",
+  "biography": [
+    "Lord Windgrace ruled as a guardian of Urborg and was wary of the destructive effects of artifice and the interventions of outsiders. The Rathi Overlay left his homeland scarred with transplanted structures and a dangerous rift.",
+    "When Teferi and his companions sought a way to heal the plane, Windgrace's suspicion made cooperation difficult. He nevertheless came to recognize the scale of the crisis.",
+    "Windgrace gave his life sealing Urborg's rift, leaving an enduring spiritual connection to the land he had defended."
+  ],
+  "chapterIds": [
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Lord Windgrace",
+    "setCode": "c18",
+    "collectorNumber": "43",
+    "scryfallId": "213d6fb8-5624-4804-b263-51f339482754",
+    "artist": "Bram Sels",
+    "significance": "A Commander 2018 depiction of the historical guardian of Urborg."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Planeswalker's Guide to Dominaria",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31"
+  }
+}

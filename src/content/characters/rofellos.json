@@ -1,0 +1,27 @@
+{
+  "name": "Rofellos",
+  "title": "Llanowar Emissary",
+  "origin": "Dominaria — Llanowar",
+  "role": "Elvish mage and Gerrard's fallen companion",
+  "summary": "A friend of Gerrard and Mirri whose death aboard the Weatherlight helped turn Gerrard against his inherited mission.",
+  "biography": [
+    "Rofellos studied under Multani alongside Gerrard and Mirri, becoming part of their closest circle of friends.",
+    "He later joined the Weatherlight crew and died before Sisay's kidnapping. His loss helped drive Gerrard and Mirri away from the ship.",
+    "Although he was absent from the main rescue narrative, Urza's Destiny later gave him a card because its flashback period could depict his earlier life."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Rofellos, Llanowar Emissary",
+    "setCode": "uds",
+    "collectorNumber": "118",
+    "scryfallId": "6aa5cc65-f8f1-4f6f-8b4e-2fedccbda684",
+    "artist": "Michael Sutfin",
+    "significance": "A retrospective card of the Llanowar elf who influenced Gerrard's departure from the Weatherlight."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Magic Design A to Z, Part 3",
+    "url": "https://magic.wizards.com/en/news/making-magic/magic-design-a-to-z-part-3"
+  }
+}

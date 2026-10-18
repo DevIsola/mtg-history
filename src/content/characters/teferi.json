@@ -1,0 +1,29 @@
+{
+  "name": "Teferi",
+  "title": "The Time Mage of Zhalfir",
+  "origin": "Dominaria — Zhalfir",
+  "role": "Temporal archmage; former planeswalker",
+  "summary": "A master of time magic who surrendered his planeswalker spark to save Shiv and begin healing Dominaria.",
+  "biography": [
+    "A gifted student of the Tolarian Academy, Teferi mastered temporal magic and eventually became a planeswalker. During the Phyrexian invasion he phased Zhalfir and Shiv out of ordinary reality to spare them from conquest.",
+    "Returning to Dominaria centuries later, he found a dying plane whose time rifts were partly the legacy of those drastic interventions. He worked with Jhoira, Venser, and Radha to understand how they could be sealed.",
+    "Teferi spent his spark restoring Shiv and healing its rift. Zhalfir, however, remained absent—one of the most enduring costs of his earlier decision.",
+    "When Wrenn reached Realmbreaker, the Zhalfirin armies returned to the fight and the displaced nation regained its place in the Multiverse."
+  ],
+  "chapterIds": [
+    "mending",
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Teferi, Mage of Zhalfir",
+    "setCode": "tsp",
+    "collectorNumber": "83",
+    "scryfallId": "3c0145f6-4e27-49e7-9ef6-bac6fa3de26d",
+    "artist": "D. Alexander Gregory & Jeremy Jarvis",
+    "significance": "Teferi as depicted in Time Spiral, before the sacrifice of his planeswalker spark."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Teferi: Behind the Magic",
+    "url": "https://magic.wizards.com/en/news/card-preview/teferi-behind-magic-2020-06-12"
+  }
+}

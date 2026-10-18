@@ -1,0 +1,27 @@
+{
+  "name": "Barrin",
+  "title": "Master Wizard of Tolaria",
+  "origin": "Dominaria — Tolaria",
+  "role": "Tolarian headmaster, Urza's ally, and Hanna's father",
+  "summary": "An academy leader whose final spell destroyed Phyrexian-occupied Tolaria after the death of his family.",
+  "biography": [
+    "Barrin led the Tolarian Academy while working with Urza to prepare mages and artificers for a future confrontation with Phyrexia.",
+    "He was the father of Hanna, the Weatherlight's navigator. Her independent career tied the Academy's research to the living crew Urza expected to assemble the Legacy.",
+    "The invasion killed his wife Rayne and daughter Hanna. Finding Tolaria overrun, Barrin cast Obliterate, destroying the area and himself."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Barrin, Master Wizard",
+    "setCode": "usg",
+    "collectorNumber": "63",
+    "scryfallId": "ec79e35f-9e78-462d-8b71-4f044e2eff90",
+    "artist": "Michael Sutfin",
+    "significance": "A portrait of the Tolarian mage whose final sacrifice came during the Phyrexian invasion."
+  },
+  "source": {
+    "title": "Wizards of the Coast — From the Vault: Lore",
+    "url": "https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01"
+  }
+}

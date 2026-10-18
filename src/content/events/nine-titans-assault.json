@@ -1,0 +1,17 @@
+{
+  "title": "The Nine Titans Assault Phyrexia",
+  "chapterId": "weatherlight",
+  "summary": "Urza leads nine planeswalkers into Phyrexia, but Tevesh Szat's betrayal brings lethal consequences.",
+  "narrative": [
+    "Urza assembled the Nine Titans—nine powerful planeswalkers, including Freyalise, Lord Windgrace, and Tevesh Szat—to strike directly at Phyrexia while Dominaria fought the invasion.",
+    "Szat turned on his companions and killed Daria and Kristina. Urza had anticipated this betrayal and used Szat's life essence to fuel the soul bombs intended to destroy Phyrexian territory.",
+    "The operation inflicted tremendous damage, but its sacrifices exposed the moral cost of Urza's strategy. The remaining Titans struggled to fulfill the mission even as Urza became captivated by Phyrexian artifice."
+  ],
+  "characterIds": [
+    "urza",
+    "tevesh-szat",
+    "freyalise",
+    "windgrace"
+  ],
+  "cardName": "Tevesh Szat, Doom of Fools"
+}

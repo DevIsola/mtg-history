@@ -1,0 +1,13 @@
+{
+  "title": "Bolas, Leshrac, and the Madaran Rift",
+  "chapterId": "mending",
+  "summary": "The contest between two ancient planeswalkers becomes the means of sealing Madara's fracture.",
+  "narrative": [
+    "Leshrac attempted to use Jeska and the rifts to increase his own power before confronting Nicol Bolas.",
+    "Bolas defeated Leshrac and used the defeated walker's power to seal the Madaran rift, an outcome driven by rivalry rather than altruism."
+  ],
+  "characterIds": [
+    "jeska"
+  ],
+  "cardName": "The Mending of Dominaria"
+}

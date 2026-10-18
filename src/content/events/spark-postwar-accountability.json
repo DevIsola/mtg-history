@@ -1,0 +1,18 @@
+{
+  "title": "Ravnica Assigns Pursuit of Bolas's Collaborators",
+  "chapterId": "war-of-the-spark",
+  "summary": "Ravnica's restored leadership seeks accountability from the walkers who aided the invasion.",
+  "narrative": [
+    "After Bolas's fall, the guilds considered the role played by people who had helped the dragon bring devastation to the city.",
+    "Ral Zarek agreed to pursue Tezzeret, Vraska was tasked with finding Dovin Baan, and Kaya was asked to hunt Liliana Vess.",
+    "Liliana's rebellion and Gideon's sacrifice complicated the question of responsibility, demonstrating that the war's moral consequences did not end with its last battle."
+  ],
+  "characterIds": [
+    "ral-zarek",
+    "tezzeret",
+    "dovin-baan",
+    "vraska",
+    "liliana-vess"
+  ],
+  "cardName": "Ral, Storm Conduit"
+}

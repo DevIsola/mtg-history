@@ -1,0 +1,30 @@
+{
+  "name": "Jaya Ballard",
+  "title": "The Task Mage of the Ice Age",
+  "origin": "Dominaria — Terisiare",
+  "role": "Pyromancer, task mage, and later planeswalker",
+  "summary": "A renowned pyromancer and longtime friend of Jodah, whose courage and magical abilities helped defend Dominaria during and after the Ice Age.",
+  "biography": [
+    "Jaya Ballard became known as a resourceful task mage and an exceptionally talented wielder of fire magic. Her adventures brought her into the dangerous political and magical struggles of Terisiare.",
+    "Her friendship with Jodah endured across centuries. Together, they played a crucial role in bringing the Kjeldoran and Balduvian factions into cooperation against the necromancer Lim-Dûl.",
+    "Jaya's life extended beyond the end of the Ice Age. Her planeswalker spark eventually ignited, beginning another chapter in a career that connected several distinct eras of Dominarian history.",
+    "Although her name first appeared in Ice Age card flavor text, Jaya received a legendary creature card in Time Spiral, followed by later cards depicting her as a planeswalker.",
+    "She later mentored Chandra Nalaar and died defending Dominaria amid Sheoldred’s sleeper-agent conspiracy."
+  ],
+  "chapterIds": [
+    "ice-age",
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Jaya Ballard, Task Mage",
+    "setCode": "tsp",
+    "collectorNumber": "166",
+    "scryfallId": "a1f85b2a-7836-4058-87a5-859c4311a7e4",
+    "artist": "Matt Cavotta",
+    "significance": "Jaya as a task mage, before her later depiction as a planeswalker."
+  },
+  "source": {
+    "title": "Wizards of the Coast — The Legends You'll Find in Dominaria United",
+    "url": "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01"
+  }
+}

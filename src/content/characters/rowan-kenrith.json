@@ -1,0 +1,27 @@
+{
+  "name": "Rowan Kenrith",
+  "title": "The Scion of War",
+  "origin": "Eldraine",
+  "role": "Former planeswalker and royal heir pursuing dangerous power",
+  "summary": "Will’s twin, whose grief and desire to protect Eldraine led her away from her brother’s vision of restoration.",
+  "biography": [
+    "Rowan survived the Phyrexian invasion but lost her parents and her planeswalker spark, joining a kingdom struggling with the Wicked Slumber.",
+    "She came to distrust the slow political solutions Will favored and increasingly viewed power as the necessary answer to Eldraine’s vulnerability.",
+    "Her pursuit of dangerous magic placed her at odds with Will without erasing the family bond at the root of their conflict."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Rowan, Scion of War",
+    "setCode": "woe",
+    "collectorNumber": "300",
+    "scryfallId": "844e29e9-e870-4433-ad63-0ff918a3e41a",
+    "artist": "Abigail Larson",
+    "significance": "Alternate-art 2023 printing reflecting Rowan’s turn toward power in Eldraine."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-2-wandering-knight-budding-hero"
+  }
+}

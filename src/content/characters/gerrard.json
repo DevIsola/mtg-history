@@ -1,0 +1,27 @@
+{
+  "name": "Gerrard Capashen",
+  "title": "Hero of the Weatherlight",
+  "origin": "Dominaria",
+  "role": "Warrior and Legacy hero",
+  "summary": "The central hero of the Weatherlight Saga, whose destiny became inseparable from the Legacy.",
+  "biography": [
+    "Gerrard was bound to Urza’s long-term plans for confronting Phyrexia. Despite his importance to the Legacy, he initially resisted the destiny others had arranged for him.",
+    "His return to the Weatherlight helped bring together its crew for the rescue of Sisay and the subsequent adventures on Rath and Mercadia.",
+    "During the invasion of Dominaria, Gerrard faced devastating personal losses. His final decisions were essential to bringing the Legacy to completion and ending Yawgmoth’s invasion."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Gerrard Capashen",
+    "setCode": "apc",
+    "collectorNumber": "11",
+    "scryfallId": "ccca800f-e850-4bec-95d0-70280b51b7a7",
+    "artist": "Brom",
+    "significance": "Gerrard as depicted in Apocalypse, the concluding expansion of the original Weatherlight Saga."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Weather(light) Report",
+    "url": "https://magic.wizards.com/en/news/making-magic/weatherlight-report-2007-12-03"
+  }
+}

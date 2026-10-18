@@ -1,0 +1,15 @@
+{
+  "title": "The Mirari Crisis",
+  "chapterId": "otaria",
+  "summary": "A mysterious artifact magnifies the ambitions of competing powers on Otaria.",
+  "narrative": [
+    "The Mirari promised extraordinary magical power, attracting warriors, Cabal mages, and political rivals.",
+    "Its influence repeatedly encouraged obsession and destructive decisions, drawing Kamahl and Chainer into a conflict whose consequences spread throughout Otaria."
+  ],
+  "characterIds": [
+    "kamahl",
+    "chainer",
+    "karn"
+  ],
+  "cardName": "Mirari"
+}

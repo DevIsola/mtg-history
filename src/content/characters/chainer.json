@@ -1,0 +1,27 @@
+{
+  "name": "Chainer",
+  "title": "Master of Dementia",
+  "origin": "Dominaria — Otaria",
+  "role": "Cabal dementia summoner",
+  "summary": "A gifted summoner of nightmares whose friendship with Kamahl could not save him from the Mirari's influence.",
+  "biography": [
+    "Chainer trained within the Cabal of Otaria, using dementia magic to summon nightmarish creatures from his mind.",
+    "Chainer discovered the Mirari in an abandoned mansion and presented it to the Cabal Patriarch. He and Kamahl formed an unexpected friendship in the pits, but his loyalty to the Cabal and growing distrust of its leadership eventually separated their paths.",
+    "Chainer used the Mirari to displace the Patriarch and overwhelm Cabal City with nightmares drawn through dementia magic. As his body was overtaken by the creatures he could no longer control, Kamahl killed him in an act of mercy. His downfall became one of the defining tragedies of the Odyssey block."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Chainer, Dementia Master",
+    "setCode": "tor",
+    "collectorNumber": "56",
+    "scryfallId": "40342b11-1005-4ccc-bef4-9ea4c640b048",
+    "artist": "Mark Zug",
+    "significance": "Chainer's original Torment printing illustrates the Cabal summoner and his nightmarish magic."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Commander Masters Storyteller, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/commander-masters-storyteller-part-1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Dovin Turns the Azorius Against Ravnica's Defenders",
+  "chapterId": "war-of-the-spark",
+  "summary": "Bolas's ally uses the Senate's civic authority to suppress opposition before the invasion.",
+  "narrative": [
+    "Dovin Baan's rise within the Azorius Senate gave Bolas a powerful accomplice in Ravnica's political institutions.",
+    "Administrative obstruction and the misuse of order weakened the city's ability to act together before the Eternals arrived.",
+    "His role illustrates how the conspiracy exploited internal division alongside interplanar magic."
+  ],
+  "characterIds": [
+    "dovin-baan",
+    "nicol-bolas",
+    "ral-zarek"
+  ],
+  "cardName": "Dovin, Hand of Control"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Kellan Leaves Eldraine by Omenpath",
+  "chapterId": "omenpaths",
+  "summary": "A half-fae youth begins crossing planes without a spark to search for Oko.",
+  "narrative": [
+    "Kellan’s involvement in Eldraine’s fae crisis reveals his connection to Oko.",
+    "He follows Omenpaths toward other worlds, where the search for a parent begins to intersect with local histories."
+  ],
+  "characterIds": [
+    "kellan",
+    "oko"
+  ],
+  "cardName": "Kellan, the Fae-Blooded"
+}

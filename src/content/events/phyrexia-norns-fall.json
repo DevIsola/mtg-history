@@ -1,0 +1,16 @@
+{
+  "title": "Karn Ends Elesh Norn's Rule",
+  "chapterId": "march-of-the-machine",
+  "summary": "The invasion fails and Karn personally dismantles the Mother of Machines.",
+  "narrative": [
+    "Elspeth's intervention and the Zhalfirin counterattack brought Norn's war to a halt as New Phyrexia became isolated.",
+    "Karn assumed personal responsibility for ending Norn's threat, dismantling her after years of guilt over the fate of his created plane."
+  ],
+  "characterIds": [
+    "karn",
+    "elesh-norn",
+    "elspeth",
+    "teferi"
+  ],
+  "cardName": "Invasion of New Phyrexia"
+}

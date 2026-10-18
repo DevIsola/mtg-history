@@ -1,0 +1,15 @@
+{
+  "title": "The Mirari's Disastrous Journey",
+  "chapterId": "otaria",
+  "summary": "The Mirari leaves the Cabal, corrupts leaders of the Order and the merfolk empire, and returns after widespread ruin.",
+  "narrative": [
+    "Lieutenant Kirtar of the Order acquired the artifact after the attack on Cabal City; his use of it led to catastrophe for the Order.",
+    "The cephalid emperor Aboshan later attempted to fulfill his dreams through the Mirari, unleashing devastating flooding. Laquatus continued his maneuvering, and the sphere ultimately returned to Cabal custody."
+  ],
+  "characterIds": [
+    "aboshan",
+    "laquatus",
+    "braids"
+  ],
+  "cardName": "Aboshan, Cephalid Emperor"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Volrath's Disguise Is Revealed",
+  "chapterId": "weatherlight",
+  "summary": "On Mercadia, the shapeshifter Volrath's disguise as Takara conceals an enemy within the Weatherlight's own company.",
+  "narrative": [
+    "After the Weatherlight rescued Sisay and other captives from Rath, Volrath escaped the Stronghold by impersonating Takara, the daughter of Starke. The apparent rescued companion traveled with the crew to Mercadia.",
+    "Volrath used the disguise to sow mistrust and conceal his own movements. His murder of Starke exposed the deadly consequences of admitting an enemy into the company under a borrowed identity.",
+    "The Mercadian Masques card Unmask depicts Volrath shedding Takara's appearance, making its illustration an unusually direct representation of a major plot revelation."
+  ],
+  "characterIds": [
+    "volrath",
+    "gerrard",
+    "sisay",
+    "hanna"
+  ],
+  "cardName": "Unmask"
+}

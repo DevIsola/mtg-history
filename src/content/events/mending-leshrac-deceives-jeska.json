@@ -1,0 +1,17 @@
+{
+  "title": "Leshrac Manipulates Jeska's Attempt to Save Dominaria",
+  "chapterId": "mending",
+  "summary": "Leshrac uses Jeska's grief and Radha's potential for his own pursuit of power.",
+  "narrative": [
+    "The ancient planeswalker Leshrac proposed that Jeska could draw on the unusual abilities of Venser and Radha rather than sacrifice herself.",
+    "His supposed help concealed an attempt to appropriate the dark power connected to her time as Phage.",
+    "The conflict ultimately led Leshrac to challenge Nicol Bolas, who defeated him and used his power to close Madara's rift."
+  ],
+  "characterIds": [
+    "leshrac",
+    "jeska",
+    "radha",
+    "nicol-bolas"
+  ],
+  "cardName": "Leshrac's Sigil"
+}

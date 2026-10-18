@@ -1,0 +1,17 @@
+{
+  "title": "Rofellos Dies Before the Rescue of Sisay",
+  "chapterId": "weatherlight",
+  "summary": "The death of a close companion fractures Gerrard's relationship with the ship and its assigned destiny.",
+  "narrative": [
+    "Rofellos joined the Weatherlight after studying with Gerrard and Mirri.",
+    "His loss was central to Gerrard's decision to abandon the voyage; it occurred before the Rath rescue mission that opens the published saga.",
+    "A later Urza's Destiny card depicts Rofellos alive, reflecting the storytelling shift into the past."
+  ],
+  "characterIds": [
+    "rofellos",
+    "gerrard",
+    "mirri",
+    "sisay"
+  ],
+  "cardName": "Rofellos, Llanowar Emissary"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Trostani",
+  "title": "Three Voices of the Selesnya Conclave",
+  "origin": "Ravnica — Vitu-Ghazi",
+  "role": "Shared dryad leadership, including Oba, Cim, and Ses",
+  "summary": "The triune leader whose internal division concealed Oba's murder campaign after the Phyrexian invasion.",
+  "biography": [
+    "The Selesnya Conclave's leader consisted of three dryads: Oba, Cim, and Ses, presenting a shared voice despite different experiences.",
+    "Oba protected her sisters from the invasion's suffering, then pursued revenge through violence and magical coercion.",
+    "Cim and Ses were not knowing participants in those murders; the case exposed how the appearance of unity could conceal a dangerous division."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Trostani, Three Whispers",
+    "setCode": "mkm",
+    "collectorNumber": "238",
+    "scryfallId": "329f3aca-6db7-41d3-95b2-c479d14b7fa3",
+    "artist": "Jodie Muir",
+    "significance": "The three dryads depicted together during the Karlov Manor crisis."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Murders at Karlov Manor: Beauty in Destruction",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Wrenn",
+  "title": "The Dryad Who Became Eight",
+  "origin": "A planeswalking dryad bonded to successive host trees",
+  "role": "Dryad planeswalker who redirected Realmbreaker to Zhalfir",
+  "summary": "The dryad who joined with Phyrexia's invasion tree and exchanged New Phyrexia's place with Zhalfir.",
+  "biography": [
+    "Wrenn survived by bonding with trees, each partnership unique; her relationship with host trees was personal rather than simply a source of magical power.",
+    "At the height of the multiversal invasion, she bonded with Realmbreaker's living remnant, naming her eighth partner Eight and reaching the isolated plane of Zhalfir.",
+    "She enabled a counterinvasion and exchanged the planes' positions, giving her life so that Zhalfir could return and New Phyrexia could be shut away."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Wrenn and Realmbreaker",
+    "setCode": "mom",
+    "collectorNumber": "217",
+    "scryfallId": "6f807d91-b157-44e8-a431-49782184f876",
+    "artist": "Cristi Balanescu",
+    "significance": "The card documents Wrenn's unique bond with the once-hostile Invasion Tree."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine, Episode 8: Wrenn and Eight",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-8-wrenn-and-eight"
+  }
+}

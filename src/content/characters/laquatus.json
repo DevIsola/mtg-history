@@ -1,0 +1,27 @@
+{
+  "name": "Ambassador Laquatus",
+  "title": "The Otarian Intriguer",
+  "origin": "Dominaria — Otaria",
+  "role": "Merfolk diplomat and political schemer",
+  "summary": "An ambitious merfolk ambassador who pursued the Mirari through alliances, manipulations, and opportunism.",
+  "biography": [
+    "Laquatus represented the merfolk court but devoted considerable effort to advancing his own position in Otaria's shifting conflicts.",
+    "The Mirari offered leverage over the emperor, the Cabal, the Order, and other contenders. Laquatus pursued it through political intrigue rather than the straightforward combat favored by Kamahl.",
+    "His continuing attempts to seize its power contributed to the conflicts that brought Kamahl to his final decision in Krosa."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Laquatus's Creativity",
+    "setCode": "ody",
+    "collectorNumber": "88",
+    "scryfallId": "dcd48c28-bfa3-4eca-8e1a-f72d785b2ab9",
+    "artist": "Don Hazeltine",
+    "significance": "A named Odyssey-era reference to Laquatus; not a direct portrait of his attempt to acquire the Mirari."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Dominarian Cartography",
+    "url": "https://magic.wizards.com/en/news/feature/dominarian-cartography-2018-04-20"
+  }
+}

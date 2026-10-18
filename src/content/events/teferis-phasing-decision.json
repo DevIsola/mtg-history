@@ -1,0 +1,14 @@
+{
+  "title": "Teferi Phases Out Zhalfir and Shiv",
+  "chapterId": "mending",
+  "summary": "Teferi preserves two lands from Phyrexia, but leaves their inhabitants separated from Dominaria.",
+  "narrative": [
+    "During the Phyrexian invasion, Teferi phased Zhalfir and Shiv out of normal reality in an effort to save their populations.",
+    "His later restoration of Shiv could not undo the isolation of Zhalfir, a loss that shaped his actions for centuries."
+  ],
+  "characterIds": [
+    "teferi",
+    "jhoira"
+  ],
+  "cardName": "Teferi, Mage of Zhalfir"
+}

@@ -1,0 +1,20 @@
+{
+  "title": "The Weatherlight Mission to Rath",
+  "chapterId": "weatherlight",
+  "summary": "Gerrard and the Weatherlight crew confront Volrath to rescue Captain Sisay.",
+  "narrative": [
+    "Sisay’s capture brought Gerrard back into the life of the Weatherlight crew and into the struggle surrounding the Legacy.",
+    "The expedition to Rath exposed the companions to Phyrexian influence, personal betrayals, and the dangerous rule of Volrath."
+  ],
+  "characterIds": [
+    "gerrard",
+    "karn",
+    "sisay",
+    "volrath",
+    "hanna",
+    "crovax",
+    "mirri",
+    "ertai"
+  ],
+  "cardName": "Sisay, Weatherlight Captain"
+}

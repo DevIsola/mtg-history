@@ -1,0 +1,27 @@
+{
+  "name": "Jhoira",
+  "title": "The Tolarian Artificer",
+  "origin": "Dominaria — Shiv",
+  "role": "Artificer, engineer, and keeper of historical memory",
+  "summary": "An ingenious Tolarian and longtime ally of Teferi and Karn whose practical skill proved critical during the temporal crisis.",
+  "biography": [
+    "Jhoira studied at Urza's Tolarian Academy and developed enduring friendships with Teferi and Karn. Her long life made her a living connection to eras separated by centuries.",
+    "When Dominaria's temporal fractures threatened the world, she accompanied Teferi and worked with Venser and other allies, often challenging those who treated mortal companions as expendable resources.",
+    "Jhoira survived the crisis and remained important to Dominaria's history beyond the Mending, carrying forward the practical legacy of artifice."
+  ],
+  "chapterIds": [
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Jhoira of the Ghitu",
+    "setCode": "fut",
+    "collectorNumber": "157",
+    "scryfallId": "1f437128-3a87-4958-97d0-3940d8761cba",
+    "artist": "Kev Walker",
+    "significance": "Jhoira's Future Sight card depicts the Ghitu artificer associated with Teferi and the Tolarian legacy."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Planeswalker's Guide to Dominaria",
+    "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-dominaria-2022-08-31"
+  }
+}

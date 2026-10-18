@@ -1,0 +1,15 @@
+{
+  "title": "Quintorius Joins Ixalan's Archaeological Expedition",
+  "chapterId": "omenpaths",
+  "summary": "A newly sparked scholar from Arcavios joins Saheeli and Huatli in interpreting the ruins of Ixalan.",
+  "narrative": [
+    "Quintorius traveled to Ixalan to assist the study of Orazca's puzzle-door and older civilizations below the surface.",
+    "Huatli's local knowledge and Saheeli's work made the expedition a collaboration rather than a discovery credited only to an outsider.",
+    "Quintorius could planeswalk while Kellan used the new planar roads, illustrating distinct forms of travel in the same historical period."
+  ],
+  "characterIds": [
+    "quintorius-kand",
+    "kellan"
+  ],
+  "cardName": "Quintorius Kand"
+}

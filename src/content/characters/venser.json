@@ -1,0 +1,27 @@
+{
+  "name": "Venser",
+  "title": "The Shaper Savant",
+  "origin": "Dominaria — Urborg",
+  "role": "Artificer, teleportation specialist, and planeswalker",
+  "summary": "An inventive mage whose teleportation experiments and emerging spark foreshadowed the post-Mending age.",
+  "biography": [
+    "Venser grew up in Urborg, where he pursued the construction of devices capable of extraordinary transportation and displacement. His talents attracted the attention of Teferi and Lord Windgrace.",
+    "Drawn into the attempt to close Dominaria's rifts, he discovered that his own potential for planeswalking differed from the nearly limitless abilities of the older planeswalkers.",
+    "Venser survived the final repair of the Otarian rift and entered the new era as one of the first examples of a post-Mending planeswalker."
+  ],
+  "chapterIds": [
+    "mending"
+  ],
+  "featuredCard": {
+    "name": "Venser, Shaper Savant",
+    "setCode": "fut",
+    "collectorNumber": "46",
+    "scryfallId": "0e84fc99-4045-4518-b588-512a675f2933",
+    "artist": "Aleksi Briclot",
+    "significance": "Venser's first legendary card, printed in Future Sight, reflects his talent for teleportation."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Venser",
+    "url": "https://magic.wizards.com/en/story/venser-planeswalker"
+  }
+}

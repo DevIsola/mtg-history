@@ -1,0 +1,15 @@
+{
+  "title": "Avacyn Disappears into the Helvault",
+  "chapterId": "many-worlds",
+  "summary": "Griselbrand lures Avacyn into the Helvault, leaving humanity's defenses gravely weakened.",
+  "narrative": [
+    "The demon Griselbrand tricked Avacyn into confinement within the enchanted prison she used against demons.",
+    "With both imprisoned, the church's protective rites weakened and Innistrad descended toward a new crisis."
+  ],
+  "characterIds": [
+    "griselbrand",
+    "avacyn",
+    "sorin"
+  ],
+  "cardName": "Helvault"
+}

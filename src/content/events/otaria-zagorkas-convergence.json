@@ -1,0 +1,16 @@
+{
+  "title": "Zagorka Becomes Part of Karona",
+  "chapterId": "otaria",
+  "summary": "The merger that creates the False God incorporates Zagorka as well as Akroma and Phage.",
+  "narrative": [
+    "At the climax of the conflict, Kamahl's strike brought together Phage, Akroma, and the elderly Zagorka into Karona, the False God.",
+    "Zagorka's inclusion matters: Karona was not simply an angel fused with a Cabal champion, but a new being produced from three distinct lives.",
+    "Devotion to Karona could not stabilize the resulting power. Her eventual destruction allowed Jeska's spark to ignite, while Akroma and Zagorka died."
+  ],
+  "characterIds": [
+    "kamahl",
+    "jeska",
+    "akroma"
+  ],
+  "cardName": "Karona, False God"
+}

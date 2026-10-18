@@ -1,0 +1,27 @@
+{
+  "name": "Alquist Proft",
+  "title": "Ravnican Master Sleuth",
+  "origin": "Ravnica",
+  "role": "Detective investigating the Karlov Manor murders",
+  "summary": "A detective whose work exposed mind control and Oba's hidden vengeance following Phyrexia's invasion.",
+  "biography": [
+    "Proft investigated the Ravnican murders when initial evidence pointed toward the assassin Etrata.",
+    "He distinguished coerced acts from willing culpability and worked with Etrata, Kaya, and Kellan to test the evidence.",
+    "The investigation uncovered Oba's use of mind-controlling flowers and the grief beneath the Trostani leadership's public unity."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Alquist Proft, Master Sleuth",
+    "setCode": "mkm",
+    "collectorNumber": "185",
+    "scryfallId": "41129b44-4fa7-473b-b2b7-48c6a58be03c",
+    "artist": "Andreas Zafiratos",
+    "significance": "Proft's original Murders at Karlov Manor card."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Murders at Karlov Manor: Roots of Decay",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-10-roots-of-decay"
+  }
+}

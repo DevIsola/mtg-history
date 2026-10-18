@@ -1,0 +1,14 @@
+{
+  "title": "A Murder Conspiracy Shakes Ravnica",
+  "chapterId": "omenpaths",
+  "summary": "Kellan helps investigators uncover a conspiracy amid the guilds’ post-invasion tensions.",
+  "narrative": [
+    "After arriving from other planes, Kellan joins Kaya and detective Alquist Proft as they investigate high-profile murders.",
+    "The case reaches deep into Ravnica’s guild politics and unresolved injuries from the Phyrexian war."
+  ],
+  "characterIds": [
+    "kellan",
+    "teysa-karlov"
+  ],
+  "cardName": "Kellan, Inquisitive Prodigy"
+}

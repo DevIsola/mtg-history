@@ -1,0 +1,14 @@
+{
+  "title": "The First Guildpact Breaks",
+  "chapterId": "many-worlds",
+  "summary": "Agrus Kos's investigation brings Szadek to justice but triggers the collapse of Ravnica's ancient magical settlement.",
+  "narrative": [
+    "The ten guilds had spent millennia operating within the magically enforced Guildpact.",
+    "During the Decamillennial crisis, Agrus Kos followed evidence to the secret Dimir founder Szadek. His arrest broke the original pact, exposing Ravnica to renewed factional conflict."
+  ],
+  "characterIds": [
+    "agrus-kos",
+    "szadek"
+  ],
+  "cardName": "Szadek, Lord of Secrets"
+}

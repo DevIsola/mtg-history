@@ -1,0 +1,16 @@
+{
+  "title": "The Alliance Against Lim-Dûl",
+  "chapterId": "ice-age",
+  "summary": "Jodah and Jaya help bring rival peoples together against the necromancer threatening the frozen kingdoms.",
+  "narrative": [
+    "Kjeldor and the Balduvian communities had their own histories of rivalry and conflict. The growing threat posed by Lim-Dûl's undead forces made continued division increasingly dangerous.",
+    "Jodah and Jaya Ballard played important roles in encouraging cooperation against the necromancer. Their partnership demonstrated how personal relationships and shared threats could change the political landscape.",
+    "The resistance to Lim-Dûl helped reshape the relationships between the peoples of Terisiare and contributed to the emergence of a new political order."
+  ],
+  "characterIds": [
+    "jodah",
+    "jaya",
+    "lim-dul"
+  ],
+  "cardName": "Jaya Ballard, Task Mage"
+}

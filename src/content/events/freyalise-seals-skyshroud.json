@@ -1,0 +1,14 @@
+{
+  "title": "Freyalise Seals the Skyshroud Rift",
+  "chapterId": "mending",
+  "summary": "Skyshroud's ancient protector gives her life to heal the displaced forest's fracture.",
+  "narrative": [
+    "The Rathi Overlay had brought Skyshroud into Keld, and a dangerous rift threatened its inhabitants.",
+    "Freyalise ultimately sacrificed herself to close the wound and protect the people under her care."
+  ],
+  "characterIds": [
+    "freyalise",
+    "radha"
+  ],
+  "cardName": "Freyalise, Llanowar's Fury"
+}

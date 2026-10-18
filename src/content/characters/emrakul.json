@@ -1,0 +1,26 @@
+{
+  "name": "Emrakul",
+  "title": "The Aeons Torn",
+  "origin": "The Blind Eternities",
+  "role": "Eldrazi titan",
+  "summary": "An alien titan whose imprisonment on Zendikar preceded a devastating awakening.",
+  "biography": [
+    "Emrakul is one of three Eldrazi titans imprisoned on Zendikar by Nahiri, Ugin, and Sorin.",
+    "The opening of the Eldrazi prison endangered Zendikar and exposed the terrifying scale of the entities once hidden behind the hedron network."
+  ],
+  "chapterIds": [
+    "many-worlds"
+  ],
+  "featuredCard": {
+    "name": "Emrakul, the Aeons Torn",
+    "setCode": "roe",
+    "collectorNumber": "4",
+    "scryfallId": "67600383-bbb8-411c-b8e6-2296650bc747",
+    "artist": "Mark Tedin",
+    "significance": "Emrakul's first legendary card from Rise of the Eldrazi."
+  },
+  "source": {
+    "title": "Wizards — Battle for Zendikar Story Summary",
+    "url": "https://magic.wizards.com/en/news/magic-story/battle-zendikar-story-summary-2015-12-23"
+  }
+}

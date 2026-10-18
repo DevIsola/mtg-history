@@ -1,0 +1,16 @@
+{
+  "title": "Barrin Obliterates Phyrexian-Occupied Tolaria",
+  "chapterId": "weatherlight",
+  "summary": "After losing his family, Barrin unleashes a forbidden spell that destroys Tolaria's occupied academy and himself.",
+  "narrative": [
+    "Barrin's wife Rayne died during the invasion, followed by their daughter Hanna, the Weatherlight's navigator, who succumbed to Phyrexian plague.",
+    "Returning to the academy and finding it overrun, the bereaved master wizard cast Obliterate against the invaders.",
+    "The spell destroyed the area and Barrin himself, showing how victory over Phyrexia could demand a terrible local cost."
+  ],
+  "characterIds": [
+    "barrin",
+    "hanna",
+    "urza"
+  ],
+  "cardName": "Barrin, Master Wizard"
+}

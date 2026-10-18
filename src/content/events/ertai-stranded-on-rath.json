@@ -1,0 +1,16 @@
+{
+  "title": "Ertai Is Stranded on Rath",
+  "chapterId": "weatherlight",
+  "summary": "Ertai holds an escape portal open while the Weatherlight departs Rath without him.",
+  "narrative": [
+    "When the Predator damaged the Weatherlight's planeshifting engine, the crew could no longer rely on its normal way of traveling between planes.",
+    "Ertai helped open an escape portal from Rath. After delays during the Stronghold mission, the Weatherlight used the Skyshaper to reach the portal before it closed.",
+    "Ertai was left on Rath. His isolation and later corruption transformed the former Weatherlight mage into an enemy of the people he had helped save."
+  ],
+  "characterIds": [
+    "ertai",
+    "gerrard",
+    "sisay"
+  ],
+  "cardName": "Ertai, Wizard Adept"
+}

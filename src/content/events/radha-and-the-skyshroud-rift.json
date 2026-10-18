@@ -1,0 +1,15 @@
+{
+  "title": "Radha and the Skyshroud Rift",
+  "chapterId": "mending",
+  "summary": "Radha's connection to a damaged landscape makes her central to rift research and a target of dangerous plans.",
+  "narrative": [
+    "Radha's Keldon and elven heritage placed her amid the Skyshroud crisis, where her unusual access to rift mana drew Teferi's attention.",
+    "Her resistance to being used as a magical tool foreshadowed the conflict over Jeska's later attempts to close rifts."
+  ],
+  "characterIds": [
+    "radha",
+    "teferi",
+    "freyalise"
+  ],
+  "cardName": "Radha, Heir to Keld"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Jace Beleren",
+  "title": "The Reawakened Mind Mage",
+  "origin": "Vryn; later Ravnica and other planes",
+  "role": "Telepathic planeswalker who survived Phyrexian compleation",
+  "summary": "A surviving planeswalker whose rescue of Vraska and later plans reveal the unresolved stakes of the post-invasion era.",
+  "biography": [
+    "Jace was compleated during the campaign against New Phyrexia but retained enough of himself to struggle against the corruption within his own mind.",
+    "He found Vraska on Ravnica during the invasion and worked to recover her, carrying the two of them to his mother on Vryn for help.",
+    "After the war, he and Vraska became involved in the plot surrounding Thunder Junction’s ancient vault and the being called Loot."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Jace Reawakened",
+    "setCode": "otj",
+    "collectorNumber": "271",
+    "scryfallId": "fd17e8d4-499e-4005-ae3c-bc9c44dc5a67",
+    "artist": "Cristi Balanescu",
+    "significance": "A 2024 planeswalker card demonstrating that desparking did not affect all planeswalkers."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/magic-story/epilogue-1-the-invasion-tree"
+  }
+}

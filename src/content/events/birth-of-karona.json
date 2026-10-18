@@ -1,0 +1,14 @@
+{
+  "title": "The Birth of Karona",
+  "chapterId": "otaria",
+  "summary": "Phage, Akroma, and Zagorka merge into a being worshipped as a false god.",
+  "narrative": [
+    "Jeska’s transformation into Phage and the creation of Akroma drew Otaria into an escalating conflict of vengeance and devotion.",
+    "A catastrophic confrontation joined Phage, Akroma, and Zagorka into Karona, whose immense power placed the continent in even greater danger."
+  ],
+  "characterIds": [
+    "jeska",
+    "kamahl"
+  ],
+  "cardName": "Karona, False God"
+}

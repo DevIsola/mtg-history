@@ -1,0 +1,16 @@
+{
+  "title": "The Defenders Disable Bolas's Invasion Machinery",
+  "chapterId": "war-of-the-spark",
+  "summary": "Ravnica's defenders cut off the beacon, the Immortal Sun, and the Planar Bridge's flow of Eternals.",
+  "narrative": [
+    "Defeating individual Eternals could not stop the conspiracy while Bolas's machines continued to summon victims and reinforcements.",
+    "Allied defenders neutralized the beacon, Immortal Sun, and Planar Bridge during the fighting.",
+    "The shutdowns removed vital advantages from the invading dragon, though the city was still endangered by his magic and the Eternals already on the battlefield."
+  ],
+  "characterIds": [
+    "ral-zarek",
+    "tezzeret",
+    "nicol-bolas"
+  ],
+  "cardName": "Interplanar Beacon"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Tezzeret Carries the Planar Bridge",
+  "chapterId": "war-of-the-spark",
+  "summary": "Bolas's artificer joins Kaladesh's stolen technology to Amonkhet's lazotep-coated armies.",
+  "narrative": [
+    "The Planar Bridge originated on Kaladesh, but Bolas's agents secured it for a much larger operation.",
+    "Tezzeret became its bearer, allowing the undead Eternals, clad in protective lazotep, to move to the chosen battlefield on Ravnica.",
+    "The bridge could not replace the Immortal Sun or the beacon: each device played a different role in the same conspiracy."
+  ],
+  "characterIds": [
+    "tezzeret",
+    "nicol-bolas"
+  ],
+  "cardName": "Tezzeret, Master of the Bridge"
+}

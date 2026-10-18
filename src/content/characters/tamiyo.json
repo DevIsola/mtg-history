@@ -1,0 +1,27 @@
+{
+  "name": "Tamiyo",
+  "title": "Moon Sage and Keeper of Stories",
+  "origin": "Kamigawa",
+  "role": "Storyteller, first compleated planeswalker, and mother to Nashi",
+  "summary": "A beloved historian transformed by Jin-Gitaxias, whose saved magical memory survived her death on Kamigawa.",
+  "biography": [
+    "Tamiyo collected stories across the Multiverse and treasured her family on Kamigawa, recording memories within enchanted scrolls.",
+    "Phyrexian experimentation compleated her while preserving her spark, twisting her scholarship into an instrument of conquest.",
+    "During the invasion the Wanderer killed her to save others. A magical record of Tamiyo's memories survived and spoke with Nashi; this was not a complete restoration of her body."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Tamiyo, Compleated Sage",
+    "setCode": "neo",
+    "collectorNumber": "238",
+    "scryfallId": "222a736e-d819-452d-aeda-eb848c4b2302",
+    "artist": "Chris Rahn",
+    "significance": "The original 2022 portrayal of Tamiyo after Phyrexian compleation on Kamigawa."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Mother, Son, and Story",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-3-mother-son-and-story"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Jin-Gitaxias Compleats Tamiyo on Kamigawa",
+  "chapterId": "march-of-the-machine",
+  "summary": "Experiments on Kamigawa make spark-preserving planeswalker compleation possible.",
+  "narrative": [
+    "Jin-Gitaxias studied the relationship between Kamigawan kami and living bodies to refine Phyrexian transformation.",
+    "Tamiyo's compleation showed that a planeswalker's spark could survive even as the person's agency was subsumed by Phyrexia.",
+    "This breakthrough made the later corruption of Ajani, Nissa, and other planeswalkers an existential threat to their allies."
+  ],
+  "characterIds": [
+    "jin-gitaxias",
+    "tamiyo",
+    "elesh-norn"
+  ],
+  "cardName": "Tamiyo, Compleated Sage"
+}

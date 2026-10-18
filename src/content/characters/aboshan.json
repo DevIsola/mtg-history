@@ -1,0 +1,27 @@
+{
+  "name": "Aboshan",
+  "title": "The Cephalid Emperor",
+  "origin": "Dominaria — Otaria",
+  "role": "Ruler of the underwater empire",
+  "summary": "A ruler whose attempt to realize his desires through the Mirari caused a devastating flood.",
+  "biography": [
+    "Aboshan ruled the cephalid empire during the crisis that followed the Mirari's discovery on Otaria.",
+    "When he obtained the Mirari, his wish for dominion over the sea was magnified into catastrophic magic that flooded great stretches of the continent and devastated his capital.",
+    "His destruction demonstrates that a ruler's ambition was no more immune to the Mirari than the desires of a gladiator or a dementia caster."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Aboshan, Cephalid Emperor",
+    "setCode": "ody",
+    "collectorNumber": "58",
+    "scryfallId": "82db4a41-03e8-4f0c-946c-a98fc5c9f7c8",
+    "artist": "Christopher Moeller",
+    "significance": "An original Odyssey portrait of the emperor whose use of the Mirari caused disaster."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Dominarian Cartography",
+    "url": "https://magic.wizards.com/en/news/feature/dominarian-cartography-2018-04-20"
+  }
+}

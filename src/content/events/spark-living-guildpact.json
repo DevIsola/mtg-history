@@ -1,0 +1,14 @@
+{
+  "title": "The Firemind Becomes the Living Guildpact",
+  "chapterId": "war-of-the-spark",
+  "summary": "Niv-Mizzet's return provides a new political and magical focus for Ravnica's guilds.",
+  "narrative": [
+    "Cooperation among the city's guilds became a crucial element of the resistance.",
+    "Niv-Mizzet was restored to life and invested with the mantle of the Living Guildpact, connecting the struggle with Ravnica's future governance."
+  ],
+  "characterIds": [
+    "niv-mizzet",
+    "nicol-bolas"
+  ],
+  "cardName": "Niv-Mizzet Reborn"
+}

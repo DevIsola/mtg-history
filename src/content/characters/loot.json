@@ -1,0 +1,27 @@
+{
+  "name": "Loot",
+  "title": "The Key to Everything",
+  "origin": "Ancient Thunder Junction vault",
+  "role": "Mysterious young being tied to the vault’s multiversal secrets",
+  "summary": "The living discovery at the heart of the vault heist, whose abilities drew attention beyond Thunder Junction.",
+  "biography": [
+    "Loot was found inside a heavily defended ancient vault on Thunder Junction, rather than being an ordinary treasure seized by a criminal crew.",
+    "His unusual connection to the Multiverse made him important to the plans of Jace and Vraska.",
+    "His emergence turned the outcome of a heist into the beginning of a larger unresolved question about the future of interplanar travel."
+  ],
+  "chapterIds": [
+    "omenpaths"
+  ],
+  "featuredCard": {
+    "name": "Loot, the Key to Everything",
+    "setCode": "big",
+    "collectorNumber": "21",
+    "scryfallId": "fb169fa2-c92e-45f7-89a2-0ca0e3910a1c",
+    "artist": "Rudy Siswanto",
+    "significance": "The Big Score card presents the vault’s living prize, not an ordinary object."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Official Magic story",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-5-high-moon"
+  }
+}

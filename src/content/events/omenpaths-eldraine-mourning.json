@@ -1,0 +1,14 @@
+{
+  "title": "Eldraine Mourns the Kenriths",
+  "chapterId": "omenpaths",
+  "summary": "Will and Rowan face a shattered kingdom after the deaths of their parents.",
+  "narrative": [
+    "King Kenrith and Queen Linden died during the Phyrexian invasion, leaving Eldraine without its familiar rulers.",
+    "Their desparked children took different approaches to the realm’s rebuilding as the Wicked Slumber strained its people."
+  ],
+  "characterIds": [
+    "will-kenrith",
+    "rowan-kenrith"
+  ],
+  "cardName": "The Kenriths' Royal Funeral"
+}

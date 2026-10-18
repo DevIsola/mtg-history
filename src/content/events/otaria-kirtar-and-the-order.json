@@ -1,0 +1,15 @@
+{
+  "title": "Kirtar Takes the Mirari for the Order",
+  "chapterId": "otaria",
+  "summary": "An Order officer tries to turn the Mirari into a tool of justice and demonstrates its power to corrupt good intentions.",
+  "narrative": [
+    "After the sphere left Cabal custody, Lieutenant Kirtar claimed it for the Order in the hope of containing or redirecting its power.",
+    "His confidence could not overcome the Mirari's tendency to magnify the desires of its wielder. The Order's claim of righteous purpose was no guarantee of safety.",
+    "The episode preceded the sphere's passage to the cephalid empire and another disastrous attempt to control it."
+  ],
+  "characterIds": [
+    "lieutenant-kirtar",
+    "cabal-patriarch"
+  ],
+  "cardName": "Lieutenant Kirtar"
+}

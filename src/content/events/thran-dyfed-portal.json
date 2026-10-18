@@ -1,0 +1,14 @@
+{
+  "title": "Dyfed Opens a Passage to Phyrexia",
+  "chapterId": "thran",
+  "summary": "A planeswalker introduces Yawgmoth to an existing artificial plane and creates the route that enables his experiments.",
+  "narrative": [
+    "Dyfed took Yawgmoth to a world created earlier by an unnamed planeswalker. He did not originate that plane.",
+    "The portal between Dominaria and Phyrexia allowed Yawgmoth to move patients and followers into a setting where his program of enforced transformation could grow."
+  ],
+  "characterIds": [
+    "yawgmoth",
+    "rebbec"
+  ],
+  "cardName": "Yawgmoth, Thran Physician"
+}

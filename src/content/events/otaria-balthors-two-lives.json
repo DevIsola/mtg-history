@@ -1,0 +1,15 @@
+{
+  "title": "Balthor Dies and Returns Transformed",
+  "chapterId": "otaria",
+  "summary": "Kamahl's dwarven mentor survives in the historical record as both a living barbarian and an undead warrior.",
+  "narrative": [
+    "Balthor was a dwarven barbarian leader and a mentor to Kamahl amid the violence of Otaria.",
+    "His death did not end his story: Balthor later appeared in an undead form, altering his identity without erasing the connection to his living past.",
+    "The original Torment and Judgment legendary cards were intentionally designed together to portray the two phases of the same character."
+  ],
+  "characterIds": [
+    "balthor",
+    "kamahl"
+  ],
+  "cardName": "Balthor the Defiled"
+}

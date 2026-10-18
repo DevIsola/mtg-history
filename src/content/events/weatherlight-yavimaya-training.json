@@ -1,0 +1,17 @@
+{
+  "title": "The Friends Who Studied Under Multani",
+  "chapterId": "weatherlight",
+  "summary": "Gerrard, Mirri, and Rofellos become companions while learning from Yavimaya's maro-sorcerer.",
+  "narrative": [
+    "Multani trained Gerrard alongside Mirri and the Llanowar elf Rofellos in Yavimaya.",
+    "Their friendship and shared education existed before Sisay's later attempt to reunite the Weatherlight crew.",
+    "Multani's lessons contrasted with the destiny Urza intended to impose through the Legacy."
+  ],
+  "characterIds": [
+    "multani",
+    "gerrard",
+    "mirri",
+    "rofellos"
+  ],
+  "cardName": "Multani, Maro-Sorcerer"
+}

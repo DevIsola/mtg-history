@@ -1,0 +1,27 @@
+{
+  "name": "Elspeth Tirel",
+  "title": "Archangel of the Final Defense",
+  "origin": "New Capenna; survivor of Phyrexian persecution",
+  "role": "Planeswalker and angelic defender of New Phyrexia's victims",
+  "summary": "A longtime opponent of Phyrexia who transformed after saving connected worlds from the Sylex.",
+  "biography": [
+    "Elspeth survived the horrors of Phyrexia in childhood, fought alongside Mirran resistance forces, and searched for safety across worlds.",
+    "When the Seedcore plan threatened worlds already connected to Realmbreaker, she carried the Sylex into the Blind Eternities instead of allowing its detonation among them.",
+    "She returned transformed into an angel, defended the Mirrans, and held off Elesh Norn while Wrenn made the decisive connection to Zhalfir."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Archangel Elspeth",
+    "setCode": "mom",
+    "collectorNumber": "320",
+    "scryfallId": "93f99e67-901f-4c8d-8a09-e443b7eb928f",
+    "artist": "Denys Tsiperko",
+    "significance": "A borderless portrait of Elspeth's angelic return at the climax of March of the Machine."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine, Episode 7: Divine Intervention",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-7-divine-intervention"
+  }
+}

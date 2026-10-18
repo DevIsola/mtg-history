@@ -1,0 +1,28 @@
+{
+  "name": "Ashnod",
+  "title": "The Flesh Mechanist",
+  "origin": "Dominaria — Terisiare",
+  "role": "Artificer and researcher of flesh and machinery",
+  "summary": "A brilliant but ruthless artificer associated with Mishra, whose experiments and independent decisions shaped the Brothers' War.",
+  "biography": [
+    "Ashnod was an accomplished artificer whose inventions and experiments explored the manipulation of living bodies through machinery and magical power. Her methods were frequently cruel, reflecting the moral costs of the technological arms race.",
+    "Ashnod worked within Mishra's sphere of influence and contributed to the development of increasingly destructive technologies. Her relationship with Mishra was complicated by her independence and the growing Phyrexian influence around him.",
+    "Despite their opposing loyalties, Ashnod developed an important connection with Tawnos, Urza's apprentice. During the conflict, she helped him escape captivity, a choice that demonstrated her willingness to act against expectations imposed by the war.",
+    "Her story illustrates a central contradiction of the Brothers' War: extraordinary technical ingenuity flourished while the political ambitions surrounding it caused immense suffering."
+  ],
+  "chapterIds": [
+    "brothers-war"
+  ],
+  "featuredCard": {
+    "name": "Ashnod, Flesh Mechanist",
+    "setCode": "bro",
+    "collectorNumber": "84",
+    "scryfallId": "5eb43c15-50a9-488f-b0be-84a5e0a6d10b",
+    "artist": "Howard Lyon",
+    "significance": "Depicts Ashnod's experiments with powerstones, flesh, and constructed beings."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Act of War, Part 1",
+    "url": "https://magic.wizards.com/en/news/making-magic/act-of-war-part-1"
+  }
+}

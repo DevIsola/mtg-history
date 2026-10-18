@@ -1,0 +1,18 @@
+{
+  "title": "The Fall of Kroog",
+  "chapterId": "brothers-war",
+  "summary": "The destruction of Yotia's capital forces Kayla and its inhabitants to confront the devastating human cost of the Brothers' War.",
+  "narrative": [
+    "As Urza and Mishra's armies struggled for control of Terisiare, the city of Kroog became a target of the expanding conflict. The destruction of the Yotian capital shattered a major political and civilian center.",
+    "Kayla bin-Kroog survived the catastrophe. Her experiences highlighted the suffering of families, displaced communities, and people whose lives were consumed by decisions made by the rival artificers.",
+    "The fall of Kroog further intensified the conflict, while its survivors faced the task of preserving their communities amid the destruction of their homeland."
+  ],
+  "characterIds": [
+    "kayla",
+    "urza",
+    "mishra",
+    "tawnos",
+    "ashnod"
+  ],
+  "cardName": "Queen Kayla bin-Kroog"
+}

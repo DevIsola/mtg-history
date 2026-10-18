@@ -1,0 +1,15 @@
+{
+  "title": "Mairsil Seizes the Conclave",
+  "chapterId": "ice-age",
+  "summary": "Mairsil deposes Lord Ith and turns a place of magical instruction into an instrument of control.",
+  "narrative": [
+    "The Conclave of Mages offered refuge for learning amid the Dark Age's persecution of spellcasters.",
+    "Mairsil imprisoned its founder, Ith, in Barl's Cage, siphoning the captive wizard's magical power while ruling in his place.",
+    "His designs on Jodah's knowledge revealed how easily the defense of scholarship could become an excuse for exploitation."
+  ],
+  "characterIds": [
+    "mairsil",
+    "jodah"
+  ],
+  "cardName": "Mairsil, the Pretender"
+}

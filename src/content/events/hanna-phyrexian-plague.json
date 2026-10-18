@@ -1,0 +1,16 @@
+{
+  "title": "Hanna Falls to the Phyrexian Plague",
+  "chapterId": "weatherlight",
+  "summary": "The invasion costs the Weatherlight its navigator and one of its most capable artificers.",
+  "narrative": [
+    "Hanna was essential to the Weatherlight's extraordinary journey. Her expertise in magical artifacts supported the crew through the rescue on Rath, the danger of Mercadia, and their return to Dominaria.",
+    "When Phyrexia invaded, Hanna succumbed to a Phyrexian plague. Her death brought devastating personal grief and deprived the defenders of a deeply experienced member of the crew.",
+    "Her loss exemplified the consequences of the invasion beyond its military campaigns: the destruction of relationships, knowledge, and irreplaceable lives."
+  ],
+  "characterIds": [
+    "hanna",
+    "gerrard",
+    "sisay"
+  ],
+  "cardName": "Hanna, Ship's Navigator"
+}

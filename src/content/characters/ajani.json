@@ -1,0 +1,27 @@
+{
+  "name": "Ajani Goldmane",
+  "title": "The Sleeper Agent",
+  "origin": "Naya, Alara",
+  "role": "Planeswalker, corrupted infiltrator, and survivor of compleation",
+  "summary": "A trusted ally whose compleation drove a betrayal during Dominaria's defense.",
+  "biography": [
+    "Ajani was widely trusted for his compassion and care for others before he was secretly compleated by Phyrexia.",
+    "His altered allegiance contributed to the death of Jaya during the Dominarian sleeper-agent crisis, showing how Phyrexia weaponized trust.",
+    "After New Phyrexia was isolated, Melira and Karn used a costly treatment to free Ajani from corruption; survival did not erase the damage done while he was controlled."
+  ],
+  "chapterIds": [
+    "march-of-the-machine"
+  ],
+  "featuredCard": {
+    "name": "Ajani, Sleeper Agent",
+    "setCode": "dmu",
+    "collectorNumber": "370",
+    "scryfallId": "7e2af6c1-fdf1-4d04-bd74-f07da939110a",
+    "artist": "Victor Adame Minguez",
+    "significance": "A Phyrexian-language treatment of Ajani's Dominaria United card, revealing the betrayal."
+  },
+  "source": {
+    "title": "Wizards of the Coast — March of the Machine, Episode 10: The Rhythms of Life",
+    "url": "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Ixidor",
+  "title": "The Reality Sculptor",
+  "origin": "Dominaria — Otaria",
+  "role": "Illusionist and creator of Akroma",
+  "summary": "Grief over Nivea's death led Ixidor to reshape reality and create Akroma to destroy Phage.",
+  "biography": [
+    "Ixidor was an illusionist whose relationship with Nivea ended in tragedy after a lethal arena confrontation with Phage.",
+    "In grief, he developed the ability to make imagined forms real. Akroma was his most consequential creation, an angel shaped by the loss of Nivea and driven toward vengeance.",
+    "The conflict between Akroma and Phage escaped the bounds of Ixidor's private motives and became part of Otaria's wider devastation."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Ixidor, Reality Sculptor",
+    "setCode": "ons",
+    "collectorNumber": "89",
+    "scryfallId": "314d5e89-55f7-42b4-af19-d4d0f499a265",
+    "artist": "Kev Walker",
+    "significance": "Ixidor's original Onslaught card, portraying the illusionist who could realize imagined beings."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Quite Some Characters",
+    "url": "https://magic.wizards.com/en/news/making-magic/quite-some-characters-2020-11-09"
+  }
+}

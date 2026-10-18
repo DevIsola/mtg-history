@@ -1,0 +1,15 @@
+{
+  "title": "Jeska's Final Sacrifice at Otaria",
+  "chapterId": "mending",
+  "summary": "Jeska protects Radha and Venser and gives her life to seal the final rift.",
+  "narrative": [
+    "The damage associated with Karona culminated in a final, exceptionally dangerous fracture over Otaria.",
+    "Rather than sacrifice Radha and Venser, Jeska sent them away and spent her own power and life to close the wound, completing the Mending."
+  ],
+  "characterIds": [
+    "jeska",
+    "radha",
+    "venser"
+  ],
+  "cardName": "Jeska, Thrice Reborn"
+}

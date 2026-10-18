@@ -1,0 +1,14 @@
+{
+  "title": "Project Kraj and Ravnica's Aftermath",
+  "chapterId": "many-worlds",
+  "summary": "Momir Vig's living weapon threatens a city destabilized by the broken Guildpact.",
+  "narrative": [
+    "With the old constraints weakened, guild leaders pursued increasingly dangerous plans to dominate Ravnica.",
+    "Teysa Karlov and Agrus Kos became involved in struggles that culminated in the defeat of Momir Vig's Project Kraj, even as the guilds remained politically divided."
+  ],
+  "characterIds": [
+    "teysa-karlov",
+    "agrus-kos"
+  ],
+  "cardName": "Teysa, Orzhov Scion"
+}

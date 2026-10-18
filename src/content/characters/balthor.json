@@ -1,0 +1,27 @@
+{
+  "name": "Balthor",
+  "title": "The Barbarian Mentor Reborn",
+  "origin": "Dominaria — Otaria",
+  "role": "Dwarven leader, mentor to Kamahl, and later an undead warrior",
+  "summary": "A dwarven leader who mentored Kamahl and whose death and return were depicted on two separate cards.",
+  "biography": [
+    "Balthor was a dwarf who led barbarians and acted as a mentor to Kamahl, giving the young fighter an example of leadership grounded in experience.",
+    "Balthor died during the Otarian conflicts and later returned in undead form. His two legendary creature cards were deliberately planned as depictions of the same character on opposite sides of death.",
+    "Torment portrayed him as Balthor the Stout, while Judgment portrayed him as Balthor the Defiled, emphasizing that transformation rather than introducing another person."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Balthor the Defiled",
+    "setCode": "jud",
+    "collectorNumber": "61",
+    "scryfallId": "ed4cc273-adc3-4f46-9743-134b552d1d56",
+    "artist": "Carl Critchlow",
+    "significance": "Balthor after death and reanimation, paired in the story with the earlier Balthor the Stout card."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Building Balthor",
+    "url": "https://magic.wizards.com/en/news/making-magic/thirty-two-short-columns-about-dwarves-2005-11-21"
+  }
+}

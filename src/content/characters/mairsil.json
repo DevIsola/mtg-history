@@ -1,0 +1,27 @@
+{
+  "name": "Mairsil",
+  "title": "The Pretender",
+  "origin": "Dominaria — Terisiare",
+  "role": "Conclave usurper during the Dark Age",
+  "summary": "A Conclave mage who imprisoned Ith and exploited forbidden magical knowledge for personal power.",
+  "biography": [
+    "Mairsil displaced the Conclave's founder, Ith, and kept him in Barl's Cage, draining the captive wizard's magical power.",
+    "He tried to exploit Jodah's ancestry and knowledge as a route to greater power, illustrating how the Conclave's public mission of preserving magic could conceal coercion.",
+    "Jodah and Sima helped release Ith. The destruction that followed ended Mairsil's control of the institution, but the surviving scholars carried their knowledge onward."
+  ],
+  "chapterIds": [
+    "ice-age"
+  ],
+  "featuredCard": {
+    "name": "Mairsil, the Pretender",
+    "setCode": "c17",
+    "collectorNumber": "41",
+    "scryfallId": "87b71b08-668c-4b32-8243-8def1a9acf26",
+    "artist": "Izzy",
+    "significance": "A Commander 2017 portrayal of the Dark Age usurper and his hunger for stolen power."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Commander (2017 Edition) Card Image Gallery",
+    "url": "https://magic.wizards.com/en/news/card-image-gallery/commander-2017"
+  }
+}

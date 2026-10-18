@@ -1,0 +1,17 @@
+{
+  "title": "Urabrask Defies the Machine Orthodoxy",
+  "chapterId": "march-of-the-machine",
+  "summary": "The furnace praetor shelters Mirrans and joins opposition to Norn's enforced conformity.",
+  "narrative": [
+    "Urabrask's tolerance of Mirran refugees distinguished his furnaces from Norn's rigid Machine Orthodoxy.",
+    "His rebellion drew together enemies of Norn whose goals were not identical, including other Phyrexians.",
+    "His brutal punishment illustrated the internal violence concealed by Norn's promise of universal unity."
+  ],
+  "characterIds": [
+    "urabrask",
+    "elesh-norn",
+    "koth",
+    "sheoldred"
+  ],
+  "cardName": "Urabrask the Hidden"
+}

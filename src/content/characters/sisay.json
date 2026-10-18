@@ -1,0 +1,28 @@
+{
+  "name": "Captain Sisay",
+  "title": "Captain of the Weatherlight",
+  "origin": "Dominaria — Jamuraa",
+  "role": "Skyship captain and leader of the Legacy expedition",
+  "summary": "The steadfast Weatherlight captain whose leadership united its crew and whose capture drew Gerrard back to the Legacy's mission.",
+  "biography": [
+    "Sisay captained the Weatherlight and helped gather the people and artifacts associated with Urza's Legacy. She believed in Gerrard's destiny even when he rejected it, and her judgment held together a crew of very different companions.",
+    "Volrath captured Sisay and took her to Rath. Rescuing her was the immediate reason Gerrard returned to the Weatherlight and led the expedition through the enemy stronghold.",
+    "After her rescue, Sisay remained a central leader as the crew escaped Rath, survived Mercadia, and returned to face the Phyrexian invasion of Dominaria.",
+    "Her Modern Horizons card revisits a captain first established in the original Weatherlight-era storytelling, emphasizing the legendary companions she sought to bring together."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCard": {
+    "name": "Sisay, Weatherlight Captain",
+    "setCode": "mh1",
+    "collectorNumber": "29",
+    "scryfallId": "5a293c45-1e73-4527-be2f-2dcd5c47b610",
+    "artist": "Anna Steinbauer",
+    "significance": "A later portrait of the Weatherlight's captain, whose capture begins the crew's rescue mission to Rath."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Weather(light) Report",
+    "url": "https://magic.wizards.com/en/news/making-magic/weatherlight-report-2007-12-03"
+  }
+}

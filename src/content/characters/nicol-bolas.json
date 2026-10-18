@@ -1,0 +1,27 @@
+{
+  "name": "Nicol Bolas",
+  "title": "The Elder Dragon",
+  "origin": "Dominaria; later a traveler across the Multiverse",
+  "role": "Planeswalker and architect of the War of the Spark",
+  "summary": "An Elder Dragon who engineered an invasion to harvest other planeswalkers' sparks and regain his lost power.",
+  "biography": [
+    "After the Mending diminished the near-godlike powers of older planeswalkers, Bolas sought a means of reversing the loss.",
+    "His agents obtained the Planar Bridge and the Immortal Sun; the Eternals prepared on Amonkhet became an army intended to harvest sparks on Ravnica.",
+    "He trapped planeswalkers on Ravnica and activated the Elderspell, but the resistance and Liliana's defiance denied him victory. His spark was removed, and Ugin confined him in the Meditation Realm."
+  ],
+  "chapterIds": [
+    "war-of-the-spark"
+  ],
+  "featuredCard": {
+    "name": "Nicol Bolas, Dragon-God",
+    "setCode": "war",
+    "collectorNumber": "207",
+    "scryfallId": "98b68dea-a7be-4f99-8a50-4c8cf0e0f7a9",
+    "artist": "Raymond Swanland",
+    "significance": "Bolas at the apparent peak of his bid for restored divinity on Ravnica."
+  },
+  "source": {
+    "title": "Wizards of the Coast — War Games",
+    "url": "https://magic.wizards.com/en/news/making-magic/war-games-2019-04-22"
+  }
+}

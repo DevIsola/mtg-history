@@ -1,0 +1,15 @@
+{
+  "title": "The Eldrazi Awakening",
+  "chapterId": "many-worlds",
+  "summary": "Eldrazi spawn and titanic manifestations turn Zendikar's frontier into an existential battlefield.",
+  "narrative": [
+    "When the wards began to fail, Zendikar's inhabitants discovered that the ancient hedrons had imprisoned entities from outside ordinary reality.",
+    "The emergence of Eldrazi spawn and titans endangered the landscape and the communities living upon it."
+  ],
+  "characterIds": [
+    "emrakul",
+    "nahiri",
+    "sorin"
+  ],
+  "cardName": "Emrakul, the Aeons Torn"
+}

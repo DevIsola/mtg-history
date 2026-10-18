@@ -1,0 +1,27 @@
+{
+  "name": "Kamahl",
+  "title": "From Pit Fighter to Druid",
+  "origin": "Dominaria — Otaria",
+  "role": "Pardic barbarian and Krosan druid",
+  "summary": "A celebrated warrior whose pursuit of the Mirari led to tragedy, remorse, and a new calling as a protector of Krosa.",
+  "biography": [
+    "Kamahl began as a formidable Pardic barbarian and gladiator, drawn to Cabal City and the Mirari during the struggle for power on Otaria. He befriended Chainer while competing in the Cabal pits; after Chainer lost control of the Mirari and his nightmares, Kamahl was forced to end his friend’s suffering.",
+    "The Mirari amplified his aggression. With the artifact bound to his sword, he seriously injured his sister Jeska, setting in motion her transformation into Phage.",
+    "Kamahl sought a different life in the Krosan Forest, where Thriss the Nantuko taught him druidic ways. His transformation from pit fighter to protector would shape the Onslaught story and his efforts to save Jeska."
+  ],
+  "chapterIds": [
+    "otaria"
+  ],
+  "featuredCard": {
+    "name": "Kamahl, Fist of Krosa",
+    "setCode": "arc",
+    "collectorNumber": "61",
+    "scryfallId": "97ab4974-d0a4-4033-b150-8928b46dc626",
+    "artist": "Matthew D. Wilson",
+    "significance": "A reprint of Kamahl's green incarnation, originally introduced in Onslaught to reflect his turn from violent pit fighting toward druidic magic."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Kamahl, Heart of Krosa",
+    "url": "https://magic.wizards.com/en/news/card-preview/kamahl-heart-krosa-2020-10-28"
+  }
+}
