@@ -25,7 +25,7 @@ const categoryLabels = {
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">The people behind the history</p>
       <h1>Connections across the <em>Multiverse.</em></h1>
-      <p>Follow a character's immediate network, move between connected figures, and read the chapter behind each documented relationship.</p>
+      <p>Explore documented character connections in an interactive graph or follow individual relationships through the historical record.</p>
     </div>
   </section>
 
@@ -60,6 +60,12 @@ const categoryLabels = {
         <button type="button" id="network-reset">Reset view</button>
       </div>
 
+      <div class="network-view-switch" id="network-view-switch" hidden aria-label="Relationship display mode">
+        <span class="network-view-switch__label">Explore relationships</span>
+        <button type="button" id="network-show-graph" aria-pressed="true">Graph view</button>
+        <button type="button" id="network-show-cards" aria-pressed="false">Relationship cards</button>
+      </div>
+
       <div class="network-focus" id="network-focus" hidden>
         <span class="eyebrow">Current focus</span>
         <strong id="network-focus-name">{byId.get(initialId)?.name ?? ''}</strong>
@@ -68,6 +74,28 @@ const categoryLabels = {
       </div>
 
       <p class="network-empty" id="network-empty" hidden>No documented connections match this category for the selected character. Choose another relationship type or a different figure.</p>
+
+      <section class="network-visual" id="network-visual" aria-labelledby="network-visual-heading" hidden>
+        <div class="network-visual__toolbar">
+          <div>
+            <h3 id="network-visual-heading">Character connections</h3>
+            <p>Drag to explore, scroll or pinch to zoom, and select a node to focus on a character. For keyboard navigation and historical context, use the character selector or relationship cards.</p>
+          </div>
+          <div class="network-visual__actions" aria-label="Graph zoom controls">
+            <button type="button" id="network-zoom-out" aria-label="Zoom out of relationship graph">−</button>
+            <button type="button" id="network-zoom-in" aria-label="Zoom into relationship graph">+</button>
+            <button type="button" id="network-fit">Fit graph</button>
+          </div>
+        </div>
+        <ul class="network-visual__legend" aria-label="Relationship color legend">
+          {Object.entries(categoryLabels).map(([key, label]) => (
+            <li class={'network-legend--' + key}>{label}</li>
+          ))}
+        </ul>
+        <p id="network-graph-status" role="status" aria-live="polite">Loading relationship graph…</p>
+        <div id="network-canvas" role="img" aria-label="Interactive character relationship graph"></div>
+      </section>
+      <p class="network-graph-error" id="network-graph-error" role="status" hidden>The interactive graph could not be loaded. All historical connections remain available in the relationship cards below.</p>
 
       <div class="network-grid" id="network-grid">
         {characterRelationships.map((relation) => {
@@ -104,7 +132,7 @@ const categoryLabels = {
           );
         })}
       </div>
-      <p class="network-note">This view shows documented direct relationships, not every encounter or implied association. Open a connected figure to continue following the network.</p>
+      <p class="network-note">Only documented relationships appear in this atlas; shared chapter appearances do not create connections. Use Relationship cards for complete contextual descriptions.</p>
       <div class="network-crosslinks">
         <a class="text-link" href={withBase('characters/')}>All character profiles →</a>
         <a class="text-link" href={withBase('timeline/')}>Explore the historical timeline →</a>
@@ -114,6 +142,7 @@ const categoryLabels = {
 </BaseLayout>
 
 <script>
+  import { initializeRelationshipGraph } from '../../scripts/relationship-graph';
   const root = document.querySelector<HTMLElement>('[data-relationship-explorer]');
   if (root) {
     const controls = root.querySelector<HTMLElement>('#network-controls');
@@ -173,6 +202,7 @@ const categoryLabels = {
             window.history.pushState(null, '', url.pathname + url.search + url.hash);
           }
         }
+        root.dispatchEvent(new CustomEvent('relationship:change'));
       };
       select.addEventListener('change', () => update(true));
       type.addEventListener('change', () => update(true));
@@ -196,6 +226,7 @@ const categoryLabels = {
       controls.hidden = false;
       focus.hidden = false;
       update(false);
+      void initializeRelationshipGraph(root);
     }
   }
 </script>

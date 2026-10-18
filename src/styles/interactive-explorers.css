@@ -207,3 +207,74 @@
 @media (prefers-reduced-motion: reduce) {
   .atlas-primary-link, .network-edge, .archive-card, .discovery-card { transition: none; }
 }
+
+/* Relationship graph Phase 1 — progressive enhancement over the static cards. */
+.network-view-switch {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem;
+  margin: 1.1rem 0 0; padding: 0.6rem; border: 1px solid var(--line);
+  border-radius: 9px; background: var(--paper-white);
+}
+.network-view-switch__label {
+  margin-right: auto; padding: 0.35rem 0.55rem; font-weight: 700;
+  font-size: 0.77rem; color: var(--ink-soft);
+}
+.network-view-switch button, .network-visual__actions button {
+  min-height: 42px; padding: 0.55rem 0.85rem; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--paper);
+  color: var(--ink); font: inherit; font-size: 0.8rem; font-weight: 700; cursor: pointer;
+}
+.network-view-switch button[aria-pressed="true"] {
+  background: var(--paper-deep); border-color: var(--gold); color: var(--ink);
+}
+.network-view-switch button:hover, .network-visual__actions button:hover { border-color: var(--gold); }
+.network-view-switch button:focus-visible, .network-visual__actions button:focus-visible {
+  outline: 3px solid var(--gold); outline-offset: 3px;
+}
+.network-visual {
+  margin: 1.5rem 0; overflow: hidden; background: var(--paper-white);
+  border: 1px solid var(--line); border-radius: 12px;
+}
+.network-visual__toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--line);
+}
+.network-visual__toolbar > div:first-child { flex: 1 1 320px; }
+.network-visual__toolbar h3 {
+  color: var(--ink); font-family: var(--font-display); font-size: 1.35rem; font-weight: normal;
+}
+.network-visual__toolbar p { margin-top: 0.3rem; color: var(--ink-soft); font-size: 0.77rem; line-height: 1.55; }
+.network-visual__actions { display: flex; gap: 0.4rem; }
+.network-visual__actions button { min-width: 44px; }
+.network-visual #network-graph-status {
+  margin: 0; padding: 0.5rem 1.25rem; color: var(--ink-soft);
+  font-size: 0.75rem; background: var(--paper);
+}
+
+.network-visual__legend {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin: 0;
+  padding: 0.7rem 1.25rem; list-style: none;
+}
+.network-visual__legend li {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  color: var(--ink-soft); font-size: 0.72rem;
+}
+.network-visual__legend li::before {
+  display: block; width: 0.65rem; height: 0.65rem; border-radius: 50%;
+  content: ''; background: var(--legend-color, #819497);
+}
+.network-legend--family { --legend-color: #d19f56; }
+.network-legend--friendship { --legend-color: #2d9a86; }
+.network-legend--alliance { --legend-color: #3a87ad; }
+.network-legend--rivalry { --legend-color: #c96b63; }
+.network-legend--mentorship { --legend-color: #9679c5; }
+.network-legend--creation { --legend-color: #ac8a62; }
+#network-canvas { width: 100%; height: clamp(410px, 66vh, 730px); touch-action: none; }
+.network-graph-error {
+  margin: 1rem 0; padding: 1rem; border: 1px solid var(--line);
+  border-left: 3px solid var(--gold); background: var(--paper-white); color: var(--ink-soft);
+}
+@media (max-width: 600px) {
+  .network-visual__toolbar { align-items: flex-start; }
+  .network-view-switch__label { flex-basis: 100%; }
+  #network-canvas { height: 420px; }
+}
