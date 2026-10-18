@@ -33,6 +33,7 @@ test('timeline native event panels can be expanded and read', async ({ page }) =
 test('relationship explorer opens from character deep link and traverses the network', async ({ page }) => {
   await page.goto(`${root}relationships/?person=urza`);
   await expect(page.locator('#network-person')).toHaveValue('urza');
+  await page.locator('#network-show-cards').click();
   const visible = page.locator('[data-network-edge]:visible');
   expect(await visible.count()).toBeGreaterThan(0);
   const firstFocusButton = visible.first().locator('button[data-network-focus]:visible');
@@ -46,6 +47,7 @@ test('relationship explorer opens from character deep link and traverses the net
 
 test('relationship category filter is reversible', async ({ page }) => {
   await page.goto(`${root}relationships/?person=urza`);
+  await page.locator('#network-show-cards').click();
   const first = page.locator('[data-network-edge]:visible').first();
   const category = await first.getAttribute('data-category');
   await page.locator('#network-category').selectOption(category);
@@ -108,6 +110,7 @@ test('timeline event search narrows visible event records and restores them on c
 
 test('relationship category and focused character are restored by browser history', async ({ page }) => {
   await page.goto(`${root}relationships/?person=urza`);
+  await page.locator('#network-show-cards').click();
   const selected = page.locator('[data-network-edge]:visible').first();
   const category = await selected.getAttribute('data-category');
   expect(category).toBeTruthy();
@@ -174,4 +177,49 @@ test.describe('no-JavaScript fallback', () => {
     await expect(edge).toBeVisible();
     await expect(edge.locator('a').first()).toHaveAttribute('href', /\/characters\//);
   });
+});
+
+// Graph Phase 1: network rendering is progressive and preserves existing cards.
+test('relationship graph renders, zooms, and retains accessible card navigation', async ({ page }) => {
+  await page.goto(`${root}relationships/`);
+  const explorer = page.locator('[data-relationship-explorer]');
+  await expect(explorer).toHaveAttribute('data-graph-state', 'ready');
+  await expect(page.locator('#network-view-switch')).toBeVisible();
+  await expect(page.locator('#network-visual')).toBeVisible();
+  await expect(page.locator('#network-canvas canvas')).toBeVisible();
+  await expect(page.locator('#network-show-graph')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('#network-grid')).toBeHidden();
+  await expect(page.locator('#network-graph-status')).toContainText('documented relationships');
+
+  await page.locator('#network-zoom-in').click();
+  await page.locator('#network-zoom-out').click();
+  await page.locator('#network-fit').click();
+  await page.locator('#network-show-cards').click();
+  await expect(page.locator('#network-grid')).toBeVisible();
+  await expect(page.locator('[data-network-edge]:visible').first()).toBeVisible();
+  await expect(page.locator('#network-show-cards')).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('#network-show-graph').click();
+  await expect(page.locator('#network-canvas canvas')).toBeVisible();
+});
+
+test('relationship graph keeps its filters and selected character synchronized', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  await expect(page.locator('[data-relationship-explorer]')).toHaveAttribute('data-graph-state', 'ready');
+  await page.locator('#network-category').selectOption('rivalry');
+  await expect(page.locator('#network-graph-status')).toContainText('documented relationships');
+  await expect(page).toHaveURL(/person=urza/);
+  await expect(page).toHaveURL(/type=rivalry/);
+  await page.locator('#network-person').selectOption('mishra');
+  await expect(page.locator('#network-focus-name')).toHaveText('Mishra');
+  await page.locator('#network-show-cards').click();
+  await expect(page.locator('[data-network-edge]:visible').first()).toBeVisible();
+});
+
+test('relationship graph fits narrow mobile screens without page overflow', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 });
+  await page.goto(`${root}relationships/`);
+  await expect(page.locator('[data-relationship-explorer]')).toHaveAttribute('data-graph-state', 'ready');
+  const overflow = await page.evaluate(() =>
+    document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
 });
