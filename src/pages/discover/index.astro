@@ -584,17 +584,16 @@ const typeLabels: Record<RecordType, string> = {
           `Showing ${count} of ${cards.length} records`;
 
         empty.hidden = count !== 0;
-        reset.disabled = !isFiltering;
+        reset.disabled = !(isFiltering || sort.value !== 'editorial');
       };
 
       for (const tab of tabs) {
-        tab.addEventListener('click', (event) => {
-          event.preventDefault();
+        tab.addEventListener('click', () => {
           type.value = tab.dataset.type ?? '';
           applyFilters();
         });
       }
-      sort.addEventListener('change', applySort);
+      sort.addEventListener('change', () => { applySort(); applyFilters(); });
       applySort();
       search.addEventListener('input', applyFilters);
       type.addEventListener('change', applyFilters);
@@ -604,6 +603,8 @@ const typeLabels: Record<RecordType, string> = {
         search.value = '';
         type.value = '';
         chapter.value = '';
+        sort.value = 'editorial';
+        applySort();
 
         applyFilters();
         search.focus();

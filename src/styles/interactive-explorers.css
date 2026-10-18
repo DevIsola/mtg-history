@@ -54,12 +54,19 @@
   color: var(--ink); text-decoration: none; font-size: 0.78rem;
 }
 .atlas-jumps span { color: var(--jade); font-weight: 700; }
+.atlas-tools :is(input, select, button):focus-visible,
+.network-tools :is(select, button):focus-visible,
+.network-edge :is(a, button):focus-visible,
+.atlas-jumps a:focus-visible, .discovery-tabs a:focus-visible,
+.archive-view-button:focus-visible, .atlas-era__events summary:focus-visible {
+  outline: 3px solid var(--gold); outline-offset: 3px;
+}
 .atlas-jumps a:hover, .discovery-tabs a:hover, .discovery-tabs a[aria-current="true"] {
   border-color: var(--gold); background: var(--paper-deep);
 }
 .atlas-track { position: relative; display: grid; gap: 1.25rem; margin-left: 1.3rem; border-left: 2px solid var(--line); }
 .atlas-era { position: relative; margin-left: 2rem; min-width: 0; scroll-margin-top: 2rem; }
-.atlas-era__rail { position: absolute; top: 1.35rem; left: -4.65rem; width: 2.7rem; height: 2.7rem;
+.atlas-era__rail { position: absolute; top: 1.35rem; left: -3.35rem; width: 2.7rem; height: 2.7rem;
   display: grid; place-items: center; border-radius: 50%;
   border: 2px solid var(--gold); background: var(--paper-white); color: var(--jade); font-weight: 700; font-size: 0.74rem;
 }
@@ -186,11 +193,14 @@
   .atlas-tools__actions, .network-tools > button { grid-column: auto; }
   .atlas-track { margin-left: 0.75rem; }
   .atlas-era { margin-left: 1.2rem; }
-  .atlas-era__rail { left: -3.35rem; width: 2.2rem; height: 2.2rem; }
+  .atlas-era__rail { left: -2.3rem; width: 2.2rem; height: 2.2rem; }
   .atlas-era__chronology { grid-template-columns: 1fr; }
   .atlas-era__topline { flex-direction: column; }
   .atlas-jumps { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.65rem; }
   .atlas-jumps a { flex-shrink: 0; }
+  .atlas-jumps { scrollbar-width: thin; }
+  .discovery-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.85rem; }
+  .discovery-tabs a { flex-shrink: 0; }
   .network-grid { grid-template-columns: 1fr; }
   .archive-directory--compact .archive-card { grid-template-columns: 90px minmax(0, 1fr); }
 }
