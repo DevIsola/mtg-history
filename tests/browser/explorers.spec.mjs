@@ -344,3 +344,61 @@ test('relationship reset restores the default global graph controls', async ({ p
   await expect(page.locator('#network-show-graph')).toHaveAttribute('aria-pressed', 'true');
   await expect(page).not.toHaveURL(/mode=|depth=|view=/);
 });
+
+// Phase 3: graph-only chapter selection uses chapter-tagged documented edges.
+test('graph chapter filtering never creates inferred relationships', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza`);
+  const explorer = page.locator('[data-relationship-explorer]');
+  await expect(explorer).toHaveAttribute('data-graph-state', 'ready');
+  const expected = await page.locator('[data-network-edge]').evaluateAll((items) => {
+    const chapter = 'war-of-the-spark';
+    const matching = items.filter((item) => item.dataset.chapter === chapter);
+    const people = new Set(matching.flatMap((item) => [item.dataset.a, item.dataset.b]));
+    return { edgeCount: matching.length, nodeCount: people.size };
+  });
+  expect(expected.edgeCount).toBeGreaterThan(0);
+  await page.locator('#network-era').selectOption('war-of-the-spark');
+  await expect(page).toHaveURL(/chapter=war-of-the-spark/);
+  await expect(explorer).toHaveAttribute('data-graph-visible-edges', String(expected.edgeCount));
+  await expect(explorer).toHaveAttribute('data-graph-visible-nodes', String(expected.nodeCount));
+  await expect(page.locator('#network-chapter-legend')).toBeVisible();
+  await expect(page.locator('#network-graph-status')).toContainText('War of the Spark');
+  await page.locator('#network-era').selectOption('');
+  await expect(page).not.toHaveURL(/chapter=/);
+});
+
+test('chapter layout, node color preference and browser history are shareable', async ({ page }) => {
+  await page.goto(`${root}relationships/?person=urza&layout=chapter&colors=neutral`);
+  const explorer = page.locator('[data-relationship-explorer]');
+  await expect(explorer).toHaveAttribute('data-graph-state', 'ready');
+  await expect(page.locator('#network-layout')).toHaveValue('chapter');
+  await expect(explorer).toHaveAttribute('data-graph-layout', 'chapter');
+  await expect(page.locator('#network-color')).toHaveValue('neutral');
+  await expect(page.locator('#network-chapter-legend')).toBeHidden();
+  await page.locator('#network-color').selectOption('chapter');
+  await expect(page).not.toHaveURL(/colors=neutral/);
+  await expect(page.locator('#network-chapter-legend')).toBeVisible();
+  await page.locator('#network-layout').selectOption('organic');
+  await expect(explorer).toHaveAttribute('data-graph-layout', 'organic');
+  await page.goBack();
+  await expect(page.locator('#network-layout')).toHaveValue('chapter');
+  await expect(explorer).toHaveAttribute('data-graph-layout', 'chapter');
+  await page.goBack();
+  await expect(page.locator('#network-color')).toHaveValue('neutral');
+  await page.locator('#network-reset').click();
+  await expect(page.locator('#network-layout')).toHaveValue('organic');
+  await expect(page.locator('#network-color')).toHaveValue('chapter');
+  await expect(page.locator('#network-era')).toHaveValue('');
+  await expect(page).not.toHaveURL(/layout=|colors=|chapter=/);
+});
+
+test('chapter graph controls remain usable in a narrow viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto(`${root}relationships/?chapter=thran&layout=chapter`);
+  await expect(page.locator('[data-relationship-explorer]')).toHaveAttribute('data-graph-state', 'ready');
+  await expect(page.locator('#network-era')).toHaveValue('thran');
+  await expect(page.locator('#network-layout')).toHaveValue('chapter');
+  const overflow = await page.evaluate(() =>
+    document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+});

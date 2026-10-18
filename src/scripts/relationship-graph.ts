@@ -2,21 +2,38 @@
  * Relationship graph Phase 2. The server-rendered HTML relationship cards are
  * the canonical accessible record and the only input to the visual network.
  */
-type GraphNode = { id: string; label: string; value: number };
+import 'vis-network/styles/vis-network.css';
+
+type GraphNode = { id: string; label: string; value: number; chapterId: string };
 type GraphEdge = {
   id: string;
   from: string;
   to: string;
   category: string;
+  chapterId: string;
   labelForA: string;
   labelForB: string;
   context: string;
   chapterHref: string;
   chapterTitle: string;
 };
-type GraphScope = 'global' | 'local';
 type GraphView = 'graph' | 'cards';
 type AtlasState = { person: string; category: string };
+
+// Node colors reflect each character's first indexed historical chapter.
+// This is an editorial grouping, never a claim of faction or relationship.
+const chapterColors = [
+  { border: '#be8254', background: '#f1d9bc' },
+  { border: '#698bb1', background: '#d9e6f7' },
+  { border: '#658f8e', background: '#d2eae5' },
+  { border: '#ae7994', background: '#f0d8e8' },
+  { border: '#a49355', background: '#f0e9c6' },
+  { border: '#8c81b8', background: '#e3ddf6' },
+  { border: '#6e9f79', background: '#dcefdc' },
+  { border: '#c0796d', background: '#f5dcd7' },
+  { border: '#6d98a4', background: '#d9ebef' },
+  { border: '#9c8d84', background: '#e8e0da' },
+];
 
 const categoryColors: Record<string, string> = {
   family: '#d19f56',
@@ -59,6 +76,10 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
   const reset = query<HTMLButtonElement>('#network-reset');
   const scope = query<HTMLSelectElement>('#network-scope');
   const depth = query<HTMLSelectElement>('#network-depth');
+  const era = query<HTMLSelectElement>('#network-era');
+  const colorMode = query<HTMLSelectElement>('#network-color');
+  const layout = query<HTMLSelectElement>('#network-layout');
+  const chapterLegend = query<HTMLElement>('#network-chapter-legend');
   const search = query<HTMLInputElement>('#network-search');
   const searchForm = query<HTMLFormElement>('#network-search-form');
   const searchStatus = query<HTMLElement>('#network-search-status');
@@ -74,7 +95,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
   const fit = query<HTMLButtonElement>('#network-fit');
 
   if (!panel || !canvas || !cards || !controls || !graphButton || !cardsButton ||
-      !status || !error || !select || !category || !reset || !scope || !depth ||
+      !status || !error || !select || !category || !reset || !scope || !depth || !era || !colorMode || !layout || !chapterLegend ||
       !search || !searchForm || !searchStatus || !inspectorKind || !inspectorHeading ||
       !inspectorSummary || !inspectorCount || !inspectorRelation || !inspectorLink || !inspectorChapter ||
       !zoomIn || !zoomOut || !fit) return;
@@ -82,6 +103,9 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
   const options = Array.from(select.options).filter((item) => item.value);
   const validIds = new Set(options.map((item) => item.value));
   const byId = new Map(options.map((option) => [option.value, option]));
+  const chapterOptions = Array.from(era.options).filter((item) => item.value);
+  const chapterIndex = new Map(chapterOptions.map((item, index) => [item.value, index]));
+  const chapterStyle = (id: string) => chapterColors[(chapterIndex.get(id) ?? 0) % chapterColors.length];
   const elements = Array.from(root.querySelectorAll<HTMLElement>('[data-network-edge]'));
   const allEdges: GraphEdge[] = elements.flatMap((element, index) => {
     const from = element.dataset.a;
@@ -92,6 +116,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       id: `relation-${index}`,
       from, to,
       category: element.dataset.category ?? '',
+      chapterId: element.dataset.chapter ?? '',
       labelForA: element.dataset.labelA ?? '',
       labelForB: element.dataset.labelB ?? '',
       context: element.querySelector<HTMLElement>(':scope > p')?.textContent?.trim() ?? '',
@@ -109,18 +134,25 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
   const allNodes: GraphNode[] = options.map((option) => ({
     id: option.value,
     label: option.textContent?.trim() ?? option.value,
+    chapterId: option.dataset.primaryChapter ?? '',
     value: Math.max(1, degree.get(option.value) ?? 0),
   }));
   const state = (): AtlasState => ({ person: select.value, category: category.value });
 
   try {
     // The only route that loads vis-network. No duplicate graph data or API calls.
-    const { DataSet, Network } = await import('vis-network/standalone');
+    // ESNext packages keep vis-network dependencies as split, cacheable ESM
+    // modules instead of placing the entire standalone renderer in one chunk.
+    const [{ DataSet }, { Network }] = await Promise.all([
+      import('vis-data/esnext'),
+      import('vis-network/esnext'),
+    ]);
     let view: GraphView = 'graph';
     let inspectedEdge: string | null = null;
     let visibleIds = new Set<string>();
     let visibleEdges: GraphEdge[] = [];
     let settling = true;
+    let organicPositions: Record<string, { x: number; y: number }> | null = null;
 
     const tokens = () => {
       const styles = getComputedStyle(document.documentElement);
@@ -145,8 +177,30 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       };
     };
     const styles = palette();
+    const nodeChapters = new Map(allNodes.map((node) => [node.id, node.chapterId]));
+    const colorForNode = (id: string, base: ReturnType<typeof palette>['node']) => {
+      if (colorMode.value === 'neutral') return base;
+      const shade = chapterStyle(era.value || nodeChapters.get(id) || '');
+      return { ...base, background: shade.background, border: shade.border };
+    };
+    const chapterSwatches = new Map(chapterOptions.map((item) => [item.value, chapterStyle(item.value)]));
+    for (const item of chapterOptions) {
+      const swatch = document.createElement('span');
+      swatch.className = 'network-chapter-legend__item';
+      const mark = document.createElement('i');
+      mark.setAttribute('aria-hidden', 'true');
+      mark.style.backgroundColor = chapterSwatches.get(item.value)?.border ?? '#819497';
+      swatch.append(mark, document.createTextNode(item.textContent?.trim() ?? item.value));
+      chapterLegend.append(swatch);
+    }
+    const updateChapterLegend = () => {
+      chapterLegend.hidden = colorMode.value !== 'chapter';
+      Array.from(chapterLegend.children).forEach((element, index) => {
+        (element as HTMLElement).hidden = !!era.value && chapterOptions[index]?.value !== era.value;
+      });
+    };
     const nodeSet = new DataSet(allNodes.map((node) => ({
-      ...node, color: styles.node, font: styles.font,
+      ...node, color: colorForNode(node.id, styles.node), font: styles.font,
     })));
     const edgeSet = new DataSet(allEdges.map((edge) => ({
       ...edge,
@@ -200,6 +254,12 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       else url.searchParams.delete('depth');
       if (view === 'cards') url.searchParams.set('view', 'cards');
       else url.searchParams.delete('view');
+      if (era.value) url.searchParams.set('chapter', era.value);
+      else url.searchParams.delete('chapter');
+      if (colorMode.value === 'neutral') url.searchParams.set('colors', 'neutral');
+      else url.searchParams.delete('colors');
+      if (layout.value === 'chapter') url.searchParams.set('layout', 'chapter');
+      else url.searchParams.delete('layout');
       if (url.href !== window.location.href) {
         window.history[replace ? 'replaceState' : 'pushState'](null, '', url.pathname + url.search + url.hash);
       }
@@ -209,6 +269,10 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       scope.value = params.get('mode') === 'local' ? 'local' : 'global';
       const requestedDepth = params.get('depth');
       depth.value = requestedDepth === '2' || requestedDepth === '3' ? requestedDepth : '1';
+      const requestedEra = params.get('chapter');
+      era.value = requestedEra && chapterIndex.has(requestedEra) ? requestedEra : '';
+      colorMode.value = params.get('colors') === 'neutral' ? 'neutral' : 'chapter';
+      layout.value = params.get('layout') === 'chapter' ? 'chapter' : 'organic';
       return params.get('view') === 'cards' ? 'cards' : 'graph';
     };
     const show = (next: GraphView, save = false, replace = false) => {
@@ -222,6 +286,40 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       if (save) persist(replace);
     };
     const fitVisible = () => {
+      if (view === 'graph' && visibleIds.size) graph.fit({ nodes: Array.from(visibleIds), animation: false });
+    };
+    // Spatial clusters are layout-only: they introduce no inferred edges and
+    // do not merge characters into artificial relationship groups.
+    const arrange = () => {
+      root.dataset.graphLayout = layout.value;
+      if (settling) return;
+      if (layout.value === 'chapter') {
+        if (!organicPositions) organicPositions = graph.getPositions();
+        graph.setOptions({ physics: { enabled: false } });
+        const orderedGroups = chapterOptions.map((option) => option.value);
+        const groups = new Map<string, GraphNode[]>();
+        for (const node of allNodes) {
+          const key = orderedGroups.includes(node.chapterId) ? node.chapterId : '';
+          const members = groups.get(key) ?? [];
+          members.push(node);
+          groups.set(key, members);
+        }
+        const total = orderedGroups.length + (groups.has('') ? 1 : 0);
+        for (const [groupIndex, chapterId] of [...orderedGroups, ...(groups.has('') ? [''] : [])].entries()) {
+          const members = (groups.get(chapterId) ?? []).sort((a, b) => a.label.localeCompare(b.label));
+          const angle = 2 * Math.PI * groupIndex / Math.max(total, 1) - Math.PI / 2;
+          const anchorX = 520 * Math.cos(angle);
+          const anchorY = 520 * Math.sin(angle);
+          for (const [index, node] of members.entries()) {
+            const ring = Math.floor(Math.sqrt(index));
+            const theta = index * 2.399963229728653; // Golden-angle spacing
+            const radius = 26 + 29 * ring;
+            graph.moveNode(node.id, anchorX + radius * Math.cos(theta), anchorY + radius * Math.sin(theta));
+          }
+        }
+      } else if (organicPositions) {
+        for (const [id, point] of Object.entries(organicPositions)) graph.moveNode(id, point.x, point.y);
+      }
       if (view === 'graph' && visibleIds.size) graph.fit({ nodes: Array.from(visibleIds), animation: false });
     };
     const inspect = () => {
@@ -270,7 +368,9 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     };
     const refresh = () => {
       const current = state();
-      const matching = allEdges.filter((edge) => !current.category || edge.category === current.category);
+      const matching = allEdges.filter((edge) =>
+        (!current.category || edge.category === current.category) &&
+        (!era.value || edge.chapterId === era.value));
       depth.disabled = scope.value !== 'local';
       visibleIds = scope.value === 'local'
         ? neighborhood(matching, current.person, Number(depth.value))
@@ -278,13 +378,14 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       visibleEdges = matching.filter((edge) => visibleIds.has(edge.from) && visibleIds.has(edge.to));
       const highlighted = new Set(matchingSearch().map((node) => node.id));
       const theme = palette();
+      const focusColor = tokens().focus;
       nodeSet.update(nodeSet.get().map((node) => ({
         ...node,
         hidden: !visibleIds.has(node.id),
         borderWidth: highlighted.has(node.id) ? 4 : 2,
         color: highlighted.has(node.id)
-          ? { ...theme.node, border: tokens().focus }
-          : theme.node,
+          ? { ...colorForNode(node.id, theme.node), border: focusColor }
+          : colorForNode(node.id, theme.node),
         font: theme.font,
       })));
       const visibleEdgeIds = new Set(visibleEdges.map((edge) => edge.id));
@@ -295,7 +396,8 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       if (inspectedEdge) graph.selectEdges([inspectedEdge]);
       else if (visibleIds.has(current.person)) graph.selectNodes([current.person], false);
       else graph.unselectAll();
-      status.textContent = `${visibleIds.size} characters and ${visibleEdges.length} documented relationships in the graph.`;
+      status.textContent = `${visibleIds.size} characters and ${visibleEdges.length} documented relationships in the graph${era.value ? ` for ${chapterOptions.find((item) => item.value === era.value)?.textContent?.trim() ?? era.value}` : ''}.`;
+      updateChapterLegend();
       canvas.setAttribute('aria-label', status.textContent);
       root.dataset.graphVisibleNodes = String(visibleIds.size);
       root.dataset.graphVisibleEdges = String(visibleEdges.length);
@@ -321,6 +423,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     graph.once('stabilizationIterationsDone', () => {
       settling = false;
       graph.setOptions({ physics: { enabled: false } });
+      arrange();
       fitVisible();
     });
     graph.once('stabilized', () => {
@@ -337,6 +440,9 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     cardsButton.addEventListener('click', () => show('cards', true));
     scope.addEventListener('change', () => { inspectedEdge = null; refresh(); persist(); fitVisible(); });
     depth.addEventListener('change', () => { inspectedEdge = null; refresh(); persist(); fitVisible(); });
+    era.addEventListener('change', () => { inspectedEdge = null; refresh(); persist(); fitVisible(); });
+    colorMode.addEventListener('change', () => { refresh(); persist(); });
+    layout.addEventListener('change', () => { arrange(); persist(); });
     search.addEventListener('input', refresh);
     inspectorRelation.addEventListener('change', () => {
       inspectedEdge = inspectorRelation.value || null;
@@ -363,13 +469,13 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       if (scope.value === 'local') fitVisible();
     });
     reset.addEventListener('click', () => {
-      scope.value = 'global'; depth.value = '1'; search.value = ''; inspectedEdge = null;
-      refresh(); show('graph', true, true); fitVisible();
+      scope.value = 'global'; depth.value = '1'; era.value = ''; colorMode.value = 'chapter'; layout.value = 'organic'; search.value = ''; inspectedEdge = null;
+      refresh(); show('graph', true, true); arrange(); fitVisible();
     });
     window.addEventListener('popstate', () => {
       const restoredView = restore();
       inspectedEdge = null;
-      refresh(); show(restoredView);
+      refresh(); show(restoredView); arrange();
       if (scope.value === 'local') fitVisible();
     });
 
@@ -381,6 +487,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     refresh();
     controls.hidden = false;
     show(initialView);
+    arrange();
     if (scope.value === 'local') fitVisible();
     root.dataset.graphState = 'ready';
   } catch (reason) {

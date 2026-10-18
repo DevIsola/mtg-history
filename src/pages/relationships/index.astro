@@ -8,6 +8,7 @@ import { withBase } from '../../utils/paths';
 const byId = new Map(characters.map((person) => [person.id, person]));
 const chapters = await getCollection('chapters');
 const chapterNames = new Map(chapters.map((chapter) => [chapter.id, chapter.data.title]));
+const orderedChapters = [...chapters].sort((a, b) => a.data.order - b.data.order);
 const connectedIds = new Set(characterRelationships.flatMap((relation) => [relation.a, relation.b]));
 const people = [...characters].filter((person) => connectedIds.has(person.id))
   .sort((a, b) => a.name.localeCompare(b.name));
@@ -47,7 +48,7 @@ const categoryLabels = {
         <div class="network-field">
           <label for="network-person">Focus on a character</label>
           <select id="network-person">
-            {people.map((person) => <option value={person.id} data-summary={person.summary} selected={person.id === initialId}>{person.name}</option>)}
+            {people.map((person) => <option value={person.id} data-summary={person.summary} data-primary-chapter={person.chapterIds[0] ?? ''} selected={person.id === initialId}>{person.name}</option>)}
           </select>
         </div>
         <div class="network-field">
@@ -103,6 +104,29 @@ const categoryLabels = {
               <option value="3">3 steps</option>
             </select>
           </div>
+          <div class="network-explore-tools__field">
+            <label for="network-era">Historical chapter</label>
+            <select id="network-era">
+              <option value="">All chapters</option>
+              {orderedChapters.map((chapter) => (
+                <option value={chapter.id}>{chapter.data.title}</option>
+              ))}
+            </select>
+          </div>
+          <div class="network-explore-tools__field">
+            <label for="network-layout">Graph arrangement</label>
+            <select id="network-layout">
+              <option value="organic">Organic relationships</option>
+              <option value="chapter">Chapter clusters</option>
+            </select>
+          </div>
+          <div class="network-explore-tools__field">
+            <label for="network-color">Character colors</label>
+            <select id="network-color">
+              <option value="chapter">Group by primary chapter</option>
+              <option value="neutral">Single-color nodes</option>
+            </select>
+          </div>
           <form id="network-search-form" class="network-explore-tools__search" role="search">
             <label for="network-search">Find a character</label>
             <div>
@@ -117,6 +141,8 @@ const categoryLabels = {
             <li class={'network-legend--' + key}>{label}</li>
           ))}
         </ul>
+        <div id="network-chapter-legend" class="network-chapter-legend" aria-label="Character chapter color legend" hidden></div>
+        <p class="network-chapter-explainer">Chapter filtering uses the chapter documenting each relationship. Character colors reflect their first indexed chapter, not necessarily their birthplace or allegiance.</p>
         <p id="network-graph-status" role="status" aria-live="polite">Loading relationship graph…</p>
         <div id="network-canvas" role="img" aria-label="Interactive character relationship graph"></div>
         <aside id="network-inspector" class="network-inspector" aria-labelledby="network-inspector-heading">
@@ -152,6 +178,7 @@ const categoryLabels = {
               data-a={relation.a}
               data-b={relation.b}
               data-category={relation.category}
+              data-chapter={relation.chapterId}
               data-label-a={relation.labelForA}
               data-label-b={relation.labelForB}
             >
