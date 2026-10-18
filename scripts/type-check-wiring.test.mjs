@@ -11,6 +11,7 @@ test('full verification gates deployment on Astro diagnostics before building', 
   assert.deepEqual(packageJson.scripts.verify.split(/\s*&&\s*/), [
     'pnpm run test',
     'pnpm run check:content',
+    'pnpm run check:editorial',
     'pnpm run check:types',
     'pnpm run build',
     'pnpm run check:links',
