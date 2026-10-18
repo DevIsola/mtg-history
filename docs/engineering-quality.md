@@ -10,10 +10,11 @@ correctness for `.astro` or TypeScript files.
 pnpm install --frozen-lockfile
 pnpm run test          # Node regression tests (no dedicated test runner dependency)
 pnpm run check:content # Validate the lore graph before a build
+pnpm run check:editorial # Validate chapter citations and card printing metadata
 pnpm run check:types   # Astro diagnostics for .astro, TypeScript, and related files
 pnpm run build         # Generate production pages and validate content schemas
 pnpm run check:links   # Validate generated routes/assets/fragments in dist/
-pnpm run verify        # Run all five checks in order
+pnpm run verify        # Run all six checks in order
 ```
 
 `check:types` runs `astro check` with the existing strict Astro TypeScript
@@ -28,6 +29,13 @@ associations, relationship endpoints and duplicates, and literal
 `<CharacterLink id="...">` / `<HistoricalEventReference id="...">` references
 in chapter MDX. It uses Node 22+ TypeScript type stripping rather than another
 runtime dependency. Astro remains authoritative for YAML and MDX schema validation.
+
+`check:editorial` checks chapter ordering, duplicate card printings and sources,
+consistent repeated Scryfall identifiers, official HTTPS source URLs, and book
+authors/publication years. It uses a deliberately limited YAML metadata reader;
+Astro performs full schema validation. This is **not** an automated lore
+fact-check, illustration rights check, or live external URL monitor. The
+review scope and baseline are recorded in `docs/editorial-integrity-baseline.md`.
 
 `check:links` loads the site origin and base path from `astro.config.mjs` and
 checks `href`, `src`, and responsive-image `srcset` references in generated

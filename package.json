@@ -13,7 +13,8 @@
     "test": "node --test scripts/*.test.mjs",
     "check:links": "node scripts/check-built-links.mjs",
     "check:content": "node --experimental-strip-types scripts/check-content-graph.mjs",
-    "verify": "pnpm run test && pnpm run check:content && pnpm run check:types && pnpm run build && pnpm run check:links",
+    "check:editorial": "node scripts/check-editorial-metadata.mjs",
+    "verify": "pnpm run test && pnpm run check:content && pnpm run check:editorial && pnpm run check:types && pnpm run build && pnpm run check:links",
     "check:types": "astro check"
   },
   "dependencies": {
