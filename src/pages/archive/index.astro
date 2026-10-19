@@ -3,7 +3,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../utils/paths';
-import { chapterCardUse, cardImageUrl, cardScryfallUrl } from '../../utils/card-printings';
+import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../../utils/card-printings';
 
 const chapters = (await getCollection('chapters'))
   .sort((a, b) => a.data.order - b.data.order);
@@ -18,7 +18,7 @@ const sections = chapters
     order: chapter.data.order,
     cards: chapter.data.cardIds.map((_, index) => {
       const card = chapterCardUse(chapter, index, cardCatalog);
-      return { ...card, imageUrl: cardImageUrl(card.scryfallId), cardUrl: cardScryfallUrl(card) };
+      return { ...card, imageUrl: cardImageUrl(card.scryfallId), imageSrcset: cardImageSrcset(card.scryfallId), cardUrl: cardScryfallUrl(card) };
     }),
   }));
 
@@ -270,6 +270,8 @@ const setCodes = [
                 >
                   <img
                     src={card.imageUrl}
+                    srcset={card.imageSrcset}
+                    sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 320px"
                     alt={`${card.name}, illustrated by ${card.artist}`}
                     width="488"
                     height="680"

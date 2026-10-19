@@ -1,6 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
-import { cardImageUrl } from '../utils/card-printings';
+import { cardImageUrl, cardImageSrcset } from '../utils/card-printings';
 
 interface Props {
   name: string;
@@ -12,12 +12,14 @@ const printing = await getEntry('cards', cardId);
 if (!printing) throw new Error(`Missing canonical card ${cardId}`);
 const card = printing.data;
 const imageUrl = cardImageUrl(printing.id);
+const imageSrcset = cardImageSrcset(printing.id);
 ---
 
 <span
   class="card-hover"
   data-card-preview
   data-card-image={imageUrl}
+  data-card-image-set={imageSrcset}
   data-card-name={card.name}
   data-card-artist={card.artist}
   data-card-set={card.setCode.toUpperCase()}
@@ -146,6 +148,7 @@ const imageUrl = cardImageUrl(printing.id);
     image.width = 488;
     image.height = 680;
     image.decoding = 'async';
+    image.sizes = 'min(85vw, 300px)';
 
     const caption = document.createElement('div');
     caption.className = 'card-hover-popover__caption';
@@ -252,6 +255,7 @@ const imageUrl = cardImageUrl(printing.id);
       activeMode = mode;
 
       const name = wrapper.dataset.cardName ?? 'Magic card';
+      image.srcset = wrapper.dataset.cardImageSet ?? '';
       image.src = wrapper.dataset.cardImage ?? '';
       image.alt = `Magic: The Gathering card: ${name}`;
       cardName.textContent = name;

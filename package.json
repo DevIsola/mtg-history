@@ -22,9 +22,10 @@
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
     "check:artwork": "node scripts/check-artwork-fidelity.mjs",
     "review:artwork": "node scripts/check-artwork-fidelity.mjs",
-    "verify": "pnpm run test && pnpm run check:entities && pnpm run check:cards && pnpm run check:content && pnpm run check:editorial && pnpm run check:artwork && pnpm run check:styles && pnpm run check:types && pnpm run build && pnpm run check:links",
+    "verify": "pnpm run test && pnpm run check:entities && pnpm run check:cards && pnpm run check:content && pnpm run check:editorial && pnpm run check:artwork && pnpm run check:images && pnpm run check:styles && pnpm run check:types && pnpm run build && pnpm run check:links",
     "check:types": "astro check",
-    "check:styles": "node scripts/check-style-architecture.mjs"
+    "check:styles": "node scripts/check-style-architecture.mjs",
+    "check:images": "node scripts/check-image-assets.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.3",
