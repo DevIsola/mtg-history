@@ -138,6 +138,7 @@ import entry125 from '../content/events/brothers-loran-recovers-sylex.json' with
 import entry126 from '../content/events/brothers-tawnos-carries-testimony.json' with { type: 'json' };
 import entry127 from '../content/events/weatherlight-crovax-frees-selenia.json' with { type: 'json' };
 import entry128 from '../content/events/weatherlight-gerrard-rejects-legacy.json' with { type: 'json' };
+import entry129 from '../content/events/thran-glacian-stones-implanted.json' with { type: 'json' };
 
 export const historicalEvents: HistoricalEvent[] = [
   { id: "omenpaths-desparking-consequences", ...entry0 } as HistoricalEvent,
@@ -269,4 +270,5 @@ export const historicalEvents: HistoricalEvent[] = [
   { id: "brothers-tawnos-carries-testimony", ...entry126 } as HistoricalEvent,
   { id: "weatherlight-crovax-frees-selenia", ...entry127 } as HistoricalEvent,
   { id: "weatherlight-gerrard-rejects-legacy", ...entry128 } as HistoricalEvent,
+  { id: "thran-glacian-stones-implanted", ...entry129 } as HistoricalEvent,
 ];
