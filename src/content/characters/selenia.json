@@ -1,0 +1,24 @@
+{
+  "name": "Selenia",
+  "title": "The Dark Angel",
+  "origin": "Unknown; bound to an artifact in Crovax’s household on Dominaria",
+  "role": "Angel bound by a magical artifact and later compelled into Volrath’s service",
+  "summary": "An angel deprived of freedom by competing magical bonds, whose death during the Weatherlight rescue completed Crovax’s vampiric curse.",
+  "biography": [
+    "Selenia was bound to a magical artifact associated with Crovax’s household. When enemies threatened his family, Crovax used the artifact to summon her; the enchantment that aided him also caused him to fall in love with her. The bond denied Selenia the freedom to determine her own fate.",
+    "Crovax released Selenia from the artifact, hoping she might freely choose to remain. Instead, another binding transferred her into the service of Volrath, the evincar of Rath. Crovax interpreted the separation as rejection and joined the Weatherlight expedition partly because he hoped to find her again.",
+    "At Volrath’s Stronghold, Selenia attacked the rescuers. Mirri intervened and was wounded; Crovax killed the angel to save his shipmate. Her death triggered his vampiric curse. It is important not to represent Selenia as simply having chosen Volrath over Crovax: the published account explicitly emphasizes the coercive magical bindings surrounding her.",
+    "Later Planar Chaos depictions of Mirri being cursed instead of Crovax belong to an alternative reality, not the principal Weatherlight sequence."
+  ],
+  "chapterIds": [
+    "weatherlight"
+  ],
+  "featuredCardId": "9c1624f7-8275-46d3-ab7e-7b162e27593f",
+  "featuredCard": {
+    "significance": "Selenia’s original Tempest portrait, depicting the angel central to Crovax’s curse; not a depiction of her death at the Stronghold."
+  },
+  "source": {
+    "title": "Wizards of the Coast — Weather(light) Report",
+    "url": "https://magic.wizards.com/en/news/making-magic/weatherlight-report-2007-12-03"
+  }
+}

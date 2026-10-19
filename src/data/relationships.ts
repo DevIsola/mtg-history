@@ -136,6 +136,8 @@ import entry112 from '../content/relationships/teferi--windgrace--alliance--mend
 import entry113 from '../content/relationships/jeska--radha--rivalry--mending.json' with { type: 'json' };
 import entry114 from '../content/relationships/jeska--venser--alliance--mending.json' with { type: 'json' };
 import entry115 from '../content/relationships/jeska--teferi--rivalry--mending.json' with { type: 'json' };
+import entry116 from '../content/relationships/crovax--selenia--rivalry--weatherlight.json' with { type: 'json' };
+import entry117 from '../content/relationships/mirri--selenia--rivalry--weatherlight.json' with { type: 'json' };
 
 export const characterRelationships: CharacterRelationship[] = [
   entry0 as CharacterRelationship,
@@ -254,4 +256,6 @@ export const characterRelationships: CharacterRelationship[] = [
   entry113 as CharacterRelationship,
   entry114 as CharacterRelationship,
   entry115 as CharacterRelationship,
+  entry116 as CharacterRelationship,
+  entry117 as CharacterRelationship,
 ];

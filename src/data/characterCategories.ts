@@ -25,7 +25,7 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "weatherlight-legacy",
     label: "The Weatherlight and the Legacy",
-    characterIds: ["barrin", "radiant", "multani", "rofellos", "squee", "gerrard", "sisay", "hanna", "mirri", "karn"],
+    characterIds: ["barrin", "radiant", "multani", "rofellos", "squee", "gerrard", "sisay", "hanna", "mirri", "karn", "selenia"],
   },
 
   {
@@ -138,7 +138,7 @@ export const characterCategories: CharacterCategory[] = [
   {
     id: "otherworldly",
     label: "Angels, demons, and Eldrazi",
-    characterIds: ["avacyn", "griselbrand", "emrakul"],
+    characterIds: ["avacyn", "griselbrand", "emrakul", "selenia"],
   },
 
   {

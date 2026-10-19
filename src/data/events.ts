@@ -134,6 +134,10 @@ import entry121 from '../content/events/karn-heals-tolaria.json' with { type: 'j
 import entry122 from '../content/events/jeska-seals-zhalfir-rift.json' with { type: 'json' };
 import entry123 from '../content/events/bolas-and-madara-rift.json' with { type: 'json' };
 import entry124 from '../content/events/jeskas-final-sacrifice.json' with { type: 'json' };
+import entry125 from '../content/events/brothers-loran-recovers-sylex.json' with { type: 'json' };
+import entry126 from '../content/events/brothers-tawnos-carries-testimony.json' with { type: 'json' };
+import entry127 from '../content/events/weatherlight-crovax-frees-selenia.json' with { type: 'json' };
+import entry128 from '../content/events/weatherlight-gerrard-rejects-legacy.json' with { type: 'json' };
 
 export const historicalEvents: HistoricalEvent[] = [
   { id: "omenpaths-desparking-consequences", ...entry0 } as HistoricalEvent,
@@ -261,4 +265,8 @@ export const historicalEvents: HistoricalEvent[] = [
   { id: "jeska-seals-zhalfir-rift", ...entry122 } as HistoricalEvent,
   { id: "bolas-and-madara-rift", ...entry123 } as HistoricalEvent,
   { id: "jeskas-final-sacrifice", ...entry124 } as HistoricalEvent,
+  { id: "brothers-loran-recovers-sylex", ...entry125 } as HistoricalEvent,
+  { id: "brothers-tawnos-carries-testimony", ...entry126 } as HistoricalEvent,
+  { id: "weatherlight-crovax-frees-selenia", ...entry127 } as HistoricalEvent,
+  { id: "weatherlight-gerrard-rejects-legacy", ...entry128 } as HistoricalEvent,
 ];

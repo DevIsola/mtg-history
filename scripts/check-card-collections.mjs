@@ -42,14 +42,14 @@ const comparedEvents = events.map((event) => {
 });
 const plan = planCards(chapters, comparedCharacters, comparedEvents);
 const errors = compareCards(plan, canonical, chapterSources, characters, events);
-if (chapters.length !== 10 || characters.length !== 87 || events.length !== 125 ||
+if (chapters.length !== 10 || characters.length !== 88 || events.length !== 129 ||
     chapters.reduce((total, chapter) => total + chapter.cards.length, 0) !== 135) {
-  errors.push('Unexpected content totals: 10 chapters, 87 characters, 125 events, 135 curated chapter card references required');
+  errors.push('Unexpected content totals: 10 chapters, 88 characters, 129 events, 135 curated chapter card references required');
 }
 if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log(`Card collection: ${canonical.length} unique printings; 135/135 chapter uses, 87/87 character references, 125/125 event references.`);
+  console.log(`Card collection: ${canonical.length} unique printings; 135/135 chapter uses, 88/88 character references, 129/129 event references.`);
   console.log('Exact printing identities and reference integrity passed (offline).');
 }
