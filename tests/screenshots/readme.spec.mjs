@@ -176,7 +176,7 @@ test('discovery — one searchable index of chapters, people and events', async 
   await expect(search).toBeVisible();
   await search.fill('Phyrexia');
   const total = await page.locator('[data-discovery-record]').count();
-  await expect(page.locator('#discovery-status')).not.toHaveText(new RegExp(`of ${total} records$`));
+  await expect(page.locator('#discovery-status')).not.toHaveText(`Showing ${total} of ${total} records`);
   await search.blur();
   await scrollToTop(page.locator('#discovery-filters'), 100);
   await shoot(page, 'discover.jpg');
