@@ -1,0 +1,54 @@
+@use 'sass:map';
+
+// Editorial chapter palettes. The named colors are accents, not mana identities.
+// The global light/dark surface tokens remain in _tokens.scss and _theme.scss.
+// Each accent must contrast >= 4.5:1 with its theme's --paper-white surface.
+$chapter-palettes: (
+  thran: (light: #775124, dark: #e7bd83, top: #334239, bottom: #142026),
+  brothers-war: (light: #87442e, dark: #eab39b, top: #44342c, bottom: #171f25),
+  ice-age: (light: #285b79, dark: #aad4ed, top: #274456, bottom: #14242d),
+  weatherlight: (light: #245d53, dark: #a3dacf, top: #264747, bottom: #132329),
+  otaria: (light: #70467a, dark: #dec0eb, top: #473449, bottom: #191d2a),
+  mending: (light: #4d558b, dark: #c3caff, top: #343955, bottom: #151e32),
+  many-worlds: (light: #256457, dark: #b1dfcb, top: #2d4944, bottom: #18252b),
+  war-of-the-spark: (light: #703e60, dark: #e8b8d4, top: #453344, bottom: #1b1c29),
+  march-of-the-machine: (light: #44653c, dark: #c6dcae, top: #354337, bottom: #182326),
+  omenpaths: (light: #85542d, dark: #f0c18f, top: #4b3c32, bottom: #22252b),
+);
+
+// Scope all accents to the chapter wrapper. Do not overwrite global --gold,
+// --link-color, --ink, or --paper variables used by the main site.
+.chapter-theme {
+  --era-accent: var(--link-color);
+  --era-banner-top: #2c4240;
+  --era-banner-bottom: var(--night);
+
+  .page-banner {
+    background: radial-gradient(ellipse at 88% 25%, var(--era-banner-top), var(--era-banner-bottom) 70%);
+  }
+
+  .chapter-reader__context,
+  .chapter-toc__count,
+  .chapter-switcher__eyebrow {
+    color: var(--era-accent);
+  }
+
+  .chapter-publications {
+    border-inline-start: 3px solid var(--era-accent);
+  }
+
+  .historical-moment {
+    border-top-color: var(--era-accent);
+  }
+}
+
+@each $id, $palette in $chapter-palettes {
+  .chapter-theme[data-era-theme='#{$id}'] {
+    --era-accent: #{map.get($palette, light)};
+    --era-banner-top: #{map.get($palette, top)};
+    --era-banner-bottom: #{map.get($palette, bottom)};
+  }
+  :root[data-theme='dark'] .chapter-theme[data-era-theme='#{$id}'] {
+    --era-accent: #{map.get($palette, dark)};
+  }
+}

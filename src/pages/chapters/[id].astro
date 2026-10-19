@@ -44,6 +44,7 @@ const nextChapter = chapters[currentIndex + 1];
   title={chapter.data.title}
   description={chapter.data.subtitle}
 >
+  <div class="chapter-theme" data-era-theme={chapter.id}>
   <section class="page-banner">
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">
@@ -147,4 +148,5 @@ const nextChapter = chapters[currentIndex + 1];
       </div>
     </div>
   </section>
+  </div>
 </BaseLayout>
