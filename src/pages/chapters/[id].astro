@@ -8,6 +8,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChapterToc from '../../components/ChapterToc.astro';
 import ChapterSources from '../../components/ChapterSources.astro';
 import ChapterSwitcher from '../../components/ChapterSwitcher.astro';
+import ChapterHistoryPaths from '../../components/ChapterHistoryPaths.astro';
 
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
@@ -106,6 +107,9 @@ const nextChapter = chapters[currentIndex + 1];
 
         <!-- Historical references -->
         <ChapterSources sources={chapter.data.sources} />
+
+        <!-- Curated historical continuity, separate from sequential navigation. -->
+        <ChapterHistoryPaths chapterId={chapter.id} chapters={chapters} />
 
         <!-- Reading navigation -->
         <nav

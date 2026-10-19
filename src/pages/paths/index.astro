@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { historyPaths, validateHistoryPaths } from '../../data/history-paths.mjs';
+import { withBase } from '../../utils/paths';
+
+const [chapters, events] = await Promise.all([getCollection('chapters'), getCollection('events')]);
+const byChapter = new Map(chapters.map((chapter) => [chapter.id, chapter]));
+const byEvent = new Map(events.map((event) => [event.id, event]));
+const errors = validateHistoryPaths(
+  historyPaths,
+  new Set(byChapter.keys()),
+  new Map(events.map((event) => [event.id, event.data.chapterId.id])),
+);
+if (errors.length) throw new Error(`Historical reading paths:\n${errors.join('\n')}`);
+---
+
+<BaseLayout title="Historical reading paths" description="Follow source-anchored connections across Magic's historical chapters without collapsing separate eras into one timeline.">
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">Historical continuity</p>
+      <h1>Stories across <em>the chapters.</em></h1>
+      <p>Explore how people, institutions, and changes in the Multiverse connect different eras. These are curated reading sequences, not claims of exact cross-planar dates.</p>
+    </div>
+  </section>
+  <section class="section-spacing history-paths" aria-label="Historical reading paths">
+    <div class="page-shell">
+      <p class="history-paths__intro">Each stop links to an existing historical event and the chapter that provides its context. Read the source notes inside each chapter for evidence and publication history.</p>
+      <div class="history-paths__grid">
+        {historyPaths.map((path) => (
+          <article id={path.id} class="history-path" data-historical-path>
+            <p class="eyebrow">{path.steps.length} chapters · Editorial route</p>
+            <h2>{path.title}</h2>
+            <p>{path.summary}</p>
+            <p class="history-path__caution"><strong>Chronology:</strong> {path.chronology}</p>
+            <ol>
+              {path.steps.map((step, index) => {
+                const chapter = byChapter.get(step.chapterId)!;
+                const event = byEvent.get(step.eventId)!;
+                return (
+                  <li>
+                    <span class="history-path__step" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                    <div>
+                      <p class="history-path__chapter">Chapter {String(chapter.data.order).padStart(2, '0')} · {chapter.data.title}</p>
+                      <h3><a href={withBase(`events/${event.id}/`)}>{event.data.title}</a></h3>
+                      <p>{step.context}</p>
+                      <a class="history-path__chapter-link" href={withBase(`chapters/${chapter.id}/#chapter-reader`)}>Read chapter →</a>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style lang="scss">
+  .history-paths__intro { max-width: 74ch; line-height: 1.7; color: var(--ink-soft); margin-bottom: 2rem; }
+  .history-paths__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1.5rem; align-items: start; }
+  .history-path { background: var(--paper-white); border: 1px solid var(--line); padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: calc(var(--site-header-height) + 1.5rem); }
+  .history-path:target { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .history-path h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2rem); margin-block: 0.5rem 0.75rem; }
+  .history-path > p:not(.eyebrow) { line-height: 1.7; color: var(--ink-soft); }
+  .history-path__caution { border-left: 3px solid var(--jade); padding-left: 0.9rem; margin-top: 0.9rem; }
+  .history-path ol { list-style: none; padding: 0; margin: 1.6rem 0 0; }
+  .history-path li { display: flex; gap: 1rem; padding-block: 1.15rem; border-top: 1px solid var(--line); }
+  .history-path__step { color: var(--jade); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .history-path__chapter { font-size: 0.8rem; color: var(--ink-soft); }
+  .history-path h3 { font-family: var(--font-display); font-size: 1.2rem; margin-block: 0.35rem; }
+  .history-path h3 a, .history-path__chapter-link { color: var(--link-color); }
+  .history-path li p:not(.history-path__chapter) { color: var(--ink-soft); font-size: 0.94rem; line-height: 1.6; }
+  .history-path__chapter-link { display: inline-block; margin-top: 0.55rem; text-decoration: underline; text-underline-offset: 0.17em; }
+  .history-path a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+</style>
