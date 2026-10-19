@@ -14,6 +14,7 @@ const styles = Object.fromEntries([
 const components = Object.fromEntries([
   'CardHoverPreview.astro', 'CharacterRelationships.astro',
   'HistoricalCard.astro', 'HistoricalEventReference.astro',
+  'SiteFooter.astro',
 ].map((name) => [name, file(`src/components/${name}`)]));
 const good = {
   styles, components,
@@ -21,6 +22,7 @@ const good = {
   tokens: styles['_tokens.scss'], reset: styles['_reset.scss'],
   config: file('astro.config.mjs'), layout: file('src/layouts/BaseLayout.astro'),
   manifest: JSON.parse(file('package.json')),
+  workspace: file('pnpm-workspace.yaml'),
   lockfile: 'lockfileVersion: "9.0"\nimporters:\n  .:\n    devDependencies:\n      sass:\npackages:\n',
 };
 
@@ -51,4 +53,18 @@ test('rejects Tailwind and missing Sass in manifest or lockfile', () => {
   assert.match(auditStyles({ ...good, styles: { ...good.styles, '_reading.scss': '@apply p-4;' } }).join(' '), /Tailwind directive/);
   assert.match(auditStyles({ ...good, manifest: { ...good.manifest, devDependencies: { ...good.manifest.devDependencies, sass: undefined } } }).join(' '), /Sass dependency/);
   assert.match(auditStyles({ ...good, lockfile: 'importers:\n  .:\npackages:\n' }).join(' '), /lockfile importer lacks Sass/);
+});
+
+
+test('approves the reviewed watcher dependency without broad build-script exemptions', () => {
+  assert.deepEqual(auditStyles(good), []);
+  assert.match(auditStyles({ ...good, workspace: "allowBuilds:\n  '@parcel/watcher': set this to true or false\n" }).join(' '), /@parcel\/watcher build|undecided placeholder/);
+  assert.match(auditStyles({ ...good, workspace: "strictDepBuilds: false\n" }).join(' '), /@parcel\/watcher build/);
+});
+
+test('footer selectors are component-owned, not reintroduced in the foundation', () => {
+  assert.match(good.components['SiteFooter.astro'], /<style lang="scss">/);
+  assert.match(good.components['SiteFooter.astro'], /bp\.\$header/);
+  assert.match(auditStyles({ ...good, foundation: good.foundation + '\n.site-footer { color: red }' }).join(' '), /footer selectors/);
+  assert.match(auditStyles({ ...good, components: { ...good.components, 'SiteFooter.astro': '<footer></footer>' } }).join(' '), /SiteFooter\.astro.*Astro-scoped SCSS/);
 });
