@@ -1,0 +1,176 @@
+<!-- A single, lazily populated native dialog shared across canonical card uses. -->
+<dialog id="card-artwork-viewer" class="card-artwork-viewer" aria-labelledby="card-artwork-viewer-title" aria-describedby="card-artwork-viewer-significance">
+  <div class="card-artwork-viewer__shell">
+    <div class="card-artwork-viewer__actions">
+      <button type="button" data-card-artwork-close>Close image <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="card-artwork-viewer__content">
+      <div class="card-artwork-viewer__image-wrap">
+        <img data-card-artwork-image alt="" width="488" height="680" decoding="async" sizes="(max-width: 680px) 85vw, 420px" />
+      </div>
+      <div class="card-artwork-viewer__details">
+        <p class="card-artwork-viewer__eyebrow">Illustrated historical record</p>
+        <h2 id="card-artwork-viewer-title" data-card-artwork-title></h2>
+        <p data-card-artwork-attribution></p>
+        <p id="card-artwork-viewer-significance" data-card-artwork-significance></p>
+        <a data-card-artwork-source target="_blank" rel="noopener noreferrer">View exact printing on Scryfall ↗</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as bp;
+
+  .card-artwork-viewer {
+    width: min(94vw, 900px);
+    max-width: 900px;
+    max-height: 94dvh;
+    padding: 0;
+    margin: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper-white);
+    color: var(--ink);
+    box-shadow: 0 26px 90px #0008;
+    overflow: auto;
+  }
+
+  .card-artwork-viewer::backdrop { background: rgb(10 16 20 / 83%); }
+  .card-artwork-viewer__shell { padding: clamp(1rem, 2.4vw, 1.7rem); }
+  .card-artwork-viewer__actions { display: flex; justify-content: flex-end; margin-bottom: 0.75rem; }
+  .card-artwork-viewer__actions button {
+    min-height: 44px;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  .card-artwork-viewer__actions button span { font-size: 1.2rem; margin-left: 0.35rem; }
+  .card-artwork-viewer :is(button, a):focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
+  .card-artwork-viewer__content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+  .card-artwork-viewer__image-wrap { display: flex; align-items: center; justify-content: center; min-width: 0; }
+  .card-artwork-viewer__image-wrap img { display: block; width: auto; max-width: 100%; height: auto; max-height: 73dvh; object-fit: contain; }
+  .card-artwork-viewer__details { min-width: 0; }
+  .card-artwork-viewer__details h2 { margin: 0.5rem 0; font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 400; line-height: 1.25; }
+  .card-artwork-viewer__details p { margin: 0.85rem 0; line-height: 1.6; color: var(--ink-soft); }
+  .card-artwork-viewer__details .card-artwork-viewer__eyebrow { color: var(--jade); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .card-artwork-viewer__details a { color: var(--link-color); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: bp.$header) {
+    .card-artwork-viewer__content { grid-template-columns: minmax(0, 1fr); }
+    .card-artwork-viewer__image-wrap img { max-height: 48dvh; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-artwork-viewer { scroll-behavior: auto; }
+  }
+</style>
+
+<script>
+  import { buildCardArtworkViewerModel, shouldAnimateCardArtwork } from '../utils/card-artwork-viewer.mjs';
+
+  const dialog = document.querySelector<HTMLDialogElement>('#card-artwork-viewer');
+  if (dialog) {
+    const image = dialog.querySelector<HTMLImageElement>('[data-card-artwork-image]')!;
+    const title = dialog.querySelector<HTMLElement>('[data-card-artwork-title]')!;
+    const attribution = dialog.querySelector<HTMLElement>('[data-card-artwork-attribution]')!;
+    const significance = dialog.querySelector<HTMLElement>('[data-card-artwork-significance]')!;
+    const sourceLink = dialog.querySelector<HTMLAnchorElement>('[data-card-artwork-source]')!;
+    const closeButton = dialog.querySelector<HTMLButtonElement>('[data-card-artwork-close]')!;
+    let trigger: HTMLButtonElement | null = null;
+    let opening = false;
+
+    // Original Scryfall links work without this enhancement. Reveal buttons only
+    // after the dialog and its keyboard controls are installed.
+    for (const button of document.querySelectorAll<HTMLButtonElement>('[data-card-artwork-open]')) {
+      button.addEventListener('click', () => {
+        if (dialog.open || opening) return;
+        let model;
+        try {
+          model = buildCardArtworkViewerModel({
+            id: button.dataset.printingId ?? '',
+            name: button.dataset.cardName ?? '',
+            artist: button.dataset.cardArtist ?? '',
+            setCode: button.dataset.cardSet ?? '',
+            collectorNumber: button.dataset.cardNumber ?? '',
+            significance: button.dataset.cardSignificance ?? '',
+          });
+        } catch (error) {
+          console.error('Cannot open historical printing:', error);
+          return;
+        }
+
+        // The image delivery fallback may have replaced the prior card image.
+        // Reset only the shared dialog's previous failure state.
+        if (image.nextElementSibling?.classList.contains('card-image-fallback')) {
+          image.nextElementSibling.remove();
+        }
+        image.style.removeProperty('display');
+        delete image.dataset.cardImageFallbackApplied;
+        title.textContent = model.title;
+        attribution.textContent = model.attribution;
+        significance.textContent = model.significance;
+        image.alt = model.alt;
+        image.srcset = model.imageSrcset;
+        image.src = model.imageUrl;
+        sourceLink.href = model.cardUrl;
+        trigger = button;
+
+        const originalImage = button.closest('figure')?.querySelector<HTMLImageElement>('a > img') ?? null;
+        const motion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const animate = shouldAnimateCardArtwork({
+          reducedMotion: motion,
+          supported: typeof document.startViewTransition === 'function',
+          sourceLoaded: !!originalImage?.naturalWidth,
+        });
+        const show = () => { dialog.showModal(); closeButton.focus(); };
+
+        if (animate && originalImage) {
+          opening = true;
+          originalImage.style.viewTransitionName = 'mtg-artwork-zoom';
+          try {
+            const transition = document.startViewTransition(() => {
+              originalImage.style.viewTransitionName = '';
+              image.style.viewTransitionName = 'mtg-artwork-zoom';
+              show();
+            });
+            void transition.finished.then(
+              () => {},
+              () => {},
+            ).finally(() => {
+              originalImage.style.viewTransitionName = '';
+              image.style.viewTransitionName = '';
+              opening = false;
+            });
+          } catch {
+            originalImage.style.viewTransitionName = '';
+            image.style.viewTransitionName = '';
+            opening = false;
+            show();
+          }
+        } else {
+          show();
+        }
+      });
+      button.hidden = false;
+    }
+
+    closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      image.removeAttribute('src');
+      image.removeAttribute('srcset');
+      if (trigger?.isConnected) trigger.focus();
+      trigger = null;
+    });
+  }
+</script>
