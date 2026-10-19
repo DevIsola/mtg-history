@@ -53,6 +53,6 @@ test('old curse event is linked to Selenia and new ties have valid endpoints', (
 test('legacy data adapters and cardinality gates include Wave 2B records', () => {
   assert.match(read('src/data/characters.ts'), /id: "selenia", \.\.\.entry87/);
   for (const [id] of selected) assert.ok(read('src/data/events.ts').includes(`id: "${id}"`));
-  assert.match(read('scripts/check-entity-collections.mjs'), /characters: 88, events: 129, relationships: 118/);
-  assert.match(read('scripts/check-card-collections.mjs'), /88\/88 character references, 129\/129 event references/);
+  assert.match(read('scripts/check-entity-collections.mjs'), /characters: 88, events: 130, relationships: 118/);
+  assert.match(read('scripts/check-card-collections.mjs'), /88\/88 character references, 130\/130 event references/);
 });

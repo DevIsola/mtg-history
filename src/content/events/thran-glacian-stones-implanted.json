@@ -1,0 +1,17 @@
+{
+  "title": "Yawgmoth Implants Glacian with Broken Powerstones",
+  "chapterId": "thran",
+  "summary": "Yawgmoth implants two halves of a broken powerstone in Glacian, draining the inventor's life before the fragments become Phyrexia's seal.",
+  "narrative": [
+    "Yawgmoth's interventions during Glacian's illness included implanting two halves of a broken powerstone in the engineer's body. Rather than curing him, the fragments drew away Glacian's life force. The official Commander Legends account explicitly identifies this as the cause of his death.",
+    "This harm happened in the ancient Thran period and is distinct from Glacian's earlier invention of powerstone technology. The victim's own discovery became a means of exploitation rather than rescue, exposing the distance between Yawgmoth's medical authority and the consequences of his methods.",
+    "Rebbec later used those same halves to seal the planar gateway to Phyrexia. They survived long enough for Urza and Mishra to discover them much later, calling them the Mightstone and Weakstone. The sealing and the rediscovery are separate events, even though the physical artifacts connect all three.",
+    "The curated 2022 The Mightstone and Weakstone card provides a retrospective picture of the surviving artifacts. It does not literally illustrate Yawgmoth's implantation of the stones in Glacian, and its publication year is not a date for the Thran event."
+  ],
+  "characterIds": [
+    "yawgmoth",
+    "glacian",
+    "rebbec"
+  ],
+  "cardId": "02aea379-b444-46a3-82f4-3038f698d4f4"
+}
