@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { characters } from '../data/characters';
+import { historicalEvents } from '../data/events';
+import { characterRelationships } from '../data/relationships';
+import { deriveEntityContinuity, entityConnectionsForChapter } from '../data/entity-continuity.mjs';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  chapterId: string;
+  chapters: CollectionEntry<'chapters'>[];
+}
+const { chapterId, chapters } = Astro.props;
+const connections = deriveEntityContinuity(chapters, characters, historicalEvents, characterRelationships);
+const matches = entityConnectionsForChapter(chapterId, connections);
+---
+
+{matches.length > 0 && (
+  <aside class="entity-continuity" aria-labelledby="entity-continuity-heading" data-entity-continuity>
+    <p class="eyebrow">From the historical record</p>
+    <h2 id="entity-continuity-heading">People appearing across chapters</h2>
+    <p>These connections are inferred from characters named in events in both chapters. They are <strong>evidence-index links</strong>, not curated timelines or claims of causation.</p>
+    <ul>
+      {matches.map((connection) => {
+        const otherId = connection.fromId === chapterId ? connection.toId : connection.fromId;
+        const otherTitle = connection.fromId === chapterId ? connection.toTitle : connection.fromTitle;
+        return (
+          <li>
+            <a href={withBase(`chapters/${otherId}/#chapter-reader`)}><strong>{otherTitle}</strong> <span aria-hidden="true">→</span></a>
+            <p>{connection.people.length} shared {connection.people.length === 1 ? 'character' : 'characters'} referenced by documented events:</p>
+            <ul>
+              {connection.people.slice(0, 3).map((person) => (
+                <li>
+                  <a href={withBase(`characters/${person.id}/`)}>{person.name}</a>
+                  {' · '}
+                  <a href={withBase(`events/${connection.fromId === chapterId ? person.fromEventId : person.toEventId}/`)}>Event here</a>
+                  {' · '}
+                  <a href={withBase(`events/${connection.fromId === chapterId ? person.toEventId : person.fromEventId}/`)}>Event there</a>
+                </li>
+              ))}
+            </ul>
+            {connection.ties.length > 0 && <p>Some of these figures also have separately documented relationships in the archive.</p>}
+          </li>
+        );
+      })}
+    </ul>
+    <a class="text-link" href={withBase('paths/#entity-evidence')}>Explore the full cross-chapter evidence index →</a>
+  </aside>
+)}
+
+<style lang="scss">
+  .entity-continuity { border-top: 1px solid var(--line); margin-block: 1.7rem 2.4rem; padding-top: 1.8rem; }
+  .entity-continuity h2 { font-family: var(--font-display); font-size: clamp(1.35rem, 2.4vw, 1.8rem); margin-top: 0.3rem; }
+  .entity-continuity > p:not(.eyebrow) { color: var(--ink-soft); line-height: 1.65; max-width: 75ch; margin-top: 0.7rem; }
+  .entity-continuity > ul { list-style: none; padding: 0; margin: 1.2rem 0; display: grid; gap: 0.85rem; }
+  .entity-continuity > ul > li { border: 1px solid var(--line); background: var(--paper-white); padding: 1rem 1.2rem; }
+  .entity-continuity li > a { color: var(--link-color); }
+  .entity-continuity li > p { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; margin-top: 0.55rem; }
+  .entity-continuity li ul { list-style: disc; padding-left: 1.3rem; margin-top: 0.55rem; }
+  .entity-continuity li ul li { padding-block: 0.2rem; line-height: 1.6; }
+  .entity-continuity li ul a { color: var(--link-color); text-decoration: underline; text-underline-offset: 0.16em; }
+  .entity-continuity a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+</style>
