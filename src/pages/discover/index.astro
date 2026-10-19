@@ -7,7 +7,7 @@ import { characters } from '../../data/characters';
 import { characterCategories } from '../../data/characterCategories';
 import { historicalEvents } from '../../data/events';
 import { withBase } from '../../utils/paths';
-import { chapterCardUse, resolvePrinting, cardImageUrl } from '../../utils/card-printings';
+import { chapterCardUse, resolvePrinting, cardImageUrl, cardImageSrcset } from '../../utils/card-printings';
 
 type RecordType = 'chapter' | 'character' | 'event';
 
@@ -20,6 +20,7 @@ interface DiscoveryRecord {
   url: string;
   illustration: string;
   imageUrl: string;
+  imageSrcset: string;
   chapterIds: string[];
   searchText: string;
 }
@@ -52,6 +53,9 @@ const chapterRecords: DiscoveryRecord[] = chapters.map((chapter) => {
     illustration: illustration?.name ?? '',
     imageUrl: illustration
       ? cardImageUrl(illustration.scryfallId)
+      : '',
+    imageSrcset: illustration
+      ? cardImageSrcset(illustration.scryfallId)
       : '',
     chapterIds: [chapter.id],
     searchText: [
@@ -101,6 +105,7 @@ const characterRecords: DiscoveryRecord[] = [...characters]
       url: withBase(`characters/${character.id}/`),
       illustration: portrait.name,
       imageUrl: cardImageUrl(portrait.scryfallId),
+      imageSrcset: cardImageSrcset(portrait.scryfallId),
       chapterIds: character.chapterIds,
       searchText: [
         character.name,
@@ -152,6 +157,7 @@ const eventRecords: DiscoveryRecord[] = historicalEvents.map(
       url: withBase(`events/${event.id}/`),
       illustration: card.name,
       imageUrl: cardImageUrl(card.scryfallId),
+      imageSrcset: cardImageSrcset(card.scryfallId),
       chapterIds: [event.chapterId],
       searchText: [
         event.title,
@@ -391,6 +397,8 @@ const typeLabels: Record<RecordType, string> = {
                   {record.imageUrl ? (
                     <img
                       src={record.imageUrl}
+                      srcset={record.imageSrcset}
+                      sizes="(max-width: 600px) 80vw, (max-width: 900px) 42vw, 300px"
                       alt={`Magic card artwork: ${record.illustration}`}
                       width="488"
                       height="680"

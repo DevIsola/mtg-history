@@ -3,12 +3,25 @@ import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import ts from 'typescript';
 
-const source = readFileSync(new URL('../src/utils/card-printings.ts', import.meta.url), 'utf8');
+const moduleUrl = new URL('../src/utils/card-printings.ts', import.meta.url);
+const source = readFileSync(moduleUrl, 'utf8');
 const javascript = ts.transpileModule(source, {
   compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
 }).outputText;
+
+// data: URLs have no directory base for relative ESM imports. Link each
+// transpiled import to the actual source module before executing its tests.
+const linkedJavascript = javascript.replace(
+  /\bfrom\s+(['"])(\.{1,2}\/[^'"]+)\1/g,
+  (_match, quote, specifier) => `from ${quote}${new URL(specifier, moduleUrl).href}${quote}`,
+);
 const { chapterCardUse, normalizeCardId } =
-  await import(`data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`);
+  await import(`data:text/javascript;base64,${Buffer.from(linkedJavascript).toString('base64')}`);
+
+
+test('transpiled card utility resolves its local image-provider import', () => {
+  assert.match(linkedJavascript, /from ['"]file:[^'"]*\/card-images\.mjs['"]/);
+});
 
 const ID = 'a736df42-18e9-4259-b0b8-54d21143e72e';
 const ALT = '8690cbcc-f8fd-41f7-9e28-e61c12b04014';

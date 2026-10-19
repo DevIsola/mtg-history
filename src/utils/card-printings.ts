@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import { cardImageUrlForPrinting, cardImageSrcsetForPrinting } from './card-images.mjs';
 
 type Printing = CollectionEntry<'cards'>['data'];
 type Chapter = CollectionEntry<'chapters'>;
@@ -46,7 +47,11 @@ export function chapterCardUse(
 
 export function cardImageUrl(cardId: string): string {
   const id = normalizeCardId(cardId);
-  return `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`;
+  return cardImageUrlForPrinting(id);
+}
+
+export function cardImageSrcset(cardId: string): string {
+  return cardImageSrcsetForPrinting(normalizeCardId(cardId));
 }
 
 export function cardScryfallUrl(card: { setCode: string; collectorNumber: string }): string {

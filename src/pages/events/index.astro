@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { historicalEvents } from '../../data/events';
 import { withBase } from '../../utils/paths';
-import { resolvePrinting, cardImageUrl } from '../../utils/card-printings';
+import { resolvePrinting, cardImageUrl, cardImageSrcset } from '../../utils/card-printings';
 
 const chapters = (await getCollection('chapters')).sort(
   (a, b) => a.data.order - b.data.order
@@ -21,7 +21,7 @@ const sections = chapters
           throw new Error(`Event ${event.id}: printing ${event.cardId} not curated in chapter ${chapter.id}`);
         }
         const card = resolvePrinting(cardCatalog, event.cardId, `event ${event.id}`);
-        return { event, cardName: card.name, imageUrl: cardImageUrl(event.cardId) };
+        return { event, cardName: card.name, imageUrl: cardImageUrl(event.cardId), imageSrcset: cardImageSrcset(event.cardId) };
       });
 
     return { chapter, events };
@@ -107,7 +107,7 @@ const sections = chapters
           </div>
 
           <div class="historical-events__grid">
-            {events.map(({ event, imageUrl, cardName }) => (
+            {events.map(({ event, imageUrl, imageSrcset, cardName }) => (
               <article class="historical-event-card">
                 <a
                   class="historical-event-card__image"
@@ -116,6 +116,8 @@ const sections = chapters
                 >
                   <img
                     src={imageUrl}
+                    srcset={imageSrcset}
+                    sizes="(max-width: 600px) 85vw, (max-width: 900px) 45vw, 320px"
                     alt={`${cardName}, a card illustrating this historical period`}
                     width="488"
                     height="680"

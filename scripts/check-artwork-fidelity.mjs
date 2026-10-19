@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { loadChapterProvenance } from './audit-external-provenance.mjs';
+import { cardImageUrlForPrinting } from '../src/utils/card-images.mjs';
 
 const ledgerPath = fileURLToPath(new URL('../docs/artwork-fidelity-ledger.tsv', import.meta.url));
 const chapterDirectory = fileURLToPath(new URL('../src/content/chapters/', import.meta.url));
@@ -97,7 +98,7 @@ export function makeArtworkGallery(chapters, entries) {
     if (!row) throw new Error(`Missing reviewed card: ${chapter.id} / ${card.name}`);
     const id = card.scryfallId.toLowerCase();
     if (!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/.test(id)) throw new Error(`Invalid Scryfall ID: ${id}`);
-    const img = `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`;
+    const img = cardImageUrlForPrinting(id);
     const dest = `https://scryfall.com/card/${encodeURIComponent(card.setCode)}/${encodeURIComponent(card.collectorNumber)}`;
     const context = `${chapter.id} ${card.name} ${row.visualRole} ${row.timeContext} ${row.editorialInterpretation}`.toLowerCase();
     return `<article class="item" data-search="${htmlEscape(context)}"><a href="${htmlEscape(dest)}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${htmlEscape(img)}" alt="${htmlEscape(card.name)}: exact Scryfall printing"/></a><div class="meta"><p class="chapter">${htmlEscape(chapter.id)} · ${htmlEscape(card.setCode.toUpperCase())} #${htmlEscape(card.collectorNumber)}</p><h2>${htmlEscape(card.name)}</h2><p><strong>${htmlEscape(row.visualRole)}</strong> · ${htmlEscape(row.timeContext)} · ${htmlEscape(row.basis)}</p><p>${htmlEscape(row.editorialInterpretation)}</p><details><summary>Chapter's existing significance</summary><p>${htmlEscape(card.significance ?? 'See chapter frontmatter for full significance.')}</p></details></div></article>`;
