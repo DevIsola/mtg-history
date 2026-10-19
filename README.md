@@ -27,30 +27,67 @@ Magic's history has been told across decades of expansions, novels, short fictio
   <img src="docs/assets/historical-eras.svg" alt="Three illustrated eras: Ancient Dominaria, the Brothers' War, and the changing Multiverse" width="100%" />
 </p>
 
-## Explore the history
+## A tour of the archive
 
-| Follow the story                                                                                                                                                      | Discover its sources                                                                                                |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
-| **[Historical timeline](https://devisola.github.io/mtg-history/timeline/)** — Follow historical eras in story order. | **[Characters](https://devisola.github.io/mtg-history/characters/)** and **[events](https://devisola.github.io/mtg-history/events/)** — Browse canonical historical records. |
-| **[Illustrated chapters](https://devisola.github.io/mtg-history/chapters/brothers-war/)** — Read the narrative with exact card printings and editorial significance. | **[Relationship explorer](https://devisola.github.io/mtg-history/relationships/)** — Explore family, mentorship, alliance, and conflict links. |
-| **[Discovery](https://devisola.github.io/mtg-history/discover/)** — Find connected people and turning points. | **[Lore glossary](https://devisola.github.io/mtg-history/glossary/)** — Define recurring concepts with chapter links. |
+Every image below is a screenshot of the real, built site, captured automatically by Playwright with the card artwork loaded live from Scryfall. See [how they are made](#screenshot-workflow).
 
-## Site previews
+<p align="center">
+  <img src="docs/screenshots/chapter-reader.jpg" alt="The Brothers' War chapter: the narrative beside the Tocasia, Dig Site Mentor card, with its editorial significance and the chapter's table of contents" width="100%" />
+</p>
 
-Screenshots below are **captured from the built site** in Chromium, not concept art. Run the reproducible capture command under [Screenshot workflow](#screenshot-workflow) before committing this README update; the image files are intentionally generated locally and must be added to the PR.
+### Read history, illustrated by the cards that remember it
+
+**[Ten illustrated chapters](https://devisola.github.io/mtg-history/chapters/thran/)** run from the Thran to the Omenpaths. Inside the narrative, *historical moments* set an exact card printing beside the passage it illustrates. Each one comes with its artist, set and collector number, and a note on what the card does and does not depict. A sticky table of contents tracks your progress through the chapter.
 
 <table>
 <tr>
-  <td width="50%"><img src="docs/screenshots/home-desktop.jpg" alt="Home page of Chronicles of the Multiverse, desktop layout" width="100%" /><br /><strong>Archive homepage</strong></td>
-  <td width="50%"><img src="docs/screenshots/timeline-desktop.jpg" alt="Historical timeline page and eras, desktop layout" width="100%" /><br /><strong>Historical timeline</strong></td>
+  <td width="50%"><img src="docs/screenshots/card-viewer.jpg" alt="Artwork viewer dialog showing Glacian, Powerstone Engineer at full size with attribution and a link to the exact Scryfall printing" width="100%" /></td>
+  <td width="50%"><img src="docs/screenshots/glossary-term.jpg" alt="An inline lore definition of 'The Thran' opened from the chapter text" width="100%" /></td>
 </tr>
 <tr>
-  <td><img src="docs/screenshots/ice-age-desktop.jpg" alt="Illustrated Ice Age chapter with reading navigation, desktop layout" width="100%" /><br /><strong>Illustrated chapter</strong></td>
-  <td><img src="docs/screenshots/relationships-desktop.jpg" alt="Interactive relationship explorer, desktop layout" width="100%" /><br /><strong>Character relationships</strong></td>
+  <td><strong>Artwork viewer.</strong> Enlarge any card to see the exact printing, its illustrator and its historical significance, with a link to Scryfall. Escape and focus return work as expected.</td>
+  <td><strong>Lore on demand.</strong> Glossary terms in the prose open a short definition without leaving the page, by pointer or keyboard, and link to the <a href="https://devisola.github.io/mtg-history/glossary/">full glossary</a>.</td>
+</tr>
+</table>
+
+### Follow the people and their connections
+
+<p align="center">
+  <img src="docs/screenshots/relationships.jpg" alt="Relationship explorer focused on Urza two steps out: graph controls, relationship-type and chapter legends, and a network of 27 characters and 43 relationships" width="100%" />
+</p>
+
+The **[relationship explorer](https://devisola.github.io/mtg-history/relationships/?person=urza)** maps 118 documented links between 88 characters: family, friendship, alliance, conflict, mentorship and creation. You can focus on one person and expand one to three steps out, filter by chapter, cluster by era or search for a name. The view is shareable as a URL, and an accessible card list mirrors the graph.
+
+<table>
+<tr>
+  <td width="50%"><img src="docs/screenshots/character-profile.jpg" alt="Urza's character profile with home plane, role, biography and his featured card Urza, Lord Protector" width="100%" /></td>
+  <td width="50%"><img src="docs/screenshots/timeline.jpg" alt="Timeline atlas with coverage counts, search and era filter, era jump links and the first era entry" width="100%" /></td>
 </tr>
 <tr>
-  <td><img src="docs/screenshots/glossary-desktop.jpg" alt="Lore glossary index, desktop layout" width="100%" /><br /><strong>Lore glossary</strong></td>
-  <td><img src="docs/screenshots/ice-age-mobile.jpg" alt="Ice Age chapter on a mobile viewport" width="55%" /><br /><strong>Mobile chapter view</strong></td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/characters/">Character profiles</a>.</strong> Each profile has a biography, the chapters and events the character appears in, and a featured card portrait.</td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/timeline/">Timeline atlas</a>.</strong> Ten eras in story order, each with its story period, publication history and 130 events, which you can search and filter.</td>
+</tr>
+<tr>
+  <td><img src="docs/screenshots/archive.jpg" alt="The illustrated archive filtered to The Brothers' War, showing a gallery of its card printings" width="100%" /></td>
+  <td><img src="docs/screenshots/discover.jpg" alt="Discovery index searching 'Phyrexia' across chapters, characters and events" width="100%" /></td>
+</tr>
+<tr>
+  <td><strong><a href="https://devisola.github.io/mtg-history/archive/">Illustrated archive</a>.</strong> Every card reference, grouped by chapter, filterable by chapter, set and search, in gallery or compact view.</td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/discover/">Discovery</a>.</strong> One searchable index of 228 chapters, characters and events.</td>
+</tr>
+</table>
+
+### At night, and on the go
+
+<table>
+<tr>
+  <td width="64%"><img src="docs/screenshots/dark-mode.jpg" alt="War of the Spark chapter in the dark theme with the Tezzeret, Master of the Bridge card" width="100%" /></td>
+  <td width="18%"><img src="docs/screenshots/mobile-home.jpg" alt="Homepage on a phone" width="100%" /></td>
+  <td width="18%"><img src="docs/screenshots/mobile-chapter.jpg" alt="Weatherlight chapter on a phone with the Skyship Weatherlight card and collapsed table of contents" width="100%" /></td>
+</tr>
+<tr>
+  <td><strong>Light and dark themes.</strong> Your choice is remembered, and the default follows your system setting.</td>
+  <td colspan="2"><strong>Mobile first.</strong> A collapsible table of contents, touch-friendly controls and full-width cards.</td>
 </tr>
 </table>
 
@@ -108,22 +145,29 @@ Pushing a reviewed change to `main` triggers the existing GitHub Pages deploymen
 
 ### Screenshot workflow
 
-The screenshot gallery is intentionally reproducible: Chromium renders the local production preview at desktop and mobile sizes. Captures use reduced motion and a fixed viewport. Screenshots should be recaptured whenever the visual design changes.
+The tour above is reproducible. [`tests/screenshots/readme.spec.mjs`](tests/screenshots/readme.spec.mjs) builds the production site and puts each feature into a meaningful state: a card moment in view, the artwork viewer open, a definition expanded, the graph focused on Urza, and so on. It then captures desktop (1440 px wide) and phone (390 px at 2×) views in Chromium with reduced motion. **A capture fails rather than saving a screenshot with a missing or broken card image.**
 
-```powershell
-pnpm install
-pnpm exec playwright install chromium
-pnpm run screenshots:readme
-# Review docs/screenshots/*.jpg, then git add docs/screenshots
-```
+- **On GitHub:** pushing a branch that changes the capture spec runs the [README screenshots workflow](.github/workflows/readme-screenshots.yaml), which commits the refreshed images back to that branch. You can also start it manually from the Actions tab.
+- **Locally:**
 
-This writes six JPEGs under `docs/screenshots/`. Card imagery loaded from Scryfall belongs to its respective artists and rights holders; screenshots illustrate site functionality and are not an artwork redistribution library. See [docs/readme-screenshots.md](docs/readme-screenshots.md) for capture and review expectations.
+  ```bash
+  pnpm exec playwright install chromium
+  pnpm run screenshots:readme   # writes docs/screenshots/*.jpg
+  ```
+
+Recapture after any visual change. Card imagery belongs to its artists and rights holders; the screenshots document the site's features and are not an artwork library. See [docs/readme-screenshots.md](docs/readme-screenshots.md) for the full checklist.
 
 ## Current chapter of the project
 
 **Under active development.** The timeline and chapter system establish the reading experience; historical articles, imagery, source references, and cross-links are being expanded incrementally.
 
-Ten published chapters currently span the ancient Thran, the Brothers' War, Dominaria's Ice Age, the Weatherlight and Otaria eras, the Mending, stories across other worlds, the War of the Spark, March of the Machine, and the Omenpaths era. Canonical cards and characters are managed through typed collections, while artwork fidelity, source provenance and accessible interactions are checked in the engineering pipeline. More editorial depth and coverage are ongoing work.
+Ten published chapters currently span the ancient Thran, the Brothers' War, Dominaria's Ice Age, the Weatherlight and Otaria eras, the Mending, stories across other worlds, the War of the Spark, March of the Machine, and the Omenpaths era.
+
+| Chapters | Characters | Events | Relationships | Card printings | Glossary terms |
+| :------: | :--------: | :----: | :-----------: | :------------: | :------------: |
+| 10       | 88         | 130    | 118           | 133            | 10             |
+
+Cards, characters, events, relationships and glossary terms are typed content collections. The engineering pipeline checks artwork fidelity, source provenance and accessible interactions. Editorial depth and coverage keep growing.
 
 ## Support the archive
 

@@ -9,7 +9,7 @@ export default defineConfig({
   timeout: 120_000,
   retries: 0,
   workers: 1,
-  reporter: 'list',
+  reporter: process.env.CI ? [['github'], ['list']] : 'list',
   use: { baseURL, trace: 'retain-on-failure' },
   projects: [{ name: 'readme-chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
