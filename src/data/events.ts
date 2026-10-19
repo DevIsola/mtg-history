@@ -5,7 +5,6 @@ export interface HistoricalEvent {
   summary: string;
   narrative: string[];
   characterIds: string[];
-  cardName: string;
   cardId: string;
 }
 

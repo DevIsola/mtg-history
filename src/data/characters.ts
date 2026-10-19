@@ -1,6 +1,4 @@
-import type { CollectionEntry } from "astro:content";
-
-type HistoricalCard = CollectionEntry<"chapters">["data"]["cards"][number];
+type HistoricalCard = { significance: string };
 
 export interface CharacterProfile {
   id: string;

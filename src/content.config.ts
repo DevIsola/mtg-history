@@ -83,14 +83,7 @@ const characters = defineCollection({
     biography: z.array(z.string()),
     chapterIds: z.array(reference("chapters")).min(1),
     featuredCardId: reference("cards"),
-    featuredCard: z.object({
-      name: z.string(),
-      setCode: z.string(),
-      collectorNumber: z.string(),
-      scryfallId: z.uuid(),
-      artist: z.string(),
-      significance: z.string(),
-    }),
+    featuredCard: z.object({ significance: z.string().min(1) }),
     source: z.object({ title: z.string(), url: z.url() }),
   }),
 });
@@ -103,7 +96,6 @@ const events = defineCollection({
     summary: z.string(),
     narrative: z.array(z.string()),
     characterIds: z.array(reference("characters")),
-    cardName: z.string(),
     cardId: reference("cards"),
   }),
 });
