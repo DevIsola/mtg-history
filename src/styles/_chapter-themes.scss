@@ -52,3 +52,27 @@ $chapter-palettes: (
     --era-accent: #{map.get($palette, dark)};
   }
 }
+
+// Progressive enhancement for MDX-generated narrative elements: the prose and
+// image links remain visible, operable and readable even before script executes.
+.chapter-theme .chapter-prose :is(h2, .historical-moment)[data-living-reveal] {
+  transition: opacity 360ms ease-out, transform 360ms ease-out;
+}
+
+.chapter-theme .chapter-prose :is(h2, .historical-moment)[data-living-reveal='pending'] {
+  opacity: 0.92;
+  transform: translate3d(0, 10px, 0);
+}
+
+.chapter-theme .chapter-prose :is(h2, .historical-moment)[data-living-reveal='visible'] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter-theme .chapter-prose :is(h2, .historical-moment)[data-living-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
