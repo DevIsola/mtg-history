@@ -33,6 +33,66 @@ export const eventProvenance = {
     ],
     artworkNote: 'The Nissa card illustrates recovery; it does not depict every planeswalker losing a spark.',
   },
+  'rise-of-yawgmoth': {
+    chronology: { precision: 'relative', label: "Ancient Thran crisis, before Rebbec seals the Phyrexian gateway", basis: "The retrospective orders Rebbec bringing Yawgmoth to Halcyon, his growing power and the civil war, but supplies no common-calendar year." },
+    sources: [{ title: "The Legendary Characters of Commander Legends, Part 1", url: 'https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30', role: 'retrospective', supports: "Explains that Rebbec brought the physician Yawgmoth to Halcyon and his rise culminated in the Thran civil war." }],
+    artworkNote: "The chosen Yawgmoth card is a portrait of the figure, not documentary artwork of his seizure of power.",
+  },
+  'brothers-koilos-stones': {
+    chronology: { precision: 'relative', label: "Urza and Mishra’s youth, before their war escalates", basis: "The design retrospective identifies the divided powerstone as a story event in the brothers’ childhood, not a timestamp." },
+    sources: [{ title: "Act of War, Part 1", url: 'https://magic.wizards.com/en/news/making-magic/act-of-war-part-1', role: 'design-commentary', supports: "Lists splitting the powerstone as a pivotal childhood event that drives the brothers toward rivalry." }],
+    artworkNote: "The surviving powerstone image represents the objects involved, not an independent record of the Koilos expedition.",
+  },
+  'sylex-blast': {
+    chronology: { precision: 'relative', label: "End of the Brothers’ War, before the postwar winter and reconstruction", basis: "The official postwar account dates its setting after the conflict and depicts the devastation of Argoth, without making that story’s AR date the blast date." },
+    sources: [{ title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: "Shows Kayla and Tawnos reckoning with the destruction of Argoth and worsening climate after the war ended." }],
+    artworkNote: "A Sylex-related card is a historical illustration of the catastrophe, not proof of an exact activation year.",
+  },
+  'alliance-against-lim-dul': {
+    chronology: { precision: 'relative', label: "During the struggle against Lim-Dûl, before the later Argivian settlement", basis: "The retrospective describes the political alliance forged in opposition to Lim-Dûl but does not supply a synchronized event date." },
+    sources: [{ title: "The Legends You'll Find in Dominaria United", url: 'https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01', role: 'retrospective', supports: "Identifies Jodah and Jaya as instrumental in uniting Kjeldoran and Balduvian factions against Lim-Dûl." }],
+    artworkNote: "The selected card identifies a participant or emblem of this period; the image is not a dated record of treaty negotiations.",
+  },
+  'weatherlight-barrin-obliteration': {
+    chronology: { precision: 'relative', label: "During the original Phyrexian invasion, after Rayne and Hanna die", basis: "The retrospective explicitly links Barrin’s losses, return to the occupied academy and final spell in sequence, without a precise date." },
+    sources: [{ title: "From the Vault: Lore", url: 'https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01', role: 'retrospective', supports: "States that Barrin cast a forbidden destructive spell at the occupied Tolarian Academy after losing Rayne and Hanna, killing himself." }],
+    artworkNote: "The card’s destructive spell imagery represents Barrin’s act; its release or reprint year is not the date of his death.",
+  },
+  'mirari-crisis': {
+    chronology: { precision: 'relative', label: "Otaria’s Mirari struggles, before the artifact’s later transformation", basis: "The retrospective summarizes the Mirari’s influence on Dominaria; it does not date any individual dispute or participant’s decision." },
+    sources: [{ title: "From the Vault: Lore", url: 'https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01', role: 'retrospective', supports: "Explains that the Mirari tempted wielders with extraordinary power and desires, repeatedly leading users toward ruin and magical chaos." }],
+    artworkNote: "The curated image represents the Mirari or its influence, not every separate event in the Otarian conflict.",
+  },
+  'the-mending': {
+    chronology: { precision: 'relative', label: "End of the Time Spiral crisis, before the post-Mending planeswalker era", basis: "Official design commentary explains the fundamental change to planeswalkers as the purpose of the Mending arc, without asserting an exact in-world year." },
+    sources: [{ title: "27 Things You Might Not Have Known About Time Spiral Block", url: 'https://magic.wizards.com/en/news/making-magic/27-things-you-might-not-have-known-about-time-spiral-block-2021-03-08', role: 'design-commentary', supports: "Explains that the Mending story fundamentally reduced and changed planeswalkers’ power as part of repairing a threatened Multiverse." }],
+    artworkNote: "The chapter’s selected spell or character printing evokes the Mending; its publication year is not a multiversal chronology.",
+  },
+  'innistrad-avacyn-restored': {
+    chronology: { precision: 'relative', label: "After Avacyn’s confinement in the Helvault, during Innistrad’s restoration crisis", basis: "Design commentary states the planned consequence of breaking the Helvault but gives no shared cross-planar date for the event." },
+    sources: [{ title: "You Had Me at Helvault", url: 'https://magic.wizards.com/en/news/making-magic/you-had-me-helvault-2012-03-29', role: 'design-commentary', supports: "Confirms that destroying the Helvault released both Avacyn and Griselbrand, the trapped angel and demon." }],
+    artworkNote: "Avacyn’s restored portrait depicts her return; the Helvault card foreshadowed the release, not its exact time.",
+  },
+  'spark-gideons-sacrifice': {
+    chronology: { precision: 'relative', label: "At the War of the Spark’s final confrontation on Ravnica", basis: "The published story relates Gideon’s fall within the battle sequence, but does not establish a universal timestamp for the day." },
+    sources: [{ title: "War of the Spark: Ravnica — Ashes", url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12', role: 'story', supports: "Depicts Gideon falling amid the confrontation with Bolas and later characters acknowledging his death; this source does not alone detail the protective transfer." }],
+    artworkNote: "A Gideon card provides a representation of the character; the story and its publication date must not be mistaken for visual proof of the transfer.",
+  },
+  'phyrexia-realmbreaker-invasion': {
+    chronology: { precision: 'relative', label: "Opening of the coordinated New Phyrexian invasion across planes", basis: "The first March of the Machine story depicts Realmbreaker’s portals and simultaneous invasions without cross-planar calendar synchronization." },
+    sources: [{ title: "March of the Machine — Episode 1: Triumph of the Fleshless", url: 'https://magic.wizards.com/en/news/magic-story/episode-1-triumph-of-the-fleshless', role: 'story', supports: "Describes Norn opening portals to multiple planes through Realmbreaker as the Phyrexian invasion spreads." }],
+    artworkNote: "The selected card is associated with the invasion mechanism, not a dated record of each invaded plane.",
+  },
+  'phyrexia-norns-fall': {
+    chronology: { precision: 'relative', label: "Final New Phyrexian confrontation, after Zhalfir’s counterattack begins", basis: "The story puts Karn’s action after Norn’s defeat and during the planar exchange, without giving a common-calendar event date." },
+    sources: [{ title: "March of the Machine — Episode 9: The Old Sins of New Phyrexia", url: 'https://magic.wizards.com/en/news/magic-story/episode-9-the-old-sins-of-new-phyrexia', role: 'story', supports: "Directly narrates Karn dismantling Elesh Norn as he accepts responsibility for the fate of his created plane." }],
+    artworkNote: "The curated card illustrates the battle’s participants or result and cannot on its own verify Karn’s exact action.",
+  },
+  'omenpaths-proft-uncovers-oba': {
+    chronology: { precision: 'relative', label: "Murders at Karlov Manor investigation, after the Phyrexian invasion", basis: "The detective story establishes its post-invasion setting and the sequence of Proft’s deductions, not a comparable universal year." },
+    sources: [{ title: "Murders at Karlov Manor — Episode 9: Beauty in Destruction", url: 'https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction', role: 'story', supports: "Shows Proft accusing Oba of orchestrating the murders and distinguishing the willing perpetrator from coerced participants." }],
+    artworkNote: "Proft’s or Trostani’s printing identifies the people involved, not a photograph of the accusation or a date stamp.",
+  },
 };
 
 /** Offline integrity only. Checks links and claim metadata, not the truth of article prose. */
