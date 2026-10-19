@@ -105,6 +105,7 @@ import entry83 from '../content/characters/venser.json' with { type: 'json' };
 import entry84 from '../content/characters/radha.json' with { type: 'json' };
 import entry85 from '../content/characters/freyalise.json' with { type: 'json' };
 import entry86 from '../content/characters/windgrace.json' with { type: 'json' };
+import entry87 from '../content/characters/selenia.json' with { type: 'json' };
 
 export const characters: CharacterProfile[] = [
   { id: "quintorius-kand", ...entry0 } as CharacterProfile,
@@ -194,4 +195,5 @@ export const characters: CharacterProfile[] = [
   { id: "radha", ...entry84 } as CharacterProfile,
   { id: "freyalise", ...entry85 } as CharacterProfile,
   { id: "windgrace", ...entry86 } as CharacterProfile,
+  { id: "selenia", ...entry87 } as CharacterProfile,
 ];

@@ -1,0 +1,16 @@
+{
+  "title": "Crovax Frees Selenia from Her First Binding",
+  "chapterId": "weatherlight",
+  "summary": "Crovax releases the angel he loves, only to lose her immediately to Volrath’s binding and to begin searching for her on Rath.",
+  "narrative": [
+    "A cursed artifact connected to Crovax’s family bound the angel Selenia, compelling her to answer his need while also drawing him into a love he could not separate from its magic.",
+    "Crovax freed Selenia because he wanted her to possess a will of her own. Her apparent departure was not an unconstrained romantic decision: she was immediately drawn under the authority of Volrath on Rath.",
+    "The separation helps explain why Crovax joined the Weatherlight mission to Rath. This event predates, and must remain separate from, the later encounter at the Stronghold where he killed Selenia and became a vampire."
+  ],
+  "characterIds": [
+    "crovax",
+    "selenia",
+    "volrath"
+  ],
+  "cardId": "9c1624f7-8275-46d3-ab7e-7b162e27593f"
+}
