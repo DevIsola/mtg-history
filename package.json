@@ -14,6 +14,7 @@
     "check:links": "node scripts/check-built-links.mjs",
     "check:content": "node --experimental-strip-types scripts/check-content-graph.mjs",
     "migrate:cards": "node scripts/migrate-cards-to-collections.mjs",
+    "migrate:card-consumers": "node scripts/migrate-card-consumers.mjs",
     "check:cards": "node scripts/check-card-collections.mjs",
     "migrate:entities": "node --experimental-strip-types scripts/migrate-entities-to-collections.mjs",
     "check:entities": "node --experimental-strip-types scripts/check-entity-collections.mjs",

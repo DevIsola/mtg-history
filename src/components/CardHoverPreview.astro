@@ -1,15 +1,17 @@
 ---
-import type { CharacterProfile } from '../data/characters';
+import { getEntry } from 'astro:content';
+import { cardImageUrl } from '../utils/card-printings';
 
 interface Props {
   name: string;
-  card: CharacterProfile['featuredCard'];
+  cardId: string;
 }
 
-const { name, card } = Astro.props;
-const id = card.scryfallId.toLowerCase();
-const imageUrl =
-  `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`;
+const { name, cardId } = Astro.props;
+const printing = await getEntry('cards', cardId);
+if (!printing) throw new Error(`Missing canonical card ${cardId}`);
+const card = printing.data;
+const imageUrl = cardImageUrl(printing.id);
 ---
 
 <span

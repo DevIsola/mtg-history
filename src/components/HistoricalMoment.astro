@@ -1,5 +1,6 @@
 ---
 import HistoricalCard from './HistoricalCard.astro';
+import { getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 type Card = CollectionEntry<'chapters'>['data']['cards'][number];
@@ -9,9 +10,11 @@ interface Props {
 }
 
 const { card } = Astro.props;
+const printing = await getEntry('cards', card.scryfallId);
+if (!printing) throw new Error(`Missing canonical card ${card.scryfallId}`);
 ---
 
-<aside class="historical-moment" aria-label={'Historical illustration: ' + card.name}>
+<aside class="historical-moment" aria-label={'Historical illustration: ' + printing.data.name}>
   <div class="historical-moment__copy">
     <p class="historical-moment__eyebrow">
       <span aria-hidden="true">✦</span>

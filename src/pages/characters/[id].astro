@@ -1,6 +1,6 @@
 
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -20,6 +20,13 @@ export function getStaticPaths() {
 
 const { profile } = Astro.props as {
   profile: CharacterProfile;
+};
+const featuredPrinting = await getEntry('cards', profile.featuredCardId);
+if (!featuredPrinting) throw new Error(`Missing canonical portrait ${profile.featuredCardId}`);
+const featuredCard = {
+  ...featuredPrinting.data,
+  scryfallId: featuredPrinting.id,
+  significance: profile.featuredCard.significance,
 };
 
 
@@ -264,13 +271,13 @@ const relatedEvents = historicalEvents.filter(
 
         <aside
           class="character-profile__aside"
-          aria-label={`Illustrated card: ${profile.featuredCard.name}`}
+          aria-label={`Illustrated card: ${featuredCard.name}`}
         >
           <p class="eyebrow">
             Card from the archive
           </p>
 
-          <HistoricalCard card={profile.featuredCard} />
+          <HistoricalCard card={featuredCard} />
         </aside>
       </div>
     </div>

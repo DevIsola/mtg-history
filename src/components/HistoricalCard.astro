@@ -1,5 +1,6 @@
 
 ---
+import { getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 type HistoricalCardData =
@@ -9,13 +10,14 @@ interface Props {
   card: HistoricalCardData;
 }
 
-const { card } = Astro.props;
-
-const id = card.scryfallId.toLowerCase();
-
+const { card: legacyCard } = Astro.props;
+const printing = await getEntry('cards', legacyCard.scryfallId);
+if (!printing) throw new Error(`Missing canonical card ${legacyCard.scryfallId}`);
+// Printing fields come only from the canonical collection. Significance is local.
+const card = { ...printing.data, scryfallId: printing.id, significance: legacyCard.significance };
+const id = printing.id;
 const imageUrl =
   `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`;
-
 const cardUrl =
   `https://scryfall.com/card/${card.setCode}/${card.collectorNumber}`;
 ---

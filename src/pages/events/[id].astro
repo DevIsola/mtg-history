@@ -13,12 +13,14 @@ import {
 
 import { characters } from '../../data/characters';
 import { withBase } from '../../utils/paths';
+import { chapterCardUse } from '../../utils/card-printings';
 
 type Chapter = CollectionEntry<'chapters'>;
-type Card = Chapter['data']['cards'][number];
+type Card = ReturnType<typeof chapterCardUse>;
 
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
+  const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
 
   return historicalEvents.map((event) => {
     const chapter = chapters.find(
@@ -31,15 +33,9 @@ export async function getStaticPaths() {
       );
     }
 
-    const card = chapter.data.cards.find(
-      (entry) => entry.name === event.cardName
-    );
-
-    if (!card) {
-      throw new Error(
-        `Missing card "${event.cardName}" for event "${event.id}"`
-      );
-    }
+    const index = chapter.data.cardIds.findIndex((reference) => reference.id === event.cardId);
+    if (index < 0) throw new Error(`Event ${event.id}: card not curated in ${chapter.id}`);
+    const card = chapterCardUse(chapter, index, cardCatalog);
 
     for (const id of event.characterIds) {
       if (!characters.some((character) => character.id === id)) {
