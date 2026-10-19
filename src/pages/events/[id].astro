@@ -5,6 +5,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HistoricalCard from '../../components/HistoricalCard.astro';
+import EventEvidence from '../../components/EventEvidence.astro';
 
 import {
   historicalEvents,
@@ -14,6 +15,7 @@ import {
 import { characters } from '../../data/characters';
 import { withBase } from '../../utils/paths';
 import { chapterCardUse } from '../../utils/card-printings';
+import { eventProvenance } from '../../data/event-provenance.mjs';
 
 type Chapter = CollectionEntry<'chapters'>;
 type Card = ReturnType<typeof chapterCardUse>;
@@ -69,6 +71,8 @@ const people = event.characterIds.map((id) => {
 
   return character;
 });
+
+const provenance = eventProvenance[event.id];
 
 const currentIndex = historicalEvents.findIndex(
   (entry) => entry.id === event.id
@@ -129,6 +133,8 @@ const nextEvent =
               <p>{paragraph}</p>
             ))}
           </div>
+
+          {provenance && <EventEvidence entry={provenance} />}
 
           <section class="historical-event-detail__related">
             <p class="eyebrow">
