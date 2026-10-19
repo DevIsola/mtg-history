@@ -33,112 +33,57 @@ cardIds:
   - f454583d-d227-4fc8-842e-128e025880e4
 
 cards:
-  - name: "Brotherhood's End"
-    setCode: "bro"
-    collectorNumber: "128"
-    scryfallId: "50f7666d-0d60-4fe5-b144-286d4e47b704"
-    artist: "Bryan Sola"
-    significance: >-
+  - significance: >-
       Depicts the tragedy surrounding Tocasia's death,
       an early turning point in Urza and Mishra's rivalry.
 
-  - name: "Urza, Lord Protector"
-    setCode: "bro"
-    collectorNumber: "225"
-    scryfallId: "8aefe8bd-216a-4ec1-9362-3f9dbf7fd083"
-    artist: "Ryan Pancoast"
-    significance: >-
+  - significance: >-
       Represents Urza's power as an artificer before
       the catastrophic conclusion of the war.
 
-  - name: "Mishra, Tamer of Mak Fawa"
-    setCode: "bro"
-    collectorNumber: "217"
-    scryfallId: "585a753d-a692-474a-bc28-48dd93b73ace"
-    artist: "Darren Tan"
-    significance: >-
+  - significance: >-
       Illustrates Mishra's increasing authority and
       the Phyrexian influence surrounding his ambitions.
 
-  - name: "Tocasia, Dig Site Mentor"
-    setCode: "bro"
-    collectorNumber: "360"
-    scryfallId: "25d759dc-0501-481a-8330-005f83b999d7"
-    artist: "Lie Setiawan"
-    significance: >-
+  - significance: >-
       Depicts the archaeologist and mentor who guided
       Urza and Mishra during their early investigations
       of ancient Thran artifacts. This is the
       extended-art printing from The Brothers' War.
 
-  - name: "Gix, Yawgmoth Praetor"
-    setCode: "bro"
-    collectorNumber: "95"
-    scryfallId: "2c76f7e0-37e7-4e87-93a3-a25ba0674645"
-    artist: "Anna Podedworna"
-    significance: >-
+  - significance: >-
       Represents Yawgmoth's Phyrexian praetor,
       whose involvement in the Brothers' War
       helped draw Mishra toward Phyrexian corruption.
 
-  - name: "Urza's Sylex"
-    setCode: "bro"
-    collectorNumber: "40"
-    scryfallId: "3000d1c6-dbb3-4e65-b428-dbf167bb8797"
-    artist: "Joseph Meehan"
-    significance: >-
+  - significance: >-
       Depicts the devastating artifact associated
       with Urza's final act on Argoth, whose
       detonation ended the Brothers' War and
       transformed Dominaria's history.
 
-  - name: "Queen Kayla bin-Kroog"
-    setCode: "bro"
-    collectorNumber: "218"
-    scryfallId: "685c9767-eaa7-4e16-b245-816181e2fc36"
-    artist: "Cristi Balanescu"
-    significance: >-
+  - significance: >-
       Represents Kayla, a royal figure in Yotia and
       a survivor who helped lead her people through
       the devastation of the Brothers' War.
 
-  - name: "Tawnos, the Toymaker"
-    setCode: "bro"
-    collectorNumber: "222"
-    scryfallId: "1f855a7e-3a97-4b62-a2a7-06ff1fbb2c4c"
-    artist: "Livia Prima"
-    significance: >-
+  - significance: >-
       Illustrates Tawnos as an inventive artificer
       whose work extended beyond the war machines
       associated with his teacher Urza.
 
-  - name: "Ashnod, Flesh Mechanist"
-    setCode: "bro"
-    collectorNumber: "84"
-    scryfallId: "5eb43c15-50a9-488f-b0be-84a5e0a6d10b"
-    artist: "Howard Lyon"
-    significance: >-
+  - significance: >-
       Depicts Ashnod, a ruthless and brilliant
       artificer whose experiments served Mishra's
       war effort and whose decisions were not
       always aligned with his ambitions.
 
-  - name: "The Mightstone and Weakstone"
-    setCode: "bro"
-    collectorNumber: "238"
-    scryfallId: "02aea379-b444-46a3-82f4-3038f698d4f4"
-    artist: "Ryan Pancoast"
-    significance: >-
+  - significance: >-
       A 2022 depiction of the two fragments at the heart of the brothers'
       rivalry. This retrospective card melds with Urza, Lord Protector;
       the card's gameplay is not itself an account of the ancient events.
 
-  - name: "The Fall of Kroog"
-    setCode: "bro"
-    collectorNumber: "133"
-    scryfallId: "f454583d-d227-4fc8-842e-128e025880e4"
-    artist: "David Auden Nash"
-    significance: >-
+  - significance: >-
       A story-spotlight illustration of Mishra's destruction of Yotia's
       capital after the failed peace negotiations. It represents a
       civilian catastrophe, not merely a military victory.
@@ -206,7 +151,7 @@ Tocasia's dig sites offered the brothers a place
 to study machines and powerstones from a civilization
 that had disappeared millennia before their birth.
 
-<HistoricalMoment card={frontmatter.cards[3]}>
+<HistoricalMoment cardId={frontmatter.cardIds[3]} significance={frontmatter.cards[3].significance}>
 
 For Urza and Mishra, the ruins were more than
 reminders of a distant past. They contained
@@ -242,7 +187,7 @@ was a source of power, an object of study, and evidence that the other brother
 possessed something the first lacked. Their names describe how the fragments
 came to be understood, not two separate inventions of the boys' own making.
 
-<HistoricalMoment card={frontmatter.cards[9]}>
+<HistoricalMoment cardId={frontmatter.cardIds[9]} significance={frontmatter.cards[9].significance}>
 
 The 2022 card *The Mightstone and Weakstone* shows the ancient powerstone
 legacy resurfacing during the Brothers' War. Its modern card mechanics should
@@ -266,7 +211,7 @@ their discovery.
 Their competing desires for the powerstones culminated
 in a violent confrontation at Tocasia's camp.
 
-<HistoricalMoment card={frontmatter.cards[0]}>
+<HistoricalMoment cardId={frontmatter.cardIds[0]} significance={frontmatter.cards[0].significance}>
 
 Tocasia attempted to intervene in the brothers'
 struggle, but the power unleashed during their
@@ -318,7 +263,7 @@ carried an enormous cost: a family conflict
 that would threaten her kingdom and the people
 she was expected to protect.
 
-<HistoricalMoment card={frontmatter.cards[6]}>
+<HistoricalMoment cardId={frontmatter.cardIds[6]} significance={frontmatter.cards[6].significance}>
 
 Kayla's place in the story reveals a different
 perspective on the Brothers' War.
@@ -363,7 +308,7 @@ The brothers were embedded in institutions that could reward escalation
 long after reconciliation had become difficult.
 
 <HistoricalEventReference id="brothers-fallaji-ascent" />
-<HistoricalMoment card={frontmatter.cards[1]}>
+<HistoricalMoment cardId={frontmatter.cardIds[1]} significance={frontmatter.cards[1].significance}>
 
 Urza's mastery of machines and artifacts became
 central to his growing political and military
@@ -389,7 +334,7 @@ artifice could serve curiosity and everyday life,
 even as the war increasingly demanded machines
 designed for destruction.
 
-<HistoricalMoment card={frontmatter.cards[7]}>
+<HistoricalMoment cardId={frontmatter.cardIds[7]} significance={frontmatter.cards[7].significance}>
 
 Tawnos's inventions reveal the creative potential
 of artifice beyond the battlefield.
@@ -459,7 +404,7 @@ were drawn into consequences they could neither predict nor control.
 The city was devastated in retaliation following a failed peace meeting,
 a sequence remembered in the flavor and illustration of *The Fall of Kroog*.
 
-<HistoricalMoment card={frontmatter.cards[10]}>
+<HistoricalMoment cardId={frontmatter.cardIds[10]} significance={frontmatter.cards[10].significance}>
 
 In this 2022 story-spotlight printing, the ruined city stands for what a
 political and military rivalry cost ordinary Yotians. The image was published
@@ -486,7 +431,7 @@ Ashnod was an exceptionally inventive artificer,
 but her work often involved disturbing experiments
 with living bodies, powerstones, and machinery.
 
-<HistoricalMoment card={frontmatter.cards[8]}>
+<HistoricalMoment cardId={frontmatter.cardIds[8]} significance={frontmatter.cards[8].significance}>
 
 Ashnod's experiments reveal the darker possibilities
 of mechanical innovation during the war.
@@ -520,7 +465,7 @@ competition, and the destruction they caused
 created opportunities for forces with
 far older ambitions.
 
-<HistoricalMoment card={frontmatter.cards[4]}>
+<HistoricalMoment cardId={frontmatter.cardIds[4]} significance={frontmatter.cards[4].significance}>
 
 Gix represented the continuing reach of the
 Phyrexian empire founded after the fall of the Thran.
@@ -532,7 +477,7 @@ that neither brother had created.
 
 </HistoricalMoment>
 
-<HistoricalMoment card={frontmatter.cards[2]}>
+<HistoricalMoment cardId={frontmatter.cardIds[2]} significance={frontmatter.cards[2].significance}>
 
 Mishra's rise among the Fallaji was followed
 by a growing dependence on forces associated
@@ -622,7 +567,7 @@ Phyrexian corruption.
 Urza confronted his brother amid the devastation,
 bringing their rivalry toward its catastrophic end.
 
-<HistoricalMoment card={frontmatter.cards[5]}>
+<HistoricalMoment cardId={frontmatter.cardIds[5]} significance={frontmatter.cards[5].significance}>
 
 The Sylex was not simply another weapon in
 the brothers' increasingly destructive arsenal.

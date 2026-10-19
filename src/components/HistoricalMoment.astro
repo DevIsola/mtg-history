@@ -1,17 +1,15 @@
 ---
 import HistoricalCard from './HistoricalCard.astro';
 import { getEntry } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
-
-type Card = CollectionEntry<'chapters'>['data']['cards'][number];
-
 interface Props {
-  card: Card;
+  cardId: string | { id: string; collection: 'cards' };
+  significance: string;
 }
 
-const { card } = Astro.props;
-const printing = await getEntry('cards', card.scryfallId);
-if (!printing) throw new Error(`Missing canonical card ${card.scryfallId}`);
+const { cardId, significance } = Astro.props;
+const id = typeof cardId === 'string' ? cardId : cardId.id;
+const printing = await getEntry('cards', id);
+if (!printing) throw new Error(`Missing canonical card ${id}`);
 ---
 
 <aside class="historical-moment" aria-label={'Historical illustration: ' + printing.data.name}>
@@ -26,6 +24,6 @@ if (!printing) throw new Error(`Missing canonical card ${card.scryfallId}`);
   </div>
 
   <div class="historical-moment__illustration">
-    <HistoricalCard card={card} />
+    <HistoricalCard card={{ scryfallId: printing.id, significance }} />
   </div>
 </aside>

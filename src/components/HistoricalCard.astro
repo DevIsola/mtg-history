@@ -1,10 +1,8 @@
 
 ---
 import { getEntry } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
 
-type HistoricalCardData =
-  CollectionEntry<'chapters'>['data']['cards'][number];
+type HistoricalCardData = { scryfallId: string; significance: string };
 
 interface Props {
   card: HistoricalCardData;

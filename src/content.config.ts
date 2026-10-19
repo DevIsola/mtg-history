@@ -30,18 +30,8 @@ const chapters = defineCollection({
 
     cardIds: z.array(reference("cards")).min(1),
 
-    cards: z
-      .array(
-        z.object({
-          name: z.string(),
-          setCode: z.string(),
-          collectorNumber: z.string(),
-          scryfallId: z.uuid(),
-          artist: z.string(),
-          significance: z.string(),
-        }),
-      )
-      .default([]),
+    // Printing metadata lives in cards collection; positions match cardIds.
+    cards: z.array(z.object({ significance: z.string().min(1) })).min(1),
 
     sources: z
       .array(

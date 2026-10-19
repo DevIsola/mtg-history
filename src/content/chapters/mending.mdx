@@ -46,113 +46,53 @@ cardIds:
   - ad5ba7ee-d6df-4b62-a8a1-c81e6fca392a
 
 cards:
-  - name: "Teferi, Mage of Zhalfir"
-    setCode: "tsp"
-    collectorNumber: "83"
-    scryfallId: "3c0145f6-4e27-49e7-9ef6-bac6fa3de26d"
-    artist: "D. Alexander Gregory & Jeremy Jarvis"
-    significance: >-
+  - significance: >-
       Teferi's Time Spiral appearance embodies the cost of
       preserving Shiv and the loss of his planeswalker spark.
 
-  - name: "Radha, Heir to Keld"
-    setCode: "plc"
-    collectorNumber: "162"
-    scryfallId: "7fc23b2e-9124-4f88-b93e-8bfe90e6eb41"
-    artist: "Jim Murray"
-    significance: >-
+  - significance: >-
       Radha's connection to the damaged landscape made her
       central to understanding how the rifts could be sealed.
 
-  - name: "Venser, Shaper Savant"
-    setCode: "fut"
-    collectorNumber: "46"
-    scryfallId: "0e84fc99-4045-4518-b588-512a675f2933"
-    artist: "Aleksi Briclot"
-    significance: >-
+  - significance: >-
       Venser's teleportation experiments anticipated the
       changed relationship between planeswalkers and the planes.
 
-  - name: "Jhoira of the Ghitu"
-    setCode: "fut"
-    collectorNumber: "157"
-    scryfallId: "1f437128-3a87-4958-97d0-3940d8761cba"
-    artist: "Kev Walker"
-    significance: >-
+  - significance: >-
       Jhoira's technical knowledge, historical memory, and
       loyalty to Teferi helped unite the effort to save Dominaria.
 
-  - name: "Freyalise, Llanowar's Fury"
-    setCode: "c14"
-    collectorNumber: "43"
-    scryfallId: "6c6ef042-1a69-4b16-abae-4f436dbadbbd"
-    artist: "Adam Paquette"
-    significance: >-
+  - significance: >-
       A later depiction of the ancient protector who spent
       her life sealing the Skyshroud rift.
 
-  - name: "Lord Windgrace"
-    setCode: "c18"
-    collectorNumber: "43"
-    scryfallId: "213d6fb8-5624-4804-b263-51f339482754"
-    artist: "Bram Sels"
-    significance: >-
+  - significance: >-
       A retrospective card representing Urborg's protector,
       whose sacrifice healed another wound in reality.
 
-  - name: "Jeska, Thrice Reborn"
-    setCode: "cmr"
-    collectorNumber: "186"
-    scryfallId: "48caf4c4-745c-4072-bf3d-1a3fa7c3bc9c"
-    artist: "Yongjae Choi"
-    significance: >-
+  - significance: >-
       This later card recalls Jeska's successive identities;
       her final sacrifice brought the temporal crisis to an end.
 
-  - name: "The Mending of Dominaria"
-    setCode: "dom"
-    collectorNumber: "173"
-    scryfallId: "0d5e4d9a-34e1-46eb-814b-8e3bd4475b8a"
-    artist: "Adam Paquette"
-    significance: >-
+  - significance: >-
       A later Saga card memorializing the event that saved
       the Multiverse and fundamentally changed planeswalkers.
 
-  - name: "Jhoira's Timebug"
-    setCode: "tsp"
-    collectorNumber: "257"
-    scryfallId: "9ce2c6d7-505b-490b-9c6f-b5166c9ff71d"
-    artist: "Dan Frazier"
-    significance: >-
+  - significance: >-
       A contemporary Time Spiral invention named for Jhoira. Its
       manipulation of time counters evokes her practical study of
       temporal phenomena, not a documented rift-closing ritual.
 
-  - name: "Reality Acid"
-    setCode: "plc"
-    collectorNumber: "45"
-    scryfallId: "8c6ad9c3-b5dd-46a9-8494-8b395e21aedf"
-    artist: "James Wong"
-    significance: >-
+  - significance: >-
       A Planar Chaos illustration used as a thematic representation
       of unstable reality, not a literal scene from Venser's journey.
 
-  - name: "Rift Elemental"
-    setCode: "fut"
-    collectorNumber: "106"
-    scryfallId: "670c1a05-0dd2-4535-aa7f-ed33bbe92681"
-    artist: "Ron Spears"
-    significance: >-
+  - significance: >-
       An elemental from Future Sight associated with moving time
       counters and unstable rifts, illustrating the crisis around
       Yavimaya without depicting Multani or Jeska directly.
 
-  - name: "Leshrac's Sigil"
-    setCode: "ice"
-    collectorNumber: "144"
-    scryfallId: "ad5ba7ee-d6df-4b62-a8a1-c81e6fca392a"
-    artist: "Drew Tucker"
-    significance: >-
+  - significance: >-
       An Ice Age-era magical emblem bearing Leshrac's name.
       This historical link to his influence is not a portrait
       of the planeswalker or his later battle with Nicol Bolas.
@@ -268,7 +208,7 @@ He had used extraordinary temporal magic to phase Zhalfir and Shiv out of normal
 
 When Teferi returned centuries later, he hoped to restore both places. Instead, he discovered that the means he had used to preserve them had contributed to the growing temporal crisis.
 
-<HistoricalMoment card={frontmatter.cards[0]}>
+<HistoricalMoment cardId={frontmatter.cardIds[0]} significance={frontmatter.cards[0].significance}>
 
 The original _Time Spiral_ printing of Teferi presents a powerful mage whose future no longer resembles his past. His story is not simply about commanding time, but about accepting responsibility for the damage his own decisions helped cause.
 
@@ -290,7 +230,7 @@ Jhoira had known Teferi and <CharacterLink id="karn">Karn</CharacterLink> since 
 
 Where powerful planeswalkers could be drawn toward solutions based on force, Jhoira looked for mechanisms, patterns, and practical ways to keep companions alive. Her loyalty to Teferi did not prevent her from questioning his recklessness.
 
-<HistoricalMoment card={frontmatter.cards[3]}>
+<HistoricalMoment cardId={frontmatter.cardIds[3]} significance={frontmatter.cards[3].significance}>
 
 Jhoira's _Future Sight_ card was published near the end of the block, although her part in the narrative begins much earlier. Her appearance here illustrates a crucial theme: mortal expertise can matter alongside the most overwhelming magic.
 
@@ -307,7 +247,7 @@ planeswalkers capable of moving mountains, disciplined engineering
 made her a necessary counterweight to spectacular but irreversible
 solutions.
 
-<HistoricalMoment card={frontmatter.cards[8]}>
+<HistoricalMoment cardId={frontmatter.cardIds[8]} significance={frontmatter.cards[8].significance}>
 
 _Jhoira's Timebug_, printed in _Time Spiral_, takes the form of a
 small artifact creature associated with adjusting time counters. It
@@ -332,7 +272,7 @@ Among the warriors connected to this landscape was <CharacterLink id="radha">Rad
 
 Radha could draw upon mana associated with the rift. That ability made her an invaluable subject for Teferi's investigation, but she was no passive instrument. She challenged the way ancient beings expected others to obey them and pursued a destiny of her own.
 
-<HistoricalMoment card={frontmatter.cards[1]}>
+<HistoricalMoment cardId={frontmatter.cardIds[1]} significance={frontmatter.cards[1].significance}>
 
 _Radha, Heir to Keld_ captures the warrior at the crossroads of her ancestry and ambition. Her connection to the damaged land would later make her central to another planeswalker's dangerous plans.
 
@@ -354,7 +294,7 @@ In Urborg, the travelers encountered <CharacterLink id="venser">Venser</Characte
 
 Venser's devices could move objects and people in unexpected ways. More important, his own latent potential suggested that the next generation of planeswalkers might not resemble the nearly godlike figures of the past.
 
-<HistoricalMoment card={frontmatter.cards[2]}>
+<HistoricalMoment cardId={frontmatter.cardIds[2]} significance={frontmatter.cards[2].significance}>
 
 The original _Future Sight_ card depicts Venser as a brilliant, quick-thinking mage of displacement and escape. His role in the Mending became a bridge between the old age of planeswalkers and the new one.
 
@@ -398,7 +338,7 @@ Freyalise had been a dominant figure in Dominarian history long before the tempo
 
 The Skyshroud rift became a crisis she could not defeat through ordinary force. Her people needed protection, but the continued existence of the wound threatened every inhabitant of the plane.
 
-<HistoricalMoment card={frontmatter.cards[4]}>
+<HistoricalMoment cardId={frontmatter.cardIds[4]} significance={frontmatter.cards[4].significance}>
 
 This later _Commander 2014_ card celebrates Freyalise's long-standing association with elven communities. Her final act in the Mending era was a sacrifice rather than another victory won by force.
 
@@ -420,7 +360,7 @@ The Rathi Overlay had brought foreign geography and old Phyrexian machinery into
 
 His suspicion of artifice complicated cooperation with Venser and Jhoira. Nevertheless, the threat became too severe for any one guardian to address alone.
 
-<HistoricalMoment card={frontmatter.cards[5]}>
+<HistoricalMoment cardId={frontmatter.cardIds[5]} significance={frontmatter.cards[5].significance}>
 
 _Lord Windgrace_ was printed long after _Time Spiral_, but it gives this earlier character a distinct visual presence in the card archive. He is remembered for choosing to protect Urborg at the cost of his own life.
 
@@ -460,7 +400,7 @@ travelers could encounter a Dominaria shaped by an alternate Ice Age
 and a renewed Phyrexian threat. These encounters mattered because
 they threatened to turn temporary overlap into permanent damage.
 
-<HistoricalMoment card={frontmatter.cards[9]}>
+<HistoricalMoment cardId={frontmatter.cardIds[9]} significance={frontmatter.cards[9].significance}>
 
 _Reality Acid_ appeared in _Planar Chaos_ and communicates the idea
 of a world coming apart. Its artwork is used as an illustrative
@@ -502,7 +442,7 @@ Yet determination did not guarantee judgment. The old planeswalker Leshrac manip
 
 Jeska closed the Zhalfirin rift, but doing so eliminated Teferi's remaining hope of restoring the phased-out homeland through that opening. She later sealed another wound above Yavimaya, inflicting further harm in the process.
 
-<HistoricalMoment card={frontmatter.cards[6]}>
+<HistoricalMoment cardId={frontmatter.cardIds[6]} significance={frontmatter.cards[6].significance}>
 
 _Jeska, Thrice Reborn_ is a retrospective printing from _Commander Legends_, not a card released during the original _Time Spiral_ block. It illustrates the long arc from the Mirari story to Jeska's final decision during the Mending.
 
@@ -527,7 +467,7 @@ Gerrard, Mirri, and Rofellos long before the Weatherlight's final
 mission. The effort to close this rift placed the forest and its
 protector at risk, and the repair was bound to a devastating loss.
 
-<HistoricalMoment card={frontmatter.cards[10]}>
+<HistoricalMoment cardId={frontmatter.cardIds[10]} significance={frontmatter.cards[10].significance}>
 
 _Rift Elemental_ belongs to _Future Sight_ and illustrates the
 unruly power of rift-associated magic. It is a thematic representation
@@ -561,7 +501,7 @@ agency rather than confront the cost herself. He was also interested
 in the lethal Phage aspect of her history. Jeska's wish to repair
 what she had once damaged gave him an opening he did not deserve.
 
-<HistoricalMoment card={frontmatter.cards[11]}>
+<HistoricalMoment cardId={frontmatter.cardIds[11]} significance={frontmatter.cards[11].significance}>
 
 _Leshrac's Sigil_ first appeared in _Ice Age_ (1995). It is a
 named remnant of the planeswalker's older influence, **not** a
@@ -609,7 +549,7 @@ The closing of the final rift brought about the Mending: a fundamental alteratio
 
 Before the Mending, planeswalkers commonly possessed immense, almost godlike abilities, including forms of immortality and extraordinary powers over reality. Afterward, possessing a spark no longer guaranteed that scale of power or freedom from aging and injury. Planeswalkers could still move between planes, but they were far more vulnerable and limited.
 
-<HistoricalMoment card={frontmatter.cards[7]}>
+<HistoricalMoment cardId={frontmatter.cardIds[7]} significance={frontmatter.cards[7].significance}>
 
 The _Dominaria_ Saga card _The Mending of Dominaria_ looks back on the restoration of the world. Its publication in 2018 reflects the continuing importance of the 2006–2007 storyline.
 

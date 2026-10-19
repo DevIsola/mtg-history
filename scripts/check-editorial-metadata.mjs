@@ -1,5 +1,4 @@
-import { readdir, readFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { loadCuratedChapters } from './load-curated-chapters.mjs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const chapterDirectory = fileURLToPath(new URL('../src/content/chapters/', import.meta.url));
@@ -134,10 +133,7 @@ export function validateEditorialMetadata(chapters) {
 }
 
 export async function checkEditorialMetadata(directory = chapterDirectory) {
-  const names = (await readdir(directory)).filter((name) => /\.(md|mdx)$/.test(name)).sort();
-  const chapters = await Promise.all(names.map(async (name) =>
-    parseChapterEditorial(await readFile(join(directory, name), 'utf8'), name.replace(/\.(md|mdx)$/, '')),
-  ));
+  const chapters = await loadCuratedChapters(directory, parseChapterEditorial);
   return {
     counts: {
       chapters: chapters.length,

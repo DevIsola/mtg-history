@@ -55,13 +55,20 @@ export function validateArtworkLedger(chapters, entries) {
 }
 
 /** Expand folded YAML significance prose omitted by the lightweight metadata parser. */
-export function extractCardSignificance(source) {
+export function extractCardSignificance(source, canonicalNames = null) {
   const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
   const cards = frontmatter.match(/^cards:\r?\n([\s\S]*?)(?=^[A-Za-z][\w-]*:|$(?![\s\S]))/m)?.[1] ?? '';
   const result = new Map();
   let name = null;
   let folded = false;
+  let index = 0;
   for (const line of cards.split(/\r?\n/)) {
+    if (/^  - significance:\s*>-\s*$/.test(line)) {
+      name = canonicalNames?.[index++] ?? null;
+      folded = Boolean(name);
+      if (folded) result.set(name, '');
+      continue;
+    }
     const card = line.match(/^  - name:\s*(?:"([^"]+)"|'([^']+)')/);
     if (card) { name = card[1] ?? card[2]; folded = false; continue; }
     if (/^    significance:\s*>-\s*$/.test(line)) {
@@ -106,7 +113,7 @@ export async function checkArtwork({ chapters = null, ledgerSource = null } = {}
   if (!chapters) {
     for (const chapter of list) {
       const content = await readFile(join(chapterDirectory, `${chapter.id}.mdx`), 'utf8');
-      const significance = extractCardSignificance(content);
+      const significance = extractCardSignificance(content, chapter.cards.map((card) => card.name));
       for (const card of chapter.cards) {
         if (significance.has(card.name)) card.significance = significance.get(card.name);
       }
