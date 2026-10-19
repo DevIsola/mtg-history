@@ -23,7 +23,27 @@ const chapters = await Promise.all((await readdir(join(content, 'chapters')))
 const characters = (await rows('characters')).map(({ id, data }) => ({ id, ...data }));
 const events = (await rows('events')).map(({ id, data }) => ({ id, ...data }));
 const canonical = await rows('cards');
-const plan = planCards(chapters, characters, events);
+// Reconstruct legacy-shaped values only for the unchanged comparison engine.
+// Canonical card JSON is the sole source of printing metadata.
+const byPrinting = new Map(canonical.map(({ id, data }) => [id, data]));
+const chaptersById = new Map(chapters.map((chapter) => [chapter.id, chapter]));
+const comparedCharacters = characters.map((character) => {
+  const { featuredCard, featuredCardId } = character;
+  if (!featuredCard || Object.keys(featuredCard).length !== 1 ||
+      typeof featuredCard.significance !== 'string' || !featuredCard.significance.trim()) {
+    throw new Error(`character ${character.id}: portrait must contain significance only`);
+  }
+  const printing = byPrinting.get(featuredCardId);
+  if (!printing) throw new Error(`character ${character.id}: missing printing ${featuredCardId}`);
+  return { ...character, featuredCard: { ...printing, scryfallId: featuredCardId, significance: featuredCard.significance } };
+});
+const comparedEvents = events.map((event) => {
+  if (Object.hasOwn(event, 'cardName')) throw new Error(`event ${event.id}: duplicate cardName must be removed`);
+  const curated = chaptersById.get(event.chapterId)?.cards.find((card) => card.scryfallId.toLowerCase() === event.cardId);
+  if (!curated) throw new Error(`event ${event.id}: printing not curated in its chapter`);
+  return { ...event, cardName: curated.name };
+});
+const plan = planCards(chapters, comparedCharacters, comparedEvents);
 const errors = compareCards(plan, canonical, chapterSources, characters, events);
 if (chapters.length !== 10 || characters.length !== 87 || events.length !== 125 ||
     chapters.reduce((total, chapter) => total + chapter.cards.length, 0) !== 135) {

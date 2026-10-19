@@ -61,8 +61,20 @@ export function validateContentGraph({
   for (const event of historicalEvents) {
     if (!chapterIds.has(event.chapterId)) {
       errors.push(`event "${event.id}": unknown chapter "${event.chapterId}"`);
-    } else if (!chaptersById.get(event.chapterId).cardNames.includes(event.cardName)) {
-      errors.push(`event "${event.id}": card "${event.cardName}" missing from chapter "${event.chapterId}"`);
+    } else {
+      const chapter = chaptersById.get(event.chapterId);
+      if (typeof event.cardId === 'string' && Array.isArray(chapter.cardIds) && chapter.cardIds.length) {
+        if (!chapter.cardIds.includes(event.cardId)) {
+          errors.push(`event "${event.id}": card printing "${event.cardId}" missing from chapter "${event.chapterId}"`);
+        }
+      } else if (typeof event.cardName === 'string') {
+        // Keep supporting standalone legacy fixtures during this transition.
+        if (!chapter.cardNames.includes(event.cardName)) {
+          errors.push(`event "${event.id}": card "${event.cardName}" missing from chapter "${event.chapterId}"`);
+        }
+      } else {
+        errors.push(`event "${event.id}": missing chapter card printing reference`);
+      }
     }
     checkReferences(event.characterIds, characterIds, `event "${event.id}" characters`, errors);
   }
@@ -101,9 +113,11 @@ export function parseChapter(source, id) {
   const cardsBlock = frontmatter.match(/^cards:\s*\r?\n([\s\S]*?)(?=^[a-zA-Z][\w-]*:|$(?![\s\S]))/m)?.[1] ?? '';
   const cardNames = [...cardsBlock.matchAll(/^\s{2}- name:\s*(?:"([^"]+)"|'([^']+)'|([^\r\n]+))\s*$/gm)]
     .map((m) => (m[1] ?? m[2] ?? m[3]).trim());
+  const cardIdsBlock = frontmatter.match(/^cardIds:\s*\r?\n((?:^  - [^\r\n]+\r?\n?)+)/m)?.[1] ?? '';
+  const cardIds = cardIdsBlock.split(/\r?\n/).filter(Boolean).map((line) => line.replace(/^  - /, '').replace(/^['"]|['"]$/g, '').trim());
   const references = [...source.slice(match[0].length).matchAll(/<(CharacterLink|HistoricalEventReference)\b[^>]*?\bid\s*=\s*(["'])([^"']+)\2/g)]
     .map((m) => ({ kind: m[1], id: m[3] }));
-  return { id, eraId: era[1], cardNames, references };
+  return { id, eraId: era[1], cardNames, ...(cardIds.length ? { cardIds } : {}), references };
 }
 
 export async function checkContentGraph(chapterDirectory = fileURLToPath(new URL('../src/content/chapters/', import.meta.url))) {
