@@ -149,4 +149,8 @@ const nextChapter = chapters[currentIndex + 1];
     </div>
   </section>
   </div>
+  <script>
+    import { setupLivingChapterReveals } from '../../utils/living-chapters.mjs';
+    setupLivingChapterReveals(document.querySelector('.chapter-theme'));
+  </script>
 </BaseLayout>
