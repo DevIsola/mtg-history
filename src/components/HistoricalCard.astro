@@ -59,6 +59,22 @@ const cardUrl = cardScryfallUrl(card);
     >
       View card on Scryfall ↗
     </a>
+    <button
+      class="historical-card__enlarge"
+      type="button"
+      hidden
+      data-card-artwork-open
+      data-printing-id={printing.id}
+      data-card-name={card.name}
+      data-card-artist={card.artist}
+      data-card-set={card.setCode}
+      data-card-number={card.collectorNumber}
+      data-card-significance={card.significance}
+      aria-haspopup="dialog"
+      aria-controls="card-artwork-viewer"
+    >
+      Enlarge card image
+    </button>
   </figcaption>
 </figure>
 
@@ -109,6 +125,21 @@ const cardUrl = cardScryfallUrl(card);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
+
+  .historical-card__enlarge {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.55rem 0.85rem;
+    min-height: 44px;
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+    color: var(--link-color);
+    font: inherit;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .historical-card__enlarge[hidden] { display: none; }
+  .historical-card__enlarge:focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
 
   @media (max-width: bp.$small) {
     .historical-card {
