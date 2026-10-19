@@ -11,6 +11,7 @@ export interface CharacterProfile {
   summary: string;
   biography: string[];
   chapterIds: string[];
+  featuredCardId: string;
   featuredCard: HistoricalCard;
   source: {
     title: string;

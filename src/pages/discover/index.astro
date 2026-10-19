@@ -7,6 +7,7 @@ import { characters } from '../../data/characters';
 import { characterCategories } from '../../data/characterCategories';
 import { historicalEvents } from '../../data/events';
 import { withBase } from '../../utils/paths';
+import { chapterCardUse, resolvePrinting, cardImageUrl } from '../../utils/card-printings';
 
 type RecordType = 'chapter' | 'character' | 'event';
 
@@ -35,13 +36,11 @@ const charactersById = new Map(
   characters.map((character) => [character.id, character])
 );
 
-const cardImage = (scryfallId: string): string => {
-  const id = scryfallId.toLowerCase();
-  return `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`;
-};
+const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
 
 const chapterRecords: DiscoveryRecord[] = chapters.map((chapter) => {
-  const illustration = chapter.data.cards[0];
+  const illustration = chapter.data.cardIds.length
+    ? chapterCardUse(chapter, 0, cardCatalog) : undefined;
 
   return {
     id: chapter.id,
@@ -52,7 +51,7 @@ const chapterRecords: DiscoveryRecord[] = chapters.map((chapter) => {
     url: withBase(`chapters/${chapter.id}/`),
     illustration: illustration?.name ?? '',
     imageUrl: illustration
-      ? cardImage(illustration.scryfallId)
+      ? cardImageUrl(illustration.scryfallId)
       : '',
     chapterIds: [chapter.id],
     searchText: [
@@ -62,10 +61,10 @@ const chapterRecords: DiscoveryRecord[] = chapters.map((chapter) => {
       chapter.data.chronology.storyPeriod,
       chapter.data.chronology.storyDetail,
       ...chapter.data.relatedSets.map((set) => set.name),
-      ...chapter.data.cards.flatMap((card) => [
-        card.name,
-        card.significance,
-      ]),
+      ...chapter.data.cardIds.flatMap((_, index) => {
+        const card = chapterCardUse(chapter, index, cardCatalog);
+        return [card.name, card.significance];
+      }),
     ].join(' '),
   };
 });
@@ -91,6 +90,8 @@ const characterRecords: DiscoveryRecord[] = [...characters]
       return chapter.data.title;
     });
 
+    const portrait = resolvePrinting(cardCatalog, character.featuredCardId, `character ${character.id}`);
+
     return {
       id: character.id,
       type: 'character',
@@ -98,8 +99,8 @@ const characterRecords: DiscoveryRecord[] = [...characters]
       context: character.origin,
       summary: character.summary,
       url: withBase(`characters/${character.id}/`),
-      illustration: character.featuredCard.name,
-      imageUrl: cardImage(character.featuredCard.scryfallId),
+      illustration: portrait.name,
+      imageUrl: cardImageUrl(portrait.scryfallId),
       chapterIds: character.chapterIds,
       searchText: [
         character.name,
@@ -110,7 +111,7 @@ const characterRecords: DiscoveryRecord[] = [...characters]
         ...character.biography,
         ...categoryNames,
         ...chapterNames,
-        character.featuredCard.name,
+        portrait.name,
       ].join(' '),
     };
   });
@@ -125,15 +126,10 @@ const eventRecords: DiscoveryRecord[] = historicalEvents.map(
       );
     }
 
-    const card = chapter.data.cards.find(
-      (entry) => entry.name === event.cardName
-    );
-
-    if (!card) {
-      throw new Error(
-        `Missing illustration "${event.cardName}" for event "${event.id}"`
-      );
+    if (!chapter.data.cardIds.some((reference) => reference.id === event.cardId)) {
+      throw new Error(`Event ${event.id}: card not curated in ${chapter.id}`);
     }
+    const card = resolvePrinting(cardCatalog, event.cardId, `event ${event.id}`);
 
     const people = event.characterIds.map((id) => {
       const character = charactersById.get(id);
@@ -155,13 +151,13 @@ const eventRecords: DiscoveryRecord[] = historicalEvents.map(
       summary: event.summary,
       url: withBase(`events/${event.id}/`),
       illustration: card.name,
-      imageUrl: cardImage(card.scryfallId),
+      imageUrl: cardImageUrl(card.scryfallId),
       chapterIds: [event.chapterId],
       searchText: [
         event.title,
         event.summary,
         ...event.narrative,
-        event.cardName,
+        card.name,
         chapter.data.title,
         chapter.data.chronology.storyPeriod,
         ...people,

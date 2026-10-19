@@ -6,6 +6,7 @@ export interface HistoricalEvent {
   narrative: string[];
   characterIds: string[];
   cardName: string;
+  cardId: string;
 }
 
 // Generated compatibility adapter. Edit src/content/events/*.json instead.

@@ -3,26 +3,22 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../utils/paths';
+import { chapterCardUse, cardImageUrl, cardScryfallUrl } from '../../utils/card-printings';
 
 const chapters = (await getCollection('chapters'))
   .sort((a, b) => a.data.order - b.data.order);
 
+const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
+
 const sections = chapters
-  .filter((chapter) => chapter.data.cards.length > 0)
+  .filter((chapter) => chapter.data.cardIds.length > 0)
   .map((chapter) => ({
     id: chapter.id,
     title: chapter.data.title,
     order: chapter.data.order,
-    cards: chapter.data.cards.map((card) => {
-      const id = card.scryfallId.toLowerCase();
-
-      return {
-        ...card,
-        imageUrl:
-          `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`,
-        cardUrl:
-          `https://scryfall.com/card/${card.setCode}/${card.collectorNumber}`,
-      };
+    cards: chapter.data.cardIds.map((_, index) => {
+      const card = chapterCardUse(chapter, index, cardCatalog);
+      return { ...card, imageUrl: cardImageUrl(card.scryfallId), cardUrl: cardScryfallUrl(card) };
     }),
   }));
 

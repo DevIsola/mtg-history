@@ -4,33 +4,24 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { historicalEvents } from '../../data/events';
 import { withBase } from '../../utils/paths';
+import { resolvePrinting, cardImageUrl } from '../../utils/card-printings';
 
 const chapters = (await getCollection('chapters')).sort(
   (a, b) => a.data.order - b.data.order
 );
+
+const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
 
 const sections = chapters
   .map((chapter) => {
     const events = historicalEvents
       .filter((event) => event.chapterId === chapter.id)
       .map((event) => {
-        const card = chapter.data.cards.find(
-          (entry) => entry.name === event.cardName
-        );
-
-        if (!card) {
-          throw new Error(
-            `Missing card "${event.cardName}" for event "${event.id}"`
-          );
+        if (!chapter.data.cardIds.some((reference) => reference.id === event.cardId)) {
+          throw new Error(`Event ${event.id}: printing ${event.cardId} not curated in chapter ${chapter.id}`);
         }
-
-        const id = card.scryfallId.toLowerCase();
-
-        return {
-          event,
-          imageUrl:
-            `https://cards.scryfall.io/normal/front/${id[0]}/${id[1]}/${id}.jpg`,
-        };
+        const card = resolvePrinting(cardCatalog, event.cardId, `event ${event.id}`);
+        return { event, cardName: card.name, imageUrl: cardImageUrl(event.cardId) };
       });
 
     return { chapter, events };
@@ -116,7 +107,7 @@ const sections = chapters
           </div>
 
           <div class="historical-events__grid">
-            {events.map(({ event, imageUrl }) => (
+            {events.map(({ event, imageUrl, cardName }) => (
               <article class="historical-event-card">
                 <a
                   class="historical-event-card__image"
@@ -125,7 +116,7 @@ const sections = chapters
                 >
                   <img
                     src={imageUrl}
-                    alt={`${event.cardName}, a card illustrating this historical period`}
+                    alt={`${cardName}, a card illustrating this historical period`}
                     width="488"
                     height="680"
                     loading="lazy"
