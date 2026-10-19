@@ -193,7 +193,9 @@ const related = characterRelationships
   </section>
 )}
 
-<style>
+<style lang="scss">
+  @use "../styles/breakpoints" as bp;
+
   .character-relations {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -305,7 +307,7 @@ const related = characterRelationships
     text-decoration: underline;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: bp.$small) {
     .character-relations__card {
       padding: 1rem;
     }

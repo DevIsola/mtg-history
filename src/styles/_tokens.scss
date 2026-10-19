@@ -1,0 +1,34 @@
+@use "./breakpoints" as bp;
+
+/* Single owner of the default theme, fonts, and semantic color variables.
+   src/styles/theme.css overrides these properties for dark mode. */
+:root {
+  color-scheme: light;
+  --ink: #172227;
+  --ink-soft: #435057;
+  --night: #101a1e;
+  --night-raised: #1a292b;
+  --paper: #f4efe5;
+  --paper-white: #faf7f0;
+  --paper-deep: #e9e0d0;
+  --line: #d9ceba;
+  --gold: #b89150;
+  --gold-light: #e2c28a;
+  --jade: #516f67;
+  --site-header-height: 86px;
+
+  /* Typography */
+  --font-body: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+
+  /* Editorial links */
+  --link-color: #785528;
+  --link-hover: #483514;
+}
+
+/* Responsive layout tokens remain centrally owned. */
+@media (max-width: bp.$header) {
+  :root {
+    --site-header-height: 72px;
+  }
+}

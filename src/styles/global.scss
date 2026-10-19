@@ -1,28 +1,30 @@
-@import "tailwindcss";
+/* Reset first, then shared tokens. Existing authored CSS order is preserved. */
+@use "./reset";
+@use "./tokens";
 
 /* Shared design foundation */
-@import "./foundation.css";
+@use "./foundation";
 
 /* Historical reading experience */
-@import "./reading.css";
+@use "./reading";
 
 /* Light and dark theme */
-@import "./theme.css";
+@use "./theme";
 
 /* Support and donations */
-@import "./support.css";
+@use "./support";
 
 /* Character encyclopedia */
-@import "./characters.css";
+@use "./characters";
 
 /* Homepage exploration and card archive */
-@import "./exploration.css";
+@use "./exploration";
 
 /* Historical events and relationships */
-@import "./events.css";
+@use "./events";
 
 /* Unified encyclopedia search */
-@import "./discovery.css";
+@use "./discovery";
 
 /* Progressive interactive explorers and updated directories */
-@import "./interactive-explorers.css";
+@use "./interactive-explorers";
