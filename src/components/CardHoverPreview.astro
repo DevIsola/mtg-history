@@ -255,6 +255,10 @@ const imageSrcset = cardImageSrcset(printing.id);
       activeMode = mode;
 
       const name = wrapper.dataset.cardName ?? 'Magic card';
+      // A previously failed card must not leave its placeholder in a new preview.
+      image.parentElement?.querySelector('.card-image-fallback')?.remove();
+      image.style.removeProperty('display');
+      delete image.dataset.cardImageFallbackApplied;
       image.srcset = wrapper.dataset.cardImageSet ?? '';
       image.src = wrapper.dataset.cardImage ?? '';
       image.alt = `Magic: The Gathering card: ${name}`;

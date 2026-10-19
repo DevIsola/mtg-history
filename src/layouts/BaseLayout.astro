@@ -52,5 +52,8 @@ const { title, description } = Astro.props;
     <SiteHeader />
     <main id="main-content"><slot /></main>
     <SiteFooter />
+    <script>
+      import '../scripts/card-image-fallback';
+    </script>
   </body>
 </html>
