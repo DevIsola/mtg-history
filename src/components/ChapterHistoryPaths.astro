@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { pathsForChapter } from '../data/history-paths.mjs';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  chapterId: string;
+  chapters: CollectionEntry<'chapters'>[];
+}
+const { chapterId, chapters } = Astro.props;
+const byId = new Map(chapters.map((chapter) => [chapter.id, chapter.data.title]));
+const matches = pathsForChapter(chapterId);
+---
+
+{matches.length > 0 && (
+  <aside class="chapter-history-paths" data-history-paths aria-labelledby="history-paths-heading">
+    <p class="eyebrow">Beyond this chapter</p>
+    <h2 id="history-paths-heading">Follow the historical connections</h2>
+    <p>Curated reading routes trace consequences across different eras. They are not a single calendar of the Multiverse.</p>
+    <ul>
+      {matches.map(({ path, index, next }) => (
+        <li>
+          <a href={withBase(`paths/#${path.id}`)}>
+            <strong>{path.title}</strong>
+            <span>{index + 1} of {path.steps.length} chapters in this reading path</span>
+          </a>
+          {next && (
+            <p>
+              Continue with <a href={withBase(`events/${next.eventId}/`)}>{byId.get(next.chapterId)}</a>.
+              {' '}{next.context}
+            </p>
+          )}
+          {!next && <p>This is the final stop. Review the full reading path to revisit its earlier connections.</p>}
+        </li>
+      ))}
+    </ul>
+    <a class="text-link" href={withBase('paths/')}>Explore all historical reading paths →</a>
+  </aside>
+)}
+
+<style lang="scss">
+  .chapter-history-paths {
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid var(--line);
+    padding-block: 1.7rem 2rem;
+    margin-block: 2.5rem;
+  }
+  .chapter-history-paths h2 { font-family: var(--font-display); font-size: clamp(1.45rem, 2.5vw, 2rem); margin-top: 0.4rem; }
+  .chapter-history-paths > p:not(.eyebrow) { line-height: 1.7; color: var(--ink-soft); margin-top: 0.6rem; }
+  .chapter-history-paths ul { list-style: none; margin: 1.3rem 0; padding: 0; display: grid; gap: 1rem; }
+  .chapter-history-paths li { border: 1px solid var(--line); background: var(--paper-white); padding: 1rem 1.2rem; }
+  .chapter-history-paths li > a { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.35rem 1rem; color: var(--link-color); }
+  .chapter-history-paths li span { color: var(--ink-soft); font-size: 0.85rem; }
+  .chapter-history-paths li p { margin-top: 0.5rem; color: var(--ink-soft); font-size: 0.94rem; line-height: 1.65; }
+  .chapter-history-paths li p a { color: var(--link-color); text-decoration: underline; text-underline-offset: 0.16em; }
+  .chapter-history-paths a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+</style>
