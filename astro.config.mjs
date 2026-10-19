@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
 
 import mdx from "@astrojs/mdx";
 
@@ -8,7 +7,6 @@ export default defineConfig({
   base: "/mtg-history",
 
   vite: {
-    plugins: [tailwindcss()],
     build: {
       // Keep the optional graph renderer modular and cacheable; unlike the
       // old standalone bundle these packages can be split at ESM boundaries.
