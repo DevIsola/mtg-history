@@ -1,0 +1,41 @@
+---
+import type { EventProvenanceEntry } from '../data/event-provenance.mjs';
+interface Props { entry: EventProvenanceEntry; }
+const { entry } = Astro.props;
+---
+<section class="event-evidence" aria-labelledby="event-evidence-heading">
+  <p class="eyebrow">Source and chronology review</p>
+  <h3 id="event-evidence-heading">Evidence for selected claims</h3>
+  <dl>
+    <div><dt>In-world time ({entry.chronology.precision})</dt><dd><strong>{entry.chronology.label}</strong></dd></div>
+    <div><dt>Chronology qualification</dt><dd>{entry.chronology.basis}</dd></div>
+  </dl>
+  <h4>Official source references</h4>
+  <ul>
+    {entry.sources.map((source) => (
+      <li>
+        <a href={source.url} rel="noopener noreferrer">{source.title} ↗</a>
+        <span class="event-evidence__role">{source.role === 'story' ? 'Story' : source.role === 'retrospective' ? 'Retrospective account' : 'Design commentary'}</span>
+        <p>{source.supports}</p>
+      </li>
+    ))}
+  </ul>
+  <p><strong>Artwork context:</strong> {entry.artworkNote}</p>
+  <p class="event-evidence__limit">Sources support the claims identified here, not necessarily every sentence in the narrative. Publication dates are not in-world dates.</p>
+</section>
+<style lang="scss">
+  .event-evidence { margin-block: 2rem; padding: clamp(1rem, 3vw, 1.5rem); background: var(--paper-white); border: 1px solid var(--line); border-radius: .85rem; color: var(--ink); }
+  .event-evidence h3, .event-evidence h4 { margin-block: .5rem 1rem; color: var(--ink); }
+  .event-evidence dl { margin: 0 0 1.25rem; }
+  .event-evidence dl div { margin-block: .7rem; }
+  .event-evidence dt, .event-evidence__role { font-size: .83rem; color: var(--ink-soft); }
+  .event-evidence dd { margin: .2rem 0 0; line-height: 1.55; }
+  .event-evidence ul { margin: 0; padding: 0; list-style: none; }
+  .event-evidence li { margin-block: .85rem; padding-block-end: .8rem; border-bottom: 1px solid var(--line); }
+  .event-evidence a { color: var(--link-color); text-decoration: underline; text-underline-offset: .2em; overflow-wrap: anywhere; }
+  .event-evidence a:hover { color: var(--link-hover); }
+  .event-evidence a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .event-evidence__role { display: block; margin-block: .3rem; }
+  .event-evidence li p { margin: .3rem 0 0; }
+  .event-evidence__limit { font-size: .85rem; color: var(--ink-soft); }
+</style>
