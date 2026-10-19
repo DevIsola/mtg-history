@@ -2,6 +2,10 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { historyPaths, validateHistoryPaths } from '../../data/history-paths.mjs';
+import { deriveEntityContinuity } from '../../data/entity-continuity.mjs';
+import { characters } from '../../data/characters';
+import { historicalEvents } from '../../data/events';
+import { characterRelationships } from '../../data/relationships';
 import { withBase } from '../../utils/paths';
 
 const [chapters, events] = await Promise.all([getCollection('chapters'), getCollection('events')]);
@@ -13,6 +17,7 @@ const errors = validateHistoryPaths(
   new Map(events.map((event) => [event.id, event.data.chapterId.id])),
 );
 if (errors.length) throw new Error(`Historical reading paths:\n${errors.join('\n')}`);
+const entityConnections = deriveEntityContinuity(chapters, characters, historicalEvents, characterRelationships);
 ---
 
 <BaseLayout title="Historical reading paths" description="Follow source-anchored connections across Magic's historical chapters without collapsing separate eras into one timeline.">
@@ -55,6 +60,41 @@ if (errors.length) throw new Error(`Historical reading paths:\n${errors.join('\n
       </div>
     </div>
   </section>
+  <section id="entity-evidence" class="section-spacing entity-evidence" aria-labelledby="entity-evidence-heading">
+    <div class="page-shell">
+      <p class="eyebrow">Entity-based discovery</p>
+      <h2 id="entity-evidence-heading">Shared characters across chapters</h2>
+      <p class="entity-evidence__intro">This index is derived from the existing character, event, and relationship records. A chapter pair appears only when a character is referenced by <strong>at least one historical event in each chapter</strong>. Shared evidence does not prove one event caused another, nor does it establish a single calendar across planes. The editorial reading paths above remain the curated narrative.</p>
+      {entityConnections.length ? (
+        <ol class="entity-evidence__grid">
+          {entityConnections.map((entry) => (
+            <li class="entity-evidence__card">
+              <h3>
+                <a href={withBase(`chapters/${entry.fromId}/#chapter-reader`)}>{entry.fromTitle}</a>
+                <span aria-hidden="true"> ↔ </span>
+                <a href={withBase(`chapters/${entry.toId}/#chapter-reader`)}>{entry.toTitle}</a>
+              </h3>
+              <p>{entry.people.length} shared {entry.people.length === 1 ? 'character' : 'characters'} with event references in both chapters.</p>
+              <ul>
+                {entry.people.map((person) => (
+                  <li>
+                    <a href={withBase(`characters/${person.id}/`)}>{person.name}</a>
+                    {' · '}
+                    <a href={withBase(`events/${person.fromEventId}/`)}>First chapter event</a>
+                    {' · '}
+                    <a href={withBase(`events/${person.toEventId}/`)}>Second chapter event</a>
+                  </li>
+                ))}
+              </ul>
+              {entry.ties.length > 0 && (
+                <p class="entity-evidence__ties">{entry.ties.length} documented {entry.ties.length === 1 ? 'relationship' : 'relationships'} among these figures. <a href={withBase('relationships/')}>Explore the relationship atlas →</a></p>
+              )}
+            </li>
+          ))}
+        </ol>
+      ) : <p>No chapter pairs currently meet the two-event evidence threshold.</p>}
+    </div>
+  </section>
 </BaseLayout>
 
 <style lang="scss">
@@ -74,4 +114,15 @@ if (errors.length) throw new Error(`Historical reading paths:\n${errors.join('\n
   .history-path li p:not(.history-path__chapter) { color: var(--ink-soft); font-size: 0.94rem; line-height: 1.6; }
   .history-path__chapter-link { display: inline-block; margin-top: 0.55rem; text-decoration: underline; text-underline-offset: 0.17em; }
   .history-path a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .entity-evidence { border-top: 1px solid var(--line); scroll-margin-top: calc(var(--site-header-height) + 1rem); }
+  .entity-evidence h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.25rem); margin-block: 0.35rem 0.9rem; }
+  .entity-evidence__intro { max-width: 82ch; color: var(--ink-soft); line-height: 1.75; margin-bottom: 1.8rem; }
+  .entity-evidence__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 1.2rem; }
+  .entity-evidence__card { border: 1px solid var(--line); background: var(--paper-white); padding: 1.35rem; }
+  .entity-evidence__card h3 { font-family: var(--font-display); font-size: 1.28rem; line-height: 1.4; }
+  .entity-evidence__card > p { color: var(--ink-soft); margin-top: 0.7rem; line-height: 1.65; }
+  .entity-evidence__card ul { padding-left: 1.3rem; margin-top: 0.7rem; }
+  .entity-evidence__card li { padding-block: 0.3rem; line-height: 1.6; }
+  .entity-evidence a { color: var(--link-color); text-decoration: underline; text-underline-offset: 0.15em; }
+  .entity-evidence a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 </style>
