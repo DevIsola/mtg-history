@@ -16,11 +16,12 @@ const requiredTokens = [
 const scopedComponents = [
   'CardHoverPreview.astro', 'CharacterRelationships.astro',
   'HistoricalCard.astro', 'HistoricalEventReference.astro',
+  'SiteFooter.astro',
 ];
 
 /** Offline policy validation; Astro/Vite and Sass perform actual compilation. */
 export function auditStyles({ globalCss, foundation, tokens, reset, styles, config, manifest, lockfile,
-  layout = "import '../styles/global.scss';", components = {} }) {
+  layout = "import '../styles/global.scss';", components = {}, workspace = '' }) {
   const errors = [];
   const uses = [...globalCss.matchAll(/@use\s+["']\.\/([\w-]+)["']\s*;/g)]
     .map((match) => match[1]);
@@ -47,6 +48,9 @@ export function auditStyles({ globalCss, foundation, tokens, reset, styles, conf
     errors.push('token partial must own default and mobile viewport tokens');
   }
   if (/:root\s*\{/.test(foundation)) errors.push('foundation partial duplicates root-level tokens');
+  if (/^\s*\.(?:site-footer|footer-grid|footer-brand|footer-links|footer-legal)(?:\b|__)/m.test(foundation)) {
+    errors.push('footer selectors must be owned by SiteFooter.astro, not foundation');
+  }
   if (!/:root\[data-theme="dark"\]/.test(styles['_theme.scss'] ?? '')) {
     errors.push('theme partial must own dark-mode runtime overrides');
   }
@@ -58,6 +62,10 @@ export function auditStyles({ globalCss, foundation, tokens, reset, styles, conf
   const deps = { ...manifest.dependencies, ...manifest.devDependencies };
   if (deps.tailwindcss || deps['@tailwindcss/vite']) errors.push('Tailwind is still a direct dependency');
   if (!deps.sass) errors.push('Sass dependency is required for Vite SCSS compilation');
+  if (!/^allowBuilds:\s*\n(?:[ \t]+[^\n]+\n)*?  ['\"]@parcel\/watcher['\"]:\s*true\s*$/m.test(workspace)) {
+    errors.push('pnpm-workspace.yaml must explicitly approve only the reviewed @parcel/watcher build');
+  }
+  if (/set this to true or false/i.test(workspace)) errors.push('pnpm build policy contains an undecided placeholder');
   if (manifest.scripts['check:styles'] !== 'node scripts/check-style-architecture.mjs' ||
       !manifest.scripts.verify.includes('pnpm run check:styles')) errors.push('verification does not gate style architecture');
   const importer = lockfile.split(/^packages:\s*$/m)[0];
@@ -93,6 +101,7 @@ export async function checkStyleArchitecture() {
     components,
     manifest: JSON.parse(await readFile(join(root, 'package.json'), 'utf8')),
     lockfile: await readFile(join(root, 'pnpm-lock.yaml'), 'utf8'),
+    workspace: await readFile(join(root, 'pnpm-workspace.yaml'), 'utf8'),
   });
 }
 
@@ -102,6 +111,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
     errors.forEach((error) => console.error(`- ${error}`));
     process.exitCode = 1;
   } else {
-    console.log('Style architecture: Astro + SCSS, centralized design tokens, scoped components; Tailwind absent.');
+    console.log('Style architecture: Astro + SCSS; footer scoped; @parcel/watcher build explicitly approved.');
   }
 }
