@@ -1,3 +1,4 @@
+import { loadCuratedChapters } from './load-curated-chapters.mjs';
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,13 +14,9 @@ async function rows(folder) {
   })));
 }
 const chapterSources = new Map();
-const chapters = await Promise.all((await readdir(join(content, 'chapters')))
-  .filter((name) => /\.(md|mdx)$/.test(name)).sort().map(async (filename) => {
-    const id = filename.replace(/\.(md|mdx)$/, '');
-    const source = await readFile(join(content, 'chapters', filename), 'utf8');
-    chapterSources.set(id, source);
-    return parseChapterEditorial(source, id);
-  }));
+const chapters = await loadCuratedChapters(
+  join(content, 'chapters'), parseChapterEditorial, chapterSources,
+);
 const characters = (await rows('characters')).map(({ id, data }) => ({ id, ...data }));
 const events = (await rows('events')).map(({ id, data }) => ({ id, ...data }));
 const canonical = await rows('cards');

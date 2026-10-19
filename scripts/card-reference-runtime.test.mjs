@@ -20,7 +20,7 @@ const chapter = {
   id: 'thran',
   data: {
     cardIds: [{ collection: 'cards', id: ID }],
-    cards: [{ scryfallId: ID, significance: 'A Thran historical interpretation' }],
+    cards: [{ significance: 'A Thran historical interpretation' }],
   },
 };
 
@@ -31,10 +31,18 @@ test('chapter card rendering resolves Astro reference objects by UUID', () => {
   });
 });
 
-test('chapter context cannot silently refer to a different printing', () => {
+test('chapter context cannot reintroduce conflicting printing fields', () => {
   const corrupted = structuredClone(chapter);
   corrupted.data.cards[0].scryfallId = ALT;
-  assert.throws(() => chapterCardUse(corrupted, 0, catalog), /misaligned/);
+  assert.throws(() => chapterCardUse(corrupted, 0, catalog),
+    /unexpected duplicated printing fields/);
+});
+
+test('chapter references reject a missing canonical printing', () => {
+  const corrupted = structuredClone(chapter);
+  corrupted.data.cardIds[0].id = ALT;
+  assert.throws(() => chapterCardUse(corrupted, 0, catalog),
+    /unknown canonical printing/);
 });
 
 test('event consumers compare Astro reference IDs rather than reference objects', () => {

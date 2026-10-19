@@ -1,5 +1,5 @@
-import { readdir, readFile, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { writeFile } from 'node:fs/promises';
+import { loadCuratedChapters } from './load-curated-chapters.mjs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { parseChapterEditorial } from './check-editorial-metadata.mjs';
 
@@ -9,10 +9,7 @@ const USER_AGENT = 'MTGHistoryProvenanceAudit/1.0 (https://github.com/DevIsola/m
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function loadChapterProvenance(directory = chapterDirectory) {
-  const files = (await readdir(directory)).filter((name) => /\.(md|mdx)$/.test(name)).sort();
-  return Promise.all(files.map(async (file) => parseChapterEditorial(
-    await readFile(join(directory, file), 'utf8'), file.replace(/\.(md|mdx)$/, ''),
-  )));
+  return loadCuratedChapters(directory, parseChapterEditorial);
 }
 
 function normalized(value) {

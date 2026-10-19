@@ -43,113 +43,58 @@ cardIds:
   - 48eac047-f888-49c7-aa7e-339f900f558f
 
 cards:
-  - name: "Jodah, Archmage Eternal"
-    setCode: "dom"
-    collectorNumber: "198"
-    scryfallId: "1ee86efa-248e-4251-b734-f8ad3e8a0344"
-    artist: "Yongjae Choi"
-    significance: >-
+  - significance: >-
       A later depiction of Jodah, whose extraordinary
       lifespan connects the persecution of magic
       after the Brothers' War to the end of the Ice Age.
 
-  - name: "Lim-Dûl the Necromancer"
-    setCode: "tsp"
-    collectorNumber: "114"
-    scryfallId: "b8a3cdfe-0289-474b-b9c4-07e8c6588ec5"
-    artist: "Matt Cavotta"
-    significance: >-
+  - significance: >-
       Lim-Dûl raised undead armies and sought power
       amid the frozen kingdoms of Terisiare.
 
-  - name: "The World Spell"
-    setCode: "dmu"
-    collectorNumber: "189"
-    scryfallId: "f3a9112a-6a1d-4d89-9866-189b55cd326d"
-    artist: "Adam Paquette"
-    significance: >-
+  - significance: >-
       Freyalise cast the World Spell to end the
       long Ice Age, transforming Dominaria and
       beginning an era of thaw.
 
-  - name: "Jaya Ballard, Task Mage"
-    setCode: "tsp"
-    collectorNumber: "166"
-    scryfallId: "a1f85b2a-7836-4058-87a5-859c4311a7e4"
-    artist: "Matt Cavotta"
-    significance: >-
+  - significance: >-
       Depicts Jaya as a task mage and pyromancer.
       Her friendship with Jodah and resistance
       to Lim-Dûl were central to the history
       of Dominaria's Ice Age.
 
-  - name: "Witch Hunter"
-    setCode: "drk"
-    collectorNumber: "19"
-    scryfallId: "4eef9bb7-cd3c-422e-a93b-90d98684675a"
-    artist: "Jesper Myrfors"
-    significance: >-
+  - significance: >-
       A thematic illustration of the suspicion and
       religious persecution surrounding magic in
       the Dark Age. It is not a literal depiction
       of the siege of Penregon.
 
-  - name: "Order of the Ebon Hand"
-    setCode: "fem"
-    collectorNumber: "42b"
-    scryfallId: "60ffbb40-13c1-4d01-9421-95b2410d0d3b"
-    artist: "Christopher Rush"
-    significance: >-
+  - significance: >-
       A surviving illustration of Sarpadia's
       Tourach-worshipping Ebon Hand, one of the
       competing factions chronicled in Fallen Empires.
 
-  - name: "Thrull Champion"
-    setCode: "fem"
-    collectorNumber: "44"
-    scryfallId: "4d3cafdd-a03b-4b08-b9c1-c776f8450d3a"
-    artist: "Daniel Gelon"
-    significance: >-
+  - significance: >-
       Represents the thrulls whose rebellion against
       the Ebon Hand helped unravel its power. The
       card serves as a thematic artifact, not a
       portrait of a specific named historical figure.
 
-  - name: "Kjeldoran Outpost"
-    setCode: "all"
-    collectorNumber: "139"
-    scryfallId: "e0769fc7-50b5-4b49-8aff-af04536288fb"
-    artist: "Jeff A. Menges"
-    significance: >-
+  - significance: >-
       Evokes the fortified settlements and military
       institutions of Kjeldor. Published in Alliances,
       it reflects the frozen kingdoms' political
       history rather than an individual event.
 
-  - name: "Mairsil, the Pretender"
-    setCode: "c17"
-    collectorNumber: "41"
-    scryfallId: "87b71b08-668c-4b32-8243-8def1a9acf26"
-    artist: "Izzy"
-    significance: >-
+  - significance: >-
       A Commander 2017 retrospective portrait of the ambitious Conclave
       usurper. The card was not printed during The Dark in 1994.
 
-  - name: "Thelon of Havenwood"
-    setCode: "tsp"
-    collectorNumber: "227"
-    scryfallId: "92b0be6d-9183-4938-b7a1-ae7f04ba78a0"
-    artist: "Kev Walker"
-    significance: >-
+  - significance: >-
       Time Spiral's depiction of the Sarpadian druid associated with
       the creation of thallids. A later character card for an older story.
 
-  - name: "Endrek Sahr, Master Breeder"
-    setCode: "c13"
-    collectorNumber: "76"
-    scryfallId: "48eac047-f888-49c7-aa7e-339f900f558f"
-    artist: "Mark Tedin"
-    significance: >-
+  - significance: >-
       Commander 2013 reprint of the legendary thrull breeder first
       given a card in Time Spiral in 2006; his work predates both.
 sources:
@@ -264,7 +209,7 @@ within the city. The surviving machines created by
 <CharacterLink id="tawnos">Tawnos</CharacterLink> became part
 of the struggle over what the city should preserve or reject.
 
-<HistoricalMoment card={frontmatter.cards[4]}>
+<HistoricalMoment cardId={frontmatter.cardIds[4]} significance={frontmatter.cards[4].significance}>
 
 The 1994 card **Witch Hunter** offers an illustrated echo of
 the suspicion and zealotry associated with the Dark Age.
@@ -300,7 +245,7 @@ Jodah became involved in the affairs of powerful wizards,
 including the conflict surrounding the imprisoned mage Ith
 and the ambitious Mairsil.
 
-<HistoricalMoment card={frontmatter.cards[0]}>
+<HistoricalMoment cardId={frontmatter.cardIds[0]} significance={frontmatter.cards[0].significance}>
 
 Jodah's story would eventually extend far beyond the
 generation into which he was born.
@@ -348,7 +293,7 @@ Mairsil's interest in Jodah was not impartial mentorship. The younger
 wizard's lineage suggested access to lost secrets, including the
 possibility of reaching Phyrexia.
 
-<HistoricalMoment card={frontmatter.cards[8]}>
+<HistoricalMoment cardId={frontmatter.cardIds[8]} significance={frontmatter.cards[8].significance}>
 
 **Mairsil, the Pretender**, printed in 2017, gives a later visual
 identity to the Conclave's usurper. It is a retrospective character
@@ -391,7 +336,7 @@ the dwarves, while thallids challenged the elves.
 The Order of the Ebon Hand faced revolt among the
 thrulls it had bred and exploited.
 
-<HistoricalMoment card={frontmatter.cards[5]}>
+<HistoricalMoment cardId={frontmatter.cardIds[5]} significance={frontmatter.cards[5].significance}>
 
 **Order of the Ebon Hand** recalls one of the powers
 that contested Sarpadia. The card's historical value
@@ -408,7 +353,7 @@ became a threat to the society that depended upon them.
 What had seemed an instrument of control became an agent
 of its undoing.
 
-<HistoricalMoment card={frontmatter.cards[6]}>
+<HistoricalMoment cardId={frontmatter.cardIds[6]} significance={frontmatter.cards[6].significance}>
 
 **Thrull Champion** provides a visual reminder that the
 thrulls were more than anonymous servants in the story
@@ -437,7 +382,7 @@ saprolings. Fungal life offered an apparent resource in an era of
 scarcity, yet its expansion also destabilized the society that had
 sought to harness it.
 
-<HistoricalMoment card={frontmatter.cards[9]}>
+<HistoricalMoment cardId={frontmatter.cardIds[9]} significance={frontmatter.cards[9].significance}>
 
 **Thelon of Havenwood**, published in _Time Spiral_ (2006), is a
 later depiction of a figure associated with the earlier Sarpadian
@@ -455,7 +400,7 @@ purposes. The institution treated these beings as exploitable
 resources, an arrangement that made its eventual loss of control
 more than a simple military reversal.
 
-<HistoricalMoment card={frontmatter.cards[10]}>
+<HistoricalMoment cardId={frontmatter.cardIds[10]} significance={frontmatter.cards[10].significance}>
 
 **Endrek Sahr, Master Breeder** uses a 2013 printing of art originally
 associated with his 2006 legendary card. Both releases revisit the
@@ -489,7 +434,7 @@ of this age were not simply remnants of an earlier world:
 they created institutions and alliances shaped by the
 conditions in which they lived.
 
-<HistoricalMoment card={frontmatter.cards[7]}>
+<HistoricalMoment cardId={frontmatter.cardIds[7]} significance={frontmatter.cards[7].significance}>
 
 **Kjeldoran Outpost**, from _Alliances_ (1996), illustrates
 the importance of fortified communities and organized
@@ -541,7 +486,7 @@ of further conquest.
 His ambitions threatened the living communities
 of Terisiare.
 
-<HistoricalMoment card={frontmatter.cards[1]}>
+<HistoricalMoment cardId={frontmatter.cardIds[1]} significance={frontmatter.cards[1].significance}>
 
 Lim-Dûl's armies transformed the dead into instruments
 of conquest.
@@ -575,7 +520,7 @@ Jaya contributed practical skill, courage,
 and a willingness to challenge established
 authority.
 
-<HistoricalMoment card={frontmatter.cards[3]}>
+<HistoricalMoment cardId={frontmatter.cardIds[3]} significance={frontmatter.cards[3].significance}>
 
 Although Jaya was later depicted as a
 planeswalker, her earlier role as a task
@@ -635,7 +580,7 @@ influence an entire world: knowledge preserved
 during the Dark Age eventually contributed
 to the end of the Ice Age.
 
-<HistoricalMoment card={frontmatter.cards[2]}>
+<HistoricalMoment cardId={frontmatter.cardIds[2]} significance={frontmatter.cards[2].significance}>
 
 Freyalise cast the World Spell, ending the Ice Age
 and beginning a period of thaw.

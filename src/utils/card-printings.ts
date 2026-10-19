@@ -34,8 +34,9 @@ export function chapterCardUse(
     throw new Error(`chapter ${chapter.id}: missing curated card at position ${position}`);
   }
   const id = normalizeCardId(reference.id);
-  if (context.scryfallId.toLowerCase() !== id) {
-    throw new Error(`chapter ${chapter.id}: card reference and significance are misaligned at position ${position}`);
+  // Context stores significance only. Printing identity comes from cardIds.
+  if (Object.keys(context).length !== 1) {
+    throw new Error(`chapter ${chapter.id}: unexpected duplicated printing fields at position ${position}`);
   }
   return {
     ...resolvePrinting(cards, id, `chapter ${chapter.id}`),

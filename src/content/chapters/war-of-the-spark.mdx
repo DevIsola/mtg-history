@@ -51,99 +51,44 @@ cardIds:
   - 2013a138-f8e2-4a67-91e8-759288d985a7
 
 cards:
-  - name: "Bolas's Citadel"
-    setCode: "war"
-    collectorNumber: "79"
-    scryfallId: "d2124603-d20e-40eb-97f0-a66323397ac2"
-    artist: "Jonas De Ro"
-    significance: >-
+  - significance: >-
       The invading dragon's monumental seat of power on Ravnica,
       emblematic of his claim to dominion over the city and its planeswalkers.
-  - name: "Nicol Bolas, Dragon-God"
-    setCode: "war"
-    collectorNumber: "207"
-    scryfallId: "98b68dea-a7be-4f99-8a50-4c8cf0e0f7a9"
-    artist: "Raymond Swanland"
-    significance: >-
+  - significance: >-
       A portrait of the Elder Dragon at the climax of the long Bolas arc;
       the card represents his sought-after elevation rather than his victory.
-  - name: "The Elderspell"
-    setCode: "war"
-    collectorNumber: "89"
-    scryfallId: "a3b16625-7faf-4de6-abf7-d397988e32fb"
-    artist: "Daarken"
-    significance: >-
+  - significance: >-
       The mechanism of Bolas's plan: stolen planeswalker sparks harvested
       through the Eternals and redirected into his own power.
-  - name: "Liliana, Dreadhorde General"
-    setCode: "war"
-    collectorNumber: "97"
-    scryfallId: "d75ebba8-34ca-47a0-bf13-8318ad73b343"
-    artist: "Chris Rallis"
-    significance: >-
+  - significance: >-
       Liliana's command of Bolas's undead army conceals the coercion that
       makes her eventual defiance both decisive and perilous.
-  - name: "Niv-Mizzet Reborn"
-    setCode: "war"
-    collectorNumber: "208"
-    scryfallId: "56a2609d-b535-400b-81d9-72989a33c70f"
-    artist: "Raymond Swanland"
-    significance: >-
+  - significance: >-
       The Firemind's return and transformation into the Living Guildpact
       represent the guilds' attempt to act together rather than separately.
-  - name: "Gideon's Sacrifice"
-    setCode: "war"
-    collectorNumber: "14"
-    scryfallId: "849c79ad-8bfc-4512-ab41-f213b6b285ab"
-    artist: "Chris Rallis"
-    significance: >-
+  - significance: >-
       A direct story illustration of Gideon giving his life to save Liliana
       when she rejects Bolas's control.
 
-  - name: "Tezzeret, Master of the Bridge"
-    setCode: "war"
-    collectorNumber: "275"
-    scryfallId: "9ee1eea2-961f-445d-b035-6baed454f289"
-    artist: "Chase Stone"
-    significance: >-
+  - significance: >-
       A 2019 buy-a-box portrait of the artificer who carried the
       Planar Bridge and enabled Bolas to deploy Amonkhet's Eternals.
       The card is a character portrait rather than the bridge's activation.
 
-  - name: "Ral, Storm Conduit"
-    setCode: "war"
-    collectorNumber: "211"
-    scryfallId: "678ce3bf-152d-45ca-87ae-ad46c921328b"
-    artist: "Wesley Burt"
-    significance: >-
+  - significance: >-
       Depicts Ral Zarek during the War of the Spark, when the Izzet
       engineer worked to resist Bolas and disable the invasion's devices.
 
-  - name: "Dovin, Hand of Control"
-    setCode: "pwar"
-    collectorNumber: "229s"
-    scryfallId: "45abf8eb-c583-4eec-a91f-0e58424a8b1c"
-    artist: "Kieran Yanner"
-    significance: >-
+  - significance: >-
       A War of the Spark prerelease printing of Bolas's collaborator.
       Dovin's control of the Azorius Senate impeded Ravnica's defense.
 
-  - name: "Interplanar Beacon"
-    setCode: "war"
-    collectorNumber: "247"
-    scryfallId: "132d8e2a-e1dd-4867-8e8c-e48b9450b350"
-    artist: "Adam Paquette"
-    significance: >-
+  - significance: >-
       The Izzet beacon brought planeswalkers to Ravnica, where the
       Immortal Sun could imprison them. Its art and flavor text also
       commemorate the devastation at the Chamber of the Guildpact.
 
-  - name: "Spark Harvest"
-    setCode: "war"
-    collectorNumber: "105"
-    scryfallId: "2013a138-f8e2-4a67-91e8-759288d985a7"
-    artist: "Kieran Yanner"
-    significance: >-
+  - significance: >-
       The War of the Spark card explicitly recalls the harvesting of
       Domri Rade's spark as Bolas's Elderspell began taking lives.
 sources:
@@ -200,7 +145,7 @@ lethal to ordinary living travelers. The bridge thus linked two
 seemingly separate projects: Kaladesh's engineering and the brutal
 trials through which Bolas built his undead army.
 
-<HistoricalMoment card={frontmatter.cards[6]}>
+<HistoricalMoment cardId={frontmatter.cardIds[6]} significance={frontmatter.cards[6].significance}>
 
 _Tezzeret, Master of the Bridge_ portrays Bolas's artificer as an
 important conspirator. It does not depict the original theft of the
@@ -233,7 +178,7 @@ with maintaining order could be directed against those sounding the
 alarm. The defenders had to resist official obstruction as well as
 an approaching interplanar threat.
 
-<HistoricalMoment card={frontmatter.cards[8]}>
+<HistoricalMoment cardId={frontmatter.cardIds[8]} significance={frontmatter.cards[8].significance}>
 
 _Dovin, Hand of Control_ gives the Azorius collaborator an identifiable
 portrait. This prerelease printing is not a literal illustration of a
@@ -259,7 +204,7 @@ half of that plan by closing off planeswalking as an escape route.
 The sequence matters: summoning visitors and preventing their departure
 were two different magical operations, neither sufficient by itself.
 
-<HistoricalMoment card={frontmatter.cards[7]}>
+<HistoricalMoment cardId={frontmatter.cardIds[7]} significance={frontmatter.cards[7].significance}>
 
 _Ral, Storm Conduit_ represents the Izzet planeswalker whose efforts
 became central to organizing resistance. Its art is a character
@@ -267,7 +212,7 @@ portrait, not an illustration of the beacon being lit.
 
 </HistoricalMoment>
 
-<HistoricalMoment card={frontmatter.cards[9]}>
+<HistoricalMoment cardId={frontmatter.cardIds[9]} significance={frontmatter.cards[9].significance}>
 
 _Interplanar Beacon_ is a more direct artifact of the trap. The card
 makes the mechanism's role visible while recalling the devastation of
@@ -279,7 +224,7 @@ the Chamber of the Guildpact.
 
 The Planar Bridge then brought Bolas's lazotep-clad Eternals from Amonkhet into the city. These soldiers were not ordinary zombies. Their training and preparation made them terrifying against individual defenders, and their role in the scheme was specifically to harvest planeswalker sparks. Ordinary Ravnicans were endangered both by the invasion itself and by the urban war that followed.
 
-<HistoricalMoment card={frontmatter.cards[0]}>
+<HistoricalMoment cardId={frontmatter.cardIds[0]} significance={frontmatter.cards[0].significance}>
 
 _Bolas's Citadel_ depicts the scale of the dragon's occupation and the spectacle of the throne from which he expected to complete his ascension. It does not imply that Ravnica willingly accepted his rule.
 
@@ -302,7 +247,7 @@ Eternals had been assembled: to turn unwilling visitors into power
 for another being. The spell's apparent grandeur depended upon a
 sequence of individual killings.
 
-<HistoricalMoment card={frontmatter.cards[10]}>
+<HistoricalMoment cardId={frontmatter.cardIds[10]} significance={frontmatter.cards[10].significance}>
 
 The flavor text of _Spark Harvest_ explicitly connects Domri's lost
 spark with the beginning of Bolas's ascension. Unlike a generalized
@@ -312,13 +257,13 @@ image of necromancy, the card identifies a particular casualty.
 
 <HistoricalEventReference id="spark-domri-first-harvest" />
 
-<HistoricalMoment card={frontmatter.cards[2]}>
+<HistoricalMoment cardId={frontmatter.cardIds[2]} significance={frontmatter.cards[2].significance}>
 
 The print of _The Elderspell_ in _War of the Spark_ gives the plan its most explicit card representation: the people drawn into the conflict are not prizes in a contest but sacrifices in a bid for restored divinity.
 
 </HistoricalMoment>
 
-<HistoricalMoment card={frontmatter.cards[1]}>
+<HistoricalMoment cardId={frontmatter.cardIds[1]} significance={frontmatter.cards[1].significance}>
 
 _Nicol Bolas, Dragon-God_ shows the dragon at the height of his ambition. Its title expresses the role he sought to possess, not the lasting outcome of the battle.
 
@@ -332,7 +277,7 @@ _Nicol Bolas, Dragon-God_ shows the dragon at the height of his ambition. Its ti
 
 As the army's general, Liliana could direct the Eternals. She also understood that turning those soldiers against Bolas would be an act of rebellion with an immediate cost: the magic of their bargain threatened to kill her. This made her decision both a moral break and a dangerous gamble, not a simple last-minute change of allegiance with no consequences.
 
-<HistoricalMoment card={frontmatter.cards[3]}>
+<HistoricalMoment cardId={frontmatter.cardIds[3]} significance={frontmatter.cards[3].significance}>
 
 _Liliana, Dreadhorde General_ represents the contradiction at the center of the invasion: its terrifying commander is simultaneously an unwilling instrument of Bolas and a person capable of choosing to defy him.
 
@@ -358,7 +303,7 @@ sparks already stolen or the deaths already suffered.
 
 The Firemind Niv-Mizzet represented a possible answer to the city's factional weakness. His death and subsequent return through a complex plan that required guild cooperation led to his emergence as the **Living Guildpact**. This political and magical transformation mattered independently of the fighting: it created a center of authority intended to connect the guilds rather than elevate one of them at the others' expense.
 
-<HistoricalMoment card={frontmatter.cards[4]}>
+<HistoricalMoment cardId={frontmatter.cardIds[4]} significance={frontmatter.cards[4].significance}>
 
 _Niv-Mizzet Reborn_ represents a Ravnican political turning point in the middle of the Multiverse-wide battle. The Firemind's rebirth was an answer to the divided city's vulnerability, although his return did not end the fight by itself.
 
@@ -372,7 +317,7 @@ When Liliana turned the Eternals against her master, Bolas's binding magic punis
 
 Gideon's death is not an interchangeable casualty in a general account of the war. It transformed Liliana's survival into an obligation that her earlier bargains could not have predicted. The arc's culmination belonged as much to the difficult choices of individuals as to the clash of armies and ancient magic.
 
-<HistoricalMoment card={frontmatter.cards[5]}>
+<HistoricalMoment cardId={frontmatter.cardIds[5]} significance={frontmatter.cards[5].significance}>
 
 _Gideon's Sacrifice_ is an unusually direct correspondence between a card and a specific canonical moment. The illustration depicts the intervention that cost Gideon his life and spared Liliana from Bolas's punishment.
 

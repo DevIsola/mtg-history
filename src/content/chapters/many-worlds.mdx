@@ -51,103 +51,48 @@ cardIds:
   - b51666ae-2aef-4cb1-9cd4-44aec81530f8
 
 cards:
-  - name: "Szadek, Lord of Secrets"
-    setCode: "rav"
-    collectorNumber: "234"
-    scryfallId: "2882793e-5d7d-47f0-9308-652a5e036c2c"
-    artist: "Donato Giancola"
-    significance: >-
+  - significance: >-
       The original Ravnica depiction of House Dimir's hidden founder,
       whose plot helped break the first Guildpact.
 
-  - name: "Agrus Kos, Wojek Veteran"
-    setCode: "gk1"
-    collectorNumber: "83"
-    scryfallId: "e525be2e-26e6-4082-b713-ac74fcbd13d3"
-    artist: "Donato Giancola"
-    significance: >-
+  - significance: >-
       A 2018 Guild Kit reprint of the investigator from the original
       Ravnica novels, reproduced here as a character portrait.
 
-  - name: "Teysa, Orzhov Scion"
-    setCode: "gpt"
-    collectorNumber: "134"
-    scryfallId: "9eb856e6-8f63-4048-9818-cc3e65748855"
-    artist: "Todd Lockwood"
-    significance: >-
+  - significance: >-
       The original Guildpact card of Teysa Karlov, an Orzhov
       negotiator who worked with Agrus Kos amid Ravnica's crisis.
 
-  - name: "Nahiri, the Harbinger"
-    setCode: "med"
-    collectorNumber: "WS7"
-    scryfallId: "45f43bd0-d4d9-4a64-a829-f1ea3dfc9e90"
-    artist: "Kieran Yanner"
-    significance: >-
+  - significance: >-
       A much later Mythic Edition portrait of Nahiri, used
       retrospectively for the lithomancer who built Zendikar's
       hedron prison. It is not a card from the original Zendikar block.
 
-  - name: "Eye of Ugin"
-    setCode: "wwk"
-    collectorNumber: "136"
-    scryfallId: "c3b21941-1b7d-4fde-8b1d-7edbd5e5b796"
-    artist: "James Paick"
-    significance: >-
+  - significance: >-
       A Worldwake foreshadowing card depicting the site at which
       the Eldrazi prison's seals were dangerously disturbed.
 
-  - name: "Ulamog, the Infinite Gyre"
-    setCode: "roe"
-    collectorNumber: "12"
-    scryfallId: "225e3cc6-34d0-4f81-9f49-162d97e2ea59"
-    artist: "Aleksi Briclot"
-    significance: >-
+  - significance: >-
       One of the three Eldrazi titans revealed in Rise of the Eldrazi,
       a manifestation of a threat far beyond Zendikar's explorers.
 
-  - name: "Emrakul, the Aeons Torn"
-    setCode: "roe"
-    collectorNumber: "4"
-    scryfallId: "67600383-bbb8-411c-b8e6-2296650bc747"
-    artist: "Mark Tedin"
-    significance: >-
+  - significance: >-
       The original depiction of Emrakul, one of three imprisoned
       Eldrazi titans; a character who would have later consequences.
 
-  - name: "Sorin, Lord of Innistrad"
-    setCode: "dka"
-    collectorNumber: "142"
-    scryfallId: "27bb371f-d49f-41bd-bbe0-d5e1e2067e36"
-    artist: "Michael Komarck"
-    significance: >-
+  - significance: >-
       Sorin's Dark Ascension card represents the ancient vampire
       planeswalker whose creation of Avacyn sustained humanity.
 
-  - name: "Helvault"
-    setCode: "dka"
-    collectorNumber: "151"
-    scryfallId: "16d2448c-1b2e-466a-a0ab-e20ba1de6bc9"
-    artist: "Jaime Jones"
-    significance: >-
+  - significance: >-
       The original artifact card depicts Avacyn's prison;
       its destruction freed her and the demons confined within.
 
-  - name: "Avacyn, Angel of Hope"
-    setCode: "avr"
-    collectorNumber: "6"
-    scryfallId: "ba149706-cd17-4da6-8403-ccfe2d6cb437"
-    artist: "Jason Chan"
-    significance: >-
+  - significance: >-
       The original Avacyn Restored card celebrates the return
       of Innistrad's protector from the Helvault.
 
-  - name: "Griselbrand"
-    setCode: "avr"
-    collectorNumber: "106"
-    scryfallId: "b51666ae-2aef-4cb1-9cd4-44aec81530f8"
-    artist: "Igor Kieryluk"
-    significance: >-
+  - significance: >-
       The demon whose bargain and confrontation with Avacyn
       helped precipitate the Helvault crisis.
 
@@ -217,13 +162,13 @@ The ten-thousandth anniversary of the Guildpact's founding—the Decamillennial�
 
 The investigation captured more than a single criminal plot. It showed how a city bound by magical rules could be manipulated by those who knew exactly which acts those rules permitted and punished. The very effort to expose and arrest Szadek helped bring down the existing Guildpact, fulfilling a larger design in which Azorius manipulation also played a part.
 
-<HistoricalMoment card={frontmatter.cards[0]}>
+<HistoricalMoment cardId={frontmatter.cardIds[0]} significance={frontmatter.cards[0].significance}>
 
 The original _Szadek, Lord of Secrets_ is a portrait of the guildmaster at the center of the crisis. House Dimir's long concealment mattered: the public order treated the guild as rumor while it continued to influence the city.
 
 </HistoricalMoment>
 
-<HistoricalMoment card={frontmatter.cards[1]}>
+<HistoricalMoment cardId={frontmatter.cardIds[1]} significance={frontmatter.cards[1].significance}>
 
 This later printing of _Agrus Kos, Wojek Veteran_ represents a character introduced during the original trilogy. The card is not a literal illustration of Szadek's arrest, which turned the successful investigation into a constitutional disaster.
 
@@ -237,7 +182,7 @@ With the foundational pact no longer restraining the guilds in the same way, old
 
 The Simic Combine's Momir Vig pursued another form of dominance through biological engineering. His Project Kraj created a threat that brought the city's conflicts to a violent climax, while the demon Rakdos became entangled in the confrontation. The collapse of the Guildpact thus gave way not to a single victorious guild, but to a dangerous reordering of the whole city.
 
-<HistoricalMoment card={frontmatter.cards[2]}>
+<HistoricalMoment cardId={frontmatter.cardIds[2]} significance={frontmatter.cards[2].significance}>
 
 _Teysa, Orzhov Scion_, first printed in _Guildpact_, depicts an influential survivor of a political world in flux. It is a character reference, not a card portraying Project Kraj's destruction.
 
@@ -259,7 +204,7 @@ Those formations were not monuments made merely for treasure-seekers. The floati
 
 The trio could not simply destroy the Eldrazi titans, so they lured them to Zendikar and contained them through a lattice of leylines and hedrons. Ugin devised the prison's design, and Nahiri spent decades shaping its stone machinery. Sorin helped secure the trap. The extraordinary scheme protected other worlds by placing an existential danger within Nahiri's own home.
 
-<HistoricalMoment card={frontmatter.cards[3]}>
+<HistoricalMoment cardId={frontmatter.cardIds[3]} significance={frontmatter.cards[3].significance}>
 
 _Nahiri, the Harbinger_ is a later portrait, not evidence that her conflict on Innistrad had already occurred during Zendikar's first expansion block. It represents the ancient architect of the hedron network retrospectively.
 
@@ -273,7 +218,7 @@ The Eye of Ugin was a focus of the prison. In later events on Zendikar, Jace Bel
 
 The distinction matters. The Eye's disturbance did not originate with all three Eldrazi titans marching openly across Zendikar in a single instant. Rather, weakening the seals set in motion a larger catastrophe, and the plane's inhabitants had to understand an enemy they scarcely recognized.
 
-<HistoricalMoment card={frontmatter.cards[4]}>
+<HistoricalMoment cardId={frontmatter.cardIds[4]} significance={frontmatter.cards[4].significance}>
 
 _Eye of Ugin_, printed in _Worldwake_ before _Rise of the Eldrazi_, functioned as a deliberate warning in the card archive. Its ominous words and Eldrazi references announced a story the first Zendikar set had not fully explained.
 
@@ -285,13 +230,13 @@ _Eye of Ugin_, printed in _Worldwake_ before _Rise of the Eldrazi_, functioned a
 
 Eldrazi were not merely large beasts living underground. Their titans were vast, alien entities whose relationship to ordinary physical reality was poorly understood by the mortals who fought their spawn. As the wards failed, Zendikar's communities confronted swarms and eventually titanic manifestations of an otherworldly hunger.
 
-<HistoricalMoment card={frontmatter.cards[5]}>
+<HistoricalMoment cardId={frontmatter.cardIds[5]} significance={frontmatter.cards[5].significance}>
 
 _Ulamog, the Infinite Gyre_ depicts one of the three imprisoned titans, a force that threatened to consume the land and the life upon it.
 
 </HistoricalMoment>
 
-<HistoricalMoment card={frontmatter.cards[6]}>
+<HistoricalMoment cardId={frontmatter.cardIds[6]} significance={frontmatter.cards[6].significance}>
 
 _Emrakul, the Aeons Torn_ represents another titan. The original _Rise of the Eldrazi_ printing communicates the scale of the danger; it does not depict a later appearance on Innistrad.
 
@@ -307,7 +252,7 @@ On Innistrad, the supernatural was not hidden at the margins. Vampires maintaine
 
 The church's angel was not an ancient deity. <CharacterLink id="sorin">Sorin Markov</CharacterLink>, an old vampire planeswalker, created <CharacterLink id="avacyn">Avacyn</CharacterLink> to stop the collapse of a terrible balance. If vampires preyed without restraint, humanity would eventually vanish—and the vampires' survival would be endangered as well.
 
-<HistoricalMoment card={frontmatter.cards[7]}>
+<HistoricalMoment cardId={frontmatter.cardIds[7]} significance={frontmatter.cards[7].significance}>
 
 _Sorin, Lord of Innistrad_ places its creator at the center of the plane's history. Sorin's protection was pragmatic as well as personal: he sought an enduring order in which humanity could survive without eliminating Innistrad's other inhabitants.
 
@@ -319,13 +264,13 @@ _Sorin, Lord of Innistrad_ places its creator at the center of the plane's histo
 
 The demon <CharacterLink id="griselbrand">Griselbrand</CharacterLink> confronted Avacyn and tricked her into entering the Helvault, a magical prison she used to confine demons. Both were sealed away. With Avacyn absent, the church's wards and blessings weakened, and the horrors beyond the villages grew bolder. A crisis of faith accompanied the increasingly physical struggle for survival.
 
-<HistoricalMoment card={frontmatter.cards[8]}>
+<HistoricalMoment cardId={frontmatter.cardIds[8]} significance={frontmatter.cards[8].significance}>
 
 The original _Helvault_ card, printed in _Dark Ascension_, foreshadowed the story's solution: destroying the prison would free its captives rather than simply destroy the threats contained inside. It was never a consequence-free act.
 
 </HistoricalMoment>
 
-<HistoricalMoment card={frontmatter.cards[10]}>
+<HistoricalMoment cardId={frontmatter.cardIds[10]} significance={frontmatter.cards[10].significance}>
 
 _Griselbrand_ depicts the demon responsible for Avacyn's imprisonment. Its _Avacyn Restored_ printing arrived in the set that revealed the escape and its aftermath.
 
@@ -339,7 +284,7 @@ Liliana Vess arrived with her own purpose. She owed terrible debts to demons, an
 
 When the Helvault was shattered, the imprisonment ended: Avacyn emerged, but the confined demons were released as well. Thalia, a cathar, faced the consequences of the prison's destruction while Liliana pursued Griselbrand. The angel's reappearance restored hope and reinvigorated the struggle against Innistrad's darkness.
 
-<HistoricalMoment card={frontmatter.cards[9]}>
+<HistoricalMoment cardId={frontmatter.cardIds[9]} significance={frontmatter.cards[9].significance}>
 
 _Avacyn, Angel of Hope_, printed in _Avacyn Restored_, records her return as a turning point for humanity. It is a restoration, not a final defeat of all the plane's horrors.
 

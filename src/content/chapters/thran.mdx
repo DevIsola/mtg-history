@@ -34,61 +34,31 @@ cardIds:
   - 02aea379-b444-46a3-82f4-3038f698d4f4
 
 cards:
-  - name: "Glacian, Powerstone Engineer"
-    setCode: "cmr"
-    collectorNumber: "72"
-    scryfallId: "a736df42-18e9-4259-b0b8-54d21143e72e"
-    artist: "Magali Villeneuve"
-    significance: >-
+  - significance: >-
       Glacian developed the powerstones that sustained
       the Thran civilization. His work survived the
       empire and influenced later artificers.
 
-  - name: "Yawgmoth, Thran Physician"
-    setCode: "mh1"
-    collectorNumber: "116"
-    scryfallId: "8690cbcc-f8fd-41f7-9e28-e61c12b04014"
-    artist: "Mark Winters"
-    significance: >-
+  - significance: >-
       Depicts Yawgmoth before his transformation
       into the ruler of Phyrexia, when he was
       still known as a Thran physician.
 
-  - name: "Rebbec, Architect of Ascension"
-    setCode: "cmr"
-    collectorNumber: "42"
-    scryfallId: "46975250-950f-4f5d-a7c5-f61aec8e40ad"
-    artist: "Magali Villeneuve"
-    significance: >-
+  - significance: >-
       Rebbec was one of the Thran Empire's greatest
       architects. Her final sacrifice sealed
       the gateway connecting Dominaria to Phyrexia.
 
-  - name: "Gix, Yawgmoth Praetor"
-    setCode: "bro"
-    collectorNumber: "95"
-    scryfallId: "2c76f7e0-37e7-4e87-93a3-a25ba0674645"
-    artist: "Anna Podedworna"
-    significance: >-
+  - significance: >-
       A retrospective portrait of Gix after his Phyrexian transformation.
       During the Thran crisis he was still a human rebel among the Untouchables.
 
-  - name: "Thran Dynamo"
-    setCode: "uds"
-    collectorNumber: "139"
-    scryfallId: "3f0c9dee-fab5-4522-9821-343f84b0c8ab"
-    artist: "Ron Spears"
-    significance: >-
+  - significance: >-
       A 1999 depiction of later Metathran-related artifice, reflecting
       the enduring influence of Thran technology rather than a specific
       machine used during the original phthisis crisis.
 
-  - name: "The Mightstone and Weakstone"
-    setCode: "bro"
-    collectorNumber: "238"
-    scryfallId: "02aea379-b444-46a3-82f4-3038f698d4f4"
-    artist: "Ryan Pancoast"
-    significance: >-
+  - significance: >-
       The surviving halves of Glacian's powerstone, later discovered
       by Urza and Mishra; illustrated in The Brothers' War (2022).
 
@@ -160,7 +130,7 @@ and harness enormous quantities of energy.
 Powerstones became fundamental to the empire's machinery,
 architecture, and daily life.
 
-<HistoricalMoment card={frontmatter.cards[0]}>
+<HistoricalMoment cardId={frontmatter.cardIds[0]} significance={frontmatter.cards[0].significance}>
 
 Glacian's inventions transformed the Thran world.
 
@@ -217,7 +187,7 @@ His medical knowledge made him valuable to a society
 desperate for a cure. But his methods and personal
 ambitions would prove increasingly dangerous.
 
-<HistoricalMoment card={frontmatter.cards[1]}>
+<HistoricalMoment cardId={frontmatter.cardIds[1]} significance={frontmatter.cards[1].significance}>
 
 Yawgmoth gained influence through his apparent ability
 to confront the suffering that afflicted the Thran.
@@ -299,7 +269,7 @@ The gateway between Dominaria and the artificial
 plane presented an existential threat to the
 surviving world.
 
-<HistoricalMoment card={frontmatter.cards[2]}>
+<HistoricalMoment cardId={frontmatter.cardIds[2]} significance={frontmatter.cards[2].significance}>
 
 Rebbec sealed the gateway to Phyrexia, sacrificing
 herself in the process.
@@ -400,7 +370,7 @@ Among the outcasts was <CharacterLink id="gix">Gix</CharacterLink>. Long before 
 
 This is one of the story's most consequential ironies. A revolt against the harm caused by powerstones helped bring the man who would turn the Thran medical crisis into the foundation of Phyrexian rule. Gix did not begin as a machine-born monster; his later transformation is part of the tragedy, not a condition that should be projected backward onto his earlier life.
 
-<HistoricalMoment card={frontmatter.cards[3]}>
+<HistoricalMoment cardId={frontmatter.cardIds[3]} significance={frontmatter.cards[3].significance}>
 
 **Gix, Yawgmoth Praetor** was printed for *The Brothers' War* in 2022. It portrays the Phyrexian figure Gix eventually became, **not** the human rebel who lived beneath Halcyon. The distinction is important when using later cards to illustrate older events.
 
@@ -418,7 +388,7 @@ The physician could decide who was sick, who required confinement, and who deser
 
 Gix's movement illustrates that trap. Yawgmoth offered treatment to a population whose rebellion challenged the established order, and in doing so gained leverage over the rebels themselves. A protest rooted in exclusion and industrial harm was gradually redirected toward dependence on the city's most ambitious new authority. The physician's ascent therefore cannot be told as a single coup; it was an accumulation of permissions, medical decisions, manipulated loyalties, and violence.
 
-<HistoricalMoment card={frontmatter.cards[4]}>
+<HistoricalMoment cardId={frontmatter.cardIds[4]} significance={frontmatter.cards[4].significance}>
 
 **Thran Dynamo** is a card from *Urza's Destiny* (1999), published long after the fictional Thran Empire's collapse. Its illustration and flavor refer to Urza's later Metathran technology. It is used here as a **retrospective illustration of the technological legacy** of the Thran name, not as documentary evidence of the machinery used to create phthisis in Halcyon.
 
@@ -456,7 +426,7 @@ The most direct material link between this ancient history and the Brothers' War
 
 Centuries passed into millennia. The empire that had produced the stones was no longer a living political order. Then <CharacterLink id="urza">Urza</CharacterLink> and <CharacterLink id="mishra">Mishra</CharacterLink> encountered the ancient artifacts in Thran ruins. Their discovery transformed the stones into the **Mightstone** and **Weakstone**, names that would become inseparable from the brothers' rivalry. Both men inherited something they only partly understood: astonishing technical power and the consequences of a civilization that had already been destroyed by its own ambitions.
 
-<HistoricalMoment card={frontmatter.cards[5]}>
+<HistoricalMoment cardId={frontmatter.cardIds[5]} significance={frontmatter.cards[5].significance}>
 
 **The Mightstone and Weakstone**, printed in *The Brothers' War* (2022), depicts the surviving relics in their later story context. It is a retrospective link between chapters, not a contemporary artifact printing from the Thran period. Its transformation into a card also shows how a much older literary event can receive new illustration decades after its first publication.
 
