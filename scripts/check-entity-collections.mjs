@@ -4,7 +4,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { entitySpecs, compareDirectoryEntries } from './entity-collection-tools.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const expectedCounts = { characters: 88, events: 130, relationships: 118 };
+const expectedCounts = { characters: 88, events: 133, relationships: 118 };
 let failed = false;
 
 for (const spec of entitySpecs) {

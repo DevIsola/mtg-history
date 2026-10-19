@@ -1,0 +1,16 @@
+{
+  "title": "Nahiri Chooses Zendikar as the Eldrazi Prison",
+  "chapterId": "many-worlds",
+  "summary": "Nahiri accepts the risk of anchoring the Eldrazi to her home world after Ugin proposes containment and Sorin joins the plan.",
+  "narrative": [
+    "When Ugin proposed trapping the Eldrazi on a single mana-rich world, he was seeking an alternative to destroying beings whose cosmic role remained uncertain. He needed Nahiri's lithomancy and Sorin's magic to execute the design.",
+    "Nahiri initially resisted the implication that Zendikar and its people should absorb the danger on behalf of many other planes. Ugin and Sorin argued that containment was possible and that the alternative would expose more worlds to devastation.",
+    "Nahiri eventually agreed that her own home plane would become the prison, with her remaining to guard it. This decision occurred before the decades of work building the hedron network and before the titans were locked within it.",
+    "The archive's retrospective Nahiri, the Harbinger printing identifies the central lithomancer but does not portray this ancient decision. The later rupture at the Eye of Ugin and Eldrazi awakening are different events."
+  ],
+  "characterIds": [
+    "nahiri",
+    "sorin"
+  ],
+  "cardId": "45f43bd0-d4d9-4a64-a829-f1ea3dfc9e90"
+}

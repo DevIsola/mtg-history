@@ -1,0 +1,16 @@
+{
+  "title": "Teysa Negotiates a Nonmagical Guild Accord",
+  "chapterId": "many-worlds",
+  "summary": "After the breakdown of the first Guildpact and the Dissension crisis, Teysa Karlov drafts a new political agreement among Ravnica's surviving guilds.",
+  "narrative": [
+    "Following the fall of the original magically binding Guildpact, Ravnica underwent successive institutional crises. The Simic Project Kraj disaster and the destruction of Prahv left established guild powers weakened but did not erase their rivalries.",
+    "Teysa Karlov used her Orzhov experience with contracts and negotiation to draft a new, nonmagical accord. The official Ravnica retrospective identifies this settlement as an attempt to secure renewed cooperation, not a recreation of the old spell.",
+    "The agreement depended upon the guilds keeping a political bargain. It did not magically restrain violence or prevent powerful figures from trying to exploit the city; its fragility was part of the history of Ravnica after Dissension.",
+    "The curated original Guildpact printing of Teysa, Orzhov Scion is a portrait of the negotiator, not an illustration of the accord being signed. The later Living Guildpact is a separate historical development."
+  ],
+  "characterIds": [
+    "teysa-karlov",
+    "agrus-kos"
+  ],
+  "cardId": "9eb856e6-8f63-4048-9818-cc3e65748855"
+}

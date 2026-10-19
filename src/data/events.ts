@@ -139,6 +139,9 @@ import entry126 from '../content/events/brothers-tawnos-carries-testimony.json' 
 import entry127 from '../content/events/weatherlight-crovax-frees-selenia.json' with { type: 'json' };
 import entry128 from '../content/events/weatherlight-gerrard-rejects-legacy.json' with { type: 'json' };
 import entry129 from '../content/events/thran-glacian-stones-implanted.json' with { type: 'json' };
+import entry130 from '../content/events/ravnica-nonmagical-guild-accord.json' with { type: 'json' };
+import entry131 from '../content/events/zendikar-nahiri-chooses-prison.json' with { type: 'json' };
+import entry132 from '../content/events/innistrad-thalia-breaks-helvault.json' with { type: 'json' };
 
 export const historicalEvents: HistoricalEvent[] = [
   { id: "omenpaths-desparking-consequences", ...entry0 } as HistoricalEvent,
@@ -271,4 +274,7 @@ export const historicalEvents: HistoricalEvent[] = [
   { id: "weatherlight-crovax-frees-selenia", ...entry127 } as HistoricalEvent,
   { id: "weatherlight-gerrard-rejects-legacy", ...entry128 } as HistoricalEvent,
   { id: "thran-glacian-stones-implanted", ...entry129 } as HistoricalEvent,
+  { id: "ravnica-nonmagical-guild-accord", ...entry130 } as HistoricalEvent,
+  { id: "zendikar-nahiri-chooses-prison", ...entry131 } as HistoricalEvent,
+  { id: "innistrad-thalia-breaks-helvault", ...entry132 } as HistoricalEvent,
 ];
