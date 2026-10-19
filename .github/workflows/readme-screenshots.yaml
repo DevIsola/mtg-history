@@ -46,6 +46,14 @@ jobs:
       - name: Install Chromium and system dependencies
         run: pnpm exec playwright install --with-deps chromium
 
+      - name: Install the site's preferred fonts (Inter, Georgia)
+        # The CSS asks for "Segoe UI", Inter / Georgia. Without these, Linux falls
+        # back to DejaVu and the captures no longer match what most readers see.
+        run: |
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+          sudo apt-get install -y --no-install-recommends fonts-inter ttf-mscorefonts-installer || sudo apt-get install -y --no-install-recommends fonts-inter
+          fc-match Georgia; fc-match Inter
+
       - name: Capture the README feature tour
         run: pnpm run screenshots:readme
 

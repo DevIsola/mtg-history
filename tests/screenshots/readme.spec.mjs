@@ -108,9 +108,10 @@ test('home — the archive entrance', async ({ browser }) => {
 
 test('chapter reader — card moment beside the narrative', async ({ browser }) => {
   const page = await openPage(browser, `${base}chapters/brothers-war/`);
-  const moment = page.locator('.chapter-prose .historical-moment').nth(1);
+  const moment = page.locator('.chapter-prose .historical-moment').first();
   await expect(moment).toBeVisible();
-  await scrollToCenter(moment);
+  // Below the site header and the sticky chapter bar.
+  await scrollToTop(moment, 190);
   await shoot(page, 'chapter-reader.jpg');
 });
 
@@ -143,14 +144,15 @@ test('timeline atlas — eras, events and filters', async ({ browser }) => {
 });
 
 test('relationship explorer — Urza’s network two steps out', async ({ browser }) => {
-  const page = await openPage(browser, `${base}relationships/?person=urza`);
+  // Taller frame so the controls and the whole graph fit in one image.
+  const page = await openPage(browser, `${base}relationships/?person=urza`, { viewport: { width: 1440, height: 1500 } });
   const explorer = page.locator('[data-relationship-explorer]');
   await expect(explorer).toHaveAttribute('data-graph-state', 'ready', { timeout: 20_000 });
   await page.locator('#network-scope').selectOption('local');
   await page.locator('#network-depth').selectOption('2');
   await expect(page).toHaveURL(/depth=2/);
   await page.locator('#network-fit').click();
-  await page.waitForTimeout(1200); // let the force layout settle
+  await page.waitForTimeout(1500); // let the force layout settle
   await scrollToTop(page.locator('#network-visual'), 96);
   await page.mouse.move(0, 0);
   await shoot(page, 'relationships.jpg');
@@ -168,32 +170,40 @@ test('illustrated archive — every printing, filterable by chapter', async ({ b
   const page = await openPage(browser, `${base}archive/`);
   await expect(page.locator('#archive-filters')).toBeVisible();
   await page.locator('#archive-chapter').selectOption('brothers-war');
-  await scrollToTop(page.locator('#archive-filters'), 100);
+  const grid = page.locator('[data-archive-section]:not([hidden]) .archive-card-grid').first();
+  await expect(grid).toBeVisible();
+  await scrollToTop(grid, 250);
   await shoot(page, 'archive.jpg');
 });
 
 test('discovery — one searchable index of chapters, people and events', async ({ browser }) => {
   const page = await openPage(browser, `${base}discover/`);
-  await expect(page.locator('#discovery-search')).toBeVisible();
-  await scrollToTop(page.locator('#discovery-directory'), 96);
+  const search = page.locator('#discovery-search');
+  await expect(search).toBeVisible();
+  await search.fill('Phyrexia');
+  const total = await page.locator('[data-discovery-record]').count();
+  await expect(page.locator('#discovery-status')).not.toHaveText(new RegExp(`of ${total} records$`));
+  await search.blur();
+  await scrollToTop(page.locator('#discovery-filters'), 100);
   await shoot(page, 'discover.jpg');
 });
 
 test('dark theme — the same reader after nightfall', async ({ browser }) => {
   const page = await openPage(browser, `${base}chapters/war-of-the-spark/`, { theme: 'dark' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await scrollToCenter(page.locator('.chapter-prose .historical-moment').first());
+  await scrollToTop(page.locator('.chapter-prose .historical-moment').first(), 190);
   await shoot(page, 'dark-mode.jpg');
 });
 
 test('mobile — chapter card moment', async ({ browser }) => {
   const page = await openPage(browser, `${base}chapters/weatherlight/`, { viewport: MOBILE, scale: 2, mobile: true });
-  await scrollToTop(page.locator('.chapter-prose .historical-moment').first(), 70);
+  // The collapsed sticky table of contents sits under the header on phones.
+  await scrollToTop(page.locator('.chapter-prose .historical-moment .historical-card').first(), 300);
   await shoot(page, 'mobile-chapter.jpg');
 });
 
-test('mobile — timeline atlas', async ({ browser }) => {
-  const page = await openPage(browser, `${base}timeline/`, { viewport: MOBILE, scale: 2, mobile: true });
-  await scrollToTop(page.locator('.atlas-era').first(), 70);
-  await shoot(page, 'mobile-timeline.jpg');
+test('mobile — the archive entrance', async ({ browser }) => {
+  const page = await openPage(browser, base, { viewport: MOBILE, scale: 2, mobile: true });
+  await expect(page.locator('.hero h1')).toBeVisible();
+  await shoot(page, 'mobile-home.jpg');
 });
