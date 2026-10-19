@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
@@ -42,12 +42,21 @@ test('README reflects SCSS, current routes, and reproducible screenshot names', 
   assert.ok(readme.includes('Dart Sass / Astro-scoped SCSS'));
   assert.ok(!readme.includes('Tailwind CSS'));
   assert.equal(pkg.scripts['screenshots:readme'], 'playwright test --config playwright.readme.config.mjs');
-  for (const name of [
-    'home-desktop.jpg', 'timeline-desktop.jpg', 'ice-age-desktop.jpg',
-    'relationships-desktop.jpg', 'glossary-desktop.jpg', 'ice-age-mobile.jpg',
-  ]) {
-    assert.ok(readme.includes(`docs/screenshots/${name}`), name);
-    assert.ok(spec.includes(name), name);
+  // The screenshot tour may evolve independently of this historical-content wave.
+  // Validate the live README against the capture specification and committed files
+  // rather than freezing the original six screenshot names into a regression test.
+  const displayed = [...readme.matchAll(/src="docs\/screenshots\/([a-z0-9-]+\.jpg)"/g)]
+    .map((match) => match[1]);
+  const captured = [...spec.matchAll(/await shoot\(page, '([a-z0-9-]+\.jpg)'\)/g)]
+    .map((match) => match[1]);
+  assert.ok(displayed.length >= 6, 'README should show a meaningful screenshot gallery');
+  assert.equal(new Set(displayed).size, displayed.length, 'README repeats a screenshot');
+  assert.equal(new Set(captured).size, captured.length, 'Screenshot spec repeats a filename');
+  assert.deepEqual(displayed.slice().sort(), captured.slice().sort(),
+    'README screenshots must match the reproducible capture specification');
+  for (const name of displayed) {
+    assert.ok(existsSync(new URL(`../docs/screenshots/${name}`, import.meta.url)),
+      `README references a missing screenshot: ${name}`);
   }
   assert.ok(config.includes('4326'));
   assert.ok(spec.includes('main#main-content'));

@@ -49,6 +49,6 @@ test('existing character identities and the generated adapter remain stable', ()
   const adapter = read('src/data/events.ts');
   assert.match(adapter, /import entry129 from '\.\.\/content\/events\/thran-glacian-stones-implanted\.json'/);
   assert.match(adapter, /id: "thran-glacian-stones-implanted", \.\.\.entry129/);
-  assert.match(read('scripts/check-entity-collections.mjs'), /characters: 88, events: 130, relationships: 118/);
-  assert.match(read('scripts/check-card-collections.mjs'), /130\/130 event references/);
+  assert.match(read('scripts/check-entity-collections.mjs'), /characters: 88, events: 133, relationships: 118/);
+  assert.match(read('scripts/check-card-collections.mjs'), /133\/133 event references/);
 });
