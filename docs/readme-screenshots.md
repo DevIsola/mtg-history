@@ -1,19 +1,32 @@
-# README screenshot capture
+# README screenshots
 
-The README screenshots are evidence of the real rendered website, not hand-designed mockups. They are generated **locally** by Playwright with the production Astro preview and committed as images together with the Markdown that embeds them.
+The README's feature tour shows the real rendered website, not mockups. [`tests/screenshots/readme.spec.mjs`](../tests/screenshots/readme.spec.mjs) builds the production site, opens each feature in a meaningful state, and saves viewport JPEGs (quality 82) to `docs/screenshots/`.
 
-## Windows PowerShell workflow
+| File | Feature shown | State prepared by the spec |
+| --- | --- | --- |
+| `chapter-reader.jpg` | Chapter reader | The first card moment of *The Brothers' War*, just below the sticky chapter bar |
+| `card-viewer.jpg` | Artwork viewer | The first card in *The Thran*, enlarged in the dialog |
+| `glossary-term.jpg` | Inline lore glossary | The first glossary term in *The Thran*, opened by keyboard |
+| `relationships.jpg` | Relationship explorer | `?person=urza`, local scope, 2 steps, fitted (1440×1500 frame) |
+| `character-profile.jpg` | Character profile | Urza's biography and featured card |
+| `timeline.jpg` | Timeline atlas | Coverage counts, search, era filter and the first era |
+| `archive.jpg` | Illustrated archive | Filtered to *The Brothers' War*, gallery view |
+| `discover.jpg` | Discovery index | Searching "Phyrexia" |
+| `dark-mode.jpg` | Dark theme | *War of the Spark*, first card moment |
+| `mobile-home.jpg` | Phone layout | Homepage at 390×844, 2× |
+| `mobile-chapter.jpg` | Phone layout | *Weatherlight* card moment at 390×844, 2× |
 
-```powershell
-pnpm install
-pnpm exec playwright install chromium
-pnpm run screenshots:readme
-Get-ChildItem docs/screenshots -Filter *.jpg
-Start-Process (Resolve-Path docs/screenshots/home-desktop.jpg)
-```
+## Capture conditions
 
-Inspect all six output files (home, timeline, Ice Age chapter, relationships, glossary, and mobile Ice Age). Make sure card images have loaded, links are not misrepresented, headings are visible and there are no empty or broken image areas. The script does not fabricate imagery or replace unavailable card images. If a third-party CDN is unavailable, repeat the capture when the exact printing is visible; do not invent a substitute.
+Chromium, desktop **1440×900** (unless noted), phone **390×844 at 2×**, reduced motion, and a fresh browser context per image. The theme is forced through the site's own `mtg-history-theme` preference. The spec waits for fonts and for every card image in view. **If any visible card image fails to load, the run fails**: the script never fabricates or substitutes artwork. If the Scryfall CDN is unavailable, rerun the capture later.
 
-Capture conditions: local production build, Chromium, desktop **1440×900**, mobile **Pixel 7** emulation, reduced motion, light mode, viewport-only JPEG at quality 80. The screenshot runner uses port 4326, distinct from the normal browser tests on port 4323. `pnpm run verify` does not automatically regenerate screenshots; update them intentionally after a visual change.
+## Running it
 
-Run `git add README.md docs/screenshots docs/readme-screenshots.md` after reviewing the pictures. A new clone of the PR should show all README images without any build or external screenshot service. Avoid uploading raw full-resolution Scryfall assets separately. Every displayed Magic card and artwork retains its original rights-holder attribution on the site. The README footer continues to declare the unofficial fan-content status.
+- **GitHub Actions (recommended):** push a branch that changes the spec (or start *README screenshots* manually from the Actions tab). The workflow installs Inter and the Microsoft core fonts, so the text matches what most readers see (Segoe UI/Inter body, Georgia headings), then commits the refreshed images back to the branch. Every run also uploads the images as an artifact.
+- **Locally:** `pnpm exec playwright install chromium`, then `pnpm run screenshots:readme`. The output uses whichever fonts your system provides.
+
+The runner serves the preview on port 4326, separate from the browser tests on port 4323. `pnpm run verify` does not regenerate screenshots, so recapture deliberately after any visual change.
+
+## Review checklist
+
+Before merging, open every image and check that card art is sharp and fully loaded. Check that the framing shows the feature named in the README, not a half-cut component, and that the README's alt text still describes what is actually in each picture. Card images remain the property of their artists and rights holders. The README footer states the project's unofficial fan-content status.

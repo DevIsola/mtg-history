@@ -100,12 +100,6 @@ test.beforeAll(async () => {
   await mkdir(destination, { recursive: true });
 });
 
-test('home — the archive entrance', async ({ browser }) => {
-  const page = await openPage(browser, base);
-  await expect(page.locator('.hero h1')).toBeVisible();
-  await shoot(page, 'home.jpg');
-});
-
 test('chapter reader — card moment beside the narrative', async ({ browser }) => {
   const page = await openPage(browser, `${base}chapters/brothers-war/`);
   const moment = page.locator('.chapter-prose .historical-moment').first();
