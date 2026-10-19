@@ -4,7 +4,10 @@
   "summary": "Agrus Kos's investigation brings Szadek to justice but triggers the collapse of Ravnica's ancient magical settlement.",
   "narrative": [
     "The ten guilds had spent millennia operating within the magically enforced Guildpact.",
-    "During the Decamillennial crisis, Agrus Kos followed evidence to the secret Dimir founder Szadek. His arrest broke the original pact, exposing Ravnica to renewed factional conflict."
+    "During the Decamillennial crisis, Agrus Kos followed evidence to the secret Dimir founder Szadek. His arrest broke the original pact, exposing Ravnica to renewed factional conflict.",
+    "The paradox at the center of the conspiracy depended on the Guildpact being both a legal order and a magical contract. Szadek, an original guild founder, understood the agreement well enough to turn an act of enforcement against its foundations. Agrus Kos's pursuit was necessary to expose the hidden vampire, yet an arrest could satisfy conditions that the investigator did not know he was triggering.",
+    "This distinction matters because the crisis cannot be reduced to Kos making a simple mistake. Szadek had arranged for an apparently lawful response to create a contradiction in the system. Azorius Grand Arbiter Augustin IV also anticipated the consequences, showing that Ravnica's institutional breakdown involved multiple actors using knowledge of the pact for different ends.",
+    "After the original enchantment broke, the guilds still controlled resources, workers, and territory, but their rivalry no longer operated beneath the same binding restraint. Teysa Karlov later helped fashion a nonmagical accord. The move from enforced cosmic law to negotiated political settlement marks a different kind of order, one that depended more visibly on the guilds' continued cooperation."
   ],
   "characterIds": [
     "agrus-kos",

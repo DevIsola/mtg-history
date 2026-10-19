@@ -4,7 +4,10 @@
   "summary": "Karn confronts the Academy's temporal catastrophe and disappears after repairing the fracture.",
   "narrative": [
     "Tolaria's rift emerged from Urza's temporal research and the disaster that struck his Academy.",
-    "Karn traveled into the past to address its origin and vanished afterward, leaving Jeska without her mentor during the remaining crisis."
+    "Karn traveled into the past to address its origin and vanished afterward, leaving Jeska without her mentor during the remaining crisis.",
+    "The Tolarian disaster was not an accidental scar independent of its creators. Urza's investigation of time and the Academy's catastrophic history left a fracture that later generations inherited. Its survival into the Mending era shows how experiments undertaken for one purpose could impose costs on people who had no voice in them.",
+    "Karn's response differed from that of a planeswalker who merely supplied enough energy to close a wound. He confronted the past of a location bound to his own history, and the apparent success of the repair came with his disappearance. For those still working to save Dominaria, his absence removed both a mentor and a powerful ally.",
+    "The narrative deliberately preserves the uncertainty of what observers knew at this moment. His disappearance after the repair should not be presented as proof that he had permanently died. The wider Phyrexian story later returns to Karn, but that later knowledge must not be imposed on Jeska's immediate understanding during the rift crisis."
   ],
   "characterIds": [
     "karn",

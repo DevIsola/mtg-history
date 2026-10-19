@@ -4,7 +4,10 @@
   "summary": "A planeswalker introduces Yawgmoth to an existing artificial plane and creates the route that enables his experiments.",
   "narrative": [
     "Dyfed took Yawgmoth to a world created earlier by an unnamed planeswalker. He did not originate that plane.",
-    "The portal between Dominaria and Phyrexia allowed Yawgmoth to move patients and followers into a setting where his program of enforced transformation could grow."
+    "The portal between Dominaria and Phyrexia allowed Yawgmoth to move patients and followers into a setting where his program of enforced transformation could grow.",
+    "Dyfed's discovery supplied access, not authorship. The artificial world already existed before Yawgmoth entered it. Distinguishing its creation from his later domination is essential: it explains why the threat arose from choices made by the physician and those who enabled him, rather than from an inherently new plane created for his purposes.",
+    "On Dominaria, political authority and the phthisis crisis constrained what Yawgmoth could do in public. A separate world offered both room and secrecy. Moving vulnerable patients through the gateway therefore had a double significance: it appeared to promise relief while putting people under the control of someone increasingly willing to alter them without meaningful consent.",
+    "Rebbec's later decision to close the route was consequently more than the destruction of a convenient passage. It limited the ability of Yawgmoth's growing Phyrexian power to return openly to the civilization from which he had drawn his first patients and followers. The seal addressed access; it did not undo what had already happened beyond the gateway."
   ],
   "characterIds": [
     "yawgmoth",
