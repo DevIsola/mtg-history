@@ -103,4 +103,14 @@ const relationships = defineCollection({
   }),
 });
 
-export const collections = { chapters, cards, characters, events, relationships };
+const glossary = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/glossary" }),
+  schema: z.object({
+    term: z.string().min(2),
+    summary: z.string().min(12),
+    details: z.string().min(12),
+    chapterId: reference("chapters"),
+  }),
+});
+
+export const collections = { chapters, cards, characters, events, relationships, glossary };
