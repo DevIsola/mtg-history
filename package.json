@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "screenshots:readme": "playwright test --config playwright.readme.config.mjs",
     "astro": "astro",
     "test": "node --test scripts/*.test.mjs",
     "check:links": "node scripts/check-built-links.mjs",

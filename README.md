@@ -31,8 +31,28 @@ Magic's history has been told across decades of expansions, novels, short fictio
 
 | Follow the story                                                                                                                                                      | Discover its sources                                                                                                |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
-| **[Historical timeline](https://devisola.github.io/mtg-history/timeline/)** — Explore the major eras in a guided narrative order.                                     | **Expansions** — Connect fictional events to the sets that introduced or revisited them. _Planned archive section._ |
-| **[Illustrated chapters](https://devisola.github.io/mtg-history/chapters/brothers-war/)** — Read the stories behind the events, with selected cards beside the prose. | **Cards as artifacts** — Examine why a particular printing, image, or flavor reference matters to the history.      |
+| **[Historical timeline](https://devisola.github.io/mtg-history/timeline/)** — Follow historical eras in story order. | **[Characters](https://devisola.github.io/mtg-history/characters/)** and **[events](https://devisola.github.io/mtg-history/events/)** — Browse canonical historical records. |
+| **[Illustrated chapters](https://devisola.github.io/mtg-history/chapters/brothers-war/)** — Read the narrative with exact card printings and editorial significance. | **[Relationship explorer](https://devisola.github.io/mtg-history/relationships/)** — Explore family, mentorship, alliance, and conflict links. |
+| **[Discovery](https://devisola.github.io/mtg-history/discover/)** — Find connected people and turning points. | **[Lore glossary](https://devisola.github.io/mtg-history/glossary/)** — Define recurring concepts with chapter links. |
+
+## Site previews
+
+Screenshots below are **captured from the built site** in Chromium, not concept art. Run the reproducible capture command under [Screenshot workflow](#screenshot-workflow) before committing this README update; the image files are intentionally generated locally and must be added to the PR.
+
+<table>
+<tr>
+  <td width="50%"><img src="docs/screenshots/home-desktop.jpg" alt="Home page of Chronicles of the Multiverse, desktop layout" width="100%" /><br /><strong>Archive homepage</strong></td>
+  <td width="50%"><img src="docs/screenshots/timeline-desktop.jpg" alt="Historical timeline page and eras, desktop layout" width="100%" /><br /><strong>Historical timeline</strong></td>
+</tr>
+<tr>
+  <td><img src="docs/screenshots/ice-age-desktop.jpg" alt="Illustrated Ice Age chapter with reading navigation, desktop layout" width="100%" /><br /><strong>Illustrated chapter</strong></td>
+  <td><img src="docs/screenshots/relationships-desktop.jpg" alt="Interactive relationship explorer, desktop layout" width="100%" /><br /><strong>Character relationships</strong></td>
+</tr>
+<tr>
+  <td><img src="docs/screenshots/glossary-desktop.jpg" alt="Lore glossary index, desktop layout" width="100%" /><br /><strong>Lore glossary</strong></td>
+  <td><img src="docs/screenshots/ice-age-mobile.jpg" alt="Ice Age chapter on a mobile viewport" width="55%" /><br /><strong>Mobile chapter view</strong></td>
+</tr>
+</table>
 
 ### Two chronologies, one story
 
@@ -57,11 +77,11 @@ The writing is original. Official lore is prioritized, and retcons or uncertain 
 |                     |                                            |
 | :------------------ | :----------------------------------------- |
 | **Framework**       | [Astro](https://astro.build/) + TypeScript |
-| **Styling**         | Tailwind CSS                               |
-| **Content**         | Markdown / MDX + Astro Content Collections |
+| **Styling**         | Dart Sass / Astro-scoped SCSS and design tokens |
+| **Content**         | MDX and typed Astro Content Collections (cards, characters, events, relationships, glossary) |
 | **Package manager** | pnpm                                       |
 | **Hosting**         | GitHub Pages                               |
-| **Deployment**      | GitHub Actions                             |
+| **Deployment**      | GitHub Actions, with Playwright and content integrity checks |
 
 This is a statically generated site: no accounts, database, or application server are required.
 
@@ -79,17 +99,31 @@ pnpm dev
 With Astro's configured base path, open `http://localhost:4321/mtg-history/`.
 
 ```bash
-pnpm build      # Create the static production site
-pnpm preview    # Preview the production build
+pnpm run verify               # Unit, content, editorial, type, build and link gates
+pnpm exec playwright test     # Desktop and mobile Chromium regression tests
+pnpm preview                  # Preview the production build
 ```
 
-Pushing a reviewed change to `main` triggers the existing GitHub Pages deployment workflow.
+Pushing a reviewed change to `main` triggers the existing GitHub Pages deployment workflow. The application stays static and does not rehost Scryfall card artwork.
+
+### Screenshot workflow
+
+The screenshot gallery is intentionally reproducible: Chromium renders the local production preview at desktop and mobile sizes. Captures use reduced motion and a fixed viewport. Screenshots should be recaptured whenever the visual design changes.
+
+```powershell
+pnpm install
+pnpm exec playwright install chromium
+pnpm run screenshots:readme
+# Review docs/screenshots/*.jpg, then git add docs/screenshots
+```
+
+This writes six JPEGs under `docs/screenshots/`. Card imagery loaded from Scryfall belongs to its respective artists and rights holders; screenshots illustrate site functionality and are not an artwork redistribution library. See [docs/readme-screenshots.md](docs/readme-screenshots.md) for capture and review expectations.
 
 ## Current chapter of the project
 
 **Under active development.** The timeline and chapter system establish the reading experience; historical articles, imagery, source references, and cross-links are being expanded incrementally.
 
-The first reference chapter is **[The Brothers' War](https://devisola.github.io/mtg-history/chapters/brothers-war/)**, a conflict portrayed in releases separated by decades. Future chapters will reach back to the Thran and forward through Dominaria's later history and other planes.
+Ten published chapters currently span the ancient Thran, the Brothers' War, Dominaria's Ice Age, the Weatherlight and Otaria eras, the Mending, stories across other worlds, the War of the Spark, March of the Machine, and the Omenpaths era. Canonical cards and characters are managed through typed collections, while artwork fidelity, source provenance and accessible interactions are checked in the engineering pipeline. More editorial depth and coverage are ongoing work.
 
 ## Support the archive
 
@@ -124,4 +158,4 @@ Created and maintained by **[DevIsola](https://github.com/DevIsola)** as an inde
 
 ---
 
-<sub>**Unofficial fan-content notice.** This project is not affiliated with, sponsored, endorsed, or approved by Wizards of the Coast. Magic: The Gathering, its characters, settings, card art, and associated marks belong to their respective rights holders. This non-commercial archive uses original writing and original decorative README artwork. See the <a href="https://company.wizards.com/en/legal/fancontentpolicy">Wizards of the Coast Fan Content Policy</a>.</sub>
+<sub>**Unofficial fan-content notice.** This project is not affiliated with, sponsored, endorsed, or approved by Wizards of the Coast. Magic: The Gathering, its characters, settings, card art, and associated marks belong to their respective rights holders. This non-commercial archive uses original writing and original decorative README artwork and screenshots of the published site. Card images displayed within screenshots remain the property of their respective rights holders. See the <a href="https://company.wizards.com/en/legal/fancontentpolicy">Wizards of the Coast Fan Content Policy</a>.</sub>
