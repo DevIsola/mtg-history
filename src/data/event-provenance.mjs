@@ -78,9 +78,12 @@ export const eventProvenance = {
   },
   'spark-gideons-sacrifice': {
     chronology: { precision: 'relative', label: "At the War of the Spark’s final confrontation on Ravnica", basis: "The published story relates Gideon’s fall within the battle sequence, but does not establish a universal timestamp for the day." },
-    sources: [{ title: "War of the Spark: Ravnica — Ashes", url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12', role: 'story', supports: "Depicts Gideon falling amid the confrontation with Bolas and later characters acknowledging his death; this source does not alone detail the protective transfer." }],
-    artworkNote: "A Gideon card provides a representation of the character; the story and its publication date must not be mistaken for visual proof of the transfer.",
-    unresolvedClaims: [{ claim: "Gideon transfers Liliana’s fatal contract punishment to himself.", requiredEvidence: "Locate primary fiction that explicitly narrates the protective transfer, not only the aftermath of Gideon’s death." }],
+    sources: [
+      { title: "War of the Spark: Ravnica — Ashes", url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12', role: 'story', supports: "Depicts Gideon falling amid the confrontation with Bolas and later characters acknowledging his death; this source does not alone detail the protective transfer." },
+      { title: 'More War Games', url: 'https://magic.wizards.com/en/news/making-magic/more-war-games-2019-04-29', role: 'design-commentary', supports: 'Mark Rosewater explicitly states that Gideon takes all the fatal damage intended for Liliana after she defies Bolas; the damage-redirection card represents this outcome but the column does not narrate the novel scene or a particular spell.' },
+    ],
+    artworkNote: "Gideon's Sacrifice (War of the Spark, collector number 14) represents the damage-redirection moment; its card illustration and rules text are not a verbatim narrative of Gideon’s final spell.",
+    unresolvedClaims: [{ claim: "Gideon employs a specifically described protective spell or transfer rite when he accepts Liliana’s fatal pact consequence.", requiredEvidence: "Read the climax of War of the Spark: Ravnica (2019 novel) to verify the precise on-page magical mechanism; More War Games confirms the fatal redirection but is design commentary, not the fictional scene." }],
   },
   'phyrexia-realmbreaker-invasion': {
     chronology: { precision: 'relative', label: "Opening of the coordinated New Phyrexian invasion across planes", basis: "The first March of the Machine story depicts Realmbreaker’s portals and simultaneous invasions without cross-planar calendar synchronization." },
