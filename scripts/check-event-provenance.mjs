@@ -28,7 +28,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1
   try {
     const result = await checkEventProvenance();
     for (const error of result.errors) console.error(`- ${error}`);
-    console.log(`Event provenance pilot: ${result.reviewedEvents}/${result.totalEvents} reviewed event records; ${result.errors.length} integrity errors.`);
+    console.log(`Event provenance coverage: ${result.reviewedEvents}/${result.totalEvents} reviewed event records; ${result.errors.length} integrity errors.`);
     if (result.errors.length) process.exitCode = 1;
     else console.log('Event citations, date precision and chapter bibliographies match (offline).');
   } catch (error) {

@@ -4,7 +4,13 @@ import test from 'node:test';
 import { eventProvenance, validateEventProvenance } from '../src/data/event-provenance.mjs';
 
 const read = (file) => readFileSync(new URL(`../${file}`, import.meta.url), 'utf8');
-const entries = Object.entries(eventProvenance);
+const pilotIds = new Set([
+  'thran-glacian-stones-implanted', 'thran-stones-rediscovered',
+  'zendikar-hedrons', 'ravnica-guildpact-collapse',
+  'phyrexia-zhalfir-return', 'omenpaths-sparks-and-roads',
+]);
+const entries = Object.entries(eventProvenance).filter(([id]) => pilotIds.has(id));
+const pilotRecords = Object.fromEntries(entries);
 const eventRows = entries.map(([id]) => ({ id, chapterId: ({
   'thran-glacian-stones-implanted': 'thran',
   'thran-stones-rediscovered': 'thran',
@@ -29,12 +35,12 @@ test('six events receive specific source evidence without fabricating precise in
     assert.ok(['relative', 'undated'].includes(record.chronology.precision));
     assert.ok(record.sources.every(({ supports }) => supports.length > 35));
   }
-  assert.deepEqual(validateEventProvenance(eventProvenance, eventRows, bibliography), []);
+  assert.deepEqual(validateEventProvenance(pilotRecords, eventRows, bibliography), []);
 });
 
 test('source-to-chapter mismatch, unsupported host and invented precise date fail closed', () => {
   const row = entries[0];
-  const tampered = structuredClone(eventProvenance);
+  const tampered = structuredClone(pilotRecords);
   tampered[row[0]].sources[0].url = 'https://example.com/something';
   tampered[row[0]].chronology.precision = 'exact';
   const errs = validateEventProvenance(tampered, eventRows, bibliography).join(' ');
@@ -45,7 +51,7 @@ test('source-to-chapter mismatch, unsupported host and invented precise date fai
 
 test('orphan records, duplicate evidence and unsupported source claims are rejected', () => {
   const row = entries[0];
-  const tampered = structuredClone(eventProvenance);
+  const tampered = structuredClone(pilotRecords);
   tampered[row[0]].sources.push({ ...tampered[row[0]].sources[0], supports: 'too short' });
   tampered.orphan = structuredClone(row[1]);
   const errs = validateEventProvenance(tampered, eventRows, bibliography).join(' ');
