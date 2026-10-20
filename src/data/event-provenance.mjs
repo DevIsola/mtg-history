@@ -98,10 +98,12 @@ export const eventProvenance = {
     artworkNote: "Proft’s or Trostani’s printing identifies the people involved, not a photograph of the accusation or a date stamp.",
   },
   'brothers-tawnos-carries-testimony': {
-    chronology: { precision: 'relative', label: 'After the Sylex Blast, during Terisiare’s postwar reconstruction', basis: 'The postwar fiction follows Tawnos delivering his recollections to Kayla but does not establish the date of Urza’s original instruction.' },
-    sources: [{ title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: 'Depicts Tawnos recounting Urza and Mishra’s war to Kayla after the catastrophe; it does not independently quote the alleged ivory-tower assignment.' }],
+    chronology: { precision: 'relative', label: 'After the Sylex Blast, during Terisiare’s postwar reconstruction', basis: 'The Brothers’ War Episode 5 directly narrates Urza’s instruction to Tawnos after Argoth; the postwar episode separately depicts his later testimony, without requiring an invented calendar year.' },
+    sources: [
+      { title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: 'Depicts Tawnos recounting Urza and Mishra’s war to Kayla after the catastrophe, giving the subsequent testimony context.' },
+      { title: "The Brothers' War — Episode 5: As Cruel, As Necessary", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-5-as-cruel-as-necessary', role: 'story', supports: 'Directly narrates Urza instructing Tawnos to travel west, find the scholars of the ivory towers, and report what the brothers did and failed to prevent.' },
+    ],
     artworkNote: 'Tawnos’s later portrait represents the surviving artificer, not Urza delivering instructions or a historical record of the meeting.',
-    unresolvedClaims: [{ claim: "Urza instructs Tawnos to carry testimony to the scholars of the ivory towers.", requiredEvidence: "Compare the original Brothers’ War fiction with the published postwar story to establish whether Urza gave this instruction." }],
   },
   'innistrad-avacyn-created': {
     chronology: { precision: 'relative', label: 'Before Avacyn’s later disappearance into the Helvault', basis: 'The official plane history establishes Sorin’s creation of Avacyn before Griselbrand’s trap, not a synchronized cross-planar year.' },
@@ -164,10 +166,12 @@ export const eventProvenance = {
     artworkNote: 'The curated card provides context for the Phyrexian agent; its art does not establish the moment World Tree essence was acquired.',
   },
   'phyrexia-dominaria-sleeper-war': {
-    chronology: { precision: 'relative', label: 'During Dominaria United’s pre-invasion Phyrexian infiltration', basis: 'The episode documents an infiltrator’s activities and renewed Phyrexian presence before the wider invasion, not a precise year or all betrayals.' },
-    sources: [{ title: 'Dominaria United — Death and Salvation', url: 'https://magic.wizards.com/en/news/magic-story/death-and-salvation-2022-08-16', role: 'story', supports: 'Depicts Ertai’s Phyrexian return and his violence against Squee’s goblin community; it does not independently document Ajani’s betrayal of Jaya.' }],
+    chronology: { precision: 'relative', label: 'During Dominaria United’s pre-invasion Phyrexian infiltration', basis: 'The Ertai episode and the later Mana Rig confrontation document distinct stages of Phyrexian infiltration; neither establishes a shared interplanar calendar date.' },
+    sources: [
+      { title: 'Dominaria United — Death and Salvation', url: 'https://magic.wizards.com/en/news/magic-story/death-and-salvation-2022-08-16', role: 'story', supports: 'Depicts Ertai’s Phyrexian return and his violence against Squee’s goblin community, supporting the wider infiltrator context.' },
+      { title: 'Dominaria United — Episode 5: A Whisper in the Wind', url: 'https://magic.wizards.com/en/news/magic-story/episode-5-whisper-wind-2022-08-18', role: 'story', supports: 'Explicitly reveals Ajani as the compleated infiltrator and directly narrates his assault on Jaya Ballard and his throwing her from the Mana Rig.' },
+    ],
     artworkNote: 'The selected card is thematic evidence of the infiltration period, not a literal visual record of every compleated agent or death.',
-    unresolvedClaims: [{ claim: "Compleated Ajani betrays the defenders and Jaya Ballard dies as a result.", requiredEvidence: "Use a Dominaria United primary story that narrates Ajani’s actions and Jaya’s death; the current Ertai episode alone is insufficient." }],
   },
   'omenpaths-kellan-first-crossing': {
     chronology: { precision: 'relative', label: 'After the invasion and Kellan’s first Eldraine adventure, before the Ixalan expedition', basis: 'An official Ixalan announcement places Kellan’s travel through Omenpaths between the Eldraine and Ixalan stories, not on a shared interplanar date.' },

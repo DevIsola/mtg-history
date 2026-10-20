@@ -6,10 +6,8 @@ import { collectEvidenceGaps, parseEvidenceGapArgs, renderEvidenceGapsMarkdown }
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const expected = [
-  'brothers-tawnos-carries-testimony',
   'freyalise-seals-skyshroud',
   'mending-venser-first-walk',
-  'phyrexia-dominaria-sleeper-war',
   'spark-gideons-sacrifice',
 ];
 
@@ -23,10 +21,10 @@ function sampleValidation() {
   };
 }
 
-test('five documented uncertainties remain visibly distinct from 43 provenance records', () => {
+test('three documented uncertainties remain visibly distinct from 43 provenance records', () => {
   assert.equal(Object.keys(eventProvenance).length, 43);
   const rows = collectEvidenceGaps();
-  assert.equal(rows.length, 5);
+  assert.equal(rows.length, 3);
   assert.deepEqual(rows.map((row) => row.id).sort(), expected.slice().sort());
   for (const row of rows) {
     assert.ok(row.claim.length >= 35);
@@ -61,7 +59,7 @@ test('report exports a stable and complete editor queue with no claims of certif
   const rows = collectEvidenceGaps();
   assert.deepEqual(collectEvidenceGaps(Object.fromEntries(Object.entries(eventProvenance).reverse())), rows);
   const report = renderEvidenceGapsMarkdown(rows);
-  assert.match(report, /Open questions:\*\* 5 across 5 source-reviewed events/);
+  assert.match(report, /Open questions:\*\* 3 across 3 source-reviewed events/);
   assert.match(report, /not known factual errors/);
   assert.match(report, /mending-venser-first-walk/);
   assert.match(report, /freyalise-seals-skyshroud/);

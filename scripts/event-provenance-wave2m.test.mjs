@@ -43,9 +43,10 @@ test('Wave 2M adds eight source-bounded reviews without dropping previous entrie
     assert.equal(review.chronology.precision, 'relative', id);
     assert.ok(review.chronology.basis.length >= 35, id);
     assert.ok(review.artworkNote.length >= 35, id);
-    assert.equal(review.sources.length, 1, id);
-    assert.equal(review.sources[0].title, sourceTitle, id);
-    assert.ok(review.sources[0].supports.length >= 35, id);
+    assert.ok(review.sources.length >= 1 && review.sources.length <= 3, id);
+    const originalSource = review.sources.find((source) => source.title === sourceTitle);
+    assert.ok(originalSource, `${id}: original source was removed`);
+    assert.ok(review.sources.every((source) => source.supports.length >= 35), id);
   }
 });
 
@@ -63,7 +64,13 @@ test('every review cites the identical official entry in its own chapter bibliog
 });
 
 test('claim limits do not turn announcements or partial scenes into complete certification', () => {
-  assert.match(eventProvenance['phyrexia-dominaria-sleeper-war'].sources[0].supports, /does not independently document Ajani/);
+  const dominariaSources = eventProvenance['phyrexia-dominaria-sleeper-war'].sources;
+  const ertai = dominariaSources.find((source) => source.title === 'Dominaria United — Death and Salvation');
+  const ajani = dominariaSources.find((source) => source.title === 'Dominaria United — Episode 5: A Whisper in the Wind');
+  assert.ok(ertai && ajani, 'Ertai context and Ajani/Jaya primary fiction must both remain cited');
+  assert.match(ertai.supports, /Ertai/);
+  assert.match(ajani.supports, /Ajani/);
+  assert.match(ajani.supports, /Jaya/);
   assert.match(eventProvenance['omenpaths-kellan-first-crossing'].sources[0].supports, /does not prove every detail/);
   assert.match(eventProvenance['zendikar-nahiri-chooses-prison'].sources[0].supports, /Nahiri protesting/);
   assert.match(eventProvenance['phyrexia-vorinclex-world-tree'].sources[0].supports, /World Tree essence/);
