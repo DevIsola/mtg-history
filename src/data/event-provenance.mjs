@@ -136,6 +136,46 @@ export const eventProvenance = {
     sources: [{ title: 'Murders at Karlov Manor — Episode 9: Beauty in Destruction', url: 'https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction', role: 'story', supports: 'Depicts Proft revealing his conclusion about Trostani and the coerced acts at the center of the murder investigation.' }],
     artworkNote: 'Kellan’s investigator portrait is an identification of the character, not proof of each detective action or date.',
   },
+  'ravnica-nonmagical-guild-accord': {
+    chronology: { precision: 'relative', label: 'After the original Guildpact collapses and the Dissension conflicts conclude', basis: 'The Wizards historical retrospective orders the nonmagical accord after the guild crisis; it does not date the agreement against other planes.' },
+    sources: [{ title: 'Ravnica, Then and Now', url: 'https://magic.wizards.com/en/news/feature/ravnica-then-and-now-2012-08-29-0', role: 'retrospective', supports: 'Explicitly identifies Teysa Karlov as drafter of a new nonmagical Guildpact intended to restore cooperation, and notes that it soon proved fragile.' }],
+    artworkNote: 'Teysa, Orzhov Scion is a character portrait printed for Guildpact, not a scene of the later accord being signed.',
+  },
+  'ravnica-project-kraj': {
+    chronology: { precision: 'relative', label: 'During the breakdown of Ravnican guild authority after the first Guildpact', basis: 'The official retrospective lists Momir Vig’s death, Kraj’s rampage and the destruction of Novijen in the Dissension aftermath, without a cross-planar event date.' },
+    sources: [{ title: 'Ravnica, Then and Now', url: 'https://magic.wizards.com/en/news/feature/ravnica-then-and-now-2012-08-29-0', role: 'retrospective', supports: 'Reports that Agrus Kos killed Momir Vig; Kraj then ran berserk and Novijen was destroyed, distinguishing separate parts of the disaster.' }],
+    artworkNote: 'The selected portrait of Teysa identifies a political participant; it does not depict Momir Vig’s death, Kraj or Novijen’s destruction.',
+  },
+  'zendikar-nahiri-chooses-prison': {
+    chronology: { precision: 'relative', label: 'Before the decades of hedron construction and the Eldrazi imprisonment', basis: 'The retrospective fiction orders Nahiri’s decision before forty years of building; its distant-past framing must not be mistaken for a universal year.' },
+    sources: [{ title: 'The Lithomancer', url: 'https://magic.wizards.com/en/news/magic-story/the-lithomancer', role: 'story', supports: 'Depicts Ugin proposing Zendikar, Nahiri protesting the risk to its inhabitants, and finally agreeing to build the Eldrazi prison there.' }],
+    artworkNote: 'The retrospective Nahiri portrait identifies the lithomancer; it is not an illustration of the decision or the completed hedron prison.',
+  },
+  'phyrexia-tamiyos-last-story': {
+    chronology: { precision: 'relative', label: 'During the Phyrexian invasion of Kamigawa, before the invasion ends', basis: 'The story follows the fatal confrontation with Tamiyo and the appearance of her prepared memory afterward, without an in-world calendar date.' },
+    sources: [{ title: 'March of the Machine — Episode 3: Mother, Son, and Story', url: 'https://magic.wizards.com/en/news/magic-story/episode-3-mother-son-and-story', role: 'story', supports: 'Narrates Tamiyo’s defeat by the Wanderer and the subsequent appearance of an enchanted memory of Tamiyo prepared before compleation.' }],
+    artworkNote: 'The Tamiyo printing supplies retrospective character context; it is not independent visual evidence of the spiritlike memory appearing.',
+  },
+  'phyrexia-vorinclex-world-tree': {
+    chronology: { precision: 'relative', label: 'Before Realmbreaker opens its portals for the New Phyrexian invasion', basis: 'Wizards describes the Kaldheim mission as preparatory to the invasion; neither the expedition nor the theft receives a common-calendar date.' },
+    sources: [{ title: "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse", url: 'https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine', role: 'retrospective', supports: 'Identifies Norn’s use of the Planar Bridge to send Vorinclex to Kaldheim to take World Tree essence for Realmbreaker.' }],
+    artworkNote: 'The curated card provides context for the Phyrexian agent; its art does not establish the moment World Tree essence was acquired.',
+  },
+  'phyrexia-dominaria-sleeper-war': {
+    chronology: { precision: 'relative', label: 'During Dominaria United’s pre-invasion Phyrexian infiltration', basis: 'The episode documents an infiltrator’s activities and renewed Phyrexian presence before the wider invasion, not a precise year or all betrayals.' },
+    sources: [{ title: 'Dominaria United — Death and Salvation', url: 'https://magic.wizards.com/en/news/magic-story/death-and-salvation-2022-08-16', role: 'story', supports: 'Depicts Ertai’s Phyrexian return and his violence against Squee’s goblin community; it does not independently document Ajani’s betrayal of Jaya.' }],
+    artworkNote: 'The selected card is thematic evidence of the infiltration period, not a literal visual record of every compleated agent or death.',
+  },
+  'omenpaths-kellan-first-crossing': {
+    chronology: { precision: 'relative', label: 'After the invasion and Kellan’s first Eldraine adventure, before the Ixalan expedition', basis: 'An official Ixalan announcement places Kellan’s travel through Omenpaths between the Eldraine and Ixalan stories, not on a shared interplanar date.' },
+    sources: [{ title: 'A First Look at The Lost Caverns of Ixalan', url: 'https://magic.wizards.com/en/news/announcements/a-first-look-at-the-lost-caverns-of-ixalan', role: 'retrospective', supports: 'Confirms that Kellan first appeared in Wilds of Eldraine and arrived on Ixalan through the Omenpaths; this source does not prove every detail of his search for Oko.' }],
+    artworkNote: 'Kellan’s card is a subsequent portrait of the traveler and does not literally show his earliest passage through an Omenpath.',
+  },
+  'omenpaths-quintorius-expedition': {
+    chronology: { precision: 'relative', label: 'During the early post-invasion Ixalan expedition and opening of Orazca’s puzzle-door', basis: 'The first Lost Caverns narrative follows Quintorius’s arrival and work with Huatli; no universal year can be inferred from publication timing.' },
+    sources: [{ title: 'The Lost Caverns of Ixalan — Episode 1', url: 'https://magic.wizards.com/en/news/magic-story/the-lost-caverns-of-ixalan-episode-1', role: 'story', supports: 'Depicts Quintorius planeswalking to Ixalan and joining Wayta, Huatli and others in investigating the Orazca puzzle-door and ruins.' }],
+    artworkNote: 'Quintorius Kand is a character portrait from the publication era, not proof of the exact date or single image of the expedition.',
+  },
 };
 
 /** Offline integrity only. Checks links and claim metadata, not the truth of article prose. */

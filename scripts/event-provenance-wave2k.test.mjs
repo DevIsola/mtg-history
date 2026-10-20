@@ -30,7 +30,7 @@ function publishedCollections() {
 
 test('Wave 2K adds eight distinct, narrowly supported event reviews', () => {
   assert.equal(Object.keys(added).length, 8);
-  assert.equal(Object.keys(eventProvenance).length, 26);
+  assert.ok(Object.keys(eventProvenance).length >= 26, "earlier review coverage must never shrink");
   for (const [id, [chapterId, sourceTitle]] of Object.entries(added)) {
     const event = json(`src/content/events/${id}.json`);
     const entry = eventProvenance[id];
