@@ -60,19 +60,70 @@ test('2009 worldbuilding is distinguished from the subsequent prison reveal', ()
   assert.match(notes, /original 2009 guide/);
 });
 
-test('Ravnica and Innistrad bodies remain byte-identical after LF normalization', () => {
-  const withoutAddedSource = chapter.split(zendikarStart)[0].replace(
+test('pre-existing Ravnica and Innistrad text survives approved Wave 2AB additions', () => {
+  // Preserve the original Wave 2AA content hashes.
+  // Exclude only the explicitly approved Wave 2AB additions.
+
+  let originalPrefix = chapter.split(zendikarStart)[0].replace(
     /  - title: "A Planeswalker's Guide to Zendikar"\n    kind: official\n    url: "https:\/\/magic\.wizards\.com\/en\/news\/feature\/a-planeswalkers-guide-to-zendikar"\n\n/,
     ''
   );
 
+  const addedSources = [
+    ["A Planeswalker's Guide to Innistrad: Introduction", 'https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-introduction-2011-08-24'],
+    ["A Planeswalker's Guide to Innistrad: Gavony and Humans", 'https://magic.wizards.com/en/news/feature/planeswalkers-guide-innistrad-gavony-and-humans-2011-09-28'],
+    ['From The Vault: Lore', 'https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01'],
+    ['I Am Avacyn', 'https://magic.wizards.com/en/news/magic-story/i-am-avacyn-2016-05-18'],
+  ];
+
+  for (const [title, url] of addedSources) {
+    const entry = '  - title: "' + title + '"\n' +
+      '    kind: official\n' +
+      '    url: "' + url + '"\n';
+
+    assert.equal(originalPrefix.split(entry).length - 1, 1, title);
+    originalPrefix = originalPrefix.replace(entry, '');
+  }
+
   assert.equal(
-    digest(withoutAddedSource),
+    digest(originalPrefix),
     "c67a16b4b2260f8197e0406548b4374e2fa3eb00d5cf4ff0867d01399c86a99d"
   );
 
+  let originalInnistrad =
+    innistradStart + chapter.split(innistradStart)[1];
+
+  const approvedSections = [
+    ['A protector created to preserve a precarious balance', '<HistoricalEventReference id="innistrad-avacyn-created" />'],
+    ['Thraben, the Blessed Sleep, and the geography of protection', "### Innistrad's church defended more than a doctrine"],
+    ['The Skirsdag operated within the city it endangered', '<HistoricalMoment cardId={frontmatter.cardIds[8]}'],
+    ['The Helvault was made of the moon, not improvised for Griselbrand', '<HistoricalEventReference id="innistrad-helvault-imprisonment" />'],
+    ['The cursemute changed some lives without erasing every curse', '<HistoricalEventReference id="innistrad-avacyn-restored" />'],
+  ];
+
+  for (const [title, anchor] of approvedSections) {
+    const marker = '### ' + title + '\n\n';
+
+    assert.equal(originalInnistrad.split(marker).length - 1, 1, title);
+
+    const start = originalInnistrad.indexOf(marker);
+    const contentStart = start + marker.length;
+    const end = originalInnistrad.indexOf(anchor, contentStart);
+
+    assert.ok(end > contentStart, title);
+
+    const addition = originalInnistrad.slice(contentStart, end);
+
+    assert.ok(addition.length > 120 && addition.endsWith('\n\n'), title);
+    assert.ok(!addition.includes('\n## '), title);
+
+    originalInnistrad =
+      originalInnistrad.slice(0, start) +
+      originalInnistrad.slice(end);
+  }
+
   assert.equal(
-    digest(innistradStart + chapter.split(innistradStart)[1]),
+    digest(originalInnistrad),
     "cfa1927e512632c37f4d053f3080a6b95401668a78e8cfd8c39ab3032df8aeb6"
   );
 });
@@ -107,6 +158,6 @@ test('exact printings, scenes, events, and source attribution are preserved', ()
     );
   }
 
-  assert.equal((chapter.match(/^  - title: /gm) ?? []).length, 14);
+  assert.equal((chapter.match(/^  - title: /gm) ?? []).length, 18);
   assert.match(notes, /No new historical event records or card references/);
 });
