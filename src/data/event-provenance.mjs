@@ -1,5 +1,15 @@
 /** Reviewed claim-level sources; this is a limited editorial pilot, not full fact certification. */
 export const eventProvenance = {
+  'thran-dyfed-portal': {
+    chronology: { precision: 'relative', label: 'During the late Thran crisis, before the portal is sealed', basis: 'The official planar retrospective places Dyfed opening the gateway after Phyrexia’s original creator died and before the Thran–Phyrexian war ended; it specifies no shared calendar year.' },
+    sources: [{ title: 'The Known Multiverse', url: 'https://magic.wizards.com/en/news/feature/known-mutliverse-2008-03-19', role: 'retrospective', supports: 'Explicitly identifies an unnamed earlier planeswalker as Phyrexia’s creator, Dyfed as the one who brought Yawgmoth there and opened the Dominaria–Phyrexia portal, and Yawgmoth’s intention to treat phthisis using the plane.' }],
+    artworkNote: 'Yawgmoth, Thran Physician is a character portrait of the future ruler of Phyrexia, not artwork depicting Dyfed opening a planar gate or establishing the gate’s construction date.',
+  },
+  'tocasias-death': {
+    chronology: { precision: 'relative', label: 'In Urza and Mishra’s youth, after they divide the powerstone and before their open war', basis: 'The official design account orders the powerstone fight that kills Tocasia before the later brothers’ war, but supplies no exact in-world year or forensic account of the fatal magic.' },
+    sources: [{ title: 'Act of War, Part 1', url: 'https://magic.wizards.com/en/news/making-magic/act-of-war-part-1', role: 'design-commentary', supports: 'Identifies the brothers’ powerstone battle as the incident in which Tocasia is killed, and explicitly associates the tragic result with rage and regret; it is design commentary, not the original novel scene.' }],
+    artworkNote: 'Brotherhood’s End is a story-associated illustration of the feud and Tocasia’s death; its destructive game mechanics do not establish which brother’s spell or stone caused the fatal injury.',
+  },
   'thran-glacian-stones-implanted': {
     chronology: { precision: 'undated', label: 'Ancient Thran period, before Rebbec seals the gateway', basis: 'Official retrospective establishes sequence but not a common-calendar event year.' },
     sources: [{ title: 'The Legendary Characters of Commander Legends, Part 2', url: 'https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-2-2020-11-06', role: 'retrospective', supports: 'Describes Yawgmoth implanting two broken powerstone halves in Glacian and causing his death.' }],
