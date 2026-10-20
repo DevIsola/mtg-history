@@ -1,14 +1,14 @@
 {
   "title": "Dovin Turns the Azorius Against Ravnica's Defenders",
   "chapterId": "war-of-the-spark",
-  "summary": "Bolas's ally uses the Senate's civic authority to suppress opposition before the invasion.",
+  "summary": "Bolas's ally held Azorius authority and guarded the Immortal Sun while Ravnica's defenders struggled to coordinate.",
   "narrative": [
-    "Dovin Baan's rise within the Azorius Senate gave Bolas a powerful accomplice in Ravnica's political institutions.",
-    "Administrative obstruction and the misuse of order weakened the city's ability to act together before the Eternals arrived.",
-    "His role illustrates how the conspiracy exploited internal division alongside interplanar magic.",
-    "The Azorius Senate was a natural target because administrative systems can determine who is heard, which threats receive attention, and whether rival factions can coordinate. Dovin's talent for identifying institutional weaknesses made him useful to Bolas even before the invading Eternals could be seen on Ravnica's streets.",
-    "Control of a guild did not imply control of every inhabitant or member. The significance was structural: policies and leadership decisions could redirect a large civic institution away from collective defense. Resistance thus faced not only a hostile foreign power but also familiar offices and procedures serving that power's interests.",
-    "The pre-invasion manipulation explains why defeating Bolas did not by itself restore civic confidence. A city that had been attacked through its own government also had to deal with questions of accountability, damaged trust, and which institutions should be allowed to wield authority after the immediate emergency ended."
+    "Dovin Baan occupied the office of Azorius guildmaster during Nicol Bolas's invasion of Ravnica. His cooperation with Bolas placed an important civic institution in the dragon's orbit, but the official accounts do not describe every Azorius official or lawmage as a participant in that alliance.",
+    "When Jace Beleren summoned representatives of the guilds to organize a defense, Lavinia and other Azorius dissidents appeared without Dovin. They had formally rejected his leadership, yet the Senate's bylaws still recognized him as guildmaster. Their opposition was real, but it did not automatically confer control of the guild.",
+    "At the same summit, Jace identified the Immortal Sun as one of the defenders' immediate problems. The Izzet beacon summoned planeswalkers to Ravnica, while the Immortal Sun prevented them from leaving. Jace placed the Sun in a New Prahv tower and identified Dovin as its guard and Bolas's agent.",
+    "This made disabling the Immortal Sun a distinct military objective, separate from shutting down the beacon or stopping the Planar Bridge that delivered the Eternals. The official story records the defenders assessing these different threats together; it does not establish that Dovin personally controlled every mechanism or directed every Azorius operation.",
+    "The Azorius split also mattered to the attempt to reunite Ravnica's guilds. Formal office and practical cooperation were not the same: dissidents could join the defenders while the recognized guildmaster served Bolas. His position did not mean every Azorius member supported Bolas, and the account does not assign collective responsibility to the guild.",
+    "After Dovin fled Ravnica, Lavinia appeared as acting Azorius guildmaster during preparations for Operation Desperation. The surviving fiction establishes that change of leadership and her participation in the wider effort against Bolas; it does not provide a complete inventory of Dovin's prior policies or prove a particular long-term political aftermath."
   ],
   "characterIds": [
     "dovin-baan",

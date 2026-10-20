@@ -240,6 +240,27 @@ export const eventProvenance = {
     ],
     artworkNote: 'The selected Nissa, Ascended Animist printing is a portrait of Nissa after compleation, not a literal scene of Jace activating the Sylex or Elspeth taking it.',
   },
+  'spark-dovin-azorius-control': {
+    chronology: { precision: 'relative', label: 'During the War of the Spark, as Ravnica coordinates resistance against Bolas', basis: 'Official fiction places Dovin in Azorius leadership and describes his later flight; it provides no cross-planar calendar date or complete record of his earlier policies.' },
+    sources: [
+      { title: 'War of the Spark: Ravnica — Rallying the Reluctant', url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-rallying-reluctant-2019-05-22', role: 'story', supports: 'Confirms Dovin was Bolas-aligned Azorius guildmaster, that Senate bylaws still recognized him despite dissidents, and that he guarded the Immortal Sun in a New Prahv tower.' },
+      { title: 'War of the Spark: Ravnica — Operation Desperation', url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-operation-desperation-2019-06-05', role: 'story', supports: 'Narrates Dovin having fled Ravnica and Lavinia serving as acting Azorius guildmaster during the effort to assemble the guilds.' },
+    ],
+    artworkNote: 'Dovin, Hand of Control is a character portrait, not an illustration of every Azorius policy or proof that every Senate member supported Bolas.',
+  },
+  'talite-siege-of-penregon': {
+    chronology: { precision: 'relative', label: '69 AR, in the years after the Sylex Blast and before Penregon is abandoned', basis: 'The Brothers’ War Episode 2 opens this episode under 69 AR and directly narrates the siege; unlike publication year 2022, 69 AR is an explicit in-world date.' },
+    sources: [{ title: "The Brothers' War — Episode 2: The Beginning", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-2-the-beginning', role: 'story', supports: 'Directly describes Talite attackers outside and within Penregon, Kayla directing city decisions, and Tawnos burning his civil-machine workshop during the siege.' }],
+    artworkNote: 'Witch Hunter is thematic imagery of anti-magic persecution and does not depict the 69 AR siege of Penregon.',
+  },
+  'spark-elderspell': {
+    chronology: { precision: 'relative', label: 'During the War of the Spark invasion of Ravnica, after planeswalkers are trapped', basis: 'Official story fiction shows the spell in progress and designer commentary explains its intention; neither establishes a shared in-world calendar date.' },
+    sources: [
+      { title: 'War of the Spark: Ravnica — Ashes', url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12', role: 'story', supports: 'Describes the Elderspell storm, dead planeswalkers, and harvested sparks flying toward Bolas and the gem between his horns during the battle.' },
+      { title: 'War Games', url: 'https://magic.wizards.com/en/news/making-magic/war-games-2019-04-22', role: 'design-commentary', supports: 'Explains the intended story mechanism: Eternals drain sparks from planeswalkers, killing them, then transfer the power to Bolas in his attempt to regain pre-Mending strength.' },
+    ],
+    artworkNote: 'The Elderspell is a contemporary spell illustration; the card mechanics express the harvesting concept but do not establish every visible detail of the narrated battle.',
+  },
 };
 
 /** Offline integrity only. Checks links and claim metadata, not the truth of article prose. */
