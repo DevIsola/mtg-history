@@ -1,3 +1,112 @@
+/* Chapter reading preferences — scoped to text, not the chapter navigation. */
+.chapter-reading-controls {
+  margin: 1.6rem 0 2rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--jade);
+  border-radius: 5px;
+  background: var(--paper-white);
+}
+
+.chapter-reading-controls__heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+}
+
+.chapter-reading-controls h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+.chapter-reading-controls__heading p {
+  margin-top: 0.45rem;
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+
+.chapter-reading-controls button {
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.chapter-reading-controls__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 1rem 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.chapter-reading-controls fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.chapter-reading-controls legend {
+  margin-bottom: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 750;
+  color: var(--ink);
+}
+
+.chapter-reading-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.79rem;
+  cursor: pointer;
+}
+
+.chapter-reading-controls input {
+  accent-color: var(--jade);
+}
+
+.chapter-reading-controls label:has(input:checked) {
+  border-color: var(--jade);
+  background: var(--paper-deep);
+  font-weight: 700;
+}
+
+.chapter-reading-controls label:focus-within,
+.chapter-reading-controls button:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 3px;
+}
+
+.chapter-reading-controls__status:not(:empty) {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* Preserve current typography when scripts are disabled or settings are default. */
+#chapter-reader[data-reading-size='compact'] .chapter-prose { font-size: 1rem; }
+#chapter-reader[data-reading-size='large'] .chapter-prose { font-size: 1.2rem; }
+#chapter-reader[data-reading-typeface='classic'] .chapter-prose { font-family: var(--font-display); }
+#chapter-reader[data-reading-spacing='relaxed'] .chapter-prose { line-height: 2.15; }
+
 /* Historical chapter pages */
 
 .chapter-publications {

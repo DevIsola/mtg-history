@@ -1,0 +1,90 @@
+---
+/** Progressive enhancement: hidden controls never obscure chapter text without JS. */
+---
+<div class="chapter-reading-controls" data-reading-controls hidden>
+  <div class="chapter-reading-controls__heading">
+    <div>
+      <h2>Reading preferences</h2>
+      <p>Adjust the chapter text. Your choices carry across chapters on this device.</p>
+    </div>
+    <button type="button" data-reading-reset>Reset</button>
+  </div>
+
+  <div class="chapter-reading-controls__groups">
+    <fieldset>
+      <legend>Text size</legend>
+      <label><input type="radio" name="reading-size" data-reading-setting="size" value="compact" /> Smaller</label>
+      <label><input type="radio" name="reading-size" data-reading-setting="size" value="regular" checked /> Standard</label>
+      <label><input type="radio" name="reading-size" data-reading-setting="size" value="large" /> Larger</label>
+    </fieldset>
+    <fieldset>
+      <legend>Typeface</legend>
+      <label><input type="radio" name="reading-typeface" data-reading-setting="typeface" value="modern" checked /> Modern</label>
+      <label><input type="radio" name="reading-typeface" data-reading-setting="typeface" value="classic" /> Classic serif</label>
+    </fieldset>
+    <fieldset>
+      <legend>Line spacing</legend>
+      <label><input type="radio" name="reading-spacing" data-reading-setting="spacing" value="comfortable" checked /> Comfortable</label>
+      <label><input type="radio" name="reading-spacing" data-reading-setting="spacing" value="relaxed" /> Relaxed</label>
+    </fieldset>
+  </div>
+  <p class="chapter-reading-controls__status" role="status" aria-live="polite" data-reading-status></p>
+</div>
+
+<script>
+  import {
+    DEFAULT_READING_PREFERENCES,
+    normalizeReadingPreferences,
+    readReadingPreferences,
+    writeReadingPreferences,
+  } from '../utils/reading-preferences.mjs';
+
+  const reader = document.querySelector<HTMLElement>('[data-chapter-reading-root]');
+  const controls = reader?.querySelector<HTMLElement>('[data-reading-controls]');
+
+  if (reader && controls) {
+    const radios = Array.from(controls.querySelectorAll<HTMLInputElement>(
+      'input[type="radio"][data-reading-setting]',
+    ));
+    const reset = controls.querySelector<HTMLButtonElement>('[data-reading-reset]');
+    const status = controls.querySelector<HTMLElement>('[data-reading-status]');
+    let storage: Storage | undefined;
+    try { storage = window.localStorage; } catch { /* Blocked storage is optional. */ }
+    let preferences = readReadingPreferences(storage);
+
+    const update = () => {
+      reader.dataset.readingSize = preferences.size;
+      reader.dataset.readingTypeface = preferences.typeface;
+      reader.dataset.readingSpacing = preferences.spacing;
+      for (const radio of radios) {
+        const setting = radio.dataset.readingSetting as keyof typeof preferences;
+        radio.checked = preferences[setting] === radio.value;
+      }
+    };
+
+    update();
+    controls.hidden = false;
+
+    controls.addEventListener('change', (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLInputElement) || !target.checked) return;
+      const setting = target.dataset.readingSetting;
+      if (!setting || !['size', 'typeface', 'spacing'].includes(setting)) return;
+      preferences = normalizeReadingPreferences({ ...preferences, [setting]: target.value });
+      update();
+      const saved = writeReadingPreferences(storage, preferences);
+      if (status) status.textContent = saved
+        ? 'Reading preferences saved.'
+        : 'Reading preferences applied for this page.';
+    });
+
+    reset?.addEventListener('click', () => {
+      preferences = normalizeReadingPreferences(DEFAULT_READING_PREFERENCES);
+      update();
+      const saved = writeReadingPreferences(storage, preferences);
+      if (status) status.textContent = saved
+        ? 'Default reading preferences restored and saved.'
+        : 'Default reading preferences restored for this page.';
+    });
+  }
+</script>
