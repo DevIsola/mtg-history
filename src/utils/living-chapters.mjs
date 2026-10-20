@@ -13,6 +13,12 @@ export function setupLivingChapterReveals(root, options = {}) {
   const noop = { count: 0, disconnect() {} };
   if (!root || reducedMotion || typeof Observer !== 'function') return noop;
 
+  // Browsers may scroll to an incoming #fragment after module scripts run.
+  // The initial viewport would be stale, leaving the eventual anchor content
+  // with a pending reveal cue. Prefer fully readable, unanimated deep links.
+  const incomingHash = options.locationHash ?? globalThis.location?.hash ?? '';
+  if (incomingHash.startsWith('#')) return noop;
+
   // Do not animate currently displayed content (including a hash-targeted
   // heading), and do not touch hidden/collapsed content.
   const targets = [...root.querySelectorAll(LIVING_REVEAL_SELECTOR)].filter((element) => {
