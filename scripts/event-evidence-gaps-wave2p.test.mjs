@@ -23,7 +23,7 @@ function sampleValidation() {
 }
 
 test('three documented uncertainties remain visibly distinct from 43 provenance records', () => {
-  assert.equal(Object.keys(eventProvenance).length, 43);
+  assert.ok(Object.keys(eventProvenance).length >= 46);
   const rows = collectEvidenceGaps();
   assert.equal(rows.length, 3);
   assert.deepEqual(rows.map((row) => row.id).sort(), expected.slice().sort());

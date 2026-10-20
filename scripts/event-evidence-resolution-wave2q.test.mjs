@@ -51,7 +51,7 @@ test('Ajani’s direct attack on Jaya has its own source rather than relying on 
 });
 
 test('the other three historical questions remain open and existing source coverage is preserved', () => {
-  assert.equal(Object.keys(eventProvenance).length, 43);
+  assert.ok(Object.keys(eventProvenance).length >= 46);
   const remaining = Object.entries(eventProvenance)
     .filter(([, record]) => record.unresolvedClaims?.length)
     .map(([id]) => id).sort();

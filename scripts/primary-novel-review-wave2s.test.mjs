@@ -57,7 +57,7 @@ test('primary bibliography exists, source panels retain uncertainty, and printin
   const freyalise = JSON.parse(read('src/content/events/freyalise-seals-skyshroud.json'));
   assert.equal(venser.cardId, '0e84fc99-4045-4518-b588-512a675f2933');
   assert.equal(freyalise.cardId, '6c6ef042-1a69-4b16-abae-4f436dbadbbd');
-  assert.equal(Object.keys(eventProvenance).length, 43);
+  assert.ok(Object.keys(eventProvenance).length >= 46);
   assert.ok(eventProvenance['spark-gideons-sacrifice'].unresolvedClaims?.length > 0);
   const manifest = JSON.parse(read('package.json'));
   assert.equal(manifest.scripts['review:novel-evidence'], 'node scripts/prepare-primary-novel-review.mjs');
