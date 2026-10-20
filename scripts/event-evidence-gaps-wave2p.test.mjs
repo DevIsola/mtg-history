@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import test from 'node:test';
 import { eventProvenance, validateEventProvenance } from '../src/data/event-provenance.mjs';
 import { collectEvidenceGaps, parseEvidenceGapArgs, renderEvidenceGapsMarkdown } from './audit-event-source-gaps.mjs';
@@ -69,8 +70,8 @@ test('report exports a stable and complete editor queue with no claims of certif
 test('report CLI handles explicit output paths and rejects ambiguous writes', () => {
   assert.deepEqual(parseEvidenceGapArgs(['--help']), { help: true });
   const output = parseEvidenceGapArgs(['--markdown', '/tmp/p.md', '--json', '/tmp/p.json']);
-  assert.equal(output['--markdown'], '/tmp/p.md');
-  assert.equal(output['--json'], '/tmp/p.json');
+  assert.equal(output['--markdown'], resolve('/tmp/p.md'));
+  assert.equal(output['--json'], resolve('/tmp/p.json'));
   assert.throws(() => parseEvidenceGapArgs(['--markdown']), /requires an output path/);
   assert.throws(() => parseEvidenceGapArgs(['--json', '--json']), /requires an output path/);
   assert.throws(() => parseEvidenceGapArgs(['--markdown', 'same', '--json', 'same']), /must differ/);

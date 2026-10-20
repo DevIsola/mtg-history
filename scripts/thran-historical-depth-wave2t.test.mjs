@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
-const chapter = readFileSync(new URL('../src/content/chapters/thran.mdx', import.meta.url), 'utf8');
+const chapter = readFileSync(new URL('../src/content/chapters/thran.mdx', import.meta.url), 'utf8').replace(/\r\n?/g, '\n');
 const titles = [
   'Architecture of Ascension: power made visible',
   'Pyrulea: an earlier glimpse of planeswalking',
