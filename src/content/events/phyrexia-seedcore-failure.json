@@ -1,10 +1,11 @@
 {
   "title": "The Sylex Mission Fails at the Seedcore",
   "chapterId": "march-of-the-machine",
-  "summary": "The strike team's effort to prevent Realmbreaker's growth ends in corruption and a desperate rescue.",
+  "summary": "The strike team reaches the Seedcore after Realmbreaker connects to other planes; Elspeth removes the activated Sylex before it detonates.",
   "narrative": [
-    "Planeswalkers attacked New Phyrexia with a new Sylex, but defenses and glistening oil fractured the mission; Nissa and other allies were compleated.",
-    "As Realmbreaker opened portals to other worlds, Elspeth carried the activated Sylex into the Blind Eternities rather than allow the blast to endanger already-linked planes."
+    "The strike team crossed New Phyrexia amid losses, corruption, and increasingly difficult decisions. By the time its survivors reached the Seedcore, Realmbreaker had already opened passages to other planes; stopping the tree before its first connections was no longer possible.",
+    "Jace prepared to activate the replacement Sylex. Kaya and Kaito warned that a blast traveling through the connected Invasion Tree could devastate other worlds as well as New Phyrexia, but Jace began the activation despite their objections.",
+    "Elspeth interrupted Jace, seized the activating Sylex, and vanished with it before an explosion at the Seedcore. The published scene leaves her destination unknown, described as beyond the Blind Eternities. The Sylex did not destroy New Phyrexia there or stop the invasion from beginning."
   ],
   "characterIds": [
     "elspeth",

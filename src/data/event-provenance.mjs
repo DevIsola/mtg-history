@@ -189,7 +189,10 @@ export const eventProvenance = {
   },
   'mending-venser-first-walk': {
     chronology: { precision: 'relative', label: 'During the Time Spiral upheaval, before Venser’s subsequent interplanar travels', basis: 'The character profile confirms that Venser’s spark eventually ignited, but does not itself date his first walk or establish the divergent-Dominaria episode.' },
-    sources: [{ title: 'Venser', url: 'https://magic.wizards.com/en/story/venser-planeswalker', role: 'retrospective', supports: 'Identifies Venser as an artificer specializing in teleportation whose spark ignited and enabled planeswalking; it does not document the alternate-history scene.' }],
+    sources: [
+      { title: 'Venser', url: 'https://magic.wizards.com/en/story/venser-planeswalker', role: 'retrospective', supports: 'Identifies Venser as an artificer specializing in teleportation whose spark ignited and enabled planeswalking; it does not document the alternate-history scene.' },
+      { title: 'A Double Take, Part 1', url: 'https://magic.wizards.com/en/news/making-magic/a-double-take-part-1', role: 'design-commentary', supports: 'Describes Venser as initially a non-planeswalker character intended to become one of the less godlike, post-Mending planeswalkers; the column does not narrate his first walk.' },
+    ],
     artworkNote: 'The retrospective Venser character card is not a literal picture of his first planar crossing or an alternate Dominaria.',
   },
   'freyalise-seals-skyshroud': {
@@ -216,6 +219,14 @@ export const eventProvenance = {
     chronology: { precision: 'relative', label: 'Across the occupation of Mirrodin, before and during New Phyrexia’s invasion', basis: 'The official faction retrospective documents Kemba and Koth organizing surviving Mirrans but does not date every campaign or Melira’s specific actions.' },
     sources: [{ title: 'The Legends of Phyrexia: All Will Be One', url: 'https://magic.wizards.com/en/news/feature/the-legends-of-phyrexia-all-will-be-one', role: 'retrospective', supports: 'Describes Kemba leading surviving leonin and advising Koth as disparate Mirran groups form a resistance; Melira’s separate contributions require other sources.' }],
     artworkNote: 'The resistance-themed printing represents Mirran survival, not a contemporaneous image of each resistance action or participant.',
+  },
+  'phyrexia-seedcore-failure': {
+    chronology: { precision: 'relative', label: 'At the failed strike-team assault, as Realmbreaker begins the multiversal invasion', basis: 'The consecutive primary-fiction episodes establish the order of Realmbreaker opening, Jace activating the Sylex, and Elspeth removing it; they give no shared in-world calendar year.' },
+    sources: [
+      { title: 'Assault on New Phyrexia — Episode 4: Impossible Odds', url: 'https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-4-impossible-odds', role: 'story', supports: 'Shows the assault team entering the Seedcore after Realmbreaker makes its first connections to other planes; the attempt to prevent those connections is already too late.' },
+      { title: 'Assault on New Phyrexia — Episode 5: Inevitable Resolutions', url: 'https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-5-inevitable-resolutions', role: 'story', supports: 'Directly narrates Jace activating the Sylex despite Kaya and Kaito’s warning, followed by Elspeth seizing it and disappearing before it detonates at the Seedcore.' },
+    ],
+    artworkNote: 'The selected Nissa, Ascended Animist printing is a portrait of Nissa after compleation, not a literal scene of Jace activating the Sylex or Elspeth taking it.',
   },
 };
 
