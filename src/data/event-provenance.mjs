@@ -45,7 +45,10 @@ export const eventProvenance = {
   },
   'sylex-blast': {
     chronology: { precision: 'relative', label: "End of the Brothers’ War, before the postwar winter and reconstruction", basis: "The official postwar account dates its setting after the conflict and depicts the devastation of Argoth, without making that story’s AR date the blast date." },
-    sources: [{ title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: "Shows Kayla and Tawnos reckoning with the destruction of Argoth and worsening climate after the war ended." }],
+    sources: [
+      { title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: "Shows Kayla and Tawnos reckoning with the destruction of Argoth and worsening climate after the war ended." },
+      { title: "The Brothers' War — Episode 5: As Cruel, As Necessary", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-5-as-cruel-as-necessary', role: 'story', supports: 'Shows Teferi encountering incompatible accounts of the Sylex’s origins while treating Urza’s activation on Argoth as the common narrative endpoint.' },
+    ],
     artworkNote: "A Sylex-related card is a historical illustration of the catastrophe, not proof of an exact activation year.",
   },
   'alliance-against-lim-dul': {
@@ -92,6 +95,46 @@ export const eventProvenance = {
     chronology: { precision: 'relative', label: "Murders at Karlov Manor investigation, after the Phyrexian invasion", basis: "The detective story establishes its post-invasion setting and the sequence of Proft’s deductions, not a comparable universal year." },
     sources: [{ title: "Murders at Karlov Manor — Episode 9: Beauty in Destruction", url: 'https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction', role: 'story', supports: "Shows Proft accusing Oba of orchestrating the murders and distinguishing the willing perpetrator from coerced participants." }],
     artworkNote: "Proft’s or Trostani’s printing identifies the people involved, not a photograph of the accusation or a date stamp.",
+  },
+  'brothers-tawnos-carries-testimony': {
+    chronology: { precision: 'relative', label: 'After the Sylex Blast, during Terisiare’s postwar reconstruction', basis: 'The postwar fiction follows Tawnos delivering his recollections to Kayla but does not establish the date of Urza’s original instruction.' },
+    sources: [{ title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: 'Depicts Tawnos recounting Urza and Mishra’s war to Kayla after the catastrophe; it does not independently quote the alleged ivory-tower assignment.' }],
+    artworkNote: 'Tawnos’s later portrait represents the surviving artificer, not Urza delivering instructions or a historical record of the meeting.',
+  },
+  'innistrad-avacyn-created': {
+    chronology: { precision: 'relative', label: 'Before Avacyn’s later disappearance into the Helvault', basis: 'The official plane history establishes Sorin’s creation of Avacyn before Griselbrand’s trap, not a synchronized cross-planar year.' },
+    sources: [{ title: 'Innistrad Plane Guide', url: 'https://magic.wizards.com/en/story/innistrad-plane', role: 'retrospective', supports: 'Identifies Sorin Markov as Avacyn’s creator and describes his intention to preserve humanity against supernatural predation.' }],
+    artworkNote: 'Sorin’s portrait indicates the creator, not a depiction of the moment he fashioned Avacyn or a precise event date.',
+  },
+  'innistrad-helvault-imprisonment': {
+    chronology: { precision: 'relative', label: 'After Avacyn’s creation and before the Helvault is broken', basis: 'The plane guide places the confinement before the subsequent loss of protective wards, without a cross-planar timestamp.' },
+    sources: [{ title: "Planeswalker's Guide to Avacyn Restored, Part 2", url: 'https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-avacyn-restored-part-2', role: 'retrospective', supports: 'States that Griselbrand drew Avacyn into the Helvault with him, motivating Liliana’s later search for the demon.' }],
+    artworkNote: 'The Helvault printing depicts the prison artifact, not the encounter between Avacyn and Griselbrand as a literal scene.',
+  },
+  'phyrexia-melira-resistance': {
+    chronology: { precision: 'relative', label: 'During the strike team’s preparation for its Seedcore mission', basis: 'The episode orders Melira’s explanation of the layered plane before the descent, but gives no universal mission date.' },
+    sources: [{ title: 'Assault on New Phyrexia — Episode 2: Unstable Foundations', url: 'https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-2-unstable-foundations', role: 'story', supports: 'Melira explains the geography around the Seedcore, disputes sacrificing Mirran survivors, and helps prepare the strike team’s route.' }],
+    artworkNote: 'The curated card portrays Melira or the resistance; it is not a literal map of the layers or a dated photograph of the briefing.',
+  },
+  'phyrexia-meliras-last-gift': {
+    chronology: { precision: 'relative', label: 'After New Phyrexia is isolated, during recovery on Zhalfir', basis: 'The narrative follows the invasion’s resolution and details the rescue of Nissa and Ajani without supplying a common-calendar year.' },
+    sources: [{ title: 'March of the Machine — Episode 10: The Rhythms of Life', url: 'https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life', role: 'story', supports: 'Depicts Melira healing Nissa and Ajani with Karn’s assistance and the remaining spark from Venser, at the cost of Melira’s life.' }],
+    artworkNote: 'The selected card illustrates a participant or aftermath of the rescue, rather than independently proving the transfer of magic.',
+  },
+  'omenpaths-eldraine-mourning': {
+    chronology: { precision: 'relative', label: 'After the Phyrexian invasion, as the twins confront the Wicked Slumber', basis: 'The Eldraine story gives the Kenriths’ losses and postwar disagreement in local narrative sequence, not a synchronized event year.' },
+    sources: [{ title: 'Wilds of Eldraine — Episode 1: Pure of Heart', url: 'https://magic.wizards.com/en/news/magic-story/episode-1-pure-of-heart', role: 'story', supports: 'Establishes Kenrith and Linden’s deaths during the invasion, and depicts Rowan’s grief and inability to access her spark.' }],
+    artworkNote: 'The memorial card represents the Kenriths and their loss; a later publication date is not the fictional date of either death.',
+  },
+  'omenpaths-rowan-and-will-diverge': {
+    chronology: { precision: 'relative', label: 'During Eldraine’s post-invasion reconstruction and spreading Wicked Slumber', basis: 'The first Wilds of Eldraine story depicts the twins’ dispute over their responsibilities, without fixing a cross-planar year.' },
+    sources: [{ title: 'Wilds of Eldraine — Episode 1: Pure of Heart', url: 'https://magic.wizards.com/en/news/magic-story/episode-1-pure-of-heart', role: 'story', supports: 'Contrasts Will’s attempt to build civic stability with Rowan’s impatience and search for stronger magical solutions.' }],
+    artworkNote: 'The Rowan card is a later character portrait; it does not establish the date or exact circumstances of their argument.',
+  },
+  'omenpaths-ravnica-investigation': {
+    chronology: { precision: 'relative', label: 'During the Murders at Karlov Manor crisis after the invasion', basis: 'The mystery places Proft, Kaya, and Kellan within a post-invasion Ravnican investigation but supplies no common-calendar date.' },
+    sources: [{ title: 'Murders at Karlov Manor — Episode 9: Beauty in Destruction', url: 'https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction', role: 'story', supports: 'Depicts Proft revealing his conclusion about Trostani and the coerced acts at the center of the murder investigation.' }],
+    artworkNote: 'Kellan’s investigator portrait is an identification of the character, not proof of each detective action or date.',
   },
 };
 

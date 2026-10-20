@@ -64,16 +64,16 @@ const originalIds = [
 
 test('the second provenance batch reviews twelve actual events while retaining the first six', () => {
   assert.equal(Object.keys(reviewedInWave).length, 12);
-  assert.equal(Object.keys(eventProvenance).length, 18);
+  assert.ok(Object.keys(eventProvenance).length >= 18, "later reviewed batches must retain Wave 2J records");
   for (const id of originalIds) assert.ok(eventProvenance[id], `${id}: original review missing`);
   for (const [id, expected] of Object.entries(reviewedInWave)) {
     const event = json(`src/content/events/${id}.json`);
     assert.equal(event.chapterId, expected.chapter, id);
     const entry = eventProvenance[id];
     assert.ok(entry, `${id}: review missing`);
-    assert.equal(entry.sources.length, 1, id);
-    assert.equal(entry.sources[0].title, expected.source, id);
-    assert.ok(entry.sources[0].supports.length >= 35, id);
+    assert.ok(entry.sources.length >= 1 && entry.sources.length <= 3, id);
+    assert.ok(entry.sources.some((source) => source.title === expected.source), id);
+    assert.ok(entry.sources.every((source) => source.supports.length >= 35), id);
     assert.ok(entry.artworkNote.length >= 35, id);
     assert.ok(['undated', 'relative'].includes(entry.chronology.precision), id);
   }
@@ -89,7 +89,7 @@ test('each new official citation occurs in its actual chapter bibliography', () 
   }
 });
 
-test('all eighteen records pass the production provenance validator', () => {
+test('all reviewed records pass the production provenance validator', () => {
   const chapters = readdirSync(new URL('../src/content/chapters/', import.meta.url)).filter((name) => name.endsWith('.mdx'));
   const sourcesByChapter = new Map(chapters.map((name) => [name.slice(0, -4),
     parseChapterEditorial(read(`src/content/chapters/${name}`), name.slice(0, -4)).sources]));
