@@ -21,6 +21,20 @@ const { entry } = Astro.props;
     ))}
   </ul>
   <p><strong>Artwork context:</strong> {entry.artworkNote}</p>
+  {entry.unresolvedClaims && entry.unresolvedClaims.length > 0 && (
+    <section class="event-evidence__gaps" aria-labelledby="event-evidence-gaps-heading">
+      <h4 id="event-evidence-gaps-heading">Claims still awaiting primary-source confirmation</h4>
+      <p>These details remain in the historical narrative, but the sources listed above do not independently establish them.</p>
+      <ul>
+        {entry.unresolvedClaims.map((gap) => (
+          <li>
+            <strong>{gap.claim}</strong>
+            <p><strong>Evidence needed:</strong> {gap.requiredEvidence}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
   <p class="event-evidence__limit">Sources support the claims identified here, not necessarily every sentence in the narrative. Publication dates are not in-world dates.</p>
 </section>
 <style lang="scss">
@@ -37,5 +51,7 @@ const { entry } = Astro.props;
   .event-evidence a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   .event-evidence__role { display: block; margin-block: .3rem; }
   .event-evidence li p { margin: .3rem 0 0; }
+  .event-evidence__gaps { border-top: 1px solid var(--line); margin-top: 1.4rem; padding-top: 1rem; }
+  .event-evidence__gaps li strong { line-height: 1.5; }
   .event-evidence__limit { font-size: .85rem; color: var(--ink-soft); }
 </style>

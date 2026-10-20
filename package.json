@@ -22,6 +22,7 @@
     "check:editorial": "node scripts/check-editorial-metadata.mjs",
     "check:provenance": "node scripts/check-event-provenance.mjs",
     "audit:history": "node scripts/audit-historical-risk.mjs",
+    "audit:source-gaps": "node scripts/audit-event-source-gaps.mjs",
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
     "check:artwork": "node scripts/check-artwork-fidelity.mjs",
     "review:artwork": "node scripts/check-artwork-fidelity.mjs",

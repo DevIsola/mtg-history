@@ -3,6 +3,7 @@ export interface EventProvenanceEntry {
   chronology: { precision: 'relative' | 'undated'; label: string; basis: string };
   sources: Array<{ title: string; url: string; role: 'story' | 'retrospective' | 'design-commentary'; supports: string }>;
   artworkNote: string;
+  unresolvedClaims?: Array<{ claim: string; requiredEvidence: string }>;
 }
 export declare const eventProvenance: Record<string, EventProvenanceEntry | undefined>;
 export declare function validateEventProvenance(
