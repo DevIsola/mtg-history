@@ -35,7 +35,7 @@ function collectionView() {
 
 test('Wave 2M adds eight source-bounded reviews without dropping previous entries', () => {
   assert.equal(Object.keys(batch).length, 8);
-  assert.equal(Object.keys(eventProvenance).length, 34);
+  assert.ok(Object.keys(eventProvenance).length >= 34, "later batches must retain all Wave 2M reviews");
   for (const id of prior) assert.ok(eventProvenance[id], `prior review missing: ${id}`);
   for (const [id, [chapter, sourceTitle]] of Object.entries(batch)) {
     assert.equal(json(`src/content/events/${id}.json`).chapterId, chapter);
