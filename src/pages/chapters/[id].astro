@@ -6,6 +6,7 @@ import { withBase } from '../../utils/paths';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChapterToc from '../../components/ChapterToc.astro';
+import ChapterReadingControls from '../../components/ChapterReadingControls.astro';
 import ChapterSources from '../../components/ChapterSources.astro';
 import ChapterSwitcher from '../../components/ChapterSwitcher.astro';
 import ChapterHistoryPaths from '../../components/ChapterHistoryPaths.astro';
@@ -66,7 +67,7 @@ const nextChapter = chapters[currentIndex + 1];
   </div>
 </div>
 
-  <section id="chapter-reader" class="chapter-reader" tabindex="-1" aria-label="Chapter reading content">
+  <section id="chapter-reader" class="chapter-reader" data-chapter-reading-root tabindex="-1" aria-label="Chapter reading content">
     <div class="page-shell chapter-reading-grid">
 
       <!-- Chapter navigation sidebar -->
@@ -88,6 +89,8 @@ const nextChapter = chapters[currentIndex + 1];
         </a>
 
         <p class="chapter-reader__context">Chapter {String(chapter.data.order).padStart(2, '0')} · {chapter.data.title}</p>
+
+        <ChapterReadingControls />
 
         <details class="chapter-publications">
           <summary>
