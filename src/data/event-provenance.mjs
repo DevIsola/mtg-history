@@ -176,6 +176,47 @@ export const eventProvenance = {
     sources: [{ title: 'The Lost Caverns of Ixalan — Episode 1', url: 'https://magic.wizards.com/en/news/magic-story/the-lost-caverns-of-ixalan-episode-1', role: 'story', supports: 'Depicts Quintorius planeswalking to Ixalan and joining Wayta, Huatli and others in investigating the Orazca puzzle-door and ruins.' }],
     artworkNote: 'Quintorius Kand is a character portrait from the publication era, not proof of the exact date or single image of the expedition.',
   },
+
+  'teferis-phasing-decision': {
+    chronology: { precision: 'relative', label: 'During the original Phyrexian invasion, before the Mending-era Shivan repair', basis: 'Teferi recounts phasing out Zhalfir, and Jhoira separately describes Shiv; the later dialogue dates their restoration sequence relatively, not to a shared calendar year.' },
+    sources: [{ title: 'Return to Dominaria: Episode 6', url: 'https://magic.wizards.com/en/news/magic-story/return-dominaria-episode-6-2018-04-18', role: 'story', supports: 'Teferi explicitly describes phasing Zhalfir to protect its people; Jhoira confirms he phased Shiv and later returned it at the cost of his spark.' }],
+    artworkNote: 'The selected Teferi portrait contextualizes his decision, not a literal image of either region disappearing from Dominaria.',
+  },
+  'shivan-rift': {
+    chronology: { precision: 'relative', label: 'During the temporal-rift repairs, centuries after the original Phyrexian invasion', basis: 'The 2018 retrospective conversation identifies the Shivan repair as the event that cost Teferi his spark; publication date is not an in-world date.' },
+    sources: [{ title: 'Return to Dominaria: Episode 6', url: 'https://magic.wizards.com/en/news/magic-story/return-dominaria-episode-6-2018-04-18', role: 'story', supports: 'Jhoira says Teferi repaired the rift and returned Shiv to Dominaria, losing his planeswalker spark in doing so; Zhalfir remained inaccessible.' }],
+    artworkNote: 'A Teferi card identifies the mage involved but cannot establish the exact moment, mechanics, or date of the Shivan rift closure.',
+  },
+  'mending-venser-first-walk': {
+    chronology: { precision: 'relative', label: 'During the Time Spiral upheaval, before Venser’s subsequent interplanar travels', basis: 'The character profile confirms that Venser’s spark eventually ignited, but does not itself date his first walk or establish the divergent-Dominaria episode.' },
+    sources: [{ title: 'Venser', url: 'https://magic.wizards.com/en/story/venser-planeswalker', role: 'retrospective', supports: 'Identifies Venser as an artificer specializing in teleportation whose spark ignited and enabled planeswalking; it does not document the alternate-history scene.' }],
+    artworkNote: 'The retrospective Venser character card is not a literal picture of his first planar crossing or an alternate Dominaria.',
+  },
+  'freyalise-seals-skyshroud': {
+    chronology: { precision: 'relative', label: 'During the repair of Dominaria’s temporal damage, after the Rathi Overlay', basis: 'The official character biography remembers Freyalise sacrificing her life for her people; it does not provide a year or name the precise rift.' },
+    sources: [{ title: 'Freyalise', url: 'https://magic.wizards.com/en/story/freyalise-planeswalker', role: 'retrospective', supports: 'Confirms Freyalise sacrificed her life while defending her people against a catastrophe threatening Dominaria; this short profile does not identify Skyshroud by name.' }],
+    artworkNote: 'The Freyalise printing portrays her character and historical role, not her specific final action at the Skyshroud rift.',
+  },
+  'phyrexia-urabrask-dissent': {
+    chronology: { precision: 'relative', label: 'During New Phyrexia’s internal power struggle, before the invasion collapses', basis: 'The faction retrospective identifies Urabrask and Sheoldred as allies preparing against Norn, but does not by itself narrate Urabrask’s final punishment.' },
+    sources: [{ title: 'The Legends of Phyrexia: All Will Be One', url: 'https://magic.wizards.com/en/news/feature/the-legends-of-phyrexia-all-will-be-one', role: 'retrospective', supports: 'Describes Urabrask forming an alliance with Sheoldred against Elesh Norn and commissioning Kethek; this source does not independently substantiate his later punishment.' }],
+    artworkNote: 'Urabrask’s card portrays the praetor, not his meeting with Sheoldred, the Mirran sanctuary, or his later punishment.',
+  },
+  'phyrexia-elspeth-return': {
+    chronology: { precision: 'relative', label: 'During the final resistance to Elesh Norn, after Elspeth leaves the Sylex mission', basis: 'The episode narrates Elspeth’s changed form and intervention in the battle, not a universal calendar date for her transformation.' },
+    sources: [{ title: 'March of the Machine — Episode 7: Divine Intervention', url: 'https://magic.wizards.com/en/news/magic-story/episode-7-divine-intervention', role: 'story', supports: 'Depicts an angelic Elspeth shielding Chandra and other Mirran allies while confronting Elesh Norn and protecting the opening toward Realmbreaker.' }],
+    artworkNote: 'The selected card illustrates Elspeth’s angelic form but does not provide an independent chronology or document every action in the scene.',
+  },
+  'phyrexia-jin-kamigawa': {
+    chronology: { precision: 'relative', label: 'Before the New Phyrexian invasion, after Jin-Gitaxias reaches Kamigawa', basis: 'The official invasion overview locates Jin-Gitaxias’s research mission before the multiversal assault, without dating Tamiyo’s individual compleation.' },
+    sources: [{ title: "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse", url: 'https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine', role: 'retrospective', supports: 'States that Jin-Gitaxias traveled to Kamigawa and developed a method to compleat planeswalkers; it does not alone document Tamiyo’s complete transformation scene.' }],
+    artworkNote: 'The Tamiyo portrait provides visual context for planeswalker compleation, not a depiction of Jin-Gitaxias performing the research.',
+  },
+  'phyrexia-mirran-survival': {
+    chronology: { precision: 'relative', label: 'Across the occupation of Mirrodin, before and during New Phyrexia’s invasion', basis: 'The official faction retrospective documents Kemba and Koth organizing surviving Mirrans but does not date every campaign or Melira’s specific actions.' },
+    sources: [{ title: 'The Legends of Phyrexia: All Will Be One', url: 'https://magic.wizards.com/en/news/feature/the-legends-of-phyrexia-all-will-be-one', role: 'retrospective', supports: 'Describes Kemba leading surviving leonin and advising Koth as disparate Mirran groups form a resistance; Melira’s separate contributions require other sources.' }],
+    artworkNote: 'The resistance-themed printing represents Mirran survival, not a contemporaneous image of each resistance action or participant.',
+  },
 };
 
 /** Offline integrity only. Checks links and claim metadata, not the truth of article prose. */
