@@ -80,6 +80,7 @@ export const eventProvenance = {
     chronology: { precision: 'relative', label: "At the War of the Spark’s final confrontation on Ravnica", basis: "The published story relates Gideon’s fall within the battle sequence, but does not establish a universal timestamp for the day." },
     sources: [{ title: "War of the Spark: Ravnica — Ashes", url: 'https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12', role: 'story', supports: "Depicts Gideon falling amid the confrontation with Bolas and later characters acknowledging his death; this source does not alone detail the protective transfer." }],
     artworkNote: "A Gideon card provides a representation of the character; the story and its publication date must not be mistaken for visual proof of the transfer.",
+    unresolvedClaims: [{ claim: "Gideon transfers Liliana’s fatal contract punishment to himself.", requiredEvidence: "Locate primary fiction that explicitly narrates the protective transfer, not only the aftermath of Gideon’s death." }],
   },
   'phyrexia-realmbreaker-invasion': {
     chronology: { precision: 'relative', label: "Opening of the coordinated New Phyrexian invasion across planes", basis: "The first March of the Machine story depicts Realmbreaker’s portals and simultaneous invasions without cross-planar calendar synchronization." },
@@ -100,6 +101,7 @@ export const eventProvenance = {
     chronology: { precision: 'relative', label: 'After the Sylex Blast, during Terisiare’s postwar reconstruction', basis: 'The postwar fiction follows Tawnos delivering his recollections to Kayla but does not establish the date of Urza’s original instruction.' },
     sources: [{ title: "The Brothers' War — Episode 1: The End", url: 'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end', role: 'story', supports: 'Depicts Tawnos recounting Urza and Mishra’s war to Kayla after the catastrophe; it does not independently quote the alleged ivory-tower assignment.' }],
     artworkNote: 'Tawnos’s later portrait represents the surviving artificer, not Urza delivering instructions or a historical record of the meeting.',
+    unresolvedClaims: [{ claim: "Urza instructs Tawnos to carry testimony to the scholars of the ivory towers.", requiredEvidence: "Compare the original Brothers’ War fiction with the published postwar story to establish whether Urza gave this instruction." }],
   },
   'innistrad-avacyn-created': {
     chronology: { precision: 'relative', label: 'Before Avacyn’s later disappearance into the Helvault', basis: 'The official plane history establishes Sorin’s creation of Avacyn before Griselbrand’s trap, not a synchronized cross-planar year.' },
@@ -165,6 +167,7 @@ export const eventProvenance = {
     chronology: { precision: 'relative', label: 'During Dominaria United’s pre-invasion Phyrexian infiltration', basis: 'The episode documents an infiltrator’s activities and renewed Phyrexian presence before the wider invasion, not a precise year or all betrayals.' },
     sources: [{ title: 'Dominaria United — Death and Salvation', url: 'https://magic.wizards.com/en/news/magic-story/death-and-salvation-2022-08-16', role: 'story', supports: 'Depicts Ertai’s Phyrexian return and his violence against Squee’s goblin community; it does not independently document Ajani’s betrayal of Jaya.' }],
     artworkNote: 'The selected card is thematic evidence of the infiltration period, not a literal visual record of every compleated agent or death.',
+    unresolvedClaims: [{ claim: "Compleated Ajani betrays the defenders and Jaya Ballard dies as a result.", requiredEvidence: "Use a Dominaria United primary story that narrates Ajani’s actions and Jaya’s death; the current Ertai episode alone is insufficient." }],
   },
   'omenpaths-kellan-first-crossing': {
     chronology: { precision: 'relative', label: 'After the invasion and Kellan’s first Eldraine adventure, before the Ixalan expedition', basis: 'An official Ixalan announcement places Kellan’s travel through Omenpaths between the Eldraine and Ixalan stories, not on a shared interplanar date.' },
@@ -194,11 +197,13 @@ export const eventProvenance = {
       { title: 'A Double Take, Part 1', url: 'https://magic.wizards.com/en/news/making-magic/a-double-take-part-1', role: 'design-commentary', supports: 'Describes Venser as initially a non-planeswalker character intended to become one of the less godlike, post-Mending planeswalkers; the column does not narrate his first walk.' },
     ],
     artworkNote: 'The retrospective Venser character card is not a literal picture of his first planar crossing or an alternate Dominaria.',
+    unresolvedClaims: [{ claim: "Venser first planeswalks while returning from a divergent version of Dominaria.", requiredEvidence: "Check the Time Spiral block novel sequence for the location, participants and precise circumstances of Venser’s first walk." }],
   },
   'freyalise-seals-skyshroud': {
     chronology: { precision: 'relative', label: 'During the repair of Dominaria’s temporal damage, after the Rathi Overlay', basis: 'The official character biography remembers Freyalise sacrificing her life for her people; it does not provide a year or name the precise rift.' },
     sources: [{ title: 'Freyalise', url: 'https://magic.wizards.com/en/story/freyalise-planeswalker', role: 'retrospective', supports: 'Confirms Freyalise sacrificed her life while defending her people against a catastrophe threatening Dominaria; this short profile does not identify Skyshroud by name.' }],
     artworkNote: 'The Freyalise printing portrays her character and historical role, not her specific final action at the Skyshroud rift.',
+    unresolvedClaims: [{ claim: "Freyalise sacrifices herself specifically to close the Skyshroud rift.", requiredEvidence: "Check primary Time Spiral block fiction for the named Skyshroud rift and the location of Freyalise’s last act." }],
   },
   'phyrexia-urabrask-dissent': {
     chronology: { precision: 'relative', label: 'During New Phyrexia’s internal power struggle, before the invasion collapses', basis: 'The faction retrospective identifies Urabrask and Sheoldred as allies preparing against Norn, but does not by itself narrate Urabrask’s final punishment.' },
@@ -242,6 +247,22 @@ export function validateEventProvenance(records, events, sourcesByChapter) {
     if (!['relative', 'undated'].includes(record?.chronology?.precision)) errors.push(`${scope}: invalid chronology precision`);
     if (!detailed(record?.chronology?.basis) || typeof record?.chronology?.label !== 'string' || record.chronology.label.trim().length < 15) errors.push(`${scope}: incomplete time qualification`);
     if (!detailed(record?.artworkNote)) errors.push(`${scope}: missing artwork interpretation`);
+    // A cited claim is not automatically a fully verified event: preserve explicit gaps.
+    if (record?.unresolvedClaims !== undefined) {
+      if (!Array.isArray(record.unresolvedClaims) || record.unresolvedClaims.length < 1 || record.unresolvedClaims.length > 4) {
+        errors.push(`${scope}: unresolved claims require one to four actionable entries`);
+      } else {
+        const claimsSeen = new Set();
+        for (const gap of record.unresolvedClaims) {
+          if (!detailed(gap?.claim) || !detailed(gap?.requiredEvidence)) {
+            errors.push(`${scope}: unresolved claim and required evidence must be substantive`);
+          }
+          const normalizedClaim = String(gap?.claim ?? '').normalize('NFC').trim().toLowerCase();
+          if (claimsSeen.has(normalizedClaim)) errors.push(`${scope}: duplicate unresolved claim`);
+          claimsSeen.add(normalizedClaim);
+        }
+      }
+    }
     if (!Array.isArray(record?.sources) || record.sources.length < 1 || record.sources.length > 3) {
       errors.push(`${scope}: require one to three official claim sources`);
       continue;
