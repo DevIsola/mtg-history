@@ -204,13 +204,13 @@ export const eventProvenance = {
       { title: 'A Double Take, Part 1', url: 'https://magic.wizards.com/en/news/making-magic/a-double-take-part-1', role: 'design-commentary', supports: 'Describes Venser as initially a non-planeswalker character intended to become one of the less godlike, post-Mending planeswalkers; the column does not narrate his first walk.' },
     ],
     artworkNote: 'The retrospective Venser character card is not a literal picture of his first planar crossing or an alternate Dominaria.',
-    unresolvedClaims: [{ claim: "Venser first planeswalks while returning from a divergent version of Dominaria.", requiredEvidence: "Check the Time Spiral block novel sequence for the location, participants and precise circumstances of Venser’s first walk." }],
+    unresolvedClaims: [{ claim: "Venser first planeswalks while returning from a divergent version of Dominaria.", requiredEvidence: "Consult the Time Spiral (2006) and Planar Chaos (2007) novels directly; locate the alternate-timeline passage, identify Venser, Jhoira, and Teferi’s roles, and record the first planeswalk scene with edition and page. Secondary plot summaries are research leads, not primary confirmation." }],
   },
   'freyalise-seals-skyshroud': {
     chronology: { precision: 'relative', label: 'During the repair of Dominaria’s temporal damage, after the Rathi Overlay', basis: 'The official character biography remembers Freyalise sacrificing her life for her people; it does not provide a year or name the precise rift.' },
     sources: [{ title: 'Freyalise', url: 'https://magic.wizards.com/en/story/freyalise-planeswalker', role: 'retrospective', supports: 'Confirms Freyalise sacrificed her life while defending her people against a catastrophe threatening Dominaria; this short profile does not identify Skyshroud by name.' }],
     artworkNote: 'The Freyalise printing portrays her character and historical role, not her specific final action at the Skyshroud rift.',
-    unresolvedClaims: [{ claim: "Freyalise sacrifices herself specifically to close the Skyshroud rift.", requiredEvidence: "Check primary Time Spiral block fiction for the named Skyshroud rift and the location of Freyalise’s last act." }],
+    unresolvedClaims: [{ claim: "Freyalise sacrifices herself specifically to close the Skyshroud rift.", requiredEvidence: "Consult Planar Chaos (2007) directly; locate Freyalise’s final action, establish whether the named rift is at Skyshroud/Keld, and document the forest’s fate with edition and page. Secondary plot summaries do not close this question." }],
   },
   'phyrexia-urabrask-dissent': {
     chronology: { precision: 'relative', label: 'During New Phyrexia’s internal power struggle, before the invasion collapses', basis: 'The faction retrospective identifies Urabrask and Sheoldred as allies preparing against Norn, but does not by itself narrate Urabrask’s final punishment.' },
