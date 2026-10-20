@@ -28,6 +28,9 @@ test('incoming anchor navigation does not animate the visible target', async ({ 
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto(`${chapterUrl}#chapter-reader`);
   await expect(page.locator('#chapter-reader')).toBeInViewport();
+  // Deep links must never acquire temporary reveal cues, even before the
+  // IntersectionObserver can react to the browser's fragment scroll.
+  await expect(page.locator('.chapter-prose [data-living-reveal]')).toHaveCount(0);
   const revealedState = await page.evaluate(() => [...document.querySelectorAll('.chapter-prose h2, .chapter-prose .historical-moment')]
     .filter((element) => {
       const bounds = element.getBoundingClientRect();

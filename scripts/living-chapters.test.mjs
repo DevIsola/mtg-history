@@ -47,6 +47,29 @@ test('registers only offscreen narrative headings and illustrations', () => {
   assert.equal(f.settings().threshold, 0.08);
 });
 
+test('incoming chapter fragments do not register pending reveals before anchor scrolling', () => {
+  for (const locationHash of ['#chapter-reader', '#thran-powerstones']) {
+    const f = fixture();
+    const handle = setupLivingChapterReveals(f.root, {
+      Observer: f.Observer, viewportHeight: 800, reducedMotion: false, locationHash,
+    });
+    assert.equal(handle.count, 0);
+    assert.deepEqual(f.observed, []);
+    for (const element of [f.current, f.upcoming, f.later, f.hidden]) {
+      assert.equal(element.dataset.livingReveal, undefined);
+    }
+  }
+});
+
+test('an ordinary chapter visit continues to observe future reveals', () => {
+  const f = fixture();
+  const handle = setupLivingChapterReveals(f.root, {
+    Observer: f.Observer, viewportHeight: 800, reducedMotion: false, locationHash: '',
+  });
+  assert.equal(handle.count, 2);
+  assert.deepEqual(f.observed, [f.upcoming, f.later]);
+});
+
 test('reveals intersecting content once and does not alter unrelated elements', () => {
   const f = fixture();
   setupLivingChapterReveals(f.root, { Observer: f.Observer, viewportHeight: 800, reducedMotion: false });
