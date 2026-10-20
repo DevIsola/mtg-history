@@ -22,6 +22,7 @@
     "check:editorial": "node scripts/check-editorial-metadata.mjs",
     "check:provenance": "node scripts/check-event-provenance.mjs",
     "audit:history": "node scripts/audit-historical-risk.mjs",
+    "audit:consolidation": "node scripts/audit-editorial-consolidation.mjs",
     "audit:source-gaps": "node scripts/audit-event-source-gaps.mjs",
     "review:novel-evidence": "node scripts/prepare-primary-novel-review.mjs",
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
