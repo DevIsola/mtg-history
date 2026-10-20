@@ -1,3 +1,4 @@
+import { eventProvenance } from '../src/data/event-provenance.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { auditHistoricalRisk, renderHistoricalRiskMarkdown, signalExplanation } from '../src/data/historical-risk.mjs';
@@ -101,14 +102,15 @@ test('report arguments reject unsupported and ambiguous writes', () => {
   assert.throws(() => parseHistoricalRiskArgs(['--bogus']), /Unknown option/);
 });
 
-test('repository-level audit accounts for 26 reviewed and 107 unreviewed records without mutating content', async () => {
+test('repository audit accounts for every unreviewed record as provenance coverage grows', async () => {
   const result = await runHistoricalRiskAudit();
+  const reviewed = Object.keys(eventProvenance).length;
   assert.deepEqual(result.summary, {
-    total: 133, reviewed: 26, queued: 107, chapters: 10,
+    total: 133, reviewed, queued: 133 - reviewed, chapters: 10,
     high: result.summary.high, medium: result.summary.medium, standard: result.summary.standard,
   });
-  assert.equal(result.byChapter.reduce((n, chapter) => n + chapter.queued, 0), 107);
-  assert.equal(new Set(result.rows.map((row) => row.id)).size, 107);
-  assert.equal(result.summary.high + result.summary.medium + result.summary.standard, 107);
+  assert.equal(result.byChapter.reduce((n, chapter) => n + chapter.queued, 0), 133 - reviewed);
+  assert.equal(new Set(result.rows.map((row) => row.id)).size, 133 - reviewed);
+  assert.equal(result.summary.high + result.summary.medium + result.summary.standard, 133 - reviewed);
   assert.ok(result.rows.every((row) => row.artwork.card && row.chapterId && row.chapterSourceCount >= 0));
 });
