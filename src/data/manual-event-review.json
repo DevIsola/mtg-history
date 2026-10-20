@@ -1,0 +1,14 @@
+{
+  "battle-of-koilos": {
+    "eventId": "battle-of-koilos",
+    "chapterId": "weatherlight",
+    "cardId": "dd8ad3aa-3225-45ae-8343-5991f5b52269",
+    "status": "PENDING_PRIMARY_FICTION",
+    "bookTitle": "Invasion",
+    "relatedEventId": "brothers-koilos-stones",
+    "claim": "The Coalition secured a specific victory at Koilos during the original Phyrexian invasion of Dominaria, before the Rathi Overlay and the ultimate defeat of Yawgmoth.",
+    "requiredEvidence": "Examine J. Robert King's Invasion (2000), recording the edition and chapter or page that narrates the Koilos battle, its participants, outcome and sequence relative to the Rathi Overlay. Compare any later novel passages separately; a bibliography entry or card name is insufficient.",
+    "notice": "The event's account of the Coalition victory at Koilos still awaits comparison with its original fictional source. The chapter bibliography lists the novel Invasion, but a listed book is not proof that every scene detail has been checked.",
+    "artworkNote": "Coalition Victory (Invasion) illustrates the Coalition's unity; the card's title, rules and artwork do not independently establish the battle's exact sequence or in-world date."
+  }
+}

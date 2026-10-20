@@ -25,6 +25,7 @@
     "audit:consolidation": "node scripts/audit-editorial-consolidation.mjs",
     "audit:source-gaps": "node scripts/audit-event-source-gaps.mjs",
     "review:novel-evidence": "node scripts/prepare-primary-novel-review.mjs",
+    "review:koilos-evidence": "node scripts/prepare-koilos-review.mjs",
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
     "check:artwork": "node scripts/check-artwork-fidelity.mjs",
     "review:artwork": "node scripts/check-artwork-fidelity.mjs",

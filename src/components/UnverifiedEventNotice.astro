@@ -1,0 +1,35 @@
+---
+interface ReviewEntry {
+  eventId: string;
+  status: string;
+  bookTitle: string;
+  notice: string;
+  claim: string;
+  requiredEvidence: string;
+  artworkNote: string;
+}
+interface Props { entry: ReviewEntry; }
+const { entry } = Astro.props;
+---
+<section class="event-research-notice" aria-labelledby="event-research-notice-heading">
+  <p class="eyebrow">Editorial evidence status</p>
+  <h3 id="event-research-notice-heading">Primary-fiction review pending</h3>
+  <p>{entry.notice}</p>
+  <p><strong>Claim being reviewed:</strong> {entry.claim}</p>
+  <p><strong>Evidence needed:</strong> {entry.requiredEvidence}</p>
+  <p><strong>Artwork interpretation:</strong> {entry.artworkNote}</p>
+  <p class="event-research-notice__limit">This is an open research question, not a conclusion that the narrative is false. No source-review certification is implied.</p>
+</section>
+<style lang="scss">
+  .event-research-notice {
+    margin-block: 2rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    background: var(--paper-white);
+    border: 1px solid var(--line);
+    border-radius: .85rem;
+    color: var(--ink);
+  }
+  .event-research-notice h3 { margin-block: .5rem 1rem; color: var(--ink); }
+  .event-research-notice p { line-height: 1.6; }
+  .event-research-notice__limit { font-size: .85rem; color: var(--ink-soft); }
+</style>

@@ -6,6 +6,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HistoricalCard from '../../components/HistoricalCard.astro';
 import EventEvidence from '../../components/EventEvidence.astro';
+import UnverifiedEventNotice from '../../components/UnverifiedEventNotice.astro';
 
 import {
   historicalEvents,
@@ -16,6 +17,7 @@ import { characters } from '../../data/characters';
 import { withBase } from '../../utils/paths';
 import { chapterCardUse } from '../../utils/card-printings';
 import { eventProvenance } from '../../data/event-provenance.mjs';
+import manualEventReviews from '../../data/manual-event-review.json';
 
 type Chapter = CollectionEntry<'chapters'>;
 type Card = ReturnType<typeof chapterCardUse>;
@@ -73,6 +75,12 @@ const people = event.characterIds.map((id) => {
 });
 
 const provenance = eventProvenance[event.id];
+const manualReview = Object.values(manualEventReviews).find(
+  (item) => item.eventId === event.id
+);
+if (manualReview && provenance) {
+  throw new Error(`Event ${event.id}: manual review conflicts with reviewed provenance`);
+}
 
 const currentIndex = historicalEvents.findIndex(
   (entry) => entry.id === event.id
@@ -135,6 +143,7 @@ const nextEvent =
           </div>
 
           {provenance && <EventEvidence entry={provenance} />}
+          {manualReview && <UnverifiedEventNotice entry={manualReview} />}
 
           <section class="historical-event-detail__related">
             <p class="eyebrow">
