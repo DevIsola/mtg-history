@@ -1,13 +1,13 @@
 {
   "title": "Dyfed Opens a Passage to Phyrexia",
   "chapterId": "thran",
-  "summary": "A planeswalker introduces Yawgmoth to an existing artificial plane and creates the route that enables his experiments.",
+  "summary": "Dyfed connects Dominaria to an artificial plane that already existed, enabling Yawgmoth to pursue a dangerous response to Thran phthisis.",
   "narrative": [
-    "Dyfed took Yawgmoth to a world created earlier by an unnamed planeswalker. He did not originate that plane.",
-    "The portal between Dominaria and Phyrexia allowed Yawgmoth to move patients and followers into a setting where his program of enforced transformation could grow.",
-    "Dyfed's discovery supplied access, not authorship. The artificial world already existed before Yawgmoth entered it. Distinguishing its creation from his later domination is essential: it explains why the threat arose from choices made by the physician and those who enabled him, rather than from an inherently new plane created for his purposes.",
-    "On Dominaria, political authority and the phthisis crisis constrained what Yawgmoth could do in public. A separate world offered both room and secrecy. Moving vulnerable patients through the gateway therefore had a double significance: it appeared to promise relief while putting people under the control of someone increasingly willing to alter them without meaningful consent.",
-    "Rebbec's later decision to close the route was consequently more than the destruction of a convenient passage. It limited the ability of Yawgmoth's growing Phyrexian power to return openly to the civilization from which he had drawn his first patients and followers. The seal addressed access; it did not undo what had already happened beyond the gateway."
+    "The planeswalker Dyfed brought Yawgmoth to Phyrexia after the death of its earlier creator, an unnamed planeswalker. Yawgmoth did not create the plane, and Dyfed did not create it for him.",
+    "Dyfed opened the planar gateway between Dominaria and Phyrexia. Yawgmoth saw the artificial world as a place where its strange artifact-magic might treat phthisis, the disease associated with the Thran powerstones.",
+    "Yawgmoth assumed control of Phyrexia rather than creating it. Drawing strength from the plane's unnatural ecology, he increasingly treated its engineered forms of life as superior to ordinary life, departing from his earlier claim to seek a treatment for phthisis.",
+    "The Thran grew horrified by Yawgmoth's actions and by the power he gained from Phyrexia. War followed between his Phyrexian forces and a weakened Thran civilization, showing how far the conflict had moved beyond its original medical pretext.",
+    "The Thran–Phyrexian war ended with the portal sealed, leaving Yawgmoth and his forces isolated on Phyrexia. Opening the route made this history possible, but it must not be confused with creating Phyrexia itself."
   ],
   "characterIds": [
     "yawgmoth",
