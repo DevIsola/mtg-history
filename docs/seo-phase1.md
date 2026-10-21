@@ -6,4 +6,4 @@ After Astro builds, `scripts/build-seo.mjs` enumerates only prerendered `index.h
 
 Validate with `node --test scripts/seo.test.mjs`, `pnpm run verify`, `pnpm exec playwright test`. Inspect `dist/sitemap.xml` and `dist/robots.txt` and check head tags in the production preview.
 
-Future phase: a dedicated, properly licensed static 1200×630 social-card image and image-specific `og:image`/`twitter:image` tags. No image metadata is emitted until the actual image exists.
+Phase 2 adds a dedicated, original static 1200×630 preview image and image-specific Open Graph/Twitter metadata. See `docs/social-preview-phase2.md`.

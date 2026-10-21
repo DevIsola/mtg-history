@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { mkdtemp, mkdir, writeFile, copyFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { buildSeo } from './build-seo.mjs';
 import { test } from 'node:test';
 import { canonicalUrl, sitemapPaths, sitemapXml } from '../src/utils/seo.mjs';
 
@@ -31,4 +35,47 @@ test('layout publishes complete canonical and social text metadata', () => {
 test('build generates sitemap after Astro and before indexing', () => {
   assert.equal(pkg.scripts.build, 'astro build && node scripts/build-seo.mjs && pagefind --site dist');
   assert.match(pkg.scripts.verify, /pnpm run build && pnpm run check:search/);
+});
+
+
+test('social preview is a nontrivial, exact-size PNG in public assets', () => {
+  const bytes = readFileSync(new URL('../public/social-preview.png', import.meta.url));
+  assert.ok(bytes.length > 20_000);
+  assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+  assert.equal(bytes.readUInt32BE(16), 1200);
+  assert.equal(bytes.readUInt32BE(20), 630);
+});
+
+test('shared social metadata uses the deployed base and a large image card', () => {
+  assert.match(layout, /new URL\(withBase\('social-preview\.png'\), Astro\.site\)\.href/);
+  assert.match(layout, /property="og:image" content=\{socialImage\}/);
+  assert.match(layout, /property="og:image:width" content="1200"/);
+  assert.match(layout, /property="og:image:height" content="630"/);
+  assert.match(layout, /property="og:image:alt" content=\{socialImageAlt\}/);
+  assert.match(layout, /name="twitter:card" content="summary_large_image"/);
+  assert.match(layout, /name="twitter:image" content=\{socialImage\}/);
+});
+
+test('SEO build fails on missing, invalid or unreferenced social imagery', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'mtg-social-preview-'));
+  const imageUrl = 'https://devisola.github.io/mtg-history/social-preview.png';
+  try {
+    const routes = ['/', '/chapters/thran/', '/characters/yawgmoth/'];
+    for (const path of routes) {
+      const folder = join(dir, path.slice(1));
+      await mkdir(folder, { recursive: true });
+      const canonical = `https://devisola.github.io/mtg-history${path}`;
+      await writeFile(join(folder, 'index.html'), `<link rel="canonical" href="${canonical}" /><meta property="og:image" content="${imageUrl}" /><meta name="twitter:image" content="${imageUrl}" />`);
+    }
+    assert.throws(() => buildSeo(dir), /Missing social-preview/);
+    await writeFile(join(dir, 'social-preview.png'), 'not an image');
+    assert.throws(() => buildSeo(dir), /1200x630 PNG/);
+    await copyFile(new URL('../public/social-preview.png', import.meta.url), join(dir, 'social-preview.png'));
+    buildSeo(dir);
+    assert.match(readFileSync(join(dir, 'sitemap.xml'), 'utf8'), /chapters\/thran/);
+    await writeFile(join(dir, 'chapters', 'thran', 'index.html'), '<link rel="canonical" href="https://devisola.github.io/mtg-history/chapters/thran/" />');
+    assert.throws(() => buildSeo(dir), /Missing or mismatched social preview metadata: \/chapters\/thran\//);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
 });
