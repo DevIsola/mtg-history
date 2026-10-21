@@ -2,8 +2,15 @@
 ---
 import { withBase } from '../utils/paths';
 import ThemeToggle from './ThemeToggle.astro';
+import { isTranslatedHome, uiFor } from '../utils/i18n.mjs';
 
-const links = [
+interface Props { locale?: 'en' | 'pt-BR'; }
+const { locale = 'en' } = Astro.props;
+const ui = uiFor(locale);
+const showLanguageSwitch = isTranslatedHome(Astro.url.pathname, withBase(''));
+
+// Keep the established English routes and their regression-test contract intact.
+const englishLinks = [
   { label: 'Home', href: withBase('') },
   { label: 'Discover', href: withBase('discover/') },
   { label: 'Search', href: withBase('search/') },
@@ -12,6 +19,13 @@ const links = [
   { label: 'Archive', href: withBase('archive/') },
   { label: 'About', href: withBase('about/') },
 ];
+const ptPaths = ['pt-br/', 'timeline/', 'characters/', 'search/', 'about/'];
+const links = locale === 'pt-BR'
+  ? ui.navigation.map((label, index) => ({ label, href: withBase(ptPaths[index]) }))
+  : englishLinks;
+const switchPath = locale === 'pt-BR' ? '' : 'pt-br/';
+const switchLabel = locale === 'pt-BR' ? 'EN' : 'PT-BR';
+const switchAria = locale === 'pt-BR' ? 'Switch to English' : 'Mudar para português brasileiro';
 
 
 
@@ -23,8 +37,8 @@ const current =
   <div class="site-header__inner page-shell">
     <a
       class="brand"
-      href={withBase('')}
-      aria-label="Chronicles of the Multiverse, home"
+      href={withBase(locale === 'pt-BR' ? 'pt-br/' : '')}
+      aria-label={ui.homeAria}
     >
       <span class="brand__sigil" aria-hidden="true">✦</span>
 
@@ -36,7 +50,7 @@ const current =
     <div class="site-header__actions">
       <nav
         class="desktop-navigation"
-        aria-label="Main navigation"
+        aria-label={ui.navAria}
       >
         {links.map((link) => (
           <a
@@ -56,13 +70,19 @@ const current =
 
       <ThemeToggle />
 
+      {showLanguageSwitch && (
+        <a class="site-header__language" href={withBase(switchPath)}
+          hreflang={locale === 'pt-BR' ? 'en' : 'pt-BR'}
+          aria-label={switchAria}>{switchLabel}</a>
+      )}
+
       <details class="mobile-navigation">
-        <summary aria-label="Toggle navigation">
-          <span>Menu</span>
+        <summary aria-label={ui.toggle}>
+          <span>{ui.menu}</span>
           <span aria-hidden="true">☰</span>
         </summary>
 
-        <nav aria-label="Mobile navigation">
+        <nav aria-label={ui.mobileAria}>
           {links.map((link) => (
             <a
               href={link.href}
@@ -82,3 +102,17 @@ const current =
     </div>
   </div>
 </header>
+
+<style>
+  .site-header__language {
+    flex: 0 0 auto;
+    color: var(--gold-light);
+    border: 1px solid currentColor;
+    border-radius: 0.3rem;
+    padding: 0.25rem 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .site-header__language:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+</style>
