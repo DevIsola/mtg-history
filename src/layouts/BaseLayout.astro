@@ -10,6 +10,8 @@ interface Props {
   description: string;
 }
 const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const socialTitle = `${title} | Chronicles of the Multiverse`;
 ---
 <!doctype html>
 <html lang="en">
@@ -45,6 +47,15 @@ const { title, description } = Astro.props;
 
     <meta name="theme-color" content="#11191d" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chronicles of the Multiverse" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <title>{title} | Chronicles of the Multiverse</title>
   </head>

@@ -30,7 +30,7 @@ test('search result routes must remain under the GitHub Pages prefix', () => {
 
 test('build pipeline indexes static pages before link checks', () => {
   const pkg = JSON.parse(read('package.json'));
-  assert.equal(pkg.scripts.build, 'astro build && pagefind --site dist');
+  assert.equal(pkg.scripts.build, 'astro build && node scripts/build-seo.mjs && pagefind --site dist');
   assert.match(pkg.scripts.verify, /pnpm run build && pnpm run check:search && pnpm run check:links/);
   assert.equal(pkg.scripts['check:search'], 'node scripts/check-pagefind-index.mjs');
   assert.match(read('src/layouts/BaseLayout.astro'), /<main id="main-content" data-pagefind-body>/);
