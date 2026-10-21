@@ -6,7 +6,7 @@ const read = (path) => readFileSync(new URL('../' + path, import.meta.url), 'utf
 const base = '/mtg-history/';
 
 test('only published locale-paired directories provide reciprocal alternatives', () => {
-  for (const path of ['', 'timeline/', 'characters/', 'events/', 'archive/']) {
+  for (const path of ['', 'search/', 'timeline/', 'characters/', 'events/', 'archive/']) {
     assert.equal(translatedSuffix(base + path), path);
     assert.equal(translatedSuffix(base + 'pt-br/' + path), path);
     assert.deepEqual(routeAlternates(base + path, 'https://devisola.github.io'), [
@@ -16,8 +16,8 @@ test('only published locale-paired directories provide reciprocal alternatives',
   }
 });
 
-test('untranslated profiles, chapters and search cannot claim Portuguese equivalents', () => {
-  for (const path of ['chapters/thran/', 'characters/urza/', 'events/brothers-war/', 'search/', 'discover/','about/', 'pt-br/chapters/thran/']) {
+test('untranslated profiles and chapters cannot claim Portuguese equivalents', () => {
+  for (const path of ['chapters/thran/', 'characters/urza/', 'events/brothers-war/', 'discover/','about/', 'pt-br/chapters/thran/']) {
     assert.equal(isTranslatedRoute(base + path), false, path);
     assert.deepEqual(routeAlternates(base + path, 'https://devisola.github.io'), []);
   }
@@ -25,7 +25,7 @@ test('untranslated profiles, chapters and search cannot claim Portuguese equival
 
 test('Portuguese navigation labels actual translated directories accurately', () => {
   const pt = uiFor('pt-BR');
-  assert.deepEqual(pt.navigation, ['Início', 'Descobrir (EN)', 'Buscar (EN)', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre (EN)']);
+  assert.deepEqual(pt.navigation, ['Início', 'Descobrir (EN)', 'Buscar', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre (EN)']);
   assert.deepEqual(pt.footerLinks, ['Linha do tempo', 'Glossário (EN)', 'Sobre o projeto (EN)']);
 });
 

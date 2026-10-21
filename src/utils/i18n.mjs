@@ -13,7 +13,7 @@ const strings = {
     credit: 'Created and maintained with love 🖤 by',
   },
   'pt-BR': {
-    navigation: ['Início', 'Descobrir (EN)', 'Buscar (EN)', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre (EN)'],
+    navigation: ['Início', 'Descobrir (EN)', 'Buscar', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre (EN)'],
     navAria: 'Navegação principal', mobileAria: 'Navegação móvel', toggle: 'Abrir navegação',
     menu: 'Menu', skip: 'Pular para o conteúdo', homeAria: 'Chronicles of the Multiverse, início',
     footerIntro: 'Um guia histórico independente sobre as histórias de Magic: The Gathering.',
@@ -44,7 +44,7 @@ export function homeAlternates(origin, base = '/mtg-history/') {
 }
 
 // Only directory UIs with actual Portuguese counterparts participate in hreflang.
-export const TRANSLATED_SUFFIXES = Object.freeze(['', 'timeline/', 'characters/', 'events/', 'archive/']);
+export const TRANSLATED_SUFFIXES = Object.freeze(['', 'search/', 'timeline/', 'characters/', 'events/', 'archive/']);
 
 export function translatedSuffix(pathname, base = '/mtg-history/') {
   if (typeof pathname !== 'string' || !base.startsWith('/') || !base.endsWith('/')) return null;

@@ -20,7 +20,7 @@ const englishLinks = [
   { label: 'Archive', href: withBase('archive/') },
   { label: 'About', href: withBase('about/') },
 ];
-const ptPaths = ['pt-br/', 'discover/', 'search/', 'pt-br/timeline/', 'pt-br/characters/', 'pt-br/archive/', 'about/'];
+const ptPaths = ['pt-br/', 'discover/', 'pt-br/search/', 'pt-br/timeline/', 'pt-br/characters/', 'pt-br/archive/', 'about/'];
 const links = locale === 'pt-BR'
   ? ui.navigation.map((label, index) => ({ label, href: withBase(ptPaths[index]) }))
   : englishLinks;

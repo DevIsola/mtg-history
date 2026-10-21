@@ -17,7 +17,7 @@ test('Brazilian Portuguese has a real local homepage and correct locale configur
 test('localized copy is explicit about English-only destination routes', () => {
   const pt = uiFor('pt-BR');
   assert.equal(pt.navigation[0], 'Início');
-  assert.deepEqual(pt.navigation.map((label) => label.endsWith('(EN)')), [false, true, true, false, false, false, true]);
+  assert.deepEqual(pt.navigation.map((label) => label.endsWith('(EN)')), [false, true, false, false, false, false, true]);
   assert.deepEqual(pt.footerLinks.map((label) => label.endsWith('(EN)')), [false, true, true]);
   assert.throws(() => uiFor('fr'), /Unsupported locale/);
 });
