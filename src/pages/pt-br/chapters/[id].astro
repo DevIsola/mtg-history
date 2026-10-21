@@ -6,10 +6,11 @@ import { historicalEvents } from '../../../data/events';
 import { withBase } from '../../../utils/paths';
 import { PORTUGUESE_BATCH_1 } from '../../../data/pt-chapter-batch1.mjs';
 import { PORTUGUESE_BATCH_2 } from '../../../data/pt-chapter-batch2.mjs';
+import { PORTUGUESE_BATCH_3 } from '../../../data/pt-chapter-batch3.mjs';
 import type { PortugueseChapter } from '../../../data/pt-chapter-batch1.mjs';
 
 export function getStaticPaths() {
-  return [...PORTUGUESE_BATCH_1, ...PORTUGUESE_BATCH_2].map((companion) => ({
+  return [...PORTUGUESE_BATCH_1, ...PORTUGUESE_BATCH_2, ...PORTUGUESE_BATCH_3].map((companion) => ({
     params: { id: companion.id },
     props: { companion },
   }));
