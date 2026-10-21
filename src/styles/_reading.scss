@@ -1,10 +1,9 @@
 /* Chapter reading preferences — scoped to text, not the chapter navigation. */
 .chapter-reading-controls {
-  margin: 1.6rem 0 2rem;
-  padding: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0.9rem 0 1.2rem;
+  padding: clamp(0.8rem, 1.5vw, 1.1rem);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--jade);
-  border-radius: 5px;
+  border-radius: 4px;
   background: var(--paper-white);
 }
 
@@ -44,8 +43,8 @@
 .chapter-reading-controls__groups {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
-  gap: 1rem 1.4rem;
-  margin-top: 1.4rem;
+  gap: 0.7rem 1rem;
+  margin-top: 0.8rem;
 }
 
 .chapter-reading-controls fieldset {
@@ -220,16 +219,17 @@
 
 .historical-moment {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(175px, 230px);
-  gap: clamp(1.5rem, 3vw, 2.4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(145px, 195px);
+  gap: clamp(1.3rem, 3vw, 2.5rem);
   align-items: start;
-  margin-block: clamp(2.5rem, 5vw, 4rem);
-  padding: clamp(1.4rem, 3vw, 2.15rem);
-  background: var(--paper-white);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--gold);
-  border-radius: 6px;
-  box-shadow: 0 16px 34px #1020230d;
+  margin-block: clamp(2.8rem, 5vw, 4rem);
+  padding-block: clamp(1.4rem, 2.5vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+.historical-moment__copy {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .historical-moment__copy,
@@ -257,15 +257,14 @@
 }
 
 .historical-moment__narrative {
-  padding-left: 1.15rem;
-  border-left: 2px solid var(--line);
+  padding: 0;
 }
 
 .chapter-prose .historical-moment__narrative p {
   margin: 0 0 1.15rem;
   color: var(--ink-soft);
   font-size: 0.96rem;
-  line-height: 1.85;
+  line-height: 1.72;
 }
 
 .chapter-prose .historical-moment__narrative p:last-child {
@@ -273,16 +272,20 @@
 }
 
 .historical-moment__illustration {
+  grid-column: 2;
+  grid-row: 1;
   width: 100%;
-  max-width: 230px;
+  max-width: 195px;
 }
 
-.historical-moment__illustration .historical-card img {
+.chapter-prose .historical-moment__illustration .historical-card img {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 4.7% / 3.4%;
-  box-shadow: 0 11px 25px #0003;
+  height: clamp(132px, 14vw, 165px);
+  object-fit: cover;
+  object-position: 50% 27%;
+  border-radius: 3px;
+  box-shadow: 0 6px 18px #0002;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -321,12 +324,20 @@
 @media (max-width: 680px) {
   .historical-moment {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
+    gap: 1.1rem;
+  }
+
+  .historical-moment__copy {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .historical-moment__illustration {
-    width: min(100%, 230px);
-    margin-inline: auto;
+    grid-column: 1;
+    grid-row: 2;
+    width: min(100%, 240px);
+    max-width: 240px;
+    margin-inline: 0;
   }
 }
 
@@ -358,14 +369,12 @@
 /* Sticky chapter reader and section-aware contents */
 
 .chapter-toc {
-  max-height: calc(100dvh - var(--site-header-height) - 2.5rem);
+  max-height: calc(100dvh - var(--site-header-height) - 1rem);
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 1.35rem 1.15rem 1rem;
-  background: var(--paper-white);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  box-shadow: 0 8px 26px #1020230b;
+  padding: 0.85rem 0.9rem;
+  background: var(--paper);
+  border-left: 2px solid var(--line);
 }
 
 .chapter-toc__toolbar {
@@ -571,10 +580,7 @@
 @media (max-width: 900px) {
   .chapter-reading-grid {
     grid-template-columns: 1fr;
-  }
-
-  .chapter-reading-grid {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .chapter-reading-sidebar {
@@ -582,8 +588,15 @@
   }
 
   .chapter-toc {
-    max-height: calc(100dvh - var(--site-header-height) - 1rem);
+    max-height: calc(100dvh - var(--site-header-height));
+    padding: 0.4rem 0.8rem;
+    background: var(--paper-white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    box-shadow: 0 5px 14px #0002;
   }
+
+  .chapter-toc__toolbar { display: none; }
 
   .chapter-toc[data-toc-ready='true'] .chapter-toc__mobile-toggle {
     display: flex;
@@ -801,26 +814,24 @@
 
 /* Compact chapter navigation. The full chronology remains on the Timeline page. */
 .chapter-switcher-band {
-  position: sticky;
-  top: var(--site-header-height);
+  position: relative;
   z-index: 45;
   background: var(--paper-white);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 8px 22px #10202312;
 }
 
 .chapter-switcher {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  min-height: 74px;
-  padding-block: 0.65rem;
+  gap: 1rem;
+  min-height: 58px;
+  padding-block: 0.35rem;
 }
 
 .chapter-switcher__identity { min-width: 0; }
 .chapter-switcher__eyebrow {
-  display: block;
+  display: none;
   margin-bottom: 0.2rem;
   color: var(--jade);
   font-size: 0.75rem;
@@ -942,15 +953,15 @@
 }
 .chapter-switcher__timeline:hover { text-decoration: underline; }
 
-/* Deep links land at the article, with the header and compact switcher visible. */
-.chapter-reader { padding-block: clamp(1.7rem, 3.5vw, 3rem) clamp(4rem, 7vw, 7rem); scroll-margin-top: calc(var(--site-header-height) + 90px); }
+/* Only the global header and sidebar TOC remain sticky on desktop. */
+.chapter-reader { padding-block: clamp(1.4rem, 3vw, 2.5rem) clamp(4rem, 7vw, 7rem); scroll-margin-top: calc(var(--site-header-height) + 0.75rem); }
 .chapter-reader:focus:not(:focus-visible) { outline: none; }
-.chapter-reader .chapter-reading-sidebar { top: calc(var(--site-header-height) + 4.625rem); }
-.chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height) - 4.625rem); }
+.chapter-reader .chapter-reading-sidebar { top: calc(var(--site-header-height) + 0.75rem); }
+.chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height) - 1.5rem); }
 .chapter-reader .chapter-prose h2:first-child { margin-top: 0.65rem; }
 .chapter-reader__context { display: none; }
 .chapter-reader .chapter-prose h2,
-.chapter-reader .chapter-sources { scroll-margin-top: calc(var(--site-header-height) + 6.7rem); }
+.chapter-reader .chapter-sources { scroll-margin-top: calc(var(--site-header-height) + 2rem); }
 .chapter-banner__start {
   display: inline-flex;
   gap: 0.6rem;
@@ -989,13 +1000,13 @@
 .chapter-reader .chapter-publications ul { margin-top: 1.15rem; }
 
 @media (max-width: 900px) {
-  .chapter-switcher-band { position: relative; top: auto; z-index: 15; }
+  .chapter-switcher-band { z-index: 15; }
   .chapter-reader { scroll-margin-top: calc(var(--site-header-height) + 0.65rem); }
   .chapter-reader .chapter-reading-sidebar { top: var(--site-header-height); }
   .chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height)); }
   .chapter-reader__context { display: block; margin: 1.2rem 0 0; color: var(--jade); font-size: 0.82rem; font-weight: 750; }
   .chapter-reader .chapter-prose h2,
-  .chapter-reader .chapter-sources { scroll-margin-top: calc(var(--site-header-height) + 4.5rem); }
+  .chapter-reader .chapter-sources { scroll-margin-top: calc(var(--site-header-height) + 5.5rem); }
 }
 @media (max-width: 680px) {
   .chapter-switcher { flex-wrap: wrap; gap: 0.6rem; padding-block: 0.85rem; }

@@ -7,9 +7,10 @@ type HistoricalCardData = { scryfallId: string; significance: string };
 
 interface Props {
   card: HistoricalCardData;
+  compact?: boolean;
 }
 
-const { card: legacyCard } = Astro.props;
+const { card: legacyCard, compact = false } = Astro.props;
 const printing = await getEntry('cards', legacyCard.scryfallId);
 if (!printing) throw new Error(`Missing canonical card ${legacyCard.scryfallId}`);
 // Printing fields come only from the canonical collection. Significance is local.
@@ -19,7 +20,7 @@ const imageSrcset = cardImageSrcset(printing.id);
 const cardUrl = cardScryfallUrl(card);
 ---
 
-<figure class="historical-card">
+<figure class={compact ? 'historical-card historical-card--plate' : 'historical-card'}>
   <a
     href={cardUrl}
     target="_blank"
@@ -41,9 +42,14 @@ const cardUrl = cardScryfallUrl(card);
   <figcaption class="historical-card__caption">
     <h3>{card.name}</h3>
 
-    <p class="historical-card__significance">
-      {card.significance}
-    </p>
+    {compact ? (
+      <details class="historical-card__interpretation">
+        <summary>Art and historical context</summary>
+        <p class="historical-card__significance">{card.significance}</p>
+      </details>
+    ) : (
+      <p class="historical-card__significance">{card.significance}</p>
+    )}
 
     <p class="historical-card__credit">
       Illustrated by {card.artist}
@@ -109,6 +115,30 @@ const cardUrl = cardScryfallUrl(card);
     color: var(--ink-soft);
     font-size: 0.92rem;
     line-height: 1.7;
+  }
+
+  .historical-card__interpretation {
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .historical-card__interpretation summary {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--link-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .historical-card__interpretation summary:focus-visible {
+    outline: 3px solid var(--link-color);
+    outline-offset: 2px;
+  }
+
+  .historical-card__interpretation .historical-card__significance {
+    margin-top: 0.25rem;
   }
 
   .historical-card__credit {
