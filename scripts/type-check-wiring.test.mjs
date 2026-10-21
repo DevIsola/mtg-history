@@ -22,6 +22,7 @@ test('full verification gates deployment on Astro diagnostics before building', 
     'pnpm run check:glossary',
     'pnpm run check:types',
     'pnpm run build',
+    'pnpm run check:search',
     'pnpm run check:links',
   ]);
 });
