@@ -26,7 +26,7 @@ test('PT-BR timeline: Portuguese era summaries remain searchable without changin
   await page.goto(`${base}timeline/`);
   await page.getByRole('searchbox', { name: 'Filtrar registros neste catálogo' }).fill('reparação');
   await expect(page.locator('[data-pt-entry]:visible')).toHaveCount(1);
-  await expect(page.locator('[data-pt-entry]:visible a')).toHaveAttribute('href', '/mtg-history/chapters/mending/');
+  await expect(page.locator('[data-pt-entry]:visible a[hreflang="en"]')).toHaveAttribute('href', '/mtg-history/chapters/mending/');
 });
 
 

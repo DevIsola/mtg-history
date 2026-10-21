@@ -85,7 +85,7 @@ test('timeline links four Portuguese adaptations without changing original Thran
   assert.match(timeline, /BATCH_1_IDS\.includes\(era\.id\)/);
   assert.match(timeline, /withBase\(`pt-br\/chapters\/\$\{era\.id\}\/`\)/);
   assert.match(timeline, /withBase\(`chapters\/\$\{era\.id\}\/`\)/);
-  assert.match(homepage, /Quatro períodos históricos/);
+  assert.match(homepage, /Sete períodos históricos/);
 });
 
 test('static route, progressive enhancement and catalog accessibility are preserved', () => {
