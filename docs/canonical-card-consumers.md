@@ -1,5 +1,8 @@
 # Canonical card consumers — Phase 2
 
+> **Historical migration record.** This one-time migration was completed and its obsolete runner has been retired. Commands below document the original rollout and must **not** be executed against current `main`. For supported checks, use `pnpm run verify` and see [project maintenance](project-maintenance.md).
+
+
 PR #76 created the exact-printing registry at `src/content/cards/<Scryfall-UUID>.json`.
 This phase makes the reader-facing card renderers use that registry. Existing
 chapter `cardIds`, event `cardId`, and character `featuredCardId` are the only

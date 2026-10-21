@@ -1,5 +1,8 @@
 # Entity content collections — migration 1: canonical records
 
+> **Historical migration record.** This one-time migration was completed and its obsolete runner has been retired. Commands below document the original rollout and must **not** be executed against current `main`. For supported checks, use `pnpm run verify` and see [project maintenance](project-maintenance.md).
+
+
 ## Architecture
 
 Character biographies, historical events, and relationship ties are now stored as

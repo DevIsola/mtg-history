@@ -65,7 +65,7 @@ The **[relationship explorer](https://devisola.github.io/mtg-history/relationshi
 </tr>
 <tr>
   <td><strong><a href="https://devisola.github.io/mtg-history/characters/">Character profiles</a>.</strong> Each profile has a biography, the chapters and events the character appears in, and a featured card portrait.</td>
-  <td><strong><a href="https://devisola.github.io/mtg-history/timeline/">Timeline atlas</a>.</strong> Ten eras in story order, each with its story period, publication history and 130 events, which you can search and filter.</td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/timeline/">Timeline atlas</a>.</strong> Ten eras in story order, each with its story period, publication history and 133 events, which you can search and filter.</td>
 </tr>
 <tr>
   <td><img src="docs/screenshots/archive.jpg" alt="The illustrated archive filtered to The Brothers' War, showing a gallery of its card printings" width="100%" /></td>
@@ -73,7 +73,7 @@ The **[relationship explorer](https://devisola.github.io/mtg-history/relationshi
 </tr>
 <tr>
   <td><strong><a href="https://devisola.github.io/mtg-history/archive/">Illustrated archive</a>.</strong> Every card reference, grouped by chapter, filterable by chapter, set and search, in gallery or compact view.</td>
-  <td><strong><a href="https://devisola.github.io/mtg-history/discover/">Discovery</a>.</strong> One searchable index of 228 chapters, characters and events.</td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/discover/">Discovery</a>.</strong> One searchable index of 231 chapters, characters and events.</td>
 </tr>
 </table>
 
@@ -163,9 +163,13 @@ Recapture after any visual change. Card imagery belongs to its artists and right
 
 Ten published chapters currently span the ancient Thran, the Brothers' War, Dominaria's Ice Age, the Weatherlight and Otaria eras, the Mending, stories across other worlds, the War of the Spark, March of the Machine, and the Omenpaths era.
 
+The Portuguese reading experience includes all ten chapter adaptations, localized catalogs, bilingual Pagefind search, and reader-facing correction reporting. These chapters are editorial adaptations, not certified full translations.
+
+For active commands, cleanup policy, and historical documentation, see [project maintenance](docs/project-maintenance.md).
+
 | Chapters | Characters | Events | Relationships | Card printings | Glossary terms |
 | :------: | :--------: | :----: | :-----------: | :------------: | :------------: |
-| 10       | 88         | 130    | 118           | 133            | 10             |
+| 10       | 88         | 133    | 118           | 133            | 10             |
 
 Cards, characters, events, relationships and glossary terms are typed content collections. The engineering pipeline checks artwork fidelity, source provenance and accessible interactions. Editorial depth and coverage keep growing.
 

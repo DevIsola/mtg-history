@@ -1,5 +1,8 @@
 # First-class cards — canonical printing collection (Phase 1)
 
+> **Historical migration record.** This one-time migration was completed and its obsolete runner has been retired. Commands below document the original rollout and must **not** be executed against current `main`. For supported checks, use `pnpm run verify` and see [project maintenance](project-maintenance.md).
+
+
 Cards are indexed by **exact Scryfall printing UUID**, not their English names
 or Oracle IDs. Two different printings of a card remain separate records.
 

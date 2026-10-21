@@ -28,3 +28,11 @@ backup/
 # browser test diagnostics (Playwright)
 playwright-report/
 test-results/
+
+# Windows and local TypeScript/coverage artifacts
+Thumbs.db
+Desktop.ini
+*.tsbuildinfo
+coverage/
+.env.local
+.env.*.local

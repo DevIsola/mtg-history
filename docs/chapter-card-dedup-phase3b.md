@@ -1,5 +1,8 @@
 # Chapter card metadata deduplication — Phase 3B
 
+> **Historical migration record.** This one-time migration was completed and its obsolete runner has been retired. Commands below document the original rollout and must **not** be executed against current `main`. For supported checks, use `pnpm run verify` and see [project maintenance](project-maintenance.md).
+
+
 This completes the canonical printing migration without erasing chapter-specific
 historical interpretation or the artwork fidelity ledger.
 
