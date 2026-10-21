@@ -104,7 +104,7 @@
 /* Preserve current typography when scripts are disabled or settings are default. */
 #chapter-reader[data-reading-size='compact'] .chapter-prose { font-size: 1rem; }
 #chapter-reader[data-reading-size='large'] .chapter-prose { font-size: 1.2rem; }
-#chapter-reader[data-reading-typeface='classic'] .chapter-prose { font-family: var(--font-display); }
+#chapter-reader[data-reading-typeface='classic'] .chapter-prose { font-family: var(--font-reading-serif); }
 #chapter-reader[data-reading-spacing='relaxed'] .chapter-prose { line-height: 2.15; }
 
 /* Historical chapter pages */
@@ -127,9 +127,9 @@
 }
 
 .chapter-prose {
-  max-width: 75ch;
+  max-width: 68ch;
   font-size: 1.075rem;
-  line-height: 1.9;
+  line-height: 1.72;
 }
 
 .chapter-prose h2 {
@@ -244,7 +244,7 @@
   gap: 0.65rem;
   margin: 0 0 1.4rem;
   color: var(--jade);
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-weight: 750;
   line-height: 1.4;
   letter-spacing: 0.11em;
@@ -252,7 +252,7 @@
 }
 
 .historical-moment__eyebrow span {
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.9rem;
 }
 
@@ -309,13 +309,13 @@
 
 .chapter-prose .historical-moment .historical-card__credit {
   margin-top: 0.7rem;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   line-height: 1.5;
 }
 
 .chapter-prose .historical-moment .historical-card__source {
   margin-top: 0.6rem;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 680px) {
@@ -344,7 +344,7 @@
 
 .chapter-reading-sidebar {
   position: sticky;
-  top: calc(var(--site-header-height) + 1.25rem);
+  top: var(--site-header-height);
   z-index: 30;
   align-self: start;
   min-width: 0;
@@ -378,13 +378,13 @@
 
 .chapter-toc__toolbar .eyebrow {
   margin: 0;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   letter-spacing: 0.13em;
 }
 
 .chapter-toc__count {
   color: var(--jade);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 750;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -422,7 +422,7 @@
 .chapter-toc__index {
   flex: none;
   color: var(--jade);
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -553,7 +553,7 @@
 }
 
 .chapter-pagination__link span {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #8b693c;
@@ -578,7 +578,7 @@
   }
 
   .chapter-reading-sidebar {
-    top: calc(var(--site-header-height) + 0.5rem);
+    top: var(--site-header-height);
   }
 
   .chapter-toc {
@@ -609,7 +609,7 @@
   }
 
   .chapter-toc__chevron {
-    color: var(--gold);
+    color: var(--accent-text);
     font-size: 1.25rem;
     transition: transform 150ms ease;
   }
@@ -722,7 +722,7 @@
 
 .chronology-strip__number {
   color: var(--link-color);
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -743,7 +743,7 @@
 
 .chronology-strip__label {
   color: var(--jade);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 750;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -823,7 +823,7 @@
   display: block;
   margin-bottom: 0.2rem;
   color: var(--jade);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 750;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -893,7 +893,7 @@
 .chapter-switcher__panel-title {
   margin: 0.3rem 0.65rem 0.85rem;
   color: var(--jade);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -927,8 +927,8 @@
   font-weight: normal;
   line-height: 1.3;
 }
-.chapter-switcher__item-copy small { display: block; margin-top: 0.25rem; color: var(--ink-soft); font-size: 0.72rem; }
-.chapter-switcher__current { color: var(--link-color); font-size: 0.64rem; font-weight: 750; }
+.chapter-switcher__item-copy small { display: block; margin-top: 0.25rem; color: var(--ink-soft); font-size: 0.75rem; }
+.chapter-switcher__current { color: var(--link-color); font-size: 0.75rem; font-weight: 750; }
 .chapter-switcher__timeline {
   display: flex;
   justify-content: space-between;
@@ -945,8 +945,8 @@
 /* Deep links land at the article, with the header and compact switcher visible. */
 .chapter-reader { padding-block: clamp(1.7rem, 3.5vw, 3rem) clamp(4rem, 7vw, 7rem); scroll-margin-top: calc(var(--site-header-height) + 90px); }
 .chapter-reader:focus:not(:focus-visible) { outline: none; }
-.chapter-reader .chapter-reading-sidebar { top: calc(var(--site-header-height) + 5.7rem); }
-.chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height) - 6.9rem); }
+.chapter-reader .chapter-reading-sidebar { top: calc(var(--site-header-height) + 4.625rem); }
+.chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height) - 4.625rem); }
 .chapter-reader .chapter-prose h2:first-child { margin-top: 0.65rem; }
 .chapter-reader__context { display: none; }
 .chapter-reader .chapter-prose h2,
@@ -991,11 +991,11 @@
 @media (max-width: 900px) {
   .chapter-switcher-band { position: relative; top: auto; z-index: 15; }
   .chapter-reader { scroll-margin-top: calc(var(--site-header-height) + 0.65rem); }
-  .chapter-reader .chapter-reading-sidebar { top: calc(var(--site-header-height) + 0.5rem); }
-  .chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height) - 1rem); }
+  .chapter-reader .chapter-reading-sidebar { top: var(--site-header-height); }
+  .chapter-reader .chapter-toc { max-height: calc(100dvh - var(--site-header-height)); }
   .chapter-reader__context { display: block; margin: 1.2rem 0 0; color: var(--jade); font-size: 0.82rem; font-weight: 750; }
   .chapter-reader .chapter-prose h2,
-  .chapter-reader .chapter-sources { scroll-margin-top: calc(var(--site-header-height) + 7rem); }
+  .chapter-reader .chapter-sources { scroll-margin-top: calc(var(--site-header-height) + 4.5rem); }
 }
 @media (max-width: 680px) {
   .chapter-switcher { flex-wrap: wrap; gap: 0.6rem; padding-block: 0.85rem; }

@@ -149,7 +149,7 @@
 
 .discovery-filter-field label {
   color: var(--ink);
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
@@ -319,7 +319,7 @@
   height: 75px;
   border: 1px solid var(--gold);
   border-radius: 50%;
-  color: var(--gold);
+  color: var(--accent-text);
   font-family: var(--font-display);
   font-size: 2.5rem;
 }
@@ -334,8 +334,8 @@
 }
 
 .discovery-card__type {
-  color: var(--gold);
-  font-size: 0.68rem;
+  color: var(--accent-text);
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
@@ -367,13 +367,13 @@
   margin-top: auto;
   padding-top: 0.9rem;
   border-top: 1px solid var(--line);
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.76rem;
   font-weight: 700;
 }
 
 .discovery-card:hover .discovery-card__title {
-  color: var(--gold);
+  color: var(--accent-text);
 }
 
 /* Required for the client-side filtering mechanism. */

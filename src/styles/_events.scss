@@ -43,7 +43,7 @@
 .historical-events__jumps a:hover,
 .historical-events__jumps a:focus-visible {
   border-color: var(--gold);
-  color: var(--gold);
+  color: var(--accent-text);
 }
 
 .historical-events__era {
@@ -137,7 +137,7 @@
 }
 
 .historical-event-card h3 a:hover {
-  color: var(--gold);
+  color: var(--accent-text);
 }
 
 .historical-event-card__content > p:not(.eyebrow) {
@@ -151,7 +151,7 @@
   margin-top: auto;
   padding-top: 0.9rem;
   border-top: 1px solid var(--line);
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.77rem;
   font-weight: 700;
   text-decoration: none;
@@ -230,7 +230,7 @@
 }
 
 .historical-event-detail__chapter span {
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.75rem;
 }
 
@@ -309,9 +309,9 @@
 }
 
 .historical-event-pagination a span {
-  font-size: 0.73rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--accent-text);
 }
 
 .historical-event-pagination a strong {
@@ -432,8 +432,8 @@
 }
 
 .character-event-list__chapter {
-  color: var(--gold);
-  font-size: 0.68rem;
+  color: var(--accent-text);
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -456,7 +456,7 @@
 
 .character-event-list__action {
   margin-top: 0.25rem;
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.77rem;
   font-weight: 700;
 }

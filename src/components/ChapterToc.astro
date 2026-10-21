@@ -47,7 +47,7 @@ const sections = headings.filter((heading) => heading.depth === 2);
             <span class="chapter-toc__index" aria-hidden="true">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <span>{section.text}</span>
+            <span>{section.text.replace(/^\s*(?:[IVXLCDM]+\.|\d+\.)\s+/i, '')}</span>
           </a>
         </li>
       ))}

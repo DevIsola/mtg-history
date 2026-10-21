@@ -21,7 +21,7 @@
   border: 1px solid rgba(226, 194, 138, 0.45);
 
   font: inherit;
-  font-size: 0.73rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 
@@ -97,117 +97,21 @@
   --gold: #d0aa6e;
   --gold-light: #f3d29a;
   --jade: #9abbaf;
+
+  /* Semantic text colors prevent contrast regressions when surfaces change. */
+  --link-color: #e2c28a;
+  --link-hover: #ffe0a3;
+  --accent-text: var(--link-color);
+  --card-shadow: 0 8px 20px #0003;
+  --card-hover-shadow: 0 17px 40px #0005;
+  --status-text: var(--ink-soft);
+  --status-border: var(--line);
+  --status-progress-text: var(--gold-light);
+  --status-progress-border: var(--gold);
+  --status-progress-bg: var(--paper-deep);
+  --button-dark-bg: var(--gold);
+  --button-dark-text: var(--night);
+  --button-dark-hover: var(--gold-light);
+  --selection-bg: var(--gold);
+  --selection-text: var(--night);
 }
-
-/* Dark surfaces and illustrations */
-
-:root[data-theme="dark"] .era-card {
-  background: var(--paper-white);
-  box-shadow: 0 8px 20px #0003;
-}
-
-:root[data-theme="dark"] .era-card:hover {
-  border-color: var(--gold);
-  box-shadow: 0 17px 40px #0005;
-}
-
-:root[data-theme="dark"] .editorial-mark {
-  color: var(--gold);
-  border-color: var(--line);
-  outline-color: var(--line);
-}
-
-/* Warm gold typography */
-
-:root[data-theme="dark"] .eyebrow,
-:root[data-theme="dark"] .era-card__top,
-:root[data-theme="dark"] .era-card__bottom,
-:root[data-theme="dark"] .era-card__kicker,
-:root[data-theme="dark"] .era-card__ornament,
-:root[data-theme="dark"] .timeline-count,
-:root[data-theme="dark"] .timeline-entry__meta,
-:root[data-theme="dark"] .set-references strong,
-:root[data-theme="dark"] .chapter-sources__number,
-:root[data-theme="dark"] .chapter-pagination__link span,
-:root[data-theme="dark"] .chronology-strip__number {
-  color: var(--gold);
-}
-
-:root[data-theme="dark"] .section-title em,
-:root[data-theme="dark"] .page-banner h1 em {
-  color: var(--gold-light);
-}
-
-:root[data-theme="dark"] .muted-copy {
-  color: var(--ink-soft);
-}
-
-/* Links */
-
-:root[data-theme="dark"] .text-link,
-:root[data-theme="dark"] .inline-link,
-:root[data-theme="dark"] .chapter-prose a,
-:root[data-theme="dark"] .historical-card__source,
-:root[data-theme="dark"] .chapter-toc__sources,
-:root[data-theme="dark"] .chapter-sources li a,
-:root[data-theme="dark"] .chronology-strip__action {
-  color: var(--gold-light);
-}
-
-:root[data-theme="dark"] .text-link {
-  border-bottom-color: var(--gold);
-}
-
-:root[data-theme="dark"] .text-link:hover,
-:root[data-theme="dark"] .chapter-prose a:hover {
-  color: #ffe0a3;
-}
-
-:root[data-theme="dark"] .chapter-toc__list a:hover,
-:root[data-theme="dark"] .chapter-toc__list a:focus-visible {
-  color: var(--gold-light);
-}
-
-/* Timeline */
-
-:root[data-theme="dark"] .timeline-entry__marker {
-  background: var(--paper-white);
-  color: var(--gold-light);
-  border-color: var(--gold);
-}
-
-:root[data-theme="dark"] .chapter-status {
-  color: var(--ink-soft);
-  background: var(--paper-white);
-  border-color: var(--line);
-}
-
-:root[data-theme="dark"] .chapter-status--progress {
-  color: var(--gold-light);
-  background: var(--paper-deep);
-  border-color: var(--gold);
-}
-
-:root[data-theme="dark"] .set-references li {
-  color: var(--ink-soft);
-  background: var(--paper-deep);
-}
-
-/* Buttons */
-
-:root[data-theme="dark"] .button--dark {
-  color: var(--night);
-  background: var(--gold);
-}
-
-:root[data-theme="dark"] .button--dark:hover {
-  background: var(--gold-light);
-}
-
-/* A more subtle selection color */
-
-:root[data-theme="dark"] ::selection {
-  background: var(--gold);
-  color: var(--night);
-}
-

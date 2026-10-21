@@ -10,8 +10,8 @@ body {
 }
 
 ::selection {
-  background: #d9bd84;
-  color: #142023;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 a {
   color: inherit;
@@ -102,7 +102,7 @@ summary:focus-visible {
   color: #d1cbbd;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   transition: color 0.2s;
 }
@@ -127,7 +127,7 @@ summary:focus-visible {
   gap: 0.7rem;
   color: var(--gold-light);
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   letter-spacing: 0.13em;
   cursor: pointer;
 }
@@ -156,11 +156,11 @@ summary:focus-visible {
 
 /* Typography and general elements */
 .eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 750;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #8b693c;
+  color: var(--accent-text);
   margin: 0 0 1.2rem;
 }
 .eyebrow--light {
@@ -173,11 +173,11 @@ summary:focus-visible {
   letter-spacing: -0.05em;
   font-weight: normal;
 }
-.section-title em,
-.page-banner h1 em {
-  color: #957039;
+.section-title em {
+  color: var(--accent-text);
   font-weight: normal;
 }
+.page-banner h1 em { color: var(--gold-light); }
 .lead-copy {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2vw, 1.7rem);
@@ -199,7 +199,7 @@ summary:focus-visible {
   color: var(--link-hover);
 }
 .muted-copy {
-  color: #66736e;
+  color: var(--ink-soft);
 }
 .button {
   min-height: 50px;
@@ -234,12 +234,12 @@ summary:focus-visible {
   background: #ffffff15;
 }
 .button--dark {
-  background: var(--night);
-  color: var(--paper-white);
+  background: var(--button-dark-bg);
+  color: var(--button-dark-text);
   margin-top: 1.4rem;
 }
 .button--dark:hover {
-  background: #2a3f43;
+  background: var(--button-dark-hover);
 }
 
 /* Homepage hero */
@@ -358,7 +358,7 @@ summary:focus-visible {
 }
 .hero__aside {
   margin-top: 5.5rem;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #b3af9e;
@@ -368,7 +368,7 @@ summary:focus-visible {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  color: var(--gold);
+  color: var(--gold-light);
   font-size: 1.1rem;
   padding-bottom: 1rem;
 }
@@ -428,8 +428,8 @@ summary:focus-visible {
   padding: 1.6rem;
   border: 1px solid var(--line);
   text-decoration: none;
-  background: #fdfaf4;
-  box-shadow: 0 8px 20px #36281308;
+  background: var(--paper-white);
+  box-shadow: var(--card-shadow);
   transition:
     transform 0.2s,
     border-color 0.2s,
@@ -437,8 +437,8 @@ summary:focus-visible {
 }
 .era-card:hover {
   transform: translateY(-5px);
-  border-color: #bd985e;
-  box-shadow: 0 17px 40px #36281317;
+  border-color: var(--gold);
+  box-shadow: var(--card-hover-shadow);
 }
 .era-card__top,
 .era-card__bottom {
@@ -446,23 +446,23 @@ summary:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: bold;
-  color: #80653e;
+  color: var(--accent-text);
 }
 .era-card__ornament {
   font-family: var(--font-display);
-  color: #c2aa79;
+  color: var(--accent-text);
   font-size: 4.8rem;
   text-align: center;
   margin: 1rem auto 0.3rem;
   line-height: 1.25;
 }
 .era-card__kicker {
-  color: #8d6e42;
-  font-size: 0.7rem;
+  color: var(--accent-text);
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   margin-bottom: 0.65rem;
@@ -504,15 +504,15 @@ summary:focus-visible {
 }
 .editorial-mark {
   min-height: 340px;
-  border: 1px solid #af9d80;
+  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.8rem;
-  outline: 1px solid #af9d80;
+  outline: 1px solid var(--line);
   outline-offset: -12px;
-  color: #826439;
+  color: var(--accent-text);
 }
 .editorial-mark span:first-child {
   font-size: 4rem;
@@ -525,7 +525,7 @@ summary:focus-visible {
 .editorial-mark span:last-child {
   text-transform: uppercase;
   letter-spacing: 0.23em;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
 }
 
 /* Inner pages and timeline */
@@ -583,9 +583,9 @@ summary:focus-visible {
   border-bottom: 1px solid var(--line);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: bold;
-  color: #947340;
+  color: var(--accent-text);
 }
 .timeline-list {
   border-left: 1px solid #c5ad80;
@@ -609,8 +609,8 @@ summary:focus-visible {
   border-radius: 50%;
   border: 1px solid #c4a677;
   background: var(--paper-white);
-  color: #8b6737;
-  font-size: 0.7rem;
+  color: var(--accent-text);
+  font-size: 0.75rem;
   font-weight: bold;
 }
 .timeline-entry__body {
@@ -627,23 +627,24 @@ summary:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  color: #8b6e42;
+  color: var(--accent-text);
   text-transform: uppercase;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-weight: bold;
   letter-spacing: 0.13em;
 }
 .chapter-status {
-  border: 1px solid #d6c9b3;
-  color: #65716b;
+  border: 1px solid var(--status-border);
+  color: var(--status-text);
+  background: var(--paper-white);
   padding: 0.3rem 0.55rem;
   letter-spacing: 0.06em;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
 }
 .chapter-status--progress {
-  color: #815b2a;
-  border-color: #c29d64;
-  background: #ead9ba70;
+  color: var(--status-progress-text);
+  border-color: var(--status-progress-border);
+  background: var(--status-progress-bg);
 }
 .timeline-entry h3 {
   font-family: var(--font-display);
@@ -663,10 +664,10 @@ summary:focus-visible {
   margin-top: 1.8rem;
 }
 .set-references strong {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #81613b;
+  color: var(--accent-text);
 }
 .set-references ul {
   display: flex;
@@ -678,9 +679,9 @@ summary:focus-visible {
 }
 .set-references li {
   font-size: 0.75rem;
-  color: #4a5656;
+  color: var(--ink-soft);
   padding: 0.4rem 0.55rem;
-  background: #ede7d9;
+  background: var(--paper-deep);
 }
 .article-column {
   max-width: 790px;

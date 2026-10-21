@@ -50,8 +50,8 @@
 }
 
 .journey-card__number {
-  color: var(--gold);
-  font-size: 0.7rem;
+  color: var(--accent-text);
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
 }
@@ -63,7 +63,7 @@
   height: 72px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  color: var(--gold);
+  color: var(--accent-text);
   font-family: var(--font-display);
   font-size: 2.4rem;
 }
@@ -86,7 +86,7 @@
   margin-top: auto;
   padding-top: 1.25rem;
   border-top: 1px solid var(--line);
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -130,7 +130,7 @@
 .archive-jump-links a:hover,
 .archive-jump-links a:focus-visible {
   border-color: var(--gold);
-  color: var(--gold);
+  color: var(--accent-text);
 }
 
 .archive-era {
@@ -215,7 +215,7 @@
 .archive-card__set,
 .archive-card__artist {
   color: var(--jade);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
 }
 
 .archive-card__set {
@@ -242,7 +242,7 @@
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
-  color: var(--gold);
+  color: var(--accent-text);
   font-size: 0.77rem;
   font-weight: 700;
   text-decoration: none;
@@ -339,7 +339,7 @@
 
 .archive-filter-field label {
   color: var(--ink);
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
