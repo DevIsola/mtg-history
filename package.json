@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist",
+    "check:search": "node scripts/check-pagefind-index.mjs",
     "preview": "astro preview",
     "screenshots:readme": "playwright test --config playwright.readme.config.mjs",
     "astro": "astro",
@@ -29,7 +30,7 @@
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
     "check:artwork": "node scripts/check-artwork-fidelity.mjs",
     "review:artwork": "node scripts/check-artwork-fidelity.mjs",
-    "verify": "pnpm run test && pnpm run check:entities && pnpm run check:cards && pnpm run check:content && pnpm run check:editorial && pnpm run check:provenance && pnpm run check:artwork && pnpm run check:images && pnpm run check:styles && pnpm run check:themes && pnpm run check:glossary && pnpm run check:types && pnpm run build && pnpm run check:links",
+    "verify": "pnpm run test && pnpm run check:entities && pnpm run check:cards && pnpm run check:content && pnpm run check:editorial && pnpm run check:provenance && pnpm run check:artwork && pnpm run check:images && pnpm run check:styles && pnpm run check:themes && pnpm run check:glossary && pnpm run check:types && pnpm run build && pnpm run check:search && pnpm run check:links",
     "check:types": "astro check",
     "check:styles": "node scripts/check-style-architecture.mjs",
     "check:themes": "node scripts/check-chapter-themes.mjs",
@@ -53,7 +54,8 @@
     "@astrojs/check": "0.9.10",
     "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.64.1",
-    "typescript": "5.9.3",
-    "sass": "1.105.2"
+    "pagefind": "1.5.2",
+    "sass": "1.105.2",
+    "typescript": "5.9.3"
   }
 }

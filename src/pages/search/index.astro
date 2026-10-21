@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../utils/paths';
+---
+
+<BaseLayout
+  title="Search the Multiverse"
+  description="Search the full text of Magic history chapters, historical events and character profiles."
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">The Multiverse encyclopedia</p>
+      <h1>Search <em>history.</em></h1>
+      <p>Find people, places and events throughout the complete historical narrative.</p>
+    </div>
+  </section>
+
+  <section class="section-spacing" data-pagefind-ignore
+    data-fulltext-search
+    data-pagefind-bundle={withBase('pagefind/pagefind.js')}
+    data-pagefind-base={withBase('')}
+  >
+    <div class="page-shell fulltext-search">
+      <div class="fulltext-search__panel">
+        <label for="fulltext-query">Search all historical text</label>
+        <input id="fulltext-query" type="search" autocomplete="off"
+          placeholder="Phyrexia, Yawgmoth, Sylex…" maxlength="160"
+          aria-controls="fulltext-results" />
+        <p class="fulltext-search__status" data-fulltext-status role="status"
+          aria-live="polite" aria-atomic="true">Enter a term to search the archive.</p>
+      </div>
+      <ol class="fulltext-search__results" id="fulltext-results" data-fulltext-results></ol>
+      <p class="fulltext-search__notice">
+        Looking for a particular figure or historical era?
+        <a href={withBase('discover/')}>Browse the structured encyclopedia</a>.
+      </p>
+      <noscript><p class="fulltext-search__notice">Full-text search requires JavaScript.
+        <a href={withBase('discover/')}>The encyclopedia index</a> works without it.</p></noscript>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { normalizeFullTextQuery, plainExcerpt, safeSearchResultUrl, PAGEFIND_RESULT_LIMIT } from '../../utils/pagefind-search.mjs';
+
+  const root = document.querySelector<HTMLElement>('[data-fulltext-search]');
+  const input = root?.querySelector<HTMLInputElement>('#fulltext-query');
+  const status = root?.querySelector<HTMLElement>('[data-fulltext-status]');
+  const results = root?.querySelector<HTMLOListElement>('[data-fulltext-results]');
+
+  if (root && input && status && results) {
+    const base = root.dataset.pagefindBase ?? '/';
+    const bundle = root.dataset.pagefindBundle ?? '';
+    let apiPromise: Promise<any> | undefined;
+    let lastRequest = 0;
+    let debounce: ReturnType<typeof setTimeout> | undefined;
+
+    const pagefind = () => {
+      if (!apiPromise) {
+        apiPromise = import(/* @vite-ignore */ bundle).then(async (module) => {
+          await module.options({ baseUrl: base });
+          return module;
+        });
+      }
+      return apiPromise;
+    };
+
+    const clearResults = () => { results.replaceChildren(); };
+    const setStatus = (message: string) => { status.textContent = message; };
+
+    const search = async (term: string, sequence: number) => {
+      try {
+        const index = await pagefind();
+        const matches = await index.search(term);
+        const items = await Promise.all(matches.results.slice(0, PAGEFIND_RESULT_LIMIT).map(
+          (result: { data: () => Promise<any> }) => result.data(),
+        ));
+        if (sequence !== lastRequest) return;
+        clearResults();
+        let rendered = 0;
+        for (const item of items) {
+          const url = safeSearchResultUrl(item.url, base, window.location.origin);
+          if (!url) continue;
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          const title = document.createElement('strong');
+          const excerpt = document.createElement('span');
+          a.href = url;
+          title.textContent = String(item.meta?.title ?? item.url ?? 'Historical record');
+          excerpt.textContent = plainExcerpt(item.excerpt);
+          a.append(title, excerpt);
+          li.append(a);
+          results.append(li);
+          rendered++;
+        }
+        const total = Number(matches.results.length) || 0;
+        setStatus(total === 0 ? 'No matching historical records.' :
+          `Showing ${rendered} of ${total} matching records.`);
+      } catch {
+        if (sequence !== lastRequest) return;
+        clearResults();
+        setStatus('Full-text index is unavailable. Build the site and run the production preview to use search.');
+      } finally {
+        if (sequence === lastRequest) results.removeAttribute('aria-busy');
+      }
+    };
+
+    input.addEventListener('input', () => {
+      if (debounce) clearTimeout(debounce);
+      const sequence = ++lastRequest;
+      const term = normalizeFullTextQuery(input.value);
+      if (term.length < 2) {
+        clearResults();
+        results.removeAttribute('aria-busy');
+        setStatus(term ? 'Enter at least two characters.' : 'Enter a term to search the archive.');
+        return;
+      }
+      results.setAttribute('aria-busy', 'true');
+      setStatus('Searching historical records…');
+      debounce = setTimeout(() => { void search(term, sequence); }, 220);
+    });
+  }
+</script>
