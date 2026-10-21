@@ -29,6 +29,9 @@ import { eras } from '../../../data/eras';
               <span>Título original: {era.name}</span>
               <span>Ler o capítulo em inglês →</span>
             </a>
+            {era.id === 'thran' && (
+              <p><a class="text-link" href={withBase('pt-br/chapters/thran/')} lang="pt-BR">Ler a versão condensada em português →</a></p>
+            )}
           </li>
         ))}
       </ol>
