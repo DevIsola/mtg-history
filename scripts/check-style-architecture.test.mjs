@@ -6,7 +6,7 @@ import { auditStyles } from './check-style-architecture.mjs';
 const file = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const modules = ['reset', 'tokens', 'foundation', 'reading', 'theme', 'support',
   'characters', 'exploration', 'events', 'discovery', 'interactive-explorers',
-  'chapter-themes'];
+  'chapter-themes', 'ux-c1'];
 const styles = Object.fromEntries([
   ['global.scss', file('src/styles/global.scss')],
   ['_breakpoints.scss', file('src/styles/_breakpoints.scss')],
@@ -40,6 +40,8 @@ test('rejects global module reordering, legacy CSS files, and missing Sass parti
   assert.match(auditStyles({ ...good, styles: { ...good.styles, 'old.css': '.old{}' } }).join(' '), /legacy global/);
   const { '_theme.scss': _missing, ...withoutTheme } = good.styles;
   assert.match(auditStyles({ ...good, styles: withoutTheme }).join(' '), /missing SCSS partial/);
+  const { '_ux-c1.scss': _missingC1, ...withoutC1 } = good.styles;
+  assert.match(auditStyles({ ...good, styles: withoutC1 }).join(' '), /missing SCSS partial: _ux-c1\.scss/);
 });
 test('rejects forgotten token owners and dark theme regressions', () => {
   assert.match(auditStyles({ ...good, tokens: ':root {}' }).join(' '), /missing semantic token/);

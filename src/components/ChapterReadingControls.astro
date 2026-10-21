@@ -64,6 +64,7 @@
 
     update();
     controls.hidden = false;
+    controls.closest('details[data-chapter-settings]')?.removeAttribute('hidden');
 
     controls.addEventListener('change', (event) => {
       const target = event.target;

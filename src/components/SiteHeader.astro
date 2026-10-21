@@ -1,4 +1,3 @@
-
 ---
 import { withBase } from '../utils/paths';
 import ThemeToggle from './ThemeToggle.astro';
@@ -7,113 +6,79 @@ import { isTranslatedRoute, translatedSuffix, uiFor } from '../utils/i18n.mjs';
 interface Props { locale?: 'en' | 'pt-BR'; }
 const { locale = 'en' } = Astro.props;
 const ui = uiFor(locale);
+const pt = locale === 'pt-BR';
+const paired = isTranslatedRoute(Astro.url.pathname, withBase(''));
 const suffix = translatedSuffix(Astro.url.pathname, withBase(''));
-const showLanguageSwitch = isTranslatedRoute(Astro.url.pathname, withBase(''));
-
-// Keep the established English routes and their regression-test contract intact.
-const englishLinks = [
-  { label: 'Home', href: withBase('') },
-  { label: 'Discover', href: withBase('discover/') },
-  { label: 'Search', href: withBase('search/') },
-  { label: 'Timeline', href: withBase('timeline/') },
-  { label: 'Characters', href: withBase('characters/') },
-  { label: 'Archive', href: withBase('archive/') },
-  { label: 'About', href: withBase('about/') },
+const home = withBase(pt ? 'pt-br/' : '');
+const timeline = withBase(pt ? 'pt-br/timeline/' : 'timeline/');
+const search = withBase(pt ? 'pt-br/search/' : 'search/');
+const about = withBase('about/');
+const englishChoice = withBase(paired ? suffix ?? '' : '');
+const portugueseChoice = withBase(paired ? 'pt-br/' + (suffix ?? '') : 'pt-br/');
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const selected = (href: string) => current === (href.replace(/\/+$/, '') || '/');
+const destinations = [
+  {label: pt ? 'Explorar índice (EN)' : 'Explore index', href: withBase('discover/')},
+  {label: pt ? 'Cronologia' : 'Timeline', href: timeline},
+  {label: pt ? 'Personagens' : 'Characters', href: withBase(pt ? 'pt-br/characters/' : 'characters/')},
+  {label: pt ? 'Eventos' : 'Events', href: withBase(pt ? 'pt-br/events/' : 'events/')},
+  {label: pt ? 'Relações (EN)' : 'Relationships', href: withBase('relationships/')},
+  {label: pt ? 'Arquivo ilustrado' : 'Illustrated archive', href: withBase(pt ? 'pt-br/archive/' : 'archive/')},
+  {label: pt ? 'Glossário (EN)' : 'Glossary', href: withBase('glossary/')},
+  {label: pt ? 'Caminhos históricos (EN)' : 'History paths', href: withBase('paths/')},
 ];
-const ptPaths = ['pt-br/', 'discover/', 'pt-br/search/', 'pt-br/timeline/', 'pt-br/characters/', 'pt-br/archive/', 'about/'];
-const links = locale === 'pt-BR'
-  ? ui.navigation.map((label, index) => ({ label, href: withBase(ptPaths[index]) }))
-  : englishLinks;
-const switchPath = locale === 'pt-BR' ? (suffix ?? '') : `pt-br/${suffix ?? ''}`;
-const switchLabel = locale === 'pt-BR' ? 'EN' : 'PT-BR';
-const switchAria = locale === 'pt-BR' ? 'Switch to English' : 'Mudar para português brasileiro';
-
-
-
-const current =
-  Astro.url.pathname.replace(/\/+$/, '') || '/';
+const readLabel = pt ? 'Ler' : 'Read';
+const exploreLabel = pt ? 'Explorar' : 'Explore';
+const aboutLabel = pt ? 'Sobre (EN)' : 'About';
+const searchLabel = pt ? 'Buscar no arquivo' : 'Search the archive';
 ---
-
 <header class="site-header">
   <div class="site-header__inner page-shell">
-    <a
-      class="brand"
-      href={withBase(locale === 'pt-BR' ? 'pt-br/' : '')}
-      aria-label={ui.homeAria}
-    >
+    <a class="brand" href={home} aria-label={ui.homeAria}>
       <span class="brand__sigil" aria-hidden="true">✦</span>
-
-      <span class="brand__name">
-        Chronicles <span>of the Multiverse</span>
-      </span>
+      <span class="brand__name">Chronicles <span>of the Multiverse</span></span>
     </a>
-
     <div class="site-header__actions">
-      <nav
-        class="desktop-navigation"
-        aria-label={ui.navAria}
-      >
-        {links.map((link) => (
-          <a
-            href={link.href}
-            aria-current={
-              current === (
-                link.href.replace(/\/+$/, '') || '/'
-              )
-                ? 'page'
-                : undefined
-            }
-          >
-            {link.label}
-          </a>
-        ))}
+      <nav class="desktop-navigation" aria-label={ui.navAria}>
+        <a href={timeline} aria-current={selected(timeline) ? 'page' : undefined}>{readLabel}</a>
+        <details class="site-explore-menu" data-site-explore-menu>
+          <summary>{exploreLabel} <span aria-hidden="true">⌄</span></summary>
+          <div class="site-explore-menu__panel">
+            {destinations.map(item => (
+              <a href={item.href} aria-current={selected(item.href) ? 'page' : undefined}>{item.label}</a>
+            ))}
+          </div>
+        </details>
+        <a href={about} aria-current={selected(about) ? 'page' : undefined}>{aboutLabel}</a>
       </nav>
-
+      <a class="site-header__search" href={search} aria-label={searchLabel}>
+        <span aria-hidden="true" class="site-header__search-icon">⌕</span>
+        <span class="site-header__search-text">{searchLabel}</span>
+      </a>
       <ThemeToggle />
-
-      {showLanguageSwitch && (
-        <a class="site-header__language" href={withBase(switchPath)}
-          hreflang={locale === 'pt-BR' ? 'en' : 'pt-BR'}
-          aria-label={switchAria}>{switchLabel}</a>
-      )}
-
-      <details class="mobile-navigation">
-        <summary aria-label={ui.toggle}>
-          <span>{ui.menu}</span>
-          <span aria-hidden="true">☰</span>
+      <details class="site-header__languages">
+        <summary aria-label={pt ? 'Escolher idioma' : 'Choose language'}>
+          {pt ? 'PT' : 'EN'} <span aria-hidden="true">⌄</span>
         </summary>
-
+        <div class="site-header__language-menu">
+          <a href={englishChoice} hreflang={paired ? 'en' : undefined} aria-current={!pt ? 'page' : undefined}>
+            English{!paired ? ' — home' : ''}
+          </a>
+          <a href={portugueseChoice} hreflang={paired ? 'pt-BR' : undefined} aria-current={pt ? 'page' : undefined}>
+            Português{!paired ? ' — início' : ''}
+          </a>
+        </div>
+      </details>
+      <details class="mobile-navigation">
+        <summary aria-label={ui.toggle}><span>{ui.menu}</span><span aria-hidden="true">☰</span></summary>
         <nav aria-label={ui.mobileAria}>
-          {links.map((link) => (
-            <a
-              href={link.href}
-              aria-current={
-                current === (
-                  link.href.replace(/\/+$/, '') || '/'
-                )
-                  ? 'page'
-                  : undefined
-              }
-            >
-              {link.label}
-            </a>
+          <a href={timeline} aria-current={selected(timeline) ? 'page' : undefined}>{readLabel}</a>
+          {destinations.map(item => (
+            <a href={item.href} aria-current={selected(item.href) ? 'page' : undefined}>{item.label}</a>
           ))}
+          <a href={about} aria-current={selected(about) ? 'page' : undefined}>{aboutLabel}</a>
         </nav>
       </details>
     </div>
   </div>
 </header>
-
-<style>
-  .site-header__language {
-    flex: 0 0 auto;
-    color: var(--gold-light);
-    border: 1px solid currentColor;
-    border-radius: 0.3rem;
-    padding: 0.25rem 0.4rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  .site-header__language:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-</style>

@@ -14,7 +14,13 @@ for (const [key, heading] of [
     await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href', `https://devisola.github.io${root}${key}/`);
     await expect(page.locator('link[rel="alternate"][hreflang="pt-BR"]')).toHaveAttribute('href', `https://devisola.github.io${root}pt-br/${key}/`);
     await expect(page.locator('main a[hreflang="en"]').first()).toBeVisible();
-    await page.getByRole('link', { name: 'Switch to English' }).click();
+    // Open the native locale disclosure; only paired translations have hreflang links.
+    const languages = page.locator('.site-header__languages');
+    await languages.locator('summary').click();
+    const english = languages.locator('a[hreflang="en"]');
+    await expect(english).toBeVisible();
+    await expect(english).toHaveAttribute('href', `${root}${key}/`);
+    await english.click();
     await expect(page).toHaveURL(new RegExp(`/mtg-history/${key}/$`));
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   });

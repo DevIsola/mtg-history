@@ -29,12 +29,20 @@ test('PT-BR search clears results for short inputs and handles no matching terms
 test('search language switch keeps English and Portuguese indexes separate', async ({ page }) => {
   await page.goto(portuguese);
   await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href', 'https://devisola.github.io/mtg-history/search/');
-  await page.getByRole('link', { name: 'Switch to English' }).click();
+  const languages = page.locator('.site-header__languages');
+  await languages.locator('summary').click();
+  const english = languages.locator('a[hreflang="en"]');
+  await expect(english).toHaveAttribute('href', `${base}search/`);
+  await english.click();
   await expect(page).toHaveURL(/\/mtg-history\/search\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await page.locator('#fulltext-query').fill('phthisis');
   await expect(page.locator('[data-fulltext-results] a').first()).toBeVisible({ timeout: 20000 });
-  await page.getByRole('link', { name: 'Mudar para português brasileiro' }).click();
+  const englishLanguages = page.locator('.site-header__languages');
+  await englishLanguages.locator('summary').click();
+  const portugueseLink = englishLanguages.locator('a[hreflang="pt-BR"]');
+  await expect(portugueseLink).toHaveAttribute('href', portuguese);
+  await portugueseLink.click();
   await expect(page).toHaveURL(/\/mtg-history\/pt-br\/search\/$/);
 });
 

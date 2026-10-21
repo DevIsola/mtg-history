@@ -14,10 +14,18 @@ test('Portuguese home uses pt-BR and has reciprocal hreflang links', async ({ pa
 
 test('home language switcher keeps existing English home reachable', async ({ page }) => {
   await page.goto(`${root}pt-br/`);
-  await page.getByRole('link', { name: 'Switch to English' }).click();
+  const languages = page.locator('.site-header__languages');
+  await languages.locator('summary').click();
+  const english = languages.locator('a[hreflang="en"]');
+  await expect(english).toHaveAttribute('href', root);
+  await english.click();
   await expect(page).toHaveURL(new RegExp('/mtg-history/$'));
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page.getByRole('link', { name: 'Mudar para português brasileiro' })).toHaveAttribute('href', `${root}pt-br/`);
+  const englishLanguages = page.locator('.site-header__languages');
+  await englishLanguages.locator('summary').click();
+  const portuguese = englishLanguages.locator('a[hreflang="pt-BR"]');
+  await expect(portuguese).toBeVisible();
+  await expect(portuguese).toHaveAttribute('href', `${root}pt-br/`);
 });
 
 test('untranslated chapters retain English language and no false hreflang', async ({ page }) => {
