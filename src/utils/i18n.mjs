@@ -1,4 +1,4 @@
-/** Phase 1 translates the landing page only; other URLs remain English. */
+/** Phase 2 translates navigation and directory interfaces; historical records remain English. */
 export const LANGUAGES = Object.freeze(['en', 'pt-BR']);
 
 const strings = {
@@ -13,11 +13,11 @@ const strings = {
     credit: 'Created and maintained with love 🖤 by',
   },
   'pt-BR': {
-    navigation: ['Início', 'Cronologia (EN)', 'Pessoas (EN)', 'Busca (EN)', 'Sobre (EN)'],
+    navigation: ['Início', 'Descobrir (EN)', 'Buscar (EN)', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre (EN)'],
     navAria: 'Navegação principal', mobileAria: 'Navegação móvel', toggle: 'Abrir navegação',
     menu: 'Menu', skip: 'Pular para o conteúdo', homeAria: 'Chronicles of the Multiverse, início',
     footerIntro: 'Um guia histórico independente sobre as histórias de Magic: The Gathering.',
-    footerLinks: ['Linha do tempo (EN)', 'Glossário (EN)', 'Sobre o projeto (EN)'],
+    footerLinks: ['Linha do tempo', 'Glossário (EN)', 'Sobre o projeto (EN)'],
     supportAria: 'Apoie DevIsola no Ko-fi', support: 'Apoiar no Ko-fi ↗',
     legal: 'Conteúdo não oficial de fãs, sem aprovação ou endosso da Wizards of the Coast. Magic: The Gathering e marcas relacionadas pertencem à Wizards of the Coast.',
     credit: 'Criado e mantido com carinho 🖤 por',
@@ -40,5 +40,30 @@ export function homeAlternates(origin, base = '/mtg-history/') {
   return [
     { lang: 'en', href: new URL(base, origin).href },
     { lang: 'pt-BR', href: new URL(`${base}pt-br/`, origin).href },
+  ];
+}
+
+// Only directory UIs with actual Portuguese counterparts participate in hreflang.
+export const TRANSLATED_SUFFIXES = Object.freeze(['', 'timeline/', 'characters/', 'events/', 'archive/']);
+
+export function translatedSuffix(pathname, base = '/mtg-history/') {
+  if (typeof pathname !== 'string' || !base.startsWith('/') || !base.endsWith('/')) return null;
+  for (const suffix of TRANSLATED_SUFFIXES) {
+    if (pathname === `${base}${suffix}` || pathname === `${base}pt-br/${suffix}`) return suffix;
+  }
+  return null;
+}
+
+export function isTranslatedRoute(pathname, base = '/mtg-history/') {
+  return translatedSuffix(pathname, base) !== null;
+}
+
+export function routeAlternates(pathname, origin, base = '/mtg-history/') {
+  const suffix = translatedSuffix(pathname, base);
+  if (suffix === null) return [];
+  if (!origin) throw new Error('Missing origin for route alternates');
+  return [
+    { lang: 'en', href: new URL(`${base}${suffix}`, origin).href },
+    { lang: 'pt-BR', href: new URL(`${base}pt-br/${suffix}`, origin).href },
   ];
 }

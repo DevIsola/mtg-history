@@ -4,7 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CardArtworkViewer from '../components/CardArtworkViewer.astro';
 import { withBase } from '../utils/paths';
-import { homeAlternates, isTranslatedHome, uiFor } from '../utils/i18n.mjs';
+import { routeAlternates, uiFor } from '../utils/i18n.mjs';
 
 interface Props {
   title: string;
@@ -13,8 +13,7 @@ interface Props {
 }
 const { title, description, locale = 'en' } = Astro.props;
 const ui = uiFor(locale);
-const localizedHome = isTranslatedHome(Astro.url.pathname, withBase(''));
-const alternates = localizedHome ? homeAlternates(Astro.site, withBase('')) : [];
+const alternates = routeAlternates(Astro.url.pathname, Astro.site, withBase(''));
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const socialTitle = `${title} | Chronicles of the Multiverse`;
 const socialImage = new URL(withBase('social-preview.png'), Astro.site).href;

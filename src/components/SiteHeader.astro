@@ -2,12 +2,13 @@
 ---
 import { withBase } from '../utils/paths';
 import ThemeToggle from './ThemeToggle.astro';
-import { isTranslatedHome, uiFor } from '../utils/i18n.mjs';
+import { isTranslatedRoute, translatedSuffix, uiFor } from '../utils/i18n.mjs';
 
 interface Props { locale?: 'en' | 'pt-BR'; }
 const { locale = 'en' } = Astro.props;
 const ui = uiFor(locale);
-const showLanguageSwitch = isTranslatedHome(Astro.url.pathname, withBase(''));
+const suffix = translatedSuffix(Astro.url.pathname, withBase(''));
+const showLanguageSwitch = isTranslatedRoute(Astro.url.pathname, withBase(''));
 
 // Keep the established English routes and their regression-test contract intact.
 const englishLinks = [
@@ -19,11 +20,11 @@ const englishLinks = [
   { label: 'Archive', href: withBase('archive/') },
   { label: 'About', href: withBase('about/') },
 ];
-const ptPaths = ['pt-br/', 'timeline/', 'characters/', 'search/', 'about/'];
+const ptPaths = ['pt-br/', 'discover/', 'search/', 'pt-br/timeline/', 'pt-br/characters/', 'pt-br/archive/', 'about/'];
 const links = locale === 'pt-BR'
   ? ui.navigation.map((label, index) => ({ label, href: withBase(ptPaths[index]) }))
   : englishLinks;
-const switchPath = locale === 'pt-BR' ? '' : 'pt-br/';
+const switchPath = locale === 'pt-BR' ? (suffix ?? '') : `pt-br/${suffix ?? ''}`;
 const switchLabel = locale === 'pt-BR' ? 'EN' : 'PT-BR';
 const switchAria = locale === 'pt-BR' ? 'Switch to English' : 'Mudar para português brasileiro';
 

@@ -12,7 +12,7 @@ const ui = uiFor(locale);
       <p>{ui.footerIntro}</p>
     </div>
     <div class="footer-links">
-      <a href={withBase('timeline/')}>{ui.footerLinks[0]}</a>
+      <a href={withBase(locale === 'pt-BR' ? 'pt-br/timeline/' : 'timeline/')}>{ui.footerLinks[0]}</a>
       <a href={withBase('glossary/')}>{ui.footerLinks[1]}</a>
       <a href={withBase('about/')}>{ui.footerLinks[2]}</a>
       <a href="https://github.com/DevIsola/mtg-history" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
