@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PortugueseCatalogControls from '../../../components/PortugueseCatalogControls.astro';
 import { withBase } from '../../../utils/paths';
+import { portugueseEra } from '../../../utils/pt-catalog.mjs';
 import { getCollection } from 'astro:content';
 const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
 ---
@@ -13,15 +15,18 @@ const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order -
     </div>
   </section>
   <section class="section-spacing">
-    <div class="page-shell">
+    <div class="page-shell" data-pt-catalog>
       <a class="text-link" href={withBase('pt-br/')}>← Voltar ao início</a>
       <p><a class="text-link" href={withBase('pt-br/events/')}>Acontecimentos</a> · <a class="text-link" href={withBase('pt-br/timeline/')}>Cronologia</a> · <a class="text-link" href={withBase('pt-br/characters/')}>Personagens</a> · <a class="text-link" href={withBase('pt-br/archive/')}>Arquivo</a></p>
       <p>A navegação está em português. Os nomes e as informações das cartas permanecem no idioma original, e o arquivo detalhado está em inglês.</p>
+      <PortugueseCatalogControls id="archive" count={chapters.length} />
       <ol class="character-event-list">
         {chapters.map((chapter) => (
-          <li><a href={withBase(`archive/#${chapter.id}`)} hreflang="en">
+          <li data-pt-entry data-pt-search={`${chapter.data.title} ${portugueseEra(chapter.id).name} ${portugueseEra(chapter.id).summary}`}><a href={withBase(`archive/#${chapter.id}`)} hreflang="en">
             <span>Capítulo {String(chapter.data.order).padStart(2, '0')} · {chapter.data.cardIds.length} referências ilustradas</span>
-            <strong>{chapter.data.title}</strong>
+            <strong>{portugueseEra(chapter.id).name}</strong>
+            <span>{portugueseEra(chapter.id).summary}</span>
+            <span>Título original: {chapter.data.title}</span>
             <span>Ver cartas no arquivo em inglês →</span>
           </a></li>
         ))}
@@ -29,3 +34,7 @@ const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order -
     </div>
   </section>
 </BaseLayout>
+<script>
+  import { setupPortugueseCatalog } from '../../../utils/pt-catalog.mjs';
+  setupPortugueseCatalog();
+</script>
