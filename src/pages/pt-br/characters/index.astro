@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PortugueseCatalogControls from '../../../components/PortugueseCatalogControls.astro';
 import { withBase } from '../../../utils/paths';
 import { characters } from '../../../data/characters';
 const people = [...characters].sort((a, b) => a.name.localeCompare(b.name));
@@ -13,14 +14,15 @@ const people = [...characters].sort((a, b) => a.name.localeCompare(b.name));
     </div>
   </section>
   <section class="section-spacing">
-    <div class="page-shell">
+    <div class="page-shell" data-pt-catalog>
       <a class="text-link" href={withBase('pt-br/')}>← Voltar ao início</a>
       <p><a class="text-link" href={withBase('pt-br/events/')}>Acontecimentos</a> · <a class="text-link" href={withBase('pt-br/timeline/')}>Cronologia</a> · <a class="text-link" href={withBase('pt-br/characters/')}>Personagens</a> · <a class="text-link" href={withBase('pt-br/archive/')}>Arquivo</a></p>
       <p>Os nomes dos personagens são mantidos; perfis, biografias e descrições estão em inglês.</p>
       <p>{people.length} personagens documentados.</p>
+      <PortugueseCatalogControls id="characters" count={people.length} />
       <ol class="character-event-list">
         {people.map((person) => (
-          <li><a href={withBase(`characters/${person.id}/`)} hreflang="en">
+          <li data-pt-entry data-pt-search={`${person.name} ${person.title} ${person.origin} ${person.role}`}><a href={withBase(`characters/${person.id}/`)} hreflang="en">
             <strong>{person.name}</strong>
             <span>Abrir perfil em inglês →</span>
           </a></li>
@@ -29,3 +31,7 @@ const people = [...characters].sort((a, b) => a.name.localeCompare(b.name));
     </div>
   </section>
 </BaseLayout>
+<script>
+  import { setupPortugueseCatalog } from '../../../utils/pt-catalog.mjs';
+  setupPortugueseCatalog();
+</script>
