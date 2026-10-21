@@ -4,6 +4,7 @@ import PortugueseCatalogControls from '../../../components/PortugueseCatalogCont
 import { withBase } from '../../../utils/paths';
 import { portugueseEra } from '../../../utils/pt-catalog.mjs';
 import { eras } from '../../../data/eras';
+import { BATCH_1_IDS } from '../../../data/pt-chapter-batch1.mjs';
 ---
 <BaseLayout locale="pt-BR" title="Cronologia histórica" description="Explore os dez períodos editoriais da história de Magic: The Gathering.">
   <section class="page-banner">
@@ -17,7 +18,7 @@ import { eras } from '../../../data/eras';
     <div class="page-shell" data-pt-catalog>
       <a class="text-link" href={withBase('pt-br/')}>← Voltar ao início</a>
       <p><a class="text-link" href={withBase('pt-br/events/')}>Acontecimentos</a> · <a class="text-link" href={withBase('pt-br/timeline/')}>Cronologia</a> · <a class="text-link" href={withBase('pt-br/characters/')}>Personagens</a> · <a class="text-link" href={withBase('pt-br/archive/')}>Arquivo</a></p>
-      <p>O catálogo está em português. Os títulos originais, resumos completos e capítulos continuam em inglês.</p>
+      <p>O catálogo está em português. Quatro períodos contam com leituras adaptadas em português; os capítulos completos e registros detalhados continuam em inglês.</p>
       <PortugueseCatalogControls id="timeline" count={eras.length} />
       <ol class="character-event-list">
         {eras.map((era) => (
@@ -31,6 +32,9 @@ import { eras } from '../../../data/eras';
             </a>
             {era.id === 'thran' && (
               <p><a class="text-link" href={withBase('pt-br/chapters/thran/')} lang="pt-BR">Ler a versão condensada em português →</a></p>
+            )}
+            {BATCH_1_IDS.includes(era.id) && (
+              <p><a class="text-link" href={withBase(`pt-br/chapters/${era.id}/`)} lang="pt-BR">Ler adaptação em português →</a></p>
             )}
           </li>
         ))}
