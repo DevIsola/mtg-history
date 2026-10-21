@@ -17,3 +17,7 @@ export interface UiCopy {
 export function uiFor(locale: Locale): UiCopy;
 export function isTranslatedHome(pathname: string, base?: string): boolean;
 export function homeAlternates(origin: URL | string | undefined, base?: string): { lang: Locale; href: string }[];
+export const TRANSLATED_SUFFIXES: readonly string[];
+export function translatedSuffix(pathname: string, base?: string): string | null;
+export function isTranslatedRoute(pathname: string, base?: string): boolean;
+export function routeAlternates(pathname: string, origin: URL | string | undefined, base?: string): { lang: Locale; href: string }[];
