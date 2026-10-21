@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import HistoricalCard from '../../../components/HistoricalCard.astro';
+import IssueReporter from '../../../components/IssueReporter.astro';
 import { historicalEvents } from '../../../data/events';
 import { withBase } from '../../../utils/paths';
 import { PORTUGUESE_BATCH_1 } from '../../../data/pt-chapter-batch1.mjs';
@@ -110,6 +111,7 @@ const cardReferences = chapter.data.cardIds.map((reference, index) => ({
           <p><a class="text-link" href={withBase(`chapters/${companion.id}/`)} hreflang="en">Ler a versão integral em inglês (EN) →</a></p>
           <p><a class="text-link" href={withBase('pt-br/timeline/')}>← Voltar à cronologia em português</a></p>
         </section>
+        <IssueReporter chapterId={companion.id} chapterTitle={companion.title} />
       </div>
     </section>
   </div>
