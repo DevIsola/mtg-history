@@ -1,5 +1,8 @@
 # Card model: contextual data deduplication (Phase 3A)
 
+> **Historical migration record.** This one-time migration was completed and its obsolete runner has been retired. Commands below document the original rollout and must **not** be executed against current `main`. For supported checks, use `pnpm run verify` and see [project maintenance](project-maintenance.md).
+
+
 After the canonical printing registry and consumers are merged, this migration
 retires two now-redundant fields without changing the user-facing history:
 
