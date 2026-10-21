@@ -1,0 +1,47 @@
+---
+import { withBase } from '../utils/paths';
+import { ISSUE_CATEGORIES, reportIssueUrl } from '../utils/issue-report.mjs';
+
+interface Props {
+  chapterId: string;
+  chapterTitle: string;
+}
+const { chapterId, chapterTitle } = Astro.props;
+const pageUrl = new URL(withBase(`pt-br/chapters/${chapterId}/`), Astro.site ?? Astro.url).href;
+const categories = ISSUE_CATEGORIES.map((category) => ({
+  ...category,
+  href: reportIssueUrl({ chapterId, chapterTitle, category: category.id, pageUrl }),
+}));
+---
+<section class="issue-report" data-issue-report data-issue-chapter={chapterId} aria-label="Enviar uma correção para este capítulo">
+  <h2>Encontrou um problema neste capítulo?</h2>
+  <p>Ajude a corrigir informações históricas, tradução, arte ou problemas de acesso. O registro já incluirá o capítulo e seu endereço.</p>
+  <details>
+    <summary>Reportar um problema</summary>
+    <p>Escolha uma categoria. O GitHub abrirá um rascunho com os dados desta página; descreva a correção e publique somente se desejar.</p>
+    <ul>
+      {categories.map((category) => (
+        <li>
+          <a href={category.href} target="_blank" rel="noopener noreferrer" data-issue-category={category.id}>
+            {category.label} ↗
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="issue-report__note">É necessário entrar no GitHub para publicar. Nenhuma issue é enviada automaticamente.</p>
+  </details>
+</section>
+<style>
+  .issue-report { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 2rem; line-height: 1.65; }
+  .issue-report h2 { font-size: clamp(1.35rem, 2vw, 1.7rem); margin: 0 0 .6rem; }
+  .issue-report > p { margin: 0 0 1rem; color: var(--ink-soft); }
+  .issue-report details { border: 1px solid var(--line); border-radius: .35rem; background: var(--paper-white); padding: 1rem 1.25rem; }
+  .issue-report summary { cursor: pointer; color: var(--link-color); font-weight: 700; }
+  .issue-report summary:focus-visible, .issue-report a:focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
+  .issue-report details p { margin: 1rem 0; }
+  .issue-report ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr)); gap: .6rem; margin: 1rem 0; padding: 0; }
+  .issue-report li { min-width: 0; }
+  .issue-report a { display: block; border: 1px solid var(--line); padding: .7rem .85rem; color: var(--link-color); overflow-wrap: anywhere; }
+  .issue-report a:hover { background: var(--paper-deep); }
+  .issue-report__note { color: var(--ink-soft); font-size: .9rem; }
+</style>
