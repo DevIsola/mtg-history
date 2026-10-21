@@ -11,6 +11,7 @@ import ChapterSources from '../../components/ChapterSources.astro';
 import ChapterSwitcher from '../../components/ChapterSwitcher.astro';
 import ChapterHistoryPaths from '../../components/ChapterHistoryPaths.astro';
 import ChapterEntityConnections from '../../components/ChapterEntityConnections.astro';
+import ChapterContextRail from '../../components/ChapterContextRail.astro';
 
 export async function getStaticPaths() {
   const chapters = await getCollection('chapters');
@@ -90,7 +91,10 @@ const nextChapter = chapters[currentIndex + 1];
 
         <p class="chapter-reader__context">Chapter {String(chapter.data.order).padStart(2, '0')} · {chapter.data.title}</p>
 
-        <ChapterReadingControls />
+        <details class="chapter-settings" data-chapter-settings hidden>
+          <summary aria-label="Reading preferences"><span aria-hidden="true">Aa</span> Reading preferences <span aria-hidden="true">⌄</span></summary>
+          <ChapterReadingControls />
+        </details>
 
         <details class="chapter-publications">
           <summary>
@@ -155,6 +159,8 @@ const nextChapter = chapters[currentIndex + 1];
         </nav>
 
       </div>
+      <ChapterContextRail chapterId={chapter.id}
+        previousChapter={previousChapter ? { id: previousChapter.id, title: previousChapter.data.title } : undefined} />
     </div>
   </section>
   </div>

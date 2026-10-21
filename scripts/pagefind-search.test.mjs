@@ -34,7 +34,10 @@ test('build pipeline indexes static pages before link checks', () => {
   assert.match(pkg.scripts.verify, /pnpm run build && pnpm run check:search && pnpm run check:links/);
   assert.equal(pkg.scripts['check:search'], 'node scripts/check-pagefind-index.mjs');
   assert.match(read('src/layouts/BaseLayout.astro'), /<main id="main-content" data-pagefind-body>/);
-  assert.match(read('src/components/SiteHeader.astro'), /label: 'Search', href: withBase\('search\/'\)/);
+  const header = read('src/components/SiteHeader.astro');
+  // Both language choices use the original Pagefind search routes, not another search engine.
+  assert.match(header, /const search = withBase\(pt \? 'pt-br\/search\/' : 'search\/'\)/);
+  assert.match(header, /class="site-header__search" href=\{search\}/);
 });
 
 test('search route provides base-aware lazy index loading, status and no-JS navigation', () => {

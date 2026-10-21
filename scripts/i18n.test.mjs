@@ -40,8 +40,15 @@ test('shared shell translates visible navigation and document language', () => {
   for (const token of ['<html lang={locale}>', 'hreflang={lang}', '<SiteHeader locale={locale} />', '<SiteFooter locale={locale} />']) {
     assert.ok(layout.includes(token), `Missing ${token}`);
   }
-  assert.match(header, /showLanguageSwitch/);
-  assert.match(header, /ui\.navigation/);
+  // Navigation is now the C1 Read/Explore/About model. Preserve locale pairing and explicit fallback labels.
+  assert.match(header, /const paired = isTranslatedRoute\(/);
+  assert.match(header, /href=\{englishChoice\} hreflang=\{paired \? 'en' : undefined\}/);
+  assert.match(header, /href=\{portugueseChoice\} hreflang=\{paired \? 'pt-BR' : undefined\}/);
+  assert.match(header, /English\{!paired \? ' — home' : ''\}/);
+  assert.match(header, /Português\{!paired \? ' — início' : ''\}/);
+  for (const label of ['readLabel', 'exploreLabel', 'aboutLabel']) {
+    assert.ok(header.includes('{' + label + '}'), 'Missing primary navigation ' + label);
+  }
   assert.match(footer, /ui\.footerIntro/);
 });
 

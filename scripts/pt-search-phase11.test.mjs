@@ -64,7 +64,8 @@ test('Portuguese navigation and homepage link to real search without altering En
   assert.equal(uiFor('pt-BR').navigation[2], 'Buscar');
   assert.equal(uiFor('en').navigation[2], 'Search');
   assert.match(header, /'pt-br\/search\/'/);
-  assert.match(header, /label: 'Search', href: withBase\('search\/'\)/);
+  assert.match(header, /const search = withBase\(pt \? 'pt-br\/search\/' : 'search\/'\)/);
+  assert.match(header, /class="site-header__search" href=\{search\}/);
   assert.match(home, /withBase\('pt-br\/search\/'\)/);
   assert.match(home, /withBase\('search\/'\)/);
 });

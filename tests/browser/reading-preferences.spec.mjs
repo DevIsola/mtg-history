@@ -6,6 +6,7 @@ test('reading preferences change prose and persist across chapters', async ({ pa
   await page.goto(base + 'thran/');
   const reader = page.locator('[data-chapter-reading-root]');
   const controls = page.locator('[data-reading-controls]');
+  await page.locator('[data-chapter-settings] summary').click();
   await expect(controls).toBeVisible();
   await controls.getByLabel('Larger', { exact: true }).check();
   await controls.getByLabel('Classic serif').check();
@@ -21,6 +22,7 @@ test('reading preferences change prose and persist across chapters', async ({ pa
   await expect(nextReader).toHaveAttribute('data-reading-size', 'large');
   await expect(nextReader).toHaveAttribute('data-reading-typeface', 'classic');
   await expect(nextReader).toHaveAttribute('data-reading-spacing', 'relaxed');
+  await page.locator('[data-chapter-settings] summary').click();
   await page.locator('[data-reading-reset]').click();
   await expect(nextReader).toHaveAttribute('data-reading-size', 'regular');
   await expect(nextReader).toHaveAttribute('data-reading-typeface', 'modern');
@@ -30,6 +32,7 @@ test('reading preferences change prose and persist across chapters', async ({ pa
 test('reader controls remain usable on a 320px screen', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 700 });
   await page.goto(base + 'thran/');
+  await page.locator('[data-chapter-settings] summary').click();
   await page.getByLabel('Larger', { exact: true }).check();
   const overflow = await page.evaluate(() =>
     document.documentElement.scrollWidth - document.documentElement.clientWidth);
