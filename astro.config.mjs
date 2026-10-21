@@ -24,5 +24,11 @@ export default defineConfig({
     },
   },
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt-br'],
+    routing: { prefixDefaultLocale: false },
+  },
+
   integrations: [mdx()],
 });

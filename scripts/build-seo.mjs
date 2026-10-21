@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { canonicalUrl, SITE_BASE, SITE_ORIGIN, sitemapPaths, sitemapXml } from '../src/utils/seo.mjs';
+import { homeAlternates } from '../src/utils/i18n.mjs';
 
 const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 
@@ -25,10 +26,21 @@ export function buildSeo(root = dist) {
     throw new Error('Social preview must be a valid 1200x630 PNG');
   }
   const paths = sitemapPaths(visit(root, root));
-  if (paths.length < 3 || !paths.includes('/')) throw new Error('Incomplete static route inventory');
+  if (paths.length < 3 || !paths.includes('/') || !paths.includes('/pt-br/')) throw new Error('Incomplete localized static route inventory');
   const urls = paths.map((path) => canonicalUrl(SITE_BASE + path.slice(1)));
   for (const [index, path] of paths.entries()) {
     const html = readFileSync(join(root, path.slice(1), 'index.html'), 'utf8');
+    if (path === '/' || path === '/pt-br/') {
+      const language = path === '/' ? 'en' : 'pt-BR';
+      if (!html.includes(`<html lang="${language}"`)) {
+        throw new Error(`Incorrect homepage language: ${path}`);
+      }
+      for (const { lang, href } of homeAlternates(SITE_ORIGIN, SITE_BASE)) {
+        if (!html.includes(`rel="alternate" hreflang="${lang}" href="${href}"`)) {
+          throw new Error(`Missing homepage hreflang ${lang}: ${path}`);
+        }
+      }
+    }
     if (!html.includes(`rel="canonical" href="${urls[index]}"`)) {
       throw new Error(`Missing or mismatched canonical URL: ${path}`);
     }

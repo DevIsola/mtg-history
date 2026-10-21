@@ -4,19 +4,24 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CardArtworkViewer from '../components/CardArtworkViewer.astro';
 import { withBase } from '../utils/paths';
+import { homeAlternates, isTranslatedHome, uiFor } from '../utils/i18n.mjs';
 
 interface Props {
   title: string;
   description: string;
+  locale?: 'en' | 'pt-BR';
 }
-const { title, description } = Astro.props;
+const { title, description, locale = 'en' } = Astro.props;
+const ui = uiFor(locale);
+const localizedHome = isTranslatedHome(Astro.url.pathname, withBase(''));
+const alternates = localizedHome ? homeAlternates(Astro.site, withBase('')) : [];
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const socialTitle = `${title} | Chronicles of the Multiverse`;
 const socialImage = new URL(withBase('social-preview.png'), Astro.site).href;
 const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass on a dark star map';
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,6 +55,7 @@ const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass
     <meta name="theme-color" content="#11191d" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {alternates.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Chronicles of the Multiverse" />
     <meta property="og:url" content={canonical} />
@@ -69,10 +75,10 @@ const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass
     <title>{title} | Chronicles of the Multiverse</title>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <SiteHeader />
+    <a class="skip-link" href="#main-content">{ui.skip}</a>
+    <SiteHeader locale={locale} />
     <main id="main-content" data-pagefind-body><slot /></main>
-    <SiteFooter />
+    <SiteFooter locale={locale} />
     <CardArtworkViewer />
     <script>
       import '../scripts/card-image-fallback';

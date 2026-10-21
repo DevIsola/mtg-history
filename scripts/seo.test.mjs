@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { buildSeo } from './build-seo.mjs';
 import { test } from 'node:test';
 import { canonicalUrl, sitemapPaths, sitemapXml } from '../src/utils/seo.mjs';
+import { homeAlternates } from '../src/utils/i18n.mjs';
 
 const layout = readFileSync(new URL('../src/layouts/BaseLayout.astro', import.meta.url), 'utf8');
 const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
@@ -60,12 +61,17 @@ test('SEO build fails on missing, invalid or unreferenced social imagery', async
   const dir = await mkdtemp(join(tmpdir(), 'mtg-social-preview-'));
   const imageUrl = 'https://devisola.github.io/mtg-history/social-preview.png';
   try {
-    const routes = ['/', '/chapters/thran/', '/characters/yawgmoth/'];
+    const routes = ['/', '/pt-br/', '/chapters/thran/', '/characters/yawgmoth/'];
     for (const path of routes) {
       const folder = join(dir, path.slice(1));
       await mkdir(folder, { recursive: true });
       const canonical = `https://devisola.github.io/mtg-history${path}`;
-      await writeFile(join(folder, 'index.html'), `<link rel="canonical" href="${canonical}" /><meta property="og:image" content="${imageUrl}" /><meta name="twitter:image" content="${imageUrl}" />`);
+      const head = (path === '/' || path === '/pt-br/')
+        ? `<html lang="${path === '/' ? 'en' : 'pt-BR'}">` + homeAlternates('https://devisola.github.io').map(
+            ({ lang, href }) => `<link rel="alternate" hreflang="${lang}" href="${href}" />`,
+          ).join('')
+        : '';
+      await writeFile(join(folder, 'index.html'), `${head}<link rel="canonical" href="${canonical}" /><meta property="og:image" content="${imageUrl}" /><meta name="twitter:image" content="${imageUrl}" />`);
     }
     assert.throws(() => buildSeo(dir), /Missing social-preview/);
     await writeFile(join(dir, 'social-preview.png'), 'not an image');
@@ -73,6 +79,14 @@ test('SEO build fails on missing, invalid or unreferenced social imagery', async
     await copyFile(new URL('../public/social-preview.png', import.meta.url), join(dir, 'social-preview.png'));
     buildSeo(dir);
     assert.match(readFileSync(join(dir, 'sitemap.xml'), 'utf8'), /chapters\/thran/);
+    assert.match(readFileSync(join(dir, 'sitemap.xml'), 'utf8'), /pt-br\//);
+    const ptFile = join(dir, 'pt-br', 'index.html');
+    const ptHtml = readFileSync(ptFile, 'utf8');
+    await writeFile(ptFile, ptHtml.replace('<html lang="pt-BR">', '<html lang="en">'));
+    assert.throws(() => buildSeo(dir), /Incorrect homepage language: \/pt-br\//);
+    await writeFile(ptFile, ptHtml.replace('hreflang="en"', 'hreflang="fr"'));
+    assert.throws(() => buildSeo(dir), /Missing homepage hreflang en: \/pt-br\//);
+    await writeFile(ptFile, ptHtml);
     await writeFile(join(dir, 'chapters', 'thran', 'index.html'), '<link rel="canonical" href="https://devisola.github.io/mtg-history/chapters/thran/" />');
     assert.throws(() => buildSeo(dir), /Missing or mismatched social preview metadata: \/chapters\/thran\//);
   } finally {

@@ -1,33 +1,37 @@
 ---
 import { withBase } from '../utils/paths';
+import { uiFor } from '../utils/i18n.mjs';
+interface Props { locale?: 'en' | 'pt-BR'; }
+const { locale = 'en' } = Astro.props;
+const ui = uiFor(locale);
 ---
 <footer class="site-footer">
   <div class="page-shell footer-grid">
     <div>
       <div class="footer-brand"><span aria-hidden="true">✦</span> Chronicles of the Multiverse</div>
-      <p>An independent historical guide to the stories behind Magic: The Gathering.</p>
+      <p>{ui.footerIntro}</p>
     </div>
     <div class="footer-links">
-      <a href={withBase('timeline/')}>Timeline</a>
-      <a href={withBase('glossary/')}>Lore glossary</a>
-      <a href={withBase('about/')}>About this project</a>
+      <a href={withBase('timeline/')}>{ui.footerLinks[0]}</a>
+      <a href={withBase('glossary/')}>{ui.footerLinks[1]}</a>
+      <a href={withBase('about/')}>{ui.footerLinks[2]}</a>
       <a href="https://github.com/DevIsola/mtg-history" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 
 <a
   href="https://ko-fi.com/B1H328PBAR"
   target="_blank"
   rel="noopener noreferrer"
-  aria-label="Support DevIsola on Ko-fi"
+  aria-label={ui.supportAria}
 >
-  Support on Ko-fi ↗
+  {ui.support}
 </a>
 
     </div>
   </div>
   <div class="page-shell footer-legal">
-    <p>This is unofficial fan content, not approved or endorsed by Wizards of the Coast. Magic: The Gathering and related marks belong to Wizards of the Coast.</p>
+    <p>{ui.legal}</p>
     <p>
-  Created and maintained with love 🖤 by&nbsp
+  {ui.credit}&nbsp;
   <a
     href="https://github.com/DevIsola"
     target="_blank"
