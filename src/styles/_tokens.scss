@@ -1,7 +1,7 @@
 @use "./breakpoints" as bp;
 
 /* Single owner of the default theme, fonts, and semantic color variables.
-   src/styles/theme.css overrides these properties for dark mode. */
+   _theme.scss overrides these properties for dark mode. */
 :root {
   color-scheme: light;
   --ink: #172227;
@@ -18,12 +18,26 @@
   --site-header-height: 86px;
 
   /* Typography */
-  --font-body: "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
-  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3 Variable", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-reading-serif: Georgia, "Times New Roman", serif;
 
   /* Editorial links */
   --link-color: #785528;
   --link-hover: #483514;
+  --accent-text: var(--link-color);
+  --card-shadow: 0 8px 20px #36281308;
+  --card-hover-shadow: 0 17px 40px #36281317;
+  --status-text: #65716b;
+  --status-border: #d6c9b3;
+  --status-progress-text: #815b2a;
+  --status-progress-border: #c29d64;
+  --status-progress-bg: #ead9ba70;
+  --button-dark-bg: var(--night);
+  --button-dark-text: #faf7f0;
+  --button-dark-hover: #2a3f43;
+  --selection-bg: #d9bd84;
+  --selection-text: #142023;
 }
 
 /* Responsive layout tokens remain centrally owned. */

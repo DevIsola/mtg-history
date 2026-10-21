@@ -63,6 +63,14 @@ Other third-party assets and excerpts are subject to their respective rights,
 terms, and attribution requirements. Do not infer permission to redistribute
 such materials from the availability of repository source code.
 
+### Self-hosted font software
+
+The website bundles **Source Sans 3** (Paul D. Hunt/Adobe) and **Fraunces**
+(The Fraunces Project Authors) through the Fontsource packages. Both font
+families are subject to the **SIL Open Font License 1.1**, not the project's MIT
+source-code license. The dependency distributions include their licenses;
+see the respective Fontsource package notices for copyright information.
+
 ## 5. Files containing mixed material
 
 A single Markdown/MDX, Astro, or TypeScript file can contain both original
