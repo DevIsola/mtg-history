@@ -1,0 +1,62 @@
+---
+/** Reader aid only. Names and provenance come from the rendered chapter cards. */
+---
+<aside class="chapter-artwork-trail" data-chapter-artwork-trail hidden
+  aria-labelledby="chapter-artwork-trail-heading">
+  <div class="chapter-artwork-trail__header">
+    <div>
+      <p class="chapter-artwork-trail__eyebrow">A visual path through this chapter</p>
+      <h2 id="chapter-artwork-trail-heading">Illustrated moments</h2>
+    </div>
+    <span class="chapter-artwork-trail__count" data-artwork-count aria-label="Illustration count"></span>
+  </div>
+  <p class="chapter-artwork-trail__note">Jump to a curated card illustration in its narrative context. These illustrations are editorial references, not independent historical evidence.</p>
+  <details class="chapter-artwork-trail__details">
+    <summary>Browse the illustrated moments <span aria-hidden="true">⌄</span></summary>
+    <ol class="chapter-artwork-trail__list" data-artwork-list></ol>
+  </details>
+  <label class="chapter-artwork-trail__focus">
+    <input type="checkbox" data-artwork-follow />
+    Highlight the current illustration as I read
+  </label>
+</aside>
+
+<style>
+  .chapter-artwork-trail[hidden] { display: none !important; }
+  .chapter-artwork-trail {
+    min-width: 0; margin: 2rem 0 2.6rem;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    background: var(--paper-white); border: 1px solid var(--line);
+    border-top: 3px solid var(--era-accent, var(--link-color));
+  }
+  .chapter-artwork-trail__header { display: flex; gap: 1rem; justify-content: space-between; align-items: start; }
+  .chapter-artwork-trail__eyebrow { margin: 0 0 .3rem; font-size: .75rem; color: var(--link-color); text-transform: uppercase; letter-spacing: .07em; font-weight: 750; }
+  .chapter-artwork-trail h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.35rem, 2.5vw, 1.7rem); font-weight: 500; line-height: 1.25; }
+  .chapter-artwork-trail__count { flex-shrink: 0; color: var(--link-color); font-size: .8rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .chapter-artwork-trail__note { margin: .75rem 0 1rem; max-width: 72ch; color: var(--ink-soft); font-size: .85rem; line-height: 1.6; }
+  .chapter-artwork-trail__details { border-top: 1px solid var(--line); }
+  .chapter-artwork-trail__details summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 0; min-height: 44px; cursor: pointer; color: var(--link-color); font-size: .85rem; font-weight: 750; }
+  .chapter-artwork-trail__details summary::-webkit-details-marker { display: none; }
+  .chapter-artwork-trail__details summary { list-style: none; }
+  .chapter-artwork-trail__list { list-style: none; margin: .1rem 0 1rem; padding: 0; display: grid; gap: .5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+  .chapter-artwork-trail__list li { min-width: 0; }
+  .chapter-artwork-trail__list a { display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: baseline; gap: .15rem .6rem; padding: .75rem; min-height: 56px; background: var(--paper); border: 1px solid var(--line); border-left: 3px solid transparent; color: var(--ink); text-decoration: none; }
+  .chapter-artwork-trail__list a:hover, .chapter-artwork-trail__list a[aria-current="location"] { border-left-color: var(--era-accent, var(--link-color)); background: var(--paper-deep); }
+  .chapter-artwork-trail__list a span { grid-row: 1 / span 2; color: var(--link-color); font-size: .8rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .chapter-artwork-trail__list a strong { min-width: 0; overflow-wrap: anywhere; font-size: .88rem; line-height: 1.4; font-weight: 700; }
+  .chapter-artwork-trail__list a small { grid-column: 2; font-size: .75rem; color: var(--ink-soft); line-height: 1.35; overflow-wrap: anywhere; }
+  .chapter-artwork-trail__focus { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; font-size: .84rem; color: var(--ink); cursor: pointer; }
+  .chapter-artwork-trail__focus input { accent-color: var(--link-color); width: 1.1rem; height: 1.1rem; }
+  .chapter-artwork-trail :is(a, summary, input):focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
+  :global(.chapter-theme[data-artwork-follow="true"] .chapter-prose .historical-moment[data-artwork-current="true"]) {
+    border-top: 3px solid var(--era-accent, var(--link-color));
+    background: var(--paper-white);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  :global(.chapter-theme .chapter-prose .historical-moment[id^="chapter-artwork-"]) { scroll-margin-top: calc(var(--site-header-height) + 1.75rem); }
+</style>
+
+<script>
+  import { setupChapterArtworkTrail } from '../utils/chapter-artwork-trail.mjs';
+  setupChapterArtworkTrail(document.querySelector('.chapter-theme'));
+</script>
