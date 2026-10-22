@@ -127,6 +127,13 @@ const relatedEvents = historicalEvents.filter(
         ← All historical characters
       </a>
 
+      <nav class="character-profile__sections" aria-label="Jump to profile section">
+        <a href="#character-biography">Biography</a>
+        <a href="#character-chapters">Chapters</a>
+        <a href={withBase('relationships/?person=' + profile.id)}>Relationship network ↗</a>
+        {relatedEvents.length > 0 && <a href="#character-events-heading">Events</a>}
+        <a href="#character-reference">Sources</a>
+      </nav>
       <div class="character-profile__layout">
         <div class="character-profile__main">
           <div class="character-profile__facts">
@@ -141,7 +148,7 @@ const relatedEvents = historicalEvents.filter(
             </div>
           </div>
 
-          <article class="character-profile__biography">
+          <article class="character-profile__biography" id="character-biography">
             <p class="eyebrow">The historical record</p>
 
             <h2>
@@ -159,6 +166,7 @@ const relatedEvents = historicalEvents.filter(
 
           <section
             class="character-profile__chapters"
+            id="character-chapters"
             aria-labelledby="character-chapters-heading"
           >
             <p class="eyebrow">Connected history</p>
@@ -198,7 +206,7 @@ const relatedEvents = historicalEvents.filter(
 
 <CharacterRelationships id={profile.id} />
 
-          <section class="character-profile__reference">
+          <section class="character-profile__reference" id="character-reference">
             <p class="eyebrow">Official reference</p>
 
             <a
@@ -274,9 +282,8 @@ const relatedEvents = historicalEvents.filter(
           aria-label={`Illustrated card: ${featuredCard.name}`}
         >
           <p class="eyebrow">
-            Card from the archive
+            Curated illustration · not a primary historical source
           </p>
-
           <HistoricalCard card={featuredCard} />
         </aside>
       </div>

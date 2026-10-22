@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PortugueseCatalogControls from '../../../components/PortugueseCatalogControls.astro';
+import CharacterPortrait from '../../../components/CharacterPortrait.astro';
 import { withBase } from '../../../utils/paths';
 import { characters } from '../../../data/characters';
 const people = [...characters].sort((a, b) => a.name.localeCompare(b.name));
@@ -20,12 +21,19 @@ const people = [...characters].sort((a, b) => a.name.localeCompare(b.name));
       <p>Os nomes dos personagens são mantidos; perfis, biografias e descrições estão em inglês.</p>
       <p>{people.length} personagens documentados.</p>
       <PortugueseCatalogControls id="characters" count={people.length} />
-      <ol class="character-event-list">
+      <ol class="character-event-list character-pt-grid">
         {people.map((person) => (
-          <li data-pt-entry data-pt-search={`${person.name} ${person.title} ${person.origin} ${person.role}`}><a href={withBase(`characters/${person.id}/`)} hreflang="en">
-            <strong>{person.name}</strong>
-            <span>Abrir perfil em inglês →</span>
-          </a></li>
+          <li data-pt-entry data-pt-search={`${person.name} ${person.title} ${person.origin} ${person.role}`}>
+            <a class="character-pt-entry" href={withBase(`characters/${person.id}/`)} hreflang="en">
+              <CharacterPortrait printingId={person.featuredCardId} characterName={person.name}
+                significance={person.featuredCard.significance} locale="pt-BR" />
+              <span class="character-pt-entry__copy">
+                <strong>{person.name}</strong>
+                <span>{person.origin} · {person.role}</span>
+                <span>Abrir perfil em inglês →</span>
+              </span>
+            </a>
+          </li>
         ))}
       </ol>
     </div>

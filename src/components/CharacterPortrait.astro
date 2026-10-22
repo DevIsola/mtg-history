@@ -1,0 +1,48 @@
+---
+import { getEntry } from 'astro:content';
+import { localizedArchiveCard } from '../utils/pt-printings.mjs';
+import ptCatalog from '../data/pt-printings.json';
+
+interface Props {
+  printingId: string;
+  characterName: string;
+  significance: string;
+  locale?: 'en' | 'pt-BR';
+}
+const { printingId, characterName, significance, locale = 'en' } = Astro.props;
+const source = await getEntry('cards', printingId);
+if (!source) throw new Error(`Character ${characterName}: missing canonical portrait ${printingId}`);
+const canonical = { ...source.data, scryfallId: source.id };
+const card = localizedArchiveCard(canonical, locale === 'pt-BR' ? ptCatalog : { version: 1, cards: {} });
+const pt = locale === 'pt-BR';
+---
+<figure class="character-portrait" data-character-portrait
+  data-canonical-id={card.canonicalId} data-printing-id={card.printingId}
+  data-language={card.language} data-scryfall-url={card.scryfallUrl}
+  data-interpretation={significance}>
+  <img src={card.imageUrl} srcset={card.imageSrcset}
+    sizes="(max-width: 600px) 112px, (max-width: 1000px) 128px, 144px"
+    width="488" height="680" loading="lazy" decoding="async"
+    alt={`${card.name}; ${pt ? 'arte de' : 'art by'} ${card.artist}`} />
+  <figcaption>
+    <span class="character-portrait__language">{pt
+      ? card.translated ? 'Carta em português (PT)' : 'Edição original (EN)'
+      : 'Exact illustrated printing'}</span>
+    <span class="character-portrait__credit">{card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</span>
+    <span class="character-portrait__interpretation">{pt ? 'Interpretação editorial (EN): ' : 'Editorial interpretation: '}{significance}</span>
+  </figcaption>
+</figure>
+<style lang="scss">
+  .character-portrait { min-width: 0; width: 100%; margin: 0; }
+  .character-portrait img {
+    width: 100%; height: auto; aspect-ratio: 488 / 680; object-fit: contain;
+    border-radius: 7px; background: var(--paper-deep);
+  }
+  .character-portrait figcaption { display: grid; gap: .25rem; margin-top: .55rem; }
+  .character-portrait__language { font-size: .75rem; font-weight: 700; color: var(--accent-text); }
+  .character-portrait__credit { color: var(--ink-soft); font-size: .75rem; line-height: 1.45; overflow-wrap: anywhere; }
+  .character-portrait__interpretation {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+    overflow: hidden; color: var(--ink-soft); font-size: .75rem; line-height: 1.5;
+  }
+</style>
