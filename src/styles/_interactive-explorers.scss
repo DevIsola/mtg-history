@@ -368,3 +368,104 @@
   .network-explore-tools__search { grid-column: auto; }
   .network-inspector { padding: 1rem; }
 }
+
+/* UX D1: editorial timeline. The event index and chronology data are unchanged. */
+.atlas-track--editorial { border-left-color: var(--gold); gap: 2rem; }
+.atlas-track--editorial .atlas-era__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 230px);
+  column-gap: clamp(1rem, 2.5vw, 2rem);
+  row-gap: .5rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--line);
+  padding: clamp(1.15rem, 2.7vw, 2.25rem);
+}
+.atlas-track--editorial .atlas-era__topline { grid-column: 1; grid-row: 1; align-self: start; }
+.atlas-track--editorial .atlas-era h3 { grid-column: 1; grid-row: 2; line-height: 1.16; }
+.atlas-track--editorial .atlas-era__summary { grid-column: 1; grid-row: 3; max-width: 62ch; margin-block: .6rem; }
+.atlas-track--editorial .atlas-era__chronology {
+  grid-column: 1; grid-row: 4;
+  gap: .75rem; background: transparent; padding: .5rem 0;
+}
+.atlas-track--editorial .atlas-era__chronology div {
+  padding: .95rem; border: 1px solid var(--line);
+  border-top: 2px solid var(--gold); background: var(--paper);
+}
+.atlas-track--editorial .atlas-era__chronology strong { overflow-wrap: anywhere; }
+.atlas-track--editorial .atlas-era__links { grid-column: 1; grid-row: 5; margin-block: .5rem 1rem; }
+.atlas-track--editorial .atlas-era__artwork {
+  grid-column: 2; grid-row: 1 / span 5;
+  align-self: start; min-width: 0; margin: 0;
+}
+.atlas-era__artwork > a { display: block; max-width: 230px; margin-inline: auto; }
+.atlas-era__artwork img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 488 / 680; object-fit: contain;
+  border-radius: 4px; box-shadow: var(--card-shadow);
+}
+.atlas-era__artwork figcaption { display: grid; gap: .4rem; margin-top: .75rem; }
+.atlas-era__artwork-label {
+  font-size: .75rem; line-height: 1.35;
+  color: var(--ink-soft);
+}
+.atlas-era__artwork figcaption > strong {
+  font-family: var(--font-display); font-size: 1rem;
+  font-weight: 600; line-height: 1.4; color: var(--ink);
+}
+.atlas-era__artwork-credit {
+  font-size: .75rem; color: var(--ink-soft); line-height: 1.5;
+}
+.atlas-era__artwork-context { border-top: 1px solid var(--line); margin-top: .25rem; }
+.atlas-era__artwork-context summary {
+  cursor: pointer; padding-block: .5rem; min-height: 44px;
+  color: var(--link-color); font-size: .79rem; font-weight: 700;
+}
+.atlas-era__artwork-context p { font-size: .82rem; line-height: 1.6; color: var(--ink-soft); }
+.atlas-era__artwork a:focus-visible,
+.atlas-era__artwork-context summary:focus-visible {
+  outline: 3px solid var(--link-color); outline-offset: 3px;
+}
+.atlas-track--editorial .atlas-era__events,
+.atlas-track--editorial .atlas-era__publications { grid-column: 1 / -1; min-width: 0; }
+.atlas-track--editorial .atlas-era__events { border-radius: 4px; }
+.atlas-track--editorial .atlas-era__events ol {
+  grid-template-columns: 1fr;
+  gap: 0; padding: 0 .9rem;
+}
+.atlas-track--editorial .atlas-era__events li + li { border-top: 1px solid var(--line); }
+.atlas-track--editorial .atlas-era__events a {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: .3rem 1rem; min-width: 0; border: 0; border-radius: 0;
+  padding: .9rem .25rem;
+}
+.atlas-track--editorial .atlas-era__events a strong { grid-column: 1; font-size: 1.05rem; }
+.atlas-track--editorial .atlas-era__events a span:not(.atlas-event-action) { grid-column: 1; max-width: 75ch; }
+.atlas-track--editorial .atlas-era__events a .atlas-event-action {
+  grid-column: 2; grid-row: 1 / span 2;
+  align-self: center; font-size: .78rem; color: var(--link-color);
+}
+.atlas-track--editorial .atlas-era__events a:hover strong,
+.atlas-track--editorial .atlas-era__events a:focus-visible strong { text-decoration: underline; }
+.atlas-track--editorial .atlas-era__publications {
+  margin-top: .75rem; padding-top: 1rem; border-top: 1px solid var(--line);
+}
+.atlas-track--editorial .atlas-era__publications li { background: transparent; border: 1px solid var(--line); }
+@media (max-width: 900px) {
+  .atlas-track--editorial .atlas-era__content { grid-template-columns: minmax(0, 1fr); }
+  .atlas-track--editorial .atlas-era__topline,
+  .atlas-track--editorial .atlas-era h3,
+  .atlas-track--editorial .atlas-era__summary,
+  .atlas-track--editorial .atlas-era__chronology,
+  .atlas-track--editorial .atlas-era__links,
+  .atlas-track--editorial .atlas-era__artwork { grid-column: 1; grid-row: auto; }
+  .atlas-track--editorial .atlas-era__artwork { width: min(100%, 225px); margin: .5rem 0 1rem; }
+  .atlas-track--editorial .atlas-era__chronology { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .atlas-track--editorial .atlas-era__content { padding: 1rem; }
+  .atlas-track--editorial .atlas-era__chronology { grid-template-columns: 1fr; }
+  .atlas-track--editorial .atlas-era__events a { grid-template-columns: minmax(0, 1fr); }
+  .atlas-track--editorial .atlas-era__events a .atlas-event-action {
+    grid-column: 1; grid-row: auto; justify-self: start;
+  }
+}
