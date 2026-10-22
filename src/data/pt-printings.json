@@ -1,0 +1,1205 @@
+{
+  "version": 1,
+  "cards": {
+    "014af391-3b4a-4aab-a3e9-f60e61016985": {
+      "canonicalId": "014af391-3b4a-4aab-a3e9-f60e61016985",
+      "id": "a1d99289-7a54-4a8a-aa4a-6c69c04ed783",
+      "lang": "pt",
+      "setCode": "tor",
+      "collectorNumber": "57",
+      "illustrationId": "aa9a6965-65a9-4a6c-a76b-26ae53d5a8ca",
+      "printedName": "Édito de Chainer",
+      "artist": "Ben Thompson"
+    },
+    "04dfbc4c-ab21-45db-bbd9-b9d245d60015": {
+      "canonicalId": "04dfbc4c-ab21-45db-bbd9-b9d245d60015",
+      "id": "7d0ec1c5-313c-4471-9c7b-eff8ceb025cd",
+      "lang": "pt",
+      "setCode": "otj",
+      "collectorNumber": "213",
+      "illustrationId": "29b42629-c194-43cf-bcdf-d028a98ef62b",
+      "printedName": "Kellan, the Kid",
+      "artist": "Magali Villeneuve"
+    },
+    "0533d7e4-6b5b-4e2e-8407-279fe438c676": {
+      "canonicalId": "0533d7e4-6b5b-4e2e-8407-279fe438c676",
+      "id": "74c01d32-c6f7-498e-bf73-2c481a9a5694",
+      "lang": "pt",
+      "setCode": "mul",
+      "collectorNumber": "23",
+      "illustrationId": "9838b36d-fed5-4717-a675-718c2b531a2f",
+      "printedName": "Urabrask, o Oculto",
+      "artist": "Flavio Girón"
+    },
+    "0806adab-6a08-411b-b249-e1c58ade354b": {
+      "canonicalId": "0806adab-6a08-411b-b249-e1c58ade354b",
+      "id": "c384421d-f52c-41bf-afc8-f786ba67adad",
+      "lang": "pt",
+      "setCode": "nph",
+      "collectorNumber": "127",
+      "illustrationId": "3f5f3485-3d63-4249-ae25-0bac6ae5f347",
+      "printedName": "Vorinclex, Voz da Fome",
+      "artist": "Karl Kopinski"
+    },
+    "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56": {
+      "canonicalId": "08bdd66e-9ca1-456e-a61c-7c96cf6f7c56",
+      "id": "c1f18376-396d-474c-986c-85033687717b",
+      "lang": "pt",
+      "setCode": "nem",
+      "collectorNumber": "75",
+      "illustrationId": "c76e2461-40e5-4404-a475-470e37b0480b",
+      "printedName": "Volrath, o Caído",
+      "artist": "Kev Walker"
+    },
+    "0d5e4d9a-34e1-46eb-814b-8e3bd4475b8a": {
+      "canonicalId": "0d5e4d9a-34e1-46eb-814b-8e3bd4475b8a",
+      "id": "1e3f67fc-ad5c-4c1e-9936-240c51b3be62",
+      "lang": "pt",
+      "setCode": "dom",
+      "collectorNumber": "173",
+      "illustrationId": "70231c4f-8b51-4ae3-8858-62849c4bc996",
+      "printedName": "A Emenda de Dominária",
+      "artist": "Adam Paquette"
+    },
+    "0d6cc98b-b376-40af-8308-198bab00b2b1": {
+      "canonicalId": "0d6cc98b-b376-40af-8308-198bab00b2b1",
+      "id": "c2f6430a-b2f7-4f4f-ab0f-b53a3ee08af6",
+      "lang": "pt",
+      "setCode": "ulg",
+      "collectorNumber": "107",
+      "illustrationId": "cd8df303-0e2a-4e75-b65e-6e9f1e838ce5",
+      "printedName": "Multani, Feiticeiro-Maro",
+      "artist": "Daren Bader"
+    },
+    "0e84fc99-4045-4518-b588-512a675f2933": {
+      "canonicalId": "0e84fc99-4045-4518-b588-512a675f2933",
+      "id": "39a54ede-a0cc-4bf4-8696-0e7de9a8872f",
+      "lang": "pt",
+      "setCode": "fut",
+      "collectorNumber": "46",
+      "illustrationId": "9a93f94a-2a89-4a6b-bfb2-1f2cde034a21",
+      "printedName": "Venser, Sábio Modelador",
+      "artist": "Aleksi Briclot"
+    },
+    "132d8e2a-e1dd-4867-8e8c-e48b9450b350": {
+      "canonicalId": "132d8e2a-e1dd-4867-8e8c-e48b9450b350",
+      "id": "41e1a827-4a54-466b-b432-17fbf4aa2419",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "247",
+      "illustrationId": "32aafca6-1108-4bd7-9561-7b1c3ee81b56",
+      "printedName": "Farol Interplanar",
+      "artist": "Adam Paquette"
+    },
+    "162088ea-5f99-4244-9427-2fdfb2168fc3": {
+      "canonicalId": "162088ea-5f99-4244-9427-2fdfb2168fc3",
+      "id": "971d88ef-4713-491f-8461-4898719fcde1",
+      "lang": "pt",
+      "setCode": "woe",
+      "collectorNumber": "218",
+      "illustrationId": "bd923d1d-31be-41aa-b848-ce323a65281a",
+      "printedName": "Will, Herdeiro da Paz",
+      "artist": "Ryan Pancoast"
+    },
+    "16d2448c-1b2e-466a-a0ab-e20ba1de6bc9": {
+      "canonicalId": "16d2448c-1b2e-466a-a0ab-e20ba1de6bc9",
+      "id": "4c38e823-60df-4744-8605-035c2a50a764",
+      "lang": "pt",
+      "setCode": "dka",
+      "collectorNumber": "151",
+      "illustrationId": "71e4065f-b94f-4ad7-aa79-6dd3979b3cb8",
+      "printedName": "Câmara Infernal",
+      "artist": "Jaime Jones"
+    },
+    "1b83af86-e1a9-4be1-83dc-0c1ab81b129e": {
+      "canonicalId": "1b83af86-e1a9-4be1-83dc-0c1ab81b129e",
+      "id": "2f6a6de7-51cc-4c7d-9e27-100ce4394186",
+      "lang": "pt",
+      "setCode": "mom",
+      "collectorNumber": "239",
+      "illustrationId": "48b4427a-82fb-428c-8e3f-280702202a04",
+      "printedName": "Invasão de Nova Phyrexia",
+      "artist": "Chris Rallis"
+    },
+    "1cf96a59-8b7d-4a5b-adfd-17eeedd95db5": {
+      "canonicalId": "1cf96a59-8b7d-4a5b-adfd-17eeedd95db5",
+      "id": "d9204c2b-8f6b-458d-8e49-6d604fcc8983",
+      "lang": "pt",
+      "setCode": "jud",
+      "collectorNumber": "93",
+      "illustrationId": "d520d2d7-64a3-48c0-8fd5-218cbf4b3b5d",
+      "printedName": "Jeska, Guerreira Adepta",
+      "artist": "rk post"
+    },
+    "1dd64b1d-bcef-476c-bf0b-3ac7df7cbed3": {
+      "canonicalId": "1dd64b1d-bcef-476c-bf0b-3ac7df7cbed3",
+      "id": "6fe47522-413e-4630-877d-49a6c16ec905",
+      "lang": "pt",
+      "setCode": "one",
+      "collectorNumber": "175",
+      "illustrationId": "ce5c9a36-a566-4cec-98bb-a11076790179",
+      "printedName": "Nissa, Animista Ascensa",
+      "artist": "Chase Stone"
+    },
+    "1ee86efa-248e-4251-b734-f8ad3e8a0344": {
+      "canonicalId": "1ee86efa-248e-4251-b734-f8ad3e8a0344",
+      "id": "511883ee-89cf-4cea-9690-e051a9926b41",
+      "lang": "pt",
+      "setCode": "dom",
+      "collectorNumber": "198",
+      "illustrationId": "f0f9b9f0-9461-4d5e-9529-07ebe2f2b179",
+      "printedName": "Jodah, Arquimago Eterno",
+      "artist": "Yongjae Choi"
+    },
+    "1f437128-3a87-4958-97d0-3940d8761cba": {
+      "canonicalId": "1f437128-3a87-4958-97d0-3940d8761cba",
+      "id": "3c18c4a6-8ae6-4726-ba49-f25d20a6f934",
+      "lang": "pt",
+      "setCode": "fut",
+      "collectorNumber": "157",
+      "illustrationId": "8a9ac041-aeac-4197-b879-51153d6d14d2",
+      "printedName": "Jhoira de Ghitu",
+      "artist": "Kev Walker"
+    },
+    "1f855a7e-3a97-4b62-a2a7-06ff1fbb2c4c": {
+      "canonicalId": "1f855a7e-3a97-4b62-a2a7-06ff1fbb2c4c",
+      "id": "d7fe5d55-eefe-49e9-9985-ba4e8f64f35a",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "222",
+      "illustrationId": "618aebac-5841-4389-8239-66d8ea758ea9",
+      "printedName": "Tawnos, o Fabricante de Brinquedos",
+      "artist": "Livia Prima"
+    },
+    "2013a138-f8e2-4a67-91e8-759288d985a7": {
+      "canonicalId": "2013a138-f8e2-4a67-91e8-759288d985a7",
+      "id": "c6afcccc-30e4-453a-8497-56ef63260e11",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "105",
+      "illustrationId": "45e4a409-0afb-4483-a5f6-fd4243b42940",
+      "printedName": "Colheita das Centelhas",
+      "artist": "Kieran Yanner"
+    },
+    "213d6fb8-5624-4804-b263-51f339482754": {
+      "canonicalId": "213d6fb8-5624-4804-b263-51f339482754",
+      "id": "3abc65e0-2f1b-483b-860a-4d7bdc04e7d0",
+      "lang": "pt",
+      "setCode": "c18",
+      "collectorNumber": "43",
+      "illustrationId": "d92b458f-5a6c-4cd0-b135-d62bbf521b36",
+      "printedName": "Lorde Windgrace",
+      "artist": "Bram Sels"
+    },
+    "222a736e-d819-452d-aeda-eb848c4b2302": {
+      "canonicalId": "222a736e-d819-452d-aeda-eb848c4b2302",
+      "id": "148b13aa-63d6-4d7b-8dd9-ff06e90ec559",
+      "lang": "pt",
+      "setCode": "neo",
+      "collectorNumber": "238",
+      "illustrationId": "bd920712-0fcf-471b-b8a8-a3ea47f4ac13",
+      "printedName": "Tamiyo, Sábia Completada",
+      "artist": "Chris Rahn"
+    },
+    "225e3cc6-34d0-4f81-9f49-162d97e2ea59": {
+      "canonicalId": "225e3cc6-34d0-4f81-9f49-162d97e2ea59",
+      "id": "d534904a-ac72-43a9-a2df-4018e708548a",
+      "lang": "pt",
+      "setCode": "roe",
+      "collectorNumber": "12",
+      "illustrationId": "7738c4ae-497f-49c1-b3d3-4801b0a66ab8",
+      "printedName": "Ulamog, o Vórtice Infinito",
+      "artist": "Aleksi Briclot"
+    },
+    "248c76d3-b5cb-4582-be17-7cd1d0cb0f58": {
+      "canonicalId": "248c76d3-b5cb-4582-be17-7cd1d0cb0f58",
+      "id": "04d46960-ad88-4f60-9c1e-1c79987e1ef4",
+      "lang": "pt",
+      "setCode": "mat",
+      "collectorNumber": "22",
+      "illustrationId": "66ab8b7b-9e90-4db9-8d5e-10629a4acce4",
+      "printedName": "Nissa, Animista Ressurgida",
+      "artist": "Tuan Duong Chu"
+    },
+    "27bb371f-d49f-41bd-bbe0-d5e1e2067e36": {
+      "canonicalId": "27bb371f-d49f-41bd-bbe0-d5e1e2067e36",
+      "id": "6c95bc30-8269-48b1-bc3c-310a2961b7a2",
+      "lang": "pt",
+      "setCode": "dka",
+      "collectorNumber": "142",
+      "illustrationId": "b99ca65a-252a-4ce4-9e42-c6219d385987",
+      "printedName": "Sorin, Senhor de Innistrad",
+      "artist": "Michael Komarck"
+    },
+    "2882793e-5d7d-47f0-9308-652a5e036c2c": {
+      "canonicalId": "2882793e-5d7d-47f0-9308-652a5e036c2c",
+      "id": "d29b3dab-b9b0-4d65-85c4-36eb2475f23d",
+      "lang": "pt",
+      "setCode": "rav",
+      "collectorNumber": "234",
+      "illustrationId": "28c07b79-82f8-49ad-9726-a2bb5c3072b8",
+      "printedName": "Szadek, Senhor dos Segredos",
+      "artist": "Donato Giancola"
+    },
+    "2a1bfefd-dae8-49e9-9d56-cc852e3dc93b": {
+      "canonicalId": "2a1bfefd-dae8-49e9-9d56-cc852e3dc93b",
+      "id": "1d0810db-c366-4ff5-87be-7333068af98c",
+      "lang": "pt",
+      "setCode": "apc",
+      "collectorNumber": "126",
+      "illustrationId": "23f2852f-f10e-45ae-baa2-262c1a511e64",
+      "printedName": "Vindicar",
+      "artist": "Brian Snõddy"
+    },
+    "2b934c78-258e-4b1e-9783-ec9f734e8776": {
+      "canonicalId": "2b934c78-258e-4b1e-9783-ec9f734e8776",
+      "id": "040ba6f6-99fd-4897-9c18-9b9c61dc1f31",
+      "lang": "pt",
+      "setCode": "tor",
+      "collectorNumber": "139",
+      "illustrationId": "74967497-96f9-4edf-aa08-f4e100164df0",
+      "printedName": "Cofres da Cabala",
+      "artist": "Don Hazeltine"
+    },
+    "2c76f7e0-37e7-4e87-93a3-a25ba0674645": {
+      "canonicalId": "2c76f7e0-37e7-4e87-93a3-a25ba0674645",
+      "id": "c76d46ad-d4cf-417d-9f7d-e60d36a35d49",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "95",
+      "illustrationId": "2d68c59a-4694-4637-a3b7-b52c90305295",
+      "printedName": "Gix, Pretor de Yawgmoth",
+      "artist": "Anna Podedworna"
+    },
+    "2db7a0e6-eea5-4fa6-ac14-401411b106cc": {
+      "canonicalId": "2db7a0e6-eea5-4fa6-ac14-401411b106cc",
+      "id": "17077405-c675-41fe-96ef-dd54540f7522",
+      "lang": "pt",
+      "setCode": "mmq",
+      "collectorNumber": "168",
+      "illustrationId": "556b7c62-4bc6-4591-baa7-9fbebd77f1bf",
+      "printedName": "Desmascarar",
+      "artist": "rk post"
+    },
+    "3000d1c6-dbb3-4e65-b428-dbf167bb8797": {
+      "canonicalId": "3000d1c6-dbb3-4e65-b428-dbf167bb8797",
+      "id": "688ac2a8-9d1f-4c62-b9a7-a5d1b6d7c8be",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "40",
+      "illustrationId": "d0f17d33-97da-41e0-a7b8-e2ed98ee12c4",
+      "printedName": "Sílex de Urza",
+      "artist": "Joseph Meehan"
+    },
+    "314d5e89-55f7-42b4-af19-d4d0f499a265": {
+      "canonicalId": "314d5e89-55f7-42b4-af19-d4d0f499a265",
+      "id": "85615f39-b211-48c1-8b25-f35d5375bc19",
+      "lang": "pt",
+      "setCode": "ons",
+      "collectorNumber": "89",
+      "illustrationId": "8a3a15cf-d5e8-42db-b2d8-cfba4898a90e",
+      "printedName": "Ixidor, Escultor da Realidade",
+      "artist": "Kev Walker"
+    },
+    "329f3aca-6db7-41d3-95b2-c479d14b7fa3": {
+      "canonicalId": "329f3aca-6db7-41d3-95b2-c479d14b7fa3",
+      "id": "1b8a9983-a04b-410b-a0a1-429c4e6c79c7",
+      "lang": "pt",
+      "setCode": "mkm",
+      "collectorNumber": "238",
+      "illustrationId": "0390217b-0aa1-4d3f-ace0-975118f7fb72",
+      "printedName": "Trostani, Três Sussurros",
+      "artist": "Jodie Muir"
+    },
+    "385d8691-b9bd-4b4d-86db-7a7cc6181104": {
+      "canonicalId": "385d8691-b9bd-4b4d-86db-7a7cc6181104",
+      "id": "b7d05f8e-6f4f-4bd3-9ce1-13514fb26fc0",
+      "lang": "pt",
+      "setCode": "apc",
+      "collectorNumber": "137",
+      "illustrationId": "bf765ff3-f67e-4f9e-ae89-8285cb018675",
+      "printedName": "Arma do Legado",
+      "artist": "John Avon"
+    },
+    "396df8d6-e85d-4486-8116-68841b7e1e2e": {
+      "canonicalId": "396df8d6-e85d-4486-8116-68841b7e1e2e",
+      "id": "5ecc4ca6-239f-4145-a5cc-30f0c3992fbb",
+      "lang": "pt",
+      "setCode": "otj",
+      "collectorNumber": "223",
+      "illustrationId": "c8cf2efc-b1be-42fa-b1a3-f295643c8400",
+      "printedName": "Oko, o Cabeça",
+      "artist": "Magali Villeneuve"
+    },
+    "3c0145f6-4e27-49e7-9ef6-bac6fa3de26d": {
+      "canonicalId": "3c0145f6-4e27-49e7-9ef6-bac6fa3de26d",
+      "id": "080d2ba6-e7d3-4a83-9e97-d898b6185cfe",
+      "lang": "pt",
+      "setCode": "tsp",
+      "collectorNumber": "83",
+      "illustrationId": "3ce22203-b8b3-4624-a60a-37ce124db90c",
+      "printedName": "Teferi, Mago de Zhalfir",
+      "artist": "D. Alexander Gregory & Jeremy Jarvis"
+    },
+    "3cbaad4f-fb66-4e56-b383-32f55552c8b2": {
+      "canonicalId": "3cbaad4f-fb66-4e56-b383-32f55552c8b2",
+      "id": "cd3795f5-a826-4bec-81d7-306c00926b6d",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "303",
+      "illustrationId": "30170493-5f9b-4063-966f-5630f6e407f9",
+      "printedName": "Mirari",
+      "artist": "Donato Giancola"
+    },
+    "3f0c9dee-fab5-4522-9821-343f84b0c8ab": {
+      "canonicalId": "3f0c9dee-fab5-4522-9821-343f84b0c8ab",
+      "id": "bf1b4651-6433-4a0d-b087-c46aec233a2f",
+      "lang": "pt",
+      "setCode": "uds",
+      "collectorNumber": "139",
+      "illustrationId": "d61c8a9c-defc-4eb7-9dd6-550a90ce201a",
+      "printedName": "Dínamo dos Thran",
+      "artist": "Ron Spears"
+    },
+    "40342b11-1005-4ccc-bef4-9ea4c640b048": {
+      "canonicalId": "40342b11-1005-4ccc-bef4-9ea4c640b048",
+      "id": "e0d3c161-2c21-4cb7-bc8d-7a54e530c071",
+      "lang": "pt",
+      "setCode": "tor",
+      "collectorNumber": "56",
+      "illustrationId": "60d1ddfd-b676-4227-babd-e4a1d60f6c86",
+      "printedName": "Chainer, Mestre da Demência",
+      "artist": "Mark Zug"
+    },
+    "41129b44-4fa7-473b-b2b7-48c6a58be03c": {
+      "canonicalId": "41129b44-4fa7-473b-b2b7-48c6a58be03c",
+      "id": "ce37d944-f5c6-48be-b544-95b916a5abba",
+      "lang": "pt",
+      "setCode": "mkm",
+      "collectorNumber": "185",
+      "illustrationId": "85c19727-48ee-4dbf-8dd1-b5a04fff67e7",
+      "printedName": "Alquist Proft, Investigador Mestre",
+      "artist": "Andreas Zafiratos"
+    },
+    "4219b5ea-a252-4d76-a60a-9674340e8ed3": {
+      "canonicalId": "4219b5ea-a252-4d76-a60a-9674340e8ed3",
+      "id": "05440292-2599-4451-91f7-4b2db2ed8901",
+      "lang": "pt",
+      "setCode": "mat",
+      "collectorNumber": "49",
+      "illustrationId": "4a78b833-6938-48c9-b907-9af23a7f0aee",
+      "printedName": "Karn, Legado Reforjado",
+      "artist": "Grzegorz Rutkowski"
+    },
+    "4382fa49-9e34-45b3-8495-4916dcd995ec": {
+      "canonicalId": "4382fa49-9e34-45b3-8495-4916dcd995ec",
+      "id": "819b7cb6-cd9a-424f-92b7-61c384067e28",
+      "lang": "pt",
+      "setCode": "lci",
+      "collectorNumber": "238",
+      "illustrationId": "d6366b2e-fcba-489f-a0da-b9931339c8e7",
+      "printedName": "Quintorius Kand",
+      "artist": "Zoltan Boros"
+    },
+    "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087": {
+      "canonicalId": "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087",
+      "id": "79e7c163-b92a-4597-a335-4363ad3ed582",
+      "lang": "pt",
+      "setCode": "one",
+      "collectorNumber": "10",
+      "illustrationId": "3307a662-2303-4846-9e2f-21fdfb46c805",
+      "printedName": "Elesh Norn, Mãe das Máquinas",
+      "artist": "Martina Fačková"
+    },
+    "4569fb73-3555-4eb8-933a-130770dd56d1": {
+      "canonicalId": "4569fb73-3555-4eb8-933a-130770dd56d1",
+      "id": "83ac6d5e-d441-46d5-9cee-f6d5e3aa5d6d",
+      "lang": "pt",
+      "setCode": "mat",
+      "collectorNumber": "34",
+      "illustrationId": "f5b8e79e-ad30-49bc-93f2-ffb18c2303a7",
+      "printedName": "O Funeral Régio dos Kenriths",
+      "artist": "Manuel Castañón"
+    },
+    "46975250-950f-4f5d-a7c5-f61aec8e40ad": {
+      "canonicalId": "46975250-950f-4f5d-a7c5-f61aec8e40ad",
+      "id": "92326803-9ea8-4d48-b6f9-6979e01ccf3b",
+      "lang": "pt",
+      "setCode": "cmr",
+      "collectorNumber": "42",
+      "illustrationId": "a1a5c2ac-2831-4385-bab3-404c0ab0b67c",
+      "printedName": "Rebbec, Arquiteta da Ascensão",
+      "artist": "Magali Villeneuve"
+    },
+    "48caf4c4-745c-4072-bf3d-1a3fa7c3bc9c": {
+      "canonicalId": "48caf4c4-745c-4072-bf3d-1a3fa7c3bc9c",
+      "id": "4fe0718f-079c-427e-a634-95b1c5d5441f",
+      "lang": "pt",
+      "setCode": "cmr",
+      "collectorNumber": "186",
+      "illustrationId": "c89516b8-f8d6-460f-93b5-4558bca4eac9",
+      "printedName": "Jeska, Três Vezes Renascida",
+      "artist": "Yongjae Choi"
+    },
+    "4ba8325a-1203-4125-9111-94d9e2b1f14b": {
+      "canonicalId": "4ba8325a-1203-4125-9111-94d9e2b1f14b",
+      "id": "2b8b2e30-ae3c-41c6-8a9c-5da9d179f1f1",
+      "lang": "pt",
+      "setCode": "mmq",
+      "collectorNumber": "214",
+      "illustrationId": "9a6bcc35-3df0-4732-a868-11cde0039803",
+      "printedName": "Squee, Nabobo Goblin",
+      "artist": "David Monette"
+    },
+    "4dcdcad5-e4fb-480e-984f-1ac5cdc986b9": {
+      "canonicalId": "4dcdcad5-e4fb-480e-984f-1ac5cdc986b9",
+      "id": "4404a1f8-7b45-4a12-9c74-fa047bc22688",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "117",
+      "illustrationId": "ac5cf45b-e5ac-4e6f-bc31-28003b5c0908",
+      "printedName": "Braids, Assecla da Cabala",
+      "artist": "Eric Peterson"
+    },
+    "50f7666d-0d60-4fe5-b144-286d4e47b704": {
+      "canonicalId": "50f7666d-0d60-4fe5-b144-286d4e47b704",
+      "id": "5bcf3748-93ff-4a93-8c57-e4e70233c176",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "128",
+      "illustrationId": "1b3f78ed-0913-45b3-9527-7930ef035c90",
+      "printedName": "Fim da Fraternidade",
+      "artist": "Bryan Sola"
+    },
+    "56a2609d-b535-400b-81d9-72989a33c70f": {
+      "canonicalId": "56a2609d-b535-400b-81d9-72989a33c70f",
+      "id": "6518ce07-3776-4352-8273-0de9776a7011",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "208",
+      "illustrationId": "0ea54a23-5660-4c2f-85f6-54fca99a5d29",
+      "printedName": "Niv-Mizzet Renascido",
+      "artist": "Raymond Swanland"
+    },
+    "585a753d-a692-474a-bc28-48dd93b73ace": {
+      "canonicalId": "585a753d-a692-474a-bc28-48dd93b73ace",
+      "id": "ac0be47a-797e-4582-b3c8-bc8373088d0c",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "217",
+      "illustrationId": "4cbe7439-b842-4121-b862-b44fed253ccc",
+      "printedName": "Mishra, Domador de Mak Fawa",
+      "artist": "Darren Tan"
+    },
+    "5a293c45-1e73-4527-be2f-2dcd5c47b610": {
+      "canonicalId": "5a293c45-1e73-4527-be2f-2dcd5c47b610",
+      "id": "7a617191-5f72-412e-855a-adac75173d0c",
+      "lang": "pt",
+      "setCode": "mh1",
+      "collectorNumber": "29",
+      "illustrationId": "05895774-51cc-4f35-872a-d43d87db3af0",
+      "printedName": "Sisay, Capitã do Bons Ventos",
+      "artist": "Anna Steinbauer"
+    },
+    "5eb43c15-50a9-488f-b0be-84a5e0a6d10b": {
+      "canonicalId": "5eb43c15-50a9-488f-b0be-84a5e0a6d10b",
+      "id": "cf011551-c0cb-434d-887b-b10ff379d635",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "84",
+      "illustrationId": "c4c40eed-678a-41de-bfd5-38362372f7b2",
+      "printedName": "Ashnod, Mecanista da Carne",
+      "artist": "Howard Lyon"
+    },
+    "63f5498b-bb12-48ec-811b-b52e45ffddaf": {
+      "canonicalId": "63f5498b-bb12-48ec-811b-b52e45ffddaf",
+      "id": "c947f3cc-2639-4cd8-a365-a68d2a8c5fb8",
+      "lang": "pt",
+      "setCode": "pls",
+      "collectorNumber": "133",
+      "illustrationId": "84d2b6a4-cdc5-44a3-845a-68ee0157930d",
+      "printedName": "Nau Voadora Bons Ventos",
+      "artist": "Mark Tedin"
+    },
+    "641a3bae-9146-4e70-862a-86a56f7c3816": {
+      "canonicalId": "641a3bae-9146-4e70-862a-86a56f7c3816",
+      "id": "ddc27bd6-a141-453f-9691-ef125fffda45",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "267",
+      "illustrationId": "c415d28a-2f70-4d2e-b91e-481029745a39",
+      "printedName": "Seton, Protetor Krosano",
+      "artist": "Greg Staples"
+    },
+    "66b950d9-8fef-4deb-b51b-26edb90abc56": {
+      "canonicalId": "66b950d9-8fef-4deb-b51b-26edb90abc56",
+      "id": "42e80749-1578-40ec-ac93-1416e5370bad",
+      "lang": "pt",
+      "setCode": "pls",
+      "collectorNumber": "107",
+      "illustrationId": "c09a61fc-11a2-4601-a7bc-79474b33819d",
+      "printedName": "Ertai, O Devasso",
+      "artist": "Mark Tedin"
+    },
+    "670c1a05-0dd2-4535-aa7f-ed33bbe92681": {
+      "canonicalId": "670c1a05-0dd2-4535-aa7f-ed33bbe92681",
+      "id": "15556a0b-3fd7-4794-a0d0-be97102c41c3",
+      "lang": "pt",
+      "setCode": "fut",
+      "collectorNumber": "106",
+      "illustrationId": "7de998f2-ed80-4047-a7d0-2d99f61b77b1",
+      "printedName": "Elemental da Fenda",
+      "artist": "Ron Spears"
+    },
+    "67600383-bbb8-411c-b8e6-2296650bc747": {
+      "canonicalId": "67600383-bbb8-411c-b8e6-2296650bc747",
+      "id": "b32fef92-13e9-4489-9123-8d63dd5a7137",
+      "lang": "pt",
+      "setCode": "roe",
+      "collectorNumber": "4",
+      "illustrationId": "77d49e83-98fd-440e-a4ee-ecf8c5535899",
+      "printedName": "Emrakul, o Fragmento dos Éons",
+      "artist": "Mark Tedin"
+    },
+    "678ce3bf-152d-45ca-87ae-ad46c921328b": {
+      "canonicalId": "678ce3bf-152d-45ca-87ae-ad46c921328b",
+      "id": "701a23eb-c630-47f4-a25e-6b8bb7c8875d",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "211",
+      "illustrationId": "619ce89a-5deb-4864-b32c-a938538d2433",
+      "printedName": "Ral, Conduíte da Tempestade",
+      "artist": "Wesley Burt"
+    },
+    "685c9767-eaa7-4e16-b245-816181e2fc36": {
+      "canonicalId": "685c9767-eaa7-4e16-b245-816181e2fc36",
+      "id": "74ae206d-2256-4688-b07d-dd4bbb20c56f",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "218",
+      "illustrationId": "9e5da903-3139-4d11-8569-3f45a4cb94fe",
+      "printedName": "Rainha Kayla bin-Kroog",
+      "artist": "Cristi Balanescu"
+    },
+    "6aa5cc65-f8f1-4f6f-8b4e-2fedccbda684": {
+      "canonicalId": "6aa5cc65-f8f1-4f6f-8b4e-2fedccbda684",
+      "id": "c620801a-5de3-402a-9377-8d340a8c831c",
+      "lang": "pt",
+      "setCode": "uds",
+      "collectorNumber": "118",
+      "illustrationId": "b1b260f6-4ccb-4291-9eda-7c9a8668ed6c",
+      "printedName": "Rofellos, Emissário de Llanowar",
+      "artist": "Michael Sutfin"
+    },
+    "6d1682dd-5a99-4bee-a2c2-c8735047e1a9": {
+      "canonicalId": "6d1682dd-5a99-4bee-a2c2-c8735047e1a9",
+      "id": "10691d55-d40a-4a38-953f-048336312a4b",
+      "lang": "pt",
+      "setCode": "exo",
+      "collectorNumber": "114",
+      "illustrationId": "ecd76b78-d746-487f-86c4-d61451e2668f",
+      "printedName": "Mirri, Felina Guerreira",
+      "artist": "Daren Bader"
+    },
+    "6f807d91-b157-44e8-a431-49782184f876": {
+      "canonicalId": "6f807d91-b157-44e8-a431-49782184f876",
+      "id": "4a1223ca-a228-494d-aefe-28d154e46c41",
+      "lang": "pt",
+      "setCode": "mom",
+      "collectorNumber": "217",
+      "illustrationId": "02e257d3-0175-4153-a04c-fdddb41234ba",
+      "printedName": "Wrenn e Quebra-reinos",
+      "artist": "Cristi Balanescu"
+    },
+    "7b608134-cfc3-48bf-92d8-35d732fcde54": {
+      "canonicalId": "7b608134-cfc3-48bf-92d8-35d732fcde54",
+      "id": "3f42fc93-b642-4a3c-84fb-a25617faadd1",
+      "lang": "pt",
+      "setCode": "mom",
+      "collectorNumber": "263",
+      "illustrationId": "ef652fa3-523d-4732-8a10-e16d0d125530",
+      "printedName": "Quebra-reinos, A Árvore da Invasão",
+      "artist": "Kekai Kotaki"
+    },
+    "7fc23b2e-9124-4f88-b93e-8bfe90e6eb41": {
+      "canonicalId": "7fc23b2e-9124-4f88-b93e-8bfe90e6eb41",
+      "id": "94514d5f-4e94-49b9-9252-597dce2b5e7a",
+      "lang": "pt",
+      "setCode": "plc",
+      "collectorNumber": "162",
+      "illustrationId": "7e33da58-0f97-483c-bf05-de86e3af3217",
+      "printedName": "Radha, Herdeira de Keld",
+      "artist": "Jim Murray"
+    },
+    "811a0988-2900-426c-9413-8f1778d99678": {
+      "canonicalId": "811a0988-2900-426c-9413-8f1778d99678",
+      "id": "ccf1c3ad-bedb-40a3-8d6d-2e53a49db020",
+      "lang": "pt",
+      "setCode": "usg",
+      "collectorNumber": "298",
+      "illustrationId": "8e1b8e7a-e168-4071-89e4-e4eb51fa285e",
+      "printedName": "Karn, Golem de Prata",
+      "artist": "Mark Zug"
+    },
+    "814245de-6105-43ef-acbf-d12d304b6331": {
+      "canonicalId": "814245de-6105-43ef-acbf-d12d304b6331",
+      "id": "95f3de35-11e8-4ca7-bce6-29b3f629e78d",
+      "lang": "pt",
+      "setCode": "lgn",
+      "collectorNumber": "1",
+      "illustrationId": "c3c4bb0c-eed2-4a28-939a-a4e8bcb6ae36",
+      "printedName": "Akroma, Anjo da Ira",
+      "artist": "Ron Spears"
+    },
+    "82db4a41-03e8-4f0c-946c-a98fc5c9f7c8": {
+      "canonicalId": "82db4a41-03e8-4f0c-946c-a98fc5c9f7c8",
+      "id": "f89ae381-8f60-4ced-8e1c-d566a03c81b9",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "58",
+      "illustrationId": "374e8e06-3913-461f-851b-655ab2320c98",
+      "printedName": "Aboshan, Imperador Cefálida",
+      "artist": "Christopher Moeller"
+    },
+    "83a4e48d-6452-4245-bdad-63fe3263550e": {
+      "canonicalId": "83a4e48d-6452-4245-bdad-63fe3263550e",
+      "id": "6da01d1c-0534-4ac1-b93a-8c1393d63373",
+      "lang": "pt",
+      "setCode": "inv",
+      "collectorNumber": "249",
+      "illustrationId": "224860b6-101f-4010-98d9-f9731b73ab29",
+      "printedName": "Hanna, Navegadora",
+      "artist": "Dave Dorman"
+    },
+    "844e29e9-e870-4433-ad63-0ff918a3e41a": {
+      "canonicalId": "844e29e9-e870-4433-ad63-0ff918a3e41a",
+      "id": "453f83f5-e303-4b8a-8cf9-b3add8b57fbe",
+      "lang": "pt",
+      "setCode": "woe",
+      "collectorNumber": "300",
+      "illustrationId": "783c5713-2d1d-4453-bc05-3b2d030a1a63",
+      "printedName": "Rowan, Herdeira da Guerra",
+      "artist": "Abigail Larson"
+    },
+    "849c79ad-8bfc-4512-ab41-f213b6b285ab": {
+      "canonicalId": "849c79ad-8bfc-4512-ab41-f213b6b285ab",
+      "id": "9e9d608b-ae89-4e7b-a19e-dac5ade21ab2",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "14",
+      "illustrationId": "e5ae8769-c3b4-4b33-afc7-5a732f28f74d",
+      "printedName": "Sacrifício de Gideon",
+      "artist": "Chris Rallis"
+    },
+    "84e19975-e3e1-453b-b902-a1b1fc1d8504": {
+      "canonicalId": "84e19975-e3e1-453b-b902-a1b1fc1d8504",
+      "id": "af62c1b0-3116-433c-8d1c-86fac1061a10",
+      "lang": "pt",
+      "setCode": "apc",
+      "collectorNumber": "47",
+      "illustrationId": "a9969264-00b4-4b4d-b085-817e42343bc1",
+      "printedName": "Arena Phyrexiana",
+      "artist": "Pete Venters"
+    },
+    "8690cbcc-f8fd-41f7-9e28-e61c12b04014": {
+      "canonicalId": "8690cbcc-f8fd-41f7-9e28-e61c12b04014",
+      "id": "54d4cb2a-7601-4cc8-8354-97e9b3f21355",
+      "lang": "pt",
+      "setCode": "mh1",
+      "collectorNumber": "116",
+      "illustrationId": "b7ae43df-a9b6-4e11-9053-a4309c0e9df0",
+      "printedName": "Yawgmoth, Médico de Thran",
+      "artist": "Mark Winters"
+    },
+    "87b71b08-668c-4b32-8243-8def1a9acf26": {
+      "canonicalId": "87b71b08-668c-4b32-8243-8def1a9acf26",
+      "id": "9c3f41f4-b596-4aae-bd1c-3c3a3e350219",
+      "lang": "pt",
+      "setCode": "c17",
+      "collectorNumber": "41",
+      "illustrationId": "44b1df40-ec5c-454a-aa8f-921f6402a6c9",
+      "printedName": "Mairsil, o Impostor",
+      "artist": "Izzy"
+    },
+    "88a9b76d-6ce1-40d4-bc04-7ae6237f5eaf": {
+      "canonicalId": "88a9b76d-6ce1-40d4-bc04-7ae6237f5eaf",
+      "id": "e0f0bc1f-349e-4131-94b8-7d6b40596fc5",
+      "lang": "pt",
+      "setCode": "sth",
+      "collectorNumber": "55",
+      "illustrationId": "66894f1b-73cf-4c37-80f2-a954f5f2af89",
+      "printedName": "Crovax, o Amaldicoado",
+      "artist": "Pete Venters"
+    },
+    "8aefe8bd-216a-4ec1-9362-3f9dbf7fd083": {
+      "canonicalId": "8aefe8bd-216a-4ec1-9362-3f9dbf7fd083",
+      "id": "a85e038d-f57f-4f99-9a5e-2f0c20d0beb0",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "225",
+      "illustrationId": "c1abe983-d141-4884-9812-2593773f1a59",
+      "printedName": "Urza, Lorde Protetor",
+      "artist": "Ryan Pancoast"
+    },
+    "8c6ad9c3-b5dd-46a9-8494-8b395e21aedf": {
+      "canonicalId": "8c6ad9c3-b5dd-46a9-8494-8b395e21aedf",
+      "id": "dbdecfbc-4a88-4584-9f44-f1e02b2d84f3",
+      "lang": "pt",
+      "setCode": "plc",
+      "collectorNumber": "45",
+      "illustrationId": "848ef853-495d-4872-b83d-c2cd328bcfb3",
+      "printedName": "Ácido da Realidade",
+      "artist": "James Wong"
+    },
+    "8f244716-78ab-46f5-b6e9-fc1e6db28052": {
+      "canonicalId": "8f244716-78ab-46f5-b6e9-fc1e6db28052",
+      "id": "57deffc2-79fe-44d4-bdf2-0e4cff074962",
+      "lang": "pt",
+      "setCode": "cmr",
+      "collectorNumber": "153",
+      "illustrationId": "7c4941f4-a593-4583-8c23-17ebbab2cc04",
+      "printedName": "Tevesh Szat, Perdição dos Tolos",
+      "artist": "Livia Prima"
+    },
+    "91971e19-61ce-45ac-b700-9ffca5091a27": {
+      "canonicalId": "91971e19-61ce-45ac-b700-9ffca5091a27",
+      "id": "1b924717-5822-4ba0-b5a6-b23a51d6499a",
+      "lang": "pt",
+      "setCode": "exo",
+      "collectorNumber": "33",
+      "illustrationId": "482f321e-c579-4693-91bc-034e5c75c2c8",
+      "printedName": "Ertai, Mago Graduado",
+      "artist": "Terese Nielsen"
+    },
+    "92b0be6d-9183-4938-b7a1-ae7f04ba78a0": {
+      "canonicalId": "92b0be6d-9183-4938-b7a1-ae7f04ba78a0",
+      "id": "25f829d6-dbb4-4b12-bc90-15e87cd2da2f",
+      "lang": "pt",
+      "setCode": "tsp",
+      "collectorNumber": "227",
+      "illustrationId": "2eefdb6d-31b4-4a7b-b3aa-6f8bb4e40288",
+      "printedName": "Thelon de Havenwood",
+      "artist": "Kev Walker"
+    },
+    "93f99e67-901f-4c8d-8a09-e443b7eb928f": {
+      "canonicalId": "93f99e67-901f-4c8d-8a09-e443b7eb928f",
+      "id": "be4159c7-f202-4418-bebb-d4d881f8ac89",
+      "lang": "pt",
+      "setCode": "mom",
+      "collectorNumber": "320",
+      "illustrationId": "124b151a-bd2c-4820-b1e5-a00d41ef3082",
+      "printedName": "Arcanjo Elspeth",
+      "artist": "Denys Tsiperko"
+    },
+    "98b68dea-a7be-4f99-8a50-4c8cf0e0f7a9": {
+      "canonicalId": "98b68dea-a7be-4f99-8a50-4c8cf0e0f7a9",
+      "id": "cbb60325-4c61-44d9-8dd8-62e0dad258f2",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "207",
+      "illustrationId": "4b8dd521-ee16-4f41-910e-c94db63d03c7",
+      "printedName": "Nicol Bolas, Dragão-deus",
+      "artist": "Raymond Swanland"
+    },
+    "99509da7-3e11-4c38-804b-286ce572f36e": {
+      "canonicalId": "99509da7-3e11-4c38-804b-286ce572f36e",
+      "id": "364e4976-954e-4b96-a638-d0a23afd4dbc",
+      "lang": "pt",
+      "setCode": "ulg",
+      "collectorNumber": "20",
+      "illustrationId": "6f941534-2b24-456f-b290-f377f220e1a3",
+      "printedName": "Radiante, Arcanjo",
+      "artist": "Michael Sutfin"
+    },
+    "9c1624f7-8275-46d3-ab7e-7b162e27593f": {
+      "canonicalId": "9c1624f7-8275-46d3-ab7e-7b162e27593f",
+      "id": "2b4b2dd9-4bf4-4d4b-9628-b4d3e24fd9d2",
+      "lang": "pt",
+      "setCode": "tmp",
+      "collectorNumber": "270",
+      "illustrationId": "31da8f6a-f0e5-4128-8d3b-66106448c7c9",
+      "printedName": "Selênia, Anjo das Trevas",
+      "artist": "Matthew D. Wilson"
+    },
+    "9ce2c6d7-505b-490b-9c6f-b5166c9ff71d": {
+      "canonicalId": "9ce2c6d7-505b-490b-9c6f-b5166c9ff71d",
+      "id": "066de4ed-1866-4a7e-aa4c-635569a6359e",
+      "lang": "pt",
+      "setCode": "tsp",
+      "collectorNumber": "257",
+      "illustrationId": "b03dd7b6-ea3b-466b-9292-529c9f007379",
+      "printedName": "Inseto-Ampulheta de Jhoira",
+      "artist": "Dan Frazier"
+    },
+    "9e9a1276-5ad5-44ee-83e5-2d1ab728946e": {
+      "canonicalId": "9e9a1276-5ad5-44ee-83e5-2d1ab728946e",
+      "id": "27614aa0-46b0-4608-b8af-635a248f1b33",
+      "lang": "pt",
+      "setCode": "cmm",
+      "collectorNumber": "140",
+      "illustrationId": "92fd6053-aaac-4b4c-a928-a0823ccc1a80",
+      "printedName": "Patriarca da Cabala",
+      "artist": "Mark Zug"
+    },
+    "9eb856e6-8f63-4048-9818-cc3e65748855": {
+      "canonicalId": "9eb856e6-8f63-4048-9818-cc3e65748855",
+      "id": "b7196a4f-3b0c-4bf2-8b3b-3e06ff24dd35",
+      "lang": "pt",
+      "setCode": "gpt",
+      "collectorNumber": "134",
+      "illustrationId": "6deee5f2-6783-43ad-b9d0-e48d8b1c64c9",
+      "printedName": "Teysa, Herdeira de Orzhov",
+      "artist": "Todd Lockwood"
+    },
+    "9ee1eea2-961f-445d-b035-6baed454f289": {
+      "canonicalId": "9ee1eea2-961f-445d-b035-6baed454f289",
+      "id": "cbaa84e4-1eea-42fe-b3f0-9e7b306f473d",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "275",
+      "illustrationId": "a012524c-141e-4257-95ab-969429686b7d",
+      "printedName": "Tezzeret, Mestre da Ponte",
+      "artist": "Chase Stone"
+    },
+    "a146ea07-ec1c-448d-b67a-dd9f9e27c2e0": {
+      "canonicalId": "a146ea07-ec1c-448d-b67a-dd9f9e27c2e0",
+      "id": "dc448861-b062-495e-aca3-fb25991a5f18",
+      "lang": "pt",
+      "setCode": "mom",
+      "collectorNumber": "134",
+      "illustrationId": "1665f4f0-20f3-4da1-962a-7a64d96f9e3e",
+      "printedName": "Chandra, Farol da Esperança",
+      "artist": "Kieran Yanner"
+    },
+    "a1f85b2a-7836-4058-87a5-859c4311a7e4": {
+      "canonicalId": "a1f85b2a-7836-4058-87a5-859c4311a7e4",
+      "id": "e21d5e2c-43ea-441c-a726-646e4b776732",
+      "lang": "pt",
+      "setCode": "tsp",
+      "collectorNumber": "166",
+      "illustrationId": "3ac84852-69dd-41a7-8229-d4ce97987e16",
+      "printedName": "Jaya Ballard, Mago Especialista",
+      "artist": "Matt Cavotta"
+    },
+    "a3b16625-7faf-4de6-abf7-d397988e32fb": {
+      "canonicalId": "a3b16625-7faf-4de6-abf7-d397988e32fb",
+      "id": "305b6a30-92b2-47cd-a3f1-647eef178ed9",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "89",
+      "illustrationId": "67be7679-280c-4708-b471-9404f6c10cb5",
+      "printedName": "A Ancianomancia",
+      "artist": "Daarken"
+    },
+    "a410b933-99d0-4383-b54b-4839a76eb6fe": {
+      "canonicalId": "a410b933-99d0-4383-b54b-4839a76eb6fe",
+      "id": "3996faa9-bd2f-4aee-a5a5-8c957ebf8302",
+      "lang": "pt",
+      "setCode": "lgn",
+      "collectorNumber": "78",
+      "illustrationId": "eed121ac-d2f1-4420-a0c1-2dc02c03bd3f",
+      "printedName": "Phage a Intocável",
+      "artist": "Ron Spears"
+    },
+    "a736df42-18e9-4259-b0b8-54d21143e72e": {
+      "canonicalId": "a736df42-18e9-4259-b0b8-54d21143e72e",
+      "id": "34d2c0d3-1cc4-422d-a766-71d6cfe69f45",
+      "lang": "pt",
+      "setCode": "cmr",
+      "collectorNumber": "72",
+      "illustrationId": "f07dd9c5-1964-416b-98dc-296ca30befe4",
+      "printedName": "Glacian, Engenheiro de Pedra de Energia",
+      "artist": "Magali Villeneuve"
+    },
+    "ad5ba7ee-d6df-4b62-a8a1-c81e6fca392a": {
+      "canonicalId": "ad5ba7ee-d6df-4b62-a8a1-c81e6fca392a",
+      "id": "5358cbfb-aed5-432c-af82-4f8f89d9e57f",
+      "lang": "pt",
+      "setCode": "ice",
+      "collectorNumber": "144",
+      "illustrationId": "d0c3bd1d-cb52-4006-aef6-2e02981d572d",
+      "printedName": "Símbolos Mágicos de Leshrac",
+      "artist": "Drew Tucker"
+    },
+    "b042abf2-c40b-4235-a4fa-2e4901c375c3": {
+      "canonicalId": "b042abf2-c40b-4235-a4fa-2e4901c375c3",
+      "id": "b2dc4ae7-5dff-4b58-bf48-87447b84e99e",
+      "lang": "pt",
+      "setCode": "otj",
+      "collectorNumber": "237",
+      "illustrationId": "5617013c-921b-4f5a-a607-9d90ca8510cf",
+      "printedName": "Vraska, a Silenciadora",
+      "artist": "Kieran Yanner"
+    },
+    "b51666ae-2aef-4cb1-9cd4-44aec81530f8": {
+      "canonicalId": "b51666ae-2aef-4cb1-9cd4-44aec81530f8",
+      "id": "4f9fbb16-f376-48eb-83d5-5ff41c713101",
+      "lang": "pt",
+      "setCode": "avr",
+      "collectorNumber": "106",
+      "illustrationId": "a2c096a2-1971-44ca-b89d-f2f1fa3f595f",
+      "printedName": "Griselbrand",
+      "artist": "Igor Kieryluk"
+    },
+    "b5ddad46-5e2e-43c9-8c91-7aca6ca23562": {
+      "canonicalId": "b5ddad46-5e2e-43c9-8c91-7aca6ca23562",
+      "id": "0db91749-05ef-4b8b-9e34-b63a0dc7b799",
+      "lang": "pt",
+      "setCode": "jud",
+      "collectorNumber": "139",
+      "illustrationId": "8bc075c3-3b2c-4eda-a27a-a854e97c1c46",
+      "printedName": "Despertar do Mirari",
+      "artist": "David Martin"
+    },
+    "b8a3cdfe-0289-474b-b9c4-07e8c6588ec5": {
+      "canonicalId": "b8a3cdfe-0289-474b-b9c4-07e8c6588ec5",
+      "id": "6b9471e7-9118-4b24-b546-bb4e5b101bd7",
+      "lang": "pt",
+      "setCode": "tsp",
+      "collectorNumber": "114",
+      "illustrationId": "a97f4018-b481-484f-8d8f-b5a73d580640",
+      "printedName": "Lim-Dûl, o Necromante",
+      "artist": "Matt Cavotta"
+    },
+    "ba149706-cd17-4da6-8403-ccfe2d6cb437": {
+      "canonicalId": "ba149706-cd17-4da6-8403-ccfe2d6cb437",
+      "id": "a40f348b-90a3-4503-aa16-082837979bc1",
+      "lang": "pt",
+      "setCode": "avr",
+      "collectorNumber": "6",
+      "illustrationId": "e4cb9f8d-fdf1-47ef-a393-a5b3f76d9e00",
+      "printedName": "Avacyn, Anjo da Esperança",
+      "artist": "Jason Chan"
+    },
+    "bd46fc9f-5b92-44d7-8940-2f39b0962b8f": {
+      "canonicalId": "bd46fc9f-5b92-44d7-8940-2f39b0962b8f",
+      "id": "798b6d83-e3f5-40a5-b4af-1a9bc589838b",
+      "lang": "pt",
+      "setCode": "nph",
+      "collectorNumber": "37",
+      "illustrationId": "5ffdd945-3f26-4e61-a9f4-97261ee7552c",
+      "printedName": "Jin-Gitaxias, Áugure Principal",
+      "artist": "Eric Deschamps"
+    },
+    "c3b21941-1b7d-4fde-8b1d-7edbd5e5b796": {
+      "canonicalId": "c3b21941-1b7d-4fde-8b1d-7edbd5e5b796",
+      "id": "ee1e9f3b-e271-4654-9928-52bfdb0f906f",
+      "lang": "pt",
+      "setCode": "wwk",
+      "collectorNumber": "136",
+      "illustrationId": "fd01e149-ff1b-4061-99b9-5cf5c3339df0",
+      "printedName": "Olho de Ugin",
+      "artist": "James Paick"
+    },
+    "c49690c7-c282-4eb4-8da3-5e0c46a80fc4": {
+      "canonicalId": "c49690c7-c282-4eb4-8da3-5e0c46a80fc4",
+      "id": "aeaa3963-1e96-4d43-b82a-c6aa2d5155bf",
+      "lang": "pt",
+      "setCode": "mkm",
+      "collectorNumber": "212",
+      "illustrationId": "7daac798-dbd9-436c-964a-52c34a2110fd",
+      "printedName": "Kellan, Prodígio Curioso",
+      "artist": "Joshua Raphael"
+    },
+    "ccca800f-e850-4bec-95d0-70280b51b7a7": {
+      "canonicalId": "ccca800f-e850-4bec-95d0-70280b51b7a7",
+      "id": "6f25405f-4575-485a-abcf-1eddc1ece5d0",
+      "lang": "pt",
+      "setCode": "apc",
+      "collectorNumber": "11",
+      "illustrationId": "810617aa-fb59-42d3-8af8-895832904b50",
+      "printedName": "Gerrard Capasheno",
+      "artist": "Brom"
+    },
+    "d2124603-d20e-40eb-97f0-a66323397ac2": {
+      "canonicalId": "d2124603-d20e-40eb-97f0-a66323397ac2",
+      "id": "d0d624da-7e82-4956-b7ec-dac40dfdae5a",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "79",
+      "illustrationId": "19488800-96af-4290-921d-635fab98a891",
+      "printedName": "Cidadela de Nicol Bolas",
+      "artist": "Jonas De Ro"
+    },
+    "d67be074-cdd4-41d9-ac89-0a0456c4e4b2": {
+      "canonicalId": "d67be074-cdd4-41d9-ac89-0a0456c4e4b2",
+      "id": "4327db99-876e-4652-b53a-ce7e7525cf9c",
+      "lang": "pt",
+      "setCode": "dmu",
+      "collectorNumber": "107",
+      "illustrationId": "7111dfce-0bbd-434c-b0a8-33e51a8707af",
+      "printedName": "Sheoldred, o Apocalipse",
+      "artist": "Chris Rahn"
+    },
+    "d75ebba8-34ca-47a0-bf13-8318ad73b343": {
+      "canonicalId": "d75ebba8-34ca-47a0-bf13-8318ad73b343",
+      "id": "3f985c36-5ba0-49e1-b7db-952618e988e8",
+      "lang": "pt",
+      "setCode": "war",
+      "collectorNumber": "97",
+      "illustrationId": "bb7f943a-2d33-48d6-913c-2508cdea16d9",
+      "printedName": "Liliana, General da Horda Medonha",
+      "artist": "Chris Rallis"
+    },
+    "dcd48c28-bfa3-4eca-8e1a-f72d785b2ab9": {
+      "canonicalId": "dcd48c28-bfa3-4eca-8e1a-f72d785b2ab9",
+      "id": "f3443d7d-8a8a-4798-8371-ad64cc5608dc",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "88",
+      "illustrationId": "f5cadc75-99c7-43a4-94b9-344f83a1dde9",
+      "printedName": "Criatividade de Laquatus",
+      "artist": "Don Hazeltine"
+    },
+    "dd8ad3aa-3225-45ae-8343-5991f5b52269": {
+      "canonicalId": "dd8ad3aa-3225-45ae-8343-5991f5b52269",
+      "id": "8fa9a2cc-cffe-4945-8ee2-2759f4b5da61",
+      "lang": "pt",
+      "setCode": "inv",
+      "collectorNumber": "241",
+      "illustrationId": "db2c3cd2-2d2c-48d1-932c-23636bc6ecfc",
+      "printedName": "Vitória da Aliança",
+      "artist": "Eric Peterson"
+    },
+    "de53d083-251e-42a4-9e2e-c2978c80615b": {
+      "canonicalId": "de53d083-251e-42a4-9e2e-c2978c80615b",
+      "id": "f574d1db-c9b3-47bc-a64b-38974e9e16f0",
+      "lang": "pt",
+      "setCode": "scg",
+      "collectorNumber": "138",
+      "illustrationId": "c748ac22-e66a-428a-81b3-2a1b65895c82",
+      "printedName": "Karona, Falso Deus",
+      "artist": "Matthew D. Wilson"
+    },
+    "e0769fc7-50b5-4b49-8aff-af04536288fb": {
+      "canonicalId": "e0769fc7-50b5-4b49-8aff-af04536288fb",
+      "id": "d333f3b8-909c-4dfb-97b2-0145c075d148",
+      "lang": "pt",
+      "setCode": "all",
+      "collectorNumber": "139",
+      "illustrationId": "d7bf10bc-82b4-4931-b19c-d534753b40e8",
+      "printedName": "Posto Avançado Kjeldorano",
+      "artist": "Jeff A. Menges"
+    },
+    "e518750f-492d-4575-b4ee-c80c1f8e0a58": {
+      "canonicalId": "e518750f-492d-4575-b4ee-c80c1f8e0a58",
+      "id": "7c1bb6d6-00f3-4ca7-a806-ec656e62aa2b",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "29",
+      "illustrationId": "5ad66f51-adf0-45a9-b18b-b6afa37415d7",
+      "printedName": "Tenente Kirtar",
+      "artist": "Paolo Parente"
+    },
+    "e5c87c93-8cf4-4d1a-9bb8-349600da55bc": {
+      "canonicalId": "e5c87c93-8cf4-4d1a-9bb8-349600da55bc",
+      "id": "e0c4d0a5-4302-448b-94c4-8a0d03e41960",
+      "lang": "pt",
+      "setCode": "nem",
+      "collectorNumber": "51",
+      "illustrationId": "4f85fc04-7734-49eb-99da-ecb604b2f14b",
+      "printedName": "Evincar Ascendente",
+      "artist": "Mark Zug"
+    },
+    "e83851a1-e4e8-49ec-af5c-4efe86fa51ad": {
+      "canonicalId": "e83851a1-e4e8-49ec-af5c-4efe86fa51ad",
+      "id": "0c2f8de8-48b5-446d-bfa7-1551a0739556",
+      "lang": "pt",
+      "setCode": "nph",
+      "collectorNumber": "115",
+      "illustrationId": "3220fbe7-d04c-40f3-9ea1-7fc312d59206",
+      "printedName": "Melira, Pária Silvoque",
+      "artist": "Min Yum"
+    },
+    "ec5e2680-8b42-4571-ab45-4936aec51901": {
+      "canonicalId": "ec5e2680-8b42-4571-ab45-4936aec51901",
+      "id": "1bc9df4c-b033-4e97-a76d-57e5630e54e4",
+      "lang": "pt",
+      "setCode": "woe",
+      "collectorNumber": "230",
+      "illustrationId": "d9dffde5-d2c5-4ea1-a206-4a8a2cdf0908",
+      "printedName": "Kellan do Sangue Feérico",
+      "artist": "Anna Steinbauer"
+    },
+    "ec79e35f-9e78-462d-8b71-4f044e2eff90": {
+      "canonicalId": "ec79e35f-9e78-462d-8b71-4f044e2eff90",
+      "id": "f3d4d57d-4304-414a-984a-795ebd3c5480",
+      "lang": "pt",
+      "setCode": "usg",
+      "collectorNumber": "63",
+      "illustrationId": "7750e07a-94bf-406d-9146-614aac2e3943",
+      "printedName": "Barrin, Mago Mestre",
+      "artist": "Michael Sutfin"
+    },
+    "ed4cc273-adc3-4f46-9743-134b552d1d56": {
+      "canonicalId": "ed4cc273-adc3-4f46-9743-134b552d1d56",
+      "id": "09225d93-be2d-4bf7-add0-3f551d8a0022",
+      "lang": "pt",
+      "setCode": "jud",
+      "collectorNumber": "61",
+      "illustrationId": "297bb76c-8af5-4fff-a7ad-12f8b8849e7e",
+      "printedName": "Balthor, o Corrompido",
+      "artist": "Carl Critchlow"
+    },
+    "ee88c776-85f1-4beb-a814-f706f5c4f341": {
+      "canonicalId": "ee88c776-85f1-4beb-a814-f706f5c4f341",
+      "id": "0f8ca5e5-917a-4b36-8f75-4a405aebad99",
+      "lang": "pt",
+      "setCode": "ody",
+      "collectorNumber": "198",
+      "illustrationId": "3d080883-e853-48b9-9b60-9c694d641276",
+      "printedName": "Kamahl, Lutador da Liça",
+      "artist": "Kev Walker"
+    },
+    "f3a9112a-6a1d-4d89-9866-189b55cd326d": {
+      "canonicalId": "f3a9112a-6a1d-4d89-9866-189b55cd326d",
+      "id": "0a89b270-3912-41db-88ea-9e54d7404b73",
+      "lang": "pt",
+      "setCode": "dmu",
+      "collectorNumber": "189",
+      "illustrationId": "6935375f-b377-4e65-8cf6-4f7da7107c20",
+      "printedName": "A Mágica do Mundo",
+      "artist": "Adam Paquette"
+    },
+    "f454583d-d227-4fc8-842e-128e025880e4": {
+      "canonicalId": "f454583d-d227-4fc8-842e-128e025880e4",
+      "id": "a1c2c4d2-048f-4bf0-99de-9ca5b0dd03d7",
+      "lang": "pt",
+      "setCode": "bro",
+      "collectorNumber": "133",
+      "illustrationId": "b52460fe-c8ba-4b16-8aaa-2322e8732885",
+      "printedName": "A Queda de Kroog",
+      "artist": "David Auden Nash"
+    },
+    "f7cedd62-efc8-464d-8387-220bb55e07e9": {
+      "canonicalId": "f7cedd62-efc8-464d-8387-220bb55e07e9",
+      "id": "3976f9d2-329c-49bf-a544-8945e5c88a1d",
+      "lang": "pt",
+      "setCode": "mom",
+      "collectorNumber": "145",
+      "illustrationId": "8e575b14-572e-4758-be1f-29571cf8942c",
+      "printedName": "Invasão de Kaldheim",
+      "artist": "Bryan Sola"
+    },
+    "fb169fa2-c92e-45f7-89a2-0ca0e3910a1c": {
+      "canonicalId": "fb169fa2-c92e-45f7-89a2-0ca0e3910a1c",
+      "id": "597033aa-94ca-447a-a8ce-89e7291178d6",
+      "lang": "pt",
+      "setCode": "big",
+      "collectorNumber": "21",
+      "illustrationId": "860e520f-56f3-4fde-a0b5-ee2101eca390",
+      "printedName": "Loot, a Chave de Tudo",
+      "artist": "Rudy Siswanto"
+    },
+    "fd17e8d4-499e-4005-ae3c-bc9c44dc5a67": {
+      "canonicalId": "fd17e8d4-499e-4005-ae3c-bc9c44dc5a67",
+      "id": "7afe398b-de8d-472b-b517-46a960f7a174",
+      "lang": "pt",
+      "setCode": "otj",
+      "collectorNumber": "271",
+      "illustrationId": "9afa732b-400a-4321-ac74-241988f75d57",
+      "printedName": "Jace, Redesperto",
+      "artist": "Cristi Balanescu"
+    }
+  }
+}

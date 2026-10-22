@@ -109,3 +109,48 @@
   .brand__name { font-size: .85rem; max-width: 95px; }
   .site-header__actions { gap: .25rem; }
 }
+
+/* D2: optional Ko-fi support beside search; no third-party script. */
+.site-header__support {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+  min-height: 42px; padding: .5rem .75rem; border: 1px solid var(--gold);
+  color: #f9f0dc; background: var(--night); text-decoration: none;
+  font-size: .8rem; font-weight: 700; white-space: nowrap;
+}
+.site-header__support:hover, .site-header__support:focus-visible {
+  background: var(--night-raised); color: var(--gold-light);
+}
+.site-header__support:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2px; }
+@media (max-width: 1120px) {
+  .site-header__support { width: 40px; min-width: 40px; padding: .4rem; }
+  .site-header__support-text { display: none; }
+}
+@media (max-width: 380px) {
+  /* Preserve all five header actions without horizontal scrolling at 320px. */
+  .brand__name { display: none; }
+  .site-header__support { width: 34px; min-width: 34px; min-height: 38px; }
+}
+
+/* D2: art and interpretation remain adjacent, not four tiny portrait tiles. */
+.archive-directory .archive-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.archive-directory .archive-card {
+  display: grid; grid-template-columns: minmax(105px, 34%) minmax(0, 1fr);
+  min-width: 0; gap: .85rem; padding: .8rem;
+}
+.archive-directory .archive-card__image { display: flex; align-items: flex-start; justify-content: center; padding: .4rem; min-width: 0; }
+.archive-directory .archive-card__image img { max-width: 220px; }
+.archive-directory .archive-card__body { min-width: 0; padding: .5rem; }
+.archive-directory .archive-card__classification {
+  display: block; font-size: .75rem; font-weight: 700;
+  color: var(--accent-text); line-height: 1.45;
+}
+.archive-directory .archive-card__body > p { overflow-wrap: anywhere; line-height: 1.65; }
+.archive-directory.archive-directory--compact .archive-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.archive-directory.archive-directory--compact .archive-card { grid-template-columns: 90px minmax(0, 1fr); }
+@media (max-width: 980px) {
+  .archive-directory .archive-card-grid, .archive-directory.archive-directory--compact .archive-card-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .archive-directory .archive-card { grid-template-columns: minmax(95px, 38%) minmax(0, 1fr); gap: .5rem; padding: .5rem; }
+  .archive-directory .archive-card__body { padding: .3rem; }
+}
