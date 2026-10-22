@@ -3,6 +3,7 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CharacterPortrait from '../../components/CharacterPortrait.astro';
 import { characters } from '../../data/characters';
 import { characterCategories } from '../../data/characterCategories';
 import { withBase } from '../../utils/paths';
@@ -125,6 +126,12 @@ const origins = [
         </p>
       </div>
 
+      <div class="character-directory__overview" aria-label="Encyclopedia coverage">
+        <p><strong>{orderedCharacters.length}</strong> documented figures</p>
+        <p><strong>{origins.length}</strong> recorded origins</p>
+        <p><strong>{characterCategories.length}</strong> editorial role categories</p>
+      </div>
+      <p class="character-directory__art-note">Illustrated portraits show exact curated card printings, not independent proof of the biography or a specific historical scene.</p>
       <a class="text-link character-network-link" href={withBase('relationships/')}>
         Explore the interactive relationship network →
       </a>
@@ -260,12 +267,8 @@ const origins = [
               data-chapters={character.chapterIds.join(' ')}
               data-origin={character.origin}
             >
-              <span
-                class="character-entry__initial"
-                aria-hidden="true"
-              >
-                {character.name.charAt(0)}
-              </span>
+              <CharacterPortrait printingId={character.featuredCardId}
+                characterName={character.name} significance={character.featuredCard.significance} />
 
               <span class="character-entry__body">
                 <span class="character-entry__eyebrow">
