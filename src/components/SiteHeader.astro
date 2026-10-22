@@ -1,6 +1,7 @@
 ---
 import { withBase } from '../utils/paths';
 import ThemeToggle from './ThemeToggle.astro';
+import SearchPalette from './SearchPalette.astro';
 import { isTranslatedRoute, translatedSuffix, uiFor } from '../utils/i18n.mjs';
 
 interface Props { locale?: 'en' | 'pt-BR'; }
@@ -52,7 +53,7 @@ const searchLabel = pt ? 'Buscar no arquivo' : 'Search the archive';
         </details>
         <a href={about} aria-current={selected(about) ? 'page' : undefined}>{aboutLabel}</a>
       </nav>
-      <a class="site-header__search" href={search} aria-label={searchLabel}>
+      <a class="site-header__search" href={search} aria-label={searchLabel} data-search-palette-trigger aria-keyshortcuts="Meta+K Control+K">
         <span aria-hidden="true" class="site-header__search-icon">⌕</span>
         <span class="site-header__search-text">{searchLabel}</span>
       </a>
@@ -83,3 +84,4 @@ const searchLabel = pt ? 'Buscar no arquivo' : 'Search the archive';
     </div>
   </div>
 </header>
+<SearchPalette locale={locale} />

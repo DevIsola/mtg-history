@@ -1,0 +1,235 @@
+---
+import { withBase } from '../utils/paths';
+
+interface Props { locale?: 'en' | 'pt-BR'; }
+const { locale = 'en' } = Astro.props;
+const pt = locale === 'pt-BR';
+const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
+---
+<dialog
+  class="search-palette"
+  data-search-palette
+  data-pagefind-base={withBase('')}
+  data-pagefind-bundle={withBase('pagefind/pagefind.js')}
+  data-palette-locale={locale}
+  aria-labelledby="palette-heading"
+  aria-describedby="palette-description"
+>
+  <div class="search-palette__head">
+    <div>
+      <h2 id="palette-heading">{pt ? 'Buscar no Multiverso' : 'Search the Multiverse'}</h2>
+      <p id="palette-description">{pt ? 'Pesquisa nos registros publicados em português.' : 'Search the published historical archive.'}</p>
+    </div>
+    <button type="button" class="search-palette__close" data-palette-close aria-label={pt ? 'Fechar busca' : 'Close search'}>✕</button>
+  </div>
+  <label class="search-palette__label" for="palette-query">{pt ? 'Buscar textos' : 'Search historical text'}</label>
+  <input id="palette-query" class="search-palette__input" data-palette-query type="search"
+    maxlength="160" autocomplete="off" spellcheck="false"
+    placeholder={pt ? 'Ex.: Phyrexia, Centelha…' : 'E.g. Yawgmoth, Sylex…'}
+    aria-controls="palette-results" />
+  <p class="search-palette__status" data-palette-status role="status" aria-live="polite" aria-atomic="true">
+    {pt ? 'Digite ao menos dois caracteres.' : 'Enter at least two characters.'}
+  </p>
+  <ol id="palette-results" class="search-palette__results" data-palette-results></ol>
+  <div class="search-palette__footer">
+    <span>{pt ? '↑ ↓ navegar · Esc fechar' : '↑ ↓ navigate · Esc close'}</span>
+    <a href={searchPath}>{pt ? 'Abrir busca completa →' : 'Open full search →'}</a>
+  </div>
+</dialog>
+
+<script>
+  import { isPaletteShortcut, paletteResultUrl, PALETTE_RESULT_LIMIT, validPaletteQuery } from '../utils/search-palette.mjs';
+  import { plainExcerpt } from '../utils/pagefind-search.mjs';
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-search-palette]');
+  const triggers = document.querySelectorAll<HTMLAnchorElement>('[data-search-palette-trigger]');
+  const input = dialog?.querySelector<HTMLInputElement>('[data-palette-query]');
+  const results = dialog?.querySelector<HTMLOListElement>('[data-palette-results]');
+  const status = dialog?.querySelector<HTMLElement>('[data-palette-status]');
+  const close = dialog?.querySelector<HTMLButtonElement>('[data-palette-close]');
+
+  if (dialog && input && results && status && close && typeof dialog.showModal === 'function') {
+    const base = dialog.dataset.pagefindBase ?? '/';
+    const bundle = dialog.dataset.pagefindBundle ?? '';
+    const locale = dialog.dataset.paletteLocale === 'pt-BR' ? 'pt-BR' : 'en';
+    const pt = locale === 'pt-BR';
+    const idle = pt ? 'Digite ao menos dois caracteres.' : 'Enter at least two characters.';
+    let pagefindPromise: Promise<any> | undefined;
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    let sequence = 0;
+    let restoreFocus: HTMLElement | null = null;
+
+    const pagefind = () => {
+      if (!pagefindPromise) {
+        pagefindPromise = import(/* @vite-ignore */ bundle).then(async (module) => {
+          await module.options({ baseUrl: base });
+          return module;
+        }).catch((error) => {
+          pagefindPromise = undefined;
+          throw error;
+        });
+      }
+      return pagefindPromise;
+    };
+    const clear = () => results.replaceChildren();
+    const cancel = () => {
+      sequence++;
+      if (timeout) clearTimeout(timeout);
+      timeout = undefined;
+      results.removeAttribute('aria-busy');
+    };
+    const open = (trigger: HTMLElement | null) => {
+      if (dialog.open) { input.focus(); return; }
+      restoreFocus = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+      cancel();
+      clear();
+      input.value = '';
+      status.textContent = idle;
+      dialog.showModal();
+      input.focus();
+    };
+    for (const trigger of triggers) {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        open(trigger);
+      });
+    }
+    document.addEventListener('keydown', (event) => {
+      if (!isPaletteShortcut(event)) return;
+      event.preventDefault();
+      if (dialog.open) dialog.close();
+      else open(document.activeElement instanceof HTMLElement ? document.activeElement : null);
+    });
+    dialog.addEventListener('close', () => {
+      cancel();
+      clear();
+      const previous = restoreFocus;
+      restoreFocus = null;
+      previous?.focus();
+    });
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    close.addEventListener('click', () => dialog.close());
+
+    const search = async (query: string, current: number) => {
+      try {
+        const api = await pagefind();
+        const response = await api.search(query);
+        const documents = await Promise.all(response.results.slice(0, PALETTE_RESULT_LIMIT).map(
+          (entry: { data: () => Promise<any> }) => entry.data(),
+        ));
+        if (current !== sequence || !dialog.open) return;
+        clear();
+        let count = 0;
+        for (const entry of documents) {
+          const url = paletteResultUrl(entry.url, base, window.location.origin, locale);
+          if (!url) continue;
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          const title = document.createElement('strong');
+          const excerpt = document.createElement('span');
+          link.href = url;
+          title.textContent = String(entry.meta?.title ?? (pt ? 'Registro histórico' : 'Historical record'));
+          excerpt.textContent = plainExcerpt(entry.plain_excerpt ?? entry.excerpt);
+          link.append(title, excerpt);
+          li.append(link);
+          results.append(li);
+          count++;
+        }
+        status.textContent = count
+          ? (pt ? `${count} resultados exibidos.` : `Showing ${count} results.`)
+          : (pt ? 'Nenhum resultado em português.' : 'No matching historical records.');
+      } catch {
+        if (current !== sequence || !dialog.open) return;
+        clear();
+        status.textContent = pt
+          ? 'O índice está indisponível. Use a busca completa na prévia de produção.'
+          : 'Search is unavailable. Open the full search in the production preview.';
+      } finally {
+        if (current === sequence) results.removeAttribute('aria-busy');
+      }
+    };
+    input.addEventListener('input', () => {
+      cancel();
+      clear();
+      const query = validPaletteQuery(input.value);
+      if (!query) {
+        status.textContent = idle;
+        return;
+      }
+      const current = sequence;
+      status.textContent = pt ? 'Pesquisando…' : 'Searching…';
+      results.setAttribute('aria-busy', 'true');
+      timeout = setTimeout(() => { void search(query, current); }, 200);
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        const first = results.querySelector<HTMLAnchorElement>('a');
+        if (first) { event.preventDefault(); first.focus(); }
+      }
+    });
+    results.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      const links = Array.from(results.querySelectorAll<HTMLAnchorElement>('a'));
+      const active = links.indexOf(document.activeElement as HTMLAnchorElement);
+      if (active < 0) return;
+      event.preventDefault();
+      const next = active + (event.key === 'ArrowDown' ? 1 : -1);
+      if (next < 0) input.focus();
+      else links[Math.min(next, links.length - 1)]?.focus();
+    });
+  }
+</script>
+
+<style lang="scss">
+  .search-palette {
+    position: fixed;
+    inset: clamp(.75rem, 8vh, 5rem) 0 auto;
+    margin-inline: auto;
+    width: min(640px, calc(100vw - 2rem));
+    max-height: min(78dvh, 720px);
+    overflow-y: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--paper-white);
+    color: var(--ink);
+    box-shadow: 0 24px 80px #0008;
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+  .search-palette::backdrop { background: #091619ad; }
+  .search-palette__head { display: flex; gap: 1rem; align-items: start; justify-content: space-between; }
+  .search-palette h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.25; }
+  .search-palette__head p { margin-top: .35rem; color: var(--ink-soft); font-size: .86rem; }
+  .search-palette__close {
+    width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 4px;
+    background: var(--paper); color: var(--ink); flex: none; cursor: pointer;
+  }
+  .search-palette__label { display: block; font-size: .85rem; font-weight: 700; margin-top: 1.4rem; }
+  .search-palette__input {
+    width: 100%; min-height: 50px; border: 1px solid var(--line); border-radius: 4px;
+    background: var(--paper); color: var(--ink); padding: .75rem; font-size: 1rem;
+    margin-top: .35rem;
+  }
+  .search-palette__input:focus-visible, .search-palette__close:focus-visible,
+  .search-palette__footer a:focus-visible, .search-palette__results a:focus-visible {
+    outline: 3px solid var(--link-color); outline-offset: 3px;
+  }
+  .search-palette__status { min-height: 1.5rem; margin-block: .8rem; color: var(--ink-soft); font-size: .84rem; }
+  .search-palette__results { list-style: none; margin: 0; padding: 0; }
+  .search-palette__results li + li { border-top: 1px solid var(--line); }
+  .search-palette__results a { display: block; padding: .75rem; border-radius: 4px; color: var(--ink); text-decoration: none; }
+  .search-palette__results a:hover, .search-palette__results a:focus-visible { background: var(--paper-deep); }
+  .search-palette__results strong { display: block; font-size: .96rem; line-height: 1.4; }
+  .search-palette__results span { display: block; margin-top: .3rem; font-size: .82rem; line-height: 1.45; color: var(--ink-soft); }
+  .search-palette__footer {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: .75rem; margin-top: .8rem; padding-top: .8rem; border-top: 1px solid var(--line);
+    font-size: .8rem; color: var(--ink-soft);
+  }
+  .search-palette__footer a { color: var(--link-color); font-weight: 700; }
+  @media (max-width: 600px) {
+    .search-palette { inset-block-start: .75rem; max-height: calc(100dvh - 1.5rem); }
+    .search-palette__footer span { display: none; }
+  }
+</style>
