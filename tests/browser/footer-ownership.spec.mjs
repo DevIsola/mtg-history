@@ -20,6 +20,8 @@ test('footer grid remains responsive with Astro-scoped styles', async ({ page })
 test('footer retains semantic links and accessible source attribution', async ({ page }) => {
   await page.goto(root);
   const footer = page.getByRole('contentinfo');
-  await expect(footer.getByRole('link', { name: 'Support DevIsola on Ko-fi' })).toBeVisible();
+  const support = footer.getByRole('link', { name: 'Support on Ko-fi ↗' });
+  await expect(support).toBeVisible();
+  await expect(support).toHaveAttribute('href', 'https://ko-fi.com/B1H328PBAR');
   await expect(footer).toContainText('unofficial fan content');
 });
