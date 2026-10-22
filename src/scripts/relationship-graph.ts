@@ -3,6 +3,7 @@
  * the canonical accessible record and the only input to the visual network.
  */
 import 'vis-network/styles/vis-network.css';
+import { relationshipColor, relationshipLabel } from '../utils/relationship-colors.mjs';
 
 type GraphNode = { id: string; label: string; value: number; chapterId: string };
 type GraphEdge = {
@@ -34,15 +35,6 @@ const chapterColors = [
   { border: '#6d98a4', background: '#d9ebef' },
   { border: '#9c8d84', background: '#e8e0da' },
 ];
-
-const categoryColors: Record<string, string> = {
-  family: '#d19f56',
-  friendship: '#2d9a86',
-  alliance: '#3a87ad',
-  rivalry: '#c96b63',
-  mentorship: '#9679c5',
-  creation: '#ac8a62',
-};
 
 /** Breadth-first traversal along documented ties, after applying category. */
 function neighborhood(edges: GraphEdge[], focus: string, depth: number): Set<string> {
@@ -79,6 +71,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
   const era = query<HTMLSelectElement>('#network-era');
   const colorMode = query<HTMLSelectElement>('#network-color');
   const layout = query<HTMLSelectElement>('#network-layout');
+  const labelDensity = query<HTMLSelectElement>('#network-label-density');
   const chapterLegend = query<HTMLElement>('#network-chapter-legend');
   const search = query<HTMLInputElement>('#network-search');
   const searchForm = query<HTMLFormElement>('#network-search-form');
@@ -95,7 +88,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
   const fit = query<HTMLButtonElement>('#network-fit');
 
   if (!panel || !canvas || !cards || !controls || !graphButton || !cardsButton ||
-      !status || !error || !select || !category || !reset || !scope || !depth || !era || !colorMode || !layout || !chapterLegend ||
+      !status || !error || !select || !category || !reset || !scope || !depth || !era || !colorMode || !layout || !labelDensity || !chapterLegend ||
       !search || !searchForm || !searchStatus || !inspectorKind || !inspectorHeading ||
       !inspectorSummary || !inspectorCount || !inspectorRelation || !inspectorLink || !inspectorChapter ||
       !zoomIn || !zoomOut || !fit) return;
@@ -173,10 +166,13 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
           highlight: { background: theme.focus, border: theme.focus },
           hover: { background: theme.background, border: theme.focus },
         },
-        font: { color: theme.text, face: 'system-ui', size: 13, strokeWidth: 0 },
+        // A halo in the canvas color makes names legible across crossing edges.
+        font: { color: theme.text, face: 'system-ui', size: 15,
+          strokeWidth: 4, strokeColor: theme.background },
       };
-    };
+     };
     const styles = palette();
+    const nodeNames = new Map(allNodes.map((node) => [node.id, node.label]));
     const nodeChapters = new Map(allNodes.map((node) => [node.id, node.chapterId]));
     const colorForNode = (id: string, base: ReturnType<typeof palette>['node']) => {
       if (colorMode.value === 'neutral') return base;
@@ -204,7 +200,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     })));
     const edgeSet = new DataSet(allEdges.map((edge) => ({
       ...edge,
-      color: { color: categoryColors[edge.category] ?? '#819497', opacity: 0.78 },
+      color: { color: relationshipColor(edge.category, document.documentElement.dataset.theme === 'dark'), opacity: 0.95 },
     })));
 
     panel.hidden = false;
@@ -234,10 +230,10 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
         font: styles.font,
       },
       edges: {
-        width: 1.6,
+        width: 2.1,
         smooth: { enabled: true, type: 'continuous', roundness: 0.15 },
-        selectionWidth: 2,
-        hoverWidth: 2,
+        selectionWidth: 3,
+        hoverWidth: 3,
       },
       interaction: {
         hover: true, dragNodes: true, dragView: true, zoomView: true,
@@ -260,6 +256,8 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       else url.searchParams.delete('colors');
       if (layout.value === 'chapter') url.searchParams.set('layout', 'chapter');
       else url.searchParams.delete('layout');
+      if (labelDensity.value === 'all') url.searchParams.set('labels', 'all');
+      else url.searchParams.delete('labels');
       if (url.href !== window.location.href) {
         window.history[replace ? 'replaceState' : 'pushState'](null, '', url.pathname + url.search + url.hash);
       }
@@ -273,6 +271,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       era.value = requestedEra && chapterIndex.has(requestedEra) ? requestedEra : '';
       colorMode.value = params.get('colors') === 'neutral' ? 'neutral' : 'chapter';
       layout.value = params.get('layout') === 'chapter' ? 'chapter' : 'organic';
+      labelDensity.value = params.get('labels') === 'all' ? 'all' : 'focus';
       return params.get('view') === 'cards' ? 'cards' : 'graph';
     };
     const show = (next: GraphView, save = false, replace = false) => {
@@ -328,13 +327,13 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       inspectorRelation.replaceChildren(new Option('Selected character overview', ''));
       for (const item of directEdges) {
         const other = item.from === current.person ? item.to : item.from;
-        const title = `${byId.get(other)?.textContent?.trim() ?? other} — ${item.category}`;
+        const title = `${byId.get(other)?.textContent?.trim() ?? other} — ${relationshipLabel(item.category)}`;
         inspectorRelation.add(new Option(title, item.id));
       }
       inspectorRelation.value = directEdges.some((item) => item.id === inspectedEdge) ? inspectedEdge ?? '' : '';
       const edge = visibleEdges.find((item) => item.id === inspectedEdge);
       if (edge) {
-        inspectorKind.textContent = `Documented ${edge.category === 'rivalry' ? 'conflict' : edge.category}`;
+        inspectorKind.textContent = `Documented relationship · ${relationshipLabel(edge.category)}`;
         inspectorHeading.textContent = `${byId.get(edge.from)?.textContent ?? edge.from} · ${byId.get(edge.to)?.textContent ?? edge.to}`;
         const fromFocus = current.person === edge.from ? edge.labelForA : current.person === edge.to ? edge.labelForB : '';
         inspectorSummary.textContent = edge.context;
@@ -377,13 +376,19 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
         : new Set(matching.flatMap((edge) => [edge.from, edge.to]));
       visibleEdges = matching.filter((edge) => visibleIds.has(edge.from) && visibleIds.has(edge.to));
       const highlighted = new Set(matchingSearch().map((node) => node.id));
+      const adjacentToFocus = new Set(matching.filter((edge) =>
+        edge.from === current.person || edge.to === current.person)
+        .flatMap((edge) => [edge.from, edge.to]));
       const theme = palette();
       const focusColor = tokens().focus;
       nodeSet.update(nodeSet.get().map((node) => ({
         ...node,
         hidden: !visibleIds.has(node.id),
-        borderWidth: highlighted.has(node.id) ? 4 : 2,
-        color: highlighted.has(node.id)
+        label: (labelDensity.value === 'all' || adjacentToFocus.has(node.id) ||
+          highlighted.has(node.id) || node.id === current.person)
+          ? nodeNames.get(node.id) ?? '' : '',
+        borderWidth: highlighted.has(node.id) || node.id === current.person ? 4 : 2,
+        color: highlighted.has(node.id) || node.id === current.person
           ? { ...colorForNode(node.id, theme.node), border: focusColor }
           : colorForNode(node.id, theme.node),
         font: theme.font,
@@ -391,6 +396,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       const visibleEdgeIds = new Set(visibleEdges.map((edge) => edge.id));
       edgeSet.update(edgeSet.get().map((edge) => ({
         ...edge, hidden: !visibleEdgeIds.has(edge.id),
+        color: { color: relationshipColor(edge.category, document.documentElement.dataset.theme === 'dark'), opacity: 0.95 },
       })));
       if (inspectedEdge && !visibleEdgeIds.has(inspectedEdge)) inspectedEdge = null;
       if (inspectedEdge) graph.selectEdges([inspectedEdge]);
@@ -402,6 +408,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       root.dataset.graphVisibleNodes = String(visibleIds.size);
       root.dataset.graphVisibleEdges = String(visibleEdges.length);
       root.dataset.networkScope = scope.value;
+      root.dataset.graphLabels = labelDensity.value;
       inspect();
     };
 
@@ -443,6 +450,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     era.addEventListener('change', () => { inspectedEdge = null; refresh(); persist(); fitVisible(); });
     colorMode.addEventListener('change', () => { refresh(); persist(); });
     layout.addEventListener('change', () => { arrange(); persist(); });
+    labelDensity.addEventListener('change', () => { refresh(); persist(); });
     search.addEventListener('input', refresh);
     inspectorRelation.addEventListener('change', () => {
       inspectedEdge = inspectorRelation.value || null;
@@ -469,7 +477,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       if (scope.value === 'local') fitVisible();
     });
     reset.addEventListener('click', () => {
-      scope.value = 'global'; depth.value = '1'; era.value = ''; colorMode.value = 'chapter'; layout.value = 'organic'; search.value = ''; inspectedEdge = null;
+      scope.value = 'global'; depth.value = '1'; era.value = ''; colorMode.value = 'chapter'; layout.value = 'organic'; labelDensity.value = 'focus'; search.value = ''; inspectedEdge = null;
       refresh(); show('graph', true, true); arrange(); fitVisible();
     });
     window.addEventListener('popstate', () => {
