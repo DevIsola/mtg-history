@@ -7,6 +7,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runEditorialConsolidation } from './audit-editorial-consolidation.mjs';
 import { eventProvenance } from '../src/data/event-provenance.mjs';
+import { annotateReviewQueue, sourceAccessFor, artworkReviewDependency, SOURCE_ACCESS } from '../src/data/source-access.mjs';
 import { PORTUGUESE_BATCH_1 } from '../src/data/pt-chapter-batch1.mjs';
 import { PORTUGUESE_BATCH_2 } from '../src/data/pt-chapter-batch2.mjs';
 import { PORTUGUESE_BATCH_3 } from '../src/data/pt-chapter-batch3.mjs';
@@ -105,7 +106,7 @@ export function buildPhase14Roadmap(editorial, inspection) {
     },
     {
       id: 'event-provenance', priority: 'P0', outstanding: s.awaitingEventReview,
-      action: 'Work the existing source-review queue, starting with high-priority triage suggestions.',
+      action: 'Prioritize events with accessible original stories; retain novel-dependent blockers separately from risk scores.',
       acceptance: 'Review claim-level evidence and update event provenance and narrative together.',
     },
     {
@@ -149,11 +150,16 @@ export function buildPhase14Roadmap(editorial, inspection) {
       comparisonStatus: 'REQUIRES_SAVED_LOCAL_SAMPLES',
     },
     koilos: { pendingSeparatePrimaryFictionReview: inspection.koilosPending },
+    sourceAvailability: Object.entries(SOURCE_ACCESS).map(([id, source]) => ({
+      id, ...source, hasProvenanceRecord: Object.hasOwn(eventProvenance, id),
+    })),
     workstreams,
     queues: {
-      primaryClaims: editorial.openClaims,
-      unreviewedEvents: editorial.eventQueue,
-      artworkScenes: editorial.visualScenes,
+      primaryClaims: editorial.openClaims.map((claim) => ({ ...claim, sourceAccess: sourceAccessFor(claim.id) })),
+      unreviewedEvents: annotateReviewQueue(editorial.eventQueue),
+      artworkScenes: editorial.visualScenes.map((scene) => ({
+        ...scene, blockedByClaim: artworkReviewDependency(scene.chapter, scene.card),
+      })),
       chapters: editorial.chapters,
     },
   };
@@ -198,6 +204,16 @@ export function renderPhase14Markdown(report) {
     ...(report.queues.unreviewedEvents.some((x) => x.priority === 'high') ? [] : ['| — | — | — | No high-priority events currently queued | — |']),
     '',
     'The full event review queue is retained in the JSON output and existing editorial-consolidation report.',
+    '',
+    '## Original-source accessibility (separate from risk)',
+    '',
+    'Source accessibility is not a risk score. Explicitly assessed original publications remain in sourceAvailability even after the event has been reviewed; all other events remain NOT_ASSESSED.',
+    ...report.queues.unreviewedEvents.filter((x) => x.sourceAccess.status === 'WEB_ORIGINAL_AVAILABLE').map((x) =>
+      `- WEB ORIGINAL: ${cell(x.chapter)} / ${cell(x.id)} (score ${x.score}) — ${cell(x.sourceAccess.title)}`),
+    ...report.queues.unreviewedEvents.filter((x) => x.sourceAccess.status === 'BLOCKED_ORIGINAL_NOVEL').map((x) =>
+      `- BLOCKED NOVEL: ${cell(x.chapter)} / ${cell(x.id)} (score ${x.score}) — ${cell(x.sourceAccess.work)}`),
+    ...report.queues.artworkScenes.filter((x) => x.blockedByClaim).map((x) =>
+      `- BLOCKED ARTWORK: ${cell(x.chapter)} / ${cell(x.card)} — requires ${cell(x.blockedByClaim)} first`),
     '',
     '## First-pass visual scene queue',
     '',
