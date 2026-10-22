@@ -471,7 +471,7 @@
 .homepage-numbers { background: var(--night); color: #f7edd9; border-top: 1px solid #665a42; border-bottom: 1px solid #665a42; }
 .homepage-numbers dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding-block: 1.35rem; gap: .75rem; }
 .homepage-numbers dl > div { padding: .3rem clamp(.5rem, 2vw, 1.5rem); border-left: 1px solid #756d5a; min-width: 0; }
-.homepage-numbers dt { color: #d2cebf; text-transform: uppercase; letter-spacing: .09em; font-size: .73rem; line-height: 1.4; }
+.homepage-numbers dt { color: #d2cebf; text-transform: uppercase; letter-spacing: .09em; font-size: .76rem; line-height: 1.4; }
 .homepage-numbers dd { margin: .4rem 0 0; color: #ffe0a3; font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.4rem); font-variant-numeric: tabular-nums; }
 .homepage-era-card { display: grid; grid-template-columns: minmax(0, 1fr); gap: .5rem; min-width: 0; padding: 1.1rem; min-height: 0; }
 .homepage-era-card .homepage-artwork { max-width: 100%; }
