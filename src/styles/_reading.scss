@@ -1019,4 +1019,11 @@
 @media (prefers-reduced-motion: reduce) {
   .chapter-switcher__step,
   .chapter-switcher__menu > summary { transition: none; }
+  /* A hover/focus image lift is unnecessary when motion is reduced. */
+  .chapter-prose .historical-moment__illustration .historical-card img {
+    transition: none;
+  }
+  .historical-moment__illustration .historical-card a:is(:hover, :focus-visible) img {
+    transform: none;
+  }
 }

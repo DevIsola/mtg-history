@@ -65,32 +65,44 @@ export function setupChapterArtworkTrail(root) {
   }
 
   let selected = -1;
-  let pending = false;
+  let frame = null;
+  let anchorFrame = null;
+  let disconnected = false;
   const update = () => {
-    pending = false;
+    if (disconnected) return;
     const header = document.querySelector('.site-header');
     const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
     const activation = headerBottom + Math.min(180, view.innerHeight * 0.25);
     const index = activeArtworkIndex(entries.map(({ element }) => element.getBoundingClientRect().top), activation);
     if (index === selected) return;
+
+    // Change only the outgoing and incoming cards, never every illustration.
+    if (selected >= 0) {
+      links[selected].removeAttribute('aria-current');
+      delete entries[selected].element.dataset.artworkCurrent;
+    }
     selected = index;
     count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(entries.length).padStart(2, '0')}`;
-    for (const [n, { element }] of entries.entries()) {
-      if (n === index) links[n].setAttribute('aria-current', 'location');
-      else links[n].removeAttribute('aria-current');
-      if (n === index && toggle.checked) element.dataset.artworkCurrent = 'true';
-      else delete element.dataset.artworkCurrent;
+    if (index >= 0) {
+      links[index].setAttribute('aria-current', 'location');
+      if (toggle.checked) entries[index].element.dataset.artworkCurrent = 'true';
     }
   };
   const schedule = () => {
-    if (pending) return;
-    pending = true;
-    view.requestAnimationFrame(update);
+    if (disconnected || frame !== null) return;
+    frame = view.requestAnimationFrame(() => {
+      frame = null;
+      update();
+    });
   };
   const change = () => {
     root.dataset.artworkFollow = toggle.checked ? 'true' : 'false';
-    selected = -1;
-    update();
+    // Checkbox changes do not require relabeling or remeasuring every card.
+    if (selected >= 0) {
+      if (toggle.checked) entries[selected].element.dataset.artworkCurrent = 'true';
+      else delete entries[selected].element.dataset.artworkCurrent;
+    }
+    schedule();
   };
   toggle.addEventListener('change', change);
   view.addEventListener('scroll', schedule, { passive: true });
@@ -105,7 +117,9 @@ export function setupChapterArtworkTrail(root) {
   let incoming = view.location?.hash?.slice(1) ?? '';
   try { incoming = decodeURIComponent(incoming); } catch { /* Ignore malformed fragments. */ }
   if (incoming.startsWith(fragmentPrefix)) {
-    view.requestAnimationFrame(() => {
+    anchorFrame = view.requestAnimationFrame(() => {
+      anchorFrame = null;
+      if (disconnected) return;
       const target = document.getElementById(incoming);
       if (target && entries.some((entry) => entry.element === target)) target.scrollIntoView();
       schedule();
@@ -115,12 +129,19 @@ export function setupChapterArtworkTrail(root) {
   return {
     count: entries.length,
     disconnect() {
+      if (disconnected) return;
+      disconnected = true;
       view.removeEventListener('scroll', schedule);
       view.removeEventListener('resize', schedule);
       view.removeEventListener('pageshow', schedule);
       toggle.removeEventListener('change', change);
+      if (frame !== null) view.cancelAnimationFrame(frame);
+      if (anchorFrame !== null) view.cancelAnimationFrame(anchorFrame);
       delete root.dataset.artworkFollow;
       for (const { element } of entries) delete element.dataset.artworkCurrent;
+      for (const link of links) link.parentElement?.remove();
+      count.textContent = '';
+      panel.hidden = true;
       delete panel.dataset.artworkReady;
     },
   };
