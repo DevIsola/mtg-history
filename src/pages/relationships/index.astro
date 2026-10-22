@@ -4,6 +4,7 @@ import { characters } from '../../data/characters';
 import { characterRelationships } from '../../data/relationships';
 import { getCollection } from 'astro:content';
 import { withBase } from '../../utils/paths';
+import { RELATIONSHIP_COLORS } from '../../utils/relationship-colors.mjs';
 
 const byId = new Map(characters.map((person) => [person.id, person]));
 const chapters = await getCollection('chapters');
@@ -44,6 +45,12 @@ const categoryLabels = {
         </div>
       </div>
 
+      <ol class="network-steps" aria-label="How to use the relationship atlas">
+        <li><span aria-hidden="true">01</span><strong>Choose a figure</strong><small>Start with a documented character</small></li>
+        <li><span aria-hidden="true">02</span><strong>Explore the ties</strong><small>Filter by type or historical chapter</small></li>
+        <li><span aria-hidden="true">03</span><strong>Read the evidence</strong><small>Inspect a connection or open its source chapter</small></li>
+      </ol>
+
       <div class="network-tools" id="network-controls" hidden>
         <div class="network-field">
           <label for="network-person">Focus on a character</label>
@@ -61,10 +68,10 @@ const categoryLabels = {
         <button type="button" id="network-reset">Reset view</button>
       </div>
 
-      <div class="network-view-switch" id="network-view-switch" hidden aria-label="Relationship display mode">
-        <span class="network-view-switch__label">Explore relationships</span>
-        <button type="button" id="network-show-graph" aria-pressed="true">Graph view</button>
-        <button type="button" id="network-show-cards" aria-pressed="false">Relationship cards</button>
+      <div class="network-view-switch" id="network-view-switch" hidden role="group" aria-label="Relationship display mode">
+        <span class="network-view-switch__label">View the same documented ties as</span>
+        <button type="button" id="network-show-graph" aria-pressed="true">Visual network</button>
+        <button type="button" id="network-show-cards" aria-pressed="false">Evidence cards</button>
       </div>
 
       <div class="network-focus" id="network-focus" hidden>
@@ -79,8 +86,8 @@ const categoryLabels = {
       <section class="network-visual" id="network-visual" aria-labelledby="network-visual-heading" hidden>
         <div class="network-visual__toolbar">
           <div>
-            <h3 id="network-visual-heading">Character connections</h3>
-            <p>Drag to explore, scroll or pinch to zoom, and select a node to focus on a character. For keyboard navigation and historical context, use the character selector or relationship cards.</p>
+            <h3 id="network-visual-heading">Documented connections</h3>
+            <p>Nodes represent characters; colored lines distinguish relationship types. Drag to explore, zoom with the controls, or select a node. Use the selectors and Evidence cards for keyboard navigation and full historical context.</p>
           </div>
           <div class="network-visual__actions" aria-label="Graph zoom controls">
             <button type="button" id="network-zoom-out" aria-label="Zoom out of relationship graph">−</button>
@@ -127,6 +134,13 @@ const categoryLabels = {
               <option value="neutral">Single-color nodes</option>
             </select>
           </div>
+          <div class="network-explore-tools__field">
+            <label for="network-label-density">Node name labels</label>
+            <select id="network-label-density">
+              <option value="focus">Focused figure and direct neighbors</option>
+              <option value="all">Show all visible names</option>
+            </select>
+          </div>
           <form id="network-search-form" class="network-explore-tools__search" role="search">
             <label for="network-search">Find a character</label>
             <div>
@@ -136,13 +150,19 @@ const categoryLabels = {
             <p id="network-search-status" role="status" aria-live="polite"></p>
           </form>
         </div>
+        <div class="network-legend-heading">
+          <strong>What the line colors mean</strong>
+          <span>Relationships are documented ties, not shared factions or dates.</span>
+        </div>
         <ul class="network-visual__legend" aria-label="Relationship color legend">
-          {Object.entries(categoryLabels).map(([key, label]) => (
-            <li class={'network-legend--' + key}>{label}</li>
+          {Object.entries(RELATIONSHIP_COLORS).map(([key, item]) => (
+            <li class={'network-legend--' + key}>
+              <strong>{item.label}</strong><span>{item.description}</span>
+            </li>
           ))}
         </ul>
         <div id="network-chapter-legend" class="network-chapter-legend" aria-label="Character chapter color legend" hidden></div>
-        <p class="network-chapter-explainer">Chapter filtering uses the chapter documenting each relationship. Character colors reflect their first indexed chapter, not necessarily their birthplace or allegiance.</p>
+        <p class="network-chapter-explainer">Chapter filters use the chapter documenting the tie. Node colors show each figure’s first indexed chapter—not allegiance, birthplace, or an exact date. By default, names appear around the selected figure; you can show every name using Node name labels.</p>
         <p id="network-graph-status" role="status" aria-live="polite">Loading relationship graph…</p>
         <div id="network-canvas" role="img" aria-label="Interactive character relationship graph"></div>
         <aside id="network-inspector" class="network-inspector" aria-labelledby="network-inspector-heading">
@@ -183,8 +203,8 @@ const categoryLabels = {
               data-label-b={relation.labelForB}
             >
               <div class="network-edge__head">
-                <span>{categoryLabels[relation.category]}</span>
-                <span class="network-edge__relation" data-network-label>{relation.labelForA}</span>
+                <span class="network-edge__category">{categoryLabels[relation.category]}</span>
+                <span class="network-edge__relation"><span class="network-edge__perspective">Relationship perspective</span><strong data-network-label>{a.name}: {relation.labelForA}</strong></span>
               </div>
               <div class="network-edge__person" data-network-person-a>
                 <a href={withBase('characters/' + a.id + '/')}>{a.name} ↗</a>
@@ -257,7 +277,7 @@ const categoryLabels = {
           if (a) a.hidden = isA;
           if (b) b.hidden = isB;
           const label = edge.querySelector<HTMLElement>('[data-network-label]');
-          if (label) label.textContent = isA ? (edge.dataset.labelA ?? '') : (edge.dataset.labelB ?? '');
+          if (label) label.textContent = `${selected?.textContent ?? person}: ${isA ? (edge.dataset.labelA ?? '') : (edge.dataset.labelB ?? '')}`;
         }
         count.textContent = visible + ' direct ' + (visible === 1 ? 'connection' : 'connections') + ' shown';
         empty.hidden = visible !== 0;

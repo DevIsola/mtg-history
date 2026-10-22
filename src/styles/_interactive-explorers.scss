@@ -469,3 +469,129 @@
     grid-column: 1; grid-row: auto; justify-self: start;
   }
 }
+/* UX E2 — relationship atlas information hierarchy and contrast. */
+.network-section .page-shell { width: min(100% - 2.5rem, 1320px); }
+.network-intro { align-items: start; }
+.network-intro > div:first-child { max-width: 69ch; }
+.network-steps {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem;
+  margin: 0 0 1.5rem; padding: 0; list-style: none;
+}
+.network-steps li {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .1rem .75rem;
+  padding: 1rem; border: 1px solid var(--line); background: var(--paper-white); min-width: 0;
+}
+.network-steps li > span {
+  grid-row: span 2; padding-top: .15rem; color: var(--accent-text);
+  font-size: .85rem; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+.network-steps strong { color: var(--ink); font-size: .92rem; }
+.network-steps small { color: var(--ink-soft); font-size: .8rem; line-height: 1.5; }
+.network-tools, .network-explore-tools {
+  border-radius: 4px; gap: .9rem; align-items: end;
+}
+.network-tools { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto; }
+.network-view-switch { border-radius: 4px; padding: .8rem; gap: .65rem; }
+.network-view-switch button { font-weight: 750; }
+.network-view-switch button[aria-pressed="true"] {
+  background: var(--night); color: #f9f0dc; border-color: var(--night);
+}
+.network-view-switch__label { color: var(--ink); font-size: .85rem; }
+.network-focus {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem;
+  padding: 1.25rem 1.5rem; border-left: 4px solid var(--accent-text); border-radius: 4px;
+}
+.network-focus .eyebrow, .network-focus > strong, .network-focus > p { grid-column: 1; margin: 0; }
+.network-focus > a { grid-column: 2; grid-row: 1 / span 3; align-self: center; color: var(--link-color); }
+.network-visual { border-radius: 4px; }
+.network-visual__toolbar { padding: 1.4rem; }
+.network-visual__toolbar h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
+.network-visual__toolbar p { max-width: 73ch; font-size: .86rem; line-height: 1.6; }
+.network-visual__actions button { min-height: 44px; }
+.network-explore-tools { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.network-explore-tools__search { grid-column: span 3; }
+.network-explore-tools__search > div { max-width: 640px; }
+.network-legend-heading {
+  display: flex; align-items: baseline; justify-content: space-between;
+  flex-wrap: wrap; gap: .5rem 1rem; padding: 1.1rem 1.25rem .35rem;
+}
+.network-legend-heading strong { color: var(--ink); font-size: .9rem; }
+.network-legend-heading span { color: var(--ink-soft); font-size: .8rem; }
+.network-visual__legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem; padding: .7rem 1.25rem 1.2rem; }
+.network-visual__legend li {
+  display: grid; grid-template-columns: .8rem minmax(0, 1fr); gap: .05rem .55rem;
+  align-items: start; padding: .65rem .75rem; border: 1px solid var(--line); border-radius: 4px;
+  color: var(--ink); background: var(--paper-white); min-width: 0;
+}
+.network-visual__legend li::before { grid-row: span 2; margin-top: .25rem; width: .75rem; height: .75rem; }
+.network-visual__legend li strong { font-size: .82rem; font-weight: 750; }
+.network-visual__legend li span { color: var(--ink-soft); font-size: .75rem; line-height: 1.4; }
+.network-legend--family { --legend-color: #88581e; }
+.network-legend--friendship { --legend-color: #146d58; }
+.network-legend--alliance { --legend-color: #225f92; }
+.network-legend--rivalry { --legend-color: #a73e46; }
+.network-legend--mentorship { --legend-color: #66499b; }
+.network-legend--creation { --legend-color: #815735; }
+:root[data-theme="dark"] .network-legend--family { --legend-color: #f2c26e; }
+:root[data-theme="dark"] .network-legend--friendship { --legend-color: #6bd9ba; }
+:root[data-theme="dark"] .network-legend--alliance { --legend-color: #86bbf2; }
+:root[data-theme="dark"] .network-legend--rivalry { --legend-color: #ef9498; }
+:root[data-theme="dark"] .network-legend--mentorship { --legend-color: #c0a4f3; }
+:root[data-theme="dark"] .network-legend--creation { --legend-color: #ddb082; }
+.network-chapter-explainer { padding: 0 1.25rem .5rem; font-size: .81rem; line-height: 1.6; }
+#network-canvas { height: clamp(480px, 67vh, 780px); background: var(--paper-white); }
+.network-inspector { gap: .9rem; }
+.network-inspector > a { color: var(--link-color); }
+.network-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.network-edge {
+  position: relative; border-left: 4px solid var(--relation-color, var(--accent-text));
+  border-radius: 4px; padding: 1.4rem; gap: .8rem;
+}
+.network-edge[data-category="family"] { --relation-color: #88581e; }
+.network-edge[data-category="friendship"] { --relation-color: #146d58; }
+.network-edge[data-category="alliance"] { --relation-color: #225f92; }
+.network-edge[data-category="rivalry"] { --relation-color: #a73e46; }
+.network-edge[data-category="mentorship"] { --relation-color: #66499b; }
+.network-edge[data-category="creation"] { --relation-color: #815735; }
+:root[data-theme="dark"] .network-edge[data-category="family"] { --relation-color: #f2c26e; }
+:root[data-theme="dark"] .network-edge[data-category="friendship"] { --relation-color: #6bd9ba; }
+:root[data-theme="dark"] .network-edge[data-category="alliance"] { --relation-color: #86bbf2; }
+:root[data-theme="dark"] .network-edge[data-category="rivalry"] { --relation-color: #ef9498; }
+:root[data-theme="dark"] .network-edge[data-category="mentorship"] { --relation-color: #c0a4f3; }
+:root[data-theme="dark"] .network-edge[data-category="creation"] { --relation-color: #ddb082; }
+.network-edge__head { gap: .4rem; padding-bottom: 1rem; }
+.network-edge__category {
+  font-size: .8rem; color: var(--ink); text-transform: uppercase; letter-spacing: .07em;
+}
+.network-edge__relation { display: grid; gap: .3rem; color: var(--ink); }
+.network-edge__perspective { font-size: .75rem; color: var(--ink-soft); }
+.network-edge__relation strong { font-size: .87rem; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere; }
+.network-edge__person > a { line-height: 1.3; overflow-wrap: anywhere; }
+.network-edge__person button { min-height: 44px; color: var(--link-color); }
+.network-edge__chapter { color: var(--link-color); line-height: 1.6; }
+.network-edge :is(a, button):focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
+.network-section [hidden] { display: none !important; }
+@media (max-width: 1000px) {
+  .network-steps { grid-template-columns: 1fr; }
+  .network-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .network-tools > button { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .network-explore-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .network-explore-tools__search { grid-column: 1 / -1; }
+  .network-visual__legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .network-grid { grid-template-columns: 1fr; }
+  .network-focus { grid-template-columns: 1fr; }
+  .network-focus > a { grid-column: 1; grid-row: auto; }
+}
+@media (max-width: 480px) {
+  .network-section .page-shell { width: calc(100% - 2rem); }
+  .network-tools, .network-explore-tools { grid-template-columns: 1fr; }
+  .network-tools > button, .network-explore-tools__search { grid-column: 1; }
+  .network-visual__legend { grid-template-columns: 1fr; }
+  .network-visual__actions { flex-wrap: wrap; }
+  #network-canvas { height: 440px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .network-edge { transition: none; }
+}
