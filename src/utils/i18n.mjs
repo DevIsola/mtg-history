@@ -44,7 +44,7 @@ export function homeAlternates(origin, base = '/mtg-history/') {
 }
 
 // Only directory UIs with actual Portuguese counterparts participate in hreflang.
-export const TRANSLATED_SUFFIXES = Object.freeze(['', 'search/', 'timeline/', 'characters/', 'events/', 'archive/']);
+export const TRANSLATED_SUFFIXES = Object.freeze(['', 'search/', 'explore/', 'timeline/', 'characters/', 'events/', 'archive/']);
 
 export function translatedSuffix(pathname, base = '/mtg-history/') {
   if (typeof pathname !== 'string' || !base.startsWith('/') || !base.endsWith('/')) return null;
