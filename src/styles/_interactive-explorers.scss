@@ -526,18 +526,18 @@
 .network-visual__legend li::before { grid-row: span 2; margin-top: .25rem; width: .75rem; height: .75rem; }
 .network-visual__legend li strong { font-size: .82rem; font-weight: 750; }
 .network-visual__legend li span { color: var(--ink-soft); font-size: .75rem; line-height: 1.4; }
-.network-legend--family { --legend-color: #88581e; }
-.network-legend--friendship { --legend-color: #146d58; }
-.network-legend--alliance { --legend-color: #225f92; }
-.network-legend--rivalry { --legend-color: #a73e46; }
-.network-legend--mentorship { --legend-color: #66499b; }
-.network-legend--creation { --legend-color: #815735; }
-:root[data-theme="dark"] .network-legend--family { --legend-color: #f2c26e; }
-:root[data-theme="dark"] .network-legend--friendship { --legend-color: #6bd9ba; }
-:root[data-theme="dark"] .network-legend--alliance { --legend-color: #86bbf2; }
-:root[data-theme="dark"] .network-legend--rivalry { --legend-color: #ef9498; }
-:root[data-theme="dark"] .network-legend--mentorship { --legend-color: #c0a4f3; }
-:root[data-theme="dark"] .network-legend--creation { --legend-color: #ddb082; }
+.network-legend--family { --legend-color: #995000; }
+.network-legend--friendship { --legend-color: #006957; }
+.network-legend--alliance { --legend-color: #1b57a6; }
+.network-legend--rivalry { --legend-color: #ac1736; }
+.network-legend--mentorship { --legend-color: #6533a6; }
+.network-legend--creation { --legend-color: #93327f; }
+:root[data-theme="dark"] .network-legend--family { --legend-color: #ffc36a; }
+:root[data-theme="dark"] .network-legend--friendship { --legend-color: #64f0cc; }
+:root[data-theme="dark"] .network-legend--alliance { --legend-color: #78b9ff; }
+:root[data-theme="dark"] .network-legend--rivalry { --legend-color: #ff8296; }
+:root[data-theme="dark"] .network-legend--mentorship { --legend-color: #d5a4ff; }
+:root[data-theme="dark"] .network-legend--creation { --legend-color: #ff99df; }
 .network-chapter-explainer { padding: 0 1.25rem .5rem; font-size: .81rem; line-height: 1.6; }
 #network-canvas { height: clamp(480px, 67vh, 780px); background: var(--paper-white); }
 .network-inspector { gap: .9rem; }
@@ -547,18 +547,18 @@
   position: relative; border-left: 4px solid var(--relation-color, var(--accent-text));
   border-radius: 4px; padding: 1.4rem; gap: .8rem;
 }
-.network-edge[data-category="family"] { --relation-color: #88581e; }
-.network-edge[data-category="friendship"] { --relation-color: #146d58; }
-.network-edge[data-category="alliance"] { --relation-color: #225f92; }
-.network-edge[data-category="rivalry"] { --relation-color: #a73e46; }
-.network-edge[data-category="mentorship"] { --relation-color: #66499b; }
-.network-edge[data-category="creation"] { --relation-color: #815735; }
-:root[data-theme="dark"] .network-edge[data-category="family"] { --relation-color: #f2c26e; }
-:root[data-theme="dark"] .network-edge[data-category="friendship"] { --relation-color: #6bd9ba; }
-:root[data-theme="dark"] .network-edge[data-category="alliance"] { --relation-color: #86bbf2; }
-:root[data-theme="dark"] .network-edge[data-category="rivalry"] { --relation-color: #ef9498; }
-:root[data-theme="dark"] .network-edge[data-category="mentorship"] { --relation-color: #c0a4f3; }
-:root[data-theme="dark"] .network-edge[data-category="creation"] { --relation-color: #ddb082; }
+.network-edge[data-category="family"] { --relation-color: #995000; }
+.network-edge[data-category="friendship"] { --relation-color: #006957; }
+.network-edge[data-category="alliance"] { --relation-color: #1b57a6; }
+.network-edge[data-category="rivalry"] { --relation-color: #ac1736; }
+.network-edge[data-category="mentorship"] { --relation-color: #6533a6; }
+.network-edge[data-category="creation"] { --relation-color: #93327f; }
+:root[data-theme="dark"] .network-edge[data-category="family"] { --relation-color: #ffc36a; }
+:root[data-theme="dark"] .network-edge[data-category="friendship"] { --relation-color: #64f0cc; }
+:root[data-theme="dark"] .network-edge[data-category="alliance"] { --relation-color: #78b9ff; }
+:root[data-theme="dark"] .network-edge[data-category="rivalry"] { --relation-color: #ff8296; }
+:root[data-theme="dark"] .network-edge[data-category="mentorship"] { --relation-color: #d5a4ff; }
+:root[data-theme="dark"] .network-edge[data-category="creation"] { --relation-color: #ff99df; }
 .network-edge__head { gap: .4rem; padding-bottom: 1rem; }
 .network-edge__category {
   font-size: .8rem; color: var(--ink); text-transform: uppercase; letter-spacing: .07em;
@@ -595,3 +595,14 @@
 @media (prefers-reduced-motion: reduce) {
   .network-edge { transition: none; }
 }
+
+
+/* F1 companion — distinguish graph relationships by color AND line pattern. */
+.network-visual__legend li { grid-template-columns: 1.65rem minmax(0, 1fr); }
+.network-visual__legend li::before {
+  width: 1.45rem; height: 0; margin-top: .55rem; border-radius: 0;
+  border-top: 4px solid var(--legend-color); background: transparent;
+}
+.network-legend--friendship::before, .network-legend--mentorship::before { border-top-style: dashed !important; }
+.network-legend--alliance::before, .network-legend--creation::before { border-top-style: dotted !important; }
+.network-edge { border-left-width: 6px; }

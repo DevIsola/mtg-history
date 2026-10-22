@@ -1,0 +1,54 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
+import { localizedArchiveCard } from '../utils/pt-printings.mjs';
+import ptCatalog from '../data/pt-printings.json';
+
+interface Props {
+  chapterId: string;
+  locale?: 'en' | 'pt-BR';
+  variant?: 'hero' | 'tile' | 'editorial';
+}
+const { chapterId, locale = 'en', variant = 'tile' } = Astro.props;
+const pt = locale === 'pt-BR';
+const chapter = await getEntry('chapters', chapterId);
+if (!chapter) throw new Error(`Homepage: unknown chapter ${chapterId}`);
+const printings = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
+const canonical = chapterCardUse(chapter, 0, printings);
+const displayed = pt ? localizedArchiveCard(canonical, ptCatalog) : {
+  canonicalId: canonical.scryfallId,
+  printingId: canonical.scryfallId,
+  name: canonical.name,
+  artist: canonical.artist,
+  setCode: canonical.setCode,
+  collectorNumber: canonical.collectorNumber,
+  imageUrl: cardImageUrl(canonical.scryfallId),
+  imageSrcset: cardImageSrcset(canonical.scryfallId),
+  scryfallUrl: cardScryfallUrl(canonical),
+  translated: false,
+};
+---
+<figure class={`homepage-artwork homepage-artwork--${variant}`}
+  data-home-artwork data-canonical-id={canonical.scryfallId}
+  data-displayed-id={displayed.printingId}>
+  <a class="homepage-artwork__image" href={displayed.scryfallUrl} target="_blank"
+    rel="noopener noreferrer"
+    aria-label={pt ? `Ver a impressão de ${displayed.name} no Scryfall` : `View the exact ${displayed.name} printing on Scryfall`}>
+    <img src={displayed.imageUrl} srcset={displayed.imageSrcset}
+      sizes={variant === 'hero' ? '(max-width: 850px) 75vw, 300px' : '(max-width: 650px) 80vw, 220px'}
+      width="488" height="680" decoding="async" loading={variant === 'hero' ? 'eager' : 'lazy'}
+      alt={pt ? `${displayed.name}, arte de ${displayed.artist}` : `${displayed.name}, illustrated by ${displayed.artist}`} />
+  </a>
+  <figcaption class="homepage-artwork__caption">
+    <span class="homepage-artwork__classification">{pt
+      ? (displayed.translated ? 'Carta oficial em português · ilustração verificada' : 'Imagem da edição original (EN)')
+      : 'Curated illustration · not independent historical proof'}</span>
+    <strong>{displayed.name}</strong>
+    <span class="homepage-artwork__credit">{displayed.artist} · {displayed.setCode.toUpperCase()} #{displayed.collectorNumber}</span>
+    <details class="homepage-artwork__context">
+      <summary>{pt ? 'Contexto editorial (EN)' : 'Historical interpretation'}</summary>
+      <p>{canonical.significance}</p>
+      {pt && <p>{'A interpretação editorial acima permanece em inglês. A impressão canônica continua vinculada à referência histórica original.'}</p>}
+    </details>
+  </figcaption>
+</figure>

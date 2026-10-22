@@ -1,25 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import HomepageArtwork from '../../components/HomepageArtwork.astro';
+import { eras } from '../../data/eras';
+import { portugueseEra } from '../../utils/pt-catalog.mjs';
 import { withBase } from '../../utils/paths';
+const highlighted = eras.slice(0, 3);
+const counts = {
+  chapters: (await getCollection('chapters')).length,
+  events: (await getCollection('events')).length,
+  characters: (await getCollection('characters')).length,
+  relationships: (await getCollection('relationships')).length,
+};
 ---
 <BaseLayout locale="pt-BR"
   title="Uma história escrita entre mundos"
   description="Conheça a história de Magic: The Gathering, seus personagens e os acontecimentos que moldaram o Multiverso. Uma introdução em português brasileiro."
 >
-  <section class="hero">
+  <section class="hero homepage-hero">
     <div class="hero__starlight" aria-hidden="true"></div>
     <div class="hero__emblem" aria-hidden="true"><div class="hero__emblem-inner"><span>✧</span></div></div>
-    <div class="page-shell hero__content">
-      <p class="eyebrow eyebrow--light">Uma história independente de Magic: The Gathering</p>
-      <h1>Cada mundo<br />tem sua <em>história.</em></h1>
-      <p class="hero__lead">Antes de se tornarem cartas, as lendas eram histórias. Descubra conflitos, personagens e acontecimentos que transformaram o Multiverso.</p>
-      <div class="hero__actions">
-        <a class="button button--gold" href={withBase('pt-br/timeline/')}>Explorar a cronologia →</a>
-        <a class="button button--outline" href={withBase('pt-br/characters/')}>Conhecer os personagens</a>
+    <div class="page-shell hero__content homepage-hero__grid">
+      <div class="homepage-hero__copy">
+        <p class="eyebrow eyebrow--light">Uma história independente e ilustrada de Magic: The Gathering</p>
+        <h1>Cada mundo tem sua <em>história.</em></h1>
+        <p class="hero__lead">Acompanhe conflitos, descobertas e personagens do Multiverso. Explore a narrativa em ordem histórica e descubra as cartas e publicações que registraram esses acontecimentos.</p>
+        <div class="hero__actions">
+          <a class="button button--gold" href={withBase('pt-br/chapters/thran/')}>Começar a leitura →</a>
+          <a class="button button--outline" href={withBase('pt-br/explore/')}>Explorar a enciclopédia</a>
+        </div>
+        <p class="hero__aside">A cronologia da história não é a mesma da publicação das cartas.</p>
       </div>
-      <p class="hero__aside">Uma viagem pela história · Ilustrada pelas próprias cartas</p>
+      <HomepageArtwork chapterId="war-of-the-spark" locale="pt-BR" variant="hero" />
     </div>
-    <div class="hero__bottom" aria-hidden="true"><span>✦</span></div>
+  </section>
+
+  <section class="homepage-numbers" aria-label="Cobertura documentada do arquivo">
+    <dl class="page-shell">
+      <div><dt>Capítulos</dt><dd>{counts.chapters}</dd></div>
+      <div><dt>Acontecimentos</dt><dd>{counts.events}</dd></div>
+      <div><dt>Personagens</dt><dd>{counts.characters}</dd></div>
+      <div><dt>Relações</dt><dd>{counts.relationships}</dd></div>
+    </dl>
   </section>
 
   <section class="intro-section section-spacing" aria-labelledby="pt-intro">
@@ -37,10 +59,32 @@ import { withBase } from '../../utils/paths';
       </div>
     </div>
   </section>
+  <section class="eras-section section-spacing" aria-labelledby="pt-eras-heading">
+    <div class="page-shell">
+      <div class="section-topline">
+        <div><p class="eyebrow">Comece a jornada</p><h2 id="pt-eras-heading" class="section-title">Primeiros <em>capítulos.</em></h2></div>
+        <a class="text-link" href={withBase('pt-br/timeline/')}>Ver toda a cronologia →</a>
+      </div>
+      <div class="era-card-grid homepage-era-grid">
+        {highlighted.map(era => (
+          <article class="era-card homepage-era-card">
+            <HomepageArtwork chapterId={era.id} locale="pt-BR" variant="tile" />
+            <div class="homepage-era-card__text">
+              <span class="era-card__kicker">Capítulo {era.chapter}</span>
+              <h3>{portugueseEra(era.id).name}</h3>
+              <p>{portugueseEra(era.id).summary}</p>
+              <a class="homepage-era-card__read" href={withBase(`pt-br/chapters/${era.id}/`)}>Ler o capítulo →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="journey-section section-spacing" aria-labelledby="pt-directories">
     <div class="page-shell">
       <h2 id="pt-directories" class="section-title">Explore o <em>Multiverso.</em></h2>
-      <div class="journey-grid">
+      <div class="journey-grid homepage-journey-grid">
         <a class="journey-card" href={withBase('pt-br/timeline/')}><h3>Cronologia</h3><p>Dez capítulos organizados por período histórico.</p><span class="journey-card__action">Explorar →</span></a>
         <a class="journey-card" href={withBase('pt-br/characters/')}><h3>Personagens</h3><p>Conheça as figuras mais importantes do Multiverso.</p><span class="journey-card__action">Explorar →</span></a>
         <a class="journey-card" href={withBase('pt-br/events/')}><h3>Acontecimentos</h3><p>Os momentos decisivos da narrativa.</p><span class="journey-card__action">Explorar →</span></a>

@@ -3,7 +3,7 @@
  * the canonical accessible record and the only input to the visual network.
  */
 import 'vis-network/styles/vis-network.css';
-import { relationshipColor, relationshipLabel } from '../utils/relationship-colors.mjs';
+import { relationshipColor, relationshipLabel, relationshipDash } from '../utils/relationship-colors.mjs';
 
 type GraphNode = { id: string; label: string; value: number; chapterId: string };
 type GraphEdge = {
@@ -200,7 +200,8 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     })));
     const edgeSet = new DataSet(allEdges.map((edge) => ({
       ...edge,
-      color: { color: relationshipColor(edge.category, document.documentElement.dataset.theme === 'dark'), opacity: 0.95 },
+      color: { color: relationshipColor(edge.category, document.documentElement.dataset.theme === 'dark'), opacity: 1 },
+        width: 2.8, dashes: relationshipDash(edge.category),
     })));
 
     panel.hidden = false;
@@ -230,7 +231,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
         font: styles.font,
       },
       edges: {
-        width: 2.1,
+        width: 2.8,
         smooth: { enabled: true, type: 'continuous', roundness: 0.15 },
         selectionWidth: 3,
         hoverWidth: 3,
@@ -396,7 +397,8 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       const visibleEdgeIds = new Set(visibleEdges.map((edge) => edge.id));
       edgeSet.update(edgeSet.get().map((edge) => ({
         ...edge, hidden: !visibleEdgeIds.has(edge.id),
-        color: { color: relationshipColor(edge.category, document.documentElement.dataset.theme === 'dark'), opacity: 0.95 },
+        color: { color: relationshipColor(edge.category, document.documentElement.dataset.theme === 'dark'), opacity: 1 },
+        width: 2.8, dashes: relationshipDash(edge.category),
       })));
       if (inspectedEdge && !visibleEdgeIds.has(inspectedEdge)) inspectedEdge = null;
       if (inspectedEdge) graph.selectEdges([inspectedEdge]);
