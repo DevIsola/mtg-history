@@ -6,6 +6,7 @@ import { withBase } from '../../utils/paths';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChapterToc from '../../components/ChapterToc.astro';
+import ChapterArtworkTrail from '../../components/ChapterArtworkTrail.astro';
 import ChapterReadingControls from '../../components/ChapterReadingControls.astro';
 import ChapterSources from '../../components/ChapterSources.astro';
 import ChapterSwitcher from '../../components/ChapterSwitcher.astro';
@@ -92,7 +93,7 @@ const nextChapter = chapters[currentIndex + 1];
         <p class="chapter-reader__context">Chapter {String(chapter.data.order).padStart(2, '0')} · {chapter.data.title}</p>
 
         <details class="chapter-settings" data-chapter-settings hidden>
-          <summary aria-label="Reading preferences"><span aria-hidden="true">Aa</span> Reading preferences <span aria-hidden="true">⌄</span></summary>
+          <summary aria-label="Aa Reading preferences"><span aria-hidden="true">Aa</span> Reading preferences <span aria-hidden="true">⌄</span></summary>
           <ChapterReadingControls />
         </details>
 
@@ -107,6 +108,9 @@ const nextChapter = chapters[currentIndex + 1];
             ))}
           </ul>
         </details>
+
+        <!-- A progressive, opt-in guide to the existing illustrated moments. -->
+        <ChapterArtworkTrail />
 
         <!-- Historical narrative -->
         <article class="chapter-prose">

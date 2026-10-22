@@ -55,12 +55,14 @@ $chapter-palettes: (
 
 // Progressive enhancement for MDX-generated narrative elements: the prose and
 // image links remain visible, operable and readable even before script executes.
+// Keep text fully opaque during reveal: parent opacity reduces WCAG contrast
+// for captions, source credits, and action labels inside illustrated moments.
 .chapter-theme .chapter-prose :is(h2, .historical-moment)[data-living-reveal] {
-  transition: opacity 360ms ease-out, transform 360ms ease-out;
+  transition: transform 360ms ease-out;
 }
 
 .chapter-theme .chapter-prose :is(h2, .historical-moment)[data-living-reveal='pending'] {
-  opacity: 0.92;
+  opacity: 1;
   transform: translate3d(0, 10px, 0);
 }
 

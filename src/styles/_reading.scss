@@ -521,7 +521,7 @@
 }
 
 .chapter-sources__number {
-  color: #8b693c;
+  color: var(--link-color);
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -565,7 +565,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #8b693c;
+  color: var(--link-color);
 }
 
 .chapter-pagination__link strong {
