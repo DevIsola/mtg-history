@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ChapterChronology from '../components/ChapterChronology.astro';
+import TimelineArtwork from '../components/TimelineArtwork.astro';
 import { eras } from '../data/eras';
 import { historicalEvents } from '../data/events';
 import { characters } from '../data/characters';
@@ -86,7 +87,7 @@ const entries = eras.map((era) => {
 
       <p class="atlas-empty" id="timeline-empty" hidden>No eras match those terms. Try a different search or clear the filters.</p>
 
-      <div class="atlas-track">
+      <div class="atlas-track atlas-track--editorial">
         {entries.map(({ era, chapter, eventRecords, eraSearch, searchText }) => (
           <article class="atlas-era" id={era.id} data-timeline-era data-id={era.id} data-search={searchText} data-era-search={eraSearch}>
             <div class="atlas-era__rail" aria-hidden="true"><span>{era.chapter}</span></div>
@@ -107,6 +108,7 @@ const entries = eras.map((era) => {
                 {chapter && <a class="atlas-primary-link" href={withBase('chapters/' + chapter.id + '/#chapter-reader')}>Read the chapter →</a>}
                 <a class="text-link" href={withBase('events/') + '#' + era.id}>Browse events in context →</a>
               </div>
+              {chapter && <TimelineArtwork chapter={chapter} />}
               {eventRecords.length > 0 && (
                 <details class="atlas-era__events" data-timeline-details>
                   <summary><span>Defining historical events</span><small data-timeline-event-count>{eventRecords.length} records</small></summary>

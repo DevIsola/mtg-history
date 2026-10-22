@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
+
+interface Props { chapter: CollectionEntry<'chapters'>; }
+const { chapter } = Astro.props;
+const printings = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
+const card = chapterCardUse(chapter, 0, printings);
+const source = cardScryfallUrl(card);
+---
+<figure class="atlas-era__artwork" data-timeline-artwork data-printing-id={card.scryfallId}>
+  <a href={source} target="_blank" rel="noopener noreferrer" aria-label={`View the exact ${card.name} printing on Scryfall`}>
+    <img src={cardImageUrl(card.scryfallId)} srcset={cardImageSrcset(card.scryfallId)}
+      sizes="(max-width: 900px) 180px, 230px" width="488" height="680"
+      loading="lazy" decoding="async"
+      alt={`${card.name}, a curated card illustration by ${card.artist}`} />
+  </a>
+  <figcaption>
+    <span class="atlas-era__artwork-label">Curated illustration · not a literal event photograph</span>
+    <strong>{card.name}</strong>
+    <span class="atlas-era__artwork-credit">{card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</span>
+    <details class="atlas-era__artwork-context">
+      <summary>Why this illustration appears</summary>
+      <p>{card.significance}</p>
+    </details>
+  </figcaption>
+</figure>
