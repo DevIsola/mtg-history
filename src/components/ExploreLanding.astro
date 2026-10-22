@@ -1,0 +1,247 @@
+---
+import { getCollection } from 'astro:content';
+import { characters } from '../data/characters';
+import { historicalEvents } from '../data/events';
+import { characterRelationships } from '../data/relationships';
+import { portugueseEra } from '../utils/pt-catalog.mjs';
+import { withBase } from '../utils/paths';
+import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
+
+interface Props { locale?: 'en' | 'pt-BR'; }
+const { locale = 'en' } = Astro.props;
+const pt = locale === 'pt-BR';
+const prefix = pt ? 'pt-br/' : '';
+const local = (path: string) => withBase(`${prefix}${path}`);
+const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const selectedIds = ['thran', 'many-worlds', 'omenpaths'];
+const featured = selectedIds.map(id => {
+  const chapter = chapters.find(item => item.id === id);
+  if (!chapter) throw new Error(`Explore landing: missing curated chapter ${id}`);
+  return chapter;
+});
+const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
+const illustration = chapterCardUse(featured[0], 0, cardCatalog);
+const evidenceHref = cardScryfallUrl(illustration);
+const heroImage = cardImageUrl(illustration.scryfallId);
+const heroSrcset = cardImageSrcset(illustration.scryfallId);
+
+type Destination = {
+  id: string; number?: number; label: string; title: string; description: string;
+  href: string; englishOnly?: boolean;
+};
+const destinations: Destination[] = [
+  {
+    id: 'chapters', number: chapters.length, label: pt ? 'Capítulos' : 'Chapters',
+    title: pt ? 'Leia a história' : 'Read the history',
+    description: pt ? 'Dez capítulos organizados por períodos editoriais, não por uma única linha temporal universal.' : 'Ten curated eras, arranged as an editorial reading sequence rather than one universal calendar.',
+    href: local('timeline/'),
+  },
+  {
+    id: 'characters', number: characters.length, label: pt ? 'Personagens' : 'Characters',
+    title: pt ? 'Conheça os personagens' : 'Meet the characters',
+    description: pt ? 'Perfis de figuras que aparecem nos acontecimentos históricos.' : 'Profiles of the people behind the events and their connections across eras.',
+    href: local('characters/'),
+  },
+  {
+    id: 'events', number: historicalEvents.length, label: pt ? 'Acontecimentos' : 'Events',
+    title: pt ? 'Explore os acontecimentos' : 'Trace the turning points',
+    description: pt ? 'Acontecimentos históricos vinculados aos capítulos e às figuras envolvidas.' : 'Historical events linked to chapters, participants, and selected illustrations.',
+    href: local('events/'),
+  },
+  {
+    id: 'relationships', number: characterRelationships.length, label: pt ? 'Relações (EN)' : 'Relationships',
+    title: pt ? 'Veja as relações (EN)' : 'Follow the relationships',
+    description: pt ? 'Uma rede em inglês de alianças, rivalidades e outros vínculos documentados.' : 'An interactive network of documented alliances, conflicts, and family ties.',
+    href: withBase('relationships/'),
+    englishOnly: pt,
+  },
+  {
+    id: 'archive', number: chapters.reduce((total, chapter) => total + chapter.data.cardIds.length, 0),
+    label: pt ? 'Referências ilustradas' : 'Illustrated references',
+    title: pt ? 'Examine as cartas' : 'Examine the card archive',
+    description: pt ? 'Imagens associadas aos capítulos, com edições específicas e créditos dos artistas.' : 'Curated printings with artist credits and chapter-specific historical interpretation.',
+    href: local('archive/'),
+  },
+  {
+    id: 'glossary', label: pt ? 'Glossário (EN)' : 'Glossary',
+    title: pt ? 'Consulte o glossário (EN)' : 'Understand the terminology',
+    description: pt ? 'Termos de história e lore explicados em inglês.' : 'Short explanations of the places, concepts, and terms found in the narrative.',
+    href: withBase('glossary/'),
+    englishOnly: pt,
+  },
+  {
+    id: 'paths', label: pt ? 'Percursos históricos (EN)' : 'History paths',
+    title: pt ? 'Siga outros percursos (EN)' : 'Follow a historical thread',
+    description: pt ? 'Percursos de leitura em inglês que conectam capítulos distintos.' : 'Curated reading sequences that connect events without merging distinct eras.',
+    href: withBase('paths/'),
+    englishOnly: pt,
+  },
+  {
+    id: 'directory', label: pt ? 'Índice (EN)' : 'Encyclopedia directory',
+    title: pt ? 'Abra o índice completo (EN)' : 'Browse the full directory',
+    description: pt ? 'Índice em inglês com filtros por tipo de registro e capítulo.' : 'The existing structured directory, including record-type and chapter filters.',
+    href: withBase('discover/'),
+    englishOnly: pt,
+  },
+];
+---
+<div class="explore-landing" data-explore-landing>
+  <section class="explore-hero" aria-labelledby="explore-heading">
+    <div class="page-shell explore-hero__grid">
+      <div class="explore-hero__copy">
+        <p class="eyebrow eyebrow--light">{pt ? 'Um atlas para o Multiverso' : 'The Multiverse, indexed'}</p>
+        <h1 id="explore-heading">{pt ? 'Explore a ' : 'Explore the '}<em>{pt ? 'história.' : 'Multiverse.'}</em></h1>
+        <p class="explore-hero__lead">
+          {pt
+            ? 'Comece por um período histórico, encontre uma pessoa ou acompanhe os acontecimentos que conectam mundos e personagens.'
+            : 'Begin with a historical era, follow a person, or investigate the events and printed cards that connect the stories.'}
+        </p>
+        <div class="explore-hero__actions">
+          <a class="explore-primary" href={local('timeline/')}>{pt ? 'Ler os capítulos' : 'Start reading'} <span aria-hidden="true">→</span></a>
+          <a class="explore-secondary" href={local('search/')}>{pt ? 'Pesquisar os textos' : 'Search the full text'} <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="explore-hero__scope">{pt
+          ? 'A busca usa o índice Pagefind em português. Algumas seções detalhadas continuam disponíveis apenas em inglês.'
+          : 'Full-text search uses the existing Pagefind index. The directory below links to published historical records.'}
+        </p>
+      </div>
+      <figure class="explore-hero__artifact">
+        <a href={evidenceHref} target="_blank" rel="noopener noreferrer" aria-label={`${illustration.name} — Scryfall`}>
+          <img src={heroImage} srcset={heroSrcset} sizes="(max-width: 760px) 65vw, 280px"
+            width="488" height="680" loading="eager" decoding="async"
+            alt={`${illustration.name}, ${pt ? 'ilustração de' : 'illustrated by'} ${illustration.artist}`} />
+        </a>
+        <figcaption>
+          <span>{pt ? 'Exemplo de referência ilustrada' : 'A curated illustrated reference'}</span>
+          <strong>{illustration.name}</strong>
+          <p>{pt ? 'Interpretação editorial (EN): ' : 'Editorial interpretation: '}{illustration.significance}</p>
+          <small>{pt ? 'Arte de' : 'Art by'} {illustration.artist} · {illustration.setCode.toUpperCase()} #{illustration.collectorNumber}</small>
+          <a href={evidenceHref} target="_blank" rel="noopener noreferrer">{pt ? 'Ver edição no Scryfall ↗' : 'Verify printing on Scryfall ↗'}</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="explore-intro section-spacing" aria-labelledby="explore-ways-heading">
+    <div class="page-shell">
+      <div class="explore-section-heading">
+        <div>
+          <p class="eyebrow">{pt ? 'Três portas de entrada' : 'Choose your starting point'}</p>
+          <h2 class="section-title" id="explore-ways-heading">{pt ? 'Uma história, ' : 'One history, '}<em>{pt ? 'muitos caminhos.' : 'many ways in.'}</em></h2>
+        </div>
+        <p>{pt
+          ? 'Os períodos são agrupamentos editoriais. Narrativas em mundos diferentes podem acontecer ao mesmo tempo.'
+          : 'Chapters are editorial groupings: stories on different planes can overlap in time.'}</p>
+      </div>
+      <div class="explore-featured">
+        {featured.map((chapter, index) => (
+          <a class="explore-feature" href={local(`chapters/${chapter.id}/`)}>
+            <span class="explore-feature__meta">{pt ? 'Capítulo' : 'Chapter'} {String(chapter.data.order).padStart(2, '0')}</span>
+            <span class="explore-feature__index" aria-hidden="true">0{index + 1}</span>
+            <h3>{pt ? portugueseEra(chapter.id).name : chapter.data.title}</h3>
+            <span class="explore-feature__description">{pt ? portugueseEra(chapter.id).summary : chapter.data.subtitle}</span>
+            <span class="explore-feature__link">{pt ? 'Ler em português' : 'Read this chapter'} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="explore-directory section-spacing" aria-labelledby="explore-directory-heading">
+    <div class="page-shell">
+      <div class="explore-section-heading">
+        <div>
+          <p class="eyebrow">{pt ? 'Acervo histórico' : 'Navigate the collections'}</p>
+          <h2 class="section-title" id="explore-directory-heading">{pt ? 'Escolha o ' : 'Follow the '}<em>{pt ? 'assunto.' : 'evidence.'}</em></h2>
+        </div>
+        <p>{pt
+          ? 'As contagens refletem os registros publicados. Referências ilustradas não representam, necessariamente, cenas históricas literais.'
+          : 'Counts reflect published data. An illustration can identify a person or theme rather than depict an exact historical event.'}</p>
+      </div>
+      <div class="explore-directory__grid">
+        {destinations.map(item => (
+          <a class="explore-destination" href={item.href} hreflang={item.englishOnly ? 'en' : undefined} data-explore-destination={item.id}>
+            <span class="explore-destination__top">
+              <span>{item.label}</span>
+              {typeof item.number === 'number' && <strong>{item.number}</strong>}
+            </span>
+            <h3 class="explore-destination__title">{item.title}</h3>
+            <span class="explore-destination__description">{item.description}</span>
+            <span class="explore-destination__action">{pt ? 'Abrir coleção' : 'Open collection'} <span aria-hidden="true">→</span></span>
+          </a>
+        ))}
+      </div>
+      <p class="explore-directory__note">{pt
+        ? 'Os dados históricos são separados das interpretações visuais. Consulte o capítulo, os créditos e a edição específica para avaliar uma imagem.'
+        : 'Historical sourcing and visual interpretation are separate. Consult the chapter, the artwork credit, and the exact printing when evaluating an image.'}</p>
+    </div>
+  </section>
+</div>
+
+<style lang="scss">
+  .explore-landing { overflow: clip; }
+  .explore-hero { color: #f7f0e4; background: radial-gradient(ellipse at 80% 20%, #2b4540 0%, #14282a 43%, #0e1a20 100%); padding: clamp(3.5rem, 7vw, 6.5rem) 0; }
+  .explore-hero__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(290px, .8fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; }
+  .explore-hero h1 { margin: 0; max-width: 12ch; font-family: var(--font-display); font-size: clamp(3.1rem, 6.3vw, 6rem); line-height: 1.06; letter-spacing: -.048em; font-weight: 450; }
+  .explore-hero h1 em { color: var(--gold-light); font-weight: 400; }
+  .explore-hero__lead { max-width: 57ch; margin: 1.5rem 0 0; font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.65; color: #e6e4dd; }
+  .explore-hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+  .explore-primary, .explore-secondary { min-height: 48px; display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .8rem 1rem; font-weight: 700; font-size: .89rem; text-decoration: none; }
+  .explore-primary { color: #182326; background: #e1c18a; }
+  .explore-primary:hover { background: #f0d5a6; }
+  .explore-secondary { color: #faf2e2; border: 1px solid #af9870; }
+  .explore-secondary:hover { background: #ffffff18; }
+  .explore-hero__scope { max-width: 61ch; margin-top: 1.2rem; color: #cad8d3; font-size: .81rem; line-height: 1.55; }
+  .explore-hero__artifact { margin: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 1.2rem; align-items: center; }
+  .explore-hero__artifact > a { display: block; }
+  .explore-hero__artifact img { display: block; width: 100%; height: auto; border-radius: 4.7% / 3.4%; box-shadow: 0 22px 46px #0008; }
+  .explore-hero__artifact figcaption { min-width: 0; }
+  .explore-hero__artifact figcaption > span { display: block; text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; color: var(--gold-light); }
+  .explore-hero__artifact figcaption strong { display: block; margin-top: .45rem; font-family: var(--font-display); font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 500; }
+  .explore-hero__artifact figcaption p { margin: .7rem 0; font-size: .81rem; line-height: 1.6; color: #e7e3d9; }
+  .explore-hero__artifact figcaption small { display: block; line-height: 1.5; font-size: .75rem; color: #e0caa5; }
+  .explore-hero__artifact figcaption a { display: inline-block; margin-top: .8rem; color: #f5daa9; font-size: .8rem; text-decoration: underline; text-underline-offset: 3px; }
+  .explore-section-heading { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr); align-items: end; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .explore-section-heading .section-title { margin: 0; font-size: clamp(2.1rem, 4vw, 3.6rem); }
+  .explore-section-heading > p { margin: 0; color: var(--ink-soft); line-height: 1.7; font-size: .95rem; }
+  .explore-intro { background: var(--paper); }
+  .explore-featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .explore-feature { display: flex; flex-direction: column; position: relative; isolation: isolate; min-height: 290px; gap: 1rem; padding: 1.5rem; background: var(--paper-white); color: var(--ink); border: 1px solid var(--line); text-decoration: none; }
+  .explore-feature:hover, .explore-feature:focus-visible { border-color: var(--accent-text); box-shadow: var(--card-hover-shadow); }
+  .explore-feature__meta { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--accent-text); }
+  .explore-feature__index { position: absolute; top: 1rem; right: 1.2rem; font-family: var(--font-display); font-size: 2rem; color: var(--line); }
+  .explore-feature > h3 { margin: .5rem 0 0; font-size: 1.45rem; line-height: 1.3; font-family: var(--font-display); font-weight: 500; }
+  .explore-feature__description { font-size: .91rem; line-height: 1.65; color: var(--ink-soft); }
+  .explore-feature__link { margin-top: auto; padding-top: 1rem; font-size: .82rem; color: var(--link-color); font-weight: 750; }
+  .explore-directory { background: var(--paper-deep); }
+  .explore-directory__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .85rem; }
+  .explore-destination { min-width: 0; display: flex; flex-direction: column; gap: .7rem; min-height: 230px; padding: 1.35rem; background: var(--paper-white); color: var(--ink); border: 1px solid var(--line); text-decoration: none; }
+  .explore-destination:hover, .explore-destination:focus-visible { border-color: var(--accent-text); transform: translateY(-2px); box-shadow: var(--card-hover-shadow); }
+  .explore-destination__top { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; font-size: .75rem; letter-spacing: .04em; color: var(--accent-text); font-weight: 750; text-transform: uppercase; }
+  .explore-destination__top strong { font: 500 1.45rem var(--font-display); color: var(--ink); }
+  .explore-destination__title { margin: 0; font-family: var(--font-display); font-size: 1.18rem; font-weight: 550; line-height: 1.3; }
+  .explore-destination__description { font-size: .84rem; line-height: 1.6; color: var(--ink-soft); }
+  .explore-destination__action { margin-top: auto; padding-top: .3rem; color: var(--link-color); font-size: .81rem; font-weight: 750; }
+  .explore-directory__note { margin: 1.4rem 0 0; max-width: 76ch; color: var(--ink-soft); line-height: 1.65; font-size: .86rem; }
+  @media (max-width: 1120px) {
+    .explore-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(220px, .78fr); gap: 2rem; }
+    .explore-hero__artifact { grid-template-columns: 1fr; max-width: 330px; }
+    .explore-hero__artifact img { max-width: 165px; }
+    .explore-directory__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .explore-hero__grid, .explore-section-heading { grid-template-columns: 1fr; }
+    .explore-hero__artifact { display: grid; grid-template-columns: 130px minmax(0, 1fr); max-width: 620px; }
+    .explore-featured { grid-template-columns: 1fr; }
+    .explore-feature { min-height: 0; }
+  }
+  @media (max-width: 520px) {
+    .explore-directory__grid { grid-template-columns: 1fr; }
+    .explore-destination { min-height: 0; }
+    .explore-hero__artifact { grid-template-columns: 110px minmax(0, 1fr); gap: .9rem; }
+    .explore-hero__artifact figcaption p { font-size: .75rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .explore-destination { transition: none; }
+  }
+</style>

@@ -18,7 +18,8 @@ const portugueseChoice = withBase(paired ? 'pt-br/' + (suffix ?? '') : 'pt-br/')
 const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const selected = (href: string) => current === (href.replace(/\/+$/, '') || '/');
 const destinations = [
-  {label: pt ? 'Explorar índice (EN)' : 'Explore index', href: withBase('discover/')},
+  {label: pt ? 'Explorar' : 'Explore home', href: withBase(pt ? 'pt-br/explore/' : 'explore/')},
+  {label: pt ? 'Índice enciclopédico (EN)' : 'Encyclopedia directory', href: withBase('discover/')},
   {label: pt ? 'Cronologia' : 'Timeline', href: timeline},
   {label: pt ? 'Personagens' : 'Characters', href: withBase(pt ? 'pt-br/characters/' : 'characters/')},
   {label: pt ? 'Eventos' : 'Events', href: withBase(pt ? 'pt-br/events/' : 'events/')},
