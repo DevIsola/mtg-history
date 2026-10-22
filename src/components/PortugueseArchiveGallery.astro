@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import { withBase } from '../utils/paths';
+import { portugueseEra } from '../utils/pt-catalog.mjs';
+import { chapterCardUse } from '../utils/card-printings';
+import { localizedArchiveCard } from '../utils/pt-printings.mjs';
+import ptCatalog from '../data/pt-printings.json';
+
+const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const originalPrintings = new Map((await getCollection('cards')).map(({id, data}) => [id, data]));
+const sections = chapters.map(chapter => ({
+  id: chapter.id, order: chapter.data.order, name: portugueseEra(chapter.id).name,
+  cards: chapter.data.cardIds.map((_, i) => {
+    const canonical = chapterCardUse(chapter, i, originalPrintings);
+    return {...localizedArchiveCard(canonical, ptCatalog), significance: canonical.significance, originalName: canonical.name};
+  }),
+}));
+const total = sections.reduce((count, chapter) => count + chapter.cards.length, 0);
+const translated = sections.reduce((count, chapter) => count + chapter.cards.filter(card => card.translated).length, 0);
+---
+  <section class="section-spacing archive-pt" id="arquivo-cartas" data-pt-archive>
+    <div class="page-shell">
+      <p class="eyebrow">As imagens e a história</p>
+      <h2 class="section-title">Uma coleção de <em>referências.</em></h2>
+      <p class="archive-pt__intro">{total} referências em {chapters.length} capítulos. {translated} exibidas em português após verificação de edição e ilustração. Outras preservam a imagem original em inglês. A imagem ilustra um tema ou um acontecimento, mas não comprova sozinha a interpretação histórica. As descrições editoriais continuam em inglês.</p>
+      <p class="archive-pt__related"><a href={withBase('archive/')} hreflang="en">Consultar o arquivo canônico em inglês ↗</a></p>
+      <div class="archive-pt__filters" hidden data-pt-archive-controls>
+        <label for="pt-archive-search">Pesquisar cartas ou interpretações</label>
+        <input id="pt-archive-search" type="search" placeholder="Carta, artista, capítulo..." autocomplete="off" />
+        <label for="pt-archive-chapter">Capítulo</label>
+        <select id="pt-archive-chapter"><option value="">Todos os capítulos</option>
+          {chapters.map(chapter => <option value={chapter.id}>{portugueseEra(chapter.id).name}</option>)}
+        </select>
+        <p data-pt-archive-status role="status" aria-live="polite">Exibindo {total} referências.</p>
+      </div>
+      <nav class="archive-pt__jumps" aria-label="Ir para um capítulo">
+        {chapters.map(chapter => <a href={`#${chapter.id}`}>{String(chapter.data.order).padStart(2,'0')} · {portugueseEra(chapter.id).name}</a>)}
+      </nav>
+      <p class="archive-pt__empty" data-pt-archive-empty hidden>Nenhuma carta corresponde à pesquisa.</p>
+      {sections.map(section => (
+        <section class="archive-pt__section" id={section.id} data-pt-archive-section>
+          <header class="archive-pt__section-heading">
+            <div><p class="eyebrow">Capítulo {String(section.order).padStart(2, '0')} · {section.cards.length} cartas</p>
+              <h3>{section.name}</h3></div>
+            <a href={withBase(`pt-br/chapters/${section.id}/`)}>Ler o capítulo →</a>
+          </header>
+          <div class="archive-pt__grid">
+            {section.cards.map(card => (
+              <article class="archive-pt__card" data-pt-archive-card data-chapter={section.id} data-canonical-id={card.canonicalId}
+                data-displayed-id={card.printingId} data-search={`${section.name} ${card.name} ${card.originalName} ${card.artist} ${card.significance}`}>
+                <a class="archive-pt__art" href={card.scryfallUrl} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${card.name} no Scryfall`}>
+                  <img src={card.imageUrl} srcset={card.imageSrcset} sizes="(max-width: 680px) 45vw, 190px"
+                    width="488" height="680" loading="lazy" decoding="async"
+                    alt={`${card.name}, ilustração de ${card.artist}`} />
+                </a>
+                <div class="archive-pt__details">
+                  <span class="archive-pt__language">{card.translated ? 'Carta oficial em português (PT)' : 'Imagem da edição original (EN)'}</span>
+                  <h4>{card.name}</h4>
+                  {card.translated && <p class="archive-pt__original-title">Nome original: {card.originalName}</p>}
+                  <p class="archive-pt__credit">Arte de {card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</p>
+                  <p class="archive-pt__meaning"><strong>Interpretação editorial (texto em inglês):</strong> {card.significance}</p>
+                  <p class="archive-pt__reference">Referência canônica: <a href={`https://scryfall.com/card/${card.setCode}/${card.collectorNumber}`} target="_blank" rel="noopener noreferrer">edição original ↗</a></p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+
+
+<style lang="scss">
+  .archive-pt { background: var(--paper); }
+  .archive-pt__intro { max-width: 78ch; margin: 1.2rem 0; color: var(--ink-soft); line-height: 1.75; }
+  .archive-pt__related a, .archive-pt__section-heading a, .archive-pt__reference a { color: var(--link-color); text-underline-offset: 3px; }
+  .archive-pt__filters { margin: 2rem 0; padding: 1rem; border: 1px solid var(--line); background: var(--paper-white); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: .6rem 1rem; }
+  .archive-pt__filters label { font-size: .82rem; font-weight: 700; }
+  .archive-pt__filters :is(input,select) { width: 100%; min-width: 0; min-height: 44px; padding: .5rem .7rem; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+  .archive-pt__filters p { grid-column: 1/-1; color: var(--ink-soft); }
+  .archive-pt__jumps { display: flex; gap: .5rem; overflow-x: auto; margin: 2rem 0; padding-bottom: 1rem; }
+  .archive-pt__jumps a { flex: 0 0 auto; padding: .65rem .9rem; border: 1px solid var(--line); background: var(--paper-white); color: var(--ink); text-decoration: none; font-size: .8rem; }
+  .archive-pt__jumps a:hover { border-color: var(--gold); }
+  .archive-pt__section { margin-top: 3rem; scroll-margin-top: 6rem; }
+  .archive-pt__section + .archive-pt__section { border-top: 1px solid var(--line); padding-top: 3rem; }
+  .archive-pt__section-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: .8rem; padding-bottom: 1.2rem; }
+  .archive-pt__section-heading h3 { font: 400 clamp(1.7rem,3vw,2.4rem)/1.2 var(--font-display); }
+  .archive-pt__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+  .archive-pt__card { display: grid; grid-template-columns: minmax(115px,35%) minmax(0,1fr); gap: 1rem; padding: 1rem; min-width: 0; border: 1px solid var(--line); background: var(--paper-white); }
+  .archive-pt__art { display: flex; align-items: flex-start; justify-content: center; min-width: 0; }
+  .archive-pt__art img { display: block; width: 100%; max-width: 230px; height: auto; aspect-ratio: 488/680; object-fit: contain; }
+  .archive-pt__details { min-width: 0; }
+  .archive-pt__language { display: inline-block; margin-bottom: .5rem; color: var(--accent-text); font-size: .75rem; font-weight: 700; }
+  .archive-pt__details h4 { font: 400 clamp(1.1rem,2vw,1.4rem)/1.25 var(--font-display); overflow-wrap: anywhere; }
+  .archive-pt__details p { margin-top: .65rem; font-size: .83rem; line-height: 1.6; overflow-wrap: anywhere; }
+  .archive-pt__credit, .archive-pt__original-title { color: var(--ink-soft); }
+  .archive-pt__meaning { padding-top: .65rem; border-top: 1px solid var(--line); }
+  .archive-pt__reference { font-size: .75rem; }
+  .archive-pt__empty { padding: 2rem 0; color: var(--ink-soft); }
+  .archive-pt [hidden] { display: none !important; }
+  @media (max-width: 970px) { .archive-pt__grid { grid-template-columns: minmax(0,1fr); } }
+  @media (max-width: 620px) { .archive-pt__filters { grid-template-columns: minmax(0,1fr); } .archive-pt__card { grid-template-columns: minmax(92px,36%) minmax(0,1fr); padding: .65rem; gap: .7rem; } .archive-pt__details p { font-size: .8rem; } }
+  @media (max-width: 350px) { .archive-pt__card { grid-template-columns: minmax(0,1fr); } .archive-pt__art img { max-width: 220px; } }
+</style>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-pt-archive]');
+  if (root) {
+    const search = root.querySelector<HTMLInputElement>('#pt-archive-search');
+    const select = root.querySelector<HTMLSelectElement>('#pt-archive-chapter');
+    const controls = root.querySelector<HTMLElement>('[data-pt-archive-controls]');
+    const status = root.querySelector<HTMLElement>('[data-pt-archive-status]');
+    const empty = root.querySelector<HTMLElement>('[data-pt-archive-empty]');
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('[data-pt-archive-card]'));
+    const sections = Array.from(root.querySelectorAll<HTMLElement>('[data-pt-archive-section]'));
+    const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+    if (search && select && controls && status && empty) {
+      const update = () => {
+        const terms = normalize(search.value).split(/\s+/).filter(Boolean);
+        let count = 0;
+        for (const card of cards) {
+          const text = normalize(card.dataset.search ?? '');
+          const visible = (!select.value || card.dataset.chapter === select.value) && terms.every(term => text.includes(term));
+          card.hidden = !visible;
+          if (visible) count++;
+        }
+        for (const section of sections) section.hidden = !section.querySelector('[data-pt-archive-card]:not([hidden])');
+        status.textContent = `Exibindo ${count} de ${cards.length} referências.`;
+        empty.hidden = count > 0;
+      };
+      search.addEventListener('input', update);
+      select.addEventListener('change', update);
+      controls.hidden = false;
+      update();
+    }
+  }
+</script>

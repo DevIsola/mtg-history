@@ -256,6 +256,7 @@ const setCodes = [
               <article
                 class="archive-card"
                 data-archive-card
+                data-canonical-id={card.scryfallId}
                 data-chapter={section.id}
                 data-set={card.setCode.toLowerCase()}
                 data-card-title={card.name}
@@ -289,6 +290,7 @@ const setCodes = [
 
                   <h3>{card.name}</h3>
 
+                  <span class="archive-card__classification">Illustrative reference · editorial interpretation</span>
                   <p>{card.significance}</p>
 
                   <span class="archive-card__artist">
