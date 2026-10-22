@@ -197,6 +197,41 @@ export const eventProvenance = {
     artworkNote: 'Quintorius Kand is a character portrait from the publication era, not proof of the exact date or single image of the expedition.',
   },
 
+  'omenpaths-loot-and-the-future': {
+    chronology: { precision: 'relative', label: 'After the vault heist, as Jace and Vraska plan their future with Loot', basis: 'The Thunder Junction epilogue interleaves past and present, making the publication date an invalid in-world event date.' },
+    sources: [{ title: 'Outlaws of Thunder Junction — Epilogue 2: Bring the End, Part 2', url: 'https://magic.wizards.com/en/news/magic-story/epilogue-2-bring-the-end-part-2', role: 'story', supports: 'Depicts Jace and Vraska discussing the Multiverse after compleation, pursuing renewal on their own terms, and taking responsibility for the living child recovered from the vault; their judgments are theirs, not narrator-approved facts.' }],
+    artworkNote: 'Loot, the Key to Everything is a character portrait identifying the child; the card does not depict Jace and Vraska discussing or implementing their future plan.',
+  },
+  'omenpaths-desparking-consequences': {
+    chronology: { precision: 'relative', label: 'After the New Phyrexian invasion and at the beginning of postwar recovery', basis: 'Nissa and her allies recount changes to their sparks after the conflict, but a common plane-to-plane date is not specified.' },
+    sources: [
+      { title: 'March of the Machine: The Aftermath — She Who Breaks the World', url: 'https://magic.wizards.com/en/news/magic-story/she-who-breaks-the-world', role: 'story', supports: 'Nissa describes losing her spark, Teferi and Koth also having lost theirs, and Chandra and Ajani retaining theirs; the story explicitly keeps the cause uncertain.' },
+      { title: 'Doing the Aftermath', url: 'https://magic.wizards.com/en/news/making-magic/doing-the-aftermath', role: 'design-commentary', supports: 'Explains the post-invasion shift in planeswalking and interplanar travel through Omenpaths; this is design commentary, not a universal fictional travel law.' },
+    ],
+    artworkNote: 'Nissa, Resurgent Animist portrays the desparked survivor and her continuing life; it is not a scene of each named planeswalker losing their spark.',
+  },
+  'omenpaths-thunder-junction-vault': {
+    chronology: { precision: 'relative', label: 'At the culmination of Oko’s Thunder Junction heist, after Kellan meets his father', basis: 'The vault episode directly orders Oko, Kellan, Vraska, and Jace’s competing actions without furnishing an interplanar date.' },
+    sources: [
+      { title: 'Outlaws of Thunder Junction — Episode 6: The Ballad of Thieves and Thunderslingers', url: 'https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers', role: 'story', supports: 'Depicts Oko and the crew entering the vault, Kellan directly opposing his father, Vraska joining the hidden client and the living prize being released.' },
+      { title: 'Outlaws of Thunder Junction — Epilogue 2: Bring the End, Part 2', url: 'https://magic.wizards.com/en/news/magic-story/epilogue-2-bring-the-end-part-2', role: 'story', supports: 'Provides later and earlier context for the Fomori vault and Jace’s knowledge of the being held inside; it does not turn the heist into proof of every ancient Fomori claim.' },
+    ],
+    artworkNote: 'Oko, the Ringleader is a character portrait contextualizing the gang and its leader, not a depiction of the full vault raid or Kellan’s confrontation.',
+  },
+  'omenpaths-loot-discovered': {
+    chronology: { precision: 'relative', label: 'At the vault’s opening, after the confrontation between Kellan and Oko', basis: 'The final Thunder Junction episode narrates the discovery after the competing teams enter the treasure chamber.' },
+    sources: [{ title: 'Outlaws of Thunder Junction — Episode 6: The Ballad of Thieves and Thunderslingers', url: 'https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers', role: 'story', supports: 'Reveals Ashiok as Jace in disguise and depicts Jace breaking the container to discover and carry away the living child; it does not establish the ancient creature’s full origins.' }],
+    artworkNote: 'Loot, the Key to Everything is the child’s portrait and does not literally illustrate the moment Jace broke the vault’s container.',
+  },
+  'omenpaths-thunder-crossroads': {
+    chronology: { precision: 'relative', label: 'During Oko’s heist on Thunder Junction, after Omenpaths begin connecting worlds', basis: 'The heist story depicts its mixed interplanar cast without dating all other planar arrivals or economic consequences.' },
+    sources: [
+      { title: 'Outlaws of Thunder Junction — Episode 6: The Ballad of Thieves and Thunderslingers', url: 'https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers', role: 'story', supports: 'Depicts outlaws from different worlds cooperating and opposing one another around Oko’s vault heist; the universal economic and political implications are editorial synthesis.' },
+      { title: 'A Legendary Crew for an Unbelievable Heist: Outlaws of Thunder Junction', url: 'https://magic.wizards.com/en/news/feature/a-legendary-crew-for-an-unbelievable-heist-outlaws-of-thunder-junction', role: 'retrospective', supports: 'Official overview identifies the interplanar heist crew and Oko’s role; it is contextual material rather than the depicted primary-fiction episode.' },
+    ],
+    artworkNote: 'Oko’s Thunder Junction portrait represents the heist organizer, not a landscape or scene proving how all Omenpath visitors arrived.',
+  },
+
   'teferis-phasing-decision': {
     chronology: { precision: 'relative', label: 'During the original Phyrexian invasion, before the Mending-era Shivan repair', basis: 'Teferi recounts phasing out Zhalfir, and Jhoira separately describes Shiv; the later dialogue dates their restoration sequence relatively, not to a shared calendar year.' },
     sources: [{ title: 'Return to Dominaria: Episode 6', url: 'https://magic.wizards.com/en/news/magic-story/return-dominaria-episode-6-2018-04-18', role: 'story', supports: 'Teferi explicitly describes phasing Zhalfir to protect its people; Jhoira confirms he phased Shiv and later returned it at the cost of his spark.' }],
