@@ -10,7 +10,6 @@ function fixture(hash = '') {
   const frames = new Map();
   const events = new Map();
   const linkAttributes = [];
-  const index = new Map();
   const create = (tag) => ({
     tag, children: [], textContent: '', dataset: {},
     attributes: new Map(),
@@ -39,7 +38,7 @@ function fixture(hash = '') {
   const count = create('span');
   const toggle = {
     checked: false,
-    addEventListener(name, fn) { this.handler = fn; },
+    addEventListener(_name, fn) { this.handler = fn; },
     removeEventListener() { this.handler = null; },
     change(value) { this.checked = value; this.handler?.(); },
   };
@@ -135,4 +134,16 @@ test('highlight decoration retains dimensions and respects reduced motion', () =
   const util = read('src/utils/chapter-artwork-trail.mjs');
   assert.doesNotMatch(util, /innerHTML\s*=/);
   assert.doesNotMatch(util, /fetch\(/);
+});
+
+
+test('compact artwork context is discoverable without rewriting the native summary label', () => {
+  const card = read('src/components/HistoricalCard.astro');
+  assert.match(card, /<details class="historical-card__interpretation">/);
+  assert.match(card, /<summary>Art and historical context<\/summary>/);
+  assert.match(card, /\.historical-card__interpretation summary::after\s*\{/);
+  assert.match(card, /\.historical-card__interpretation\[open\] summary::after\s*\{/);
+  assert.match(card, /\.historical-card__interpretation summary:focus-visible/);
+  assert.match(card, /min-height:\s*44px/);
+  assert.match(card, /background:\s*linear-gradient/);
 });

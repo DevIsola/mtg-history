@@ -58,3 +58,35 @@ test('refreshing a chapter illustration deep link preserves provenance and in-pa
   await expect(page.locator(fragment).locator('.historical-card__credit')).toBeVisible();
   await expect(page.locator(fragment).locator('.historical-card__source')).toHaveAttribute('href', /scryfall\.com\/card\//);
 });
+
+
+test('illustrated card historical context has a visible plus/minus cue and native keyboard toggle', async ({ page }) => {
+  await page.goto('/mtg-history/chapters/thran/');
+  const card = page.locator('.chapter-prose .historical-moment .historical-card--plate').first();
+  const disclosure = card.locator('.historical-card__interpretation');
+  const summary = disclosure.locator('summary');
+
+  await expect(summary).toBeVisible();
+  await expect(summary).toHaveText('Art and historical context');
+  await expect(summary).toHaveCSS('cursor', 'pointer');
+  await expect(summary).toHaveCSS('border-top-style', 'solid');
+
+  const indicators = () => summary.evaluate((element) => {
+    const image = getComputedStyle(element, '::after').backgroundImage;
+    return (image.match(/linear-gradient\(/g) ?? []).length;
+  });
+  expect(await indicators()).toBe(2); // + when closed
+  await expect(disclosure).not.toHaveAttribute('open', '');
+
+  await summary.click();
+  await expect(disclosure).toHaveAttribute('open', '');
+  expect(await indicators()).toBe(1); // - when open
+  await expect(disclosure.locator('.historical-card__significance')).toBeVisible();
+  await expect(card.locator('.historical-card__credit')).toBeVisible();
+  await expect(card.locator('.historical-card__source')).toHaveAttribute('href', /scryfall\.com\/card\//);
+
+  await summary.focus();
+  await page.keyboard.press('Enter');
+  await expect(disclosure).not.toHaveAttribute('open', '');
+  expect(await indicators()).toBe(2);
+});
