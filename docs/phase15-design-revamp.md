@@ -4,7 +4,7 @@ Based on the seven approved homepage, chapter, timeline, Explore, character, arc
 
 ## Implementation
 
-- Compact dark header, paper surfaces, gold rules, large editorial headings and a single decorative landscape across banners. The generic landscape is explicitly identified on About and linked from the footer; it does not depict a canonical event, plane or character.
+- Compact dark header, paper surfaces, gold rules, large editorial headings and a single decorative landscape across banners. The existing Source Sans 3 and Fraunces Latin fonts preload to avoid late swaps moving the header and chronology. The generic landscape is explicitly identified on About and linked from the footer; it does not depict a canonical event, plane or character.
 - Homepages: reading CTA, live collection totals, all eleven chapter links, topic cards, featured chapter printings and intact source/translation context.
 - Chapter reader: real story/publication/section metadata, classic serif default, saved reader choices, responsive TOC/context and full-frame printing miniatures. The third reader rail continues to fold below the article at narrower widths.
 - Timeline: filter space is reserved while JavaScript loads, with an inert pending state and a compact no-JavaScript fallback. A delayed-script browser check verifies the first era does not move when filters become active. An era rail and compact, credited full-frame printing beside the existing chronology and filterable event list. PT catalogs share the visual system and preserve their current language boundaries.
