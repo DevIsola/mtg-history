@@ -47,7 +47,7 @@ test('artwork dependency cannot be silently accepted as verified', () => {
 
 test('ROADMAP records local split while retaining stable invasion URL', () => {
   const roadmap = read('ROADMAP.md');
-  assert.match(roadmap, /LOCAL IMPLEMENTATION, PENDING RELEASE/);
+  assert.match(roadmap, /Merged #155; Pages deployment passed/);
   assert.match(roadmap, /new-phyrexia/);
   assert.match(roadmap, /march-of-the-machine/);
   assert.match(roadmap, /Omenpaths moves from order 10 to order 11/);

@@ -9,7 +9,7 @@ for (const [suffix, language, search] of [
     await page.goto(root + suffix);
     await expect(page.locator('html')).toHaveAttribute('lang', language);
     await expect(page.locator('[data-explore-landing] h1')).toBeVisible();
-    await expect(page.locator(`.explore-hero__actions a[href="${search}"]`)).toHaveCount(1);
+    await expect(page.locator(`.explore-reference a[href="${search}"]`)).toHaveCount(1);
     for (const destination of ['chapters', 'characters', 'events', 'relationships', 'archive', 'glossary', 'paths', 'directory']) {
       await expect(page.locator(`[data-explore-destination="${destination}"]`)).toHaveCount(1);
     }

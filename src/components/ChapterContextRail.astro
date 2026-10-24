@@ -1,4 +1,5 @@
 ---
+import PrintingMiniature from './PrintingMiniature.astro';
 import { characters } from '../data/characters';
 import { historicalEvents } from '../data/events';
 import { withBase } from '../utils/paths';
@@ -23,7 +24,7 @@ const highlightedEvents = events.slice(0, 2);
         <h3>People in the record</h3>
         <ul>
           {people.map(person => (
-            <li><a href={withBase('characters/' + person.id + '/')}><strong>{person.name}</strong><span>{person.role}</span></a></li>
+            <li><a href={withBase('characters/' + person.id + '/')}><PrintingMiniature printingId={person.featuredCardId} /><strong>{person.name}</strong><span>{person.role}</span></a></li>
           ))}
         </ul>
       </section>

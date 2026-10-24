@@ -22,12 +22,12 @@ test('desktop: only the header and chapter sidebar remain sticky', async ({ page
   expect(positions.sidebar).toBeLessThanOrEqual(positions.header + 26);
 });
 
-test('illustration plate shows an art detail with original printing and interpretation', async ({ page }) => {
+test('illustration plate preserves the full printing and interpretation', async ({ page }) => {
   await page.goto(thran);
   const plate = page.locator('.historical-moment').first();
   await expect(plate.locator('.historical-card--plate')).toHaveCount(1);
   const image = plate.locator('.historical-card img');
-  await expect(image).toHaveCSS('object-fit', 'cover');
+  await expect(image).toHaveCSS('object-fit', 'contain');
   const context = plate.locator('.historical-card__interpretation');
   await expect(context).not.toHaveAttribute('open', '');
   await context.locator('summary').click();

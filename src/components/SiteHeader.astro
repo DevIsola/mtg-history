@@ -32,7 +32,7 @@ const destinations = [
 const readLabel = pt ? 'Ler' : 'Read';
 const exploreLabel = pt ? 'Explorar' : 'Explore';
 const aboutLabel = pt ? 'Sobre (EN)' : 'About';
-const searchLabel = pt ? 'Buscar no arquivo' : 'Search the archive';
+const searchLabel = pt ? 'Buscar mundos, pessoas, eventos…' : 'Search worlds, people, events…';
 ---
 <header class="site-header">
   <div class="site-header__inner page-shell">
@@ -42,7 +42,7 @@ const searchLabel = pt ? 'Buscar no arquivo' : 'Search the archive';
     </a>
     <div class="site-header__actions">
       <nav class="desktop-navigation" aria-label={ui.navAria}>
-        <a href={timeline} aria-current={selected(timeline) ? 'page' : undefined}>{readLabel}</a>
+        <a href={timeline} aria-current={selected(timeline) || current.includes('/chapters/') ? 'page' : undefined}>{readLabel}</a>
         <details class="site-explore-menu" data-site-explore-menu>
           <summary>{exploreLabel} <span aria-hidden="true">⌄</span></summary>
           <div class="site-explore-menu__panel">
@@ -53,9 +53,10 @@ const searchLabel = pt ? 'Buscar no arquivo' : 'Search the archive';
         </details>
         <a href={about} aria-current={selected(about) ? 'page' : undefined}>{aboutLabel}</a>
       </nav>
-      <a class="site-header__search" href={search} aria-label={searchLabel} data-search-palette-trigger aria-keyshortcuts="Meta+K Control+K">
+      <a class="site-header__search" href={search} aria-label={searchLabel + ' ⌘ K'} data-search-palette-trigger aria-keyshortcuts="Meta+K Control+K">
         <span aria-hidden="true" class="site-header__search-icon">⌕</span>
         <span class="site-header__search-text">{searchLabel}</span>
+        <kbd class="site-header__shortcut" aria-hidden="true">⌘ K</kbd>
       </a>
       <a class="site-header__support" href="https://ko-fi.com/B1H328PBAR" target="_blank" rel="noopener noreferrer" aria-label={ui.supportAria}>
         <span aria-hidden="true">♥</span>

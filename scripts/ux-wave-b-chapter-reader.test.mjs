@@ -35,6 +35,6 @@ test('interpretation remains accessible with native details without JavaScript',
   assert.match(card, /<summary>Art and historical context<\/summary>/);
   assert.match(card, /<p class="historical-card__significance">\{card\.significance\}<\/p>/);
   assert.match(css, /\.chapter-prose \.historical-moment__illustration \.historical-card img/);
-  assert.match(css, /object-fit: cover;/);
+  assert.match(css, /object-fit: contain;/);
   assert.doesNotMatch(moment, /<img/);
 });

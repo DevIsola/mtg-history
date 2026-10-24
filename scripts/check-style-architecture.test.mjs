@@ -6,7 +6,7 @@ import { auditStyles } from './check-style-architecture.mjs';
 const file = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const modules = ['reset', 'tokens', 'foundation', 'reading', 'theme', 'support',
   'characters', 'exploration', 'events', 'discovery', 'interactive-explorers',
-  'chapter-themes', 'ux-c1'];
+  'chapter-themes', 'ux-c1', 'phase15'];
 const styles = Object.fromEntries([
   ['global.scss', file('src/styles/global.scss')],
   ['_breakpoints.scss', file('src/styles/_breakpoints.scss')],

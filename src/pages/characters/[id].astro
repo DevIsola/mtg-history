@@ -5,6 +5,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HistoricalCard from '../../components/HistoricalCard.astro';
+import PrintingMiniature from '../../components/PrintingMiniature.astro';
 import CharacterRelationships from '../../components/CharacterRelationships.astro';
 import { characters } from '../../data/characters';
 import type { CharacterProfile } from '../../data/characters';
@@ -74,15 +75,18 @@ const relatedEvents = historicalEvents.filter(
 <BaseLayout
   title={profile.name}
   description={profile.summary}
+  printingId={profile.featuredCardId}
 >
-  <section class="page-banner">
+  <section class="page-banner character-banner">
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">
         Historical character · {profile.origin}
       </p>
 
+      <div class="character-banner__portrait"><PrintingMiniature printingId={profile.featuredCardId} /></div>
       <h1>{profile.name}</h1>
       <p>{profile.title}</p>
+      <p class="character-banner__summary">{profile.summary}</p>
     </div>
   </section>
 

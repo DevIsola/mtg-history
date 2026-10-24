@@ -6,7 +6,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const requiredModules = [
   'reset', 'tokens', 'foundation', 'reading', 'theme', 'support',
   'characters', 'exploration', 'events', 'discovery', 'interactive-explorers',
-  'chapter-themes', 'ux-c1',
+  'chapter-themes', 'ux-c1', 'phase15',
 ];
 const requiredTokens = [
   'ink', 'ink-soft', 'night', 'night-raised', 'paper', 'paper-white',

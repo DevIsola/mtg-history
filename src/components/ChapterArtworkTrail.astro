@@ -5,14 +5,13 @@
   aria-labelledby="chapter-artwork-trail-heading">
   <div class="chapter-artwork-trail__header">
     <div>
-      <p class="chapter-artwork-trail__eyebrow">A visual path through this chapter</p>
       <h2 id="chapter-artwork-trail-heading">Illustrated moments</h2>
     </div>
     <span class="chapter-artwork-trail__count" data-artwork-count aria-label="Illustration count"></span>
   </div>
-  <p class="chapter-artwork-trail__note">Jump to a curated card illustration in its narrative context. These illustrations are editorial references, not independent historical evidence.</p>
   <details class="chapter-artwork-trail__details">
     <summary>Browse the illustrated moments <span aria-hidden="true">⌄</span></summary>
+  <p class="chapter-artwork-trail__note">Jump to a curated card illustration in its narrative context. These illustrations are editorial references, not independent historical evidence.</p>
     <ol class="chapter-artwork-trail__list" data-artwork-list></ol>
   </details>
   <label class="chapter-artwork-trail__focus">
@@ -24,14 +23,13 @@
 <style>
   .chapter-artwork-trail[hidden] { display: none !important; }
   .chapter-artwork-trail {
-    min-width: 0; margin: 2rem 0 2.6rem;
-    padding: clamp(1rem, 2.5vw, 1.5rem);
+    min-width: 0; margin: .75rem 0 1.25rem;
+    padding: .75rem;
     background: var(--paper-white); border: 1px solid var(--line);
     border-top: 3px solid var(--era-accent, var(--link-color));
   }
   .chapter-artwork-trail__header { display: flex; gap: 1rem; justify-content: space-between; align-items: start; }
-  .chapter-artwork-trail__eyebrow { margin: 0 0 .3rem; font-size: .75rem; color: var(--link-color); text-transform: uppercase; letter-spacing: .07em; font-weight: 750; }
-  .chapter-artwork-trail h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.35rem, 2.5vw, 1.7rem); font-weight: 500; line-height: 1.25; }
+  .chapter-artwork-trail h2 { margin: 0; font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; line-height: 1.25; }
   .chapter-artwork-trail__count { flex-shrink: 0; color: var(--link-color); font-size: .8rem; font-weight: 750; font-variant-numeric: tabular-nums; }
   .chapter-artwork-trail__note { margin: .75rem 0 1rem; max-width: 72ch; color: var(--ink-soft); font-size: .85rem; line-height: 1.6; }
   .chapter-artwork-trail__details { border-top: 1px solid var(--line); }

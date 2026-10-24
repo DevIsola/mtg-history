@@ -19,7 +19,7 @@ function fakeStorage() {
   };
 }
 
-test('defaults preserve existing chapter typography', () => {
+test('defaults use the editorial serif reader while saved choices remain valid', () => {
   assert.deepEqual(normalizeReadingPreferences(null), DEFAULT_READING_PREFERENCES);
   assert.deepEqual(normalizeReadingPreferences([]), DEFAULT_READING_PREFERENCES);
   assert.deepEqual(readReadingPreferences(fakeStorage()), DEFAULT_READING_PREFERENCES);

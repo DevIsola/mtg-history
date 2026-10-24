@@ -36,7 +36,7 @@ const cardReferences = chapter.data.cardIds.map((reference, index) => ({
   significance: chapter.data.cards[index].significance,
 }));
 ---
-<BaseLayout locale="pt-BR" title={`${companion.title} — leitura em português`} description={companion.subtitle}>
+<BaseLayout locale="pt-BR" title={`${companion.title} — leitura em português`} description={companion.subtitle} printingId={chapter.data.cardIds[0].id}>
   <div class="chapter-theme" data-era-theme={companion.id} data-pt-chapter-batch>
     <section class="page-banner">
       <div class="page-shell">
