@@ -44,7 +44,7 @@ The Phase 15 local release record reports `pnpm run verify` passing (433 Node te
 
 | Phase | Workstream | Primary deliverables | Entry / exit gate |
 | --- | --- | --- | --- |
-| **16** | Cloudflare Workers Static Assets migration | Hosting architecture and root-path configuration; Wrangler static assets; parity/staging; custom domain, redirects, caching, DNS/HTTPS, rollback and Pages retirement | Start after Phase 15 acceptance or a documented explicit exception; only cut over after URL/locale/search/SEO parity and rollback rehearsal |
+| **16** | Cloudflare Workers Static Assets migration — preparation active under recorded maintainer exception | Hosting architecture and root-path configuration; Wrangler static assets; parity/staging; custom domain, redirects, caching, DNS/HTTPS, rollback and Pages retirement | Start after Phase 15 acceptance or a documented explicit exception; only cut over after URL/locale/search/SEO parity and rollback rehearsal |
 | **17** | Historical evidence and lore transparency | Claim confidence/provenance UI, contradictions and retcons, corrections history, uncertainty labels | Every public label sourced; novel-blocked claims remain marked unresolved |
 | **18** | Reader and publication features | Print styles, curated update feeds, local-only reading/bookmark options, accessible sharing | Progressive enhancement, no mandatory accounts/backend |
 | **19** | Dual chronology explorer | Compare fictional historical order with publication/reinterpretation dates and supporting citations | No unsupported precision or invented in-universe dates |
@@ -60,3 +60,7 @@ The Phase 15 local release record reports `pnpm run verify` passing (433 Node te
 4. Progress through Phases 17–21 as independently releasable scopes. Phase 22 remains optional.
 
 For all phases, release readiness requires local verification, browser/strict accessibility checks, performance comparison when relevant, review of changed historical printings/sources, and final maintainer acceptance **before** merging. Successful post-merge CI is confirmation of the merge's build/deployment, not retrospective human approval.
+
+### Phase 16 preparation exception
+
+On 24 October 2026 the maintainer authorized Phase 16 preparation with Phase 15 acceptance still pending and requested a free workers.dev address initially. Work continues on `feature/phase16-cloudflare-static-assets`; see [scope, staging and rollback gates](docs/phase16-cloudflare-static-assets.md). Production cutover and Pages retirement remain subject to acceptance.

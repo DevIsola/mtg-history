@@ -36,3 +36,8 @@ Desktop.ini
 coverage/
 .env.local
 .env.*.local
+
+# Cloudflare local runtime and local-only credentials
+.wrangler/
+.dev.vars
+.dev.vars.*
