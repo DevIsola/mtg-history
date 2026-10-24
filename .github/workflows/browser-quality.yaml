@@ -1,8 +1,8 @@
 name: Browser quality
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -39,9 +39,8 @@ jobs:
 
       - name: Run desktop and mobile browser tests and accessibility scans
         run: pnpm exec playwright test
-
-      - name: Build production site for performance sampling
-        run: pnpm run build
+        env:
+          A11Y_ENFORCE: "1"
 
       - name: Record desktop and mobile production performance
         run: pnpm exec playwright test --config playwright.performance.config.mjs

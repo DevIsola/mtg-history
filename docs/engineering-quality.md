@@ -48,8 +48,10 @@ references, and HTML asset fragments are intentionally excluded. This check
 operates on generated output, not the source CSS import graph. It is not a
 substitute for browser accessibility or visual regression testing.
 
-`.github/workflows/quality.yaml` runs `pnpm run verify` for pull requests against
-`main`; the Pages deployment uses the same verification command. A failing
+`.github/workflows/quality.yaml` offers manual verification. After a merge pushes
+`main`, Pages runs the same verification command and calls the browser-quality
+workflow; deployment waits for both. Feature pushes and PRs trigger no automatic
+checks. Follow `docs/implementation-workflow.md` for local pre-merge gates. A failing
 type check, integrity check, build, or link check must prevent deployment.
 
 ## Repository housekeeping

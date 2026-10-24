@@ -27,11 +27,8 @@ WebGL until a lightweight static landing experience meets performance budgets.
 
 ## Release workflow
 
-Use the manual GitHub CLI handoff after local tests, `pnpm run verify`,
-`pnpm exec playwright test`, and visual acceptance. Create a PR with
-`gh pr create`, monitor PR checks with `gh pr checks --watch`, and merge only
-once CI is successful using `gh pr merge --merge --delete-branch`.
-Then fast-forward local `main` with `git switch main`,
-`git pull --ff-only origin main`, `git fetch --all --prune`, and `git status -sb`.
-The GitHub Pages workflow runs on the merged push to `main`; inspect its
-result separately. A failed post-merge deployment does not roll back the merge.
+Follow [implementation-workflow.md](implementation-workflow.md). Keep one branch
+for the complete phase, commit/push increments and run local verification, browser
+tests and visual acceptance before merging. Automatic checks run only after merge
+to main. Inspect the Pages deployment separately; a failed deployment does not
+roll back the merge.

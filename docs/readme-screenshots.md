@@ -22,7 +22,7 @@ Chromium, desktop **1440×900** (unless noted), phone **390×844 at 2×**, reduc
 
 ## Running it
 
-- **GitHub Actions (recommended):** push a branch that changes the spec (or start *README screenshots* manually from the Actions tab). The workflow installs Inter and the Microsoft core fonts, so the text matches what most readers see (Segoe UI/Inter body, Georgia headings), then commits the refreshed images back to the branch. Every run also uploads the images as an artifact.
+- **GitHub Actions:** manually start *README screenshots* from the Actions tab. The workflow installs Inter and the Microsoft core fonts and uploads the images as an artifact for review. It does not commit or push images automatically.
 - **Locally:** `pnpm exec playwright install chromium`, then `pnpm run screenshots:readme`. The output uses whichever fonts your system provides.
 
 The runner serves the preview on port 4326, separate from the browser tests on port 4323. `pnpm run verify` does not regenerate screenshots, so recapture deliberately after any visual change.
