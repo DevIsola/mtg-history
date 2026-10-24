@@ -62,7 +62,7 @@ test('integrity gate counts only the two newly sourced events and retains novel 
 
   const report = await runEditorialConsolidation();
   assert.equal(report.summary.events, 133);
-  assert.equal(report.summary.cardUses, 135);
+  assert.equal(report.summary.cardUses, 136);
   assert.equal(report.summary.sourceReviewed, result.reviewedEvents);
   assert.equal(report.summary.openPrimaryClaims, 3);
   assert.equal(report.summary.awaitingEventReview, 133 - result.reviewedEvents);

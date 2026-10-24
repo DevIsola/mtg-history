@@ -54,9 +54,11 @@ const plan = {
     "Liliana's bargain became a question of who could refuse",
     "The end of Bolas's plan was not the end of Ravnica's crisis"
   ],
-  "march-of-the-machine": [
+  "new-phyrexia": [
     "The praetors disagreed about what perfection meant",
-    "A failed mission can change the shape of a later victory",
+    "A failed mission can change the shape of a later victory"
+  ],
+  "march-of-the-machine": [
     "Local resistance could not wait for a central command",
     "The ending of Norn's rule left a different Multiverse"
   ],
@@ -69,10 +71,10 @@ const plan = {
 };
 
 test('every historical era has substantial, uniquely titled added context', () => {
-  assert.equal(Object.keys(plan).length, 10);
+  assert.equal(Object.keys(plan).length, 11);
   for (const [chapter, entries] of Object.entries(plan)) {
     const source = readFileSync(new URL(`../src/content/chapters/${chapter}.mdx`, import.meta.url), 'utf8');
-    assert.ok(entries.length >= 4, `${chapter}: expected four expanded topics`);
+    assert.ok(entries.length >= (['new-phyrexia', 'march-of-the-machine'].includes(chapter) ? 2 : 4), `${chapter}: missing expanded topics`);
     for (const heading of entries) {
       const marker = `### ${heading}`;
       assert.equal(source.split(marker).length - 1, 1, `${chapter}: missing or duplicate '${heading}'`);

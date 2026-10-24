@@ -54,9 +54,9 @@ test('canonical editorial counts and verified PT printing identities remain unch
   for (const [dir, expected] of counts) assert.equal(entries(dir).length, expected, dir);
   const chapters = readdirSync(new URL('../src/content/chapters/', import.meta.url))
     .filter(name => /\.(?:md|mdx)$/.test(name));
-  assert.equal(chapters.length, 10, 'chapter count');
+  assert.equal(chapters.length, 11, 'chapter count');
   const ledger = read('docs/artwork-fidelity-ledger.tsv').trimEnd().split(/\r?\n/).slice(1);
-  assert.equal(ledger.length, 135, 'curated chapter-artwork references');
+  assert.equal(ledger.length, 136, 'curated chapter-artwork references');
   const cards = Object.fromEntries(entries('src/content/cards/').map(file => [
     file.slice(0, -5), JSON.parse(read('src/content/cards/' + file)),
   ]));

@@ -103,11 +103,11 @@ war-of-the-spark	Ral, Storm Conduit	portrait	contemporary	context-assessed	Ral p
 war-of-the-spark	Dovin, Hand of Control	portrait	contemporary	context-assessed	Dovin promo portrait; not Senate coup scene
 war-of-the-spark	Interplanar Beacon	object	contemporary	context-assessed	Beacon and destroyed Guildpact chamber; not whole trap mechanism
 war-of-the-spark	Spark Harvest	scene	contemporary	context-assessed	Story illustration tied to Domri's harvested spark
-march-of-the-machine	Sheoldred, the Apocalypse	portrait	contemporary	context-assessed	Praetor portrait; not a depicted infiltration action
-march-of-the-machine	Ajani, Sleeper Agent	portrait	contemporary	context-assessed	Compleated Ajani portrait; not scene of Jaya's death
-march-of-the-machine	Elesh Norn, Mother of Machines	portrait	contemporary	context-assessed	Orthodoxy leader portrait; not victory over Multiverse
-march-of-the-machine	Nissa, Ascended Animist	portrait	contemporary	context-assessed	Compleated Nissa portrait; not depicted surgery
-march-of-the-machine	Koth, Fire of Resistance	portrait	contemporary	context-assessed	Mirran resistance leader portrait; not Seedcore mission
+new-phyrexia	Sheoldred, the Apocalypse	portrait	contemporary	context-assessed	Praetor portrait; not a depicted infiltration action
+new-phyrexia	Ajani, Sleeper Agent	portrait	contemporary	context-assessed	Compleated Ajani portrait; not scene of Jaya's death
+new-phyrexia	Elesh Norn, Mother of Machines	portrait	contemporary	context-assessed	Orthodoxy leader portrait; not victory over Multiverse
+new-phyrexia	Nissa, Ascended Animist	portrait	contemporary	context-assessed	Compleated Nissa portrait; not depicted surgery
+new-phyrexia	Koth, Fire of Resistance	portrait	contemporary	context-assessed	Mirran resistance leader portrait; not Seedcore mission
 march-of-the-machine	Realmbreaker, the Invasion Tree	object	contemporary	context-assessed	Invasion tree depiction; not every individual world crossing
 march-of-the-machine	Invasion of Kaldheim	scene	contemporary	context-assessed	Battle card represents Kaldheim front of wider invasion
 march-of-the-machine	Chandra, Hope's Beacon	portrait	contemporary	context-assessed	Chandra portrait; not Nissa's rescue scene
@@ -115,11 +115,11 @@ march-of-the-machine	Wrenn and Realmbreaker	portrait	contemporary	context-assess
 march-of-the-machine	Archangel Elspeth	portrait	contemporary	context-assessed	Angelically transformed Elspeth; not Norn's death scene
 march-of-the-machine	Invasion of New Phyrexia	scene	contemporary	context-assessed	Battle front depicts counterattack; reverse face portrays Teferi
 march-of-the-machine	Karn, Legacy Reforged	portrait	retrospective	context-assessed	Aftermath-era Karn portrait; not dismantling Elesh Norn
-march-of-the-machine	Jin-Gitaxias, Core Augur	portrait	cross-era	context-assessed	2011 praetor identity; not Kamigawan compleation procedure
-march-of-the-machine	Vorinclex, Voice of Hunger	portrait	cross-era	context-assessed	2011 praetor depiction; not later World Tree theft
-march-of-the-machine	Urabrask the Hidden	portrait	reprint	context-assessed	2023 reprint of red praetor; not Norn rebellion scene
-march-of-the-machine	Melira, Sylvok Outcast	portrait	cross-era	context-assessed	Early Mirran survivor depiction; not later sacrifice
-march-of-the-machine	Tamiyo, Compleated Sage	portrait	cross-era	context-assessed	2022 compleated Tamiyo; not her later Kamigawan death
+new-phyrexia	Jin-Gitaxias, Core Augur	portrait	cross-era	context-assessed	2011 praetor identity; not Kamigawan compleation procedure
+new-phyrexia	Vorinclex, Voice of Hunger	portrait	cross-era	context-assessed	2011 praetor depiction; not later World Tree theft
+new-phyrexia	Urabrask the Hidden	portrait	reprint	context-assessed	2023 reprint of red praetor; not Norn rebellion scene
+new-phyrexia	Melira, Sylvok Outcast	portrait	cross-era	context-assessed	Early Mirran survivor depiction; not later sacrifice
+new-phyrexia	Tamiyo, Compleated Sage	portrait	cross-era	context-assessed	2022 compleated Tamiyo; not her later Kamigawan death
 omenpaths	The Kenriths' Royal Funeral	scene	contemporary	context-assessed	Memorial image shows two royal effigies and mourners; it does not depict how or when the Kenriths died
 omenpaths	Nissa, Resurgent Animist	portrait	contemporary	context-assessed	Desparked Nissa portrait; recovery not completed universally
 omenpaths	Kellan, the Fae-Blooded	portrait	contemporary	context-assessed	First Eldraine portrayal; Adventure reverse face is separate
@@ -134,3 +134,4 @@ omenpaths	Loot, the Key to Everything	portrait	contemporary	context-assessed	Loo
 omenpaths	Quintorius Kand	portrait	contemporary	context-assessed	Archaeologist planeswalker portrait; not Orazca door opening
 omenpaths	Alquist Proft, Master Sleuth	portrait	contemporary	context-assessed	Detective portrait; not Oba's confession
 omenpaths	Trostani, Three Whispers	portrait	contemporary	context-assessed	Composite dryad portrait; not three sisters consenting to murders
+march-of-the-machine	Tamiyo, Compleated Sage	portrait	cross-era	context-assessed	2022 compleated Tamiyo; not her later Kamigawan death

@@ -214,12 +214,12 @@ test('CLI rejects ambiguous and unsupported output arguments', () => {
   );
 });
 
-test('real repository inventory retains all ten chapters and evidence boundaries', async () => {
+test('real repository inventory retains all eleven chapters and evidence boundaries', async () => {
   const report = await runEditorialConsolidation();
 
-  assert.equal(report.summary.chapters, 10);
+  assert.equal(report.summary.chapters, 11);
   assert.equal(report.summary.events, 133);
-  assert.equal(report.summary.cardUses, 135);
+  assert.equal(report.summary.cardUses, 136);
   assert.ok(report.summary.sourceReviewed >= 46);
   assert.equal(report.summary.openPrimaryClaims, 3);
 
@@ -233,5 +233,5 @@ test('real repository inventory retains all ten chapters and evidence boundaries
     'PENDING_MANUAL_EDITORIAL_ACCEPTANCE'
   );
 
-  assert.equal(report.chapters.length, 10);
+  assert.equal(report.chapters.length, 11);
 });

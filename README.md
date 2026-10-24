@@ -37,7 +37,7 @@ Every image below is a screenshot of the real, built site, captured automaticall
 
 ### Read history, illustrated by the cards that remember it
 
-**[Ten illustrated chapters](https://devisola.github.io/mtg-history/chapters/thran/)** run from the Thran to the Omenpaths. Inside the narrative, *historical moments* set an exact card printing beside the passage it illustrates. Each one comes with its artist, set and collector number, and a note on what the card does and does not depict. A sticky table of contents tracks your progress through the chapter.
+**[Eleven illustrated chapters](https://devisola.github.io/mtg-history/chapters/thran/)** run from the Thran to the Omenpaths. Inside the narrative, *historical moments* set an exact card printing beside the passage it illustrates. Each one comes with its artist, set and collector number, and a note on what the card does and does not depict. A sticky table of contents tracks your progress through the chapter.
 
 <table>
 <tr>
@@ -65,7 +65,7 @@ The **[relationship explorer](https://devisola.github.io/mtg-history/relationshi
 </tr>
 <tr>
   <td><strong><a href="https://devisola.github.io/mtg-history/characters/">Character profiles</a>.</strong> Each profile has a biography, the chapters and events the character appears in, and a featured card portrait.</td>
-  <td><strong><a href="https://devisola.github.io/mtg-history/timeline/">Timeline atlas</a>.</strong> Ten eras in story order, each with its story period, publication history and 133 events, which you can search and filter.</td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/timeline/">Timeline atlas</a>.</strong> Eleven eras in story order, each with its story period, publication history and 133 events, which you can search and filter.</td>
 </tr>
 <tr>
   <td><img src="docs/screenshots/archive.jpg" alt="The illustrated archive filtered to The Brothers' War, showing a gallery of its card printings" width="100%" /></td>
@@ -73,7 +73,7 @@ The **[relationship explorer](https://devisola.github.io/mtg-history/relationshi
 </tr>
 <tr>
   <td><strong><a href="https://devisola.github.io/mtg-history/archive/">Illustrated archive</a>.</strong> Every card reference, grouped by chapter, filterable by chapter, set and search, in gallery or compact view.</td>
-  <td><strong><a href="https://devisola.github.io/mtg-history/discover/">Discovery</a>.</strong> One searchable index of 231 chapters, characters and events.</td>
+  <td><strong><a href="https://devisola.github.io/mtg-history/discover/">Discovery</a>.</strong> One searchable index of 232 chapters, characters and events.</td>
 </tr>
 </table>
 
@@ -147,7 +147,7 @@ Pushing a reviewed change to `main` triggers the existing GitHub Pages deploymen
 
 The tour above is reproducible. [`tests/screenshots/readme.spec.mjs`](tests/screenshots/readme.spec.mjs) builds the production site and puts each feature into a meaningful state: a card moment in view, the artwork viewer open, a definition expanded, the graph focused on Urza, and so on. It then captures desktop (1440 px wide) and phone (390 px at 2×) views in Chromium with reduced motion. **A capture fails rather than saving a screenshot with a missing or broken card image.**
 
-- **On GitHub:** pushing a branch that changes the capture spec runs the [README screenshots workflow](.github/workflows/readme-screenshots.yaml), which commits the refreshed images back to that branch. You can also start it manually from the Actions tab.
+- **On GitHub:** manually dispatch the [README screenshots workflow](.github/workflows/readme-screenshots.yaml), which uploads the refreshed images as review artifacts without committing to the branch.
 - **Locally:**
 
   ```bash
@@ -161,9 +161,9 @@ Recapture after any visual change. Card imagery belongs to its artists and right
 
 **Under active development.** The timeline and chapter system establish the reading experience; historical articles, imagery, source references, and cross-links are being expanded incrementally.
 
-Ten published chapters currently span the ancient Thran, the Brothers' War, Dominaria's Ice Age, the Weatherlight and Otaria eras, the Mending, stories across other worlds, the War of the Spark, March of the Machine, and the Omenpaths era.
+Eleven published chapters currently span the ancient Thran, the Brothers' War, Dominaria's Ice Age, the Weatherlight and Otaria eras, the Mending, stories across other worlds, the War of the Spark, Rise of New Phyrexia, March of the Machine, and the Omenpaths era.
 
-The Portuguese reading experience includes all ten chapter adaptations, localized catalogs, bilingual Pagefind search, and reader-facing correction reporting. These chapters are editorial adaptations, not certified full translations.
+The Portuguese reading experience includes all eleven chapter adaptations, localized catalogs, bilingual Pagefind search, and reader-facing correction reporting. These chapters are editorial adaptations, not certified full translations.
 
 For active commands, cleanup policy, and historical documentation, see [project maintenance](docs/project-maintenance.md).
 

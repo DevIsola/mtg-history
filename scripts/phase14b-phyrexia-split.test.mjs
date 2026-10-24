@@ -75,13 +75,6 @@ test('CLI rejects invalid or ambiguous output destinations', () => {
   assert.throws(() => parsePhase14bArgs(['--markdown', 'same', '--json', 'same']));
 });
 
-test('real repository retains the ten-chapter pre-migration split boundary', async () => {
-  const r = await runPhase14bSplitAudit();
-  assert.equal(r.current.events, 13);
-  assert.equal(r.current.curatedPrintings, 17);
-  assert.equal(r.current.sections, 11);
-  assert.ok(r.current.sources >= 15);
-  assert.ok(r.current.relationships >= 5);
-  assert.ok(r.current.characters >= 5);
-  assert.equal(r.proposed.expectedEnglishChapters, 11);
+test('pre-migration audit rejects the migrated working tree', async () => {
+  await assert.rejects(runPhase14bSplitAudit, /Expected published ten-chapter baseline/);
 });

@@ -18,8 +18,8 @@ function report(id, category) {
 }
 
 test('every Portuguese chapter is eligible exactly once', () => {
-  assert.equal(ids.length, 10);
-  assert.equal(new Set(ids).size, 10);
+  assert.equal(ids.length, 11);
+  assert.equal(new Set(ids).size, 11);
   assert.equal(ids[0], 'thran');
   assert.equal(ids.at(-1), 'omenpaths');
   assert.match(dynamic, /\.\.\.PORTUGUESE_BATCH_1, \.\.\.PORTUGUESE_BATCH_2, \.\.\.PORTUGUESE_BATCH_3/);

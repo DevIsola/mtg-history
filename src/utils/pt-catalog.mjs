@@ -8,6 +8,7 @@ export const PORTUGUESE_ERAS = Object.freeze({
   'mending': { name: 'Espiral Temporal e a Reparação', summary: 'Fendas temporais ameaçam Dominária e exigem sacrifícios para reparar a realidade.' },
   'many-worlds': { name: 'Histórias entre planos', summary: 'Ravnica, Zendikar e Innistrad enfrentam crises distintas que mudam seus mundos.' },
   'war-of-the-spark': { name: 'A Guerra da Centelha', summary: 'Nicol Bolas reúne planeswalkers em Ravnica e enfrenta a resistência das guildas.' },
+  'new-phyrexia': { name: 'A ascensão de Nova Phyrexia', summary: 'Mirrodin é ocupado, os pretores preparam a expansão e a missão ao Núcleo-Semente fracassa.' },
   'march-of-the-machine': { name: 'A invasão de Nova Phyrexia', summary: 'A invasão liderada por Elesh Norn se espalha pelo Multiverso e encontra resistência.' },
   'omenpaths': { name: 'A era dos Caminhos Pressagiados', summary: 'Novas passagens entre planos alteram as viagens e os encontros após a invasão.' },
 });

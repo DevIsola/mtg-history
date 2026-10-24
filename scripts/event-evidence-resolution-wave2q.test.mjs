@@ -11,7 +11,7 @@ const resolution = {
     'https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-5-as-cruel-as-necessary',
   ],
   'phyrexia-dominaria-sleeper-war': [
-    'march-of-the-machine',
+    'new-phyrexia',
     'Dominaria United — Episode 5: A Whisper in the Wind',
     'https://magic.wizards.com/en/news/magic-story/episode-5-whisper-wind-2022-08-18',
   ],

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 const base = '/mtg-history/pt-br/';
 
-for (const [route, expectedCount] of [['timeline',10], ['characters',88], ['events',133], ['archive',10]]) {
+for (const [route, expectedCount] of [['timeline',11], ['characters',88], ['events',133], ['archive',11]]) {
   test(`PT-BR ${route}: accessible filtering preserves English-only record links`, async ({ page }) => {
     const response = await page.goto(`${base}${route}/`);
     expect(response?.ok()).toBeTruthy();

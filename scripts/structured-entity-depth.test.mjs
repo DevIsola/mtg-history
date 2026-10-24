@@ -13,7 +13,7 @@ const pairs = {
   mending: ['karn-heals-tolaria', 'venser'],
   'many-worlds': ['ravnica-guildpact-collapse', 'agrus-kos'],
   'war-of-the-spark': ['spark-dovin-azorius-control', 'dovin-baan'],
-  'march-of-the-machine': ['phyrexia-urabrask-dissent', 'urabrask'],
+  'new-phyrexia': ['phyrexia-urabrask-dissent', 'urabrask'],
   omenpaths: ['omenpaths-ravnica-investigation', 'alquist-proft'],
 };
 

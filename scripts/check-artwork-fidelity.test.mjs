@@ -50,6 +50,6 @@ test('extracts real folded significance for gallery captions', () => {
 test('full ledger covers all published curated cards', async () => {
   const result = await checkArtwork();
   assert.deepEqual(result.errors, []);
-  assert.equal(result.counts.references, 135);
-  assert.equal(result.counts.reviewed, 135);
+  assert.equal(result.counts.references, 136);
+  assert.equal(result.counts.reviewed, 136);
 });

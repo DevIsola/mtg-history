@@ -58,6 +58,17 @@ const cardReferences = chapter.data.cardIds.map((reference, index) => ({
           <a href={withBase(`chapters/${companion.id}/`)} hreflang="en">Leia o capítulo completo em inglês (EN)</a>.
         </div>
 
+        {companion.id === 'march-of-the-machine' && (
+          <nav aria-label="Seções movidas para A ascensão de Nova Phyrexia">
+            <p>Os preparativos da invasão agora estão em A ascensão de Nova Phyrexia:</p>
+            <ul>
+              {PORTUGUESE_BATCH_3.find(entry => entry.id === 'new-phyrexia')!.sections.slice(0, 4).map(section => (
+                <li id={section.id}><a href={withBase(`pt-br/chapters/new-phyrexia/#${section.id}`)}>{section.title}</a></li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         <nav class="pt-batch-toc" aria-label="Índice da leitura">
           <h2>Índice</h2>
           <ol>
