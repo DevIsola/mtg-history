@@ -21,7 +21,7 @@ for (const slug of ['thran', 'ice-age', 'war-of-the-spark', 'new-phyrexia', 'mar
       } catch { /* Unsupported: report status separately. */ }
     });
 
-    const route = `/mtg-history/chapters/${slug}/`;
+    const route = `${process.env.MTG_TEST_BASE ?? '/mtg-history/'}chapters/${slug}/`;
     const response = await page.goto(route, { waitUntil: 'load' });
     expect(response?.ok()).toBeTruthy();
     const trail = page.locator('[data-chapter-artwork-trail]');

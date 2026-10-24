@@ -98,3 +98,7 @@ When reviewed, update this decision to `ACCEPTED`, `ACCEPTED_WITH_DOCUMENTED_EXC
 ## Next phase readiness
 
 Phase 16 is Cloudflare Workers **Static Assets** migration, not another redesign. Begin a dedicated `feature/phase16-cloudflare-static-assets` branch only after recording Phase 15 acceptance or a specific maintainer exception. Before cutover: configure portable Astro site/base URLs for root domain, test EN/PT paths/Pagefind/SEO/OG/sitemap/redirects, stage Workers static assets, verify caching/headers and asset loading, document DNS+HTTPS, test rollback to GitHub Pages, and compare public performance. Retire Pages only when the new production host is independently accepted.
+
+## Recorded Phase 16 entry exception — 24 October 2026
+
+The maintainer explicitly authorized “Begin Phase 16 preparation; keep Phase 15 acceptance pending.” Preparation and staging may proceed on the dedicated Phase 16 branch. This does not change `PENDING_MANUAL_ACCEPTANCE`, close any historical/artwork queue, authorize production cutover, or retire Pages. See [the Phase 16 preparation record](phase16-cloudflare-static-assets.md).

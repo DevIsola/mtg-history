@@ -1,10 +1,12 @@
 import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
+import { hostingConfig } from "./config/hosting.mjs";
+const hosting = hostingConfig();
 
 export default defineConfig({
-  site: "https://devisola.github.io",
-  base: "/mtg-history",
+  site: hosting.site,
+  base: hosting.base,
 
   vite: {
     build: {
