@@ -125,6 +125,8 @@
 .editorial-design .atlas-intro { margin-bottom: 1.5rem; padding: 0; }
 .editorial-design .atlas-intro h2 { font-size: 1.6rem; }
 .editorial-design .atlas-intro > div > p { max-width: 65ch; font-size: .9rem; }
+/* Reserve enhancement space so enabling filters does not move the chronology. */
+.editorial-design .atlas-tools[data-timeline-pending] { visibility: hidden; }
 .editorial-design .atlas-tools { padding: 1rem; background: var(--paper-white); border: 1px solid var(--line); border-radius: 4px; gap: .75rem; }
 .editorial-design .atlas-jumps { padding: .5rem 0; margin-block: 1rem; }
 .editorial-design .atlas-jumps a { background: transparent; font-size: .75rem; }

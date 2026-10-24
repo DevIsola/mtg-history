@@ -54,7 +54,8 @@ const entries = eras.map((era) => {
 
   <section class="atlas-section section-spacing" data-timeline-explorer>
     <div class="page-shell">
-      <div class="atlas-tools" id="timeline-controls" hidden>
+      <noscript><style is:inline>.editorial-design .atlas-tools[data-timeline-pending] { display: none; }</style></noscript>
+      <div class="atlas-tools" id="timeline-controls" data-timeline-pending inert>
         <div class="atlas-tools__field atlas-tools__field--search">
           <label for="timeline-search">Search history</label>
           <input id="timeline-search" type="search" placeholder="A person, place, event, or card set..." autocomplete="off" />
@@ -214,7 +215,8 @@ const entries = eras.map((era) => {
         }
         syncExpand();
       });
-      controls.hidden = false;
+      controls.removeAttribute('inert');
+      controls.removeAttribute('data-timeline-pending');
       update();
     }
   }

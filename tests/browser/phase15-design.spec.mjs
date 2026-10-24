@@ -15,6 +15,8 @@ for (const route of routes) {
     for (const theme of ['light', 'dark']) {
       if (await page.locator('html').getAttribute('data-theme') !== theme) await page.locator('[data-theme-toggle]').click();
       await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+      // Wait for the reduced-motion color transitions to finish before axe samples contrast.
+      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
       const audit = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
       await testInfo.attach(theme + '-axe', { body: JSON.stringify(audit.violations), contentType: 'application/json' });
@@ -95,4 +97,24 @@ test('Explore search call-to-action returns focus to the control that opened it'
   await expect(page.locator('[data-search-palette]')).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(trigger).toBeFocused();
+});
+
+
+test('timeline enhancement reserves its layout before JavaScript arrives', async ({ page }) => {
+  let release;
+  const scriptsReady = new Promise(resolve => { release = resolve; });
+  await page.route('**/*.js', async route => {
+    await scriptsReady;
+    await route.continue();
+  });
+  await page.goto(base + 'timeline/', { waitUntil: 'commit' });
+  await expect(page.locator('main h1')).toBeVisible();
+  await page.evaluate(() => document.fonts.ready);
+  const era = page.locator('[data-timeline-era]').first();
+  const before = await era.boundingBox();
+  await expect(page.locator('#timeline-controls')).toBeHidden();
+  release();
+  await expect(page.locator('#timeline-controls')).toBeVisible();
+  const after = await era.boundingBox();
+  expect(Math.abs(after.y - before.y)).toBeLessThanOrEqual(1);
 });
