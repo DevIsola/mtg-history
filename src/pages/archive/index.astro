@@ -2,6 +2,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveChapterIndex from '../../components/ArchiveChapterIndex.astro';
 import { withBase } from '../../utils/paths';
 import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../../utils/card-printings';
 
@@ -104,6 +105,8 @@ const setCodes = [
           chapter where its story is told.
         </p>
       </div>
+
+      <ArchiveChapterIndex />
 
       <div class="archive-overview" aria-label="Collection coverage">
         <div><strong>{cardCount}</strong><span>curated cards</span></div>

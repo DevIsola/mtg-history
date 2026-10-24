@@ -2,10 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import HomepageArtwork from '../components/HomepageArtwork.astro';
+import HomeEraStrip from '../components/HomeEraStrip.astro';
 import { eras } from '../data/eras';
 import { withBase } from '../utils/paths';
 
-const highlighted = eras.slice(0, 3);
+const highlighted = eras.slice(0, 4);
 const counts = {
   chapters: (await getCollection('chapters')).length,
   events: (await getCollection('events')).length,
@@ -18,20 +19,18 @@ const counts = {
   description="Travel through the history of Magic: The Gathering. Explore its events, major expansions, and the cards that preserve their stories."
 >
   <section class="hero homepage-hero">
-    <div class="hero__starlight" aria-hidden="true"></div>
-    <div class="hero__emblem" aria-hidden="true"><div class="hero__emblem-inner"><span>✧</span></div></div>
     <div class="page-shell hero__content homepage-hero__grid">
       <div class="homepage-hero__copy">
         <p class="eyebrow eyebrow--light">An independent illustrated history of Magic: The Gathering</p>
-        <h1>Every world has a <em>history.</em></h1>
+        <h1>Every world<br />has a history.</h1>
         <p class="hero__lead">Follow the wars, discoveries, and people that shaped the Multiverse. Read in story order, then explore the actual cards and publications that preserve its history.</p>
         <div class="hero__actions">
           <a class="button button--gold" href={withBase('chapters/thran/')}>Start reading <span aria-hidden="true">→</span></a>
-          <a class="button button--outline" href={withBase('explore/')}>Explore the encyclopedia</a>
+          <a class="button button--outline" href={withBase('timeline/')}>Explore the timeline</a>
         </div>
         <p class="hero__aside">Story chronology is distinct from publication history.</p>
       </div>
-      <HomepageArtwork chapterId="war-of-the-spark" variant="hero" />
+
     </div>
   </section>
 
@@ -44,46 +43,7 @@ const counts = {
     </dl>
   </section>
 
-  <section class="intro-section section-spacing" aria-labelledby="intro-heading">
-    <div class="page-shell intro-grid">
-      <div class="intro-heading">
-        <p class="eyebrow">The archive</p>
-        <h2 id="intro-heading" class="section-title">Not simply a list<br />of <em>expansions.</em></h2>
-      </div>
-      <div class="intro-copy">
-        <p class="lead-copy">This is a history of the Multiverse told through its defining moments.</p>
-        <p>Each chapter connects the events of Magic's story to the sets that revealed them—and to selected cards whose art and flavor text bring those moments to life.</p>
-        <p>Follow the story in narrative order, then discover when each piece of that history appeared in the real world.</p>
-        <a class="text-link" href={withBase('about/')}>How the archive is organized <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="eras-section section-spacing" aria-labelledby="eras-heading">
-    <div class="page-shell">
-      <div class="section-topline">
-        <div>
-          <p class="eyebrow">Begin the journey</p>
-          <h2 id="eras-heading" class="section-title">The first <em>chapters</em></h2>
-        </div>
-        <a class="text-link" href={withBase('timeline/')}>View complete timeline <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="era-card-grid homepage-era-grid">
-        {highlighted.map((era) => (
-          <article class="era-card homepage-era-card">
-            <HomepageArtwork chapterId={era.id} variant="tile" />
-            <div class="homepage-era-card__text">
-              <span class="era-card__kicker">Chapter {era.chapter} · {era.kicker}</span>
-              <h3>{era.name}</h3>
-              <p>{era.summary}</p>
-              <a class="homepage-era-card__read" href={withBase(`chapters/${era.id}/`)}>Read historical chapter →</a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <HomeEraStrip />
 
 <section
   class="journey-section section-spacing"
@@ -94,7 +54,7 @@ const counts = {
       <p class="eyebrow">Choose your path</p>
 
       <h2 id="journey-heading" class="section-title">
-        Three ways to explore
+        Ways to explore
         <em> the Multiverse.</em>
       </h2>
 
@@ -176,6 +136,55 @@ const counts = {
 
   </div>
 </section>
+
+  <section class="eras-section section-spacing" aria-labelledby="eras-heading">
+    <div class="page-shell">
+      <div class="section-topline">
+        <div>
+          <p class="eyebrow">Begin the journey</p>
+          <h2 id="eras-heading" class="section-title">The first <em>chapters</em></h2>
+        </div>
+        <a class="text-link" href={withBase('timeline/')}>View complete timeline <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="era-card-grid homepage-era-grid">
+        {highlighted.map((era) => (
+          <article class="era-card homepage-era-card">
+            <HomepageArtwork chapterId={era.id} variant="tile" />
+            <div class="homepage-era-card__text">
+              <span class="era-card__kicker">Chapter {era.chapter} · {era.kicker}</span>
+              <h3>{era.name}</h3>
+              <p>{era.summary}</p>
+              <a class="homepage-era-card__read" href={withBase(`chapters/${era.id}/`)}>Read historical chapter →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="intro-section section-spacing" aria-labelledby="intro-heading">
+    <div class="page-shell intro-grid">
+      <div class="intro-heading">
+        <p class="eyebrow">The archive</p>
+        <h2 id="intro-heading" class="section-title">Not simply a list<br />of <em>expansions.</em></h2>
+      </div>
+      <div class="intro-copy">
+      <HomepageArtwork chapterId="war-of-the-spark" variant="editorial" />
+
+        <p class="lead-copy">This is a history of the Multiverse told through its defining moments.</p>
+        <p>Each chapter connects the events of Magic's story to the sets that revealed them—and to selected cards whose art and flavor text bring those moments to life.</p>
+        <p>Follow the story in narrative order, then discover when each piece of that history appeared in the real world.</p>
+        <a class="text-link" href={withBase('about/')}>How the archive is organized <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
 
 
   <section class="editorial-section section-spacing" aria-labelledby="editorial-heading">

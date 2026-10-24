@@ -3,7 +3,7 @@ const root = '/mtg-history/';
 
 test('Cmd+K opens keyboard accessible dialog, Escape closes and returns focus', async ({ page }) => {
   await page.goto(root + 'explore/');
-  const trigger = page.locator('[data-search-palette-trigger]');
+  const trigger = page.locator('.site-header__search[data-search-palette-trigger]');
   await trigger.focus();
   await page.keyboard.press('ControlOrMeta+k');
   const dialog = page.locator('[data-search-palette]');
@@ -16,7 +16,7 @@ test('Cmd+K opens keyboard accessible dialog, Escape closes and returns focus', 
 
 test('English palette uses indexed documents, keyboard selection and full search fallback', async ({ page }) => {
   await page.goto(root + 'chapters/thran/');
-  await page.locator('[data-search-palette-trigger]').click();
+  await page.locator('.site-header__search[data-search-palette-trigger]').click();
   const dialog = page.locator('[data-search-palette]');
   await expect(dialog.locator('a[href="'+root+'search/"]')).toHaveCount(1);
   await dialog.locator('[data-palette-query]').fill('Yawgmoth');
@@ -29,7 +29,7 @@ test('English palette uses indexed documents, keyboard selection and full search
 
 test('Portuguese pages keep Portuguese-only palette results', async ({ page }) => {
   await page.goto(root + 'pt-br/explore/');
-  await page.locator('[data-search-palette-trigger]').click();
+  await page.locator('.site-header__search[data-search-palette-trigger]').click();
   const dialog = page.locator('[data-search-palette]');
   await expect(dialog.locator('a[href="'+root+'pt-br/search/"]')).toHaveCount(1);
   await dialog.locator('[data-palette-query]').fill('Phyrexia');
@@ -41,7 +41,7 @@ test('Portuguese pages keep Portuguese-only palette results', async ({ page }) =
 test('320px palette fits the viewport and is dismissible by button', async ({ page }) => {
   await page.setViewportSize({width:320,height:700});
   await page.goto(root + 'pt-br/');
-  await page.locator('[data-search-palette-trigger]').click();
+  await page.locator('.site-header__search[data-search-palette-trigger]').click();
   const dialog = page.locator('[data-search-palette]');
   await expect(dialog).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
@@ -53,7 +53,7 @@ test.describe('without JavaScript', () => {
   test.use({javaScriptEnabled:false});
   test('search control remains a real search-page link', async ({ page }) => {
     await page.goto(root + 'pt-br/');
-    await page.locator('[data-search-palette-trigger]').click();
+    await page.locator('.site-header__search[data-search-palette-trigger]').click();
     await expect(page).toHaveURL(new RegExp('/mtg-history/pt-br/search/$'));
   });
 });

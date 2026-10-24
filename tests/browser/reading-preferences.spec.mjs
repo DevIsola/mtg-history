@@ -25,7 +25,7 @@ test('reading preferences change prose and persist across chapters', async ({ pa
   await page.locator('[data-chapter-settings] summary').click();
   await page.locator('[data-reading-reset]').click();
   await expect(nextReader).toHaveAttribute('data-reading-size', 'regular');
-  await expect(nextReader).toHaveAttribute('data-reading-typeface', 'modern');
+  await expect(nextReader).toHaveAttribute('data-reading-typeface', 'classic');
   await expect(nextReader).toHaveAttribute('data-reading-spacing', 'comfortable');
 });
 

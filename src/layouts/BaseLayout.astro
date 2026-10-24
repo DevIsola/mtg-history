@@ -5,6 +5,7 @@ import '@fontsource-variable/fraunces/wght.css';
 import '@fontsource-variable/fraunces/wght-italic.css';
 import '../styles/global.scss';
 import SiteHeader from '../components/SiteHeader.astro';
+import atmosphereSource from '../assets/phase15-atmosphere.jpg';
 import SiteFooter from '../components/SiteFooter.astro';
 import CardArtworkViewer from '../components/CardArtworkViewer.astro';
 import { withBase } from '../utils/paths';
@@ -14,8 +15,10 @@ interface Props {
   title: string;
   description: string;
   locale?: 'en' | 'pt-BR';
+  printingId?: string;
 }
-const { title, description, locale = 'en' } = Astro.props;
+const { title, description, locale = 'en', printingId } = Astro.props;
+const atmosphere = atmosphereSource;
 const ui = uiFor(locale);
 const alternates = routeAlternates(Astro.url.pathname, Astro.site, withBase(''));
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -57,6 +60,7 @@ const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass
 
     <meta name="theme-color" content="#11191d" />
     <meta name="description" content={description} />
+    {printingId && <meta name="archive-printing" content={printingId} data-pagefind-meta="printingId[content]" />}
     <link rel="canonical" href={canonical} />
     {alternates.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
     <meta property="og:type" content="website" />
@@ -77,7 +81,7 @@ const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass
     <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <title>{title} | Chronicles of the Multiverse</title>
   </head>
-  <body>
+  <body class="editorial-design" style={`--site-atmosphere: url("${atmosphere.src}")`}>
     <a class="skip-link" href="#main-content">{ui.skip}</a>
     <SiteHeader locale={locale} />
     <main id="main-content" data-pagefind-body><slot /></main>

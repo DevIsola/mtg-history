@@ -2,7 +2,7 @@
 export const READING_PREFERENCES_KEY = 'mtg-history-reading-preferences-v1';
 export const DEFAULT_READING_PREFERENCES = Object.freeze({
   size: 'regular',
-  typeface: 'modern',
+  typeface: 'classic',
   spacing: 'comfortable',
 });
 

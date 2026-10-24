@@ -42,26 +42,18 @@ const entries = eras.map((era) => {
   <section class="page-banner">
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">An interactive historical atlas</p>
-      <h1>Explore the <em>timeline.</em></h1>
-      <p>Move from an era to its defining events, characters, and published narrative. This is an editorial reading order, not a scale drawing of in-universe time.</p>
-    </div>
-  </section>
-
-  <section class="atlas-section section-spacing" data-timeline-explorer>
-    <div class="page-shell">
-      <div class="atlas-intro">
-        <div>
-          <p class="eyebrow">The story at a glance</p>
-          <h2 class="section-title">History has <em>many layers.</em></h2>
-          <p>Browse the key developments within each period, then open the original chapter or a specific historical event.</p>
-        </div>
+      <h1>A chronology<br />of the Multiverse</h1>
+      <p>An editorial reading order through {eras.length} eras. Story chronology and publication history remain distinct.</p>
         <div class="atlas-stats" aria-label="Archive coverage">
           <div><strong>{eras.length}</strong><span>historical eras</span></div>
           <div><strong>{chapters.length}</strong><span>published chapters</span></div>
           <div><strong>{historicalEvents.length}</strong><span>documented events</span></div>
         </div>
-      </div>
+    </div>
+  </section>
 
+  <section class="atlas-section section-spacing" data-timeline-explorer>
+    <div class="page-shell">
       <div class="atlas-tools" id="timeline-controls" hidden>
         <div class="atlas-tools__field atlas-tools__field--search">
           <label for="timeline-search">Search history</label>
@@ -90,7 +82,7 @@ const entries = eras.map((era) => {
       <div class="atlas-track atlas-track--editorial">
         {entries.map(({ era, chapter, eventRecords, eraSearch, searchText }) => (
           <article class="atlas-era" id={era.id} data-timeline-era data-id={era.id} data-search={searchText} data-era-search={eraSearch}>
-            <div class="atlas-era__rail" aria-hidden="true"><span>{era.chapter}</span></div>
+            <div class="atlas-era__rail" aria-hidden="true"><span>{era.chapter}</span><strong>{era.name}</strong><small>{chapter?.data.chronology.storyPeriod}</small></div>
             <div class="atlas-era__content">
               <div class="atlas-era__topline">
                 <span>{era.kicker}</span>

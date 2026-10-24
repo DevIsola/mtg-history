@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArchiveChapterIndex from '../../../components/ArchiveChapterIndex.astro';
 import PortugueseArchiveGallery from '../../../components/PortugueseArchiveGallery.astro';
 import PortugueseCatalogControls from '../../../components/PortugueseCatalogControls.astro';
 import { withBase } from '../../../utils/paths';
@@ -21,6 +22,7 @@ const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order -
       <p><a class="text-link" href={withBase('pt-br/events/')}>Acontecimentos</a> · <a class="text-link" href={withBase('pt-br/timeline/')}>Cronologia</a> · <a class="text-link" href={withBase('pt-br/characters/')}>Personagens</a> · <a class="text-link" href={withBase('pt-br/archive/')}>Arquivo</a></p>
       <p>A pesquisa das fontes históricas permanece em inglês. Abaixo, consulte todas as cartas do arquivo, incluindo versões oficiais em português verificadas e alternativas na edição original.</p>
       <p><a class="text-link" href="#arquivo-cartas">Ver cartas ilustradas neste arquivo ↓</a></p>
+      <ArchiveChapterIndex locale="pt-BR" />
       <PortugueseCatalogControls id="archive" count={chapters.length} />
       <ol class="character-event-list">
         {chapters.map((chapter) => (

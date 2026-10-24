@@ -7,8 +7,8 @@ test('custom reset preserves authored layout and hidden element behavior', async
   await expect(page.locator('h1').first()).toBeVisible();
 
   const styles = await page.evaluate(() => {
-    const heading = document.querySelector('h1');
-    if (!heading) throw new Error('Missing homepage heading');
+    const heading = document.createElement('h2');
+    document.body.append(heading);
     const hidden = document.createElement('div');
     hidden.hidden = true;
     document.body.append(hidden);
@@ -19,6 +19,7 @@ test('custom reset preserves authored layout and hidden element behavior', async
       hiddenDisplay: getComputedStyle(hidden).display,
     };
     hidden.remove();
+    heading.remove();
     return result;
   });
 

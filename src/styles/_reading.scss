@@ -104,6 +104,7 @@
 #chapter-reader[data-reading-size='compact'] .chapter-prose { font-size: 1rem; }
 #chapter-reader[data-reading-size='large'] .chapter-prose { font-size: 1.2rem; }
 #chapter-reader[data-reading-typeface='classic'] .chapter-prose { font-family: var(--font-reading-serif); }
+#chapter-reader[data-reading-typeface='modern'] .chapter-prose { font-family: var(--font-body); }
 #chapter-reader[data-reading-spacing='relaxed'] .chapter-prose { line-height: 2.15; }
 
 /* Historical chapter pages */
@@ -281,9 +282,8 @@
 .chapter-prose .historical-moment__illustration .historical-card img {
   display: block;
   width: 100%;
-  height: clamp(132px, 14vw, 165px);
-  object-fit: cover;
-  object-position: 50% 27%;
+  height: auto;
+  object-fit: contain;
   border-radius: 3px;
   box-shadow: 0 6px 18px #0002;
   transition: transform 180ms ease, box-shadow 180ms ease;

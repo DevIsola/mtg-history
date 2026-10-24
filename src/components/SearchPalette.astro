@@ -27,6 +27,11 @@ const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
     maxlength="160" autocomplete="off" spellcheck="false"
     placeholder={pt ? 'Ex.: Phyrexia, Centelha…' : 'E.g. Yawgmoth, Sylex…'}
     aria-controls="palette-results" />
+  <div class="search-palette__suggestions" data-palette-suggestions>
+    <p class="eyebrow">{pt ? 'Comece por um nome' : 'Start with a thread'}</p>
+    <button type="button" data-palette-suggestion="Phyrexia">⌕ <strong>Phyrexia</strong><span>{pt ? 'Pessoas, capítulos e acontecimentos' : 'People, chapters and turning points'}</span> ↵</button>
+    <button type="button" data-palette-suggestion="Yawgmoth">⌕ <strong>Yawgmoth</strong><span>{pt ? 'A origem de uma longa história' : 'The beginning of a long history'}</span> ↵</button>
+  </div>
   <p class="search-palette__status" data-palette-status role="status" aria-live="polite" aria-atomic="true">
     {pt ? 'Digite ao menos dois caracteres.' : 'Enter at least two characters.'}
   </p>
@@ -43,6 +48,7 @@ const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
 
 <script>
   import { isPaletteShortcut, paletteResultUrl, PALETTE_RESULT_LIMIT, validPaletteQuery, paletteResultKind } from '../utils/search-palette.mjs';
+  import { cardImageUrlForPrinting } from '../utils/card-images.mjs';
   import { plainExcerpt } from '../utils/pagefind-search.mjs';
 
   const dialog = document.querySelector<HTMLDialogElement>('[data-search-palette]');
@@ -57,6 +63,14 @@ const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
     const bundle = dialog.dataset.pagefindBundle ?? '';
     const locale = dialog.dataset.paletteLocale === 'pt-BR' ? 'pt-BR' : 'en';
     const pt = locale === 'pt-BR';
+    const suggestions = dialog.querySelector<HTMLElement>('[data-palette-suggestions]');
+    for (const suggestion of dialog.querySelectorAll<HTMLButtonElement>('[data-palette-suggestion]')) {
+      suggestion.addEventListener('click', () => {
+        input.value = suggestion.dataset.paletteSuggestion ?? '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.focus();
+      });
+    }
     const idle = pt ? 'Digite ao menos dois caracteres.' : 'Enter at least two characters.';
     let pagefindPromise: Promise<any> | undefined;
     let timeout: ReturnType<typeof setTimeout> | undefined;
@@ -88,6 +102,7 @@ const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
       cancel();
       clear();
       input.value = '';
+      if (suggestions) suggestions.hidden = false;
       status.textContent = idle;
       dialog.showModal();
       input.focus();
@@ -149,6 +164,16 @@ const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
           arrow.textContent = '↗';
           arrow.setAttribute('aria-hidden', 'true');
           copy.append(title, excerpt);
+          const printingId = String(entry.meta?.printingId ?? '');
+          if (/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(printingId)) {
+            const image = document.createElement('img');
+            image.src = cardImageUrlForPrinting(printingId, 'small');
+            image.alt = '';
+            image.width = 48; image.height = 67;
+            image.loading = 'lazy';
+            image.className = 'search-palette__result-image';
+            kind.append(image);
+          }
           link.append(kind, copy, arrow);
           li.append(link);
           results.append(li);
@@ -171,6 +196,7 @@ const searchPath = withBase(pt ? 'pt-br/search/' : 'search/');
       cancel();
       clear();
       const query = validPaletteQuery(input.value);
+      if (suggestions) suggestions.hidden = Boolean(query);
       if (!query) {
         status.textContent = idle;
         return;

@@ -1,0 +1,13 @@
+---
+import { getEntry } from 'astro:content';
+import { cardImageUrl, cardImageSrcset } from '../utils/card-printings';
+interface Props { printingId: string; }
+const { printingId } = Astro.props;
+const printing = await getEntry('cards', printingId);
+if (!printing) throw new Error('Missing printing ' + printingId);
+const card = printing.data;
+---
+<figure class="printing-miniature" data-printing-miniature={printingId}>
+  <img src={cardImageUrl(printingId)} srcset={cardImageSrcset(printingId)} sizes="80px" width="488" height="680" loading="lazy" decoding="async" alt={card.name + ', illustrated by ' + card.artist} />
+  <figcaption>{card.name}<span>{card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</span></figcaption>
+</figure>

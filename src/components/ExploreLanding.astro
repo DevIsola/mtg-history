@@ -90,60 +90,15 @@ const destinations: Destination[] = [
     <div class="page-shell explore-hero__grid">
       <div class="explore-hero__copy">
         <p class="eyebrow eyebrow--light">{pt ? 'Um atlas para o Multiverso' : 'The Multiverse, indexed'}</p>
-        <h1 id="explore-heading">{pt ? 'Explore a ' : 'Explore the '}<em>{pt ? 'história.' : 'Multiverse.'}</em></h1>
+        <h1 id="explore-heading">{pt ? 'Explore a ' : 'Explore the '}<em>{pt ? 'história.' : 'archive.'}</em></h1>
         <p class="explore-hero__lead">
           {pt
             ? 'Comece por um período histórico, encontre uma pessoa ou acompanhe os acontecimentos que conectam mundos e personagens.'
             : 'Begin with a historical era, follow a person, or investigate the events and printed cards that connect the stories.'}
         </p>
-        <div class="explore-hero__actions">
-          <a class="explore-primary" href={local('timeline/')}>{pt ? 'Ler os capítulos' : 'Start reading'} <span aria-hidden="true">→</span></a>
-          <a class="explore-secondary" href={local('search/')}>{pt ? 'Pesquisar os textos' : 'Search the full text'} <span aria-hidden="true">↗</span></a>
-        </div>
-        <p class="explore-hero__scope">{pt
-          ? 'A busca usa o índice Pagefind em português. Algumas seções detalhadas continuam disponíveis apenas em inglês.'
-          : 'Full-text search uses the existing Pagefind index. The directory below links to published historical records.'}
-        </p>
-      </div>
-      <figure class="explore-hero__artifact">
-        <a href={evidenceHref} target="_blank" rel="noopener noreferrer" aria-label={`${illustration.name} — Scryfall`}>
-          <img src={heroImage} srcset={heroSrcset} sizes="(max-width: 760px) 65vw, 280px"
-            width="488" height="680" loading="eager" decoding="async"
-            alt={`${illustration.name}, ${pt ? 'ilustração de' : 'illustrated by'} ${illustration.artist}`} />
-        </a>
-        <figcaption>
-          <span>{pt ? 'Exemplo de referência ilustrada' : 'A curated illustrated reference'}</span>
-          <strong>{illustration.name}</strong>
-          <p>{pt ? 'Interpretação editorial (EN): ' : 'Editorial interpretation: '}{illustration.significance}</p>
-          <small>{pt ? 'Arte de' : 'Art by'} {illustration.artist} · {illustration.setCode.toUpperCase()} #{illustration.collectorNumber}</small>
-          <a href={evidenceHref} target="_blank" rel="noopener noreferrer">{pt ? 'Ver edição no Scryfall ↗' : 'Verify printing on Scryfall ↗'}</a>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
 
-  <section class="explore-intro section-spacing" aria-labelledby="explore-ways-heading">
-    <div class="page-shell">
-      <div class="explore-section-heading">
-        <div>
-          <p class="eyebrow">{pt ? 'Três portas de entrada' : 'Choose your starting point'}</p>
-          <h2 class="section-title" id="explore-ways-heading">{pt ? 'Uma história, ' : 'One history, '}<em>{pt ? 'muitos caminhos.' : 'many ways in.'}</em></h2>
-        </div>
-        <p>{pt
-          ? 'Os períodos são agrupamentos editoriais. Narrativas em mundos diferentes podem acontecer ao mesmo tempo.'
-          : 'Chapters are editorial groupings: stories on different planes can overlap in time.'}</p>
       </div>
-      <div class="explore-featured">
-        {featured.map((chapter, index) => (
-          <a class="explore-feature" href={local(`chapters/${chapter.id}/`)}>
-            <span class="explore-feature__meta">{pt ? 'Capítulo' : 'Chapter'} {String(chapter.data.order).padStart(2, '0')}</span>
-            <span class="explore-feature__index" aria-hidden="true">0{index + 1}</span>
-            <h3>{pt ? portugueseEra(chapter.id).name : chapter.data.title}</h3>
-            <span class="explore-feature__description">{pt ? portugueseEra(chapter.id).summary : chapter.data.subtitle}</span>
-            <span class="explore-feature__link">{pt ? 'Ler em português' : 'Read this chapter'} →</span>
-          </a>
-        ))}
-      </div>
+
     </div>
   </section>
 
@@ -176,31 +131,67 @@ const destinations: Destination[] = [
         : 'Historical sourcing and visual interpretation are separate. Consult the chapter, the artwork credit, and the exact printing when evaluating an image.'}</p>
     </div>
   </section>
+
+  <section class="explore-intro section-spacing" aria-labelledby="explore-ways-heading">
+    <div class="page-shell">
+      <div class="explore-section-heading">
+        <div>
+          <p class="eyebrow">{pt ? 'Três portas de entrada' : 'Choose your starting point'}</p>
+          <h2 class="section-title" id="explore-ways-heading">{pt ? 'Uma história, ' : 'One history, '}<em>{pt ? 'muitos caminhos.' : 'many ways in.'}</em></h2>
+        </div>
+        <p>{pt
+          ? 'Os períodos são agrupamentos editoriais. Narrativas em mundos diferentes podem acontecer ao mesmo tempo.'
+          : 'Chapters are editorial groupings: stories on different planes can overlap in time.'}</p>
+      </div>
+      <div class="explore-featured">
+        {featured.map((chapter, index) => (
+          <a class="explore-feature" href={local(`chapters/${chapter.id}/`)}>
+            <span class="explore-feature__meta">{pt ? 'Capítulo' : 'Chapter'} {String(chapter.data.order).padStart(2, '0')}</span>
+            <span class="explore-feature__index" aria-hidden="true">0{index + 1}</span>
+            <h3>{pt ? portugueseEra(chapter.id).name : chapter.data.title}</h3>
+            <span class="explore-feature__description">{pt ? portugueseEra(chapter.id).summary : chapter.data.subtitle}</span>
+            <span class="explore-feature__link">{pt ? 'Ler em português' : 'Read this chapter'} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="explore-reference section-spacing"><div class="page-shell">
+      <figure class="explore-hero__artifact">
+        <a href={evidenceHref} target="_blank" rel="noopener noreferrer" aria-label={`${illustration.name} — Scryfall`}>
+          <img src={heroImage} srcset={heroSrcset} sizes="(max-width: 760px) 65vw, 280px"
+            width="488" height="680" loading="eager" decoding="async"
+            alt={`${illustration.name}, ${pt ? 'ilustração de' : 'illustrated by'} ${illustration.artist}`} />
+        </a>
+        <figcaption>
+          <span>{pt ? 'Exemplo de referência ilustrada' : 'A curated illustrated reference'}</span>
+          <strong>{illustration.name}</strong>
+          <p>{pt ? 'Interpretação editorial (EN): ' : 'Editorial interpretation: '}{illustration.significance}</p>
+          <small>{pt ? 'Arte de' : 'Art by'} {illustration.artist} · {illustration.setCode.toUpperCase()} #{illustration.collectorNumber}</small>
+          <a href={evidenceHref} target="_blank" rel="noopener noreferrer">{pt ? 'Ver edição no Scryfall ↗' : 'Verify printing on Scryfall ↗'}</a>
+        </figcaption>
+      </figure>
+    <div><p class="eyebrow">{pt ? 'Busque nos textos' : 'Search the encyclopedia'}</p><h2 class="section-title">{pt ? 'Siga uma pista.' : 'Find your next thread.'}</h2><p>{pt ? 'Busque capítulos, personagens e acontecimentos no índice de textos já publicado.' : 'Find chapters, characters and events in the same full-text index used throughout the archive.'}</p><a class="button button--gold" href={local('search/')} data-search-palette-trigger>{pt ? 'Pesquisar no arquivo' : 'Search the archive'} <kbd aria-hidden="true">⌘ K</kbd></a></div>
+  </div></section>
 </div>
 
 <style lang="scss">
   .explore-landing { overflow: clip; }
   .explore-hero { color: #f7f0e4; background: radial-gradient(ellipse at 80% 20%, #2b4540 0%, #14282a 43%, #0e1a20 100%); padding: clamp(3.5rem, 7vw, 6.5rem) 0; }
   .explore-hero__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(290px, .8fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; }
-  .explore-hero h1 { margin: 0; max-width: 12ch; font-family: var(--font-display); font-size: clamp(3.1rem, 6.3vw, 6rem); line-height: 1.06; letter-spacing: -.048em; font-weight: 450; }
-  .explore-hero h1 em { color: var(--gold-light); font-weight: 400; }
+  .explore-hero h1 { margin: 0; max-width: none; font-family: var(--font-display); font-size: clamp(2.8rem, 4.8vw, 4.5rem); line-height: 1.06; letter-spacing: -.048em; font-weight: 450; }
+  .explore-hero h1 em { color: inherit; font-weight: 400; font-style: normal; }
   .explore-hero__lead { max-width: 57ch; margin: 1.5rem 0 0; font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.65; color: #e6e4dd; }
-  .explore-hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
-  .explore-primary, .explore-secondary { min-height: 48px; display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .8rem 1rem; font-weight: 700; font-size: .89rem; text-decoration: none; }
-  .explore-primary { color: #182326; background: #e1c18a; }
-  .explore-primary:hover { background: #f0d5a6; }
-  .explore-secondary { color: #faf2e2; border: 1px solid #af9870; }
-  .explore-secondary:hover { background: #ffffff18; }
-  .explore-hero__scope { max-width: 61ch; margin-top: 1.2rem; color: #cad8d3; font-size: .81rem; line-height: 1.55; }
   .explore-hero__artifact { margin: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 1.2rem; align-items: center; }
   .explore-hero__artifact > a { display: block; }
   .explore-hero__artifact img { display: block; width: 100%; height: auto; border-radius: 4.7% / 3.4%; box-shadow: 0 22px 46px #0008; }
   .explore-hero__artifact figcaption { min-width: 0; }
-  .explore-hero__artifact figcaption > span { display: block; text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; color: var(--gold-light); }
-  .explore-hero__artifact figcaption strong { display: block; margin-top: .45rem; font-family: var(--font-display); font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 500; }
-  .explore-hero__artifact figcaption p { margin: .7rem 0; font-size: .81rem; line-height: 1.6; color: #e7e3d9; }
-  .explore-hero__artifact figcaption small { display: block; line-height: 1.5; font-size: .75rem; color: #e0caa5; }
-  .explore-hero__artifact figcaption a { display: inline-block; margin-top: .8rem; color: #f5daa9; font-size: .8rem; text-decoration: underline; text-underline-offset: 3px; }
+  .explore-hero__artifact figcaption > span { display: block; text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; color: var(--link-color); }
+  .explore-hero__artifact figcaption strong { display: block; margin-top: .45rem; font-family: var(--font-display); font-size: clamp(1rem, 1.7vw, 1.35rem); font-weight: 500; color: var(--ink); }
+  .explore-hero__artifact figcaption p { margin: .7rem 0; font-size: .81rem; line-height: 1.6; color: var(--ink-soft); }
+  .explore-hero__artifact figcaption small { display: block; line-height: 1.5; font-size: .75rem; color: var(--ink-soft); }
+  .explore-hero__artifact figcaption a { display: inline-block; margin-top: .8rem; color: var(--link-color); font-size: .8rem; text-decoration: underline; text-underline-offset: 3px; }
   .explore-section-heading { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(240px, .6fr); align-items: end; gap: 1.5rem; margin-bottom: 2.5rem; }
   .explore-section-heading .section-title { margin: 0; font-size: clamp(2.1rem, 4vw, 3.6rem); }
   .explore-section-heading > p { margin: 0; color: var(--ink-soft); line-height: 1.7; font-size: .95rem; }
@@ -210,7 +201,7 @@ const destinations: Destination[] = [
   .explore-feature:hover, .explore-feature:focus-visible { border-color: var(--accent-text); box-shadow: var(--card-hover-shadow); }
   .explore-feature__meta { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--accent-text); }
   .explore-feature__index { position: absolute; top: 1rem; right: 1.2rem; font-family: var(--font-display); font-size: 2rem; color: var(--line); }
-  .explore-feature > h3 { margin: .5rem 0 0; font-size: 1.45rem; line-height: 1.3; font-family: var(--font-display); font-weight: 500; }
+  .explore-feature > h3 { margin: .5rem 0 0; font-size: 1.45rem; line-height: 1.3; font-family: var(--font-display); font-weight: 500; color: var(--ink); }
   .explore-feature__description { font-size: .91rem; line-height: 1.65; color: var(--ink-soft); }
   .explore-feature__link { margin-top: auto; padding-top: 1rem; font-size: .82rem; color: var(--link-color); font-weight: 750; }
   .explore-directory { background: var(--paper-deep); }
