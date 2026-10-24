@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { writeFile } from 'node:fs/promises';
 
-const root = '/mtg-history/';
+const root = process.env.MTG_TEST_BASE ?? '/mtg-history/';
 const routes = [
   ['home', root],
   ['timeline', `${root}timeline/`],

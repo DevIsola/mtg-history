@@ -1,5 +1,5 @@
-export const SITE_ORIGIN = 'https://devisola.github.io';
-export const SITE_BASE = '/mtg-history/';
+import { hostingConfig } from '../../config/hosting.mjs';
+export const { site: SITE_ORIGIN, base: SITE_BASE } = hostingConfig();
 
 export function canonicalUrl(pathname, origin = SITE_ORIGIN, base = SITE_BASE) {
   if (!pathname.startsWith(base)) throw new Error(`Page outside site base: ${pathname}`);

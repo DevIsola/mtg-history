@@ -1,11 +1,12 @@
 import { access, readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { hostingConfig } from '../config/hosting.mjs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const defaultDist = fileURLToPath(new URL('../dist/', import.meta.url));
 
 /** Built artifacts are mandatory; a missing index must block deployment. */
-export async function checkPagefindIndex(root = defaultDist) {
+export async function checkPagefindIndex(root = defaultDist, base = hostingConfig().base) {
   const errors = [];
   const site = resolve(root);
   for (const path of ['pagefind/pagefind.js', 'search/index.html', 'chapters/thran/index.html']) {
@@ -14,8 +15,8 @@ export async function checkPagefindIndex(root = defaultDist) {
   }
   try {
     const search = await readFile(resolve(site, 'search/index.html'), 'utf8');
-    if (!search.includes('data-pagefind-bundle="/mtg-history/pagefind/pagefind.js"')) {
-      errors.push('search entry point does not respect /mtg-history base');
+    if (!search.includes(`data-pagefind-bundle="${base}pagefind/pagefind.js"`)) {
+      errors.push(`search entry point does not respect ${base} base`);
     }
     const chapter = await readFile(resolve(site, 'chapters/thran/index.html'), 'utf8');
     if (!/<main\b[^>]*data-pagefind-body/.test(chapter)) {
