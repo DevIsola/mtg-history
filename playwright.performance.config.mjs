@@ -18,7 +18,7 @@ export default defineConfig({
     { name: 'mobile-production', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: 'pnpm exec astro preview --host 127.0.0.1 --port 4322',
+    command: 'pnpm exec astro preview --ignore-lock --host 127.0.0.1 --port 4322',
     url: `${baseURL}/mtg-history/`,
     reuseExistingServer: false,
     timeout: 120_000,

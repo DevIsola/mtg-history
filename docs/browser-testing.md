@@ -2,8 +2,9 @@
 
 The browser suite complements the Node regression tests, content-graph validation,
 Astro type diagnostics, production build, and generated-link checker. It does
-not replace any of them. The new GitHub Actions workflow runs on pull requests
-against `main` and blocks approval/merge only if repository rules require it.
+not replace any of them. The reusable GitHub Actions workflow runs after merge to `main`. A failing
+browser job blocks deployment; local checks and review must precede merge.
+See [implementation-workflow.md](implementation-workflow.md).
 
 ## Local setup (macOS)
 
@@ -60,7 +61,7 @@ performance budgets are future work, not claimed by these tests.
 
 ## CI behavior
 
-`.github/workflows/browser-quality.yaml` runs an independent pull-request job:
+`.github/workflows/browser-quality.yaml` runs a job called by Pages after a merge to main, or by manual dispatch:
 install reproducible dependencies, install Chromium and Linux libraries,
 execute the browser suite, and upload Playwright traces/screenshots when a test
 fails. A failing suite must be fixed; do not suppress or skip checks to merge.

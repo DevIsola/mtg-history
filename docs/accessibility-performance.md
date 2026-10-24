@@ -71,7 +71,7 @@ major content/image changes, and then tested on production hosting.
 
 ## CI and artifacts
 
-`.github/workflows/browser-quality.yaml` performs three stages on PRs:
+`.github/workflows/browser-quality.yaml` performs three stages after a merge to main (called by Pages), or by manual dispatch:
 
 1. Existing browser interaction and accessibility scans (Astro dev).
 2. Generate the production build.

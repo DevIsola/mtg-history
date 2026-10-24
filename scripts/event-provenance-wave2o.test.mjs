@@ -13,7 +13,7 @@ const primarySources = [
 
 test('Seedcore narration distinguishes opening, disputed activation and Elspeth removing the Sylex', () => {
   const row = event(seedcore);
-  assert.equal(row.chapterId, 'march-of-the-machine');
+  assert.equal(row.chapterId, 'new-phyrexia');
   assert.equal(row.cardId, '1dd64b1d-bcef-476c-bf0b-3ac7df7cbed3');
   assert.equal(row.narrative.length, 3);
   assert.match(row.narrative[0], /Realmbreaker had already opened passages/);
@@ -24,7 +24,7 @@ test('Seedcore narration distinguishes opening, disputed activation and Elspeth 
 });
 
 test('two primary stories must be cited verbatim in the original chapter bibliography', () => {
-  const bibliography = read('src/content/chapters/march-of-the-machine.mdx');
+  const bibliography = read('src/content/chapters/new-phyrexia.mdx');
   const record = eventProvenance[seedcore];
   assert.ok(record);
   assert.equal(record.chronology.precision, 'relative');
@@ -38,8 +38,8 @@ test('two primary stories must be cited verbatim in the original chapter bibliog
     assert.ok(record.sources.some((source) => source.title === title && source.url === url));
   }
   assert.deepEqual(validateEventProvenance({ [seedcore]: record },
-    [{ id: seedcore, chapterId: 'march-of-the-machine' }],
-    new Map([['march-of-the-machine', primarySources.map(([title, url]) => ({ title, url, kind: 'official' }))]])), []);
+    [{ id: seedcore, chapterId: 'new-phyrexia' }],
+    new Map([['new-phyrexia', primarySources.map(([title, url]) => ({ title, url, kind: 'official' }))]])), []);
 });
 
 test('Venser has character and design context but no fabricated first-walk source', () => {
@@ -66,8 +66,8 @@ test('provenance validator still rejects unsupported dates and forged source URL
   record.chronology.precision = 'exact';
   record.sources[1].url = 'https://example.com/fabrication';
   const errors = validateEventProvenance({ [seedcore]: record },
-    [{ id: seedcore, chapterId: 'march-of-the-machine' }],
-    new Map([['march-of-the-machine', primarySources.map(([title, url]) => ({ title, url, kind: 'official' }))]])).join(' | ');
+    [{ id: seedcore, chapterId: 'new-phyrexia' }],
+    new Map([['new-phyrexia', primarySources.map(([title, url]) => ({ title, url, kind: 'official' }))]])).join(' | ');
   assert.match(errors, /invalid chronology precision/);
   assert.match(errors, /canonical Wizards HTTPS article URL/);
   assert.match(errors, /absent from the chapter bibliography/);

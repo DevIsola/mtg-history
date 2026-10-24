@@ -4,8 +4,8 @@ const root = '/mtg-history/';
 test('D1 timeline connects every published era to its exact illustrated printing', async ({ page }) => {
   await page.goto(root + 'timeline/');
   const eras = page.locator('[data-timeline-era]');
-  await expect(eras).toHaveCount(10);
-  await expect(page.locator('[data-timeline-artwork]')).toHaveCount(10);
+  await expect(eras).toHaveCount(11);
+  await expect(page.locator('[data-timeline-artwork]')).toHaveCount(11);
   const first = eras.first();
   await expect(first.locator('[data-timeline-artwork]')).toHaveAttribute('data-printing-id', /^[a-f\d-]{36}$/i);
   await expect(first.locator('.atlas-era__artwork figcaption')).toContainText('#');
@@ -22,7 +22,7 @@ test('filtering and historical events still work with editorial layout', async (
   await first.locator('[data-timeline-details] summary').click();
   await expect(first.locator('[data-timeline-event]:visible').first()).toBeVisible();
   await page.locator('#timeline-reset').click();
-  await expect(page.locator('[data-timeline-era]:visible')).toHaveCount(10);
+  await expect(page.locator('[data-timeline-era]:visible')).toHaveCount(11);
 });
 
 test('320px timeline and search results do not overflow', async ({ page }) => {

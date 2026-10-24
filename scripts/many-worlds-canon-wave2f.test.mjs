@@ -60,5 +60,5 @@ test('generated event adapter and count gates reflect 133 events without changin
   assert.match(adapter, /entry132 from '\.\.\/content\/events\/innistrad-thalia-breaks-helvault\.json'/);
   assert.match(read('scripts/check-entity-collections.mjs'), /characters: 88, events: 133, relationships: 118/);
   assert.match(read('scripts/check-card-collections.mjs'), /133\/133 event references/);
-  assert.match(read('scripts/check-card-collections.mjs'), /135\/135 chapter uses/);
+  assert.match(read('scripts/check-card-collections.mjs'), /136\/136 chapter uses/);
 });

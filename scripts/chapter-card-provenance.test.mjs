@@ -9,10 +9,10 @@ import { extractCardSignificance } from './check-artwork-fidelity.mjs';
 
 const directory = fileURLToPath(new URL('../src/content/chapters/', import.meta.url));
 
-test('135 chapter uses hydrate from canonical printing records without duplicate fields', async () => {
+test('136 chapter uses hydrate from canonical printing records without duplicate fields', async () => {
   const chapters = await loadCuratedChapters(directory, parseChapterEditorial);
-  assert.equal(chapters.length, 10);
-  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.cards.length, 0), 135);
+  assert.equal(chapters.length, 11);
+  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.cards.length, 0), 136);
   for (const chapter of chapters) for (const card of chapter.cards) {
     assert.match(card.scryfallId, /^[a-f0-9]{8}-/);
     assert.ok(card.name && card.artist && card.setCode && card.collectorNumber);

@@ -1,0 +1,111 @@
+{
+  "baseline": "a9248f9",
+  "riseEvents": [
+    "phyrexia-mirran-survival",
+    "phyrexia-vorinclex-world-tree",
+    "phyrexia-jin-kamigawa",
+    "phyrexia-urabrask-dissent",
+    "phyrexia-dominaria-sleeper-war",
+    "phyrexia-seedcore-failure",
+    "phyrexia-melira-resistance"
+  ],
+  "warEvents": [
+    "phyrexia-realmbreaker-invasion",
+    "phyrexia-elspeth-return",
+    "phyrexia-zhalfir-return",
+    "phyrexia-norns-fall",
+    "phyrexia-tamiyos-last-story",
+    "phyrexia-meliras-last-gift"
+  ],
+  "printings": {
+    "new-phyrexia": [
+      {
+        "id": "d67be074-cdd4-41d9-ac89-0a0456c4e4b2",
+        "significance": "  - significance: >-\n      Sheoldred's Dominaria United printing represents the praetor directing\n      the sleeper-agent infiltration that preceded the wider invasion.\n"
+      },
+      {
+        "id": "7e2af6c1-fdf1-4d04-bd74-f07da939110a",
+        "significance": "  - significance: >-\n      A Phyrexian-language printing of the compleated Ajani, illustrating\n      the betrayal that cost the Dominarian resistance one of its heroes.\n"
+      },
+      {
+        "id": "44dcab01-1d13-4dfc-ae2f-fbaa3dd35087",
+        "significance": "  - significance: >-\n      Norn's original Phyrexia: All Will Be One portrait, an emblem of the\n      Machine Orthodoxy's attempt to impose a single will on every plane.\n"
+      },
+      {
+        "id": "1dd64b1d-bcef-476c-bf0b-3ac7df7cbed3",
+        "significance": "  - significance: >-\n      The corrupted Nissa shows the personal cost of the failed strike team\n      and the danger of compleation that could preserve a planeswalker's spark.\n"
+      },
+      {
+        "id": "e38f63c4-1d35-451a-8778-2066ed874ff9",
+        "significance": "  - significance: >-\n      A Phyrexia: All Will Be One promotional printing portraying Koth,\n      the Mirran resistance leader who never abandoned his home.\n"
+      },
+      {
+        "id": "bd46fc9f-5b92-44d7-8940-2f39b0962b8f",
+        "significance": "  - significance: >-\n      The original New Phyrexia portrait of the blue-aligned praetor,\n      whose obsession with experimentation later enabled compleation\n      of planeswalkers without extinguishing their sparks.\n"
+      },
+      {
+        "id": "0806adab-6a08-411b-b249-e1c58ade354b",
+        "significance": "  - significance: >-\n      The original depiction of the predatory green praetor.\n      Vorinclex later stole World Tree essence from Kaldheim,\n      creating the foundation for Realmbreaker's growth.\n"
+      },
+      {
+        "id": "0533d7e4-6b5b-4e2e-8407-279fe438c676",
+        "significance": "  - significance: >-\n      A 2023 Multiverse Legends portrait of the red praetor whose\n      furnace tolerated Mirran refugees. It recalls his earlier\n      opposition to Norn, not a separate invasion-era persona.\n"
+      },
+      {
+        "id": "e83851a1-e4e8-49ec-af5c-4efe86fa51ad",
+        "significance": "  - significance: >-\n      Melira's original New Phyrexia card depicts the Mirran\n      immune to Phyrexian contamination, a resistance fighter\n      whose last intervention later saved Ajani and Nissa.\n"
+      },
+      {
+        "id": "222a736e-d819-452d-aeda-eb848c4b2302",
+        "significance": "  - significance: >-\n      The original Kamigawa: Neon Dynasty illustration of\n      a compleated planeswalker. Tamiyo's later final story\n      distinguishes her lost body from the magical memory\n      that survived to console her family.\n"
+      }
+    ],
+    "march-of-the-machine": [
+      {
+        "id": "7b608134-cfc3-48bf-92d8-35d732fcde54",
+        "significance": "  - significance: >-\n      The machinery of interplanar invasion, grown from stolen World Tree\n      essence and used to open passages for Phyrexia's armies.\n"
+      },
+      {
+        "id": "f7cedd62-efc8-464d-8387-220bb55e07e9",
+        "significance": "  - significance: >-\n      A Battle card documenting one of many simultaneous fronts, where\n      Realmbreaker's branches struck the World Tree and its realms.\n"
+      },
+      {
+        "id": "a146ea07-ec1c-448d-b67a-dd9f9e27c2e0",
+        "significance": "  - significance: >-\n      Chandra's March of the Machine portrait marks her determination\n      to continue the fight after the Seedcore mission's failure.\n"
+      },
+      {
+        "id": "6f807d91-b157-44e8-a431-49782184f876",
+        "significance": "  - significance: >-\n      Wrenn's union with the invasion tree transforms Phyrexia's instrument\n      of conquest into a path for Zhalfir's liberation.\n"
+      },
+      {
+        "id": "93f99e67-901f-4c8d-8a09-e443b7eb928f",
+        "significance": "  - significance: >-\n      A borderless illustration of Elspeth's angelic return, portraying\n      the figure who confronted Norn at the climax of the invasion.\n"
+      },
+      {
+        "id": "1b83af86-e1a9-4be1-83dc-0c1ab81b129e",
+        "significance": "  - significance: >-\n      A double-faced Battle card depicting the counterattack on New Phyrexia\n      and Teferi's return with Zhalfir's forces.\n"
+      },
+      {
+        "id": "4219b5ea-a252-4d76-a60a-9674340e8ed3",
+        "significance": "  - significance: >-\n      An Aftermath-era image of Karn after the war, linking the defeat of\n      New Phyrexia to the fate of the plane he originally created.\n"
+      },
+      {
+        "id": "222a736e-d819-452d-aeda-eb848c4b2302",
+        "significance": "  - significance: >-\n      The original Kamigawa: Neon Dynasty illustration of\n      a compleated planeswalker. Tamiyo's later final story\n      distinguishes her lost body from the magical memory\n      that survived to console her family.\n"
+      }
+    ]
+  },
+  "movedAnchors": [
+    "i-an-old-enemy-in-a-new-body",
+    "the-people-mirrodin-could-not-afford-to-forget",
+    "ii-the-machine-orthodoxy-and-its-fractures",
+    "five-competing-visions-of-compleation",
+    "an-experiment-that-changed-planeswalking",
+    "a-furnace-that-refused-to-submit",
+    "the-praetors-disagreed-about-what-perfection-meant",
+    "iii-dominaria-the-war-no-one-recognized-soon-enough",
+    "iv-the-seedcore-mission",
+    "a-failed-mission-can-change-the-shape-of-a-later-victory",
+    "melira-and-the-resistance-that-endured"
+  ]
+}

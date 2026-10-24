@@ -5,7 +5,7 @@ import { PORTUGUESE_ERAS, portugueseEra, normalizePortugueseQuery, matchesPortug
 const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
 
 test('ten authored Portuguese summaries map to established historical chapters', () => {
-  const ids = ['thran','brothers-war','ice-age','weatherlight','otaria','mending','many-worlds','war-of-the-spark','march-of-the-machine','omenpaths'];
+  const ids = ['thran','brothers-war','ice-age','weatherlight','otaria','mending','many-worlds','war-of-the-spark','new-phyrexia','march-of-the-machine','omenpaths'];
   assert.deepEqual(Object.keys(PORTUGUESE_ERAS), ids);
   for (const id of ids) {
     assert.ok(portugueseEra(id).name.length > 9);

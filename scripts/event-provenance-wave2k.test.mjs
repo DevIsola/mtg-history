@@ -10,7 +10,7 @@ const added = {
   'brothers-tawnos-carries-testimony': ['brothers-war', "The Brothers' War — Episode 1: The End"],
   'innistrad-avacyn-created': ['many-worlds', 'Innistrad Plane Guide'],
   'innistrad-helvault-imprisonment': ['many-worlds', "Planeswalker's Guide to Avacyn Restored, Part 2"],
-  'phyrexia-melira-resistance': ['march-of-the-machine', 'Assault on New Phyrexia — Episode 2: Unstable Foundations'],
+  'phyrexia-melira-resistance': ['new-phyrexia', 'Assault on New Phyrexia — Episode 2: Unstable Foundations'],
   'phyrexia-meliras-last-gift': ['march-of-the-machine', 'March of the Machine — Episode 10: The Rhythms of Life'],
   'omenpaths-eldraine-mourning': ['omenpaths', 'Wilds of Eldraine — Episode 1: Pure of Heart'],
   'omenpaths-rowan-and-will-diverge': ['omenpaths', 'Wilds of Eldraine — Episode 1: Pure of Heart'],
@@ -47,7 +47,7 @@ test('Wave 2K adds eight distinct, narrowly supported event reviews', () => {
 test('the additional reviews cite official sources in each event chapter', () => {
   const { chapters, events } = publishedCollections();
   assert.equal(events.length, 133);
-  assert.equal(chapters.size, 10);
+  assert.equal(chapters.size, 11);
   for (const [id, [chapterId]] of Object.entries(added)) {
     const bibliography = chapters.get(chapterId) ?? [];
     for (const source of eventProvenance[id].sources) {

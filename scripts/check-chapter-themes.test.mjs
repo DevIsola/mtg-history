@@ -16,7 +16,7 @@ const good = {
 
 test('all authored chapters have exactly one scoped palette', () => {
   assert.deepEqual(auditChapterThemes(good), []);
-  assert.equal(extractChapterPalettes(palette).length, 10);
+  assert.equal(extractChapterPalettes(palette).length, 11);
 });
 test('current real chapter files and editorial eras match', async () => {
   assert.deepEqual((await checkChapterThemes()).errors, []);

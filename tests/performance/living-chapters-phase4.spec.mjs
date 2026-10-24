@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { writeFile } from 'node:fs/promises';
 
 // Production-preview diagnostics only: do not mistake local lab data for field CWV.
-for (const slug of ['thran', 'ice-age', 'war-of-the-spark']) {
+for (const slug of ['thran', 'ice-age', 'war-of-the-spark', 'new-phyrexia', 'march-of-the-machine']) {
   test(`${slug}: living chapter interaction/performance snapshot`, async ({ page }, testInfo) => {
     await page.addInitScript(() => {
       window.__livingChapterLab = { cls: 0, longTasks: 0 };

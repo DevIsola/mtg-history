@@ -11,6 +11,11 @@ permissions:
   id-token: write
 
 jobs:
+  browser-quality:
+    uses: ./.github/workflows/browser-quality.yaml
+    permissions:
+      contents: read
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +29,7 @@ jobs:
           build-cmd: pnpm run verify
 
   deploy:
-    needs: build
+    needs: [build, browser-quality]
     runs-on: ubuntu-latest
     environment:
       name: github-pages

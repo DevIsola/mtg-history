@@ -13,7 +13,7 @@ export default defineConfig({
   use: { baseURL, trace: 'retain-on-failure' },
   projects: [{ name: 'readme-chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
-    command: `pnpm run build && pnpm exec astro preview --host 127.0.0.1 --port ${port}`,
+    command: `pnpm run build && pnpm exec astro preview --ignore-lock --host 127.0.0.1 --port ${port}`,
     url: `${baseURL}/mtg-history/`,
     reuseExistingServer: false,
     timeout: 120_000,

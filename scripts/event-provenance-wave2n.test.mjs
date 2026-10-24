@@ -11,10 +11,10 @@ const batch = Object.freeze({
   'shivan-rift': ['mending', 'Return to Dominaria: Episode 6'],
   'mending-venser-first-walk': ['mending', 'Venser'],
   'freyalise-seals-skyshroud': ['mending', 'Freyalise'],
-  'phyrexia-urabrask-dissent': ['march-of-the-machine', 'The Legends of Phyrexia: All Will Be One'],
+  'phyrexia-urabrask-dissent': ['new-phyrexia', 'The Legends of Phyrexia: All Will Be One'],
   'phyrexia-elspeth-return': ['march-of-the-machine', 'March of the Machine — Episode 7: Divine Intervention'],
-  'phyrexia-jin-kamigawa': ['march-of-the-machine', "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse"],
-  'phyrexia-mirran-survival': ['march-of-the-machine', 'The Legends of Phyrexia: All Will Be One'],
+  'phyrexia-jin-kamigawa': ['new-phyrexia', "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse"],
+  'phyrexia-mirran-survival': ['new-phyrexia', 'The Legends of Phyrexia: All Will Be One'],
 });
 
 function publishedCollections() {
@@ -48,7 +48,7 @@ test('Wave 2N adds eight distinct event reviews without dropping prior provenanc
 test('each event source has an identical official title and URL in its own chapter bibliography', () => {
   const { chapters, events } = publishedCollections();
   assert.equal(events.length, 133);
-  assert.equal(chapters.size, 10);
+  assert.equal(chapters.size, 11);
   for (const [id, [chapter]] of Object.entries(batch)) {
     for (const source of eventProvenance[id].sources) {
       assert.ok(chapters.get(chapter)?.some((reference) => reference.kind === 'official' &&

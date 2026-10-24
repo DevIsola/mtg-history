@@ -20,3 +20,7 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Implementation and release
+
+Follow `docs/implementation-workflow.md`: one branch per complete phase/feature, incremental commits and pushes, and merge only when complete and accepted. Automatic CI runs after merge to main, not on feature pushes or pull requests. Run required checks locally before merge.

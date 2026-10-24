@@ -106,7 +106,7 @@ test('repository audit accounts for every unreviewed record as provenance covera
   const result = await runHistoricalRiskAudit();
   const reviewed = Object.keys(eventProvenance).length;
   assert.deepEqual(result.summary, {
-    total: 133, reviewed, queued: 133 - reviewed, chapters: 10,
+    total: 133, reviewed, queued: 133 - reviewed, chapters: 11,
     high: result.summary.high, medium: result.summary.medium, standard: result.summary.standard,
   });
   assert.equal(result.byChapter.reduce((n, chapter) => n + chapter.queued, 0), 133 - reviewed);

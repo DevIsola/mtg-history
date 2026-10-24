@@ -74,8 +74,8 @@ test('all six companion routes remain in the shared static route and Portuguese 
   assert.match(route, /\.\.\.PORTUGUESE_BATCH_1, \.\.\.PORTUGUESE_BATCH_2/);
   assert.match(timeline, /BATCH_1_IDS\.includes\(era\.id\)/);
   assert.match(timeline, /BATCH_2_IDS\.includes\(era\.id\)/);
-  assert.match(homepage, /Dez períodos históricos/);
-  assert.match(timeline, /Dez períodos/);
+  assert.match(homepage, /Onze períodos históricos/);
+  assert.match(timeline, /Onze períodos/);
   assert.match(timeline, /withBase\(`pt-br\/chapters\/\$\{era\.id\}\/`\)/);
 });
 

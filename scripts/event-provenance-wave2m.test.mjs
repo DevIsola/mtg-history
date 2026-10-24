@@ -11,8 +11,8 @@ const batch = {
   'ravnica-project-kraj': ['many-worlds', 'Ravnica, Then and Now'],
   'zendikar-nahiri-chooses-prison': ['many-worlds', 'The Lithomancer'],
   'phyrexia-tamiyos-last-story': ['march-of-the-machine', 'March of the Machine — Episode 3: Mother, Son, and Story'],
-  'phyrexia-vorinclex-world-tree': ['march-of-the-machine', "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse"],
-  'phyrexia-dominaria-sleeper-war': ['march-of-the-machine', 'Dominaria United — Death and Salvation'],
+  'phyrexia-vorinclex-world-tree': ['new-phyrexia', "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse"],
+  'phyrexia-dominaria-sleeper-war': ['new-phyrexia', 'Dominaria United — Death and Salvation'],
   'omenpaths-kellan-first-crossing': ['omenpaths', 'A First Look at The Lost Caverns of Ixalan'],
   'omenpaths-quintorius-expedition': ['omenpaths', 'The Lost Caverns of Ixalan — Episode 1'],
 };
@@ -52,7 +52,7 @@ test('Wave 2M adds eight source-bounded reviews without dropping previous entrie
 
 test('every review cites the identical official entry in its own chapter bibliography', () => {
   const { chapterSources, events } = collectionView();
-  assert.equal(chapterSources.size, 10);
+  assert.equal(chapterSources.size, 11);
   assert.equal(events.length, 133);
   assert.deepEqual(validateEventProvenance(eventProvenance, events, chapterSources), []);
   for (const [id, [chapter]] of Object.entries(batch)) {

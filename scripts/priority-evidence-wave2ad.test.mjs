@@ -127,7 +127,7 @@ test('full provenance and consolidation retain gaps, printing identities and eve
   const report = await runEditorialConsolidation();
 
   assert.equal(report.summary.events, 133);
-  assert.equal(report.summary.cardUses, 135);
+  assert.equal(report.summary.cardUses, 136);
   assert.equal(
     report.summary.sourceReviewed,
     validation.reviewedEvents

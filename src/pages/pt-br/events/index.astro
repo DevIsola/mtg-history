@@ -7,12 +7,12 @@ import { eras } from '../../../data/eras';
 import { historicalEvents } from '../../../data/events';
 const sections = eras.map((era) => ({ era, events: historicalEvents.filter((event) => event.chapterId === era.id) })).filter((item) => item.events.length > 0);
 ---
-<BaseLayout locale="pt-BR" title="Acontecimentos históricos" description="Conheça os acontecimentos registrados nos dez capítulos.">
+<BaseLayout locale="pt-BR" title="Acontecimentos históricos" description="Conheça os acontecimentos registrados nos onze capítulos.">
   <section class="page-banner">
     <div class="page-shell">
       <p class="eyebrow eyebrow--light">Enciclopédia do Multiverso · Português brasileiro</p>
       <h1>Acontecimentos históricos</h1>
-      <p>Conheça os acontecimentos registrados nos dez capítulos.</p>
+      <p>Conheça os acontecimentos registrados nos onze capítulos.</p>
     </div>
   </section>
   <section class="section-spacing">

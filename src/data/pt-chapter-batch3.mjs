@@ -1,7 +1,4 @@
-/**
- * PT-BR editorial adaptations: chapters 08–10 (initial coverage, not full translations).
- * Original chapter entries own exact card printings, significance and source bibliographies.
- */
+/** PT-BR condensed editorial adaptations; canonical chapters own printing and source metadata. */
 export const PORTUGUESE_BATCH_3 = Object.freeze([
   {
     "id": "war-of-the-spark",
@@ -113,10 +110,10 @@ export const PORTUGUESE_BATCH_3 = Object.freeze([
     ]
   },
   {
-    "id": "march-of-the-machine",
+    "id": "new-phyrexia",
     "number": "09",
-    "title": "A Invasão da Nova Phyrexia",
-    "subtitle": "A árvore Realmbreaker abre caminhos para uma guerra multiversal, enquanto resistentes mirranos e antigos aliados enfrentam Elesh Norn.",
+    "title": "A ascensão de Nova Phyrexia",
+    "subtitle": "A ocupação de Mirrodin, os projetos dos pretores e a missão fracassada ao Núcleo-Semente antecedem a invasão multiversal.",
     "sections": [
       {
         "id": "o-inimigo-que-permaneceu",
@@ -150,6 +147,39 @@ export const PORTUGUESE_BATCH_3 = Object.freeze([
           "Jace, Vraska, Nahiri, Lukka e Nissa estiveram entre os aliados cuja sorte foi alterada pela invasão e pela transformação phyrexiana. A retirada de Elspeth com o Sylex não representou vitória imediata: a missão fracassou em seu objetivo central de impedir a abertura das passagens. Essa falha modificou as condições em que a resistência teria de lutar posteriormente."
         ]
       },
+      {
+        "id": "a-resistencia-mirrana-antes-da-invasao",
+        "title": "A resistência de Mirrodin",
+        "paragraphs": [
+          "Koth e Melira defenderam a sobrevivência dos mirranos mesmo quando os visitantes não podiam garantir a libertação imediata de seu mundo. Koth preservou a recusa em aceitar a conquista como fato consumado, enquanto Melira trouxe uma resistência incomum à corrupção que permitiu socorrer pessoas afetadas pelo óleo. Sua luta tinha uma escala cotidiana e coletiva, não apenas a ambição de vencer um duelo entre figuras lendárias.",
+          "As comunidades de Mirrodin enfrentavam um território que já não correspondia à terra em que haviam crescido. A esperança de resistir precisava levar em conta abrigo, companheirismo e perdas irreversíveis. A posterior queda de Elesh Norn só pode ser compreendida adequadamente se a persistência dessas pessoas for reconhecida como parte da vitória, e não como simples pano de fundo para uma campanha de planeswalkers."
+        ]
+      },
+      {
+        "id": "publicacao-e-cronologia",
+        "title": "Publicação e cronologia",
+        "paragraphs": [
+          "Este capítulo acompanha a ocupação de Mirrodin e os preparativos anteriores à invasão entre planos. Os primeiros retratos de Jin-Gitaxias, Vorinclex e Melira pertencem a New Phyrexia, de 2011. As missões dos pretores e a transformação de Tamiyo aparecem em publicações posteriores, sem que isso transforme as imagens antigas em registros de acontecimentos futuros.",
+          "A infiltração de Dominária e a expedição ao Núcleo-Semente estabelecem o limite desta leitura. A retirada de Elspeth com o Sylex impede uma catástrofe imediata, mas não interrompe Realmbreaker. O capítulo March of the Machine continua a narrativa com a guerra entre planos. Esta adaptação conserva a distinção entre publicação, cronologia e interpretação das cartas."
+        ]
+      }
+    ],
+    "eventIds": [
+      "phyrexia-mirran-survival",
+      "phyrexia-vorinclex-world-tree",
+      "phyrexia-jin-kamigawa",
+      "phyrexia-urabrask-dissent",
+      "phyrexia-dominaria-sleeper-war",
+      "phyrexia-seedcore-failure",
+      "phyrexia-melira-resistance"
+    ]
+  },
+  {
+    "id": "march-of-the-machine",
+    "number": "10",
+    "title": "March of the Machine — a invasão",
+    "subtitle": "A árvore Realmbreaker abre caminhos para uma guerra multiversal, enquanto resistentes mirranos e antigos aliados enfrentam Elesh Norn.",
+    "sections": [
       {
         "id": "realmbreaker-alcanca-muitos-mundos",
         "title": "Realmbreaker alcança muitos mundos",
@@ -208,14 +238,7 @@ export const PORTUGUESE_BATCH_3 = Object.freeze([
       }
     ],
     "eventIds": [
-      "phyrexia-mirran-survival",
-      "phyrexia-vorinclex-world-tree",
-      "phyrexia-jin-kamigawa",
-      "phyrexia-urabrask-dissent",
-      "phyrexia-dominaria-sleeper-war",
-      "phyrexia-seedcore-failure",
       "phyrexia-realmbreaker-invasion",
-      "phyrexia-melira-resistance",
       "phyrexia-elspeth-return",
       "phyrexia-zhalfir-return",
       "phyrexia-norns-fall",
@@ -225,7 +248,7 @@ export const PORTUGUESE_BATCH_3 = Object.freeze([
   },
   {
     "id": "omenpaths",
-    "number": "10",
+    "number": "11",
     "title": "A Era dos Caminhos Pressagiados",
     "subtitle": "Depois da invasão phyrexiana, novas passagens conectam mundos e modificam a vida de viajantes, reinos e comunidades.",
     "sections": [
@@ -325,6 +348,7 @@ export const PORTUGUESE_BATCH_3 = Object.freeze([
     ]
   }
 ]);
+
 export const BATCH_3_IDS = Object.freeze(PORTUGUESE_BATCH_3.map(chapter => chapter.id));
 export function portugueseChapterBatch3(id) {
   return PORTUGUESE_BATCH_3.find(chapter => chapter.id === id) ?? null;
