@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { writeFile } from 'node:fs/promises';
+import ledger from '../../docs/phase14c-migration-identities.json' with { type: 'json' };
 const origin = process.env.MTG_SITE_ORIGIN ?? 'https://mtg-history.example.workers.dev';
 for (const route of ['', 'pt-br/', 'chapters/brothers-war/', 'pt-br/chapters/new-phyrexia/', 'timeline/', 'pt-br/timeline/', 'explore/', 'pt-br/explore/', 'characters/urza/', 'archive/', 'pt-br/archive/', 'search/', 'pt-br/search/']) {
   test('root static hosting: ' + (route || 'home'), async ({ page }, info) => {
@@ -57,4 +58,21 @@ test('Pagefind palette and PT search use root URLs and restore keyboard focus', 
   await page.goto('/pt-br/search/');
   await page.locator('#fulltext-query').fill('Phyrexia');
   await expect(page.locator('[data-fulltext-results] a').first()).toHaveAttribute('href', /^\/pt-br\//, { timeout: 15000 });
+});
+
+
+test.describe('no-JavaScript migration links', () => {
+  test.use({ javaScriptEnabled: false });
+  test('legacy prefix redirects preserve moved EN/PT fragment navigation', async ({ page }) => {
+    await page.route('https://cards.scryfall.io/**', route => route.abort());
+    for (const [locale, anchor] of [['', ledger.movedAnchors[0]], ['pt-br/', 'a-missao-ao-nucleo-semente']]) {
+      await page.goto('/mtg-history/' + locale + 'chapters/march-of-the-machine/#' + anchor, { waitUntil: 'domcontentloaded' });
+      expect(new URL(page.url()).pathname).toBe('/' + locale + 'chapters/march-of-the-machine/');
+      expect(new URL(page.url()).hash).toBe('#' + anchor);
+      await page.locator('[id="' + anchor + '"] a').click();
+      expect(new URL(page.url()).pathname).toBe('/' + locale + 'chapters/new-phyrexia/');
+      expect(new URL(page.url()).hash).toBe('#' + anchor);
+      await expect(page.locator('[id="' + anchor + '"]')).toBeVisible();
+    }
+  });
 });

@@ -10,6 +10,7 @@ test('hosting parity tolerates URL prefixes but rejects lost locale, fragment an
   const a = join(root, 'pages'), b = join(root, 'workers');
   try {
     await mkdir(a); await mkdir(b);
+    await assert.rejects(checkHostingParity(a, b), /No built HTML/);
     const html = '<html lang="pt-BR"><h1>História</h1><a href="/mtg-history/search/">Search</a><section id="evidence" data-printing-id="exact-printing"></section><aside id="lore-definition-670dea49-464a-405e-b83f-dd08b07aee34"></aside></html>';
     await writeFile(join(a, 'index.html'), html);
     const migrated = html.replace('/mtg-history/search/', '/search/').replace('670dea49-464a-405e-b83f-dd08b07aee34', '6d1aa50b-6c13-45c0-aafc-73a872c4c5ff');

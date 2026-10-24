@@ -23,6 +23,7 @@ function record(html) {
 }
 export async function checkHostingParity(pagesRoot, workersRoot) {
   const pages = await inventory(pagesRoot), workers = await inventory(workersRoot);
+  if (!pages.length) throw new Error('No built HTML routes to compare');
   if (JSON.stringify(pages) !== JSON.stringify(workers)) throw new Error('Hosting HTML route inventories differ');
   for (const path of pages) {
     const before = record(await readFile(join(pagesRoot, path), 'utf8'));

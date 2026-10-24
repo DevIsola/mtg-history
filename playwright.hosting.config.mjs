@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 const origin = process.env.MTG_SITE_ORIGIN ?? 'https://mtg-history.example.workers.dev';
+const remote = process.env.MTG_HOSTING_URL;
 export default defineConfig({
   testDir: './tests/hosting',
   outputDir: 'test-results/hosting',
@@ -7,12 +8,12 @@ export default defineConfig({
   expect: { timeout: 10000 },
   workers: 2,
   retries: 0,
-  use: { baseURL: 'http://127.0.0.1:4325', trace: 'retain-on-failure', reducedMotion: 'reduce' },
+  use: { baseURL: remote ?? 'http://127.0.0.1:4325', trace: 'retain-on-failure', reducedMotion: 'reduce' },
   projects: [
     { name: 'desktop-workers', use: { ...devices['Desktop Chrome'] } },
     { name: 'mobile-workers', use: { ...devices['Pixel 7'] } },
   ],
-  webServer: {
+  webServer: remote ? undefined : {
     command: 'pnpm run build:cloudflare && pnpm run preview:cloudflare',
     env: { MTG_SITE_ORIGIN: origin, WRANGLER_SEND_METRICS: 'false' },
     url: 'http://127.0.0.1:4325/',

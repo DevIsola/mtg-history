@@ -64,3 +64,5 @@ For all phases, release readiness requires local verification, browser/strict ac
 ### Phase 16 preparation exception
 
 On 24 October 2026 the maintainer authorized Phase 16 preparation with Phase 15 acceptance still pending and requested a free workers.dev address initially. Work continues on `feature/phase16-cloudflare-static-assets`; see [scope, staging and rollback gates](docs/phase16-cloudflare-static-assets.md). Production cutover and Pages retirement remain subject to acceptance.
+
+Phase 16 staging is now available at https://mtg-history-staging.dev-disola.workers.dev (free Workers address; noindex). Portable builds, all-262-route identity parity, full existing browser checks, local/live Workers checks, public artifact verification and performance sampling passed. Production migration remains open; the phase branch and PR stay in draft until staging acceptance and the documented cutover gates are resolved. See the [verified staging record](docs/phase16-cloudflare-static-assets.md#verified-staging-release--24-october-2026).
