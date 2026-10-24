@@ -1,0 +1,43 @@
+{
+  "phyrexian-legacy": {
+    "title": "A longa sombra de Phyrexia",
+    "summary": "Acompanhe uma ameaça desde suas origens entre os Thran, passando por duas guerras em Dominária, até a invasão de muitos mundos.",
+    "chronology": "Uma história de ambições phyrexianas recorrentes em conflitos distintos, não uma campanha contínua.",
+    "steps": [
+      { "chapterId": "thran", "eventId": "rise-of-yawgmoth", "context": "Um médico adquire poder em Halcyon e se torna o senhor de Phyrexia." },
+      { "chapterId": "brothers-war", "eventId": "gix-influences-mishra", "context": "Gix explora Mishra durante uma guerra cujas causas não eram originalmente phyrexianas." },
+      { "chapterId": "weatherlight", "eventId": "legacy-weapon", "context": "O Legado encerra a invasão de Yawgmoth; não apaga a história phyrexiana posterior." },
+      { "chapterId": "march-of-the-machine", "eventId": "phyrexia-realmbreaker-invasion", "context": "Nova Phyrexia usa o Quebra-reinos para atacar vários planos." }
+    ]
+  },
+  "jeskas-rebirths": {
+    "title": "Jeska: de Otária à Reparação",
+    "summary": "Acompanhe como uma tragédia pessoal durante a crise do Mirari se conecta ao reparo das fendas temporais de Dominária.",
+    "chronology": "Esses acontecimentos dizem respeito à mesma pessoa em duas eras diferentes; Phage e Karona não são biografias separadas.",
+    "steps": [
+      { "chapterId": "otaria", "eventId": "jeska-spark", "context": "Jeska sobrevive à queda de Karona e se torna uma planeswalker." },
+      { "chapterId": "mending", "eventId": "jeskas-final-sacrifice", "context": "Ela dá a vida para reparar a última fenda temporal." }
+    ]
+  },
+  "ravnicas-orders": {
+    "title": "Ravnica: poder, lei e consequências",
+    "summary": "Observe como a mesma cidade responde ao fim de um contrato ancestral, à invasão de Bolas e a uma conspiração de assassinatos posterior.",
+    "chronology": "Três crises distintas de Ravnica; não projete a política posterior das guildas sobre o primeiro Pacto das Guildas.",
+    "steps": [
+      { "chapterId": "many-worlds", "eventId": "ravnica-guildpact-collapse", "context": "O primeiro Pacto das Guildas entra em colapso quando a conspiração de Szadek vem à tona." },
+      { "chapterId": "war-of-the-spark", "eventId": "spark-ravnica-invasion", "context": "Bolas transforma Ravnica em um campo de batalha por centelhas roubadas de planeswalkers." },
+      { "chapterId": "omenpaths", "eventId": "omenpaths-ravnica-investigation", "context": "Uma investigação posterior se desenrola em meio às tensões da cidade após a invasão." }
+    ]
+  },
+  "changing-boundaries": {
+    "title": "Como as fronteiras entre mundos mudaram",
+    "summary": "Compare mudanças extraordinárias no isolamento, no poder dos planeswalkers, nas rotas de invasão e nas viagens interplanares.",
+    "chronology": "Uma comparação temática de mecanismos diferentes; o Feitiço Mundial, a Reparação, o Quebra-reinos e os Caminhos Pressagiados não são o mesmo fenômeno.",
+    "steps": [
+      { "chapterId": "ice-age", "eventId": "world-spell", "context": "Freyalise encerra o inverno sobrenatural e altera o isolamento do Fragmento." },
+      { "chapterId": "mending", "eventId": "the-mending", "context": "O reparo da realidade muda permanentemente o poder dos planeswalkers." },
+      { "chapterId": "march-of-the-machine", "eventId": "phyrexia-realmbreaker-invasion", "context": "O Quebra-reinos permite uma ofensiva forçada através das fronteiras planares." },
+      { "chapterId": "omenpaths", "eventId": "omenpaths-sparks-and-roads", "context": "Os Caminhos Pressagiados disponibilizam novas rotas para pessoas sem centelhas de planeswalker." }
+    ]
+  }
+}

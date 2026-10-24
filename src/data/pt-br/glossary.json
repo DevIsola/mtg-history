@@ -1,0 +1,52 @@
+{
+  "blind-eternities": {
+    "term": "Eternidades Cegas",
+    "summary": "O espaço perigoso entre planos atravessado pelos planeswalkers.",
+    "details": "Planeswalkers podem viajar entre mundos pelas Eternidades Cegas. Os Caminhos Pressagiados abriram outra possibilidade, menos previsível, para algumas pessoas sem centelhas."
+  },
+  "eldrazi": {
+    "term": "Eldrazi",
+    "summary": "Entidades antigas de além deste mundo cujo surgimento ameaçou Zendikar e outros planos.",
+    "details": "Os titãs Eldrazi foram aprisionados em Zendikar muito antes de seu despertar posterior. Os hedrons flutuantes são importantes para a história dessa prisão."
+  },
+  "guildpact": {
+    "term": "Pacto das Guildas",
+    "summary": "O acordo imposto por magia que governa as dez guildas de Ravnica.",
+    "details": "O Pacto das Guildas original restringia o conflito aberto entre as instituições concorrentes de Ravnica. Seu colapso e seus sucessores posteriores são acontecimentos separados na história do plano."
+  },
+  "omenpaths": {
+    "term": "Caminhos Pressagiados",
+    "summary": "Passagens interplanares que às vezes permitem a pessoas que não são planeswalkers viajar entre mundos.",
+    "details": "Após a invasão de Nova Phyrexia, os Caminhos Pressagiados abriram rotas pelo Multiverso. Os destinos e a permanência variam, de modo que sua existência não garante uma passagem controlada ou segura."
+  },
+  "phyrexia": {
+    "term": "Phyrexia",
+    "summary": "Um plano artificial e, posteriormente, uma ameaça multiversal associada a Yawgmoth e à transformação phyrexiana.",
+    "details": "Phyrexia surgiu como refúgio e domínio para Yawgmoth na era thran. Suas invasões e ideologias reaparecem ao longo dos capítulos posteriores; a invasão de Nova Phyrexia é uma crise posterior e distinta."
+  },
+  "planeswalker": {
+    "term": "Planeswalker",
+    "summary": "Uma pessoa capaz de viajar entre planos, tradicionalmente por meio de uma centelha de planeswalker acesa.",
+    "details": "Os poderes dos planeswalkers e sua relação com o Multiverso mudaram significativamente após a Reparação. Acontecimentos posteriores também removeram as centelhas de alguns planeswalkers, sem encerrar todas as viagens interplanares."
+  },
+  "powerstones": {
+    "term": "Pedras de poder",
+    "summary": "Cristais mágicos usados para armazenar e canalizar energia, centrais à criação de artefatos thran e, posteriormente, de Dominária.",
+    "details": "As pedras de poder alimentavam as máquinas thran e deixaram um legado tecnológico que moldou as descobertas de Urza e Mishra. Sua importância histórica não significa que toda pedra de poder posterior seja um artefato da era thran."
+  },
+  "the-mending": {
+    "term": "A Reparação",
+    "summary": "O reparo das fendas temporais de Dominária que mudou permanentemente os poderes dos planeswalkers.",
+    "details": "A Reparação culminou em sacrifícios que repararam danos generalizados à realidade. Também remodelou a natureza e os limites do poder dos planeswalkers nas histórias subsequentes."
+  },
+  "the-spark": {
+    "term": "Centelha de planeswalker",
+    "summary": "Um potencial mágico inato que pode se acender e permitir a viagem entre planos.",
+    "details": "Uma centelha distingue um planeswalker da maioria dos outros conjuradores. Sua perda muda a capacidade da pessoa de transpor os planos, mas não apaga necessariamente suas outras habilidades mágicas."
+  },
+  "thran": {
+    "term": "Os Thran",
+    "summary": "Uma civilização antiga de Dominária cuja tecnologia e colapso precederam a Guerra dos Irmãos.",
+    "details": "Os Thran construíram uma sociedade sofisticada alimentada por pedras de poder. Suas divisões internas e a ascensão de Yawgmoth foram centrais às origens de Phyrexia."
+  }
+}
