@@ -4,19 +4,76 @@ const chapter = '/mtg-history/chapters/war-of-the-spark/';
 
 test('opting into the illustration highlight never shifts its measured card position', async ({ page }) => {
   await page.goto(chapter);
+
   const moment = page.locator('.chapter-prose .historical-moment').first();
-  const trail = page.locator('[data-chapter-artwork-trail]');
-  await expect(trail).toBeVisible();
-  const toggle = trail.locator('[data-artwork-follow]');
-  const firstBox = await moment.boundingBox();
-  await toggle.check();
-  await expect(moment).toHaveAttribute('data-artwork-current', 'true');
-  const highlightedBox = await moment.boundingBox();
-  expect(highlightedBox?.height).toBeCloseTo(firstBox.height, 1);
-  await toggle.uncheck();
-  const restoredBox = await moment.boundingBox();
-  expect(restoredBox?.height).toBeCloseTo(firstBox.height, 1);
-  await expect(moment.locator('.historical-card__source')).toHaveAttribute('href', /scryfall\.com\/card\//);
+  await expect(page.locator('[data-chapter-artwork-trail]')).toBeVisible();
+  await expect(moment).toBeVisible();
+
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+  });
+
+  // Measure the visual change synchronously, without unrelated
+  // network, scroll, font or animation activity between samples.
+  const result = await page.evaluate(() => {
+    const card = document.querySelector(
+      '.chapter-prose .historical-moment'
+    );
+    const toggle = document.querySelector(
+      '[data-chapter-artwork-trail] [data-artwork-follow]'
+    );
+
+    if (!card || !(toggle instanceof HTMLInputElement)) {
+      throw new Error('Artwork highlight controls are missing');
+    }
+
+    const measure = () => {
+      const { x, y, width, height } = card.getBoundingClientRect();
+      return { x, y, width, height };
+    };
+
+    const initial = measure();
+    const initialShadow = getComputedStyle(card).boxShadow;
+
+    toggle.click();
+
+    const highlighted = {
+      box: measure(),
+      checked: toggle.checked,
+      current: card.dataset.artworkCurrent,
+      shadow: getComputedStyle(card).boxShadow,
+    };
+
+    toggle.click();
+
+    const restored = {
+      box: measure(),
+      checked: toggle.checked,
+      current: card.dataset.artworkCurrent,
+    };
+
+    return { initial, initialShadow, highlighted, restored };
+  });
+
+  expect(result.highlighted.checked).toBe(true);
+  expect(result.highlighted.current).toBe('true');
+  expect(result.highlighted.shadow).not.toBe(result.initialShadow);
+
+  expect(result.restored.checked).toBe(false);
+  expect(result.restored.current).toBeUndefined();
+
+  for (const box of [result.highlighted.box, result.restored.box]) {
+    for (const dimension of ['x', 'y', 'width', 'height']) {
+      expect(
+        Math.abs(box[dimension] - result.initial[dimension]),
+        `Highlight changed card ${dimension}`
+      ).toBeLessThanOrEqual(0.5);
+    }
+  }
+
+  await expect(
+    moment.locator('.historical-card__source')
+  ).toHaveAttribute('href', /scryfall[.]com[/]card[/]/);
 });
 
 test('chapter illustration reader remains usable at the narrowest and intermediate widths', async ({ page }) => {

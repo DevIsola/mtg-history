@@ -45,13 +45,17 @@ test('artwork dependency cannot be silently accepted as verified', () => {
   assert.match(read('docs/artwork-fidelity-ledger.tsv'), /omenpaths\tThe Kenriths' Royal Funeral\tscene\tcontemporary\tcontext-assessed\t/);
 });
 
-test('ROADMAP records local split while retaining stable invasion URL', () => {
+test('ROADMAP documents the merged split and preserves chapter order', () => {
   const roadmap = read('ROADMAP.md');
-  assert.match(roadmap, /Merged #155; Pages deployment passed/);
+
+  assert.match(roadmap, /PR #155/);
   assert.match(roadmap, /new-phyrexia/);
   assert.match(roadmap, /march-of-the-machine/);
-  assert.match(roadmap, /Omenpaths moves from order 10 to order 11/);
-  assert.match(read('src/content/chapters/march-of-the-machine.mdx'), /order:\s*10/);
+  assert.match(roadmap, /Omenpaths.*order 11/);
+
+  assert.match(read('src/content/chapters/new-phyrexia.mdx'), /^order:\s*9$/m);
+  assert.match(read('src/content/chapters/march-of-the-machine.mdx'), /^order:\s*10$/m);
+  assert.match(read('src/content/chapters/omenpaths.mdx'), /^order:\s*11$/m);
 });
 
 test('roadmap builder includes accessibility and dependency without falsifying risk score', () => {
