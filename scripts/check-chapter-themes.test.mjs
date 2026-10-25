@@ -9,7 +9,7 @@ const chapters = [...readFileSync(new URL('../src/data/eras.ts', import.meta.url
   .matchAll(/^\s+id: "([a-z0-9-]+)",/gm)].map((m) => m[1]);
 const good = {
   scss: palette, chapters, eras: chapters,
-  page: read('src/pages/chapters/[id].astro'),
+  page: read('src/components/ChapterReader.astro'),
   globalStyles: read('src/styles/global.scss'),
   manifest: JSON.parse(read('package.json')),
 };

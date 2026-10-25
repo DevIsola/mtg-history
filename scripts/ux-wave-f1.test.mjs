@@ -32,8 +32,8 @@ test('six network categories have distinct line colors, strong light/dark contra
 test('homepage illustration resolves one pinned chapter printing without fabricating an event scene', () => {
   const c = read('src/components/HomepageArtwork.astro');
   for (const token of ['getEntry(\'chapters\', chapterId)', 'chapterCardUse(chapter, 0, printings)', 'canonical.scryfallId',
-    'localizedArchiveCard(canonical, ptCatalog)', 'cardImageSrcset', 'displayed.scryfallUrl',
-    'canonical.significance', 'data-canonical-id', 'data-displayed-id']) assert.ok(c.includes(token), token);
+    'archiveCard(canonical, locale)', 'displayed.imageSrcset', 'displayed.scryfallUrl',
+    'editorialChapter.data.cards[0].significance', 'data-canonical-id', 'data-displayed-id']) assert.ok(c.includes(token), token);
   assert.match(c, /not independent historical proof/);
   assert.match(c, /loading=\{variant === 'hero'/);
 });
@@ -48,9 +48,11 @@ test('EN and PT-BR homepages share the editorial layout and live collection tota
     assert.match(home, /homepage-journey-grid/);
   }
   const pt = read('src/pages/pt-br/index.astro');
-  assert.match(pt, /locale="pt-BR"/);
-  assert.match(pt, /portugueseEra/);
-  assert.match(pt, /em inglês/);
+  assert.match(pt, /const locale = 'pt-BR' as const/);
+  assert.match(pt, /<BaseLayout locale=\{locale\}/);
+  assert.match(pt, /name: t\(era\.name\)/);
+  assert.match(pt, /localPath\('characters\/', locale\)/);
+  assert.doesNotMatch(pt, /adaptação condensada|não é uma tradução integral/i);
 });
 test('the graph uses theme-aware saturated strokes and distinct line patterns', () => {
   const graph = read('src/scripts/relationship-graph.ts');

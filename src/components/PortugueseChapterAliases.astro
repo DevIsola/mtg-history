@@ -1,0 +1,61 @@
+---
+import { getEntry, render } from 'astro:content';
+import aliases from '../data/pt-br/legacy-anchors.json';
+import { withBase } from '../utils/paths';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+interface Alias {
+  id: string;
+  headingIndex?: number;
+  targetChapterId?: string;
+  targetId?: string;
+  label?: string;
+}
+interface Props {
+  chapterId: string;
+  headings: Heading[];
+}
+
+const { chapterId, headings } = Astro.props;
+const entries = (aliases as Record<string, Alias[]>)[chapterId] ?? [];
+const chapterHeadings = new Map<string, Heading[]>([[chapterId, headings.filter(heading => heading.depth === 2)]]);
+const otherChapters = [...new Set(entries.map(entry => entry.targetChapterId).filter((id): id is string => Boolean(id && id !== chapterId)))];
+await Promise.all(otherChapters.map(async id => {
+  const chapter = await getEntry('chaptersPt', id);
+  if (!chapter) throw new Error(`Missing Portuguese legacy-anchor target chapter: ${id}`);
+  const rendered = await render(chapter);
+  chapterHeadings.set(id, rendered.headings.filter(heading => heading.depth === 2));
+}));
+const links = entries.map(entry => {
+  const targetChapter = entry.targetChapterId ?? chapterId;
+  const heading = entry.headingIndex === undefined ? undefined : chapterHeadings.get(targetChapter)?.[entry.headingIndex];
+  const targetId = entry.targetId ?? heading?.slug;
+  const label = entry.label ?? heading?.text;
+  if (!targetId || !label) throw new Error(`Unresolved Portuguese legacy anchor: ${chapterId}#${entry.id}`);
+  return {
+    id: entry.id,
+    label,
+    href: targetChapter === chapterId ? `#${targetId}` : withBase(`pt-br/chapters/${targetChapter}/#${targetId}`),
+  };
+});
+---
+
+<div class="portuguese-chapter-aliases" role="group" aria-label="Links de edições anteriores">
+  {links.map(link => (
+    <p id={link.id} class="legacy-alias" tabindex="-1">
+      Este link pertencia a uma edição anterior. Continue na seção correspondente da tradução integral:
+      <a href={link.href}>{link.label} →</a>
+    </p>
+  ))}
+</div>
+
+<style>
+  .legacy-alias { display: none; scroll-margin-block-start: 6rem; }
+  .legacy-alias:target { display: block; padding: 1rem; border: 1px solid var(--line); background: var(--paper-white); line-height: 1.6; }
+  .legacy-alias a { color: var(--link-color); text-decoration: underline; text-underline-offset: .2em; }
+  .legacy-alias a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+</style>

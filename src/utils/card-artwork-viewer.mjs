@@ -1,7 +1,7 @@
 import { canonicalPrintingId, cardImageSrcsetForPrinting, cardImageUrlForPrinting } from './card-images.mjs';
 
 /** Model a viewer from an existing canonical printing, never a name lookup. */
-export function buildCardArtworkViewerModel({ id, name, artist, setCode, collectorNumber, significance = '' }) {
+export function buildCardArtworkViewerModel({ id, name, artist, setCode, collectorNumber, significance = '' }, locale = 'en') {
   const printingId = canonicalPrintingId(id);
   if (typeof name !== 'string' || !name.trim() ||
       typeof artist !== 'string' || !artist.trim()) {
@@ -15,8 +15,8 @@ export function buildCardArtworkViewerModel({ id, name, artist, setCode, collect
   return {
     printingId,
     title: name.trim(),
-    alt: `${name.trim()}, illustrated by ${artist.trim()}`,
-    attribution: `Illustrated by ${artist.trim()} · ${set.toUpperCase()} #${collectorNumber}`,
+    alt: `${name.trim()}, ${locale === 'pt-BR' ? 'ilustrada por' : 'illustrated by'} ${artist.trim()}`,
+    attribution: `${locale === 'pt-BR' ? 'Ilustrada por' : 'Illustrated by'} ${artist.trim()} · ${set.toUpperCase()} #${collectorNumber}`,
     significance: typeof significance === 'string' ? significance : '',
     imageUrl: cardImageUrlForPrinting(printingId),
     imageSrcset: cardImageSrcsetForPrinting(printingId),

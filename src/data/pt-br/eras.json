@@ -1,0 +1,57 @@
+{
+  "thran": {
+    "name": "Os Thran e as origens de Phyrexia",
+    "kicker": "Antes dos irmãos",
+    "summary": "Explore a sociedade das pedras de poder de Halcyon, o levante dos Intocáveis, a ascensão de Yawgmoth, o portal de Dyfed, o sacrifício de Rebbec e as pedras que moldaram a Guerra dos Irmãos."
+  },
+  "brothers-war": {
+    "name": "A Guerra dos Irmãos",
+    "kicker": "Um mundo dividido",
+    "summary": "Das pedras de Koilos e da morte de Tocasia aos impérios rivais, à queda de Kroog, ao Terceiro Caminho, a Argoth e à recuperação de Kayla, o conflito dos irmãos refaz Terisiare."
+  },
+  "ice-age": {
+    "name": "A Escuridão e a Era Glacial",
+    "kicker": "Da escuridão ao degelo",
+    "summary": "Da perseguição talita e do Conclave de Mairsil aos thrulls e talídeos de Sarpadia, aos exércitos de Lim-Dûl e ao Feitiço Mundial de Freyalise, Dominária sobrevive ao longo inverno."
+  },
+  "weatherlight": {
+    "name": "A Saga de Bons Ventos",
+    "kicker": "O Legado e a invasão",
+    "summary": "Do projeto de Linhagens de Urza e do Reino de Serra à tripulação de Gerrard, a Mercádia, à Coalizão e ao feitiço final de Barrin, o Legado encerra a invasão de Yawgmoth a um imenso custo pessoal."
+  },
+  "otaria": {
+    "name": "O Mirari e Otaria",
+    "kicker": "Ambição, redenção e renascimento",
+    "summary": "Da Ordem e da Cabala a Kamahl, Chainer e Balthor, o Mirari corrompe os poderes rivais de Otaria antes que Jeska, Akroma e Zagorka convirjam como Karona."
+  },
+  "mending": {
+    "name": "Espiral Temporal e a Reparação",
+    "kicker": "O custo de reparar a realidade",
+    "summary": "Fendas temporais trazem histórias alternativas a Dominária; Jhoira e Venser enfrentam o tempo quebrado enquanto Leshrac explora Jeska antes dos sacrifícios que completam a Reparação."
+  },
+  "many-worlds": {
+    "name": "Histórias entre os planos",
+    "kicker": "Um Multiverso em expansão",
+    "summary": "O primeiro Pacto das Guildas de Ravnica desmorona, a prisão dos Eldrazi em Zendikar enfraquece e a crise da Câmara Infernal de Innistrad muda o destino da humanidade."
+  },
+  "war-of-the-spark": {
+    "name": "A Guerra da Centelha",
+    "kicker": "O destino de Ravnica",
+    "summary": "A Ponte Planar, o farol, o Sol Imortal e o Feitiço Ancião de Bolas aprisionam planeswalkers em Ravnica; defensores das guildas resistem à sua Horda Medonha, enquanto o sacrifício de Gideon e o renascimento de Niv-Mizzet moldam as consequências."
+  },
+  "new-phyrexia": {
+    "name": "A ascensão de Nova Phyrexia",
+    "kicker": "Mirrodin sob ocupação",
+    "summary": "A resistência mirraniana, os pretores rivais, a guerra dos agentes adormecidos em Dominária e o ataque fracassado ao Germinúcleo preparam o terreno para uma invasão interplanar."
+  },
+  "march-of-the-machine": {
+    "name": "A Marcha das Máquinas",
+    "kicker": "Um Multiverso em guerra",
+    "summary": "Quebra-reinos leva a invasão aos planos; a resistência local, Elspeth, Wrenn e Zhalfir ajudam a encerrar o domínio de Elesh Norn, deixando os sobreviventes diante de perdas irreversíveis."
+  },
+  "omenpaths": {
+    "name": "A era dos Caminhos Pressagiados",
+    "kicker": "Depois da invasão",
+    "summary": "Enquanto centelhas se apagam e Caminhos Pressagiados se abrem, Kellan viaja de Eldraine por Ixalan e Ravnica até Thunder Junction; Quintorius, Proft e Trostani revelam como as novas estradas se cruzam com histórias locais."
+  }
+}

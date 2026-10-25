@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 const base = '/mtg-history/';
-for (const [route, locale, minimum] of [['', 'en', 6], ['pt-br/', 'pt-BR', 5]]) {
+for (const [route, locale, minimum] of [['', 'en', 6], ['pt-br/', 'pt-BR', 6]]) {
   test(`F1 homepage ${locale}: authentic illustrated sections and responsive hierarchy`, async ({ page }) => {
     await page.goto(base + route);
     await expect(page.locator('html')).toHaveAttribute('lang', locale);

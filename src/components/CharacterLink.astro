@@ -1,6 +1,8 @@
 ---
+import { localeForPath, localPath } from '../utils/locale';
+
 import { characters } from '../data/characters';
-import { withBase } from '../utils/paths';
+import { localized } from '../utils/localization';
 import CardHoverPreview from './CardHoverPreview.astro';
 
 interface Props {
@@ -9,17 +11,20 @@ interface Props {
 
 const { id } = Astro.props;
 
-const character = characters.find((entry) => entry.id === id);
+const canonicalCharacter = characters.find((entry) => entry.id === id);
 
-if (!character) {
+if (!canonicalCharacter) {
   throw new Error(`Unknown historical character: ${id}`);
 }
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const character = localized('characters', canonicalCharacter, pageLocale);
 ---
 
 <CardHoverPreview name={character.name} cardId={character.featuredCardId}>
   <a
     class="character-inline-link"
-    href={withBase(`characters/${character.id}/`)}
+    href={localPath(`characters/${character.id}/`, pageLocale)}
   >
     <slot>{character.name}</slot>
   </a>

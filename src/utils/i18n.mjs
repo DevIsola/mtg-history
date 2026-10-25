@@ -1,4 +1,6 @@
-/** Phase 2 translates navigation and directory interfaces; historical records remain English. */
+import translatedRoutes from '../data/translated-routes.json' with { type: 'json' };
+
+/** Locale pairs are restricted to the generated canonical route manifest. */
 export const LANGUAGES = Object.freeze(['en', 'pt-BR']);
 
 const strings = {
@@ -13,11 +15,11 @@ const strings = {
     credit: 'Created and maintained with love 🖤 by',
   },
   'pt-BR': {
-    navigation: ['Início', 'Descobrir (EN)', 'Buscar', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre (EN)'],
+    navigation: ['Início', 'Descobrir', 'Buscar', 'Cronologia', 'Personagens', 'Arquivo', 'Sobre'],
     navAria: 'Navegação principal', mobileAria: 'Navegação móvel', toggle: 'Abrir navegação',
     menu: 'Menu', skip: 'Pular para o conteúdo', homeAria: 'Chronicles of the Multiverse, início',
     footerIntro: 'Um guia histórico independente sobre as histórias de Magic: The Gathering.',
-    footerLinks: ['Linha do tempo', 'Glossário (EN)', 'Sobre o projeto (EN)'],
+    footerLinks: ['Linha do tempo', 'Glossário', 'Sobre o projeto'],
     supportAria: 'Apoie DevIsola no Ko-fi', support: 'Apoiar no Ko-fi ↗',
     legal: 'Conteúdo não oficial de fãs, sem aprovação ou endosso da Wizards of the Coast. Magic: The Gathering e marcas relacionadas pertencem à Wizards of the Coast.',
     credit: 'Criado e mantido com carinho 🖤 por',
@@ -43,15 +45,14 @@ export function homeAlternates(origin, base = '/mtg-history/') {
   ];
 }
 
-// Only directory UIs with actual Portuguese counterparts participate in hreflang.
-export const TRANSLATED_SUFFIXES = Object.freeze(['', 'search/', 'explore/', 'timeline/', 'characters/', 'events/', 'archive/']);
+export const TRANSLATED_SUFFIXES = Object.freeze([...translatedRoutes]);
+const translatedRouteSet = new Set(TRANSLATED_SUFFIXES);
 
 export function translatedSuffix(pathname, base = '/mtg-history/') {
-  if (typeof pathname !== 'string' || !base.startsWith('/') || !base.endsWith('/')) return null;
-  for (const suffix of TRANSLATED_SUFFIXES) {
-    if (pathname === `${base}${suffix}` || pathname === `${base}pt-br/${suffix}`) return suffix;
-  }
-  return null;
+  if (typeof pathname !== 'string' || typeof base !== 'string' || !base.startsWith('/') || !base.endsWith('/') || !pathname.startsWith(base)) return null;
+  const relative = pathname.slice(base.length);
+  const suffix = relative.startsWith('pt-br/') ? relative.slice('pt-br/'.length) : relative;
+  return translatedRouteSet.has(suffix) ? suffix : null;
 }
 
 export function isTranslatedRoute(pathname, base = '/mtg-history/') {

@@ -1,4 +1,6 @@
 ---
+import { localeForPath, phrase } from '../utils/locale';
+
 interface Heading {
   depth: number;
   slug: string;
@@ -12,11 +14,14 @@ interface Props {
 
 const { headings, hasSources = false } = Astro.props;
 const sections = headings.filter((heading) => heading.depth === 2);
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 ---
 
-<nav class="chapter-toc" aria-label="Chapter contents" data-chapter-toc>
+<nav class="chapter-toc" aria-label={t("Chapter contents")} data-chapter-toc>
   <div class="chapter-toc__toolbar">
-    <p class="eyebrow">In this chapter</p>
+    <p class="eyebrow">{t("In this chapter")}</p>
     <span class="chapter-toc__count" data-chapter-count>
       01 / {String(sections.length).padStart(2, '0')}
     </span>
@@ -30,7 +35,7 @@ const sections = headings.filter((heading) => heading.depth === 2);
     data-chapter-toggle
   >
     <span class="chapter-toc__mobile-label" data-chapter-label>
-      Jump to section
+      {t("Jump to section")}
     </span>
     <span class="chapter-toc__chevron" aria-hidden="true">⌄</span>
   </button>
@@ -59,7 +64,7 @@ const sections = headings.filter((heading) => heading.depth === 2);
         href="#chapter-sources"
         data-chapter-sources
       >
-        Sources &amp; further reading
+        {t("Sources & further reading")}
       </a>
     )}
   </div>
@@ -70,6 +75,9 @@ const sections = headings.filter((heading) => heading.depth === 2);
 </nav>
 
 <script>
+  import { localeForPath, phrase } from '../utils/locale';
+  const locale = localeForPath(window.location.pathname);
+  const t = (english: string) => phrase(locale, english);
   const toc = document.querySelector<HTMLElement>('[data-chapter-toc]');
 
   if (toc) {
@@ -161,15 +169,15 @@ const sections = headings.filter((heading) => heading.depth === 2);
 
       if (count) {
         count.textContent = onSources
-          ? 'Sources'
+          ? t("Sources")
           : String(activeIndex + 1).padStart(2, '0') + ' / ' +
             String(sectionLinks.length).padStart(2, '0');
       }
 
       if (label) {
         label.textContent = onSources
-          ? 'Sources & further reading'
-          : (sectionLinks[activeIndex]?.textContent ?? 'Jump to section')
+          ? t("Sources & further reading")
+          : (sectionLinks[activeIndex]?.textContent ?? t("Jump to section"))
               .trim()
               .replace(/^\d+\s*/, '');
       }

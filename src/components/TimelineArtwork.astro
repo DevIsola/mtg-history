@@ -1,28 +1,41 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
+import { chapterCardUse } from '../utils/card-printings';
+import { archiveCard, cardLabels } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
 
-interface Props { chapter: CollectionEntry<'chapters'>; }
+interface Props { chapter: CollectionEntry<'chapters'> | CollectionEntry<'chaptersPt'>; }
 const { chapter } = Astro.props;
+const locale = localeForPath(Astro.url.pathname);
+const pt = locale === 'pt-BR';
+const labels = cardLabels(locale);
+const canonicalChapter = chapter.collection === 'chapters' ? chapter : await getEntry('chapters', chapter.id);
+if (!canonicalChapter) throw new Error(`Timeline: missing canonical chapter ${chapter.id}`);
+const editorialChapter = pt && chapter.collection !== 'chaptersPt' ? await getEntry('chaptersPt', chapter.id) : chapter;
+if (!editorialChapter) throw new Error(`Timeline: missing localized chapter ${chapter.id}`);
 const printings = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
-const card = chapterCardUse(chapter, 0, printings);
-const source = cardScryfallUrl(card);
+const canonical = chapterCardUse(canonicalChapter, 0, printings);
+const card = archiveCard(canonical, locale);
+const significance = editorialChapter.data.cards[0].significance;
+const source = card.scryfallUrl;
 ---
-<figure class="atlas-era__artwork" data-timeline-artwork data-printing-id={card.scryfallId}>
-  <a href={source} target="_blank" rel="noopener noreferrer" aria-label={`View the exact ${card.name} printing on Scryfall`}>
-    <img src={cardImageUrl(card.scryfallId)} srcset={cardImageSrcset(card.scryfallId)}
+<figure class="atlas-era__artwork" data-timeline-artwork data-printing-id={card.printingId} data-canonical-id={card.canonicalId} data-language={card.language}>
+  <a href={source} target="_blank" rel="noopener noreferrer" aria-label={pt ? `Ver a impressão exata de ${card.name} no Scryfall` : `View the exact ${card.name} printing on Scryfall`}>
+    <img src={card.imageUrl} srcset={card.imageSrcset}
       sizes="(max-width: 900px) 180px, 230px" width="488" height="680"
       loading="lazy" decoding="async"
-      alt={`${card.name}, a curated card illustration by ${card.artist}`} />
+      alt={pt ? `${card.name}, uma ilustração de carta selecionada de ${card.artist}` : `${card.name}, a curated card illustration by ${card.artist}`} />
   </a>
   <figcaption>
-    <span class="atlas-era__artwork-label">Curated illustration · not a literal event photograph</span>
+    <span class="atlas-era__artwork-label">{pt ? 'Ilustração selecionada · não é uma fotografia literal do acontecimento' : 'Curated illustration · not a literal event photograph'}</span>
+    {pt && <span class="atlas-era__artwork-label">{card.translated ? labels.language : labels.fallback}</span>}
     <strong>{card.name}</strong>
     <span class="atlas-era__artwork-credit">{card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</span>
     <details class="atlas-era__artwork-context">
-      <summary>Why this illustration appears</summary>
-      <p>{card.significance}</p>
+      <summary>{pt ? 'Por que esta ilustração aparece' : 'Why this illustration appears'}</summary>
+      <p>{significance}</p>
+      {pt && <a href={card.originalUrl} target="_blank" rel="noopener noreferrer">{labels.original}</a>}
     </details>
   </figcaption>
 </figure>

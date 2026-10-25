@@ -7,8 +7,8 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const consumers = Object.freeze({
   'src/components/HistoricalCard.astro': ['srcset={imageSrcset}', 'sizes='],
   'src/pages/archive/index.astro': ['srcset={card.imageSrcset}', 'sizes='],
-  'src/pages/discover/index.astro': ['srcset={record.imageSrcset}', 'sizes='],
-  'src/pages/events/index.astro': ['srcset={imageSrcset}', 'sizes='],
+  'src/components/pages/DiscoveryDirectory.astro': ['srcset={record.imageSrcset}', 'sizes='],
+  'src/components/pages/EventDirectory.astro': ['srcset={imageSrcset}', 'sizes='],
   'src/components/CardHoverPreview.astro': ['data-card-image-set={imageSrcset}', 'image.srcset ='],
 });
 

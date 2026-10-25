@@ -1,7 +1,8 @@
 
 ---
 import { getEntry } from 'astro:content';
-import { cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
+import { archiveCard, cardLabels } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
 
 type HistoricalCardData = { scryfallId: string; significance: string };
 
@@ -15,23 +16,28 @@ const printing = await getEntry('cards', legacyCard.scryfallId);
 if (!printing) throw new Error(`Missing canonical card ${legacyCard.scryfallId}`);
 // Printing fields come only from the canonical collection. Significance is local.
 const card = { ...printing.data, scryfallId: printing.id, significance: legacyCard.significance };
-const imageUrl = cardImageUrl(printing.id);
-const imageSrcset = cardImageSrcset(printing.id);
-const cardUrl = cardScryfallUrl(card);
+const locale = localeForPath(Astro.url.pathname);
+const pt = locale === 'pt-BR';
+const labels = cardLabels(locale);
+const displayed = archiveCard(card, locale);
+const imageUrl = displayed.imageUrl;
+const imageSrcset = displayed.imageSrcset;
+const cardUrl = displayed.scryfallUrl;
 ---
 
-<figure class={compact ? 'historical-card historical-card--plate' : 'historical-card'}>
+<figure class={compact ? 'historical-card historical-card--plate' : 'historical-card'}
+  data-canonical-id={printing.id} data-displayed-id={displayed.printingId} data-language={displayed.language}>
   <a
     href={cardUrl}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label={`View ${card.name} on Scryfall`}
+    aria-label={pt ? `Ver ${displayed.name} no Scryfall` : `View ${card.name} on Scryfall`}
   >
     <img
       src={imageUrl}
       srcset={imageSrcset}
       sizes="(max-width: 600px) 85vw, 488px"
-      alt={`${card.name}, illustrated by ${card.artist}`}
+      alt={`${displayed.name}, ${pt ? 'ilustração de' : 'illustrated by'} ${displayed.artist}`}
       width="488"
       height="680"
       loading="lazy"
@@ -40,11 +46,12 @@ const cardUrl = cardScryfallUrl(card);
   </a>
 
   <figcaption class="historical-card__caption">
-    <h3>{card.name}</h3>
+    <h3>{displayed.name}</h3>
+    {pt && <p class="historical-card__language">{displayed.translated ? labels.language : labels.fallback}</p>}
 
     {compact ? (
       <details class="historical-card__interpretation">
-        <summary>Art and historical context</summary>
+        <summary>{labels.artContext}</summary>
         <p class="historical-card__significance">{card.significance}</p>
       </details>
     ) : (
@@ -52,7 +59,7 @@ const cardUrl = cardScryfallUrl(card);
     )}
 
     <p class="historical-card__credit">
-      Illustrated by {card.artist}
+      {labels.illustratedBy} {displayed.artist}
       · {card.setCode.toUpperCase()}
       #{card.collectorNumber}
     </p>
@@ -63,23 +70,28 @@ const cardUrl = cardScryfallUrl(card);
       target="_blank"
       rel="noopener noreferrer"
     >
-      View card on Scryfall ↗
+      {labels.viewCard}
     </a>
+    {pt && displayed.translated && <a class="historical-card__source" href={displayed.originalUrl} target="_blank" rel="noopener noreferrer">{labels.original}</a>}
     <button
       class="historical-card__enlarge"
       type="button"
       hidden
       data-card-artwork-open
-      data-printing-id={printing.id}
-      data-card-name={card.name}
-      data-card-artist={card.artist}
+      data-canonical-id={printing.id}
+      data-printing-id={displayed.printingId}
+      data-card-source={cardUrl}
+      data-card-original-source={displayed.originalUrl}
+      data-card-language={displayed.language}
+      data-card-name={displayed.name}
+      data-card-artist={displayed.artist}
       data-card-set={card.setCode}
       data-card-number={card.collectorNumber}
       data-card-significance={card.significance}
       aria-haspopup="dialog"
       aria-controls="card-artwork-viewer"
     >
-      Enlarge card image
+      {labels.enlarge}
     </button>
   </figcaption>
 </figure>
@@ -173,7 +185,8 @@ const cardUrl = cardScryfallUrl(card);
     margin-top: 0.25rem;
   }
 
-  .historical-card__credit {
+  .historical-card__credit,
+  .historical-card__language {
     margin-top: 1rem;
     font-size: 0.75rem;
     color: var(--jade);

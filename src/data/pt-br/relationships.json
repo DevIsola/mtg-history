@@ -1,0 +1,592 @@
+{
+  "aboshan--laquatus--rivalry--otaria": {
+    "labelForA": "Imperador e obstáculo político",
+    "labelForB": "Ambicioso diplomata da corte",
+    "context": "Laquatus conspirava em torno do governo de Aboshan e do Mirari, enquanto o uso desastroso do artefato pelo imperador prejudicou o império submarino."
+  },
+  "agrus-kos--szadek--rivalry--many-worlds": {
+    "labelForA": "Suspeito de conspiração",
+    "labelForB": "Investigador wojek",
+    "context": "Agrus Kos perseguiu a conspiração oculta de Szadek, mas a prisão do vampiro estava entrelaçada à destruição do primeiro Pacto das Guildas."
+  },
+  "agrus-kos--teysa-karlov--alliance--many-worlds": {
+    "labelForA": "Aliada política Orzhov",
+    "labelForB": "Investigador Boros",
+    "context": "Agrus e Teysa trabalharam além das fronteiras das guildas enquanto Ravnica enfrentava as consequências do Pacto das Guildas rompido."
+  },
+  "ajani--jaya--rivalry--new-phyrexia": {
+    "labelForA": "Heroína morta durante sua corrupção",
+    "labelForB": "Aliado de confiança transformado em agente adormecido",
+    "context": "A completação de Ajani possibilitou a traição de Phyrexia à coalizão de Dominária e a morte de Jaya."
+  },
+  "akroma--ixidor--creation--otaria": {
+    "labelForA": "Anjo criado a partir do luto",
+    "labelForB": "Criador que esculpe a realidade",
+    "context": "Ixidor criou Akroma com sua magia de moldar a realidade após a morte de Nivea e a direcionou à vingança contra Phage."
+  },
+  "akroma--jeska--rivalry--otaria": {
+    "labelForA": "Phage, alvo de sua vingança",
+    "labelForB": "Anjo que buscava sua morte",
+    "context": "Como Phage, Jeska se tornou inimiga de Akroma. A escalada do conflito entre elas culminou em sua fusão com Zagorka em Karona."
+  },
+  "akroma--kamahl--rivalry--otaria": {
+    "labelForA": "Anjo vingativo e ameaça a Krosa",
+    "labelForB": "Druida que defendia a irmã e a floresta",
+    "context": "Kamahl se opôs ao conflito destrutivo envolvendo Akroma e Phage e acabou atingindo ambas com o machado Ceifadora de Almas durante o confronto que criou Karona."
+  },
+  "alquist-proft--kellan--alliance--omenpaths": {
+    "labelForA": "Jovem aliado na investigação",
+    "labelForB": "Detetive e guia de Ravnica",
+    "context": "Kellan trabalhou com Alquist Proft durante os assassinatos da Mansão Karlov, conectando suas viagens pelos Caminhos Pressagiados à própria crise jurídica da cidade."
+  },
+  "alquist-proft--trostani--rivalry--omenpaths": {
+    "labelForA": "Oba, exposta como assassina",
+    "labelForB": "Investigador que revelou as ações de Oba",
+    "context": "A investigação de Proft revelou a culpabilidade de Oba dentro de Trostani sem tornar Cim e Ses cúmplices conscientes."
+  },
+  "ashnod--mishra--alliance--brothers-war": {
+    "labelForA": "Artífice e tenente",
+    "labelForB": "Comandante e patrono",
+    "context": "Ashnod trabalhou no esforço de guerra de Mishra, mas sua independência e suas decisões acabaram colocando-a em conflito com as ambições dele."
+  },
+  "ashnod--tawnos--friendship--brothers-war": {
+    "labelForA": "Amigo do outro lado das linhas inimigas",
+    "labelForB": "Amiga do outro lado das linhas inimigas",
+    "context": "Apesar de servirem a exércitos opostos, Ashnod e Tawnos desenvolveram uma conexão pessoal importante. Mais tarde, Ashnod ajudou Tawnos a escapar do cativeiro."
+  },
+  "avacyn--griselbrand--rivalry--many-worlds": {
+    "labelForA": "Demônio que a aprisionou",
+    "labelForB": "Adversária angelical",
+    "context": "Griselbrand atraiu Avacyn ao Elocárcere, aprisionando a si mesmo e ao anjo enquanto as proteções da igreja desmoronavam."
+  },
+  "avacyn--sorin--creation--many-worlds": {
+    "labelForA": "Guardiã angelical criada",
+    "labelForB": "Criador e protetor",
+    "context": "Sorin criou Avacyn para preservar a humanidade de Innistrad e o equilíbrio entre seus povos e monstros."
+  },
+  "balthor--kamahl--mentorship--otaria": {
+    "labelForA": "Pupilo bárbaro",
+    "labelForB": "Líder anão e mentor",
+    "context": "Balthor liderou os guerreiros bárbaros e orientou Kamahl antes de a morte e a reanimação mudarem seu lugar na história de Otaria."
+  },
+  "barrin--hanna--family--weatherlight": {
+    "labelForA": "Filha e navegadora",
+    "labelForB": "Pai e diretor de Tolaria",
+    "context": "O trabalho de Barrin na Academia de Urza se cruzou com o serviço de Hanna a bordo de Bons Ventos; a morte dela foi central para seu feitiço final."
+  },
+  "braids--cabal-patriarch--alliance--otaria": {
+    "labelForA": "Líder da Cabala",
+    "labelForB": "Agente imprevisível",
+    "context": "Braids operava na esfera de influência da Cabala e ajudou a devolver o Mirari ao controle da instituição após sua passagem por mãos rivais."
+  },
+  "braids--chainer--alliance--otaria": {
+    "labelForA": "Companheiro de operações da Cabala",
+    "labelForB": "Colega invocadora de demência",
+    "context": "Chainer e Braids eram membros da Cabala cujas atividades separadas os envolveram na crise do Mirari quando o artefato retornou à Cidade da Cabala."
+  },
+  "cabal-patriarch--chainer--alliance--otaria": {
+    "labelForA": "Patrono da Cabala e futuro rival",
+    "labelForB": "Protegido que se tornou usurpador",
+    "context": "Chainer inicialmente entregou o Mirari recém-descoberto ao Primeiro e depois acabou usando seu poder para remover o Patriarca da Cidade da Cabala."
+  },
+  "cabal-patriarch--jeska--rivalry--otaria": {
+    "labelForA": "Guerreira ferida transformada em Phage",
+    "labelForB": "Autoridade da Cabala por trás de sua transformação",
+    "context": "A intervenção da Cabala transformou Jeska, ferida pelo Mirari, em Phage, cujo poder mortal se tornou útil às arenas e aos objetivos políticos do Patriarca."
+  },
+  "cabal-patriarch--laquatus--rivalry--otaria": {
+    "labelForA": "Rival político da Cabala",
+    "labelForB": "Concorrente tritão manipulador",
+    "context": "Laquatus e o Patriarca da Cabala perseguiam ambições conflitantes pelo Mirari e manobravam para explorar as vulnerabilidades um do outro."
+  },
+  "cabal-patriarch--lieutenant-kirtar--rivalry--otaria": {
+    "labelForA": "Governante da Cabala e rival",
+    "labelForB": "Oficial da Ordem",
+    "context": "A Ordem de Kirtar se opunha à Cabala, e sua reivindicação ao Mirari levou essa rivalidade à perigosa disputa pela custódia do artefato."
+  },
+  "chainer--kamahl--friendship--otaria": {
+    "labelForA": "Amigo",
+    "labelForB": "Amigo",
+    "context": "Kamahl e Chainer formaram uma amizade improvável durante os conflitos em torno do Mirari."
+  },
+  "chandra--jaya--mentorship--new-phyrexia": {
+    "labelForA": "Piromante promissora",
+    "labelForB": "Mentora cuja morte a impulsionou",
+    "context": "Os ensinamentos de Jaya moldaram Chandra; sua morte durante Dominaria United deu à invasão final um custo intensamente pessoal."
+  },
+  "chandra--nissa--alliance--march-of-the-machine": {
+    "labelForA": "Pessoa amada perdida para a completação",
+    "labelForB": "Companheira que buscou sua recuperação",
+    "context": "Chandra combateu Phyrexia sem abrir mão da esperança por Nissa, que depois sobreviveu ao tratamento de Melira e Karn."
+  },
+  "chandra--wrenn--alliance--march-of-the-machine": {
+    "labelForA": "Amiga que a ajudou a alcançar a árvore",
+    "labelForB": "Dríade cujo sacrifício encerrou a invasão",
+    "context": "Chandra ajudou na tentativa final de Wrenn de se vincular a Quebra-reinos (Realmbreaker) e reverter a rede interplanar dos invasores."
+  },
+  "crovax--ertai--alliance--weatherlight": {
+    "labelForA": "Mago corrompido e auxiliar",
+    "labelForB": "Evincar e mestre phyrexiano",
+    "context": "A transformação de Ertai em Rath o levou ao serviço de Crovax; ele ajudou Crovax a derrotar Volrath e reivindicar o título de evincar."
+  },
+  "crovax--gerrard--rivalry--weatherlight": {
+    "labelForA": "Companheiro caído da tripulação",
+    "labelForB": "Antigo companheiro de navio e adversário",
+    "context": "Crovax havia navegado com Gerrard, mas traiu a tripulação após sua transformação em vampiro, matando Mirri e depois servindo a Phyrexia."
+  },
+  "crovax--mirri--rivalry--weatherlight": {
+    "labelForA": "Antiga companheira de navio e vítima",
+    "labelForB": "Antigo aliado e assassino",
+    "context": "Crovax matou Selenia para salvar Mirri, mas foi amaldiçoado; depois que ela o seguiu para longe de Bons Ventos, ele a matou."
+  },
+  "crovax--selenia--rivalry--weatherlight": {
+    "labelForA": "Preso pelo amor e por uma maldição fatal",
+    "labelForB": "Anjo cuja liberdade foi negada",
+    "context": "Crovax libertou Selenia do artefato da família, mas Volrath a prendeu a Rath. O trágico reencontro deles na Fortaleza terminou quando Crovax a matou para salvar Mirri, cumprindo a maldição. A classificação de rivalidade descreve seu conflito coagido, não uma hostilidade escolhida livremente."
+  },
+  "crovax--volrath--rivalry--weatherlight": {
+    "labelForA": "Antigo evincar e rival",
+    "labelForB": "Sucessor e assassino",
+    "context": "Com a ajuda de Ertai, Crovax matou Volrath após o retorno do metamorfo de Mercadia e se tornou o novo evincar de Rath."
+  },
+  "dovin-baan--nicol-bolas--alliance--war-of-the-spark": {
+    "labelForA": "Conspirador que apoiou",
+    "labelForB": "Administrador Azorius",
+    "context": "Dovin usou o Senado de Ravnica para suprimir a resistência e ajudar o plano de Bolas."
+  },
+  "dovin-baan--ral-zarek--rivalry--war-of-the-spark": {
+    "labelForA": "Colaborador Azorius",
+    "labelForB": "Adversário Izzet",
+    "context": "Ral ajudou Ravnica a resistir ao plano que Dovin apoiava por meio do controle do Senado Azorius."
+  },
+  "elesh-norn--elspeth--rivalry--march-of-the-machine": {
+    "labelForA": "Adversária angelical",
+    "labelForB": "Perseguidora e arquiteta da conquista",
+    "context": "Elspeth retornou transformada para confrontar Norn e manter viva a resistência final enquanto Wrenn alcançava a árvore."
+  },
+  "elesh-norn--jin-gitaxias--alliance--new-phyrexia": {
+    "labelForA": "Pesquisador da Hoste Cromada",
+    "labelForB": "Soberana que usou suas descobertas",
+    "context": "O trabalho de Jin-Gitaxias em Kamigawa e sua estratégica Hoste Cromada apoiaram a invasão de Norn, apesar das visões diferentes de perfeição dos pretores."
+  },
+  "elesh-norn--karn--rivalry--march-of-the-machine": {
+    "labelForA": "Criador de Mirrodin",
+    "labelForB": "Pretora que ele finalmente desmontou",
+    "context": "Karn assumiu a responsabilidade pelo destino do plano que criou e encerrou pessoalmente a tentativa de conquista multiversal de Norn."
+  },
+  "elesh-norn--sheoldred--rivalry--new-phyrexia": {
+    "labelForA": "Pretora rival",
+    "labelForB": "Líder autoritária da Ortodoxia",
+    "context": "As duas pretoras perseguiam o domínio phyrexiano com ambições conflitantes, expondo fraturas sob a retórica de unidade de Norn."
+  },
+  "elesh-norn--urabrask--rivalry--new-phyrexia": {
+    "labelForA": "Dissidente das fornalhas",
+    "labelForB": "Governante da Ortodoxia que ele desafiou",
+    "context": "Urabrask tolerava sobreviventes mirranianos e se rebelou contra a conformidade forçada de Norn; a punição que ela lhe impôs revelou os conflitos internos do império."
+  },
+  "elesh-norn--vorinclex--alliance--new-phyrexia": {
+    "labelForA": "Emissário à Árvore do Mundo",
+    "labelForB": "Pretora que encomendou o roubo",
+    "context": "A expedição de Vorinclex a Kaldheim deu a Norn a essência da Árvore do Mundo que tornou Quebra-reinos (Realmbreaker) possível."
+  },
+  "elspeth--koth--alliance--march-of-the-machine": {
+    "labelForA": "Defensora dos mirranianos que retornou",
+    "labelForB": "Líder inflexível da resistência mirraniana",
+    "context": "Koth e Elspeth lutaram em nome de Mirrodin, e o retorno transformado dela ajudou a proteger seu povo sobrevivente."
+  },
+  "emrakul--nahiri--rivalry--many-worlds": {
+    "labelForA": "Titã aprisionada",
+    "labelForB": "Arquiteta da prisão de edros",
+    "context": "Nahiri ajudou a construir a rede de proteções que confinou Emrakul e os outros titãs Eldrazi a Zendikar."
+  },
+  "ertai--hanna--alliance--weatherlight": {
+    "labelForA": "Mago de Tolaria da tripulação",
+    "labelForB": "Navegadora e artífice",
+    "context": "Hanna e Ertai levaram conhecimento de Tolaria a bordo de Bons Ventos durante a missão de resgate em Rath."
+  },
+  "ertai--sisay--alliance--weatherlight": {
+    "labelForA": "Mago da tripulação",
+    "labelForB": "Capitã",
+    "context": "Ertai serviu à missão de Bons Ventos e manteve aberto o portal que a tripulação usou para escapar de Rath, mas foi deixado preso lá."
+  },
+  "freyalise--jodah--alliance--ice-age": {
+    "labelForA": "Conjuradora do Feitiço Mundial",
+    "labelForB": "Portador do espelho",
+    "context": "Jodah possuía um espelho encantado que ajudou Freyalise a conjurar o Feitiço Mundial e encerrar a Era Glacial de Dominária."
+  },
+  "freyalise--radha--alliance--mending": {
+    "labelForA": "Guerreira de Keld e de ascendência élfica ligada a Skyshroud",
+    "labelForB": "Guardiã da floresta",
+    "context": "A conexão de Radha com a mana das fendas a colocou na disputa por Skyshroud, a floresta deslocada que Freyalise se sacrificou para proteger."
+  },
+  "gerrard--hanna--friendship--weatherlight": {
+    "labelForA": "Antiga companheira e colega de navio",
+    "labelForB": "Antigo companheiro e colega de navio",
+    "context": "Hanna e Gerrard compartilhavam um passado amoroso, abalado quando Gerrard abandonou Bons Ventos; seu retorno os reuniu novamente antes de a invasão tirar a vida de Hanna."
+  },
+  "gerrard--karn--alliance--weatherlight": {
+    "labelForA": "Companheiro de Bons Ventos",
+    "labelForB": "Companheiro de Bons Ventos",
+    "context": "Karn e Gerrard serviram a bordo de Bons Ventos e ajudaram a levar o Legado a seu propósito final."
+  },
+  "gerrard--mirri--friendship--weatherlight": {
+    "labelForA": "Amiga e companheira de longa data",
+    "labelForB": "Amigo e companheiro de longa data",
+    "context": "Gerrard e Mirri cresceram juntos, e ela o acompanhou a bordo de Bons Ventos até sua morte pelas mãos de Crovax."
+  },
+  "gerrard--multani--mentorship--weatherlight": {
+    "labelForA": "Mestre de Yavimaya",
+    "labelForB": "Antigo pupilo",
+    "context": "Multani instruiu Gerrard em Yavimaya antes que a missão de resgate de Bons Ventos o obrigasse a enfrentar seu destino."
+  },
+  "gerrard--rofellos--friendship--weatherlight": {
+    "labelForA": "Companheiro perdido",
+    "labelForB": "Amigo que deixou o navio após sua morte",
+    "context": "Os dois estudaram juntos com Multani; a morte de Rofellos contribuiu para o afastamento de Gerrard do navio."
+  },
+  "gerrard--sisay--alliance--weatherlight": {
+    "labelForA": "Capitã e aliada de confiança",
+    "labelForB": "Herói do Legado e tripulante",
+    "context": "Sisay acreditava no papel de Gerrard no Legado, e seu sequestro o trouxe de volta à missão de Bons Ventos."
+  },
+  "gerrard--urza--rivalry--weatherlight": {
+    "labelForA": "Herói do Legado e adversário na arena",
+    "labelForB": "Arquiteto do Legado e adversário na arena",
+    "context": "Urza arquitetou o Legado que moldou a vida de Gerrard. Sob a influência de Yawgmoth, os dois lutaram um contra o outro em uma arena, onde Gerrard decapitou Urza."
+  },
+  "gerrard--volrath--rivalry--weatherlight": {
+    "labelForA": "Irmão adotivo e inimigo",
+    "labelForB": "Irmão adotivo e rival",
+    "context": "Os meninos Gerrard e Vuel cresceram juntos, mas Vuel mais tarde se tornou Volrath, evincar de Rath e principal antagonista da missão de resgate de Bons Ventos."
+  },
+  "gideon-jura--liliana-vess--alliance--war-of-the-spark": {
+    "labelForA": "Aliada que ele protegeu",
+    "labelForB": "Aliado que deu a vida",
+    "context": "Gideon sofreu a consequência letal destinada a Liliana após ela desafiar Bolas."
+  },
+  "gideon-jura--nicol-bolas--rivalry--war-of-the-spark": {
+    "labelForA": "Inimigo que ameaçava Ravnica",
+    "labelForB": "Adversário dos Sentinelas",
+    "context": "Gideon ajudou a defender Ravnica da invasão de Bolas e de sua tentativa de colher centelhas."
+  },
+  "gix--glacian--rivalry--thran": {
+    "labelForA": "Engenheiro de pedras de poder que ele atacou",
+    "labelForB": "Rebelde que o feriu",
+    "context": "Antes de sua completação, Gix lutava pelos Intocáveis excluídos de Halcyon e feriu Glacian com um fragmento de pedra de poder durante sua revolta."
+  },
+  "gix--mishra--alliance--brothers-war": {
+    "labelForA": "Patrono phyrexiano",
+    "labelForB": "Aliado manipulado",
+    "context": "Gix explorou a Guerra dos Irmãos para estender a influência phyrexiana, atraindo Mishra cada vez mais para suas máquinas e ambições."
+  },
+  "gix--yawgmoth--alliance--brothers-war": {
+    "labelForA": "Pretor e agente",
+    "labelForB": "Mestre",
+    "context": "Gix serviu a Yawgmoth e promoveu os interesses phyrexianos em Dominária durante a Guerra dos Irmãos."
+  },
+  "glacian--rebbec--family--thran": {
+    "labelForA": "Esposa",
+    "labelForB": "Marido",
+    "context": "Glacian e Rebbec eram casados e estavam entre as figuras mais talentosas do Império Thran. As pedras de poder de Glacian sustentavam as realizações arquitetônicas de Rebbec, e a doença dele a levou a buscar tratamento com Yawgmoth."
+  },
+  "glacian--yawgmoth--rivalry--thran": {
+    "labelForA": "Médico que explorou sua doença",
+    "labelForB": "Paciente e pioneiro da engenharia",
+    "context": "Yawgmoth ganhou acesso político ao tratar a tísica de Glacian e depois manipulou o inventor e a pedra de poder dividida ligada a seu destino."
+  },
+  "hanna--sisay--alliance--weatherlight": {
+    "labelForA": "Navegadora e artífice",
+    "labelForB": "Capitã",
+    "context": "Sisay liderava Bons Ventos e dependia do domínio de Hanna sobre seu maquinário e seus artefatos mágicos."
+  },
+  "ixidor--jeska--rivalry--otaria": {
+    "labelForA": "Phage, responsabilizada pela morte de Nivea",
+    "labelForB": "Ilusionista vingativo",
+    "context": "Ixidor culpava Phage pela morte de Nivea e criou Akroma como agente de sua retaliação."
+  },
+  "jace-beleren--loot--alliance--omenpaths": {
+    "labelForA": "Jovem protegido",
+    "labelForB": "Protetor e planejador",
+    "context": "Jace se interessou por Loot após a descoberta no antigo cofre de Thunder Junction."
+  },
+  "jace-beleren--vraska--alliance--omenpaths": {
+    "labelForA": "Companheira e amada",
+    "labelForB": "Companheiro e amado",
+    "context": "Jace e Vraska sobreviveram à corrupção phyrexiana e perseguiram um novo plano após sua recuperação."
+  },
+  "jaya--jodah--friendship--ice-age": {
+    "labelForA": "Amigo e aliado de longa data",
+    "labelForB": "Amiga e aliada de longa data",
+    "context": "Jodah e Jaya mantiveram uma amizade duradoura e ajudaram a reunir forças kjeldoranas e balduvianas contra Lim-Dûl."
+  },
+  "jaya--lim-dul--rivalry--ice-age": {
+    "labelForA": "Adversário necromante",
+    "labelForB": "Adversária piromante",
+    "context": "Jaya se juntou a Jodah para resistir a Lim-Dûl e à ameaça que suas forças representavam para Terisiare."
+  },
+  "jeska--kamahl--family--otaria": {
+    "labelForA": "Irmã",
+    "labelForB": "Irmão",
+    "context": "Kamahl e Jeska eram irmãos cujas vidas mudaram drasticamente após o Mirari influenciar Kamahl."
+  },
+  "jeska--karn--mentorship--otaria": {
+    "labelForA": "Aluna",
+    "labelForB": "Mentor",
+    "context": "Após a transformação de Jeska em planeswalker, Karn se tornou um guia importante em sua nova existência."
+  },
+  "jeska--leshrac--rivalry--mending": {
+    "labelForA": "Planeswalker que ele enganou",
+    "labelForB": "Antigo planeswalker manipulador",
+    "context": "Leshrac explorou o luto de Jeska e a crise das fendas para buscar o poder ligado à identidade anterior de Phage dela."
+  },
+  "jeska--radha--rivalry--mending": {
+    "labelForA": "Guerreira ligada às fendas cuja autonomia ela pôs em perigo",
+    "labelForB": "Planeswalker que tentou explorar seu vínculo com as fendas",
+    "context": "Jeska tentou usar a conexão de Radha com as fraturas temporais antes de finalmente se recusar a sacrificá-la na última reparação."
+  },
+  "jeska--teferi--rivalry--mending": {
+    "labelForA": "Mago temporal cujo lar ela não conseguiu restaurar",
+    "labelForB": "Planeswalker que fechou a rota restante para Zhalfir",
+    "context": "O fechamento da fenda zhalfiriana por Jeska impediu Teferi de usar aquela abertura para recuperar Zhalfir, revelando os custos conflitantes de reparar o mundo."
+  },
+  "jeska--venser--alliance--mending": {
+    "labelForA": "Artífice e colaborador na fenda final",
+    "labelForB": "Planeswalker e colaboradora na fenda final",
+    "context": "Venser e Jeska convergiram na fenda final de Otaria; Jeska escolheu enviá-lo para um lugar seguro em vez de forçá-lo a pagar por seu fechamento."
+  },
+  "jhoira--karn--friendship--mending": {
+    "labelForA": "Amigo de longa data",
+    "labelForB": "Amiga de longa data",
+    "context": "Karn e Jhoira compartilhavam uma longa história por meio da Academia de Tolaria e dos acontecimentos que se seguiram."
+  },
+  "jhoira--teferi--friendship--mending": {
+    "labelForA": "Amigo de longa data",
+    "labelForB": "Amiga de longa data",
+    "context": "Teferi e Jhoira mantiveram uma amizade duradoura ao longo da era de Tolaria e da crise temporal."
+  },
+  "jhoira--venser--alliance--mending": {
+    "labelForA": "Colaborador",
+    "labelForB": "Colaboradora",
+    "context": "Jhoira e Venser contribuíram com seu conhecimento de artifício e deslocamento mágico para o esforço de reparar Dominária."
+  },
+  "jin-gitaxias--tamiyo--rivalry--new-phyrexia": {
+    "labelForA": "Planeswalker submetida à completação",
+    "labelForB": "Pretor cujos experimentos a subjugaram",
+    "context": "A transformação forçada de Tamiyo por Jin-Gitaxias preservou sua centelha enquanto destruía sua liberdade; a conexão entre eles era coercitiva, não uma aliança."
+  },
+  "jodah--lim-dul--rivalry--ice-age": {
+    "labelForA": "Adversário necromante",
+    "labelForB": "Adversário arquimago",
+    "context": "Jodah se opôs às ambições de Lim-Dûl e ajudou a construir a resistência a seus exércitos de mortos-vivos."
+  },
+  "jodah--mairsil--rivalry--ice-age": {
+    "labelForA": "Usurpador do Conclave",
+    "labelForB": "Jovem mago que ele tentou explorar",
+    "context": "Mairsil buscava usar a ascendência e o conhecimento de Jodah para seus planos; Jodah depois ajudou a libertar Ith, o fundador aprisionado do Conclave."
+  },
+  "kamahl--seton--friendship--otaria": {
+    "labelForA": "Amigo e aliado de Krosa",
+    "labelForB": "Guerreiro de Pardic que se tornou defensor",
+    "context": "A aliança de Seton com Kamahl conectou o antigo lutador de arena à floresta viva e a seus valores enquanto ele abandonava a influência corruptora do Mirari."
+  },
+  "karn--koth--alliance--march-of-the-machine": {
+    "labelForA": "Mirraniano que continuou resistindo",
+    "labelForB": "Criador que enfrenta a queda do plano",
+    "context": "Os dois sobreviventes estavam unidos pela perda de Mirrodin e de seu povo, mesmo depois que a vitória tornou Zhalfir seu refúgio."
+  },
+  "karn--melira--alliance--march-of-the-machine": {
+    "labelForA": "Mirraniana cujo presente final salvou os infectados",
+    "labelForB": "Criador cuja centelha restante possibilitou a cura",
+    "context": "Karn e Melira acabaram sacrificando a centelha de Karn e a vida de Melira para salvar Ajani e Nissa, sem restaurar todas as vítimas phyrexianas."
+  },
+  "karn--sisay--alliance--weatherlight": {
+    "labelForA": "Companheiro do Legado",
+    "labelForB": "Capitã",
+    "context": "Sisay e Karn serviram a bordo de Bons Ventos enquanto a tripulação buscava as peças do Legado."
+  },
+  "karn--squee--friendship--weatherlight": {
+    "labelForA": "Companheiro sobrevivente",
+    "labelForB": "Guardião compassivo do Legado",
+    "context": "Karn e Squee sobreviveram à guerra original como companheiros incomuns cujas vidas prosseguiram na história posterior de Dominária."
+  },
+  "karn--urza--creation--weatherlight": {
+    "labelForA": "Constructo criado",
+    "labelForB": "Criador",
+    "context": "Urza criou Karn como um golem de prata que acabou se tornando um componente central do Legado."
+  },
+  "kayla--mishra--rivalry--brothers-war": {
+    "labelForA": "Senhor da guerra cujas forças destruíram Kroog",
+    "labelForB": "Rainha yotiana afetada por sua campanha",
+    "context": "O ataque de Mishra a Yotia destruiu o lar de Kayla e ajudou a transformar a guerra privada dos irmãos em uma catástrofe para os civis."
+  },
+  "kayla--tawnos--alliance--brothers-war": {
+    "labelForA": "Artífice de confiança",
+    "labelForB": "Rainha e aliada política",
+    "context": "Kayla e Tawnos sobreviveram à devastação da guerra e mais tarde trabalharam para proteger comunidades que lutavam com suas consequências."
+  },
+  "kayla--urza--family--brothers-war": {
+    "labelForA": "Esposa",
+    "labelForB": "Marido",
+    "context": "O casamento de Urza com Kayla o conectou à família governante de Yotia. Seu relacionamento foi profundamente afetado pela guerra e por suas consequências."
+  },
+  "kellan--oko--family--omenpaths": {
+    "labelForA": "Pai esquivo",
+    "labelForB": "Filho à sua procura",
+    "context": "Kellan atravessou Caminhos Pressagiados para encontrar Oko, apenas para se deparar com os métodos do trapaceiro em Thunder Junction."
+  },
+  "kellan--quintorius-kand--alliance--omenpaths": {
+    "labelForA": "Viajante dos Caminhos Pressagiados em Ixalan",
+    "labelForB": "Arqueólogo que explora Ixalan",
+    "context": "Ambos participaram da história de Lost Caverns of Ixalan como visitantes com meios diferentes de se deslocar entre mundos."
+  },
+  "koth--melira--alliance--new-phyrexia": {
+    "labelForA": "Aliada mirraniana resistente à corrupção",
+    "labelForB": "Líder da resistência que defendeu seu lar",
+    "context": "Koth e Melira sustentaram a resistência mirraniana por anos de ocupação e guiaram aliados ao Germinúcleo."
+  },
+  "leshrac--nicol-bolas--rivalry--mending": {
+    "labelForA": "Dragão que o derrotou",
+    "labelForB": "Rival derrotado",
+    "context": "Sua luta terminou com Bolas usando o poder restante de Leshrac para selar a fenda de Madara."
+  },
+  "liliana-vess--nicol-bolas--rivalry--war-of-the-spark": {
+    "labelForA": "General rebelde",
+    "labelForB": "Mestre coercitivo",
+    "context": "Bolas obrigou Liliana a comandar seus Eternos; ela acabou voltando aquele exército contra ele."
+  },
+  "loot--vraska--alliance--omenpaths": {
+    "labelForA": "Jovem protegido",
+    "labelForB": "Protetora e aliada",
+    "context": "Vraska se tornou parte da história de Loot em desenvolvimento após o assalto ao cofre."
+  },
+  "mirri--multani--mentorship--weatherlight": {
+    "labelForA": "Mestre de Yavimaya",
+    "labelForB": "Antiga pupila",
+    "context": "Mirri aprendeu ao lado de Gerrard e Rofellos enquanto treinava com Multani em Yavimaya."
+  },
+  "mirri--selenia--rivalry--weatherlight": {
+    "labelForA": "Ferida ao defender a tripulação",
+    "labelForB": "Atacante da Fortaleza",
+    "context": "Durante a missão de resgate da tripulação em Rath, Mirri lutou contra Selenia, que estava presa magicamente. Crovax matou o anjo para proteger Mirri, desencadeando sua própria maldição vampírica."
+  },
+  "mishra--tawnos--rivalry--brothers-war": {
+    "labelForA": "Artífice adversário e aprendiz de Urza",
+    "labelForB": "Comandante alinhado ao exército oposto",
+    "context": "Tawnos abastecia o esforço de Urza enquanto as forças de Mishra ameaçavam o reino yotiano; suas posições foram moldadas pelas máquinas de guerra rivais."
+  },
+  "mishra--tocasia--mentorship--brothers-war": {
+    "labelForA": "Aluno",
+    "labelForB": "Mentora",
+    "context": "Tocasia ensinou Mishra ao lado de Urza e morreu tentando intervir no conflito entre eles."
+  },
+  "mishra--urza--family--brothers-war": {
+    "labelForA": "Irmão e rival",
+    "labelForB": "Irmão e rival",
+    "context": "Urza e Mishra eram irmãos cujo interesse compartilhado por artefatos Thran se desenvolveu em uma rivalidade que devastou Terisiare."
+  },
+  "nahiri--sorin--alliance--many-worlds": {
+    "labelForA": "Aliado na prisão dos Eldrazi",
+    "labelForB": "Aliada litomante",
+    "context": "Nahiri e Sorin cooperaram com Ugin para aprisionar os Eldrazi em Zendikar; sua ruptura posterior não fazia parte da fundação da prisão."
+  },
+  "nicol-bolas--niv-mizzet--rivalry--war-of-the-spark": {
+    "labelForA": "Dragão Ancião invasor",
+    "labelForB": "Mente de Fogo e Pacto das Guildas Vivo",
+    "context": "A resistência e o renascimento de Niv-Mizzet desafiaram a tentativa de Bolas de dominar Ravnica."
+  },
+  "nicol-bolas--tezzeret--alliance--war-of-the-spark": {
+    "labelForA": "Empregador dragão",
+    "labelForB": "Portador da Ponte Planar",
+    "context": "Tezzeret carregava a Ponte Planar que trouxe os Eternos de Bolas revestidos de lazotep a Ravnica."
+  },
+  "niv-mizzet--ral-zarek--alliance--war-of-the-spark": {
+    "labelForA": "Líder Izzet",
+    "labelForB": "Planeswalker Izzet",
+    "context": "Ral trabalhava na Liga Izzet e ajudou a coordenar a oposição enquanto Niv-Mizzet retornava como o Pacto das Guildas Vivo."
+  },
+  "radha--teferi--alliance--mending": {
+    "labelForA": "Aliado relutante",
+    "labelForB": "Aliada relutante",
+    "context": "A conexão de Radha com a fenda de Skyshroud ajudou Teferi a investigar como a realidade danificada poderia ser restaurada."
+  },
+  "radha--venser--alliance--mending": {
+    "labelForA": "Guerreira e aliada ligada às fendas",
+    "labelForB": "Inventor e companheiro sobrevivente",
+    "context": "Venser e Radha sobreviveram ao ritual final em Otaria depois que Jeska escolheu assumir o último sacrifício sozinha."
+  },
+  "radiant--urza--rivalry--weatherlight": {
+    "labelForA": "Planeswalker que fez seu reino colapsar",
+    "labelForB": "Guardiã do reino moribundo de Serra",
+    "context": "Radiant se opôs aos acontecimentos que culminaram na destruição do Reino de Serra, cujo poder Urza reuniu para Bons Ventos."
+  },
+  "ral-zarek--tezzeret--rivalry--war-of-the-spark": {
+    "labelForA": "Artífice a perseguir",
+    "labelForB": "Perseguidor Izzet",
+    "context": "Após a invasão, Ral aceitou a missão das guildas de caçar Tezzeret."
+  },
+  "rebbec--yawgmoth--rivalry--thran": {
+    "labelForA": "Adversário",
+    "labelForB": "Adversária",
+    "context": "Rebbec trouxe Yawgmoth a Halcyon, mas acabou se opondo às suas ambições e selou o portal para Phyrexia."
+  },
+  "rowan-kenrith--will-kenrith--family--omenpaths": {
+    "labelForA": "Irmã gêmea",
+    "labelForB": "Irmão gêmeo",
+    "context": "O luto compartilhado dos herdeiros após a invasão se desenvolveu em uma discordância sobre como Eldraine poderia ser salva."
+  },
+  "sisay--squee--alliance--weatherlight": {
+    "labelForA": "Grumete leal",
+    "labelForB": "Capitã de Bons Ventos",
+    "context": "Squee serviu a bordo de Bons Ventos de Sisay, contribuindo com lealdade e resiliência para uma tripulação dividida por posição e origem."
+  },
+  "tawnos--urza--mentorship--brothers-war": {
+    "labelForA": "Aprendiz",
+    "labelForB": "Mentor",
+    "context": "Tawnos estudou com Urza e contribuiu para suas invenções mecânicas, questionando mais tarde os usos destrutivos de sua tecnologia."
+  },
+  "teferi--venser--alliance--mending": {
+    "labelForA": "Aliado na reparação das fendas",
+    "labelForB": "Aliado na reparação das fendas",
+    "context": "Venser se juntou aos esforços de Teferi para compreender e fechar as fendas temporais que ameaçavam Dominária."
+  },
+  "teferi--windgrace--alliance--mending": {
+    "labelForA": "Protetor cauteloso de Urborg",
+    "labelForB": "Mago temporal que buscava fechar fendas",
+    "context": "A crise temporal acabou alinhando o trabalho de Teferi e do ferozmente independente Windgrace, apesar da desconfiança deste em relação às intervenções externas."
+  },
+  "teferi--wrenn--alliance--march-of-the-machine": {
+    "labelForA": "Guia para o povo perdido de Zhalfir",
+    "labelForB": "Dríade que restaurou sua terra natal",
+    "context": "Wrenn encontrou um caminho por Quebra-reinos (Realmbreaker) até Zhalfir, completando a longa luta de Teferi para reconectar sua nação."
+  },
+  "tevesh-szat--urza--rivalry--weatherlight": {
+    "labelForA": "Traidor entre os Titãs",
+    "labelForB": "Líder e executor",
+    "context": "Urza recrutou Tevesh Szat para os Nove Titãs, mas esperava sua traição. Depois que Szat matou Daria e Kristina, Urza usou a essência vital do traidor para alimentar as bombas de almas contra Phyrexia."
+  },
+  "teysa-karlov--trostani--rivalry--omenpaths": {
+    "labelForA": "Vítima da vingança de Oba",
+    "labelForB": "Oba, o membro culpado de Trostani",
+    "context": "A vingança de Oba após a invasão phyrexiana tirou a vida de Teysa Karlov; as outras dríades de Trostani não participaram voluntariamente."
+  },
+  "tocasia--urza--mentorship--brothers-war": {
+    "labelForA": "Aluno",
+    "labelForB": "Mentora",
+    "context": "Tocasia orientou os primeiros estudos de Urza sobre a tecnologia Thran antiga antes que sua morte separasse os irmãos."
+  },
+  "urza--yawgmoth--rivalry--weatherlight": {
+    "labelForA": "Inimigo",
+    "labelForB": "Inimigo",
+    "context": "Urza passou séculos se preparando para derrotar Yawgmoth e o império phyrexiano que ele controlava."
+  },
+  "venser--windgrace--alliance--mending": {
+    "labelForA": "Aliado relutante",
+    "labelForB": "Aliado relutante",
+    "context": "Os experimentos de Venser atraíram a atenção de Lorde Windgrace, cuja desconfiança do artifício complicou seu envolvimento na crise temporal."
+  },
+  "volrath--yawgmoth--alliance--weatherlight": {
+    "labelForA": "Mestre de Phyrexia",
+    "labelForB": "Evincar e agente",
+    "context": "Volrath governava Rath como um evincar phyrexiano e trabalhava para promover os planos de invasão de Yawgmoth."
+  }
+}

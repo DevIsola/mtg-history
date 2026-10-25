@@ -1,0 +1,1416 @@
+{
+  "aboshan": {
+    "name": "Aboshan",
+    "title": "O imperador cefálida",
+    "origin": "Dominária — Otaria",
+    "role": "Governante do império submarino",
+    "summary": "Um governante cuja tentativa de realizar seus desejos por meio do Mirari causou uma inundação devastadora.",
+    "biography": [
+      "Aboshan governou o império cefálida durante a crise que se seguiu à descoberta do Mirari em Otaria.",
+      "Quando obteve o Mirari, seu desejo de domínio sobre o mar foi ampliado em uma magia catastrófica que inundou grandes extensões do continente e devastou sua capital.",
+      "Sua destruição demonstra que a ambição de um governante não era mais imune ao Mirari que os desejos de um gladiador ou de um conjurador de demência."
+    ],
+    "featuredCard": {
+      "significance": "Um retrato original de Odyssey do imperador cujo uso do Mirari causou um desastre."
+    }
+  },
+  "agrus-kos": {
+    "name": "Agrus Kos",
+    "title": "Investigador wojek",
+    "origin": "Ravnica",
+    "role": "Veterano Boros e investigador",
+    "summary": "Um wojek determinado cuja perseguição a um mestre de guilda secreto ajudou a desfazer o primeiro Pacto das Guildas de Ravnica.",
+    "biography": [
+      "Agrus Kos serviu à Legião Boros como um wojek veterano, investigando crimes que expunham as fissuras entre as dez guildas de Ravnica.",
+      "Sua investigação de Szadek ajudou a revelar a conspiração da Casa Dimir, mas a prisão do vampiro também desencadeou o colapso do Pacto das Guildas original.",
+      "Agrus continuou a enfrentar as consequências do pacto rompido ao lado de aliados como Teysa Karlov.",
+      "Kos abordava as conspirações de Ravnica pelas práticas comuns da investigação: seguindo testemunhas, enfrentando a corrupção e perseguindo pessoas que se escondiam atrás do poder institucional. Sua posição de wojek o colocava dentro do sistema Boros e, ao mesmo tempo, exigia que fizesse perguntas além das fronteiras das guildas.",
+      "A destruição do primeiro Pacto das Guildas é crucial precisamente porque ele não pretendia destruí-lo. Szadek arquitetou um paradoxo no contrato mágico, e Augustin IV antecipou o resultado. Kos agiu com base em evidências contra um vampiro perigoso, apenas para descobrir que fazer cumprir a lei podia ajudar a romper a própria lei que governava a cidade.",
+      "Após essa ruptura, Kos e seus aliados enfrentaram mais que um único vilão preso. Ravnica ainda precisava de ordem política mesmo sem o acordo vinculante que havia estruturado a competição entre guildas por milênios. Sua história, portanto, passa da solução de um crime ao enfrentamento das consequências de um sistema cujas regras haviam sido usadas como armas."
+    ],
+    "featuredCard": {
+      "significance": "Uma impressão posterior do investigador Boros apresentado no primeiro ciclo de histórias de Ravnica."
+    }
+  },
+  "ajani": {
+    "name": "Ajani Goldmane",
+    "title": "O agente adormecido",
+    "origin": "Naya, Alara",
+    "role": "Planeswalker, infiltrado corrompido e sobrevivente da completação",
+    "summary": "Um aliado de confiança cuja completação levou a uma traição durante a defesa de Dominária.",
+    "biography": [
+      "Ajani era amplamente respeitado por sua compaixão e seu cuidado com os outros antes de ser secretamente completado por Phyrexia.",
+      "Sua lealdade alterada contribuiu para a morte de Jaya durante a crise dos agentes adormecidos em Dominária, mostrando como Phyrexia transformava a confiança em arma.",
+      "Após o isolamento de Nova Phyrexia, Melira e Karn usaram um tratamento custoso para libertar Ajani da corrupção; sobreviver não apagou o dano causado enquanto ele era controlado."
+    ],
+    "featuredCard": {
+      "significance": "Um tratamento em idioma phyrexiano da carta de Ajani de Dominaria United, revelando a traição."
+    }
+  },
+  "akroma": {
+    "name": "Akroma",
+    "title": "O Anjo da Ira",
+    "origin": "Dominária — Otaria",
+    "role": "Anjo esculpido na realidade e adversária de Phage",
+    "summary": "Criada por Ixidor em seu luto, Akroma se tornou um símbolo de vingança cujo conflito com Phage culminou em Karona.",
+    "biography": [
+      "Akroma era um anjo poderoso tornado real por Ixidor após a morte de Nivea nas arenas da Cabala.",
+      "Seu propósito era a vingança contra Phage, a identidade transformada de Jeska. O confronto entre elas cresceu além de uma disputa pessoal quando apoiadores rivais se reuniram a seu redor.",
+      "O golpe de Kamahl com a Ceifadora de Almas uniu Akroma, Phage e Zagorka em Karona. Akroma morreu quando esse ser composto foi posteriormente separado."
+    ],
+    "featuredCard": {
+      "significance": "A representação original de Legions do anjo criado por Ixidor para vingar Nivea."
+    }
+  },
+  "alquist-proft": {
+    "name": "Alquist Proft",
+    "title": "Mestre detetive de Ravnica",
+    "origin": "Ravnica",
+    "role": "Detetive que investiga os assassinatos da Mansão Karlov",
+    "summary": "Um detetive cujo trabalho expôs controle mental e a vingança oculta de Oba após a invasão phyrexiana.",
+    "biography": [
+      "Proft investigou os assassinatos de Ravnica quando as evidências iniciais apontavam para a assassina Etrata.",
+      "Ele distinguiu atos coagidos de culpabilidade voluntária e trabalhou com Etrata, Kaya e Kellan para testar as evidências.",
+      "A investigação revelou o uso de flores de controle mental por Oba e o luto sob a unidade pública da liderança de Trostani.",
+      "O método de Proft dependia de separar o que podia ser observado daquilo que os suspeitos pareciam pretender. Em uma cidade acostumada a intrigas de guildas e enganos mágicos, uma confissão, um ataque aparente ou uma acusação conveniente não podiam substituir a reconstrução da cadeia de ações.",
+      "Sua cooperação com figuras como Etrata, Kaya e Kellan reuniu pessoas com histórias muito diferentes e motivos para desconfiar das autoridades. A investigação mostra por que os recém-chegados pelos Caminhos Pressagiados não se limitavam a assistir ao desenrolar de histórias antigas de Ravnica; podiam se tornar participantes das instituições locais e de suas crises.",
+      "A descoberta do envolvimento de Oba também reinterpretou os assassinatos como consequências da invasão phyrexiana e da dor que deixou para trás. O papel de Proft era desvendar essas conexões sem tratar as mágoas como motivo para abandonar as evidências ou desculpar a coerção."
+    ],
+    "featuredCard": {
+      "significance": "A carta original de Proft de Murders at Karlov Manor."
+    }
+  },
+  "ashnod": {
+    "name": "Ashnod",
+    "title": "A mecanista da carne",
+    "origin": "Dominária — Terisiare",
+    "role": "Artífice e pesquisadora de carne e máquinas",
+    "summary": "Uma artífice brilhante, mas implacável, associada a Mishra, cujos experimentos e decisões independentes moldaram a Guerra dos Irmãos.",
+    "biography": [
+      "Ashnod era uma artífice talentosa cujas invenções e experimentos exploravam a manipulação de corpos vivos por meio de máquinas e poder mágico. Seus métodos eram frequentemente cruéis, refletindo os custos morais da corrida armamentista tecnológica.",
+      "Ashnod trabalhou na esfera de influência de Mishra e contribuiu para o desenvolvimento de tecnologias cada vez mais destrutivas. Seu relacionamento com Mishra era complicado por sua independência e pela crescente influência phyrexiana ao redor dele.",
+      "Apesar das lealdades opostas, Ashnod desenvolveu uma conexão importante com Tawnos, aprendiz de Urza. Durante o conflito, ela o ajudou a escapar do cativeiro, uma escolha que demonstrou sua disposição de agir contra as expectativas impostas pela guerra.",
+      "Sua história ilustra uma contradição central da Guerra dos Irmãos: uma extraordinária engenhosidade técnica florescia enquanto as ambições políticas ao seu redor causavam imenso sofrimento."
+    ],
+    "featuredCard": {
+      "significance": "Retrata os experimentos de Ashnod com pedras de poder, carne e seres construídos."
+    }
+  },
+  "avacyn": {
+    "name": "Avacyn",
+    "title": "Anjo da Esperança",
+    "origin": "Innistrad",
+    "role": "Protetora angelical da humanidade",
+    "summary": "A criação de Sorin que protegia Innistrad até Griselbrand aprisioná-la no Elocárcere.",
+    "biography": [
+      "Sorin criou Avacyn para proteger a humanidade de predadores sobrenaturais e manter o equilíbrio precário de Innistrad.",
+      "Griselbrand a enganou para que se aprisionasse com ele no Elocárcere, enfraquecendo as proteções mágicas da igreja.",
+      "Sua libertação em Avacyn Restored marcou uma renovação da esperança, embora não um fim permanente dos perigos do plano."
+    ],
+    "featuredCard": {
+      "significance": "A representação original de Avacyn Restored de seu retorno."
+    }
+  },
+  "balthor": {
+    "name": "Balthor",
+    "title": "O mentor bárbaro renascido",
+    "origin": "Dominária — Otaria",
+    "role": "Líder anão, mentor de Kamahl e, mais tarde, guerreiro morto-vivo",
+    "summary": "Um líder anão que orientou Kamahl e cuja morte e retorno foram retratados em duas cartas distintas.",
+    "biography": [
+      "Balthor era um anão que liderava bárbaros e atuava como mentor de Kamahl, dando ao jovem guerreiro um exemplo de liderança fundamentada na experiência.",
+      "Balthor morreu durante os conflitos de Otaria e mais tarde retornou como morto-vivo. Suas duas cartas de criatura lendária foram deliberadamente planejadas como representações do mesmo personagem em lados opostos da morte.",
+      "Torment o retratou como Balthor the Stout, enquanto Judgment o retratou como Balthor the Defiled, enfatizando essa transformação em vez de apresentar outra pessoa."
+    ],
+    "featuredCard": {
+      "significance": "Balthor após a morte e a reanimação, associado na história à carta anterior Balthor the Stout."
+    }
+  },
+  "barrin": {
+    "name": "Barrin",
+    "title": "Mago mestre de Tolaria",
+    "origin": "Dominária — Tolaria",
+    "role": "Diretor de Tolaria, aliado de Urza e pai de Hanna",
+    "summary": "Um líder de academia cujo feitiço final destruiu Tolaria ocupada pelos phyrexianos após a morte de sua família.",
+    "biography": [
+      "Barrin dirigiu a Academia de Tolaria enquanto trabalhava com Urza para preparar magos e artífices para um futuro confronto com Phyrexia.",
+      "Ele era o pai de Hanna, a navegadora de Bons Ventos. A carreira independente dela ligou a pesquisa da Academia à tripulação viva que Urza esperava que reunisse o Legado.",
+      "A invasão matou sua esposa Rayne e sua filha Hanna. Ao encontrar Tolaria tomada, Barrin conjurou Obliterate, destruindo a área e a si mesmo."
+    ],
+    "featuredCard": {
+      "significance": "Um retrato do mago de Tolaria cujo sacrifício final ocorreu durante a invasão phyrexiana."
+    }
+  },
+  "braids": {
+    "name": "Braids",
+    "title": "Uma agente da Cabala",
+    "origin": "Dominária — Otaria",
+    "role": "Agente da Cabala e conjuradora de demência",
+    "summary": "Uma figura implacável e imprevisível cujas atividades ajudaram a Cabala a manter seu alcance durante a crise do Mirari.",
+    "biography": [
+      "Braids serviu à Cabala na era em que seus jogos de arena e sua magia de demência moldavam a vida política de Otaria.",
+      "Ela esteve envolvida nos deslocamentos e no retorno do Mirari depois que o artefato passou pelas mãos de potências rivais.",
+      "Sua carta original de Odyssey retrata os métodos inflexíveis da Cabala e as vidas sacrificadas para preservar sua influência."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de Braids de Odyssey, representando a severa cultura interna da Cabala."
+    }
+  },
+  "cabal-patriarch": {
+    "name": "Patriarca da Cabala",
+    "title": "O Primeiro da Cabala",
+    "origin": "Dominária — Otaria",
+    "role": "Líder da Cabala e governante de seu sistema de arenas",
+    "summary": "O Primeiro transformou o Mirari em prêmio público e manipulou a Cidade da Cabala por meio do espetáculo, da patronagem e da magia sombria.",
+    "biography": [
+      "O Patriarca da Cabala, conhecido como o Primeiro, exercia poder político por meio da lucrativa e violenta cultura de arenas da Cidade da Cabala.",
+      "Chainer lhe trouxe o Mirari após sua descoberta. O Primeiro reconheceu seu potencial e o ofereceu como um prêmio que atrairia combatentes ambiciosos e facções rivais aos jogos.",
+      "Chainer acabou tomando o Mirari e afastando temporariamente o Patriarca, mas a influência mais ampla do Primeiro sobreviveu à rebelião e depois se estendeu à transformação de Jeska em Phage."
+    ],
+    "featuredCard": {
+      "significance": "Uma reimpressão de Commander Masters do retrato original do Primeiro da Cabala da era de Odyssey."
+    }
+  },
+  "chainer": {
+    "name": "Chainer",
+    "title": "Mestre da demência",
+    "origin": "Dominária — Otaria",
+    "role": "Invocador de demência da Cabala",
+    "summary": "Um talentoso invocador de pesadelos cuja amizade com Kamahl não conseguiu salvá-lo da influência do Mirari.",
+    "biography": [
+      "Chainer treinou na Cabala de Otaria, usando magia de demência para invocar criaturas aterrorizantes de sua mente.",
+      "Chainer descobriu o Mirari em uma mansão abandonada e o apresentou ao Patriarca da Cabala. Ele e Kamahl formaram uma amizade inesperada nas arenas, mas sua lealdade à Cabala e a crescente desconfiança de sua liderança acabaram separando seus caminhos.",
+      "Chainer usou o Mirari para afastar o Patriarca e inundar a Cidade da Cabala com pesadelos trazidos pela magia de demência. Quando seu corpo foi tomado pelas criaturas que já não conseguia controlar, Kamahl o matou em um ato de misericórdia. Sua queda tornou-se uma das tragédias definidoras do bloco Odyssey.",
+      "Os ensinamentos de Skellum apresentaram Chainer a uma disciplina que exigia formar e controlar cuidadosamente horrores imaginados. Na economia de arenas da Cabala, o sucesso com essa magia também tornava seu talento mais valioso para líderes que tratavam a violência espetacular como fonte de autoridade.",
+      "Sua amizade com Kamahl atravessava fronteiras institucionais: um lutador de arena de Pardic e um invocador da Cabala podiam se importar um com o outro sem compartilhar a mesma compreensão de a quem deviam lealdade. Esse vínculo torna a tentativa posterior de Chainer de dominar o Mirari uma tragédia pessoal, em vez de uma simples história sobre um vilão reivindicando um artefato.",
+      "A carta de Torment Chainer, Dementia Master traduziu sua história em mecânicas ao criar um vínculo entre Chainer e os Pesadelos que desapareciam com ele. A retrospectiva de design da Wizards explica que a carta foi deliberadamente reservada para Torment porque Chainer era o protagonista de Chainer's Torment. As regras da carta comunicam uma ideia sobre invocação, não a cronologia precisa de sua morte."
+    ],
+    "featuredCard": {
+      "significance": "A impressão original de Chainer de Torment ilustra o invocador da Cabala e sua magia de pesadelos."
+    }
+  },
+  "chandra": {
+    "name": "Chandra Nalaar",
+    "title": "Farol da esperança",
+    "origin": "Kaladesh",
+    "role": "Piromante e defensora do Multiverso",
+    "summary": "Uma planeswalker que retornou a Nova Phyrexia para combater Norn enquanto enfrentava a morte de Jaya e a corrupção de Nissa.",
+    "biography": [
+      "Jaya Ballard foi mentora de Chandra, cujo temperamento impetuoso escondia uma profunda lealdade às pessoas que amava.",
+      "Depois que a traição de Ajani matou Jaya e a missão ao Germinúcleo fracassou, Chandra ajudou os defensores restantes a se reorganizar e retornar a Nova Phyrexia.",
+      "Ela lutou ao lado de Wrenn e Koth e, mais tarde, permaneceu ao lado de Nissa durante a tentativa incerta de reverter a completação."
+    ],
+    "featuredCard": {
+      "significance": "A aparição de Chandra em March of the Machine captura sua determinação no clímax da guerra."
+    }
+  },
+  "crovax": {
+    "name": "Crovax",
+    "title": "O nobre amaldiçoado",
+    "origin": "Dominária",
+    "role": "Companheiro de Bons Ventos, vampiro e, mais tarde, evincar de Rath",
+    "summary": "Um antigo companheiro de Bons Ventos cujo vínculo com Selenia trouxe uma maldição vampírica e cuja queda o levou a governar Rath.",
+    "biography": [
+      "Crovax era um nobre de Dominária cuja casa era afligida por uma maldição ligada ao anjo Selenia. Após libertá-la do artefato que a prendia, ele a perdeu para Volrath e se juntou à jornada de Bons Ventos a Rath na esperança de encontrá-la.",
+      "Durante a missão de resgate na Fortaleza de Volrath, Selenia atacou Mirri. Para salvar sua companheira, Crovax matou o anjo, cumprindo sem saber a maldição que o transformou em vampiro.",
+      "A mudança consumiu suas antigas lealdades. Depois que uma Mirri ferida o seguiu quando ele deixou Bons Ventos, Crovax a matou, rompendo outro vínculo com a tripulação e a vida de Gerrard.",
+      "Crovax mais tarde serviu aos interesses phyrexianos em Rath. Com a ajuda de Ertai, matou Volrath quando este retornou e reivindicou o título de evincar, uma transformação representada pela carta posterior Ascendant Evincar."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Stronghold de Crovax após sua transformação em vampiro por meio da morte de Selenia."
+    }
+  },
+  "dovin-baan": {
+    "name": "Dovin Baan",
+    "title": "Grande árbitro Azorius",
+    "origin": "Kaladesh",
+    "role": "Administrador do Senado Azorius aliado a Bolas",
+    "summary": "O planeswalker que usou as instituições jurídicas de Ravnica para obstruir a oposição a Bolas.",
+    "biography": [
+      "Dovin Baan era um planeswalker vedalkeano conhecido por sua precisão administrativa e seu talento para encontrar falhas em sistemas.",
+      "Ele foi a Ravnica e assumiu o controle do Senado Azorius, usando a autoridade cívica de maneiras que fortaleciam a conspiração de Bolas e obstruíam seus adversários.",
+      "Seu controle político demonstra por que a Guerra da Centelha não foi apenas uma batalha mágica: as próprias instituições da cidade haviam sido comprometidas. Após a guerra, Vraska recebeu a tarefa de persegui-lo.",
+      "A perspectiva de Dovin era moldada pela capacidade de notar falhas em organizações e mecanismos. Em Ravnica, ele aplicou essa aptidão a um governo cuja legitimidade se apoiava em procedimentos e regulamentações. Era um ambiente em que uma decisão aparentemente técnica podia ter consequências para a defesa de uma cidade inteira.",
+      "Seu alinhamento com Nicol Bolas transformou o poder burocrático em recurso estratégico. O Senado Azorius não precisava ser derrotado em combate aberto antes de poder ser usado para obstruir a cooperação ou autorizar medidas prejudiciais. Essa forma de controle complementava a armadilha mágica e as forças de invasão que aguardavam fora da vida cívica comum.",
+      "As consequências expuseram um tipo de responsabilidade diferente das decisões de campo de batalha tomadas por Gideon ou Liliana. Autoridades que haviam exercido poder legal em favor de uma conspiração invasora deixaram um problema de confiança, responsabilização e sucessão. As ações de Dovin pertencem a essa história institucional, não apenas a uma lista de planeswalkers inimigos."
+    ],
+    "featuredCard": {
+      "significance": "Retrato de pré-lançamento de War of the Spark do colaborador Azorius."
+    }
+  },
+  "elesh-norn": {
+    "name": "Elesh Norn",
+    "title": "Mãe das Máquinas",
+    "origin": "Nova Phyrexia — a Ortodoxia das Máquinas",
+    "role": "Grande pretora e arquiteta da invasão multiversal",
+    "summary": "A pretora que usou Quebra-reinos (Realmbreaker) para impor a unidade phyrexiana ao Multiverso.",
+    "biography": [
+      "Após a queda de Mirrodin, Elesh Norn consolidou a Ortodoxia das Máquinas e buscou o domínio tanto sobre outros pretores quanto sobre outros planos.",
+      "Agentes recuperaram a essência da Árvore do Mundo de Kaldheim e aperfeiçoaram a completação de planeswalkers, permitindo a Norn cultivar Quebra-reinos e abrir caminhos para exércitos de invasão.",
+      "Sua ambição fracassou quando Elspeth retornou, Wrenn trouxe Zhalfir para a luta e Karn desmontou Norn pessoalmente após o contra-ataque."
+    ],
+    "featuredCard": {
+      "significance": "A imagem original de All Will Be One da pretora que dirigiu a tentativa de Phyrexia de conquistar todos os planos."
+    }
+  },
+  "elspeth": {
+    "name": "Elspeth Tirel",
+    "title": "Arcanjo da defesa final",
+    "origin": "Nova Capenna; sobrevivente da perseguição phyrexiana",
+    "role": "Planeswalker e defensora angelical das vítimas de Nova Phyrexia",
+    "summary": "Uma adversária de longa data de Phyrexia que se transformou após salvar os mundos conectados do Sylex.",
+    "biography": [
+      "Elspeth sobreviveu aos horrores de Phyrexia na infância, lutou ao lado das forças da resistência mirraniana e procurou segurança em outros mundos.",
+      "Quando o plano do Germinúcleo ameaçou mundos já conectados a Quebra-reinos (Realmbreaker), ela levou o Sylex às Eternidades Cegas em vez de permitir sua detonação entre eles.",
+      "Ela retornou transformada em anjo, defendeu os mirranianos e conteve Elesh Norn enquanto Wrenn fazia a conexão decisiva com Zhalfir."
+    ],
+    "featuredCard": {
+      "significance": "Um retrato sem bordas do retorno angelical de Elspeth no clímax de March of the Machine."
+    }
+  },
+  "emrakul": {
+    "name": "Emrakul",
+    "title": "O Fragmento dos Éons",
+    "origin": "As Eternidades Cegas",
+    "role": "Titã Eldrazi",
+    "summary": "Uma titã alienígena cujo aprisionamento em Zendikar precedeu um despertar devastador.",
+    "biography": [
+      "Emrakul é um dos três titãs Eldrazi aprisionados em Zendikar por Nahiri, Ugin e Sorin.",
+      "A abertura da prisão dos Eldrazi pôs Zendikar em perigo e expôs a escala aterrorizante das entidades antes ocultas pela rede de edros."
+    ],
+    "featuredCard": {
+      "significance": "A primeira carta lendária de Emrakul de Rise of the Eldrazi."
+    }
+  },
+  "endrek-sahr": {
+    "name": "Endrek Sahr",
+    "title": "Mestre criador",
+    "origin": "Dominária — Sarpadia",
+    "role": "Criador de thrulls para a Ordem da Mão de Ébano",
+    "summary": "Um mago cuja criação de thrulls serviu à Mão de Ébano antes de suas criações ajudarem a derrubar o controle da Ordem.",
+    "biography": [
+      "Endrek Sahr foi lembrado como o criador dos thrulls usados pela Ordem da Mão de Ébano em Sarpadia.",
+      "A dependência da Ordem de servos construídos a tornou vulnerável quando os thrulls cresceram além dos papéis obedientes destinados a eles.",
+      "Endrek recebeu sua primeira carta lendária em Time Spiral (2006); este arquivo usa uma impressão de 2013 daquela ilustração anterior.",
+      "Os thrulls não eram meros elementos de cenário para a Ordem da Mão de Ébano. Sua fabricação e exploração eram importantes para a forma como a Ordem sustentava sua vida militar e ritual, transformando o controle de seres criados em dependência estrutural.",
+      "Quando os thrulls se levantaram contra seus criadores, a Mão de Ébano enfrentou as consequências de suas próprias escolhas institucionais. Essa crise pertence à história de Sarpadia e não deve ser confundida com a crise distinta dos talídeos entre os elfos de Havenwood.",
+      "A retrospectiva de design de Time Spiral da Wizards identifica Endrek como o criador dos thrulls. A carta lendária foi publicada muito depois de Fallen Empires e serve como retrato posterior, em vez de ilustração literal da revolta."
+    ],
+    "featuredCard": {
+      "significance": "Uma reimpressão de Commander 2013 que recorda o criador sarpadiano de thrulls."
+    }
+  },
+  "ertai": {
+    "name": "Ertai",
+    "title": "O mago deixado para trás",
+    "origin": "Dominária — Tolaria",
+    "role": "Mago de Tolaria e, mais tarde, agente phyrexiano",
+    "summary": "Um talentoso e presunçoso mago de Bons Ventos cujos esforços para abrir um portal de fuga o deixaram preso em Rath e vulnerável à corrupção.",
+    "biography": [
+      "Ertai era um talentoso mago de Tolaria conhecido pelo domínio da contramágica e pela considerável confiança nas próprias capacidades. Ele se juntou a Bons Ventos durante a busca pela Capitã Sisay.",
+      "Depois que Predador danificou a capacidade de Bons Ventos de cruzar planos, Ertai ajudou a abrir um portal de fuga em Rath. A tripulação usou o Moldador dos Céus do Legado para alcançá-lo antes que se fechasse, mas a fuga deixou Ertai preso no plano inimigo.",
+      "Seu isolamento e suas experiências posteriores sob influência phyrexiana o transformaram. Ertai ajudou Crovax durante a disputa pela liderança de Rath e foi retratado como Ertai, the Corrupted em Planeshift.",
+      "A história posterior de Dominaria United ressuscitou Ertai séculos após sua morte original. Suas cartas originais de Exodus e Planeshift registram a jornada muito anterior de jovem mago a antagonista caído."
+    ],
+    "featuredCard": {
+      "significance": "Ertai como um jovem mago talentoso antes de ficar preso em Rath e ser posteriormente transformado por Phyrexia."
+    }
+  },
+  "freyalise": {
+    "name": "Freyalise",
+    "title": "Guardiã dos elfos",
+    "origin": "Dominária",
+    "role": "Planeswalker ancestral e protetora de Skyshroud",
+    "summary": "Uma guardiã formidável que encerrou a Era Glacial de Dominária e morreu selando a fenda de Skyshroud.",
+    "biography": [
+      "Freyalise exercia um poder extraordinário desde a época da Era Glacial, quando sua magia ajudou a encerrar o longo inverno sobrenatural. Ela se tornou particularmente associada às comunidades élficas e à defesa de suas florestas.",
+      "Depois que a Sobreposição de Rath transplantou Skyshroud para Keld, Freyalise continuou a proteger seus habitantes das ameaças, mesmo enquanto a crescente fenda temporal enfraquecia o plano.",
+      "Reconhecendo a ameaça a toda Dominária, ela sacrificou sua vida e seu poder para curar a fratura acima de Skyshroud.",
+      "A trajetória de Freyalise abrange duas grandes fases da história de Dominária que não devem ser fundidas. Na história da Era Glacial, sua intervenção está ligada ao Feitiço Mundial e ao fim de um inverno sobrenatural; na história da Reparação, o desafio é uma ruptura temporal específica que ameaça a terra e as pessoas sob sua proteção.",
+      "Para os habitantes de Skyshroud, ela não era uma personificação abstrata do poder dos planeswalkers. Sua conexão com as comunidades élficas envolvia expectativas antigas de defesa e cuidado. O deslocamento da floresta durante a Sobreposição de Rath agravou o problema ao colocar uma vida familiar em uma paisagem transformada.",
+      "Seu sacrifício final ilustra como os antigos planeswalkers enfrentavam limites mesmo antes de o Multiverso mudar ao seu redor. A reparação da fenda foi local e custosa, não um feitiço simples que revertesse todas as consequências da invasão ou da Era Glacial. Sua partida deixou os sobreviventes para viver no mundo que ela ajudara a preservar."
+    ],
+    "featuredCard": {
+      "significance": "Uma carta posterior de planeswalker que representa a protetora élfica que se sacrificou durante a Reparação."
+    }
+  },
+  "gerrard": {
+    "name": "Gerrard Capashen",
+    "title": "Herói de Bons Ventos",
+    "origin": "Dominária",
+    "role": "Guerreiro e herói do Legado",
+    "summary": "O herói central da Saga de Bons Ventos, cujo destino se tornou inseparável do Legado.",
+    "biography": [
+      "Gerrard estava ligado aos planos de longo prazo de Urza para confrontar Phyrexia. Apesar de sua importância para o Legado, inicialmente resistiu ao destino que outros haviam preparado para ele.",
+      "Seu retorno a Bons Ventos ajudou a reunir a tripulação para o resgate de Sisay e as aventuras subsequentes em Rath e Mercadia.",
+      "Durante a invasão de Dominária, Gerrard enfrentou perdas pessoais devastadoras. Suas decisões finais foram essenciais para concluir o Legado e encerrar a invasão de Yawgmoth."
+    ],
+    "featuredCard": {
+      "significance": "Gerrard como retratado em Apocalypse, a expansão final da Saga de Bons Ventos original."
+    }
+  },
+  "gideon-jura": {
+    "name": "Gideon Jura",
+    "title": "O escudo dos Sentinelas",
+    "origin": "Theros",
+    "role": "Planeswalker e líder que deu a vida por Liliana",
+    "summary": "Um defensor de Ravnica cujo ato final poupou Liliana da punição mortal de Bolas.",
+    "biography": [
+      "Gideon se juntou aos Sentinelas em defesa de um Multiverso que não podia depender apenas do poder dos planeswalkers.",
+      "Preso em Ravnica com os outros planeswalkers, ele reuniu a resistência e lutou para proteger as pessoas ameaçadas pela invasão de Bolas.",
+      "Quando Liliana se rebelou, Gideon interpôs sua própria magia protetora, sofrendo a consequência fatal e salvando a vida dela."
+    ],
+    "featuredCard": {
+      "significance": "Gideon redireciona para si o efeito letal da rebelião de Liliana."
+    }
+  },
+  "gix": {
+    "name": "Gix",
+    "title": "Pretor da antiga Phyrexia",
+    "origin": "Dominária (Império Thran); mais tarde, Phyrexia",
+    "role": "Antigo rebelde Thran, mais tarde pretor phyrexiano e agente de Yawgmoth",
+    "summary": "Um antigo rebelde Intocável de Halcyon que se tornou pretor phyrexiano e depois ajudou a corromper Mishra durante a Guerra dos Irmãos.",
+    "biography": [
+      "Em Halcyon, Gix começou como um humano entre os Intocáveis, cuja doença e exclusão estavam ligadas à dependência do Império Thran de pedras de poder. Ele atacou Glacian com um fragmento de pedra de poder durante a agitação na Plataforma de Mana.",
+      "Yawgmoth mais tarde usou o acesso ao tratamento da tísica para exercer influência sobre os marginalizados e seus líderes. Gix foi atraído para seu poder crescente antes de ser transformado em um servo phyrexiano.",
+      "Gix era um poderoso servo de Yawgmoth e uma das principais figuras phyrexianas envolvidas nos acontecimentos em torno da Guerra dos Irmãos.",
+      "Sua influência alcançou Dominária enquanto Urza e Mishra lutavam pelo controle de Terisiare. Em vez de agir como um comandante militar comum, Gix trabalhava para estender o poder phyrexiano por meio do conflito já em curso.",
+      "A crescente dependência de Mishra das forças phyrexianas permitiu que a influência de Gix se tornasse parte da história central da guerra. A corrupção final do irmão refletiu o perigo de tratar essas forças como instrumentos de ambição pessoal.",
+      "O envolvimento de Gix ajudou a conectar as origens antigas de Phyrexia às lutas posteriores contra Yawgmoth, tornando a Guerra dos Irmãos um capítulo importante de um conflito muito mais longo."
+    ],
+    "featuredCard": {
+      "significance": "Gix como um pretor phyrexiano lendário em The Brothers' War."
+    }
+  },
+  "glacian": {
+    "name": "Glacian",
+    "title": "O pai do artifício das pedras de poder",
+    "origin": "Dominária",
+    "role": "Engenheiro Thran e inventor das pedras de poder",
+    "summary": "O brilhante engenheiro Thran cujas pedras de poder alimentaram um império e cujas invenções moldaram os conflitos de eras posteriores.",
+    "biography": [
+      "Glacian descobriu como criar pedras de poder, cristais capazes de armazenar quantidades extraordinárias de energia mágica. Suas invenções se tornaram fundamentais para as máquinas, a infraestrutura e as realizações do antigo Império Thran.",
+      "Glacian era casado com Rebbec, uma das maiores arquitetas do império. Suas realizações estavam intimamente entrelaçadas: as pedras de poder sustentavam as estruturas extraordinárias projetadas por Rebbec, incluindo o Templo Thran flutuante acima de Halcyon.",
+      "As tecnologias em que Glacian foi pioneiro também estavam ligadas à tísica, uma doença devastadora que afligia os Thran. Quando Glacian adoeceu gravemente, Rebbec usou sua influência para trazer o médico Yawgmoth a Halcyon.",
+      "Yawgmoth implantou duas metades de uma pedra de poder quebrada no corpo de Glacian, drenando sua força vital. Mais tarde, Rebbec usou essas pedras para selar o portal para Phyrexia. Milênios depois, Urza e Mishra as descobriram e lhes deram os nomes de Pedra de Força e Pedra de Fraqueza.",
+      "A história pessoal de Glacian não pode ser reduzida à descoberta posterior de duas pedras. Ele foi um inventor cujo trabalho alimentava tanto a infraestrutura cotidiana Thran quanto os edifícios monumentais de Halcyon. A tísica mostrou como uma sociedade podia se beneficiar de seu artifício enquanto deixava seus custos humanos sem solução.",
+      "O implante das duas metades de uma pedra de poder quebrada por Yawgmoth não foi um tratamento bem-sucedido. Os fragmentos consumiam a força vital de Glacian, e as pedras mais tarde passaram à tentativa desesperada de Rebbec de selar Phyrexia. O dispositivo chamado Pedra de Força e Pedra de Fraqueza na Guerra dos Irmãos é um registro posterior daqueles mesmos objetos, não uma imagem do implante."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Glacian de Commander Legends, cujas invenções alimentaram a civilização Thran e influenciaram gerações de artífices posteriores."
+    }
+  },
+  "griselbrand": {
+    "name": "Griselbrand",
+    "title": "Demônio do Elocárcere",
+    "origin": "Innistrad",
+    "role": "Demônio e adversário de Avacyn",
+    "summary": "Um demônio que atraiu Avacyn ao Elocárcere, tornando-se o alvo da busca de Liliana Vess.",
+    "biography": [
+      "Griselbrand enganou Avacyn para levá-la ao Elocárcere, tirando a protetora de Innistrad do conflito.",
+      "Ele também era um dos credores demoníacos a quem Liliana Vess devia um terrível pacto mágico.",
+      "O Elocárcere continha tanto Griselbrand quanto o anjo que havia tentado aprisioná-lo. Enquanto estavam ausentes, a Igreja de Avacyn perdeu grande parte da proteção da qual as comunidades de Innistrad dependiam.",
+      "Liliana procurava o demônio porque esperava escapar dos termos de seus pactos matando aqueles que os detinham. A crise posterior na Catedral de Thraben colocou seu objetivo privado em conflito com a vida dos cátaros que guardavam a prisão.",
+      "Thalia cedeu sob ameaças a seus soldados e quebrou o Elocárcere. Isso libertou Griselbrand e Avacyn juntos; não significava que Liliana pretendia resgatar a protetora de Innistrad. A libertação do demônio e a restauração de Avacyn são consequências de uma única ruptura."
+    ],
+    "featuredCard": {
+      "significance": "A representação de Avacyn Restored do demônio que ajudou a causar a crise do Elocárcere."
+    }
+  },
+  "hanna": {
+    "name": "Hanna",
+    "title": "A navegadora de Bons Ventos",
+    "origin": "Dominária — Tolaria",
+    "role": "Navegadora, artífice e engenheira mágica",
+    "summary": "Uma talentosa artífice de Tolaria que mantinha a tecnologia de Bons Ventos e cuja morte na invasão phyrexiana devastou a tripulação.",
+    "biography": [
+      "Hanna era filha de Barrin e Rayne e estudou em Tolaria. Embora o pai quisesse que se dedicasse à feitiçaria, seus próprios talentos e interesses estavam nos objetos mágicos e na engenharia.",
+      "Ela serviu a bordo de Bons Ventos como navegadora e artífice, usando sua perícia para manter o extraordinário maquinário do navio e os artefatos ligados ao Legado.",
+      "Hanna e Gerrard haviam mantido um relacionamento amoroso próximo antes da partida dele do navio. Seu retorno após o sequestro de Sisay os obrigou a enfrentar as consequências daquela separação anterior.",
+      "Durante a invasão phyrexiana, Hanna morreu de uma praga phyrexiana. Sua perda representou tanto uma tragédia pessoal quanto um golpe severo no conhecimento e na experiência da tripulação."
+    ],
+    "featuredCard": {
+      "significance": "A carta de Hanna de Invasion homenageia a artífice e navegadora cuja vida terminou durante a guerra contra Phyrexia."
+    }
+  },
+  "ixidor": {
+    "name": "Ixidor",
+    "title": "O escultor da realidade",
+    "origin": "Dominária — Otaria",
+    "role": "Ilusionista e criador de Akroma",
+    "summary": "O luto pela morte de Nivea levou Ixidor a remodelar a realidade e criar Akroma para destruir Phage.",
+    "biography": [
+      "Ixidor era um ilusionista cujo relacionamento com Nivea terminou em tragédia após um confronto letal na arena com Phage.",
+      "Em seu luto, desenvolveu a capacidade de tornar reais formas imaginadas. Akroma foi sua criação de maior consequência, um anjo moldado pela perda de Nivea e movido pela vingança.",
+      "O conflito entre Akroma e Phage escapou dos limites dos motivos privados de Ixidor e tornou-se parte da devastação mais ampla de Otaria.",
+      "A morte de Nivea deu uma origem específica à sua posterior manipulação da realidade. A resposta de Ixidor não foi curar o dano causado pelos jogos da Cabala, mas criar um ser capaz de perseguir a pessoa que considerava responsável. Assim, ele transformou o luto privado em uma nova fonte de violência pública.",
+      "A existência de Akroma tornou difícil conter o conflito. Seu poder extraordinário e sua devoção à vingança atraíram seguidores além da mágoa imediata de Ixidor, enquanto a adversária que ela perseguia era Jeska refeita como Phage por outra cadeia de ferimentos e coerção.",
+      "Ixidor, Reality Sculptor pertence ao período de publicação original de Onslaught. Representações posteriores de Akroma podem homenagear sua criação mais famosa ou imaginar versões alternativas, mas não devem ser lidas como novas ilustrações de testemunha ocular da morte de Nivea."
+    ],
+    "featuredCard": {
+      "significance": "A carta original de Ixidor de Onslaught, retratando o ilusionista que podia tornar reais seres imaginados."
+    }
+  },
+  "jace-beleren": {
+    "name": "Jace Beleren",
+    "title": "O mago mental redespertado",
+    "origin": "Vryn; mais tarde, Ravnica e outros planos",
+    "role": "Planeswalker telepata que sobreviveu à completação phyrexiana",
+    "summary": "Um planeswalker sobrevivente cujo resgate de Vraska e cujos planos posteriores revelam as questões não resolvidas da era pós-invasão.",
+    "biography": [
+      "Jace foi completado durante a campanha contra Nova Phyrexia, mas conservou o suficiente de si para lutar contra a corrupção dentro de sua própria mente.",
+      "Ele encontrou Vraska em Ravnica durante a invasão e trabalhou para recuperá-la, levando os dois à sua mãe em Vryn em busca de ajuda.",
+      "Após a guerra, ele e Vraska se envolveram na trama em torno do antigo cofre de Thunder Junction e do ser chamado Loot."
+    ],
+    "featuredCard": {
+      "significance": "Uma carta de planeswalker de 2024 que demonstra que a perda de centelha não afetou todos os planeswalkers."
+    }
+  },
+  "jaya": {
+    "name": "Jaya Ballard",
+    "title": "A maga de tarefas da Era Glacial",
+    "origin": "Dominária — Terisiare",
+    "role": "Piromante, maga de tarefas e, mais tarde, planeswalker",
+    "summary": "Uma renomada piromante e amiga de longa data de Jodah, cuja coragem e habilidades mágicas ajudaram a defender Dominária durante e após a Era Glacial.",
+    "biography": [
+      "Jaya Ballard se tornou conhecida como uma inventiva maga de tarefas e uma usuária excepcionalmente talentosa de magia de fogo. Suas aventuras a levaram às perigosas disputas políticas e mágicas de Terisiare.",
+      "Sua amizade com Jodah perdurou por séculos. Juntos, desempenharam um papel crucial em fazer as facções kjeldoranas e balduvianas cooperarem contra o necromante Lim-Dûl.",
+      "A vida de Jaya se estendeu além do fim da Era Glacial. Sua centelha de planeswalker acabou se acendendo, iniciando outro capítulo de uma carreira que conectou várias eras distintas da história de Dominária.",
+      "Embora seu nome tenha aparecido pela primeira vez em textos de ambientação de cartas de Ice Age, Jaya recebeu uma carta de criatura lendária em Time Spiral, seguida de cartas posteriores que a retratavam como planeswalker.",
+      "Mais tarde, ela foi mentora de Chandra Nalaar e morreu defendendo Dominária em meio à conspiração de agentes adormecidos de Sheoldred."
+    ],
+    "featuredCard": {
+      "significance": "Jaya como maga de tarefas, antes de sua representação posterior como planeswalker."
+    }
+  },
+  "jeska": {
+    "name": "Jeska",
+    "title": "A planeswalker três vezes renascida",
+    "origin": "Dominária — Otaria",
+    "role": "Guerreira de Pardic, Phage, Karona e planeswalker",
+    "summary": "A irmã de Kamahl sobreviveu a um ferimento terrível e a várias transformações antes de se tornar planeswalker.",
+    "biography": [
+      "Jeska era uma guerreira de Pardic e a irmã mais nova de Kamahl. Sua vida mudou quando ele a atingiu com uma espada influenciada pelo Mirari.",
+      "O ferimento levou à sua transformação em Phage, a Intocável. Um confronto posterior combinou Phage, Akroma e Zagorka em Karona, o Falso Deus.",
+      "Quando Karona foi esfaqueada com a espada do Mirari, Akroma e Zagorka morreram, mas Jeska sobreviveu e sua centelha de planeswalker se acendeu. Karn se tornou seu guia, e ela mais tarde retornaria a Dominária durante a crise das fendas temporais.",
+      "A história de Jeska atravessa etapas distintas do conflito de Otaria. Seu ferimento veio do irmão enquanto ele estava sob o efeito do Mirari; a intervenção subsequente da Cabala a tornou Phage, uma figura temida cujo toque letal a colocou dentro de outra disputa por poder político e religioso.",
+      "Phage mais tarde se fundiu com Akroma e Zagorka para formar Karona. Karona era um ser composto e objeto de adoração, não simplesmente Jeska escolhendo outro título. Quando o ser composto foi destruído, as outras duas mulheres morreram enquanto Jeska sobreviveu e se tornou planeswalker.",
+      "A carta posterior Jeska, Thrice Reborn comprime deliberadamente suas identidades anteriores em um único retrato retrospectivo. Essa publicação não deve deslocar seu despertar de planeswalker para trás, para a história de Odyssey, nem obscurecer seu envolvimento posterior na crise das fendas temporais de Dominária e na Reparação."
+    ],
+    "featuredCard": {
+      "significance": "A carta lendária original de Jeska mostra a guerreira de Pardic antes das identidades de Phage, Karona e planeswalker."
+    }
+  },
+  "jhoira": {
+    "name": "Jhoira",
+    "title": "A artífice de Tolaria",
+    "origin": "Dominária — Shiv",
+    "role": "Artífice, engenheira e guardiã da memória histórica",
+    "summary": "Uma engenhosa tolariana e aliada de longa data de Teferi e Karn cuja habilidade prática se mostrou crucial durante a crise temporal.",
+    "biography": [
+      "Jhoira estudou na Academia de Tolaria de Urza e desenvolveu amizades duradouras com Teferi e Karn. Sua vida longa fez dela uma conexão viva com eras separadas por séculos.",
+      "Quando as fraturas temporais de Dominária ameaçaram o mundo, ela acompanhou Teferi e trabalhou com Venser e outros aliados, frequentemente desafiando aqueles que tratavam os companheiros mortais como recursos descartáveis.",
+      "Jhoira sobreviveu à crise e continuou importante para a história de Dominária além da Reparação, levando adiante o legado prático do artifício."
+    ],
+    "featuredCard": {
+      "significance": "A carta de Jhoira de Future Sight retrata a artífice ghitu associada a Teferi e ao legado de Tolaria."
+    }
+  },
+  "jin-gitaxias": {
+    "name": "Jin-Gitaxias",
+    "title": "Pretor da Máquina do Progresso",
+    "origin": "Nova Phyrexia — a Baía Cirúrgica",
+    "role": "Comandante da Hoste Cromada e arquiteto da completação que preserva a centelha",
+    "summary": "Um pesquisador phyrexiano cujos experimentos em Kamigawa transformaram planeswalkers em agentes da invasão.",
+    "biography": [
+      "Jin-Gitaxias perseguia um ideal de perfeição por meio da experimentação e da aquisição de conhecimento, comandando a Hoste Cromada alinhada ao azul.",
+      "Seus estudos dos kami de Kamigawa ajudaram a produzir um método de completação que preservava a centelha de um planeswalker; Tamiyo se tornou um exemplo devastador.",
+      "Durante a invasão multiversal, seus soldados exploraram informações sobre cada plano, embora suposições equivocadas tornassem seus ataques vulneráveis à resistência local."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de 2011 do cientista cujo trabalho posterior mudou a completação de planeswalkers."
+    }
+  },
+  "jodah": {
+    "name": "Jodah",
+    "title": "O arquimago eterno",
+    "origin": "Dominária",
+    "role": "Arquimago e historiador",
+    "summary": "Um mago excepcionalmente longevo que preservou o conhecimento mágico ao longo da Era das Trevas e da Era Glacial.",
+    "biography": [
+      "Jodah surgiu durante os séculos conturbados que se seguiram à Guerra dos Irmãos. Suas primeiras experiências ocorreram quando o conhecimento mágico era temido e seus praticantes podiam enfrentar perseguição.",
+      "Sua notável longevidade lhe permitiu testemunhar séculos da história de Dominária. Ao lado de Jaya Ballard, desempenhou um papel importante na luta contra Lim-Dûl durante a Era Glacial.",
+      "Jodah sobreviveu até eras muito posteriores, tornando-se uma conexão viva entre a história antiga de Dominária e suas gerações mais novas.",
+      "A longa memória de Jodah não deve ser confundida com autoridade política sobre todas as eras que testemunhou. Seu papel como preservador do conhecimento foi moldado pelas consequências da Guerra dos Irmãos e pelo perigo de tratar a própria magia como crime durante a Era das Trevas.",
+      "Sua parceria com Jaya durante a ameaça de Lim-Dûl conectou o estudo à diplomacia e à defesa imediata. Fazer rivais kjeldoranos e balduvianos cooperarem exigia mais que derrotar um inimigo; suas comunidades precisavam reconhecer um futuro que se estendesse além de seus conflitos locais.",
+      "O Jodah retratado em Dominaria United é uma figura pública muito posterior. Sua impressão oferece uma conexão retrospectiva com esses acontecimentos anteriores, não uma representação de testemunha ocular de uma batalha ou reunião específica da Era Glacial."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação posterior de Jodah, cuja vida abrange vários grandes períodos históricos."
+    }
+  },
+  "kamahl": {
+    "name": "Kamahl",
+    "title": "De lutador de arena a druida",
+    "origin": "Dominária — Otaria",
+    "role": "Bárbaro de Pardic e druida de Krosa",
+    "summary": "Um guerreiro celebrado cuja busca pelo Mirari levou à tragédia, ao remorso e a uma nova vocação como protetor de Krosa.",
+    "biography": [
+      "Kamahl começou como um formidável bárbaro e gladiador de Pardic, atraído à Cidade da Cabala e ao Mirari durante a disputa por poder em Otaria. Tornou-se amigo de Chainer enquanto competia nas arenas da Cabala; depois que Chainer perdeu o controle do Mirari e de seus pesadelos, Kamahl foi forçado a encerrar o sofrimento do amigo.",
+      "O Mirari amplificou sua agressividade. Com o artefato preso à espada, ele feriu gravemente sua irmã Jeska, desencadeando sua transformação em Phage.",
+      "Kamahl buscou outra vida na Floresta de Krosa, onde Thriss, o nantuko, lhe ensinou os caminhos druídicos. Sua transformação de lutador de arena em protetor moldaria a história de Onslaught e seus esforços para salvar Jeska.",
+      "As arenas da Cabala transformaram sua habilidade em aclamação pública, mas ele também formou uma amizade verdadeira com Chainer, cuja formação e cujas lealdades eram diferentes das suas. A queda de Chainer deixou Kamahl com uma memória de violência que não podia ser compreendida apenas como vitória sobre um adversário.",
+      "O Mirari não inventou o orgulho de Kamahl. Intensificou sua fome de poder existente até que ele tentou obrigar as tribos de Pardic a segui-lo e atingiu Jeska em um acesso de raiva. Seu remorso posterior não a curou nem desfez as consequências políticas de sua conduta.",
+      "Em Krosa, Kamahl estudou com Thriss, o nantuko, e redirecionou sua força à defesa da floresta. A Wizards mais tarde representou o contraste histórico com o vermelho Kamahl, Pit Fighter e o verde Kamahl, Fist of Krosa; são fases diferentes da mesma vida, não guerreiros lendários independentes.",
+      "Seu legado sobreviveu a ele. A biografia posterior da Wizards de Kamahl, Heart of Krosa identifica a ordem de druidas Kamahlite como uma instituição fundada em Krosa para homenagear sua vida e suas ações. Essa lembrança posterior não deve ser confundida com uma organização que governava Kamahl durante a crise do Mirari."
+    ],
+    "featuredCard": {
+      "significance": "Uma reimpressão da encarnação verde de Kamahl, originalmente apresentada em Onslaught para refletir sua mudança da luta violenta nas arenas para a magia druídica."
+    }
+  },
+  "karn": {
+    "name": "Karn",
+    "title": "O golem de prata",
+    "origin": "Dominária",
+    "role": "Constructo, componente do Legado e planeswalker",
+    "summary": "Criado por Urza, Karn tornou-se um membro compassivo da tripulação de Bons Ventos e, mais tarde, um planeswalker.",
+    "biography": [
+      "Karn foi criado por Urza como um golem de prata e tornou-se um componente importante do Legado. Sua índole gentil contrastava com os propósitos destrutivos de muitas máquinas ao seu redor.",
+      "Como parte da tripulação de Bons Ventos, Karn foi envolvido na luta contra Phyrexia. Seu papel no Legado ajudou a tornar possível o confronto final com Yawgmoth.",
+      "Karn sobreviveu àquele conflito e se tornou planeswalker. Sua criação posterior de um mundo artificial teria consequências para outra era da história de Magic.",
+      "Enquanto Nova Phyrexia tentava invadir todos os planos, Karn ajudou a encerrar o governo de Elesh Norn e depois sacrificou sua centelha restante para ajudar a salvar Nissa e Ajani."
+    ],
+    "featuredCard": {
+      "significance": "A carta de criatura lendária original de Karn, lançada durante o bloco Urza's Saga."
+    }
+  },
+  "kayla": {
+    "name": "Kayla bin-Kroog",
+    "title": "A rainha que resistiu",
+    "origin": "Dominária — Yotia e Argive",
+    "role": "Nobre yotiana, rainha e cronista histórica",
+    "summary": "Uma figura da realeza cuja vida foi transformada pela guerra de Urza contra Mishra e cuja liderança ajudou a preservar seu povo após a catástrofe.",
+    "biography": [
+      "Kayla bin-Kroog pertencia à família governante de Yotia. Seu casamento com Urza conectou o artífice ao poder político yotiano, colocando-a perto das origens e da escalada da Guerra dos Irmãos.",
+      "A destruição de Kroog devastou o mundo que Kayla havia conhecido. Ela sobreviveu ao ataque e se tornou uma líder para as pessoas deslocadas pela guerra, enfrentando consequências políticas e humanitárias que as invenções de nenhum dos irmãos podiam resolver.",
+      "As experiências de Kayla continuaram além da batalha final em Argoth. À medida que o clima se deteriorava e as comunidades sobreviventes lutavam para se adaptar, ela trabalhou para preservar a ordem e proteger as pessoas sob seus cuidados.",
+      "Seu relato, The Antiquities War, tornou-se um registro histórico importante do conflito. Sua perspectiva preservou não apenas as ações de Urza e Mishra, mas o sofrimento e a resiliência daqueles que viveram suas decisões.",
+      "A vida política de Kayla começou em Yotia, onde sua conexão com Urza ligou uma família governante a um poderoso artífice. Essa aliança deu à guerra uma dimensão doméstica que relatos focados apenas nas batalhas entre irmãos podem obscurecer. A esposa de um governante precisava enfrentar as consequências práticas de campanhas travadas em nome de objetivos estratégicos distantes.",
+      "Após a queda de Kroog, a sobrevivência se tornou uma responsabilidade contínua, e não o fim de sua história. A defesa posterior de Penregon, recontada na ficção retrospectiva de The Brothers' War, mostra Kayla avaliando ameaças como uma líder que já perdeu uma capital. Ela é especialmente cautelosa com decisões que tratam civis como peças descartáveis da estratégia de outro general.",
+      "Seu papel de cronista também exige atenção à perspectiva. The Antiquities War é indispensável para reconstruir como a rivalidade dos irmãos afetou Terisiare, mas é um testemunho moldado pela perda, pela memória e pelo difícil trabalho de governar após uma catástrofe. Leitores posteriores podem usar seu relato sem presumir que seja uma visão sem ponto de vista."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Kayla como líder cujo papel continuou além do conflito militar entre Urza e Mishra."
+    }
+  },
+  "kellan": {
+    "name": "Kellan",
+    "title": "O viajante de sangue feérico",
+    "origin": "Eldraine; mais tarde, viajante entre planos",
+    "role": "Aventureiro meio feérico que atravessou Caminhos Pressagiados em busca do pai",
+    "summary": "Um jovem herói de Eldraine cuja busca se tornou uma jornada por Ixalan, Ravnica e Thunder Junction.",
+    "biography": [
+      "Os encontros de Kellan com as fadas e o Sono Perverso em Eldraine revelaram que seu pai era o esquivo planeswalker Oko.",
+      "Os recém-abertos Caminhos Pressagiados lhe permitiram continuar a busca além de seu lar, apesar de não possuir uma centelha de planeswalker.",
+      "Suas experiências como explorador, investigador e participante do assalto de Thunder Junction testaram o que família e julgamento pessoal significavam para ele."
+    ],
+    "featuredCard": {
+      "significance": "A primeira carta lendária de Kellan antecede as representações posteriores de sua jornada multiversal."
+    }
+  },
+  "koth": {
+    "name": "Koth",
+    "title": "Fogo da resistência",
+    "origin": "Mirrodin — os vulshok da Cadeia de Oxidda",
+    "role": "Geomante e líder da resistência mirraniana sobrevivente",
+    "summary": "Um nativo de Mirrodin que se recusou a ceder a Phyrexia depois que ela ocupou seu plano natal.",
+    "biography": [
+      "Koth combateu os phyrexianos enquanto sua corrupção varria Mirrodin e continuou resistindo muito depois de o mundo receber o nome de Nova Phyrexia.",
+      "Ele ajudou a guiar planeswalkers que retornavam e sobreviventes mirranianos pela crise do Germinúcleo e pela tentativa final de alcançar Quebra-reinos (Realmbreaker).",
+      "A restauração de Zhalfir ofereceu santuário a seu povo, mas a vitória não devolveu o mundo de metal que ele havia jurado salvar."
+    ],
+    "featuredCard": {
+      "significance": "Uma impressão promocional de Phyrexia: All Will Be One que ilustra o líder da resistência mirraniana."
+    }
+  },
+  "laquatus": {
+    "name": "Embaixador Laquatus",
+    "title": "O intrigante de Otaria",
+    "origin": "Dominária — Otaria",
+    "role": "Diplomata tritão e conspirador político",
+    "summary": "Um ambicioso embaixador tritão que perseguiu o Mirari por meio de alianças, manipulações e oportunismo.",
+    "biography": [
+      "Laquatus representava a corte dos tritões, mas dedicava esforço considerável a promover sua própria posição nos conflitos mutáveis de Otaria.",
+      "O Mirari oferecia influência sobre o imperador, a Cabala, a Ordem e outros concorrentes. Laquatus o perseguia por meio de intriga política, em vez do combate direto preferido por Kamahl.",
+      "Suas tentativas contínuas de tomar seu poder contribuíram para os conflitos que levaram Kamahl à sua decisão final em Krosa."
+    ],
+    "featuredCard": {
+      "significance": "Uma referência nominal da era de Odyssey a Laquatus; não um retrato direto de sua tentativa de adquirir o Mirari."
+    }
+  },
+  "leshrac": {
+    "name": "Leshrac",
+    "title": "O andarilho da noite",
+    "origin": "O Multiverso — ativo em Dominária",
+    "role": "Planeswalker ancestral e manipulador durante a Reparação",
+    "summary": "Um antigo planeswalker que explorou o medo de Jeska de perder a centelha e acabou derrotado por Nicol Bolas.",
+    "biography": [
+      "Leshrac era um planeswalker ancestral e perigoso cujo nome estava associado à magia sombria em Dominária desde a época de Lim-Dûl.",
+      "Durante a crise temporal, ofereceu a Jeska conselhos que pareciam permitir que ela fechasse fendas sem abrir mão de sua própria centelha, recorrendo ao vínculo extraordinário de Radha com a mana das fendas.",
+      "Seus motivos eram predatórios: buscava o poder ligado à identidade de Phage de Jeska e desafiou Nicol Bolas. Bolas o derrotou e usou o poder restante para fechar a fenda de Madara."
+    ],
+    "featuredCard": {
+      "significance": "Uma carta de Ice Age que leva o nome de Leshrac; evidência temática de sua influência anterior, e não um retrato do planeswalker."
+    }
+  },
+  "lieutenant-kirtar": {
+    "name": "Tenente Kirtar",
+    "title": "O tenente da Ordem",
+    "origin": "Dominária — Otaria",
+    "role": "Oficial da Ordem e um dos primeiros detentores do Mirari",
+    "summary": "Um comandante da Ordem que tomou o Mirari da Cabala, mas não conseguiu fazer seu poder servir a seu ideal de justiça.",
+    "biography": [
+      "Kirtar servia à Ordem, que se opunha à Cabala e afirmava agir contra a magia perigosa e a crueldade associadas à Cidade da Cabala.",
+      "Quando o Mirari passou da custódia da Cabala às mãos da Ordem, Kirtar esperava direcionar seu poder à própria causa. O artefato, em vez disso, demonstrou como a certeza podia se tornar perigosa quando amplificada por uma magia avassaladora.",
+      "Seu fracasso é uma fase da passagem do Mirari entre potências rivais de Otaria, anterior ao uso desastroso da esfera por Aboshan.",
+      "Kirtar era oficial de uma organização que se definia em oposição à Cabala. Enquanto as arenas da Cabala transformavam o sofrimento em espetáculo comercializável, a Ordem reivindicava uma autoridade superior enraizada na disciplina e na justiça. Esse contraste tornava o Mirari atraente como forma de assegurar a posição da Ordem.",
+      "O efeito da esfera era mais complicado que o de uma arma comum mudando de mãos. Kirtar acreditava que a legitimidade de seus fins ajudaria a controlar o que possuía, mas o Mirari expôs a distância entre convicção moral e comedimento. Sua tentativa deve ser colocada ao lado dos fracassos posteriores de governantes e guerreiros que levaram ambições diferentes ao mesmo objeto.",
+      "Seu retrato é evidência de sua presença na história de Odyssey, não uma representação literal da transformação decisiva que o Mirari lhe causou. Preservar essa distinção impede que o arquivo ilustrado confunda a identificação de um personagem com uma cena histórica exata."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de Kirtar de Odyssey; a ilustração o identifica em vez de retratar sua tentativa final de usar o Mirari."
+    }
+  },
+  "liliana-vess": {
+    "name": "Liliana Vess",
+    "title": "A general da Horda Medonha",
+    "origin": "Dominária",
+    "role": "Necromante forçada a comandar o exército de Eternos de Bolas",
+    "summary": "Uma planeswalker cujo desafio a Bolas mudou a batalha e levou ao sacrifício de Gideon.",
+    "biography": [
+      "Liliana buscou libertar-se de pactos sobrenaturais, mas acabou vinculada ao Dragão Ancião Nicol Bolas.",
+      "Em Ravnica, comandou a Horda Medonha sabendo que o domínio de Bolas sobre ela poderia matá-la caso desobedecesse.",
+      "Ela voltou os Eternos contra Bolas; Gideon absorveu a consequência letal de sua rebelião, deixando-a viva com um legado difícil.",
+      "Antes da Guerra da Centelha, Liliana viajou a Innistrad em busca de Griselbrand, um dos demônios a quem havia prometido seus serviços. O Véu Metálico aumentou seu poder necromântico ao mesmo tempo que introduziu uma dependência diferente e perigosa.",
+      "Na Catedral de Thraben, Liliana ameaçou os cátaros sob o comando de Thalia até que Thalia quebrou o Elocárcere. A ruptura libertou Griselbrand e Avacyn; a intenção de Liliana era confrontar seu credor, e não restaurar o arcanjo ou reformar a igreja de Innistrad.",
+      "Esse episódio anterior ajuda a explicar sua resistência posterior à obrigação mágica sem tratá-lo como uma versão inicial da Guerra da Centelha. Seu conflito com Bolas, o comando da Horda Medonha e o sacrifício de Gideon pertencem a uma crise subsequente em Ravnica."
+    ],
+    "featuredCard": {
+      "significance": "O comando contestado de Liliana sobre o exército de Eternos durante a invasão."
+    }
+  },
+  "lim-dul": {
+    "name": "Lim-Dûl",
+    "title": "O necromante da Era Glacial",
+    "origin": "Dominária — Terisiare",
+    "role": "Necromante e comandante de exércitos de mortos-vivos",
+    "summary": "Um poderoso necromante cujas ambições e forças mortas-vivas ameaçaram os reinos de Terisiare durante o longo inverno de Dominária.",
+    "biography": [
+      "Lim-Dûl buscou poder mágico e político durante a Era Glacial de Dominária, quando os reinos de Terisiare já estavam pressionados por gerações de dificuldades ambientais e guerras.",
+      "Seu domínio da necromancia lhe permitiu erguer e comandar forças mortas-vivas, acrescentando uma ameaça sobrenatural aos conflitos dos reinos congelados.",
+      "Jodah e Jaya Ballard se tornaram adversários importantes de Lim-Dûl. A resistência às suas ambições incentivou a cooperação entre as facções rivais kjeldoranas e balduvianas.",
+      "Lim-Dûl se tornou uma das figuras duradouras associadas à história da Era Glacial. Sua carta de criatura lendária apareceu em Time Spiral, anos após a expansão original Ice Age.",
+      "O poder do necromante agravava a vulnerabilidade de Terisiare: as baixas podiam se tornar novas ameaças aos vivos. Isso alterava o que estava em jogo para assentamentos que enfrentavam invernos, conflitos e recursos limitados, mesmo antes de seus governantes concordarem com uma resposta.",
+      "Sua influência é mais bem compreendida como uma pressão sobre várias comunidades políticas, e não como uma única campanha ininterrupta com datas universalmente aceitas. A aliança que acabou se opondo a ele também foi uma luta para superar divisões mais antigas entre os povos kjeldoranos e balduvianos.",
+      "A impressão de Time Spiral usada neste arquivo é um retrato retrospectivo de personagem. Suas regras e sua arte comunicam a associação de Lim-Dûl com os mortos-vivos, mas não retratam todas as fases de sua campanha na Era Glacial."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Lim-Dûl de Time Spiral, cujos exércitos de mortos-vivos ameaçaram Terisiare."
+    }
+  },
+  "loot": {
+    "name": "Loot",
+    "title": "A chave para tudo",
+    "origin": "Antigo cofre de Thunder Junction",
+    "role": "Jovem ser misterioso ligado aos segredos multiversais do cofre",
+    "summary": "A descoberta viva no coração do assalto ao cofre, cujas capacidades atraíram atenção além de Thunder Junction.",
+    "biography": [
+      "Loot foi encontrado dentro de um antigo cofre fortemente defendido em Thunder Junction, em vez de ser um tesouro comum tomado por uma equipe criminosa.",
+      "Sua conexão incomum com o Multiverso o tornou importante para os planos de Jace e Vraska.",
+      "Seu surgimento transformou o resultado de um assalto no começo de uma questão maior e não resolvida sobre o futuro das viagens interplanares."
+    ],
+    "featuredCard": {
+      "significance": "A carta de The Big Score apresenta o prêmio vivo do cofre, não um objeto comum."
+    }
+  },
+  "mairsil": {
+    "name": "Mairsil",
+    "title": "O impostor",
+    "origin": "Dominária — Terisiare",
+    "role": "Usurpador do Conclave durante a Era das Trevas",
+    "summary": "Um mago do Conclave que aprisionou Ith e explorou conhecimento mágico proibido para obter poder pessoal.",
+    "biography": [
+      "Mairsil depôs o fundador do Conclave, Ith, e o manteve na Jaula de Barl, drenando o poder mágico do mago cativo.",
+      "Ele tentou explorar a ascendência e o conhecimento de Jodah como caminho para um poder maior, ilustrando como a missão pública do Conclave de preservar a magia podia esconder coerção.",
+      "Jodah e Sima ajudaram a libertar Ith. A destruição que se seguiu encerrou o controle de Mairsil sobre a instituição, mas os estudiosos sobreviventes levaram seu conhecimento adiante."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Commander 2017 do usurpador da Era das Trevas e de sua fome por poder roubado."
+    }
+  },
+  "melira": {
+    "name": "Melira",
+    "title": "Exilada sylvok",
+    "origin": "Mirrodin — os sylvok",
+    "role": "Combatente da resistência mirraniana e protetora contra a corrupção phyrexiana",
+    "summary": "Uma mirraniana cuja rara imunidade deu esperança à resistência e possibilitou um sacrifício final por dois planeswalkers completados.",
+    "biography": [
+      "A resistência inata de Melira à corrupção phyrexiana a tornou valiosa para os sobreviventes mirranianos dispersos durante a conquista de seu mundo.",
+      "Ela ajudou a expedição que tentou alcançar o Germinúcleo de Nova Phyrexia, guiada por seu conhecimento das regiões transformadas do plano.",
+      "Após a derrota de Elesh Norn, ela gastou sua vida para ajudar a restaurar Nissa e Ajani, em uma cura que também custou a centelha de Karn."
+    ],
+    "featuredCard": {
+      "significance": "A representação original de 2011 da imunidade de Melira e de seu papel na resistência."
+    }
+  },
+  "mirri": {
+    "name": "Mirri",
+    "title": "A guerreira felina de Bons Ventos",
+    "origin": "Dominária — Llanowar",
+    "role": "Guerreira felina e tripulante de Bons Ventos",
+    "summary": "Uma lutadora habilidosa e amiga de longa data de Gerrard cuja lealdade não conseguiu salvá-la da maldição e da traição de Crovax.",
+    "biography": [
+      "Mirri era uma guerreira felina criada entre os elfos de Llanowar, onde sua amizade com Gerrard formou uma parte importante de sua vida. Sua velocidade e suas capacidades de combate a tornaram um membro valorizado da tripulação de Bons Ventos.",
+      "Quando a tripulação invadiu a Fortaleza de Volrath para resgatar Sisay, Mirri interveio durante um encontro com o anjo Selenia e ficou gravemente ferida. Crovax matou Selenia para protegê-la, completando a maldição que o tornou um vampiro.",
+      "Mirri permaneceu leal aos companheiros. Após o encontro, seguiu Crovax quando ele deixou Bons Ventos, e ele a matou. Sua morte foi uma das perdas pessoais definidoras da expedição a Rath.",
+      "A carta original de Exodus Mirri, Cat Warrior a retrata como parte da continuidade principal de Bons Ventos. Mirri the Cursed, publicada mais tarde em Planar Chaos, retrata uma realidade alternativa, e não seu destino canônico."
+    ],
+    "featuredCard": {
+      "significance": "A carta lendária de Mirri de Exodus, lançada durante a história da fuga da tripulação de Rath."
+    }
+  },
+  "mishra": {
+    "name": "Mishra",
+    "title": "O irmão perdido para Phyrexia",
+    "origin": "Dominária — Terisiare",
+    "role": "Artífice, comandante Fallaji e líder de guerra",
+    "summary": "O talentoso irmão mais novo de Urza, cuja rivalidade, ambições militares e corrupção phyrexiana ajudaram a devastar Terisiare.",
+    "biography": [
+      "Mishra estudou artefatos Thran antigos ao lado do irmão Urza sob a orientação da arqueóloga Tocasia. A descoberta das duas metades de uma pedra poderosa ajudou a acender a rivalidade que definiria a vida dos dois.",
+      "Após a morte de Tocasia, Mishra se separou de Urza e ganhou destaque entre os Fallaji. Seus talentos como artífice e sua crescente influência transformaram um conflito familiar em uma disputa entre facções poderosas.",
+      "Enquanto a guerra continuava, o pretor phyrexiano Gix aproveitou as ambições de Mishra. Mishra se envolveu cada vez mais com a influência phyrexiana, e sua transformação final simbolizou o quanto o conflito havia ido além de suas causas originais.",
+      "O confronto final de Mishra com Urza ocorreu em Argoth. A ativação do Sylex Golgothiano por Urza levou a guerra a um fim catastrófico, deixando o legado dos irmãos inseparável da devastação de Dominária."
+    ],
+    "featuredCard": {
+      "significance": "Mishra como poderoso artífice e líder antes das consequências finais de sua corrupção phyrexiana."
+    }
+  },
+  "multani": {
+    "name": "Multani",
+    "title": "Maro-feiticeiro de Yavimaya",
+    "origin": "Dominária — Yavimaya",
+    "role": "Antigo espírito da natureza e mentor",
+    "summary": "O maro que orientou Gerrard, Mirri e Rofellos antes de suas jornadas entrelaçadas em Bons Ventos.",
+    "biography": [
+      "Multani era um antigo elemental ligado às florestas de Yavimaya e à sua magia viva.",
+      "Ele instruiu os jovens Gerrard, Mirri e Rofellos, cuja amizade antecedia em muito a missão de resgatar Sisay de Rath.",
+      "Seus ensinamentos oferecem um contraponto em escala humana à manipulação de linhagens e do Legado por Urza: as lealdades de Gerrard foram formadas pela experiência vivida, não apenas pelo planejamento."
+    ],
+    "featuredCard": {
+      "significance": "A impressão de Urza's Legacy do mestre de Gerrard em Yavimaya."
+    }
+  },
+  "nahiri": {
+    "name": "Nahiri",
+    "title": "A litomante",
+    "origin": "Zendikar",
+    "role": "Planeswalker e arquiteta da prisão de edros",
+    "summary": "Uma litomante de Zendikar que construiu a prisão de edros com Ugin e Sorin para conter os Eldrazi.",
+    "biography": [
+      "O talento de Nahiri para moldar pedra tornou possível construir a prisão dos titãs Eldrazi que abrangia todo Zendikar.",
+      "Ela concordou em defender seu plano natal depois que Ugin e Sorin ajudaram a atrair os Eldrazi ao confinamento.",
+      "Seu conflito posterior com Sorin e suas ações em Innistrad pertencem a histórias subsequentes, não ao primeiro despertar dos Eldrazi.",
+      "Muito mais tarde, ela foi completada durante o ataque a Nova Phyrexia e voltou sua litomancia contra Zendikar durante a invasão.",
+      "No relato The Lithomancer, Ugin propôs conter os Eldrazi em vez de destruir entidades cujo lugar em uma ordem cósmica mais ampla ele não compreendia plenamente. Nahiri reconheceu que usar Zendikar como prisão colocaria seus habitantes em risco e inicialmente rejeitou esse fardo.",
+      "Ela acabou escolhendo seu próprio plano como local de confinamento e permaneceu como sua guardiã. A construção posterior dos edros e a criação do Olho de Ugin foram consequências dessa decisão anterior, não evidências independentes de que os habitantes de Zendikar haviam aceitado conscientemente o risco.",
+      "A carta de Nahiri selecionada para este arquivo é um retrato retrospectivo muito posterior. Ela identifica a litomante, mas não é uma representação de sua conversa antiga com Ugin e Sorin."
+    ],
+    "featuredCard": {
+      "significance": "Um retrato retrospectivo de 2019 da antiga litomante de Zendikar."
+    }
+  },
+  "nicol-bolas": {
+    "name": "Nicol Bolas",
+    "title": "O Dragão Ancião",
+    "origin": "Dominária; mais tarde, viajante pelo Multiverso",
+    "role": "Planeswalker e arquiteto da Guerra da Centelha",
+    "summary": "Um Dragão Ancião que arquitetou uma invasão para colher as centelhas de outros planeswalkers e recuperar seu poder perdido.",
+    "biography": [
+      "Depois que a Reparação reduziu os poderes quase divinos dos planeswalkers antigos, Bolas buscou um meio de reverter a perda.",
+      "Seus agentes obtiveram a Ponte Planar e o Sol Imortal; os Eternos preparados em Amonkhet se tornaram um exército destinado a colher centelhas em Ravnica.",
+      "Ele aprisionou planeswalkers em Ravnica e ativou o Feitiço Ancião, mas a resistência e a rebeldia de Liliana lhe negaram a vitória. Sua centelha foi removida, e Ugin o confinou no Reino da Meditação."
+    ],
+    "featuredCard": {
+      "significance": "Bolas no aparente auge de sua tentativa de restaurar a divindade em Ravnica."
+    }
+  },
+  "nissa": {
+    "name": "Nissa Revane",
+    "title": "A animista ascendida",
+    "origin": "Zendikar",
+    "role": "Maga elemental, planeswalker completada e sobrevivente",
+    "summary": "Uma guardiã de mundos vivos cujos poderes foram voltados contra seus aliados após a completação.",
+    "biography": [
+      "A relação de Nissa com as terras de Zendikar e o Turbilhão fez dela uma das magas da natureza mais capazes do Multiverso.",
+      "Na missão fracassada ao Germinúcleo, o óleo phyrexiano e a completação coercitiva a voltaram contra a coalizão; Chandra mais tarde a enfrentou nas etapas finais da invasão.",
+      "Em Zhalfir, o sacrifício de Melira e o poder que Karn conservava de Venser permitiram a restauração de Nissa, embora cicatrizes e consequências permanecessem."
+    ],
+    "featuredCard": {
+      "significance": "Seu retrato completado registra a violação, pela invasão, de um antigo vínculo com a natureza."
+    }
+  },
+  "niv-mizzet": {
+    "name": "Niv-Mizzet",
+    "title": "A Mente de Fogo renascida",
+    "origin": "Ravnica",
+    "role": "Mestre da guilda Izzet e, mais tarde, Pacto das Guildas Vivo",
+    "summary": "A Mente de Fogo de Ravnica cujo renascimento transformou a aliança das guildas da cidade em uma nova forma de ordem mágica.",
+    "biography": [
+      "Niv-Mizzet liderou a Liga Izzet com intelecto formidável e uma longa história de intriga entre guildas.",
+      "Durante o confronto com Bolas, seu plano perigoso exigiu cooperação entre as facções de Ravnica e resultou em sua morte e renascimento.",
+      "Ele retornou como o Pacto das Guildas Vivo, uma figura central na tentativa de Ravnica de se recuperar da guerra."
+    ],
+    "featuredCard": {
+      "significance": "A transformação da Mente de Fogo no Pacto das Guildas Vivo."
+    }
+  },
+  "oko": {
+    "name": "Oko",
+    "title": "O trapaceiro feérico",
+    "origin": "Origens feéricas desconhecidas; viajante entre mundos",
+    "role": "Planeswalker, metamorfo e organizador do assalto ao cofre de Thunder Junction",
+    "summary": "O pai de Kellan, um planeswalker feérico enganador cujos planos elaborados levaram uma equipe a um cofre antigo.",
+    "biography": [
+      "A habilidade de Oko com transformações e manipulação o ajudou a escapar das consequências e reunir aliados para planos de alto risco.",
+      "Ele organizou uma equipe criminosa interplanar em torno do cofre de Thunder Junction e de seu conteúdo misterioso.",
+      "Seu reencontro com Kellan confrontou o jovem viajante com a diferença entre procurar um pai e confiar nele."
+    ],
+    "featuredCard": {
+      "significance": "A carta de planeswalker de Thunder Junction retrata Oko como o arquiteto do assalto ao cofre."
+    }
+  },
+  "quintorius-kand": {
+    "name": "Quintorius Kand",
+    "title": "Arqueólogo de Arcavios",
+    "origin": "Arcavios — Faculdade de Sapioforte; expedição a Ixalan",
+    "role": "Planeswalker de centelha recém-acesa e estudioso de civilizações antigas",
+    "summary": "Um arqueólogo cujo trabalho com Huatli e Saheeli revela histórias mais antigas sob Ixalan.",
+    "biography": [
+      "Quintorius estudava história em Arcavios antes de descobrir que possuía uma centelha de planeswalker.",
+      "Ele aceitou o convite de Saheeli e Huatli para ajudar a interpretar a porta-enigma de Orazca e evidências das civilizações enterradas de Ixalan.",
+      "Sua presença ilustra como uma centelha ainda ativa e Caminhos Pressagiados recorrentes podiam conectar pesquisadores sem apagar a história local que buscavam compreender."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de planeswalker de Quintorius de Lost Caverns of Ixalan."
+    }
+  },
+  "radha": {
+    "name": "Radha",
+    "title": "Herdeira de Keld",
+    "origin": "Dominária — Keld e Skyshroud",
+    "role": "Guerreira meio elfa e líder de Keld",
+    "summary": "Uma guerreira formidável cuja conexão com a fenda de Skyshroud ajudou a remodelar as tentativas de salvar Dominária.",
+    "biography": [
+      "Radha foi criada entre a herança dos elfos de Skyshroud e as tradições ferozes de Keld. Ela buscava reconhecimento como guerreira de Keld, em vez de simplesmente aceitar a identidade que outros lhe atribuíam.",
+      "Seu vínculo incomum com a mana das fendas a tornou central para a investigação de Teferi e, mais tarde, para as tentativas de Jeska de curar o plano danificado. Ambos os planeswalkers precisaram enfrentar a independência de Radha e os perigos de usar outra pessoa como ferramenta.",
+      "Ela sobreviveu à Reparação e se tornou uma líder influente em Keld durante a recuperação subsequente de Dominária."
+    ],
+    "featuredCard": {
+      "significance": "A impressão original de Radha de Planar Chaos captura sua identidade de Keld e seu vínculo com a floresta."
+    }
+  },
+  "radiant": {
+    "name": "Radiant",
+    "title": "Arcanjo de Serra",
+    "origin": "Reino de Serra",
+    "role": "Guardiã angelical do plano artificial de Serra",
+    "summary": "A guardiã cujo governo cada vez mais severo precedeu o colapso do Reino de Serra e a criação da fonte de energia de Bons Ventos.",
+    "biography": [
+      "Serra confiou seu reino a Radiant quando a corrupção phyrexiana afastou sua criadora.",
+      "A determinação de Radiant de eliminar a infiltração endureceu até se tornar suspeita de seu próprio povo, enquanto o reino sem Serra continuava a se deteriorar.",
+      "Bons Ventos ajudou a resgatar habitantes antes do colapso do plano. Sua mana e a luz divina de Radiant se tornaram parte da pedra de poder que alimentava o navio voador.",
+      "Radiant havia sido criada entre os primeiros arcanjos de Serra e recebeu a responsabilidade por um santuário definido pelos ideais de sua criadora. Sua autoridade, portanto, carregava um fardo excepcionalmente pessoal: proteger não apenas uma população, mas um ambiente que expressava a visão de Serra de refúgio e paz ordenada.",
+      "Enquanto agentes phyrexianos exploravam os medos do reino, a determinação de Radiant se endurecia em suspeita. O trono que ela herdou não era destinado a ela e lhe infligia sofrimento; esse detalhe ajuda a explicar a deterioração de seu julgamento sem desculpar o dano que se seguiu. O medo da corrupção tornou-se um meio pelo qual o reino prejudicava a si mesmo.",
+      "A evacuação por Bons Ventos e o colapso do Reino de Serra encerraram o governo de Radiant, mas sua luz contribuiu para o poder posterior da embarcação. Seu legado é, assim, trágico e duplo: uma guardiã fracassada de um mundo tornou-se parte de uma máquina usada para defender outro."
+    ],
+    "featuredCard": {
+      "significance": "A representação original de Urza's Legacy do arcanjo que guardava o reino decadente de Serra."
+    }
+  },
+  "ral-zarek": {
+    "name": "Ral Zarek",
+    "title": "Mago das tempestades Izzet",
+    "origin": "Ravnica",
+    "role": "Planeswalker Izzet e organizador da resistência de Ravnica",
+    "summary": "Um mago Izzet cuja perícia com o Sinalizador Interplanar se mostrou vital tanto para a armadilha da invasão quanto para combatê-la.",
+    "biography": [
+      "Ral Zarek era um planeswalker e mago da Liga Izzet intimamente ligado à engenharia mágica de Ravnica e a Niv-Mizzet.",
+      "Enquanto a trama de Bolas convergia para Ravnica, o Sinalizador Interplanar se tornou o meio de atrair planeswalkers a uma prisão selada pelo Sol Imortal.",
+      "Ral ajudou a organizar a resistência e a desativar o maquinário que sustentava o exército invasor. Após a batalha, a liderança das guildas lhe encarregou de perseguir Tezzeret."
+    ],
+    "featuredCard": {
+      "significance": "Ral Zarek durante a Guerra da Centelha, a serviço da resistência de Ravnica."
+    }
+  },
+  "rebbec": {
+    "name": "Rebbec",
+    "title": "Arquiteta da Ascensão",
+    "origin": "Dominária",
+    "role": "Arquiteta Thran",
+    "summary": "Uma celebrada arquiteta Thran cuja escolha final separou Dominária da Phyrexia de Yawgmoth.",
+    "biography": [
+      "Rebbec foi uma das maiores arquitetas da antiga civilização Thran. Ela incorporava pedras de poder a estruturas extraordinárias, incluindo o Templo Thran flutuante acima de Halcyon.",
+      "Quando seu marido Glacian adoeceu, Rebbec ajudou a trazer o médico Yawgmoth a Halcyon. Sua influência crescente contribuiu para a destruição da civilização que ela havia ajudado a construir.",
+      "Reconhecendo a ameaça representada por Phyrexia, Rebbec selou o portal entre os planos, cortando o caminho imediato de Yawgmoth de volta a Dominária.",
+      "A posição de Rebbec em Halcyon vinha de seu trabalho como arquiteta, não de um cargo militar. Seus projetos expressavam a crença Thran de que a engenharia das pedras de poder podia sustentar uma civilização pública espetacular. O templo e outras estruturas importam como evidência de que as realizações tecnológicas do império estavam ligadas ao prestígio político e à desigualdade social.",
+      "Seu interesse pessoal na doença de Glacian ajuda a explicar por que Yawgmoth ganhou acesso a círculos poderosos. A decisão de buscar um médico veio antes de ser possível compreender todo o perigo de seu programa. Não deve ser reformulada como se Rebbec conscientemente endossasse tudo o que ele fez depois com sua influência política ou com o plano artificial.",
+      "Quando Rebbec finalmente selou o portal, agiu contra uma força que antes havia ajudado a admitir em seu mundo. Essa escolha preservou uma fronteira ao custo de separá-la do que estava além dela. Seu papel histórico vai, assim, além do de uma testemunha de Yawgmoth: ela ilustra os limites da responsabilidade e a possibilidade de recusar um projeto após descobrir no que havia se tornado.",
+      "A história das pedras implantadas em Glacian dá à decisão final de Rebbec uma continuidade material além do simbolismo. Os mesmos fragmentos de pedra de poder que haviam drenado a vida de seu marido acabaram sendo usados para selar a passagem pela qual Yawgmoth ameaçava Dominária.",
+      "O fechamento do portal por ela foi uma resposta ao domínio phyrexiano emergente de Yawgmoth, não a invenção dos fragmentos nem uma garantia de que os Thran podiam ser restaurados. A redescoberta posterior das pedras por Urza e Mishra pertence a outra era e deve ser tratada como um acontecimento separado."
+    ],
+    "featuredCard": {
+      "significance": "Retrata a influente arquiteta Thran cujas escolhas moldaram a história antiga de Dominária."
+    }
+  },
+  "rofellos": {
+    "name": "Rofellos",
+    "title": "Emissário de Llanowar",
+    "origin": "Dominária — Llanowar",
+    "role": "Mago élfico e companheiro caído de Gerrard",
+    "summary": "Um amigo de Gerrard e Mirri cuja morte a bordo de Bons Ventos ajudou a voltar Gerrard contra a missão que herdara.",
+    "biography": [
+      "Rofellos estudou com Multani ao lado de Gerrard e Mirri, tornando-se parte de seu círculo mais próximo de amigos.",
+      "Mais tarde, ele se juntou à tripulação de Bons Ventos e morreu antes do sequestro de Sisay. Sua perda ajudou a afastar Gerrard e Mirri do navio.",
+      "Embora estivesse ausente da narrativa principal do resgate, Urza's Destiny mais tarde lhe deu uma carta porque seu período retrospectivo podia retratar sua vida anterior."
+    ],
+    "featuredCard": {
+      "significance": "Uma carta retrospectiva do elfo de Llanowar que influenciou a partida de Gerrard de Bons Ventos."
+    }
+  },
+  "rowan-kenrith": {
+    "name": "Rowan Kenrith",
+    "title": "A herdeira da guerra",
+    "origin": "Eldraine",
+    "role": "Antiga planeswalker e herdeira real em busca de poder perigoso",
+    "summary": "A irmã gêmea de Will, cujo luto e desejo de proteger Eldraine a afastaram da visão de restauração de seu irmão.",
+    "biography": [
+      "Rowan sobreviveu à invasão phyrexiana, mas perdeu os pais e a centelha de planeswalker, integrando um reino que lutava contra o Sono Perverso.",
+      "Ela passou a desconfiar das soluções políticas lentas preferidas por Will e via cada vez mais o poder como a resposta necessária à vulnerabilidade de Eldraine.",
+      "Sua busca por magia perigosa a colocou em oposição a Will sem apagar o vínculo familiar na raiz do conflito entre eles."
+    ],
+    "featuredCard": {
+      "significance": "Impressão de 2023 com arte alternativa que reflete a mudança de Rowan em direção ao poder em Eldraine."
+    }
+  },
+  "selenia": {
+    "name": "Selenia",
+    "title": "O anjo sombrio",
+    "origin": "Desconhecida; vinculada a um artefato na casa de Crovax em Dominária",
+    "role": "Anjo preso por um artefato mágico e depois forçado a servir Volrath",
+    "summary": "Um anjo privado de liberdade por vínculos mágicos concorrentes, cuja morte durante o resgate de Bons Ventos completou a maldição vampírica de Crovax.",
+    "biography": [
+      "Selenia estava presa a um artefato mágico associado à casa de Crovax. Quando inimigos ameaçaram sua família, Crovax usou o artefato para invocá-la; o encantamento que o ajudava também fez com que se apaixonasse por ela. O vínculo negava a Selenia a liberdade de determinar seu próprio destino.",
+      "Crovax libertou Selenia do artefato, esperando que ela pudesse escolher livremente ficar. Em vez disso, outro vínculo a transferiu para o serviço de Volrath, o evincar de Rath. Crovax interpretou a separação como rejeição e se juntou à expedição de Bons Ventos em parte porque esperava encontrá-la novamente.",
+      "Na Fortaleza de Volrath, Selenia atacou os resgatadores. Mirri interveio e foi ferida; Crovax matou o anjo para salvar sua companheira de navio. A morte dela desencadeou sua maldição vampírica. É importante não representar Selenia como se simplesmente tivesse escolhido Volrath em vez de Crovax: o relato publicado enfatiza explicitamente os vínculos mágicos coercitivos ao seu redor.",
+      "Representações posteriores de Planar Chaos em que Mirri é amaldiçoada no lugar de Crovax pertencem a uma realidade alternativa, não à sequência principal de Bons Ventos."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de Selenia de Tempest, que retrata o anjo central à maldição de Crovax; não uma representação de sua morte na Fortaleza."
+    }
+  },
+  "seton": {
+    "name": "Seton",
+    "title": "Protetor de Krosa",
+    "origin": "Dominária — Floresta de Krosa",
+    "role": "Druida centauro e guardião",
+    "summary": "Um defensor de Krosa que representava os valores de uma floresta viva em contraste com a política de arenas de Otaria.",
+    "biography": [
+      "Seton era um centauro associado à Floresta de Krosa e às suas tradições de proteção e magia druídica.",
+      "Sua amizade com Kamahl ajudou a conectar o antigo lutador de arena a um mundo onde o poder podia ser exercido a serviço dos seres vivos, em vez da conquista pessoal.",
+      "O principal mestre nantuko de Kamahl foi Thriss; Seton é mais bem compreendido como aliado e representante da tradição mais ampla de Krosa, não como substituto de Thriss na narrativa."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de Seton de Odyssey, mostrando os guardiões de Krosa antes da transformação de Kamahl."
+    }
+  },
+  "sheoldred": {
+    "name": "Sheoldred",
+    "title": "O Apocalipse",
+    "origin": "Nova Phyrexia — os Poços de Escória",
+    "role": "Pretora e organizadora da campanha de agentes adormecidos em Dominária",
+    "summary": "Uma líder phyrexiana que enfraqueceu Dominária por meio da infiltração secreta antes da invasão maior.",
+    "biography": [
+      "Sheoldred operava entre os Thanes de Aço e liderou um esforço secreto para desestabilizar Dominária, o mundo onde o império anterior de Phyrexia havia sido derrotado.",
+      "Seus agentes adormecidos transformavam instituições e companheiros de confiança em possíveis ameaças; a completação de Ajani possibilitou uma traição devastadora e a morte de Jaya.",
+      "Os interesses de Sheoldred não eram idênticos aos de Elesh Norn, e a disputa dos pretores pelo poder revelou os limites da vontade supostamente unificada de Phyrexia."
+    ],
+    "featuredCard": {
+      "significance": "O retrato da pretora de Dominaria United apresenta a campanha secreta por trás da guerra que se aproximava."
+    }
+  },
+  "sisay": {
+    "name": "Capitã Sisay",
+    "title": "Capitã de Bons Ventos",
+    "origin": "Dominária — Jamuraa",
+    "role": "Capitã de navio voador e líder da expedição do Legado",
+    "summary": "A firme capitã de Bons Ventos cuja liderança uniu a tripulação e cuja captura trouxe Gerrard de volta à missão do Legado.",
+    "biography": [
+      "Sisay comandava Bons Ventos e ajudava a reunir as pessoas e os artefatos associados ao Legado de Urza. Acreditava no destino de Gerrard mesmo quando ele o rejeitava, e seu julgamento mantinha unida uma tripulação de companheiros muito diferentes.",
+      "Volrath capturou Sisay e a levou a Rath. Resgatá-la foi a razão imediata pela qual Gerrard retornou a Bons Ventos e liderou a expedição pela fortaleza inimiga.",
+      "Após seu resgate, Sisay permaneceu uma líder central enquanto a tripulação escapava de Rath, sobrevivia a Mercadia e retornava para enfrentar a invasão phyrexiana de Dominária.",
+      "Sua carta de Modern Horizons revisita uma capitã estabelecida pela primeira vez na narrativa original da era de Bons Ventos, enfatizando os companheiros lendários que buscava reunir."
+    ],
+    "featuredCard": {
+      "significance": "Um retrato posterior da capitã de Bons Ventos, cuja captura inicia a missão de resgate da tripulação em Rath."
+    }
+  },
+  "sorin": {
+    "name": "Sorin Markov",
+    "title": "Planeswalker vampiro de Innistrad",
+    "origin": "Innistrad",
+    "role": "Planeswalker e criador de Avacyn",
+    "summary": "Um vampiro ancestral que ajudou a aprisionar os Eldrazi e criou Avacyn para preservar a humanidade de Innistrad.",
+    "biography": [
+      "Sorin ajudou Nahiri e Ugin a construir o sistema que aprisionou os Eldrazi em Zendikar.",
+      "Em seu plano natal de Innistrad, criou o anjo Avacyn para preservar a humanidade e um equilíbrio viável entre presa e predador.",
+      "O aprisionamento de Avacyn no Elocárcere ameaçou esse equilíbrio e forçou Sorin a enfrentar os limites de sua intervenção."
+    ],
+    "featuredCard": {
+      "significance": "O retrato de Dark Ascension do planeswalker vampiro de Innistrad."
+    }
+  },
+  "squee": {
+    "name": "Squee",
+    "title": "Nababo goblin",
+    "origin": "Dominária",
+    "role": "Grumete de Bons Ventos e sobrevivente da maldição de ressurreição de Yawgmoth",
+    "summary": "Um improvável herói de Bons Ventos cujos séculos de imortalidade indesejada terminaram com sua escolha de uma vida final durante a renovada invasão phyrexiana.",
+    "biography": [
+      "Squee se juntou a Bons Ventos como um grumete goblin aparentemente insignificante e se tornou um membro leal de sua companhia variada.",
+      "Durante a guerra phyrexiana original, a magia de Yawgmoth lhe concedeu uma imortalidade regenerativa que fazia seu corpo ser reconstruído após a morte.",
+      "A história de 2022 Death and Salvation revelou que a completação de Squee por Ertai interrompeu esse ciclo ao separar sua alma do corpo que retornava.",
+      "Diante da oferta de ressurreição sem fim, descanso final ou outra escolha, Squee pediu à Salvação que o deixasse retornar para uma última vida finita."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de Squee de Mercadian Masques, da era de Bons Ventos."
+    }
+  },
+  "szadek": {
+    "name": "Szadek",
+    "title": "Senhor dos segredos",
+    "origin": "Ravnica",
+    "role": "Fundador vampiro da Casa Dimir",
+    "summary": "O mestre de guilda oculto cuja manipulação da crise do Decamilenário despedaçou o antigo Pacto das Guildas.",
+    "biography": [
+      "Szadek era o esquivo fundador da Casa Dimir, a guilda que cultivava o sigilo e a desinformação por toda Ravnica.",
+      "Durante a crise do Decamilenário, suas maquinações levaram Agrus Kos a descobri-lo e prendê-lo, desencadeando o colapso do Pacto das Guildas."
+    ],
+    "featuredCard": {
+      "significance": "A representação original do fundador Dimir oculto de Ravnica."
+    }
+  },
+  "tamiyo": {
+    "name": "Tamiyo",
+    "title": "Sábia da lua e guardiã de histórias",
+    "origin": "Kamigawa",
+    "role": "Contadora de histórias, primeira planeswalker completada e mãe de Nashi",
+    "summary": "Uma amada historiadora transformada por Jin-Gitaxias, cuja memória mágica preservada sobreviveu à sua morte em Kamigawa.",
+    "biography": [
+      "Tamiyo coletava histórias pelo Multiverso e prezava sua família em Kamigawa, registrando memórias em pergaminhos encantados.",
+      "A experimentação phyrexiana a completou preservando sua centelha, distorcendo seus estudos em um instrumento de conquista.",
+      "Durante a invasão, a Imperatriz Errante a matou para salvar outros. Um registro mágico das memórias de Tamiyo sobreviveu e falou com Nashi; isso não foi uma restauração completa de seu corpo."
+    ],
+    "featuredCard": {
+      "significance": "A representação original de 2022 de Tamiyo após a completação phyrexiana em Kamigawa."
+    }
+  },
+  "tawnos": {
+    "name": "Tawnos",
+    "title": "O aprendiz que questionou a guerra",
+    "origin": "Dominária — Terisiare",
+    "role": "Artífice, inventor e aprendiz de Urza",
+    "summary": "Um inventor talentoso que serviu a Urza durante a Guerra dos Irmãos e depois enfrentou o legado destrutivo das máquinas que construíram.",
+    "biography": [
+      "Tawnos se tornou aluno e colaborador próximo de Urza, desenvolvendo uma compreensão excepcional de máquinas e invenções movidas a pedras de poder. Seus talentos ajudaram a apoiar os projetos de engenharia das forças de Urza.",
+      "Ao contrário dos dois irmãos, cuja rivalidade passou a dominar suas vidas, Tawnos manteve relacionamentos entre os lados do conflito. Sua conexão com Ashnod, uma artífice associada a Mishra, revelou a possibilidade de cooperação além das lealdades militares opostas.",
+      "Durante a guerra, Tawnos foi aprisionado e acabou libertado pela intervenção de Ashnod. Suas experiências o expuseram às consequências pessoais da disputa entre seus respectivos líderes.",
+      "Após a devastação de Argoth, Tawnos continuou trabalhando com tecnologia mecânica no mundo transformado. Seus esforços para servir às comunidades civis o forçaram a enfrentar o perigo de que máquinas projetadas para uso pacífico voltassem a se tornar instrumentos de guerra."
+    ],
+    "featuredCard": {
+      "significance": "Representa a abordagem inventiva de Tawnos à vida mecânica e seus interesses além do artifício militar."
+    }
+  },
+  "teferi": {
+    "name": "Teferi",
+    "title": "O mago temporal de Zhalfir",
+    "origin": "Dominária — Zhalfir",
+    "role": "Arquimago temporal; antigo planeswalker",
+    "summary": "Um mestre da magia temporal que abriu mão de sua centelha de planeswalker para salvar Shiv e começar a curar Dominária.",
+    "biography": [
+      "Um aluno talentoso da Academia de Tolaria, Teferi dominou a magia temporal e acabou se tornando planeswalker. Durante a invasão phyrexiana, retirou Zhalfir e Shiv de fase, para fora da realidade comum, a fim de poupá-las da conquista.",
+      "Ao retornar a Dominária séculos depois, encontrou um plano moribundo cujas fendas temporais eram em parte o legado dessas intervenções drásticas. Trabalhou com Jhoira, Venser e Radha para compreender como poderiam ser seladas.",
+      "Teferi gastou sua centelha para restaurar Shiv e curar sua fenda. Zhalfir, porém, permaneceu ausente — um dos custos mais duradouros de sua decisão anterior.",
+      "Quando Wrenn alcançou Quebra-reinos (Realmbreaker), os exércitos zhalfirianos retornaram à luta e a nação deslocada recuperou seu lugar no Multiverso."
+    ],
+    "featuredCard": {
+      "significance": "Teferi como retratado em Time Spiral, antes do sacrifício de sua centelha de planeswalker."
+    }
+  },
+  "tevesh-szat": {
+    "name": "Tevesh Szat",
+    "title": "O traidor entre os Nove Titãs",
+    "origin": "Dominária",
+    "role": "Planeswalker ancestral, manipulador e membro dos Nove Titãs",
+    "summary": "Um planeswalker implacável cuja traição aos Nove Titãs de Urza expôs as concessões desesperadas por trás do ataque a Phyrexia.",
+    "biography": [
+      "Antes da Invasão Phyrexiana, Tevesh Szat era uma força ancestral e destrutiva na história de Dominária. Seus planos contribuíram para convulsões em Sarpadia e em outras civilizações muito antes da campanha final de Bons Ventos.",
+      "Urza recrutou Szat para os Nove Titãs, nove planeswalkers que atacaram Phyrexia em Máquinas Titânicas. O arranjo era estrategicamente útil, mas profundamente perigoso, porque Szat nunca havia abandonado suas próprias ambições.",
+      "Szat traiu a missão e assassinou as planeswalkers Daria e Kristina. Urza havia antecipado a traição e matou Szat, usando sua essência vital para alimentar as bombas de almas destinadas a devastar Phyrexia.",
+      "Sua história ilustra tanto a ameaça de traição dentro dos Nove Titãs quanto a disposição de Urza de transformar a morte de um aliado em arma. Tevesh Szat mais tarde recebeu uma carta de planeswalker em Commander Legends, muito depois dos acontecimentos que ela recorda."
+    ],
+    "featuredCard": {
+      "significance": "A carta lendária de planeswalker posterior de Tevesh Szat, representando um vilão cuja traição prejudicou os Nove Titãs de Urza."
+    }
+  },
+  "teysa-karlov": {
+    "name": "Teysa Karlov",
+    "title": "Negociadora Orzhov",
+    "origin": "Ravnica",
+    "role": "Aristocrata Orzhov e estrategista política",
+    "summary": "Uma inventiva líder Orzhov que navegou pelo caos após a destruição do primeiro Pacto das Guildas.",
+    "biography": [
+      "Teysa trabalhava no mundo de contratos, dívidas e influência política do Sindicato Orzhov.",
+      "Durante as disputas que se seguiram ao rompimento do Pacto das Guildas, aliou-se a Agrus Kos para enfrentar ameaças ao futuro de Ravnica.",
+      "A perícia jurídica de Teysa importou depois que Agrus Kos expôs o paradoxo que destruiu o antigo Pacto das Guildas mágico. Enquanto as facções enfrentavam violência e colapso político, ela se tornou uma negociadora importante, em vez de reivindicar o poder de um antigo parun.",
+      "A retrospectiva de Ravnica atribui a Teysa a redação de um novo acordo não mágico entre as guildas. Isso não restaurou o encantamento anterior nem obrigou os mestres de guilda a cumprir suas promessas: a cidade ainda precisava administrar interesses concorrentes por meio da política e da aplicação das regras.",
+      "Seu papel histórico conecta, portanto, o fim da trilogia original à história posterior das leis das guildas. Não deve ser confundido com a condição subsequente de Jace Beleren como Pacto das Guildas Vivo, que surgiu em outra era."
+    ],
+    "featuredCard": {
+      "significance": "O retrato original de Guildpact da líder Orzhov."
+    }
+  },
+  "tezzeret": {
+    "name": "Tezzeret",
+    "title": "Mestre da Ponte Planar",
+    "origin": "Alara — Esper",
+    "role": "Artífice e portador do dispositivo interplanar de invasão de Bolas",
+    "summary": "O planeswalker artífice cuja Ponte Planar permitiu a Bolas transportar os Eternos revestidos de lazotep a Ravnica.",
+    "biography": [
+      "A ambição de Tezzeret e seu domínio das máquinas mágicas fizeram dele um agente importante nos planos de Nicol Bolas.",
+      "Depois que a Ponte Planar foi tomada de Kaladesh, Tezzeret se tornou seu portador. Seu transporte de matéria não viva entre planos deu a Bolas uma forma de mover os Eternos especialmente preparados de Amonkhet para Ravnica.",
+      "A ponte era um elemento de uma operação maior que também dependia do Sinalizador Interplanar, do Sol Imortal e do Feitiço Ancião. Após a derrota de Bolas, líderes das guildas de Ravnica buscaram responsabilizar Tezzeret."
+    ],
+    "featuredCard": {
+      "significance": "Retrato promocional de compra de caixa de War of the Spark do portador da Ponte Planar."
+    }
+  },
+  "thelon-of-havenwood": {
+    "name": "Thelon de Havenwood",
+    "title": "Druida thelonita",
+    "origin": "Dominária — Sarpadia, Havenwood",
+    "role": "Druida associado ao cultivo de talídeos",
+    "summary": "Um druida de Havenwood cujas criações fúngicas se tornaram centrais para a luta dos elfos de Sarpadia.",
+    "biography": [
+      "Thelon é associado ao desenvolvimento dos talídeos, os seres fúngicos que podiam gerar saprófitas na sociedade em declínio de Havenwood.",
+      "As tentativas dos elfos de incorporar a vida fúngica a seus recursos foram seguidas por conflitos quando os talídeos se expandiram além das expectativas.",
+      "Sua carta posterior de Time Spiral recorda o período de Fallen Empires, em vez de retratar um acontecimento contemporâneo à expansão de 2006.",
+      "A conexão de Thelon com os talídeos explica como uma solução mágica para a escassez e o conflito podia criar uma nova incerteza. A relação dos elfos de Havenwood com a vida fúngica mudou à medida que os talídeos se multiplicaram e deixaram de se encaixar no lugar que lhes fora destinado na sociedade élfica.",
+      "A história de Thelon é separada do trabalho de Endrek Sahr para a Mão de Ébano. Os talídeos eram vida fúngica associada a Havenwood, enquanto os thrulls eram produzidos para outra potência de Sarpadia. Tratá-los como um único experimento obscureceria as causas distintas de cada colapso.",
+      "Sua lenda de Time Spiral é uma representação retrospectiva. O relato de design da Wizards conectou explicitamente Thelon à história anterior de Fallen Empires e incluiu mana preta em uma habilidade para sugerir uma identidade mais complicada."
+    ],
+    "featuredCard": {
+      "significance": "Um retrato retrospectivo de Time Spiral do druida ligado aos talídeos de Sarpadia."
+    }
+  },
+  "tocasia": {
+    "name": "Tocasia",
+    "title": "Mentora dos irmãos",
+    "origin": "Dominária — Terisiare",
+    "role": "Arqueóloga, artífice e professora",
+    "summary": "Uma arqueóloga que guiou Urza e Mishra pelas ruínas dos Thran antes de sua rivalidade trazer tragédia ao acampamento dela.",
+    "biography": [
+      "Tocasia era uma arqueóloga experiente cujas investigações de ruínas Thran antigas forneceram o cenário para os primeiros estudos de Urza e Mishra. Ela ajudou a cultivar seu interesse no artifício e nas civilizações esquecidas de Dominária.",
+      "As descobertas dos irmãos nas Cavernas de Koilos lhes deram a posse da Pedra de Força e da Pedra de Fraqueza. À medida que a rivalidade crescia, os artefatos se tornavam cada vez mais objetos de conflito, em vez de curiosidade compartilhada.",
+      "Tocasia morreu ao tentar intervir em um confronto entre os irmãos. Sua morte encerrou a vida dos dois juntos sob sua orientação e se tornou uma das tragédias definidoras que antecederam a Guerra dos Irmãos.",
+      "A expansão The Brothers' War mais tarde retratou Tocasia em uma carta de criatura lendária, dando a uma figura importante do início da história sua própria representação no registro histórico ilustrado."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação com arte estendida de Tocasia, a arqueóloga que orientou Urza e Mishra."
+    }
+  },
+  "trostani": {
+    "name": "Trostani",
+    "title": "Três vozes do Conclave Selesnya",
+    "origin": "Ravnica — Vitu-Ghazi",
+    "role": "Liderança compartilhada de dríades, incluindo Oba, Cim e Ses",
+    "summary": "A líder tríplice cuja divisão interna escondeu a campanha de assassinatos de Oba após a invasão phyrexiana.",
+    "biography": [
+      "A líder do Conclave Selesnya era composta por três dríades: Oba, Cim e Ses, apresentando uma voz compartilhada apesar das experiências diferentes.",
+      "Oba protegeu as irmãs do sofrimento da invasão e depois buscou vingança por meio da violência e da coerção mágica.",
+      "Cim e Ses não participaram conscientemente desses assassinatos; o caso expôs como a aparência de unidade podia ocultar uma divisão perigosa."
+    ],
+    "featuredCard": {
+      "significance": "As três dríades retratadas juntas durante a crise da Mansão Karlov."
+    }
+  },
+  "urabrask": {
+    "name": "Urabrask",
+    "title": "Pretor da Fornalha Silenciosa",
+    "origin": "Nova Phyrexia — a Camada das Fornalhas",
+    "role": "Pretor dissidente alinhado ao vermelho e adversário de Elesh Norn",
+    "summary": "Um pretor phyrexiano que tolerava refugiados mirranianos e resistia abertamente à unidade forçada de Norn.",
+    "biography": [
+      "Ao contrário de Norn, Urabrask permitia que sobreviventes mirranianos se abrigassem em suas fornalhas e se recusava a impor uma única forma de obediência.",
+      "Sua oposição à Ortodoxia das Máquinas acabou se tornando rebelião aberta, com alianças formadas apesar de profundas divisões ideológicas.",
+      "A punição brutal de Norn ao rival mostrou a violência subjacente à sua proclamação de que todos os phyrexianos compartilhavam uma única vontade.",
+      "Urabrask era um pretor de Nova Phyrexia cuja filosofia da camada das fornalhas diferia fortemente da de Elesh Norn. A presença de sobreviventes mirranianos em seu território mostrava os limites da alegação de que todo centro de poder phyrexiano seguia políticas idênticas em relação à vida não phyrexiana.",
+      "Sua revolta criou oportunidades para a oposição a Norn, mas seria enganoso torná-lo simplesmente mais um combatente mirraniano pela liberdade. Seus objetivos surgiam de conflitos dentro de Phyrexia e não apagavam as diferenças mais profundas entre os rebeldes que cooperavam contra a Ortodoxia das Máquinas.",
+      "A punição infligida a ele dramatizou o custo da dissidência dentro de uma civilização supostamente unida. Também ajuda a explicar as vulnerabilidades internas da invasão: expandir para outros mundos exigia que Norn demandasse obediência dos líderes rivais em casa, não apenas que superasse defensores no exterior."
+    ],
+    "featuredCard": {
+      "significance": "Uma ilustração retrospectiva de 2023 do pretor das fornalhas apresentado pela primeira vez em 2011."
+    }
+  },
+  "urza": {
+    "name": "Urza",
+    "title": "O arquiteto do destino",
+    "origin": "Dominária",
+    "role": "Artífice e planeswalker",
+    "summary": "Um mestre artífice cuja rivalidade com Mishra e longa guerra contra Phyrexia remodelaram Dominária.",
+    "biography": [
+      "Urza e seu irmão Mishra descobriram pedras de poder Thran antigas que dividiriam sua família. A rivalidade se intensificou até se tornar a Guerra dos Irmãos, terminando com a devastação de Argoth e a ignição da centelha de planeswalker de Urza.",
+      "Urza dedicou os séculos seguintes a derrotar Yawgmoth e Phyrexia. Desenvolveu planos elaborados, incluindo o Legado e preparativos que acabaram envolvendo Bons Ventos e sua tripulação.",
+      "Suas realizações tiveram custos imensos. Urza estava disposto a sacrificar outros em busca da vitória, tornando seu legado historicamente significativo e moralmente complicado."
+    ],
+    "featuredCard": {
+      "significance": "Urza durante a Guerra dos Irmãos, antes de a Explosão do Sylex transformar sua existência."
+    }
+  },
+  "venser": {
+    "name": "Venser",
+    "title": "O moldador sábio",
+    "origin": "Dominária — Urborg",
+    "role": "Artífice, especialista em teletransporte e planeswalker",
+    "summary": "Um mago inventivo cujos experimentos de teletransporte e cuja centelha emergente prenunciaram a era pós-Reparação.",
+    "biography": [
+      "Venser cresceu em Urborg, onde buscou construir dispositivos capazes de transporte e deslocamento extraordinários. Seus talentos atraíram a atenção de Teferi e Lorde Windgrace.",
+      "Envolvido na tentativa de fechar as fendas de Dominária, descobriu que seu próprio potencial para viajar entre planos diferia das capacidades quase ilimitadas dos planeswalkers antigos.",
+      "Venser sobreviveu à reparação final da fenda de Otaria e entrou na nova era como um dos primeiros exemplos de planeswalker pós-Reparação.",
+      "Os primeiros experimentos de Venser eram técnicos e mágicos. Seu interesse em dispositivos de teletransporte fez dele um companheiro incomum para Teferi e Jhoira em um momento em que planeswalkers veteranos tentavam reparar danos deixados por poderes muito maiores que o dele.",
+      "Sua centelha emergente apareceu dentro da crise maior, e não depois de ela ser resolvida em segurança. Esse momento importa porque sua experiência desafiava a suposição de que viajar entre planos sempre se pareceria com a existência quase ilimitada da geração anterior. A Reparação transformou essa relação entre capacidade e limitação.",
+      "Sua sobrevivência permite que o capítulo termine com possibilidade e também com sacrifício. O desaparecimento ou a morte de alguns guardiões estabelecidos mudou o mundo, mas inventores como Venser ainda enfrentavam decisões sobre como usar seus poderes com responsabilidade na nova ordem. Sua história posterior pertence a narrativas subsequentes e não deve ser projetada para trás em sua primeira jornada."
+    ],
+    "featuredCard": {
+      "significance": "A primeira carta lendária de Venser, impressa em Future Sight, reflete seu talento para o teletransporte."
+    }
+  },
+  "volrath": {
+    "name": "Volrath",
+    "title": "Evincar de Rath",
+    "origin": "Dominária — Jamuraa; mais tarde, Rath",
+    "role": "Metamorfo phyrexiano e governante de Rath",
+    "summary": "Antes irmão adotivo de Gerrard sob o nome Vuel, Volrath governou Rath para Phyrexia e se infiltrou na tripulação de Bons Ventos por meio de um disfarce perigoso.",
+    "biography": [
+      "Conhecido como Vuel na juventude, Volrath cresceu ao lado de Gerrard sob os cuidados de Sidar Kondo. Seu ressentimento contra Gerrard ajudou a transformar o vínculo pessoal entre eles em uma inimizade duradoura.",
+      "Como evincar de Rath, Volrath governava a partir da Fortaleza e servia ao plano phyrexiano de usar o plano artificial como base para a invasão de Dominária.",
+      "Ele sequestrou a Capitã Sisay, trazendo Gerrard de volta à missão de Bons Ventos. Quando a tripulação libertou seus cativos, Volrath escapou de Rath disfarçado de Takara, filha de Starke, e viajou com o grupo para Mercadia.",
+      "Em Mercadia, o engano de Volrath levou ao assassinato de Starke e fraturou ainda mais a confiança da tripulação. Seus planos faziam parte de uma campanha mais ampla que se estendia além de um plano ou de uma rivalidade."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Nemesis do metamorfo phyrexiano que governou Rath e enganou a tripulação de Bons Ventos."
+    }
+  },
+  "vorinclex": {
+    "name": "Vorinclex",
+    "title": "Pretor do Enxame Cruel",
+    "origin": "Nova Phyrexia — o Labirinto dos Caçadores",
+    "role": "Pretor predatório e ladrão da essência da Árvore do Mundo",
+    "summary": "O pretor alinhado ao verde cuja missão a Kaldheim ajudou a criar a árvore interplanar da invasão.",
+    "biography": [
+      "Vorinclex incorporava a visão de que a dominação e a sobrevivência deveriam ser determinadas pela adaptação implacável e pela predação.",
+      "Viajando a Kaldheim pelo crescente alcance interplanar de Phyrexia, obteve uma essência da Árvore do Mundo necessária para Quebra-reinos (Realmbreaker).",
+      "Suas realizações ajudaram Elesh Norn a preparar uma invasão coordenada apesar das ideias conflitantes dos pretores sobre o significado de perfeição."
+    ],
+    "featuredCard": {
+      "significance": "A representação original de Vorinclex, publicada muito antes de sua missão à Árvore do Mundo."
+    }
+  },
+  "vraska": {
+    "name": "Vraska",
+    "title": "A silenciadora",
+    "origin": "Ravnica",
+    "role": "Sobrevivente górgona, antiga líder de guilda e aliada de Jace",
+    "summary": "Uma antiga planeswalker completada cuja sobrevivência e cujos objetivos ocultos complicam o assalto de Thunder Junction.",
+    "biography": [
+      "A história de Vraska com Ravnica e Jace antecedia a invasão phyrexiana, durante a qual seu corpo e sua mente foram corrompidos.",
+      "Jace a procurou durante a guerra, protegeu seu eu sobrevivente e a levou em direção à recuperação.",
+      "Ela retornou à ação entre os fora da lei de Thunder Junction enquanto escondia objetivos além daqueles que a equipe de Oko compreendia."
+    ],
+    "featuredCard": {
+      "significance": "Sua impressão de criatura lendária de Thunder Junction reflete uma condição alterada após a invasão."
+    }
+  },
+  "will-kenrith": {
+    "name": "Will Kenrith",
+    "title": "O jovem rei de Eldraine",
+    "origin": "Eldraine",
+    "role": "Antigo planeswalker e pretendente ao trono de Eldraine",
+    "summary": "O herdeiro sem centelha que tentou guiar Eldraine pelas consequências da invasão phyrexiana.",
+    "biography": [
+      "Will e sua irmã gêmea Rowan perderam o Rei Kenrith e a Rainha Linden durante a invasão phyrexiana, deixando o reino se reconstruir em meio ao luto e à desordem.",
+      "Sem sua centelha de planeswalker, Will permaneceu comprometido com o difícil trabalho de restaurar instituições e unir Eldraine após o Sono Perverso.",
+      "Sua crença na negociação entrou em choque com a convicção de Rowan de que apenas uma magia formidável poderia impedir a próxima catástrofe."
+    ],
+    "featuredCard": {
+      "significance": "A carta de criatura lendária captura as responsabilidades de Will após perder sua centelha."
+    }
+  },
+  "windgrace": {
+    "name": "Lorde Windgrace",
+    "title": "Protetor de Urborg",
+    "origin": "Dominária — Urborg",
+    "role": "Planeswalker e guardião de Urborg",
+    "summary": "Um antigo protetor que entregou a vida para fechar a fenda temporal de Urborg.",
+    "biography": [
+      "Lorde Windgrace governava como guardião de Urborg e desconfiava dos efeitos destrutivos do artifício e das intervenções de estrangeiros. A Sobreposição de Rath deixou sua terra natal marcada por estruturas transplantadas e por uma fenda perigosa.",
+      "Quando Teferi e seus companheiros buscaram uma forma de curar o plano, a suspeita de Windgrace dificultou a cooperação. Ainda assim, ele acabou reconhecendo a escala da crise.",
+      "Windgrace deu a vida para selar a fenda de Urborg, deixando uma conexão espiritual duradoura com a terra que havia defendido."
+    ],
+    "featuredCard": {
+      "significance": "Uma representação de Commander 2018 do guardião histórico de Urborg."
+    }
+  },
+  "wrenn": {
+    "name": "Wrenn",
+    "title": "A dríade que se tornou Oito",
+    "origin": "Uma dríade que viaja entre planos e se vincula a árvores hospedeiras sucessivas",
+    "role": "Planeswalker dríade que redirecionou Quebra-reinos a Zhalfir",
+    "summary": "A dríade que se uniu à árvore de invasão de Phyrexia e trocou o lugar de Nova Phyrexia pelo de Zhalfir.",
+    "biography": [
+      "Wrenn sobrevivia vinculando-se a árvores, cada parceria única; sua relação com as árvores hospedeiras era pessoal, e não simplesmente uma fonte de poder mágico.",
+      "No auge da invasão multiversal, ela se vinculou ao remanescente vivo de Quebra-reinos (Realmbreaker), nomeando seu oitavo parceiro Oito e alcançando o plano isolado de Zhalfir.",
+      "Ela possibilitou uma contra-invasão e trocou as posições dos planos, dando sua vida para que Zhalfir pudesse retornar e Nova Phyrexia fosse isolada."
+    ],
+    "featuredCard": {
+      "significance": "A carta documenta o vínculo singular de Wrenn com a Árvore da Invasão antes hostil."
+    }
+  },
+  "yawgmoth": {
+    "name": "Yawgmoth",
+    "title": "O Pai das Máquinas",
+    "origin": "Dominária",
+    "role": "Médico Thran e governante de Phyrexia",
+    "summary": "Um médico Thran cuja ambição transformou um plano artificial no centro do poder phyrexiano.",
+    "biography": [
+      "Yawgmoth entrou na capital Thran de Halcyon durante uma crise médica. Seu conhecimento e suas manobras políticas o ajudaram a adquirir influência, mesmo enquanto seus experimentos cada vez mais implacáveis ameaçavam a civilização.",
+      "A planeswalker Dyfed o apresentou ao plano artificial de Phyrexia. Yawgmoth não criou originalmente aquele plano; assumiu seu controle e remodelou seus habitantes de acordo com sua visão.",
+      "Phyrexia se tornou uma ameaça a Dominária ao longo de milhares de anos, da influência de Gix durante a Guerra dos Irmãos à invasão combatida por Urza e pela tripulação de Bons Ventos.",
+      "A entrada de Yawgmoth em Halcyon dependeu de uma emergência médica e da esperança de Rebbec de que ele pudesse ajudar Glacian. Seu acesso aos pacientes e à autoridade pública permitiu que um médico apresentasse o controle coercitivo como resposta necessária às consequências da tecnologia das pedras de poder.",
+      "O implante das duas metades de uma pedra de poder quebrada no corpo de Glacian oferece um exemplo específico do perigo por trás das alegações de Yawgmoth. Relatos oficiais descrevem os fragmentos drenando a vida do inventor em vez de restaurá-la; esse episódio antecede seu uso posterior para selar o portal para Phyrexia.",
+      "O plano artificial que Dyfed revelou a Yawgmoth já existia antes de ele encontrá-lo. Sua transformação posterior de Phyrexia em uma sociedade organizada em torno de sua visão deve ser distinguida de sua criação original e do retorno muito posterior de sua influência por meio de Gix e de outros agentes."
+    ],
+    "featuredCard": {
+      "significance": "Yawgmoth antes de sua transformação no governante de Phyrexia."
+    }
+  }
+}

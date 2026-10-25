@@ -29,7 +29,7 @@
     "audit:provenance": "node scripts/audit-external-provenance.mjs",
     "check:artwork": "node scripts/check-artwork-fidelity.mjs",
     "review:artwork": "node scripts/check-artwork-fidelity.mjs",
-    "verify": "pnpm run test && pnpm run check:entities && pnpm run check:cards && pnpm run check:content && pnpm run check:editorial && pnpm run check:provenance && pnpm run check:artwork && pnpm run check:images && pnpm run check:styles && pnpm run check:themes && pnpm run check:glossary && pnpm run check:types && pnpm run build && pnpm run check:search && pnpm run check:links",
+    "verify": "pnpm run test && pnpm run check:localization && pnpm run check:entities && pnpm run check:cards && pnpm run check:content && pnpm run check:editorial && pnpm run check:provenance && pnpm run check:artwork && pnpm run check:images && pnpm run check:styles && pnpm run check:themes && pnpm run check:glossary && pnpm run check:types && pnpm run build && pnpm run check:search && pnpm run check:links",
     "check:types": "astro check",
     "check:styles": "node scripts/check-style-architecture.mjs",
     "check:themes": "node scripts/check-chapter-themes.mjs",
@@ -38,7 +38,8 @@
     "probe:images": "node scripts/probe-card-images.mjs",
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
     "preview:cloudflare": "wrangler dev --local --ip 127.0.0.1 --port 4325",
-    "check:hosting": "playwright test --config playwright.hosting.config.mjs"
+    "check:hosting": "playwright test --config playwright.hosting.config.mjs",
+    "check:localization": "node scripts/check-full-localization.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.3",

@@ -31,12 +31,12 @@ test('graph labels and colors respond to real focus, URL state and theme', () =>
 });
 
 test('network layout explains categories and separates graph from source-backed cards', () => {
-  const page = read('src/pages/relationships/index.astro');
+  const page = read('src/components/pages/RelationshipAtlas.astro');
   const styles = read('src/styles/_interactive-explorers.scss');
   for (const token of ['network-steps', 'network-label-density', 'network-legend-heading', 'network-edge__perspective',
     'RELATIONSHIP_COLORS'])
     assert.ok(page.includes(token), token);
-  assert.match(page, /role="group" aria-label="Relationship display mode"/);
+  assert.match(page, /role="group" aria-label=\{phrase\(pageLocale, "Relationship display mode"\)\}/);
   assert.match(page, /Relationship perspective/);
   assert.match(styles, /UX E2/);
   assert.match(styles, /max-width: 480px/);

@@ -52,7 +52,7 @@ test('corrupted or unavailable storage fails safely without changing defaults', 
 });
 
 test('preferences are scoped only to chapter reader and preserve no-JS reading', () => {
-  const page = read('src/pages/chapters/[id].astro');
+  const page = read('src/components/ChapterReader.astro');
   const component = read('src/components/ChapterReadingControls.astro');
   const scss = read('src/styles/_reading.scss');
   assert.match(page, /data-chapter-reading-root/);

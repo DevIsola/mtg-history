@@ -8,7 +8,7 @@ import { BATCH_3_IDS } from '../src/data/pt-chapter-batch3.mjs';
 
 const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const dynamic = read('src/pages/pt-br/chapters/[id].astro');
-const thran = read('src/pages/pt-br/chapters/thran/index.astro');
+const reader = read('src/components/ChapterReader.astro');
 const component = read('src/components/IssueReporter.astro');
 const ids = ['thran', ...BATCH_1_IDS, ...BATCH_2_IDS, ...BATCH_3_IDS];
 const origin = 'https://devisola.github.io/mtg-history/pt-br/chapters/';
@@ -22,7 +22,7 @@ test('every Portuguese chapter is eligible exactly once', () => {
   assert.equal(new Set(ids).size, 11);
   assert.equal(ids[0], 'thran');
   assert.equal(ids.at(-1), 'omenpaths');
-  assert.match(dynamic, /\.\.\.PORTUGUESE_BATCH_1, \.\.\.PORTUGUESE_BATCH_2, \.\.\.PORTUGUESE_BATCH_3/);
+  assert.match(dynamic, /getCollection\('chaptersPt'\)/);
 });
 
 test('five accessible categories carry distinct identifiers', () => {
@@ -33,7 +33,7 @@ test('five accessible categories carry distinct identifiers', () => {
   assert.match(component, /data-issue-category=\{category\.id\}/);
 });
 
-test('all fifty generated issue URLs target the authorized GitHub repository', () => {
+test('all fifty-five generated issue URLs target the authorized GitHub repository', () => {
   for (const id of ids) for (const category of ISSUE_CATEGORIES) {
     const target = report(id, category.id);
     assert.equal(target.origin, 'https://github.com');
@@ -61,11 +61,11 @@ test('unsafe protocols and cross-chapter URLs are rejected', () => {
   assert.throws(() => reportIssueUrl({ ...base, chapterId: '../other', pageUrl: `${origin}thran/` }));
 });
 
-test('both Astro chapter types render the same reusable reporting component', () => {
-  assert.match(dynamic, /import IssueReporter from '\.\.\/\.\.\/\.\.\/components\/IssueReporter\.astro';/);
-  assert.match(thran, /import IssueReporter from '\.\.\/\.\.\/\.\.\/\.\.\/components\/IssueReporter\.astro';/);
-  assert.match(dynamic, /<IssueReporter chapterId=\{companion\.id\} chapterTitle=\{companion\.title\} \/>/);
-  assert.match(thran, /<IssueReporter chapterId="thran" chapterTitle="Os Thran e as origens de Phyrexia" \/>/);
+
+test('one shared reader renders the same reporting component for all Portuguese chapters', () => {
+  assert.match(dynamic, /<ChapterReader chapter=\{chapter\} locale="pt-BR"/);
+  assert.match(reader, /import IssueReporter from/);
+  assert.match(reader, /pt && <IssueReporter chapterId=\{chapter.id\} chapterTitle=\{chapter.data.title\}/);
   assert.match(component, /data-issue-report/);
 });
 
@@ -73,7 +73,7 @@ test('progressive enhancement and editorial boundaries are preserved', () => {
   assert.match(component, /target="_blank" rel="noopener noreferrer"/);
   assert.match(component, /Nenhuma issue é enviada automaticamente/);
   assert.doesNotMatch(component, /<script|client:load|client:only|<form/);
-  assert.match(dynamic, /não é uma tradução integral/);
-  assert.match(thran, /Versão condensada, não tradução integral/);
+  assert.match(reader, /complete-pending-review/);
+  assert.match(reader, /Revisão editorial humana pendente/);
   assert.doesNotMatch(component, /localStorage|fetch\(/);
 });

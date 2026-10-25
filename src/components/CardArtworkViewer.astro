@@ -1,19 +1,26 @@
+---
+import { cardLabels } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
+const labels = cardLabels(localeForPath(Astro.url.pathname));
+---
 <!-- A single, lazily populated native dialog shared across canonical card uses. -->
 <dialog id="card-artwork-viewer" class="card-artwork-viewer" aria-labelledby="card-artwork-viewer-title" aria-describedby="card-artwork-viewer-significance">
   <div class="card-artwork-viewer__shell">
     <div class="card-artwork-viewer__actions">
-      <button type="button" data-card-artwork-close>Close image <span aria-hidden="true">×</span></button>
+      <button type="button" data-card-artwork-close>{labels.close} <span aria-hidden="true">×</span></button>
     </div>
     <div class="card-artwork-viewer__content">
       <div class="card-artwork-viewer__image-wrap">
         <img data-card-artwork-image alt="" width="488" height="680" decoding="async" sizes="(max-width: 680px) 85vw, 420px" />
       </div>
       <div class="card-artwork-viewer__details">
-        <p class="card-artwork-viewer__eyebrow">Illustrated historical record</p>
+        <p class="card-artwork-viewer__eyebrow">{labels.record}</p>
         <h2 id="card-artwork-viewer-title" data-card-artwork-title></h2>
         <p data-card-artwork-attribution></p>
         <p id="card-artwork-viewer-significance" data-card-artwork-significance></p>
-        <a data-card-artwork-source target="_blank" rel="noopener noreferrer">View exact printing on Scryfall ↗</a>
+        <p data-card-artwork-language hidden></p>
+        <a data-card-artwork-source target="_blank" rel="noopener noreferrer">{labels.viewPrinting}</a>
+        <p data-card-artwork-original-wrap hidden><a data-card-artwork-original target="_blank" rel="noopener noreferrer">{labels.original}</a></p>
       </div>
     </div>
   </div>
@@ -76,6 +83,7 @@
 <script>
   import { buildCardArtworkViewerModel, shouldAnimateCardArtwork } from '../utils/card-artwork-viewer.mjs';
 
+  const locale = document.documentElement.lang === 'pt-BR' ? 'pt-BR' : 'en';
   const dialog = document.querySelector<HTMLDialogElement>('#card-artwork-viewer');
   if (dialog) {
     const image = dialog.querySelector<HTMLImageElement>('[data-card-artwork-image]')!;
@@ -83,6 +91,9 @@
     const attribution = dialog.querySelector<HTMLElement>('[data-card-artwork-attribution]')!;
     const significance = dialog.querySelector<HTMLElement>('[data-card-artwork-significance]')!;
     const sourceLink = dialog.querySelector<HTMLAnchorElement>('[data-card-artwork-source]')!;
+    const originalLink = dialog.querySelector<HTMLAnchorElement>('[data-card-artwork-original]')!;
+    const language = dialog.querySelector<HTMLElement>('[data-card-artwork-language]')!;
+    const originalWrap = dialog.querySelector<HTMLElement>('[data-card-artwork-original-wrap]')!;
     const closeButton = dialog.querySelector<HTMLButtonElement>('[data-card-artwork-close]')!;
     let trigger: HTMLButtonElement | null = null;
     let opening = false;
@@ -101,7 +112,7 @@
             setCode: button.dataset.cardSet ?? '',
             collectorNumber: button.dataset.cardNumber ?? '',
             significance: button.dataset.cardSignificance ?? '',
-          });
+          }, locale);
         } catch (error) {
           console.error('Cannot open historical printing:', error);
           return;
@@ -120,7 +131,11 @@
         image.alt = model.alt;
         image.srcset = model.imageSrcset;
         image.src = model.imageUrl;
-        sourceLink.href = model.cardUrl;
+        sourceLink.href = button.dataset.cardSource ?? model.cardUrl;
+        originalLink.href = button.dataset.cardOriginalSource ?? model.cardUrl;
+        originalWrap.hidden = locale !== 'pt-BR' || button.dataset.cardLanguage !== 'pt';
+        language.hidden = locale !== 'pt-BR';
+        language.textContent = button.dataset.cardLanguage === 'pt' ? 'Carta oficial em português (PT)' : 'Imagem da edição original (EN)';
         trigger = button;
 
         const originalImage = button.closest('figure')?.querySelector<HTMLImageElement>('a > img') ?? null;

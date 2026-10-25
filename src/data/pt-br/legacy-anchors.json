@@ -1,0 +1,736 @@
+{
+  "thran": [
+    {
+      "id": "antes-dos-irmaos",
+      "headingIndex": 0
+    },
+    {
+      "id": "civilizacao",
+      "headingIndex": 1
+    },
+    {
+      "id": "yawgmoth",
+      "headingIndex": 2
+    },
+    {
+      "id": "phyrexia",
+      "headingIndex": 3
+    },
+    {
+      "id": "queda",
+      "headingIndex": 4
+    },
+    {
+      "id": "rebbec",
+      "headingIndex": 5
+    },
+    {
+      "id": "glacian",
+      "headingIndex": 6
+    },
+    {
+      "id": "publicacoes",
+      "headingIndex": 7
+    },
+    {
+      "id": "intocaveis",
+      "headingIndex": 8
+    },
+    {
+      "id": "medicina",
+      "headingIndex": 9
+    },
+    {
+      "id": "dyfed",
+      "headingIndex": 10
+    },
+    {
+      "id": "guerra",
+      "headingIndex": 11
+    },
+    {
+      "id": "pedras",
+      "headingIndex": 12
+    },
+    {
+      "id": "fontes",
+      "targetId": "chapter-sources",
+      "label": "Fontes e leitura complementar"
+    },
+    {
+      "id": "fontes-titulo",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "brothers-war": [
+    {
+      "id": "pedras-antigas",
+      "headingIndex": 0
+    },
+    {
+      "id": "tocasia",
+      "headingIndex": 1
+    },
+    {
+      "id": "dois-poderes",
+      "headingIndex": 2
+    },
+    {
+      "id": "guerra-terisiare",
+      "headingIndex": 3
+    },
+    {
+      "id": "terceiro-caminho",
+      "headingIndex": 3
+    },
+    {
+      "id": "argoth",
+      "headingIndex": 4
+    },
+    {
+      "id": "sobreviventes",
+      "headingIndex": 5
+    },
+    {
+      "id": "publicacoes",
+      "headingIndex": 6
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "ice-age": [
+    {
+      "id": "sylex",
+      "headingIndex": 0
+    },
+    {
+      "id": "era-sombria",
+      "headingIndex": 1
+    },
+    {
+      "id": "jodah",
+      "headingIndex": 2
+    },
+    {
+      "id": "sarpadia",
+      "headingIndex": 3
+    },
+    {
+      "id": "thallids-thrulls",
+      "headingIndex": 3
+    },
+    {
+      "id": "inverno",
+      "headingIndex": 4
+    },
+    {
+      "id": "lim-dul",
+      "headingIndex": 5
+    },
+    {
+      "id": "feitico-mundial",
+      "headingIndex": 6
+    },
+    {
+      "id": "degelo",
+      "headingIndex": 7
+    },
+    {
+      "id": "publicacoes",
+      "headingIndex": 8
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "weatherlight": [
+    {
+      "id": "guerra-inacabada",
+      "headingIndex": 0
+    },
+    {
+      "id": "heranca",
+      "headingIndex": 1
+    },
+    {
+      "id": "tripulacao",
+      "headingIndex": 2
+    },
+    {
+      "id": "rath",
+      "headingIndex": 3
+    },
+    {
+      "id": "fortaleza",
+      "headingIndex": 4
+    },
+    {
+      "id": "mercadia",
+      "headingIndex": 5
+    },
+    {
+      "id": "preparativos-urza",
+      "headingIndex": 6
+    },
+    {
+      "id": "invasao",
+      "headingIndex": 7
+    },
+    {
+      "id": "sobreposicao",
+      "headingIndex": 8
+    },
+    {
+      "id": "arena",
+      "headingIndex": 9
+    },
+    {
+      "id": "arma-heranca",
+      "headingIndex": 10
+    },
+    {
+      "id": "consequencias",
+      "headingIndex": 11
+    },
+    {
+      "id": "publicacoes",
+      "headingIndex": 12
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "otaria": [
+    {
+      "id": "depois-da-invasao",
+      "headingIndex": 0
+    },
+    {
+      "id": "a-descoberta-do-mirari",
+      "headingIndex": 1
+    },
+    {
+      "id": "a-cabala-e-seus-espetaculos",
+      "headingIndex": 2
+    },
+    {
+      "id": "a-esfera-entre-poderes-rivais",
+      "headingIndex": 3
+    },
+    {
+      "id": "kamahl-chainer-e-as-arenas",
+      "headingIndex": 4
+    },
+    {
+      "id": "chainer-e-os-pesadelos",
+      "headingIndex": 5
+    },
+    {
+      "id": "a-espada-e-a-ferida-de-jeska",
+      "headingIndex": 6
+    },
+    {
+      "id": "krosa-e-outra-ideia-de-forca",
+      "headingIndex": 7
+    },
+    {
+      "id": "jeska-torna-se-phage",
+      "headingIndex": 8
+    },
+    {
+      "id": "ixidor-nivea-e-akroma",
+      "headingIndex": 9
+    },
+    {
+      "id": "exercitos-e-devocao",
+      "headingIndex": 10
+    },
+    {
+      "id": "o-nascimento-de-karona",
+      "headingIndex": 11
+    },
+    {
+      "id": "a-queda-da-falsa-deusa",
+      "headingIndex": 12
+    },
+    {
+      "id": "karn-recupera-a-esfera",
+      "headingIndex": 13
+    },
+    {
+      "id": "publicacoes-e-limites-das-fontes",
+      "headingIndex": 14
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "mending": [
+    {
+      "id": "o-peso-da-historia",
+      "headingIndex": 0
+    },
+    {
+      "id": "as-origens-das-fendas",
+      "headingIndex": 1
+    },
+    {
+      "id": "a-decisao-antiga-de-teferi",
+      "headingIndex": 2
+    },
+    {
+      "id": "jhoira-diante-do-tempo-quebrado",
+      "headingIndex": 3
+    },
+    {
+      "id": "radha-e-skyshroud",
+      "headingIndex": 4
+    },
+    {
+      "id": "venser-e-um-futuro-diferente",
+      "headingIndex": 5
+    },
+    {
+      "id": "o-retorno-de-shiv",
+      "headingIndex": 6
+    },
+    {
+      "id": "freyalise-e-o-destino-da-floresta",
+      "headingIndex": 7
+    },
+    {
+      "id": "windgrace-e-urborg",
+      "headingIndex": 8
+    },
+    {
+      "id": "passado-e-realidades-alternativas",
+      "headingIndex": 9
+    },
+    {
+      "id": "karn-e-a-ferida-de-tolaria",
+      "headingIndex": 10
+    },
+    {
+      "id": "jeska-retorna",
+      "headingIndex": 11
+    },
+    {
+      "id": "leshrac-bolas-e-madara",
+      "headingIndex": 12
+    },
+    {
+      "id": "otaria-e-a-ultima-ruptura",
+      "headingIndex": 13
+    },
+    {
+      "id": "a-reparacao-do-multiverso",
+      "headingIndex": 14
+    },
+    {
+      "id": "alem-das-cartas",
+      "headingIndex": 15
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "many-worlds": [
+    {
+      "id": "alem-do-horizonte-de-dominaria",
+      "headingIndex": 0
+    },
+    {
+      "id": "ravnica-e-o-poder-das-guildas",
+      "headingIndex": 1
+    },
+    {
+      "id": "agrus-kos-e-a-guilda-oculta",
+      "headingIndex": 2
+    },
+    {
+      "id": "o-pacto-desfeito-e-novas-disputas",
+      "headingIndex": 3
+    },
+    {
+      "id": "ravnica-em-uma-crise-maior",
+      "headingIndex": 4
+    },
+    {
+      "id": "zendikar-plano-em-movimento",
+      "headingIndex": 5
+    },
+    {
+      "id": "o-olho-de-ugin-e-a-primeira-ruptura",
+      "headingIndex": 6
+    },
+    {
+      "id": "a-ameaca-dos-eldrazi",
+      "headingIndex": 7
+    },
+    {
+      "id": "innistrad-e-suas-sombras",
+      "headingIndex": 8
+    },
+    {
+      "id": "griselbrand-e-o-helvault",
+      "headingIndex": 9
+    },
+    {
+      "id": "liliana-e-o-retorno-de-avacyn",
+      "headingIndex": 10
+    },
+    {
+      "id": "tres-planos-formas-distintas-de-protecao",
+      "headingIndex": 11
+    },
+    {
+      "id": "as-historias-e-as-publicacoes",
+      "headingIndex": 12
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "war-of-the-spark": [
+    {
+      "id": "a-ambicao-de-nicol-bolas",
+      "headingIndex": 0
+    },
+    {
+      "id": "instrumentos-reunidos-em-outros-mundos",
+      "headingIndex": 1
+    },
+    {
+      "id": "ravnica-antes-da-batalha",
+      "headingIndex": 2
+    },
+    {
+      "id": "o-farol-interplanar-e-a-armadilha",
+      "headingIndex": 3
+    },
+    {
+      "id": "o-feitico-anciao-e-as-centelhas",
+      "headingIndex": 4
+    },
+    {
+      "id": "liliana-e-uma-servidao-imposta",
+      "headingIndex": 5
+    },
+    {
+      "id": "a-resistencia-de-uma-cidade-dividida",
+      "headingIndex": 6
+    },
+    {
+      "id": "o-sacrificio-de-gideon",
+      "headingIndex": 7
+    },
+    {
+      "id": "a-derrota-do-dragao",
+      "headingIndex": 8
+    },
+    {
+      "id": "reconstrucao-e-responsabilidade",
+      "headingIndex": 9
+    },
+    {
+      "id": "como-a-historia-foi-publicada",
+      "headingIndex": 10
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "new-phyrexia": [
+    {
+      "id": "o-inimigo-que-permaneceu",
+      "headingIndex": 0
+    },
+    {
+      "id": "cinco-pretores-projetos-conflitantes",
+      "headingIndex": 1
+    },
+    {
+      "id": "a-guerra-oculta-em-dominaria",
+      "headingIndex": 2
+    },
+    {
+      "id": "a-missao-ao-nucleo-semente",
+      "headingIndex": 3
+    },
+    {
+      "id": "a-resistencia-mirrana-antes-da-invasao",
+      "headingIndex": 0
+    },
+    {
+      "id": "publicacao-e-cronologia",
+      "headingIndex": 4
+    },
+    {
+      "id": "i-an-old-enemy-in-a-new-body",
+      "headingIndex": 0
+    },
+    {
+      "id": "the-people-mirrodin-could-not-afford-to-forget",
+      "headingIndex": 0
+    },
+    {
+      "id": "ii-the-machine-orthodoxy-and-its-fractures",
+      "headingIndex": 1
+    },
+    {
+      "id": "five-competing-visions-of-compleation",
+      "headingIndex": 1
+    },
+    {
+      "id": "an-experiment-that-changed-planeswalking",
+      "headingIndex": 1
+    },
+    {
+      "id": "a-furnace-that-refused-to-submit",
+      "headingIndex": 1
+    },
+    {
+      "id": "the-praetors-disagreed-about-what-perfection-meant",
+      "headingIndex": 1
+    },
+    {
+      "id": "iii-dominaria-the-war-no-one-recognized-soon-enough",
+      "headingIndex": 2
+    },
+    {
+      "id": "iv-the-seedcore-mission",
+      "headingIndex": 3
+    },
+    {
+      "id": "a-failed-mission-can-change-the-shape-of-a-later-victory",
+      "headingIndex": 3
+    },
+    {
+      "id": "melira-and-the-resistance-that-endured",
+      "headingIndex": 3
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "march-of-the-machine": [
+    {
+      "id": "realmbreaker-alcanca-muitos-mundos",
+      "headingIndex": 0
+    },
+    {
+      "id": "a-resistencia-de-mirrodin",
+      "headingIndex": 1
+    },
+    {
+      "id": "o-retorno-de-elspeth",
+      "headingIndex": 2
+    },
+    {
+      "id": "wrenn-e-o-retorno-de-zhalfir",
+      "headingIndex": 3
+    },
+    {
+      "id": "karn-e-a-queda-de-norn",
+      "headingIndex": 4
+    },
+    {
+      "id": "sobrevivencia-e-perdas-irreversiveis",
+      "headingIndex": 5
+    },
+    {
+      "id": "publicacao-e-cronologia",
+      "headingIndex": 6
+    },
+    {
+      "id": "o-inimigo-que-permaneceu",
+      "headingIndex": 0,
+      "targetChapterId": "new-phyrexia"
+    },
+    {
+      "id": "cinco-pretores-projetos-conflitantes",
+      "headingIndex": 1,
+      "targetChapterId": "new-phyrexia"
+    },
+    {
+      "id": "a-guerra-oculta-em-dominaria",
+      "headingIndex": 2,
+      "targetChapterId": "new-phyrexia"
+    },
+    {
+      "id": "a-missao-ao-nucleo-semente",
+      "headingIndex": 3,
+      "targetChapterId": "new-phyrexia"
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ],
+  "omenpaths": [
+    {
+      "id": "uma-vitoria-que-nao-restaurou-as-fronteiras",
+      "headingIndex": 0
+    },
+    {
+      "id": "zhalfir-e-o-peso-da-sobrevivencia",
+      "headingIndex": 1
+    },
+    {
+      "id": "o-luto-da-familia-kenrith",
+      "headingIndex": 2
+    },
+    {
+      "id": "kellan-e-uma-viagem-sem-centelha",
+      "headingIndex": 3
+    },
+    {
+      "id": "ixalan-e-suas-profundezas",
+      "headingIndex": 4
+    },
+    {
+      "id": "os-assassinatos-de-ravnica",
+      "headingIndex": 5
+    },
+    {
+      "id": "thunder-junction-e-o-encontro-de-forasteiros",
+      "headingIndex": 6
+    },
+    {
+      "id": "jace-vraska-e-o-segredo-do-cofre",
+      "headingIndex": 7
+    },
+    {
+      "id": "rotas-fronteiras-e-confianca",
+      "headingIndex": 8
+    },
+    {
+      "id": "publicacoes-e-perspectivas-da-nova-era",
+      "headingIndex": 9
+    },
+    {
+      "id": "pt-batch-events-heading",
+      "targetId": "chapter-reader",
+      "label": "Narrativa integral e seus acontecimentos relacionados"
+    },
+    {
+      "id": "pt-batch-artwork-heading",
+      "targetId": "chapter-artwork-trail-heading",
+      "label": "Momentos ilustrados"
+    },
+    {
+      "id": "pt-batch-sources-heading",
+      "targetId": "chapter-sources-title",
+      "label": "Fontes e leitura complementar"
+    }
+  ]
+}

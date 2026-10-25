@@ -1,4 +1,6 @@
 ---
+import { localeForPath, phrase } from '../utils/locale';
+
 interface ReviewEntry {
   eventId: string;
   status: string;
@@ -10,15 +12,18 @@ interface ReviewEntry {
 }
 interface Props { entry: ReviewEntry; }
 const { entry } = Astro.props;
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 ---
 <section class="event-research-notice" aria-labelledby="event-research-notice-heading">
-  <p class="eyebrow">Editorial evidence status</p>
-  <h3 id="event-research-notice-heading">Primary-fiction review pending</h3>
-  <p>{entry.notice}</p>
-  <p><strong>Claim being reviewed:</strong> {entry.claim}</p>
-  <p><strong>Evidence needed:</strong> {entry.requiredEvidence}</p>
-  <p><strong>Artwork interpretation:</strong> {entry.artworkNote}</p>
-  <p class="event-research-notice__limit">This is an open research question, not a conclusion that the narrative is false. No source-review certification is implied.</p>
+  <p class="eyebrow">{t("Editorial evidence status")}</p>
+  <h3 id="event-research-notice-heading">{t("Primary-fiction review pending")}</h3>
+  <p>{t(entry.notice)}</p>
+  <p><strong>{t("Claim being reviewed:")}</strong> {t(entry.claim)}</p>
+  <p><strong>{t("Evidence needed:")}</strong> {t(entry.requiredEvidence)}</p>
+  <p><strong>{t("Artwork interpretation:")}</strong> {t(entry.artworkNote)}</p>
+  <p class="event-research-notice__limit">{t("This is an open research question, not a conclusion that the narrative is false. No source-review certification is implied.")}</p>
 </section>
 <style lang="scss">
   .event-research-notice {

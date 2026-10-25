@@ -1,37 +1,45 @@
 ---
+import { localeForPath, phrase } from '../utils/locale';
+
 /** Progressive enhancement: hidden controls never obscure chapter text without JS. */
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 ---
 <div class="chapter-reading-controls" data-reading-controls hidden>
   <div class="chapter-reading-controls__heading">
     <div>
-      <h2>Reading preferences</h2>
-      <p>Adjust the chapter text. Your choices carry across chapters on this device.</p>
+      <h2>{t("Reading preferences")}</h2>
+      <p>{t("Adjust the chapter text. Your choices carry across chapters on this device.")}</p>
     </div>
-    <button type="button" data-reading-reset>Reset</button>
+    <button type="button" data-reading-reset>{t("Reset")}</button>
   </div>
 
   <div class="chapter-reading-controls__groups">
     <fieldset>
-      <legend>Text size</legend>
-      <label><input type="radio" name="reading-size" data-reading-setting="size" value="compact" /> Smaller</label>
-      <label><input type="radio" name="reading-size" data-reading-setting="size" value="regular" checked /> Standard</label>
-      <label><input type="radio" name="reading-size" data-reading-setting="size" value="large" /> Larger</label>
+      <legend>{t("Text size")}</legend>
+      <label><input type="radio" name="reading-size" data-reading-setting="size" value="compact" /> {t("Smaller")}</label>
+      <label><input type="radio" name="reading-size" data-reading-setting="size" value="regular" checked /> {t("Standard")}</label>
+      <label><input type="radio" name="reading-size" data-reading-setting="size" value="large" /> {t("Larger")}</label>
     </fieldset>
     <fieldset>
-      <legend>Typeface</legend>
-      <label><input type="radio" name="reading-typeface" data-reading-setting="typeface" value="modern" /> Modern</label>
-      <label><input type="radio" name="reading-typeface" data-reading-setting="typeface" value="classic" checked /> Classic serif</label>
+      <legend>{t("Typeface")}</legend>
+      <label><input type="radio" name="reading-typeface" data-reading-setting="typeface" value="modern" /> {t("Modern")}</label>
+      <label><input type="radio" name="reading-typeface" data-reading-setting="typeface" value="classic" checked /> {t("Classic serif")}</label>
     </fieldset>
     <fieldset>
-      <legend>Line spacing</legend>
-      <label><input type="radio" name="reading-spacing" data-reading-setting="spacing" value="comfortable" checked /> Comfortable</label>
-      <label><input type="radio" name="reading-spacing" data-reading-setting="spacing" value="relaxed" /> Relaxed</label>
+      <legend>{t("Line spacing")}</legend>
+      <label><input type="radio" name="reading-spacing" data-reading-setting="spacing" value="comfortable" checked /> {t("Comfortable")}</label>
+      <label><input type="radio" name="reading-spacing" data-reading-setting="spacing" value="relaxed" /> {t("Relaxed")}</label>
     </fieldset>
   </div>
   <p class="chapter-reading-controls__status" role="status" aria-live="polite" data-reading-status></p>
 </div>
 
 <script>
+  import { localeForPath, phrase } from '../utils/locale';
+  const locale = localeForPath(window.location.pathname);
+  const t = (english: string) => phrase(locale, english);
   import {
     DEFAULT_READING_PREFERENCES,
     normalizeReadingPreferences,
@@ -75,8 +83,8 @@
       update();
       const saved = writeReadingPreferences(storage, preferences);
       if (status) status.textContent = saved
-        ? 'Reading preferences saved.'
-        : 'Reading preferences applied for this page.';
+        ? t("Reading preferences saved.")
+        : t("Reading preferences applied for this page.");
     });
 
     reset?.addEventListener('click', () => {
@@ -84,8 +92,8 @@
       update();
       const saved = writeReadingPreferences(storage, preferences);
       if (status) status.textContent = saved
-        ? 'Default reading preferences restored and saved.'
-        : 'Default reading preferences restored for this page.';
+        ? t("Default reading preferences restored and saved.")
+        : t("Default reading preferences restored for this page.");
     });
   }
 </script>

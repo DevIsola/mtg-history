@@ -29,15 +29,15 @@ test('palette is a structured list with independent type, title, excerpt and aff
 });
 
 test('timeline preserves filters and historical chronology while showing exact canonical illustration', () => {
-  const timeline = read('src/pages/timeline.astro');
+  const timeline = read('src/components/pages/TimelinePage.astro');
   const artwork = read('src/components/TimelineArtwork.astro');
   assert.match(timeline, /<TimelineArtwork chapter=\{chapter\} \/>/);
   for (const token of ['data-timeline-explorer', 'data-timeline-event',
     'data-timeline-details', 'data-era-search', 'atlas-era__chronology',
     'publicationHistory', 'storyPeriod']) assert.ok(timeline.includes(token), token);
-  for (const token of ['chapterCardUse(chapter, 0, printings)', 'cardImageUrl(card.scryfallId)',
-    'cardImageSrcset(card.scryfallId)', 'cardScryfallUrl(card)', 'card.significance',
-    'card.artist', 'card.collectorNumber', 'data-printing-id={card.scryfallId}'])
+  for (const token of ['chapterCardUse(canonicalChapter, 0, printings)', 'archiveCard(canonical, locale)',
+    'card.imageUrl', 'card.imageSrcset', 'card.scryfallUrl', 'significance',
+    'card.artist', 'card.collectorNumber', 'data-canonical-id={card.canonicalId}'])
     assert.ok(artwork.includes(token), token);
 });
 

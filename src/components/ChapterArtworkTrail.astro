@@ -1,22 +1,27 @@
 ---
+import { localeForPath, phrase } from '../utils/locale';
+
 /** Reader aid only. Names and provenance come from the rendered chapter cards. */
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 ---
 <aside class="chapter-artwork-trail" data-chapter-artwork-trail hidden
   aria-labelledby="chapter-artwork-trail-heading">
   <div class="chapter-artwork-trail__header">
     <div>
-      <h2 id="chapter-artwork-trail-heading">Illustrated moments</h2>
+      <h2 id="chapter-artwork-trail-heading">{t("Illustrated moments")}</h2>
     </div>
-    <span class="chapter-artwork-trail__count" data-artwork-count aria-label="Illustration count"></span>
+    <span class="chapter-artwork-trail__count" data-artwork-count aria-label={t("Illustration count")}></span>
   </div>
   <details class="chapter-artwork-trail__details">
-    <summary>Browse the illustrated moments <span aria-hidden="true">⌄</span></summary>
-  <p class="chapter-artwork-trail__note">Jump to a curated card illustration in its narrative context. These illustrations are editorial references, not independent historical evidence.</p>
+    <summary>{t("Browse the illustrated moments")} <span aria-hidden="true">⌄</span></summary>
+  <p class="chapter-artwork-trail__note">{t("Jump to a curated card illustration in its narrative context. These illustrations are editorial references, not independent historical evidence.")}</p>
     <ol class="chapter-artwork-trail__list" data-artwork-list></ol>
   </details>
   <label class="chapter-artwork-trail__focus">
     <input type="checkbox" data-artwork-follow />
-    Highlight the current illustration as I read
+    {t("Highlight the current illustration as I read")}
   </label>
 </aside>
 

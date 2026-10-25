@@ -1,0 +1,940 @@
+{
+  "thran-dyfed-portal": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a fase final da crise thran, antes do selamento do portal",
+      "basis": "A retrospectiva oficial dos planos situa a abertura do portal por Dyfed depois da morte do criador original de Phyrexia e antes do fim da guerra Thran–Phyrexia; não especifica um ano de calendário compartilhado."
+    },
+    "sources": [
+      {
+        "title": "The Known Multiverse",
+        "url": "https://magic.wizards.com/en/news/feature/known-mutliverse-2008-03-19",
+        "role": "retrospective",
+        "supports": "Identifica explicitamente um planeswalker anterior sem nome como criador de Phyrexia, Dyfed como quem levou Yawgmoth até lá e abriu o portal Dominária–Phyrexia, e a intenção de Yawgmoth de tratar a phthisis usando o plano."
+      }
+    ],
+    "artworkNote": "Yawgmoth, Thran Physician é um retrato do futuro governante de Phyrexia, não uma arte que retrate Dyfed abrindo um portal planar ou estabeleça a data de construção do portal."
+  },
+  "tocasias-death": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Na juventude de Urza e Mishra, depois de dividirem a pedra de poder e antes de sua guerra aberta",
+      "basis": "O relato oficial de criação ordena a luta pela pedra de poder que mata Tocasia antes da guerra posterior dos irmãos, mas não fornece um ano exato dentro da ficção nem um relato pericial da magia fatal."
+    },
+    "sources": [
+      {
+        "title": "Act of War, Part 1",
+        "url": "https://magic.wizards.com/en/news/making-magic/act-of-war-part-1",
+        "role": "design-commentary",
+        "supports": "Identifica a batalha dos irmãos pela pedra de poder como o incidente em que Tocasia é morta e associa explicitamente o resultado trágico à raiva e ao arrependimento; é um comentário de criação, não a cena original do romance."
+      }
+    ],
+    "artworkNote": "Brotherhood's End é uma ilustração associada à história da rivalidade e da morte de Tocasia; suas mecânicas destrutivas de jogo não estabelecem o feitiço ou a pedra de qual irmão causou o ferimento fatal."
+  },
+  "thran-glacian-stones-implanted": {
+    "chronology": {
+      "precision": "undated",
+      "label": "Antigo período thran, antes de Rebbec selar o portal",
+      "basis": "A retrospectiva oficial estabelece a sequência, mas não um ano do acontecimento em um calendário comum."
+    },
+    "sources": [
+      {
+        "title": "The Legendary Characters of Commander Legends, Part 2",
+        "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-2-2020-11-06",
+        "role": "retrospective",
+        "supports": "Descreve Yawgmoth implantando duas metades de pedra de poder quebrada em Glacian e causando sua morte."
+      }
+    ],
+    "artworkNote": "The Mightstone and Weakstone ilustra os artefatos sobreviventes, não o próprio implante."
+  },
+  "thran-stones-rediscovered": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Milênios depois da catástrofe thran, antes da Guerra dos Irmãos",
+      "basis": "A retrospectiva diz que Urza e Mishra encontraram as pedras milênios depois; nenhum ano exato de calendário é estabelecido."
+    },
+    "sources": [
+      {
+        "title": "The Legendary Characters of Commander Legends, Part 2",
+        "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-2-2020-11-06",
+        "role": "retrospective",
+        "supports": "Nomeia Urza e Mishra como os descobridores posteriores que chamaram os fragmentos de Pedra da Força e Pedra da Fraqueza."
+      }
+    ],
+    "artworkNote": "A impressão de The Brothers' War é uma representação posterior; seu ano de publicação não é a data da descoberta."
+  },
+  "zendikar-hedrons": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Muito antes do primeiro despertar dos Eldrazi no bloco Zendikar",
+      "basis": "A ficção histórica estabelece que a prisão foi construída e selada antes de sua falha posterior, sem uma data planar compartilhada."
+    },
+    "sources": [
+      {
+        "title": "The Lithomancer",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-lithomancer",
+        "role": "story",
+        "supports": "Retrata Nahiri escolhendo Zendikar para a prisão e descreve a construção dos hedrons com Ugin e Sorin."
+      }
+    ],
+    "artworkNote": "O retrato posterior de Nahiri é uma referência à personagem, não uma ilustração testemunhal da construção original."
+  },
+  "ravnica-guildpact-collapse": {
+    "chronology": {
+      "precision": "relative",
+      "label": "A crise do Decamilenário de Ravnica, antes de seu acordo não mágico",
+      "basis": "O acontecimento tem uma sequência na história cívica de Ravnica, não uma marca temporal universal para outros planos."
+    },
+    "sources": [
+      {
+        "title": "Ravnica, Then and Now",
+        "url": "https://magic.wizards.com/en/news/feature/ravnica-then-and-now-2012-08-29-0",
+        "role": "retrospective",
+        "supports": "Explica como Szadek manipulou sua prisão por Agrus Kos para produzir o paradoxo que rompeu o Pacto das Guildas original."
+      }
+    ],
+    "artworkNote": "O retrato de Szadek identifica o conspirador; não retrata Kos efetuando a prisão."
+  },
+  "phyrexia-zhalfir-return": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Na resolução da invasão de Nova Phyrexia",
+      "basis": "A história relata a troca de lugares e suas consequências, mas não dá uma data exata em um calendário compartilhado."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine — Episode 10: The Rhythms of Life",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life",
+        "role": "story",
+        "supports": "Descreve o retorno de Zhalfir ao Multiverso e Nova Phyrexia deixada para além do alcance comum após a troca."
+      }
+    ],
+    "artworkNote": "A carta escolhida fornece contexto visual editorial, não prova independente de uma data histórica."
+  },
+  "omenpaths-sparks-and-roads": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois da invasão, no início da era dos Caminhos Pressagiados",
+      "basis": "As fontes estabelecem as consequências e as condições alteradas de viagem, sem sincronizar datas entre planos."
+    },
+    "sources": [
+      {
+        "title": "Doing the Aftermath",
+        "url": "https://magic.wizards.com/en/news/making-magic/doing-the-aftermath",
+        "role": "design-commentary",
+        "supports": "Confirma que a maioria dos planeswalkers perdeu suas centelhas e que os Caminhos Pressagiados permitem a pessoas que não são planeswalkers atravessar mundos."
+      },
+      {
+        "title": "March of the Machine: The Aftermath — She Who Breaks the World",
+        "url": "https://magic.wizards.com/en/news/magic-story/she-who-breaks-the-world",
+        "role": "story",
+        "supports": "Retrata Nissa depois de perder sua centelha e encontrar uma rota desconhecida entre planos."
+      }
+    ],
+    "artworkNote": "A carta de Nissa ilustra a recuperação; não retrata todos os planeswalkers perdendo uma centelha."
+  },
+  "rise-of-yawgmoth": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Antiga crise thran, antes de Rebbec selar o portal phyrexiano",
+      "basis": "A retrospectiva ordena a chegada de Yawgmoth a Halcyon trazido por Rebbec, seu poder crescente e a guerra civil, mas não fornece um ano de calendário comum."
+    },
+    "sources": [
+      {
+        "title": "The Legendary Characters of Commander Legends, Part 1",
+        "url": "https://magic.wizards.com/en/news/card-preview/legendary-characters-commander-legends-part-1-2020-10-30",
+        "role": "retrospective",
+        "supports": "Explica que Rebbec levou o médico Yawgmoth a Halcyon e que sua ascensão culminou na guerra civil thran."
+      }
+    ],
+    "artworkNote": "A carta escolhida de Yawgmoth é um retrato da figura, não uma arte documental de sua tomada de poder."
+  },
+  "brothers-koilos-stones": {
+    "chronology": {
+      "precision": "relative",
+      "label": "A juventude de Urza e Mishra, antes da escalada de sua guerra",
+      "basis": "A retrospectiva de criação identifica a divisão da pedra de poder como um acontecimento da história na infância dos irmãos, não uma marca temporal."
+    },
+    "sources": [
+      {
+        "title": "Act of War, Part 1",
+        "url": "https://magic.wizards.com/en/news/making-magic/act-of-war-part-1",
+        "role": "design-commentary",
+        "supports": "Lista a divisão da pedra de poder como um acontecimento decisivo da infância que conduz os irmãos à rivalidade."
+      }
+    ],
+    "artworkNote": "A imagem da pedra de poder sobrevivente representa os objetos envolvidos, não um registro independente da expedição a Koilos."
+  },
+  "sylex-blast": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Fim da Guerra dos Irmãos, antes do inverno e da reconstrução do pós-guerra",
+      "basis": "O relato oficial do pós-guerra data seu cenário depois do conflito e retrata a devastação de Argoth, sem fazer da data AR dessa história a data da explosão."
+    },
+    "sources": [
+      {
+        "title": "The Brothers' War — Episode 1: The End",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end",
+        "role": "story",
+        "supports": "Mostra Kayla e Tawnos confrontando a destruição de Argoth e o agravamento do clima depois do fim da guerra."
+      },
+      {
+        "title": "The Brothers' War — Episode 5: As Cruel, As Necessary",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-5-as-cruel-as-necessary",
+        "role": "story",
+        "supports": "Mostra Teferi encontrando relatos incompatíveis sobre as origens do Sylex, enquanto trata a ativação por Urza em Argoth como o desfecho narrativo comum."
+      }
+    ],
+    "artworkNote": "Uma carta relacionada ao Sylex é uma ilustração histórica da catástrofe, não prova de um ano exato de ativação."
+  },
+  "alliance-against-lim-dul": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a luta contra Lim-Dûl, antes do acordo argiviano posterior",
+      "basis": "A retrospectiva descreve a aliança política forjada em oposição a Lim-Dûl, mas não fornece uma data sincronizada para o acontecimento."
+    },
+    "sources": [
+      {
+        "title": "The Legends You'll Find in Dominaria United",
+        "url": "https://magic.wizards.com/en/news/feature/legends-youll-find-dominaria-united-2022-09-01",
+        "role": "retrospective",
+        "supports": "Identifica Jodah e Jaya como fundamentais para unir facções kjeldoranas e balduvianas contra Lim-Dûl."
+      }
+    ],
+    "artworkNote": "A carta selecionada identifica um participante ou emblema desse período; a imagem não é um registro datado de negociações de tratado."
+  },
+  "weatherlight-barrin-obliteration": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a invasão phyrexiana original, depois das mortes de Rayne e Hanna",
+      "basis": "A retrospectiva liga explicitamente as perdas de Barrin, seu retorno à academia ocupada e o feitiço final em sequência, sem uma data precisa."
+    },
+    "sources": [
+      {
+        "title": "From the Vault: Lore",
+        "url": "https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01",
+        "role": "retrospective",
+        "supports": "Afirma que Barrin lançou um feitiço destrutivo proibido na Academia Tolariana ocupada depois de perder Rayne e Hanna, matando a si mesmo."
+      }
+    ],
+    "artworkNote": "As imagens do feitiço destrutivo da carta representam o ato de Barrin; seu ano de lançamento ou reimpressão não é a data de sua morte."
+  },
+  "mirari-crisis": {
+    "chronology": {
+      "precision": "relative",
+      "label": "As disputas pelo Mirari em Otaria, antes da transformação posterior do artefato",
+      "basis": "A retrospectiva resume a influência do Mirari em Dominária; não data nenhuma disputa individual nem a decisão de qualquer participante."
+    },
+    "sources": [
+      {
+        "title": "From the Vault: Lore",
+        "url": "https://magic.wizards.com/en/news/feature/vault-lore-2016-08-01",
+        "role": "retrospective",
+        "supports": "Explica que o Mirari tentava seus portadores com poder e desejos extraordinários, levando repetidamente seus usuários à ruína e ao caos mágico."
+      }
+    ],
+    "artworkNote": "A imagem selecionada representa o Mirari ou sua influência, não cada acontecimento separado do conflito de Otaria."
+  },
+  "the-mending": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Fim da crise de Espiral Temporal, antes da era dos planeswalkers após a Reparação",
+      "basis": "O comentário oficial de criação explica a mudança fundamental dos planeswalkers como propósito do arco da Reparação, sem afirmar um ano exato dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "27 Things You Might Not Have Known About Time Spiral Block",
+        "url": "https://magic.wizards.com/en/news/making-magic/27-things-you-might-not-have-known-about-time-spiral-block-2021-03-08",
+        "role": "design-commentary",
+        "supports": "Explica que a história da Reparação reduziu e mudou fundamentalmente o poder dos planeswalkers como parte do reparo de um Multiverso ameaçado."
+      }
+    ],
+    "artworkNote": "A impressão de feitiço ou personagem selecionada para o capítulo evoca a Reparação; seu ano de publicação não é uma cronologia multiversal."
+  },
+  "innistrad-avacyn-restored": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois do confinamento de Avacyn na Câmara Infernal, durante a crise de restauração de Innistrad",
+      "basis": "O comentário de criação afirma a consequência planejada da quebra da Câmara Infernal, mas não dá uma data compartilhada entre planos para o acontecimento."
+    },
+    "sources": [
+      {
+        "title": "You Had Me at Helvault",
+        "url": "https://magic.wizards.com/en/news/making-magic/you-had-me-helvault-2012-03-29",
+        "role": "design-commentary",
+        "supports": "Confirma que destruir a Câmara Infernal libertou Avacyn e Griselbrand, a anja e o demônio aprisionados."
+      }
+    ],
+    "artworkNote": "O retrato restaurado de Avacyn retrata seu retorno; a carta da Câmara Infernal prenunciava a libertação, não seu momento exato."
+  },
+  "spark-gideons-sacrifice": {
+    "chronology": {
+      "precision": "relative",
+      "label": "No confronto final da Guerra da Centelha em Ravnica",
+      "basis": "A história publicada relata a queda de Gideon dentro da sequência da batalha, mas não estabelece uma marca temporal universal para o dia."
+    },
+    "sources": [
+      {
+        "title": "War of the Spark: Ravnica — Ashes",
+        "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12",
+        "role": "story",
+        "supports": "Retrata a queda de Gideon em meio ao confronto com Bolas e personagens posteriores reconhecendo sua morte; essa fonte sozinha não detalha a transferência protetora."
+      },
+      {
+        "title": "More War Games",
+        "url": "https://magic.wizards.com/en/news/making-magic/more-war-games-2019-04-29",
+        "role": "design-commentary",
+        "supports": "Mark Rosewater afirma explicitamente que Gideon recebe todo o dano fatal destinado a Liliana depois que ela desafia Bolas; a carta de redirecionamento de dano representa esse resultado, mas a coluna não narra a cena do romance nem um feitiço específico."
+      }
+    ],
+    "artworkNote": "Gideon's Sacrifice (War of the Spark, número de colecionador 14) representa o momento de redirecionamento de dano; sua ilustração e texto de regras não são uma narrativa literal do feitiço final de Gideon.",
+    "unresolvedClaims": [
+      {
+        "claim": "Gideon emprega um feitiço protetor ou rito de transferência descrito especificamente ao aceitar a consequência fatal do pacto de Liliana.",
+        "requiredEvidence": "Ler o clímax de War of the Spark: Ravnica (romance de 2019) para verificar o mecanismo mágico preciso na página; More War Games confirma o redirecionamento fatal, mas é um comentário de criação, não a cena ficcional."
+      }
+    ]
+  },
+  "phyrexia-realmbreaker-invasion": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Início da invasão coordenada de Nova Phyrexia entre planos",
+      "basis": "A primeira história de March of the Machine retrata os portais de Quebra-reinos e invasões simultâneas sem sincronização de calendários entre planos."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine — Episode 1: Triumph of the Fleshless",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-1-triumph-of-the-fleshless",
+        "role": "story",
+        "supports": "Descreve Norn abrindo portais para múltiplos planos por meio de Quebra-reinos enquanto a invasão phyrexiana se espalha."
+      }
+    ],
+    "artworkNote": "A carta selecionada está associada ao mecanismo da invasão, não a um registro datado de cada plano invadido."
+  },
+  "phyrexia-norns-fall": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Confronto final de Nova Phyrexia, depois do início do contra-ataque de Zhalfir",
+      "basis": "A história situa a ação de Karn depois da derrota de Norn e durante a troca planar, sem dar uma data do acontecimento em um calendário comum."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine — Episode 9: The Old Sins of New Phyrexia",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-9-the-old-sins-of-new-phyrexia",
+        "role": "story",
+        "supports": "Narra diretamente Karn desmantelando Elesh Norn enquanto aceita a responsabilidade pelo destino do plano que criou."
+      }
+    ],
+    "artworkNote": "A carta selecionada ilustra os participantes ou o resultado da batalha e não pode verificar sozinha a ação exata de Karn."
+  },
+  "omenpaths-proft-uncovers-oba": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Investigação de Murders at Karlov Manor, depois da invasão phyrexiana",
+      "basis": "A história policial estabelece seu cenário após a invasão e a sequência das deduções de Proft, não um ano universal comparável."
+    },
+    "sources": [
+      {
+        "title": "Murders at Karlov Manor — Episode 9: Beauty in Destruction",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction",
+        "role": "story",
+        "supports": "Mostra Proft acusando Oba de orquestrar os assassinatos e distinguindo a autora voluntária de participantes coagidos."
+      }
+    ],
+    "artworkNote": "A impressão de Proft ou Trostani identifica as pessoas envolvidas, não uma fotografia da acusação nem uma marca de data."
+  },
+  "brothers-tawnos-carries-testimony": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois da Explosão do Sylex, durante a reconstrução de Terisiare no pós-guerra",
+      "basis": "O Episódio 5 de The Brothers' War narra diretamente a instrução de Urza a Tawnos depois de Argoth; o episódio do pós-guerra retrata separadamente seu testemunho posterior, sem exigir um ano de calendário inventado."
+    },
+    "sources": [
+      {
+        "title": "The Brothers' War — Episode 1: The End",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-1-the-end",
+        "role": "story",
+        "supports": "Retrata Tawnos contando a Kayla a guerra de Urza e Mishra depois da catástrofe, dando contexto ao testemunho subsequente."
+      },
+      {
+        "title": "The Brothers' War — Episode 5: As Cruel, As Necessary",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-5-as-cruel-as-necessary",
+        "role": "story",
+        "supports": "Narra diretamente Urza instruindo Tawnos a viajar para oeste, encontrar os estudiosos das torres de marfim e relatar o que os irmãos fizeram e deixaram de impedir."
+      }
+    ],
+    "artworkNote": "O retrato posterior de Tawnos representa o artífice sobrevivente, não Urza dando instruções nem um registro histórico do encontro."
+  },
+  "innistrad-avacyn-created": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Antes do desaparecimento posterior de Avacyn na Câmara Infernal",
+      "basis": "A história oficial do plano estabelece a criação de Avacyn por Sorin antes da armadilha de Griselbrand, não um ano sincronizado entre planos."
+    },
+    "sources": [
+      {
+        "title": "Innistrad Plane Guide",
+        "url": "https://magic.wizards.com/en/story/innistrad-plane",
+        "role": "retrospective",
+        "supports": "Identifica Sorin Markov como criador de Avacyn e descreve sua intenção de preservar a humanidade contra a predação sobrenatural."
+      }
+    ],
+    "artworkNote": "O retrato de Sorin indica o criador, não uma representação do momento em que moldou Avacyn nem uma data precisa do acontecimento."
+  },
+  "innistrad-helvault-imprisonment": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois da criação de Avacyn e antes da quebra da Câmara Infernal",
+      "basis": "O guia do plano situa o confinamento antes da perda subsequente das proteções mágicas, sem uma marca temporal entre planos."
+    },
+    "sources": [
+      {
+        "title": "Planeswalker's Guide to Avacyn Restored, Part 2",
+        "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-avacyn-restored-part-2",
+        "role": "retrospective",
+        "supports": "Afirma que Griselbrand arrastou Avacyn para a Câmara Infernal com ele, motivando a busca posterior de Liliana pelo demônio."
+      }
+    ],
+    "artworkNote": "A impressão de Helvault retrata o artefato de prisão, não o encontro entre Avacyn e Griselbrand como uma cena literal."
+  },
+  "phyrexia-melira-resistance": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante os preparativos da equipe de ataque para sua missão ao Germinúcleo",
+      "basis": "O episódio ordena a explicação de Melira sobre o plano em camadas antes da descida, mas não dá uma data universal para a missão."
+    },
+    "sources": [
+      {
+        "title": "Assault on New Phyrexia — Episode 2: Unstable Foundations",
+        "url": "https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-2-unstable-foundations",
+        "role": "story",
+        "supports": "Melira explica a geografia ao redor do Germinúcleo, contesta o sacrifício de sobreviventes mirranianos e ajuda a preparar a rota da equipe de ataque."
+      }
+    ],
+    "artworkNote": "A carta selecionada retrata Melira ou a resistência; não é um mapa literal das camadas nem uma fotografia datada da reunião de instruções."
+  },
+  "phyrexia-meliras-last-gift": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois do isolamento de Nova Phyrexia, durante a recuperação em Zhalfir",
+      "basis": "A narrativa acompanha a resolução da invasão e detalha o resgate de Nissa e Ajani sem fornecer um ano de calendário comum."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine — Episode 10: The Rhythms of Life",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-10-the-rhythms-of-life",
+        "role": "story",
+        "supports": "Retrata Melira curando Nissa e Ajani com a ajuda de Karn e da centelha restante de Venser, ao custo da vida de Melira."
+      }
+    ],
+    "artworkNote": "A carta selecionada ilustra um participante ou as consequências do resgate, em vez de comprovar de forma independente a transferência de magia."
+  },
+  "omenpaths-eldraine-mourning": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois da invasão phyrexiana, enquanto os gêmeos enfrentam o Sono Perverso",
+      "basis": "A história de Eldraine apresenta as perdas dos Kenrith e seu desentendimento do pós-guerra na sequência narrativa local, não em um ano sincronizado dos acontecimentos."
+    },
+    "sources": [
+      {
+        "title": "Wilds of Eldraine — Episode 1: Pure of Heart",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-1-pure-of-heart",
+        "role": "story",
+        "supports": "Estabelece as mortes de Kenrith e Linden durante a invasão e retrata o luto de Rowan e sua incapacidade de acessar a centelha."
+      }
+    ],
+    "artworkNote": "A carta memorial representa os Kenrith e sua perda; uma data posterior de publicação não é a data ficcional de nenhuma das mortes."
+  },
+  "omenpaths-rowan-and-will-diverge": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a reconstrução de Eldraine após a invasão e a disseminação do Sono Perverso",
+      "basis": "A primeira história de Wilds of Eldraine retrata a disputa dos gêmeos sobre suas responsabilidades, sem fixar um ano entre planos."
+    },
+    "sources": [
+      {
+        "title": "Wilds of Eldraine — Episode 1: Pure of Heart",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-1-pure-of-heart",
+        "role": "story",
+        "supports": "Contrasta a tentativa de Will de construir estabilidade cívica com a impaciência de Rowan e sua busca por soluções mágicas mais fortes."
+      }
+    ],
+    "artworkNote": "A carta de Rowan é um retrato posterior da personagem; não estabelece a data nem as circunstâncias exatas da discussão entre eles."
+  },
+  "omenpaths-ravnica-investigation": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a crise de Murders at Karlov Manor após a invasão",
+      "basis": "O mistério situa Proft, Kaya e Kellan em uma investigação de Ravnica após a invasão, mas não fornece uma data de calendário comum."
+    },
+    "sources": [
+      {
+        "title": "Murders at Karlov Manor — Episode 9: Beauty in Destruction",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-9-beauty-in-destruction",
+        "role": "story",
+        "supports": "Retrata Proft revelando sua conclusão sobre Trostani e os atos coagidos no centro da investigação dos assassinatos."
+      }
+    ],
+    "artworkNote": "O retrato de Kellan como investigador é uma identificação do personagem, não prova de cada ação investigativa nem de sua data."
+  },
+  "ravnica-nonmagical-guild-accord": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois do colapso do Pacto das Guildas original e da conclusão dos conflitos de Dissension",
+      "basis": "A retrospectiva histórica da Wizards ordena o acordo não mágico depois da crise das guildas; não data o acordo em relação a outros planos."
+    },
+    "sources": [
+      {
+        "title": "Ravnica, Then and Now",
+        "url": "https://magic.wizards.com/en/news/feature/ravnica-then-and-now-2012-08-29-0",
+        "role": "retrospective",
+        "supports": "Identifica explicitamente Teysa Karlov como redatora de um novo Pacto das Guildas não mágico destinado a restaurar a cooperação e observa que ele logo se mostrou frágil."
+      }
+    ],
+    "artworkNote": "Teysa, Orzhov Scion é um retrato de personagem impresso para Guildpact, não uma cena da assinatura do acordo posterior."
+  },
+  "ravnica-project-kraj": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante o colapso da autoridade das guildas de Ravnica após o primeiro Pacto das Guildas",
+      "basis": "A retrospectiva oficial lista a morte de Momir Vig, a fúria de Kraj e a destruição de Novijen nas consequências de Dissension, sem uma data do acontecimento entre planos."
+    },
+    "sources": [
+      {
+        "title": "Ravnica, Then and Now",
+        "url": "https://magic.wizards.com/en/news/feature/ravnica-then-and-now-2012-08-29-0",
+        "role": "retrospective",
+        "supports": "Relata que Agrus Kos matou Momir Vig; Kraj então entrou em fúria e Novijen foi destruída, distinguindo partes separadas do desastre."
+      }
+    ],
+    "artworkNote": "O retrato selecionado de Teysa identifica uma participante política; não retrata a morte de Momir Vig, Kraj nem a destruição de Novijen."
+  },
+  "zendikar-nahiri-chooses-prison": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Antes das décadas de construção dos hedrons e do aprisionamento dos Eldrazi",
+      "basis": "A ficção retrospectiva ordena a decisão de Nahiri antes de quarenta anos de construção; seu enquadramento no passado distante não deve ser confundido com um ano universal."
+    },
+    "sources": [
+      {
+        "title": "The Lithomancer",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-lithomancer",
+        "role": "story",
+        "supports": "Retrata Ugin propondo Zendikar, Nahiri protestando contra o risco para seus habitantes e, por fim, concordando em construir ali a prisão dos Eldrazi."
+      }
+    ],
+    "artworkNote": "O retrato retrospectivo de Nahiri identifica a litomante; não é uma ilustração da decisão nem da prisão de hedrons concluída."
+  },
+  "phyrexia-tamiyos-last-story": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a invasão phyrexiana de Kamigawa, antes do fim da invasão",
+      "basis": "A história acompanha o confronto fatal com Tamiyo e a aparição posterior de sua memória preparada, sem uma data de calendário dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine — Episode 3: Mother, Son, and Story",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-3-mother-son-and-story",
+        "role": "story",
+        "supports": "Narra a derrota de Tamiyo pela Imperatriz Errante e a aparição subsequente de uma memória encantada de Tamiyo preparada antes da completação."
+      }
+    ],
+    "artworkNote": "A impressão de Tamiyo fornece contexto retrospectivo da personagem; não é evidência visual independente da aparição da memória semelhante a um espírito."
+  },
+  "phyrexia-vorinclex-world-tree": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Antes de Quebra-reinos abrir seus portais para a invasão de Nova Phyrexia",
+      "basis": "A Wizards descreve a missão a Kaldheim como preparatória à invasão; nem a expedição nem o roubo recebem uma data de calendário comum."
+    },
+    "sources": [
+      {
+        "title": "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse",
+        "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine",
+        "role": "retrospective",
+        "supports": "Identifica o uso da Ponte Planar por Norn para enviar Vorinclex a Kaldheim a fim de tomar a essência da Árvore do Mundo para Quebra-reinos."
+      }
+    ],
+    "artworkNote": "A carta selecionada fornece contexto para o agente phyrexiano; sua arte não estabelece o momento em que a essência da Árvore do Mundo foi adquirida."
+  },
+  "phyrexia-dominaria-sleeper-war": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a infiltração phyrexiana de Dominaria United anterior à invasão",
+      "basis": "O episódio de Ertai e o confronto posterior na Plataforma de Mana documentam estágios distintos da infiltração phyrexiana; nenhum estabelece uma data compartilhada em um calendário interplanar."
+    },
+    "sources": [
+      {
+        "title": "Dominaria United — Death and Salvation",
+        "url": "https://magic.wizards.com/en/news/magic-story/death-and-salvation-2022-08-16",
+        "role": "story",
+        "supports": "Retrata o retorno phyrexiano de Ertai e sua violência contra a comunidade goblin de Squee, sustentando o contexto mais amplo de infiltração."
+      },
+      {
+        "title": "Dominaria United — Episode 5: A Whisper in the Wind",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-5-whisper-wind-2022-08-18",
+        "role": "story",
+        "supports": "Revela explicitamente Ajani como o infiltrado completado e narra diretamente seu ataque a Jaya Ballard e o ato de atirá-la da Plataforma de Mana."
+      }
+    ],
+    "artworkNote": "A carta selecionada é uma evidência temática do período de infiltração, não um registro visual literal de cada agente completado ou morte."
+  },
+  "omenpaths-kellan-first-crossing": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois da invasão e da primeira aventura de Kellan em Eldraine, antes da expedição a Ixalan",
+      "basis": "Um anúncio oficial de Ixalan situa a viagem de Kellan pelos Caminhos Pressagiados entre as histórias de Eldraine e Ixalan, não em uma data interplanar compartilhada."
+    },
+    "sources": [
+      {
+        "title": "A First Look at The Lost Caverns of Ixalan",
+        "url": "https://magic.wizards.com/en/news/announcements/a-first-look-at-the-lost-caverns-of-ixalan",
+        "role": "retrospective",
+        "supports": "Confirma que Kellan apareceu primeiro em Wilds of Eldraine e chegou a Ixalan pelos Caminhos Pressagiados; essa fonte não comprova todos os detalhes de sua busca por Oko."
+      }
+    ],
+    "artworkNote": "A carta de Kellan é um retrato subsequente do viajante e não mostra literalmente sua primeira passagem por um Caminho Pressagiado."
+  },
+  "omenpaths-quintorius-expedition": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a primeira expedição a Ixalan após a invasão e a abertura da porta-enigma de Orazca",
+      "basis": "A primeira narrativa de Lost Caverns acompanha a chegada de Quintorius e seu trabalho com Huatli; nenhum ano universal pode ser inferido do momento de publicação."
+    },
+    "sources": [
+      {
+        "title": "The Lost Caverns of Ixalan — Episode 1",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-lost-caverns-of-ixalan-episode-1",
+        "role": "story",
+        "supports": "Retrata Quintorius transpondo os planos até Ixalan e se juntando a Wayta, Huatli e outros na investigação da porta-enigma e das ruínas de Orazca."
+      }
+    ],
+    "artworkNote": "Quintorius Kand é um retrato de personagem da época de publicação, não prova da data exata nem uma imagem única da expedição."
+  },
+  "omenpaths-loot-and-the-future": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois do assalto ao cofre, enquanto Jace e Vraska planejam seu futuro com Loot",
+      "basis": "O epílogo de Thunder Junction entrelaça passado e presente, tornando a data de publicação inválida como data do acontecimento dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "Outlaws of Thunder Junction — Epilogue 2: Bring the End, Part 2",
+        "url": "https://magic.wizards.com/en/news/magic-story/epilogue-2-bring-the-end-part-2",
+        "role": "story",
+        "supports": "Retrata Jace e Vraska discutindo o Multiverso após a completação, buscando renovação em seus próprios termos e assumindo responsabilidade pela criança viva recuperada do cofre; seus julgamentos são deles, não fatos aprovados pelo narrador."
+      }
+    ],
+    "artworkNote": "Loot, the Key to Everything é um retrato de personagem que identifica a criança; a carta não retrata Jace e Vraska discutindo ou implementando seu plano futuro."
+  },
+  "omenpaths-desparking-consequences": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Depois da invasão de Nova Phyrexia e no início da recuperação do pós-guerra",
+      "basis": "Nissa e seus aliados relatam mudanças em suas centelhas após o conflito, mas não é especificada uma data comum entre os planos."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine: The Aftermath — She Who Breaks the World",
+        "url": "https://magic.wizards.com/en/news/magic-story/she-who-breaks-the-world",
+        "role": "story",
+        "supports": "Nissa descreve a perda de sua centelha, Teferi e Koth também tendo perdido as suas e Chandra e Ajani conservando as deles; a história mantém explicitamente a causa incerta."
+      },
+      {
+        "title": "Doing the Aftermath",
+        "url": "https://magic.wizards.com/en/news/making-magic/doing-the-aftermath",
+        "role": "design-commentary",
+        "supports": "Explica a mudança após a invasão na transposição dos planos e nas viagens interplanares pelos Caminhos Pressagiados; isto é um comentário de criação, não uma lei ficcional universal de viagem."
+      }
+    ],
+    "artworkNote": "Nissa, Resurgent Animist retrata a sobrevivente sem centelha e a continuação de sua vida; não é uma cena de cada planeswalker nomeado perdendo sua centelha."
+  },
+  "omenpaths-thunder-junction-vault": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Na culminação do assalto de Oko em Thunder Junction, depois que Kellan encontra seu pai",
+      "basis": "O episódio do cofre ordena diretamente as ações concorrentes de Oko, Kellan, Vraska e Jace sem fornecer uma data interplanar."
+    },
+    "sources": [
+      {
+        "title": "Outlaws of Thunder Junction — Episode 6: The Ballad of Thieves and Thunderslingers",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers",
+        "role": "story",
+        "supports": "Retrata Oko e a equipe entrando no cofre, Kellan se opondo diretamente a seu pai, Vraska se juntando ao cliente oculto e o prêmio vivo sendo libertado."
+      },
+      {
+        "title": "Outlaws of Thunder Junction — Epilogue 2: Bring the End, Part 2",
+        "url": "https://magic.wizards.com/en/news/magic-story/epilogue-2-bring-the-end-part-2",
+        "role": "story",
+        "supports": "Fornece contexto posterior e anterior para o cofre fomori e o conhecimento de Jace sobre o ser mantido dentro dele; não transforma o assalto em prova de toda alegação sobre os antigos Fomori."
+      }
+    ],
+    "artworkNote": "Oko, the Ringleader é um retrato de personagem que contextualiza o bando e seu líder, não uma representação de toda a invasão do cofre nem do confronto de Kellan."
+  },
+  "omenpaths-loot-discovered": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Na abertura do cofre, depois do confronto entre Kellan e Oko",
+      "basis": "O episódio final de Thunder Junction narra a descoberta depois que as equipes concorrentes entram na câmara do tesouro."
+    },
+    "sources": [
+      {
+        "title": "Outlaws of Thunder Junction — Episode 6: The Ballad of Thieves and Thunderslingers",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers",
+        "role": "story",
+        "supports": "Revela Ashiok como Jace disfarçado e retrata Jace quebrando o recipiente para descobrir e levar a criança viva; não estabelece as origens completas da criatura antiga."
+      }
+    ],
+    "artworkNote": "Loot, the Key to Everything é o retrato da criança e não ilustra literalmente o momento em que Jace quebrou o recipiente do cofre."
+  },
+  "omenpaths-thunder-crossroads": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante o assalto de Oko em Thunder Junction, depois que os Caminhos Pressagiados começam a conectar mundos",
+      "basis": "A história do assalto retrata seu elenco interplanar misto sem datar todas as outras chegadas planares nem as consequências econômicas."
+    },
+    "sources": [
+      {
+        "title": "Outlaws of Thunder Junction — Episode 6: The Ballad of Thieves and Thunderslingers",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-6-the-ballad-of-thieves-and-thunderslingers",
+        "role": "story",
+        "supports": "Retrata foras da lei de mundos diferentes cooperando e se opondo em torno do assalto ao cofre de Oko; as implicações econômicas e políticas universais são síntese editorial."
+      },
+      {
+        "title": "A Legendary Crew for an Unbelievable Heist: Outlaws of Thunder Junction",
+        "url": "https://magic.wizards.com/en/news/feature/a-legendary-crew-for-an-unbelievable-heist-outlaws-of-thunder-junction",
+        "role": "retrospective",
+        "supports": "A visão geral oficial identifica a equipe interplanar do assalto e o papel de Oko; é material contextual, em vez do episódio retratado de ficção primária."
+      }
+    ],
+    "artworkNote": "O retrato de Oko de Thunder Junction representa o organizador do assalto, não uma paisagem ou cena que comprove como todos os visitantes dos Caminhos Pressagiados chegaram."
+  },
+  "teferis-phasing-decision": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a invasão phyrexiana original, antes do reparo de Shiv na era da Reparação",
+      "basis": "Teferi relata a retirada de Zhalfir de fase, e Jhoira descreve Shiv separadamente; o diálogo posterior data sua sequência de restauração de forma relativa, não em um ano de calendário compartilhado."
+    },
+    "sources": [
+      {
+        "title": "Return to Dominaria: Episode 6",
+        "url": "https://magic.wizards.com/en/news/magic-story/return-dominaria-episode-6-2018-04-18",
+        "role": "story",
+        "supports": "Teferi descreve explicitamente a retirada de Zhalfir de fase para proteger seu povo; Jhoira confirma que ele retirou Shiv de fase e depois a devolveu ao custo de sua centelha."
+      }
+    ],
+    "artworkNote": "O retrato selecionado de Teferi contextualiza sua decisão, não uma imagem literal de qualquer uma das regiões desaparecendo de Dominária."
+  },
+  "shivan-rift": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante os reparos das fendas temporais, séculos depois da invasão phyrexiana original",
+      "basis": "A conversa retrospectiva de 2018 identifica o reparo de Shiv como o acontecimento que custou a centelha de Teferi; a data de publicação não é uma data dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "Return to Dominaria: Episode 6",
+        "url": "https://magic.wizards.com/en/news/magic-story/return-dominaria-episode-6-2018-04-18",
+        "role": "story",
+        "supports": "Jhoira diz que Teferi reparou a fenda e devolveu Shiv a Dominária, perdendo sua centelha de planeswalker ao fazê-lo; Zhalfir permaneceu inacessível."
+      }
+    ],
+    "artworkNote": "Uma carta de Teferi identifica o mago envolvido, mas não pode estabelecer o momento exato, os mecanismos nem a data do fechamento da fenda de Shiv."
+  },
+  "mending-venser-first-walk": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a convulsão de Espiral Temporal, antes das viagens interplanares subsequentes de Venser",
+      "basis": "O perfil do personagem confirma que a centelha de Venser acabou se acendendo, mas não data por si só sua primeira transposição nem estabelece o episódio da Dominária divergente."
+    },
+    "sources": [
+      {
+        "title": "Venser",
+        "url": "https://magic.wizards.com/en/story/venser-planeswalker",
+        "role": "retrospective",
+        "supports": "Identifica Venser como um artífice especializado em teletransporte cuja centelha se acendeu e permitiu transpor os planos; não documenta a cena da história alternativa."
+      },
+      {
+        "title": "A Double Take, Part 1",
+        "url": "https://magic.wizards.com/en/news/making-magic/a-double-take-part-1",
+        "role": "design-commentary",
+        "supports": "Descreve Venser inicialmente como um personagem que não era planeswalker, destinado a se tornar um dos planeswalkers menos divinos após a Reparação; a coluna não narra sua primeira transposição."
+      }
+    ],
+    "artworkNote": "A carta retrospectiva do personagem Venser não é uma imagem literal de sua primeira travessia planar nem de uma Dominária alternativa.",
+    "unresolvedClaims": [
+      {
+        "claim": "Venser transpõe os planos pela primeira vez ao retornar de uma versão divergente de Dominária.",
+        "requiredEvidence": "Consultar diretamente os romances Time Spiral (2006) e Planar Chaos (2007); localizar a passagem da linha do tempo alternativa, identificar os papéis de Venser, Jhoira e Teferi e registrar a primeira cena de transposição planar com edição e página. Resumos secundários do enredo são pistas de pesquisa, não confirmação primária."
+      }
+    ]
+  },
+  "freyalise-seals-skyshroud": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante o reparo dos danos temporais de Dominária, depois da Sobreposição de Rath",
+      "basis": "A biografia oficial da personagem recorda Freyalise sacrificando sua vida por seu povo; não fornece um ano nem nomeia a fenda precisa."
+    },
+    "sources": [
+      {
+        "title": "Freyalise",
+        "url": "https://magic.wizards.com/en/story/freyalise-planeswalker",
+        "role": "retrospective",
+        "supports": "Confirma que Freyalise sacrificou sua vida ao defender seu povo contra uma catástrofe que ameaçava Dominária; esse perfil curto não identifica Skyshroud pelo nome."
+      }
+    ],
+    "artworkNote": "A impressão de Freyalise retrata sua personagem e seu papel histórico, não sua ação final específica na fenda de Skyshroud.",
+    "unresolvedClaims": [
+      {
+        "claim": "Freyalise se sacrifica especificamente para fechar a fenda de Skyshroud.",
+        "requiredEvidence": "Consultar diretamente Planar Chaos (2007); localizar a ação final de Freyalise, estabelecer se a fenda nomeada fica em Skyshroud/Keld e documentar o destino da floresta com edição e página. Resumos secundários do enredo não resolvem essa questão."
+      }
+    ]
+  },
+  "phyrexia-urabrask-dissent": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a disputa interna pelo poder em Nova Phyrexia, antes do colapso da invasão",
+      "basis": "A retrospectiva das facções identifica Urabrask e Sheoldred como aliados se preparando contra Norn, mas não narra por si só a punição final de Urabrask."
+    },
+    "sources": [
+      {
+        "title": "The Legends of Phyrexia: All Will Be One",
+        "url": "https://magic.wizards.com/en/news/feature/the-legends-of-phyrexia-all-will-be-one",
+        "role": "retrospective",
+        "supports": "Descreve Urabrask formando uma aliança com Sheoldred contra Elesh Norn e encarregando Kethek de uma missão; essa fonte não sustenta de forma independente sua punição posterior."
+      }
+    ],
+    "artworkNote": "A carta de Urabrask retrata o pretor, não seu encontro com Sheoldred, o santuário mirraniano nem sua punição posterior."
+  },
+  "phyrexia-elspeth-return": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a resistência final a Elesh Norn, depois que Elspeth deixa a missão do Sylex",
+      "basis": "O episódio narra a forma alterada de Elspeth e sua intervenção na batalha, não uma data universal de calendário para sua transformação."
+    },
+    "sources": [
+      {
+        "title": "March of the Machine — Episode 7: Divine Intervention",
+        "url": "https://magic.wizards.com/en/news/magic-story/episode-7-divine-intervention",
+        "role": "story",
+        "supports": "Retrata uma Elspeth angelical protegendo Chandra e outros aliados mirranianos enquanto confronta Elesh Norn e protege a abertura em direção a Quebra-reinos."
+      }
+    ],
+    "artworkNote": "A carta selecionada ilustra a forma angelical de Elspeth, mas não fornece uma cronologia independente nem documenta cada ação da cena."
+  },
+  "phyrexia-jin-kamigawa": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Antes da invasão de Nova Phyrexia, depois que Jin-Gitaxias chega a Kamigawa",
+      "basis": "A visão geral oficial da invasão situa a missão de pesquisa de Jin-Gitaxias antes do ataque multiversal, sem datar a completação individual de Tamiyo."
+    },
+    "sources": [
+      {
+        "title": "Planeswalker's Guide to March of the Machine: The Phyrexian Invasion of the Multiverse",
+        "url": "https://magic.wizards.com/en/news/feature/planeswalkers-guide-to-march-of-the-machine",
+        "role": "retrospective",
+        "supports": "Afirma que Jin-Gitaxias viajou a Kamigawa e desenvolveu um método para completar planeswalkers; não documenta sozinha a cena inteira da transformação de Tamiyo."
+      }
+    ],
+    "artworkNote": "O retrato de Tamiyo fornece contexto visual para a completação de planeswalkers, não uma representação de Jin-Gitaxias realizando a pesquisa."
+  },
+  "phyrexia-mirran-survival": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Ao longo da ocupação de Mirrodin, antes e durante a invasão de Nova Phyrexia",
+      "basis": "A retrospectiva oficial das facções documenta Kemba e Koth organizando os mirranianos sobreviventes, mas não data cada campanha nem as ações específicas de Melira."
+    },
+    "sources": [
+      {
+        "title": "The Legends of Phyrexia: All Will Be One",
+        "url": "https://magic.wizards.com/en/news/feature/the-legends-of-phyrexia-all-will-be-one",
+        "role": "retrospective",
+        "supports": "Descreve Kemba liderando os leoninos sobreviventes e aconselhando Koth enquanto grupos mirranianos distintos formam uma resistência; as contribuições separadas de Melira exigem outras fontes."
+      }
+    ],
+    "artworkNote": "A impressão temática da resistência representa a sobrevivência mirraniana, não uma imagem contemporânea de cada ação ou participante da resistência."
+  },
+  "phyrexia-seedcore-failure": {
+    "chronology": {
+      "precision": "relative",
+      "label": "No ataque fracassado da equipe, enquanto Quebra-reinos inicia a invasão multiversal",
+      "basis": "Os episódios consecutivos de ficção primária estabelecem a ordem da abertura de Quebra-reinos, da ativação do Sylex por Jace e de sua remoção por Elspeth; não dão um ano de calendário compartilhado dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "Assault on New Phyrexia — Episode 4: Impossible Odds",
+        "url": "https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-4-impossible-odds",
+        "role": "story",
+        "supports": "Mostra a equipe de ataque entrando no Germinúcleo depois que Quebra-reinos faz suas primeiras conexões com outros planos; a tentativa de impedir essas conexões já chega tarde demais."
+      },
+      {
+        "title": "Assault on New Phyrexia — Episode 5: Inevitable Resolutions",
+        "url": "https://magic.wizards.com/en/news/magic-story/assault-on-new-phyrexia-or-episode-5-inevitable-resolutions",
+        "role": "story",
+        "supports": "Narra diretamente Jace ativando o Sylex apesar do alerta de Kaya e Kaito, seguido por Elspeth tomando-o e desaparecendo antes que ele detone no Germinúcleo."
+      }
+    ],
+    "artworkNote": "A impressão selecionada de Nissa, Ascended Animist é um retrato de Nissa após a completação, não uma cena literal de Jace ativando o Sylex ou de Elspeth tomando-o."
+  },
+  "spark-dovin-azorius-control": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a Guerra da Centelha, enquanto Ravnica coordena a resistência a Bolas",
+      "basis": "A ficção oficial situa Dovin na liderança Azorius e descreve sua fuga posterior; não fornece uma data de calendário entre planos nem um registro completo de suas políticas anteriores."
+    },
+    "sources": [
+      {
+        "title": "War of the Spark: Ravnica — Rallying the Reluctant",
+        "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-rallying-reluctant-2019-05-22",
+        "role": "story",
+        "supports": "Confirma que Dovin era o mestre de guilda Azorius alinhado a Bolas, que os estatutos do Senado ainda o reconheciam apesar dos dissidentes e que ele guardava o Sol Imortal em uma torre de Nova Prahv."
+      },
+      {
+        "title": "War of the Spark: Ravnica — Operation Desperation",
+        "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-operation-desperation-2019-06-05",
+        "role": "story",
+        "supports": "Narra que Dovin fugira de Ravnica e que Lavinia servia como mestre de guilda Azorius interina durante o esforço para reunir as guildas."
+      }
+    ],
+    "artworkNote": "Dovin, Hand of Control é um retrato de personagem, não uma ilustração de cada política Azorius nem prova de que todo membro do Senado apoiava Bolas."
+  },
+  "talite-siege-of-penregon": {
+    "chronology": {
+      "precision": "relative",
+      "label": "69 AR, nos anos depois da Explosão do Sylex e antes do abandono de Penregon",
+      "basis": "O Episódio 2 de The Brothers' War abre esse episódio sob 69 AR e narra diretamente o cerco; ao contrário do ano de publicação de 2022, 69 AR é uma data explícita dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "The Brothers' War — Episode 2: The Beginning",
+        "url": "https://magic.wizards.com/en/news/magic-story/the-brothers-war-episode-2-the-beginning",
+        "role": "story",
+        "supports": "Descreve diretamente atacantes talitas fora e dentro de Penregon, Kayla dirigindo as decisões da cidade e Tawnos queimando sua oficina de máquinas civis durante o cerco."
+      }
+    ],
+    "artworkNote": "Witch Hunter é uma imagem temática da perseguição contra a magia e não retrata o cerco de Penregon de 69 AR."
+  },
+  "spark-elderspell": {
+    "chronology": {
+      "precision": "relative",
+      "label": "Durante a invasão de Ravnica na Guerra da Centelha, depois que os planeswalkers são aprisionados",
+      "basis": "A ficção oficial mostra o feitiço em andamento e o comentário de criação explica sua intenção; nenhum estabelece uma data de calendário compartilhada dentro da ficção."
+    },
+    "sources": [
+      {
+        "title": "War of the Spark: Ravnica — Ashes",
+        "url": "https://magic.wizards.com/en/news/magic-story/war-spark-ravnica-ashes-2019-06-12",
+        "role": "story",
+        "supports": "Descreve a tempestade do Feitiço Ancião, planeswalkers mortos e centelhas colhidas voando em direção a Bolas e à gema entre seus chifres durante a batalha."
+      },
+      {
+        "title": "War Games",
+        "url": "https://magic.wizards.com/en/news/making-magic/war-games-2019-04-22",
+        "role": "design-commentary",
+        "supports": "Explica o mecanismo pretendido da história: Eternos drenam as centelhas dos planeswalkers, matando-os, e então transferem o poder a Bolas em sua tentativa de recuperar a força anterior à Reparação."
+      }
+    ],
+    "artworkNote": "The Elderspell é uma ilustração contemporânea de feitiço; as mecânicas da carta expressam o conceito de colheita, mas não estabelecem cada detalhe visível da batalha narrada."
+  }
+}

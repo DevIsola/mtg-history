@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { buildSeo } from './build-seo.mjs';
 import { test } from 'node:test';
 import { canonicalUrl, sitemapPaths, sitemapXml } from '../src/utils/seo.mjs';
-import { homeAlternates } from '../src/utils/i18n.mjs';
+import { routeAlternates } from '../src/utils/i18n.mjs';
 
 const layout = readFileSync(new URL('../src/layouts/BaseLayout.astro', import.meta.url), 'utf8');
 const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
@@ -61,16 +61,16 @@ test('SEO build fails on missing, invalid or unreferenced social imagery', async
   const dir = await mkdtemp(join(tmpdir(), 'mtg-social-preview-'));
   const imageUrl = 'https://devisola.github.io/mtg-history/social-preview.png';
   try {
-    const routes = ['/', '/pt-br/', '/chapters/thran/', '/characters/yawgmoth/'];
+    const routes = ['/', '/pt-br/', '/chapters/thran/', '/pt-br/chapters/thran/', '/characters/yawgmoth/', '/pt-br/characters/yawgmoth/'];
     for (const path of routes) {
       const folder = join(dir, path.slice(1));
       await mkdir(folder, { recursive: true });
       const canonical = `https://devisola.github.io/mtg-history${path}`;
-      const head = (path === '/' || path === '/pt-br/')
-        ? `<html lang="${path === '/' ? 'en' : 'pt-BR'}">` + homeAlternates('https://devisola.github.io').map(
-            ({ lang, href }) => `<link rel="alternate" hreflang="${lang}" href="${href}" />`,
-          ).join('')
-        : '';
+      const language = path.startsWith('/pt-br/') ? 'pt-BR' : 'en';
+      const alternates = routeAlternates('/mtg-history' + path, 'https://devisola.github.io');
+      const head = `<html lang="${language}">` + alternates.map(
+        ({ lang, href }) => `<link rel="alternate" hreflang="${lang}" href="${href}" />`,
+      ).join('');
       await writeFile(join(folder, 'index.html'), `${head}<link rel="canonical" href="${canonical}" /><meta property="og:image" content="${imageUrl}" /><meta name="twitter:image" content="${imageUrl}" />`);
     }
     assert.throws(() => buildSeo(dir), /Missing social-preview/);
@@ -87,7 +87,9 @@ test('SEO build fails on missing, invalid or unreferenced social imagery', async
     await writeFile(ptFile, ptHtml.replace('hreflang="en"', 'hreflang="fr"'));
     assert.throws(() => buildSeo(dir), /Missing homepage hreflang en: \/pt-br\//);
     await writeFile(ptFile, ptHtml);
-    await writeFile(join(dir, 'chapters', 'thran', 'index.html'), '<link rel="canonical" href="https://devisola.github.io/mtg-history/chapters/thran/" />');
+    const chapterFile = join(dir, 'chapters', 'thran', 'index.html');
+    const chapterHtml = readFileSync(chapterFile, 'utf8');
+    await writeFile(chapterFile, chapterHtml.replace(/<meta (?:property="og:image"|name="twitter:image")[^>]+>/g, ''));
     assert.throws(() => buildSeo(dir), /Missing or mismatched social preview metadata: \/chapters\/thran\//);
   } finally {
     await rm(dir, { recursive: true, force: true });

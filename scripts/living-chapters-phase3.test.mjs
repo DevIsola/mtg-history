@@ -36,7 +36,11 @@ test('the enhancement is a no-op without a compatible chapter', () => {
 });
 
 test('wiring preserves actual historical moments, full artwork, and accessibility', () => {
-  const page = read('src/pages/chapters/[id].astro');
+  const route = read('src/pages/chapters/[id].astro');
+  const translatedRoute = read('src/pages/pt-br/chapters/[id].astro');
+  const page = read('src/components/ChapterReader.astro');
+  assert.match(route, /<ChapterReader chapter=\{chapter\} \/>/);
+  assert.match(translatedRoute, /<ChapterReader chapter=\{chapter\} locale="pt-BR" \/>/);
   const component = read('src/components/ChapterArtworkTrail.astro');
   const util = read('src/utils/chapter-artwork-trail.mjs');
   assert.match(page, /<ChapterArtworkTrail \/>/);

@@ -1,0 +1,7 @@
+---
+import Page from '../../../components/pages/CharacterProfilePage.astro';
+import { characters } from '../../../data/characters';
+export function getStaticPaths() { return characters.map(profile => ({ params: { id: profile.id }, props: { profile } })); }
+const { profile } = Astro.props;
+---
+<Page profile={profile} />

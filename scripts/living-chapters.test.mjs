@@ -110,9 +110,9 @@ test('missing chapter or no eligible elements is a no-op', () => {
 });
 
 test('chapter script and scoped styling are progressive enhancements', () => {
-  const page = readFileSync(new URL('../src/pages/chapters/[id].astro', import.meta.url), 'utf8');
+  const page = readFileSync(new URL('../src/components/ChapterReader.astro', import.meta.url), 'utf8');
   const scss = readFileSync(new URL('../src/styles/_chapter-themes.scss', import.meta.url), 'utf8');
-  assert.match(page, /import \{ setupLivingChapterReveals \} from '\.\.\/\.\.\/utils\/living-chapters\.mjs';/);
+  assert.match(page, /import \{ setupLivingChapterReveals \} from '\.\.\/utils\/living-chapters\.mjs';/);
   assert.match(page, /setupLivingChapterReveals\(document\.querySelector\('\.chapter-theme'\)\)/);
   assert.match(scss, /\[data-living-reveal='pending'\]/);
   assert.match(scss, /prefers-reduced-motion:\s*reduce/);

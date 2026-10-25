@@ -1,14 +1,18 @@
-
 ---
-import type { CollectionEntry } from 'astro:content';
-import { withBase } from '../utils/paths';
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 interface Props {
-  chapters: CollectionEntry<'chapters'>[];
+  chapters: CollectionEntry<'chapters' | 'chaptersPt'>[];
   activeId?: string;
 }
 
-const { chapters, activeId } = Astro.props;
+const { chapters: providedChapters, activeId } = Astro.props;
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
+const chapterTranslations = new Map((pageLocale === 'pt-BR' ? await getCollection('chaptersPt') : []).map(chapter => [chapter.id, chapter]));
+const chapters = providedChapters.map(chapter => chapterTranslations.get(chapter.id) ?? chapter);
 
 const orderedChapters = [...chapters].sort(
   (a, b) =>
@@ -19,14 +23,13 @@ const orderedChapters = [...chapters].sort(
 
 <nav
   class="chronology-strip"
-  aria-label="Historical and publication chronology"
+  aria-label={t("Historical and publication chronology")}
 >
   <div class="chronology-strip__heading">
-    <p class="eyebrow">The historical record</p>
-    <h2>Two histories. One Multiverse.</h2>
+    <p class="eyebrow">{t("The historical record")}</p>
+    <h2>{t("Two histories. One Multiverse.")}</h2>
     <p>
-      Follow events in their fictional order, and discover
-      when Magic published the stories behind them.
+      {t("Follow events in their fictional order, and discover when Magic published the stories behind them.")}
     </p>
   </div>
 
@@ -39,13 +42,13 @@ const orderedChapters = [...chapters].sort(
             activeId === chapter.id &&
               'chronology-strip__link--current',
           ]}
-          href={withBase(`chapters/${chapter.id}/#chapter-reader`)}
+          href={localPath(`chapters/${chapter.id}/#chapter-reader`, pageLocale)}
           aria-current={
             activeId === chapter.id ? 'page' : undefined
           }
         >
           <span class="chronology-strip__number">
-            Chapter {String(chapter.data.order).padStart(2, '0')}
+            {t('Chapter')} {String(chapter.data.order).padStart(2, '0')}
           </span>
 
           <strong class="chronology-strip__title">
@@ -54,7 +57,7 @@ const orderedChapters = [...chapters].sort(
 
           <span class="chronology-strip__track">
             <span class="chronology-strip__label">
-              In-universe chronology
+              {t("In-universe chronology")}
             </span>
 
             <span class="chronology-strip__date">
@@ -68,7 +71,7 @@ const orderedChapters = [...chapters].sort(
 
           <span class="chronology-strip__track chronology-strip__track--publication">
             <span class="chronology-strip__label">
-              Real-world publication
+              {t("Real-world publication")}
             </span>
 
             <span class="chronology-strip__publication">
@@ -78,8 +81,8 @@ const orderedChapters = [...chapters].sort(
 
           <span class="chronology-strip__action">
             {activeId === chapter.id
-              ? 'Currently reading'
-              : 'Explore chapter →'}
+              ? t('Currently reading')
+              : t('Explore chapter →')}
           </span>
         </a>
       </li>
@@ -87,9 +90,6 @@ const orderedChapters = [...chapters].sort(
   </ol>
 
   <p class="chronology-strip__note">
-    AR = Argivian Reckoning, the Dominarian calendar
-    beginning with the births of Urza and Mishra.
-    Dates are an approximate editorial guide.
-    Chapters are shown in reading order, not to scale.
+    {t("AR = Argivian Reckoning, the Dominarian calendar beginning with the births of Urza and Mishra. Dates are an approximate editorial guide. Chapters are shown in reading order, not to scale.")}
   </p>
 </nav>

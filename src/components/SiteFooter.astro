@@ -1,20 +1,20 @@
 ---
-import { withBase } from '../utils/paths';
-import { uiFor } from '../utils/i18n.mjs';
+import { localeForPath, localPath, phrase } from '../utils/locale';
 interface Props { locale?: 'en' | 'pt-BR'; }
-const { locale = 'en' } = Astro.props;
-const ui = uiFor(locale);
+const { locale = localeForPath(Astro.url.pathname) } = Astro.props;
+const pageLocale = locale;
+const t = (english: string) => phrase(pageLocale, english);
 ---
 <footer class="site-footer">
   <div class="page-shell footer-grid">
     <div>
-      <div class="footer-brand"><span aria-hidden="true">✦</span> Chronicles of the Multiverse</div>
-      <p>{ui.footerIntro}</p>
+      <div class="footer-brand"><span aria-hidden="true">✦</span> {t("Chronicles of the Multiverse")}</div>
+      <p>{t('An independent historical guide to the stories behind Magic: The Gathering.')}</p>
     </div>
     <div class="footer-links">
-      <a href={withBase(locale === 'pt-BR' ? 'pt-br/timeline/' : 'timeline/')}>{ui.footerLinks[0]}</a>
-      <a href={withBase('glossary/')}>{ui.footerLinks[1]}</a>
-      <a href={withBase('about/')}>{ui.footerLinks[2]}</a>
+      <a href={localPath('timeline/', locale)}>{t('Timeline')}</a>
+      <a href={localPath('glossary/', locale)}>{t('Lore glossary')}</a>
+      <a href={localPath('about/', locale)}>{t('About this project')}</a>
       <a href="https://github.com/DevIsola/mtg-history" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 
 <a
@@ -22,15 +22,15 @@ const ui = uiFor(locale);
   target="_blank"
   rel="noopener noreferrer"
 >
-  {ui.support}
+  {t('Support on Ko-fi ↗')}
 </a>
 
     </div>
   </div>
   <div class="page-shell footer-legal">
-    <div><p>{ui.legal}</p><p class="footer-artwork"><a href={withBase('about/#site-illustration')}>{locale === 'pt-BR' ? 'Sobre a ilustração decorativa (EN)' : 'About the decorative landscape'}</a></p></div>
+    <div><p>{t('This is unofficial fan content, not approved or endorsed by Wizards of the Coast. Magic: The Gathering and related marks belong to Wizards of the Coast.')}</p><p class="footer-artwork"><a href={localPath('about/#site-illustration', locale)}>{t('About the decorative landscape')}</a></p></div>
     <p>
-  {ui.credit}&nbsp;
+  {t('Created and maintained with love 🖤 by')}&nbsp;
   <a
     href="https://github.com/DevIsola"
     target="_blank"

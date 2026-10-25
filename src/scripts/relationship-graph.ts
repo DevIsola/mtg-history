@@ -3,6 +3,7 @@
  * the canonical accessible record and the only input to the visual network.
  */
 import 'vis-network/styles/vis-network.css';
+import { localeForPath, phrase } from '../utils/locale';
 import { relationshipColor, relationshipLabel, relationshipDash } from '../utils/relationship-colors.mjs';
 
 type GraphNode = { id: string; label: string; value: number; chapterId: string };
@@ -54,6 +55,9 @@ function neighborhood(edges: GraphEdge[], focus: string, depth: number): Set<str
 }
 
 export async function initializeRelationshipGraph(root: HTMLElement): Promise<void> {
+  const locale = localeForPath(root.ownerDocument.location.pathname);
+  const t = (english: string) => phrase(locale, english);
+  const localizedRelationshipLabel = (category: string) => t(relationshipLabel(category));
   const query = <T extends HTMLElement>(selector: string) => root.querySelector<T>(selector);
   const panel = query<HTMLElement>('#network-visual');
   const canvas = query<HTMLElement>('#network-canvas');
@@ -206,7 +210,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
 
     panel.hidden = false;
     cards.hidden = true;
-    status.textContent = 'Positioning character connections…';
+    status.textContent = t('Positioning character connections…');
     const graph = new Network(canvas, { nodes: nodeSet, edges: edgeSet }, {
       autoResize: true,
       layout: { randomSeed: 19, improvedLayout: false },
@@ -325,20 +329,20 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
     const inspect = () => {
       const current = state();
       const directEdges = visibleEdges.filter((item) => item.from === current.person || item.to === current.person);
-      inspectorRelation.replaceChildren(new Option('Selected character overview', ''));
+      inspectorRelation.replaceChildren(new Option(t('Selected character overview'), ''));
       for (const item of directEdges) {
         const other = item.from === current.person ? item.to : item.from;
-        const title = `${byId.get(other)?.textContent?.trim() ?? other} — ${relationshipLabel(item.category)}`;
+        const title = `${byId.get(other)?.textContent?.trim() ?? other} — ${localizedRelationshipLabel(item.category)}`;
         inspectorRelation.add(new Option(title, item.id));
       }
       inspectorRelation.value = directEdges.some((item) => item.id === inspectedEdge) ? inspectedEdge ?? '' : '';
       const edge = visibleEdges.find((item) => item.id === inspectedEdge);
       if (edge) {
-        inspectorKind.textContent = `Documented relationship · ${relationshipLabel(edge.category)}`;
+        inspectorKind.textContent = `${t('Documented relationship')} · ${localizedRelationshipLabel(edge.category)}`;
         inspectorHeading.textContent = `${byId.get(edge.from)?.textContent ?? edge.from} · ${byId.get(edge.to)?.textContent ?? edge.to}`;
         const fromFocus = current.person === edge.from ? edge.labelForA : current.person === edge.to ? edge.labelForB : '';
         inspectorSummary.textContent = edge.context;
-        inspectorCount.textContent = fromFocus ? `From the selected character’s perspective: ${fromFocus}` : '';
+        inspectorCount.textContent = fromFocus ? `${t('From the selected character’s perspective:')} ${fromFocus}` : '';
         inspectorLink.hidden = true;
         inspectorChapter.hidden = !edge.chapterHref;
         inspectorChapter.href = edge.chapterHref;
@@ -348,10 +352,10 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
         inspectedEdge = null;
         const person = byId.get(current.person);
         const direct = directEdges.length;
-        inspectorKind.textContent = 'Selected character';
+        inspectorKind.textContent = t('Selected character');
         inspectorHeading.textContent = person?.textContent?.trim() ?? current.person;
         inspectorSummary.textContent = person?.dataset.summary ?? '';
-        inspectorCount.textContent = `${direct} visible direct ${direct === 1 ? 'relationship' : 'relationships'} in this graph view.`;
+        inspectorCount.textContent = `${direct} ${t(direct === 1 ? 'visible direct relationship' : 'visible direct relationships')} ${t('in this graph view.')}`;
         inspectorLink.href = root.querySelector<HTMLAnchorElement>('#network-profile')?.href ?? '';
         inspectorLink.hidden = false;
         inspectorChapter.hidden = true;
@@ -362,7 +366,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       const term = search.value.trim().toLocaleLowerCase();
       const matches = term ? allNodes.filter((node) => node.label.toLocaleLowerCase().includes(term)) : [];
       searchStatus.textContent = term
-        ? `${matches.length} matching ${matches.length === 1 ? 'character' : 'characters'}. ${matches.length ? 'Press Find to focus the first match.' : 'Try another name.'}`
+        ? `${matches.length} ${t(matches.length === 1 ? 'matching character' : 'matching characters')}. ${t(matches.length ? 'Press Find to focus the first match.' : 'Try another name.')}`
         : '';
       return matches;
     };
@@ -404,7 +408,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       if (inspectedEdge) graph.selectEdges([inspectedEdge]);
       else if (visibleIds.has(current.person)) graph.selectNodes([current.person], false);
       else graph.unselectAll();
-      status.textContent = `${visibleIds.size} characters and ${visibleEdges.length} documented relationships in the graph${era.value ? ` for ${chapterOptions.find((item) => item.value === era.value)?.textContent?.trim() ?? era.value}` : ''}.`;
+      status.textContent = `${visibleIds.size} ${t('characters and')} ${visibleEdges.length} ${t('documented relationships in the graph')}${era.value ? ` ${t('for')} ${chapterOptions.find((item) => item.value === era.value)?.textContent?.trim() ?? era.value}` : ''}.`;
       updateChapterLegend();
       canvas.setAttribute('aria-label', status.textContent);
       root.dataset.graphVisibleNodes = String(visibleIds.size);
@@ -471,7 +475,7 @@ export async function initializeRelationshipGraph(root: HTMLElement): Promise<vo
       select.value = found.id;
       select.dispatchEvent(new Event('change', { bubbles: true }));
       if (visibleIds.has(found.id)) graph.focus(found.id, { scale: 1, animation: false });
-      else searchStatus.textContent = 'Character selected, but hidden by the current relationship filter. Try All relationships.';
+      else searchStatus.textContent = t('Character selected, but hidden by the current relationship filter. Try All relationships.');
     });
     root.addEventListener('relationship:change', () => {
       inspectedEdge = null;

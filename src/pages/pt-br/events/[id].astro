@@ -1,0 +1,7 @@
+---
+import Page from '../../../components/pages/EventPage.astro';
+import { getEventStaticPaths } from '../../../utils/event-page';
+export const getStaticPaths = getEventStaticPaths;
+const { event, chapter, card } = Astro.props;
+---
+<Page event={event} chapter={chapter} card={card} />

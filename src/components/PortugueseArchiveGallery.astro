@@ -6,13 +6,16 @@ import { chapterCardUse } from '../utils/card-printings';
 import { localizedArchiveCard } from '../utils/pt-printings.mjs';
 import ptCatalog from '../data/pt-printings.json';
 
-const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const chapters = (await getCollection('chaptersPt')).sort((a, b) => a.data.order - b.data.order);
+const originalChapters = new Map((await getCollection('chapters')).map(chapter => [chapter.id, chapter]));
 const originalPrintings = new Map((await getCollection('cards')).map(({id, data}) => [id, data]));
 const sections = chapters.map(chapter => ({
   id: chapter.id, order: chapter.data.order, name: portugueseEra(chapter.id).name,
   cards: chapter.data.cardIds.map((_, i) => {
-    const canonical = chapterCardUse(chapter, i, originalPrintings);
-    return {...localizedArchiveCard(canonical, ptCatalog), significance: canonical.significance, originalName: canonical.name};
+    const original = originalChapters.get(chapter.id);
+    if (!original) throw new Error(`Archive: missing canonical chapter ${chapter.id}`);
+    const canonical = chapterCardUse(original, i, originalPrintings);
+    return {...localizedArchiveCard(canonical, ptCatalog), significance: chapter.data.cards[i].significance, originalName: canonical.name};
   }),
 }));
 const total = sections.reduce((count, chapter) => count + chapter.cards.length, 0);
@@ -22,7 +25,7 @@ const translated = sections.reduce((count, chapter) => count + chapter.cards.fil
     <div class="page-shell">
       <p class="eyebrow">As imagens e a história</p>
       <h2 class="section-title">Uma coleção de <em>referências.</em></h2>
-      <p class="archive-pt__intro">{total} referências em {chapters.length} capítulos. {translated} exibidas em português após verificação de edição e ilustração. Outras preservam a imagem original em inglês. A imagem ilustra um tema ou um acontecimento, mas não comprova sozinha a interpretação histórica. As descrições editoriais continuam em inglês.</p>
+      <p class="archive-pt__intro">{total} referências em {chapters.length} capítulos. {translated} exibidas em português após verificação de edição e ilustração. Outras preservam a imagem original em inglês. A imagem ilustra um tema ou um acontecimento, mas não comprova sozinha a interpretação histórica. As interpretações editoriais estão disponíveis em português.</p>
       <p class="archive-pt__related"><a href={withBase('archive/')} hreflang="en">Consultar o arquivo canônico em inglês ↗</a></p>
       <div class="archive-pt__filters" hidden data-pt-archive-controls>
         <label for="pt-archive-search">Pesquisar cartas ou interpretações</label>
@@ -58,7 +61,7 @@ const translated = sections.reduce((count, chapter) => count + chapter.cards.fil
                   <h4>{card.name}</h4>
                   {card.translated && <p class="archive-pt__original-title">Nome original: {card.originalName}</p>}
                   <p class="archive-pt__credit">Arte de {card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</p>
-                  <p class="archive-pt__meaning"><strong>Interpretação editorial (texto em inglês):</strong> {card.significance}</p>
+                  <p class="archive-pt__meaning"><strong>Interpretação editorial:</strong> {card.significance}</p>
                   <p class="archive-pt__reference">Referência canônica: <a href={`https://scryfall.com/card/${card.setCode}/${card.collectorNumber}`} target="_blank" rel="noopener noreferrer">edição original ↗</a></p>
                 </div>
               </article>

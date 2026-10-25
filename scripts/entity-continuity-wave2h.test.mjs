@@ -61,9 +61,9 @@ test('orphan event or relationship references fail closed', () => {
 });
 
 test('editorial routes remain distinct from generated evidence and all links use canonical IDs', () => {
-  const hub = read('src/pages/paths/index.astro');
+  const hub = read('src/components/pages/HistoryPathsPage.astro');
   const component = read('src/components/ChapterEntityConnections.astro');
-  const chapter = read('src/pages/chapters/[id].astro');
+  const chapter = read('src/components/ChapterReader.astro');
   assert.match(hub, /historyPaths\.map\(/);
   assert.match(hub, /deriveEntityContinuity\(/);
   assert.match(hub, /id="entity-evidence"/);

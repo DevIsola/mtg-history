@@ -1,23 +1,29 @@
 ---
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
 import { getEntry } from 'astro:content';
-import { withBase } from '../utils/paths';
+import { localized } from '../utils/localization';
 
 interface Props { id: string; }
+const pageLocale = localeForPath(Astro.url.pathname);
 const { id } = Astro.props;
 const entry = await getEntry('glossary', id);
 if (!entry) throw new Error(`Unknown glossary term: ${id}`);
 // Web Crypto is available in the supported Node.js runtime and the DOM types.
+const definition = localized('glossary', { id: entry.id, ...entry.data }, pageLocale);
 const panelId = `lore-definition-${globalThis.crypto.randomUUID()}`;
-const href = withBase(`glossary/#${entry.id}`);
+const href = localPath(`glossary/#${entry.id}`, pageLocale);
+
+const t = (english: string) => phrase(pageLocale, english);
 ---
 
 <span class="lore-term" data-lore-term>
-  <a href={href} class="lore-term__link"><slot>{entry.data.term}</slot></a>
+  <a href={href} class="lore-term__link"><slot>{definition.term}</slot></a>
   <button
     class="lore-term__button"
     type="button"
     data-lore-button
-    aria-label={`Explain ${entry.data.term}`}
+    aria-label={`${t('Explain')} ${definition.term}`}
     aria-controls={panelId}
     aria-expanded="false"
     hidden
@@ -27,12 +33,12 @@ const href = withBase(`glossary/#${entry.id}`);
     id={panelId}
     data-lore-panel
     role="group"
-    aria-label={`Definition of ${entry.data.term}`}
+    aria-label={`${t('Definition of')} ${definition.term}`}
     hidden
   >
-    <strong class="lore-term__title">{entry.data.term}</strong>
-    <span class="lore-term__description">{entry.data.summary}</span>
-    <a class="lore-term__more" href={href}>Full glossary entry →</a>
+    <strong class="lore-term__title">{definition.term}</strong>
+    <span class="lore-term__description">{definition.summary}</span>
+    <a class="lore-term__more" href={href}>{t("Full glossary entry →")}</a>
   </span>
 </span>
 

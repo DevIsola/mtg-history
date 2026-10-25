@@ -140,7 +140,7 @@ test('highlight decoration retains dimensions and respects reduced motion', () =
 test('compact artwork context is discoverable without rewriting the native summary label', () => {
   const card = read('src/components/HistoricalCard.astro');
   assert.match(card, /<details class="historical-card__interpretation">/);
-  assert.match(card, /<summary>Art and historical context<\/summary>/);
+  assert.match(card, /<summary>\{labels\.artContext\}<\/summary>/);
   assert.match(card, /\.historical-card__interpretation summary::after\s*\{/);
   assert.match(card, /\.historical-card__interpretation\[open\] summary::after\s*\{/);
   assert.match(card, /\.historical-card__interpretation summary:focus-visible/);

@@ -17,7 +17,7 @@ export function auditGlossary({ terms, chapters, sources, component, page, schem
     if (!chapters.includes(data.chapterId)) errors.push(`${id}: unknown chapter ${data.chapterId}`);
   }
   if (terms.length < 10) errors.push('Glossary must retain its initial ten curated entries');
-  if (!schema.includes('const glossary = defineCollection(') || !schema.includes('chapterId: reference("chapters")') || !schema.includes('chapters, cards, characters, events, relationships, glossary')) errors.push('Glossary collection must have a validated chapter reference');
+  if (!schema.includes('const glossary = defineCollection(') || !schema.includes('chapterId: reference("chapters")') || !['chapters', 'cards', 'characters', 'events', 'relationships', 'glossary'].every(name => new RegExp(`\\b${name}\\b`).test(schema))) errors.push('Glossary collection must have a validated chapter reference');
   if (!component.includes("getEntry('glossary', id)") || !component.includes('data-lore-button') || !component.includes('data-lore-panel')) errors.push('GlossaryTerm component must use canonical collection and accessible controls');
   if (!page.includes("getCollection('glossary')") || !page.includes('id={entry.id}')) errors.push('Glossary index must render anchored collection entries');
   for (const [path, source] of Object.entries(sources)) {
@@ -38,7 +38,7 @@ export async function checkGlossary() {
   const sources = Object.fromEntries(await Promise.all(chapterFiles.filter((f) => /\.mdx?$/.test(f)).map(async (f) => [f, await readFile(new URL(`src/content/chapters/${f}`, root), 'utf8')])));
   const [component, page, schema, manifest] = await Promise.all([
     readFile(new URL('src/components/GlossaryTerm.astro', root), 'utf8'),
-    readFile(new URL('src/pages/glossary/index.astro', root), 'utf8'),
+    readFile(new URL('src/components/pages/GlossaryPage.astro', root), 'utf8'),
     readFile(new URL('src/content.config.ts', root), 'utf8'),
     readFile(new URL('package.json', root), 'utf8').then(JSON.parse),
   ]);

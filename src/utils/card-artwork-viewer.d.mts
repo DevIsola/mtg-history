@@ -16,7 +16,7 @@ export interface CardArtworkViewerModel {
   imageSrcset: string;
   cardUrl: string;
 }
-export function buildCardArtworkViewerModel(input: CardArtworkViewerInput): CardArtworkViewerModel;
+export function buildCardArtworkViewerModel(input: CardArtworkViewerInput, locale?: 'en' | 'pt-BR'): CardArtworkViewerModel;
 export function shouldAnimateCardArtwork(input: {
   reducedMotion: boolean;
   supported: boolean;

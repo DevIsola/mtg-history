@@ -1,0 +1,296 @@
+---
+const pageLocale = localeForPath(Astro.url.pathname);
+const pt = pageLocale === 'pt-BR';
+const withBase = (path = '') => localPath(path, pageLocale);
+
+import { getCollection, getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HistoricalCard from '../../components/HistoricalCard.astro';
+import PrintingMiniature from '../../components/PrintingMiniature.astro';
+import CharacterRelationships from '../../components/CharacterRelationships.astro';
+import { characters as canonical_characters } from '../../data/characters';
+import type { CharacterProfile } from '../../data/characters';
+import { historicalEvents as canonical_historicalEvents } from '../../data/events';
+import { localPath, localeForPath, phrase } from '../../utils/locale';
+import { localized } from '../../utils/localization';
+const historicalEvents = canonical_historicalEvents.map(record => localized('events', record, pageLocale));
+
+const characters = canonical_characters.map(record => localized('characters', record, pageLocale));
+
+
+const { profile: originalProfile } = Astro.props as {
+  profile: CharacterProfile;
+};
+const profile = localized('characters', originalProfile, pageLocale);
+const featuredPrinting = await getEntry('cards', profile.featuredCardId);
+if (!featuredPrinting) throw new Error(`Missing canonical portrait ${profile.featuredCardId}`);
+const featuredCard = {
+  ...featuredPrinting.data,
+  scryfallId: featuredPrinting.id,
+  significance: profile.featuredCard.significance,
+};
+
+
+const orderedCharacters = [...characters].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
+const currentIndex = orderedCharacters.findIndex(
+  (character) => character.id === profile.id
+);
+
+const previousCharacter =
+  currentIndex > 0
+    ? orderedCharacters[currentIndex - 1]
+    : undefined;
+
+const nextCharacter =
+  currentIndex >= 0 &&
+  currentIndex < orderedCharacters.length - 1
+    ? orderedCharacters[currentIndex + 1]
+    : undefined;
+
+
+const chapters = await getCollection(pt ? 'chaptersPt' : 'chapters');
+
+const chaptersById = new Map(
+  chapters.map((chapter) => [chapter.id, chapter])
+);
+
+const relatedChapters = profile.chapterIds
+  .map((id) => chaptersById.get(id))
+  .filter(
+    (chapter): chapter is CollectionEntry<'chapters' | 'chaptersPt'> =>
+      chapter !== undefined
+  )
+  .sort((a, b) => a.data.order - b.data.order);
+
+
+const relatedEvents = historicalEvents.filter(
+  (event) => event.characterIds.includes(profile.id)
+);
+
+---
+
+<BaseLayout locale={pageLocale}
+  title={profile.name}
+  description={profile.summary}
+  printingId={profile.featuredCardId}
+>
+  <section class="page-banner character-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">
+        {phrase(pageLocale, "Historical character ·")} {profile.origin}
+      </p>
+
+      <div class="character-banner__portrait"><PrintingMiniature printingId={profile.featuredCardId} /></div>
+      <h1>{profile.name}</h1>
+      <p>{profile.title}</p>
+      <p class="character-banner__summary">{profile.summary}</p>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+
+{(previousCharacter || nextCharacter) && (
+  <nav
+    class="chapter-pagination character-pagination"
+    aria-label={phrase(pageLocale, "Character navigation")}
+  >
+    {previousCharacter && (
+      <a
+        class="chapter-pagination__link character-pagination__previous"
+        href={withBase(
+          `characters/${previousCharacter.id}/`
+        )}
+      >
+        <span>{phrase(pageLocale, "← Previous character")}</span>
+        <strong>{previousCharacter.name}</strong>
+      </a>
+    )}
+
+    {nextCharacter && (
+      <a
+        class="chapter-pagination__link character-pagination__next"
+        href={withBase(
+          `characters/${nextCharacter.id}/`
+        )}
+      >
+        <span>{phrase(pageLocale, "Next character →")}</span>
+        <strong>{nextCharacter.name}</strong>
+      </a>
+    )}
+  </nav>
+)}
+
+    <div class="page-shell">
+      <a
+        class="text-link"
+        href={withBase('characters/')}
+      >
+        {phrase(pageLocale, "← All historical characters")}
+      </a>
+
+      <nav class="character-profile__sections" aria-label={phrase(pageLocale, "Jump to profile section")}>
+        <a href="#character-biography">{phrase(pageLocale, "Biography")}</a>
+        <a href="#character-chapters">{phrase(pageLocale, "Chapters")}</a>
+        <a href={withBase('relationships/?person=' + profile.id)}>{phrase(pageLocale, "Relationship network ↗")}</a>
+        {relatedEvents.length > 0 && <a href="#character-events-heading">{phrase(pageLocale, "Events")}</a>}
+        <a href="#character-reference">{phrase(pageLocale, "Sources")}</a>
+      </nav>
+      <div class="character-profile__layout">
+        <div class="character-profile__main">
+          <div class="character-profile__facts">
+            <div>
+              <span>{phrase(pageLocale, "Home plane")}</span>
+              <strong>{profile.origin}</strong>
+            </div>
+
+            <div>
+              <span>{phrase(pageLocale, "Historical role")}</span>
+              <strong>{profile.role}</strong>
+            </div>
+          </div>
+
+          <article class="character-profile__biography" id="character-biography">
+            <p class="eyebrow">{phrase(pageLocale, "The historical record")}</p>
+
+            <h2>
+              {profile.name}: {profile.title}
+            </h2>
+
+            <p class="character-profile__lead">
+              {profile.summary}
+            </p>
+
+            {profile.biography.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </article>
+
+          <section
+            class="character-profile__chapters"
+            id="character-chapters"
+            aria-labelledby="character-chapters-heading"
+          >
+            <p class="eyebrow">{phrase(pageLocale, "Connected history")}</p>
+
+            <h2 id="character-chapters-heading">
+              {phrase(pageLocale, "Chapters featuring")} {profile.name}
+            </h2>
+
+            {relatedChapters.length > 0 ? (
+              <ol>
+                {relatedChapters.map((chapter) => (
+                  <li>
+                    <a
+                      href={withBase(
+                        `chapters/${chapter.id}/`
+                      )}
+                    >
+                      <span>
+                        {phrase(pageLocale, "Chapter")} {
+                          String(chapter.data.order).padStart(2, '0')
+                        }
+                      </span>
+
+                      <strong>{chapter.data.title}</strong>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p>
+                {phrase(pageLocale, "This character's main historical chapter is being prepared for the archive.")}
+              </p>
+            )}
+          </section>
+
+<CharacterRelationships id={profile.id} />
+
+          <section class="character-profile__reference" id="character-reference">
+            <p class="eyebrow">{phrase(pageLocale, "Official reference")}</p>
+
+            <a
+              class="text-link"
+              href={profile.source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {profile.source.title} ↗
+            </a>
+          </section>
+
+
+{relatedEvents.length > 0 && (
+  <section
+    class="character-profile__events"
+    aria-labelledby="character-events-heading"
+  >
+    <p class="eyebrow">
+      {phrase(pageLocale, "Defining moments")}
+    </p>
+
+    <h2 id="character-events-heading">
+      {phrase(pageLocale, "Historical events involving")} {profile.name}
+    </h2>
+
+    <p class="character-profile__events-intro">
+      {phrase(pageLocale, "Explore the events that shaped this character's history and their role in the Multiverse.")}
+    </p>
+
+    <ol class="character-event-list">
+      {relatedEvents.map((event) => {
+        const chapter = chaptersById.get(event.chapterId);
+
+        return (
+          <li>
+            <a href={withBase(`events/${event.id}/`)}>
+              <span class="character-event-list__chapter">
+                {chapter
+                  ? `${phrase(pageLocale, 'Chapter')} ${String(chapter.data.order).padStart(2, '0')} · ${chapter.data.title}`
+                  : phrase(pageLocale, "Historical event")}
+              </span>
+
+              <strong>{event.title}</strong>
+
+              <span class="character-event-list__summary">
+                {event.summary}
+              </span>
+
+              <span class="character-event-list__action">
+                {phrase(pageLocale, "Explore this event →")}
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+
+    <a
+      class="text-link character-profile__events-all"
+      href={withBase('events/')}
+    >
+      {phrase(pageLocale, "Browse all historical events →")}
+    </a>
+  </section>
+)}
+
+        </div>
+
+        <aside
+          class="character-profile__aside"
+          aria-label={`${phrase(pageLocale, 'Illustrated card:')} ${featuredCard.name}`}
+        >
+          <p class="eyebrow">
+            {phrase(pageLocale, "Curated illustration · not a primary historical source")}
+          </p>
+          <HistoricalCard card={featuredCard} />
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

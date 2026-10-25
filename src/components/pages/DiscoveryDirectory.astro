@@ -1,0 +1,632 @@
+---
+const pageLocale = localeForPath(Astro.url.pathname);
+const pt = pageLocale === 'pt-BR';
+const withBase = (path = '') => localPath(path, pageLocale);
+
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { characters as canonical_characters } from '../../data/characters';
+import { characterCategories as canonicalCharacterCategories } from '../../data/characterCategories';
+import { historicalEvents as canonical_historicalEvents } from '../../data/events';
+import { localPath, localeForPath, phrase } from '../../utils/locale';
+import { localized } from '../../utils/localization';
+import { chapterCardUse, resolvePrinting } from '../../utils/card-printings';
+import { archiveCard, cardLabels } from '../../utils/card-localization';
+const printingLabels = cardLabels(pageLocale);
+const historicalEvents = canonical_historicalEvents.map(record => localized('events', record, pageLocale));
+
+const characters = canonical_characters.map(record => localized('characters', record, pageLocale));
+const characterCategories = canonicalCharacterCategories.map(category => ({ ...category, label: phrase(pageLocale, category.label) }));
+
+
+type RecordType = 'chapter' | 'character' | 'event';
+
+interface DiscoveryRecord {
+  id: string;
+  type: RecordType;
+  title: string;
+  context: string;
+  summary: string;
+  url: string;
+  illustration: string;
+  imageUrl: string;
+  imageSrcset: string;
+  imageLanguageLabel: string;
+  chapterIds: string[];
+  searchText: string;
+}
+
+const canonicalChapters = await getCollection('chapters');
+const canonicalChaptersById = new Map(canonicalChapters.map(chapter => [chapter.id, chapter]));
+const chapters = (pt ? await getCollection('chaptersPt') : canonicalChapters).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const chaptersById = new Map(
+  chapters.map((chapter) => [chapter.id, chapter])
+);
+
+const charactersById = new Map(
+  characters.map((character) => [character.id, character])
+);
+
+const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
+
+const chapterRecords: DiscoveryRecord[] = chapters.map((chapter) => {
+  const illustration = chapter.data.cardIds.length
+    ? { ...chapterCardUse(canonicalChaptersById.get(chapter.id)!, 0, cardCatalog), significance: chapter.data.cards[0].significance } : undefined;
+  const displayedIllustration = illustration ? archiveCard(illustration, pageLocale) : undefined;
+
+  return {
+    id: chapter.id,
+    type: 'chapter',
+    title: chapter.data.title,
+    context: `${phrase(pageLocale, 'Chapter')} ${String(chapter.data.order).padStart(2, '0')} · ${chapter.data.chronology.storyPeriod}`,
+    summary: chapter.data.subtitle,
+    url: withBase(`chapters/${chapter.id}/`),
+    illustration: displayedIllustration?.name ?? '',
+    imageUrl: displayedIllustration?.imageUrl ?? '',
+    imageSrcset: displayedIllustration?.imageSrcset ?? '',
+    imageLanguageLabel: displayedIllustration?.translated ? printingLabels.language : printingLabels.fallback,
+    chapterIds: [chapter.id],
+    searchText: [
+      chapter.data.title,
+      chapter.data.subtitle,
+      chapter.data.plane,
+      chapter.data.chronology.storyPeriod,
+      chapter.data.chronology.storyDetail,
+      ...chapter.data.relatedSets.map((set) => set.name),
+      ...chapter.data.cardIds.flatMap((_, index) => {
+        const card = { ...chapterCardUse(canonicalChaptersById.get(chapter.id)!, index, cardCatalog), significance: chapter.data.cards[index].significance };
+        return [card.name, card.significance];
+      }),
+    ].join(' '),
+  };
+});
+
+const characterRecords: DiscoveryRecord[] = [...characters]
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map((character) => {
+    const categoryNames = characterCategories
+      .filter((category) =>
+        category.characterIds.includes(character.id)
+      )
+      .map((category) => category.label);
+
+    const chapterNames = character.chapterIds.map((id) => {
+      const chapter = chaptersById.get(id);
+
+      if (!chapter) {
+        throw new Error(
+          `Unknown chapter "${id}" for character "${character.id}"`
+        );
+      }
+
+      return chapter.data.title;
+    });
+
+    const portrait = archiveCard(resolvePrinting(cardCatalog, character.featuredCardId, `character ${character.id}`), pageLocale);
+
+    return {
+      id: character.id,
+      type: 'character',
+      title: character.name,
+      context: character.origin,
+      summary: character.summary,
+      url: withBase(`characters/${character.id}/`),
+      illustration: portrait.name,
+      imageUrl: portrait.imageUrl,
+      imageSrcset: portrait.imageSrcset,
+      imageLanguageLabel: portrait.translated ? printingLabels.language : printingLabels.fallback,
+      chapterIds: character.chapterIds,
+      searchText: [
+        character.name,
+        character.title,
+        character.role,
+        character.origin,
+        character.summary,
+        ...character.biography,
+        ...categoryNames,
+        ...chapterNames,
+        portrait.name,
+      ].join(' '),
+    };
+  });
+
+const eventRecords: DiscoveryRecord[] = historicalEvents.map(
+  (event) => {
+    const chapter = chaptersById.get(event.chapterId);
+
+    if (!chapter) {
+      throw new Error(
+        `Unknown chapter "${event.chapterId}" for event "${event.id}"`
+      );
+    }
+
+    if (!chapter.data.cardIds.some((reference) => reference.id === event.cardId)) {
+      throw new Error(`Event ${event.id}: card not curated in ${chapter.id}`);
+    }
+    const card = archiveCard(resolvePrinting(cardCatalog, event.cardId, `event ${event.id}`), pageLocale);
+
+    const people = event.characterIds.map((id) => {
+      const character = charactersById.get(id);
+
+      if (!character) {
+        throw new Error(
+          `Unknown character "${id}" for event "${event.id}"`
+        );
+      }
+
+      return character.name;
+    });
+
+    return {
+      id: event.id,
+      type: 'event',
+      title: event.title,
+      context: chapter.data.title,
+      summary: event.summary,
+      url: withBase(`events/${event.id}/`),
+      illustration: card.name,
+      imageUrl: card.imageUrl,
+      imageSrcset: card.imageSrcset,
+      imageLanguageLabel: card.translated ? printingLabels.language : printingLabels.fallback,
+      chapterIds: [event.chapterId],
+      searchText: [
+        event.title,
+        event.summary,
+        ...event.narrative,
+        card.name,
+        chapter.data.title,
+        chapter.data.chronology.storyPeriod,
+        ...people,
+      ].join(' '),
+    };
+  }
+);
+
+const groups = [
+  {
+    type: 'chapter',
+    title: phrase(pageLocale, "Historical chapters"),
+    description:
+      phrase(pageLocale, "Follow the story through the major eras of the Multiverse."),
+    records: chapterRecords,
+  },
+  {
+    type: 'character',
+    title: phrase(pageLocale, "Characters and legends"),
+    description:
+      phrase(pageLocale, "Meet the figures who shaped history, and discover their stories."),
+    records: characterRecords,
+  },
+  {
+    type: 'event',
+    title: phrase(pageLocale, "Defining events"),
+    description:
+      phrase(pageLocale, "Explore the conflicts, discoveries, and turning points of history."),
+    records: eventRecords,
+  },
+];
+
+const recordCount =
+  chapterRecords.length +
+  characterRecords.length +
+  eventRecords.length;
+
+const typeLabels: Record<RecordType, string> = {
+  chapter: phrase(pageLocale, "Historical chapter"),
+  character: phrase(pageLocale, "Character profile"),
+  event: phrase(pageLocale, "Historical event"),
+};
+---
+
+<BaseLayout locale={pageLocale}
+  title={phrase(pageLocale, "Explore the encyclopedia")}
+  description={phrase(pageLocale, "Discover chapters, characters, and historical events from the Magic: The Gathering Multiverse.")}
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">
+        {phrase(pageLocale, "The Multiverse encyclopedia")}
+      </p>
+
+      <h1>{phrase(pageLocale, "Explore the")} <em>{phrase(pageLocale, "Multiverse.")}</em></h1>
+
+      <p>
+        {phrase(pageLocale, "One history, many ways to discover it. Search across the chapters, people, and events that form the Chronicles.")}
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="section-spacing discovery-directory"
+    id="discovery-directory"
+    data-discovery-directory
+  >
+    <div class="page-shell">
+
+      <div class="discovery-intro">
+        <p class="eyebrow">{phrase(pageLocale, "The historical index")}</p>
+
+        <h2 class="section-title">
+          {phrase(pageLocale, "Find your place in")} <em>{phrase(pageLocale, "history.")}</em>
+        </h2>
+
+        <p>
+          {phrase(pageLocale, "Browse")} {recordCount} {phrase(pageLocale, "connected records across the historical encyclopedia. Discover a subject here, then follow its links into the narrative.")}
+        </p>
+      </div>
+
+      <div class="discovery-overview" aria-label={phrase(pageLocale, "Encyclopedia coverage")}>
+        <div><strong>{chapterRecords.length}</strong><span>{phrase(pageLocale, "chapters")}</span></div>
+        <div><strong>{characterRecords.length}</strong><span>{phrase(pageLocale, "characters")}</span></div>
+        <div><strong>{eventRecords.length}</strong><span>{phrase(pageLocale, "events")}</span></div>
+      </div>
+
+      <nav class="discovery-tabs" aria-label={phrase(pageLocale, "Browse encyclopedia sections")}>
+        <a href="#discovery-directory" data-discovery-tab data-type="">{phrase(pageLocale, "All records")} <strong>{recordCount}</strong></a>
+        <a href="#discovery-heading-chapter" data-discovery-tab data-type="chapter">{phrase(pageLocale, "Chapters")} <strong>{chapterRecords.length}</strong></a>
+        <a href="#discovery-heading-character" data-discovery-tab data-type="character">{phrase(pageLocale, "Characters")} <strong>{characterRecords.length}</strong></a>
+        <a href="#discovery-heading-event" data-discovery-tab data-type="event">{phrase(pageLocale, "Events")} <strong>{eventRecords.length}</strong></a>
+      </nav>
+
+      <a class="discovery-relationships-link" href={withBase('relationships/')}>
+        {phrase(pageLocale, "Explore interactive character relationships →")}
+      </a>
+
+      <!-- The controls appear only after JavaScript loads. -->
+      <div
+        class="discovery-filters"
+        id="discovery-filters"
+        hidden
+      >
+        <h3>{phrase(pageLocale, "Search the encyclopedia")}</h3>
+
+        <p class="discovery-filters__description">
+          {phrase(pageLocale, "Search names, locations, historical subjects, or Magic card references.")}
+        </p>
+
+        <div class="discovery-filters__grid">
+          <div class="discovery-filter-field">
+            <label for="discovery-search">
+              {phrase(pageLocale, "Search all records")}
+            </label>
+
+            <input
+              id="discovery-search"
+              type="search"
+              placeholder={phrase(pageLocale, "Yawgmoth, Phyrexia, the Sylex...")}
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="discovery-filter-field">
+            <label for="discovery-type">
+              {phrase(pageLocale, "Record type")}
+            </label>
+
+            <select id="discovery-type">
+              <option value="">{phrase(pageLocale, "All record types")}</option>
+              <option value="chapter">{phrase(pageLocale, "Chapters")}</option>
+              <option value="character">{phrase(pageLocale, "Characters")}</option>
+              <option value="event">{phrase(pageLocale, "Historical events")}</option>
+            </select>
+          </div>
+
+          <div class="discovery-filter-field">
+            <label for="discovery-chapter">
+              {phrase(pageLocale, "Historical chapter")}
+            </label>
+
+            <select id="discovery-chapter">
+              <option value="">{phrase(pageLocale, "All chapters")}</option>
+
+              {chapters.map((chapter) => (
+                <option value={chapter.id}>
+                  {String(chapter.data.order).padStart(2, '0')}
+                  {' — '}
+                  {chapter.data.title}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div class="discovery-filter-field">
+            <label for="discovery-sort">{phrase(pageLocale, "Order results")}</label>
+            <select id="discovery-sort">
+              <option value="editorial">{phrase(pageLocale, "Curated archive order")}</option>
+              <option value="alphabetical">{phrase(pageLocale, "Title A–Z")}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="discovery-filters__footer">
+          <p
+            id="discovery-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {phrase(pageLocale, "Showing")} {recordCount} {phrase(pageLocale, "of")} {recordCount} {phrase(pageLocale, "records")}
+          </p>
+
+          <button
+            id="discovery-reset"
+            type="button"
+            disabled
+          >
+            {phrase(pageLocale, "Clear filters")}
+          </button>
+        </div>
+      </div>
+
+      <p
+        id="discovery-empty"
+        class="discovery-empty"
+        hidden
+      >
+        {phrase(pageLocale, "No encyclopedia records match these filters. Try different keywords or clear your selections.")}
+      </p>
+
+      {groups.map((group) => (
+        <section
+          class="discovery-group"
+          data-discovery-group
+          aria-labelledby={`discovery-heading-${group.type}`}
+        >
+          <div class="discovery-group__heading">
+            <div>
+              <p class="eyebrow">
+                <span data-discovery-group-count>{group.records.length}</span>
+                {" " + phrase(pageLocale, "indexed records")}
+              </p>
+
+              <h2 id={`discovery-heading-${group.type}`}>
+                {group.title}
+              </h2>
+
+              <p>{group.description}</p>
+            </div>
+          </div>
+
+          <div class="discovery-grid">
+            {group.records.map((record) => (
+              <a
+                class="discovery-card"
+                href={record.url}
+                data-discovery-record
+                data-type={record.type}
+                data-title={record.title}
+                data-chapters={record.chapterIds.join(' ')}
+                data-search={record.searchText}
+              >
+                <span class="discovery-card__media">
+                  {record.imageUrl ? (
+                    <img
+                      src={record.imageUrl}
+                      srcset={record.imageSrcset}
+                      sizes="(max-width: 600px) 80vw, (max-width: 900px) 42vw, 300px"
+                      alt={`${phrase(pageLocale, 'Magic card artwork:')} ${record.illustration}`}
+                      width="488"
+                      height="680"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <span
+                      class="discovery-card__placeholder"
+                      aria-hidden="true"
+                    >
+                      ✦
+                    </span>
+                  )}
+                </span>
+
+                <span class="discovery-card__body">
+                  {pt && <span class="discovery-card__type">{record.imageLanguageLabel}</span>}
+                  <span class="discovery-card__type">
+                    {typeLabels[record.type]}
+                  </span>
+
+                  <strong class="discovery-card__title">
+                    {record.title}
+                  </strong>
+
+                  <span class="discovery-card__context">
+                    {record.context}
+                  </span>
+
+                  <span class="discovery-card__summary">
+                    {record.summary}
+                  </span>
+
+                  <span class="discovery-card__action">
+                    {phrase(pageLocale, "Explore record →")}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { phrase, localeForPath } from '../../utils/locale';
+  const clientLocale = localeForPath(window.location.pathname);
+  const root = document.querySelector<HTMLElement>(
+    '[data-discovery-directory]'
+  );
+
+  if (root) {
+    const panel = root.querySelector<HTMLElement>(
+      '#discovery-filters'
+    );
+    const search = root.querySelector<HTMLInputElement>(
+      '#discovery-search'
+    );
+    const type = root.querySelector<HTMLSelectElement>(
+      '#discovery-type'
+    );
+    const chapter = root.querySelector<HTMLSelectElement>(
+      '#discovery-chapter'
+    );
+    const sort = root.querySelector<HTMLSelectElement>('#discovery-sort');
+    const tabs = Array.from(root.querySelectorAll<HTMLAnchorElement>('[data-discovery-tab]'));
+    const reset = root.querySelector<HTMLButtonElement>(
+      '#discovery-reset'
+    );
+    const status = root.querySelector<HTMLElement>(
+      '#discovery-status'
+    );
+    const empty = root.querySelector<HTMLElement>(
+      '#discovery-empty'
+    );
+
+    const groups = Array.from(
+      root.querySelectorAll<HTMLElement>(
+        '[data-discovery-group]'
+      )
+    );
+
+    const cards = Array.from(
+      root.querySelectorAll<HTMLElement>(
+        '[data-discovery-record]'
+      )
+    );
+
+    const normalize = (value: string): string =>
+      value
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+
+    if (
+      panel &&
+      search &&
+      type &&
+      chapter &&
+      sort &&
+      reset &&
+      status &&
+      empty
+    ) {
+      const originalOrder = new Map(groups.map((group) => [
+        group,
+        Array.from(group.querySelectorAll<HTMLElement>('[data-discovery-record]')),
+      ]));
+      const applySort = () => {
+        for (const [group, original] of originalOrder) {
+          const next = [...original];
+          if (sort.value === 'alphabetical') {
+            next.sort((a, b) => (a.dataset.title ?? '').localeCompare(b.dataset.title ?? ''));
+          }
+          const grid = group.querySelector<HTMLElement>('.discovery-grid');
+          if (grid) next.forEach((record) => grid.appendChild(record));
+        }
+      };
+
+      const indexed = cards.map((card) => ({
+        card,
+        text: normalize(card.dataset.search ?? ''),
+        chapterIds: (card.dataset.chapters ?? '')
+          .split(' ')
+          .filter(Boolean),
+      }));
+
+      const applyFilters = () => {
+        const queryTerms = normalize(search.value)
+          .split(/\s+/)
+          .filter(Boolean);
+
+        const selectedType = type.value;
+        const selectedChapter = chapter.value;
+
+        const isFiltering = Boolean(
+          queryTerms.length ||
+          selectedType ||
+          selectedChapter
+        );
+
+        let count = 0;
+
+        for (const record of indexed) {
+          const matchesText = queryTerms.every(
+            (term) => record.text.includes(term)
+          );
+
+          const matchesType =
+            !selectedType ||
+            record.card.dataset.type === selectedType;
+
+          const matchesChapter =
+            !selectedChapter ||
+            record.chapterIds.includes(selectedChapter);
+
+          const matches =
+            matchesText &&
+            matchesType &&
+            matchesChapter;
+
+          record.card.hidden = !matches;
+
+          if (matches) count++;
+        }
+
+        for (const group of groups) {
+          const items = Array.from(
+            group.querySelectorAll<HTMLElement>(
+              '[data-discovery-record]'
+            )
+          );
+
+          const visible = items.filter((item) => !item.hidden).length;
+          group.hidden = visible === 0;
+          const countLabel = group.querySelector<HTMLElement>('[data-discovery-group-count]');
+          if (countLabel) countLabel.textContent = String(visible);
+        }
+        for (const tab of tabs) {
+          if (tab.dataset.type === selectedType) tab.setAttribute('aria-current', 'true');
+          else tab.removeAttribute('aria-current');
+        }
+
+        status.textContent =
+          phrase(clientLocale, "Showing {visible} of {total} records").replace('{visible}', String(count)).replace('{total}', String(cards.length));
+
+        empty.hidden = count !== 0;
+        reset.disabled = !(isFiltering || sort.value !== 'editorial');
+      };
+
+      for (const tab of tabs) {
+        tab.addEventListener('click', () => {
+          type.value = tab.dataset.type ?? '';
+          applyFilters();
+        });
+      }
+      sort.addEventListener('change', () => { applySort(); applyFilters(); });
+      applySort();
+      search.addEventListener('input', applyFilters);
+      type.addEventListener('change', applyFilters);
+      chapter.addEventListener('change', applyFilters);
+
+      reset.addEventListener('click', () => {
+        search.value = '';
+        type.value = '';
+        chapter.value = '';
+        sort.value = 'editorial';
+        applySort();
+
+        applyFilters();
+        search.focus();
+      });
+
+      panel.hidden = false;
+      applyFilters();
+    }
+  }
+</script>

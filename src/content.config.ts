@@ -2,13 +2,7 @@ import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const chapters = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: "./src/content/chapters",
-  }),
-
-  schema: z.object({
+const chapterSchema = z.object({
     title: z.string(),
     subtitle: z.string(),
     eraId: z.string(),
@@ -44,7 +38,20 @@ const chapters = defineCollection({
         }),
       )
       .default([]),
+  });
+
+const chapters = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "./src/content/chapters",
   }),
+
+  schema: chapterSchema,
+});
+
+const chaptersPt = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/chapters-pt" }),
+  schema: chapterSchema,
 });
 
 /**
@@ -113,4 +120,4 @@ const glossary = defineCollection({
   }),
 });
 
-export const collections = { chapters, cards, characters, events, relationships, glossary };
+export const collections = { chapters, chaptersPt, cards, characters, events, relationships, glossary };

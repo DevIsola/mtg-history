@@ -1,0 +1,103 @@
+---
+const pageLocale = localeForPath(Astro.url.pathname);
+const pt = pageLocale === 'pt-BR';
+const withBase = (path = '') => localPath(path, pageLocale);
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { localPath, localeForPath, phrase } from '../../utils/locale';
+---
+<BaseLayout locale={pageLocale}
+  title={phrase(pageLocale, "About the archive")}
+  description={phrase(pageLocale, "Learn how Chronicles of the Multiverse organizes Magic: The Gathering lore, publications, and historical card references.")}
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">{phrase(pageLocale, "Our approach")}</p>
+      <h1>{phrase(pageLocale, "History before")} <em>{phrase(pageLocale, "everything.")}</em></h1>
+      <p>{phrase(pageLocale, "An independent, non-commercial reading project about the events, people, and worlds of Magic: The Gathering.")}</p>
+    </div>
+  </section>
+  <section class="section-spacing">
+    <div class="page-shell article-column">
+      <p class="eyebrow">{phrase(pageLocale, "The purpose")}</p>
+      <h2 class="section-title">{pt ? <em>{phrase(pageLocale, 'A story-first archive.')}</em> : <>A story-first <em>archive.</em></>}</h2>
+      <p class="lead-copy">{phrase(pageLocale, "Magic has been published in sets for decades. Its fictional history, however, is richer—and less linear—than any release calendar.")}</p>
+      <p>{phrase(pageLocale, "Our goal is to organize those stories into clear chapters. Rather than list every card in an expansion, each chapter will explain a significant historical event and show a curated group of cards that illustrate or reference it.")}</p>
+      <h3>{phrase(pageLocale, "Two complementary timelines")}</h3>
+      <p><strong>{phrase(pageLocale, "Story chronology")}</strong> {phrase(pageLocale, "traces events in the fiction.")} <strong>{phrase(pageLocale, "Publication chronology")}</strong> {phrase(pageLocale, "records when a story or reference appeared in a Magic set. For instance, Antiquities (1994) and The Brothers' War (2022) both reference the same ancient conflict.")}</p>
+      <h3 id="site-illustration">{phrase(pageLocale, "About the landscape illustration")}</h3>
+      <p>{phrase(pageLocale, "The banner landscape is an original AI-generated atmospheric illustration created for this site. It does not reconstruct a canonical place, person or historical event. It is separate from the historical card collection: those full-frame card images retain their exact printing identities, original artist credits, source links and editorial context.")}</p>
+      <h3>{phrase(pageLocale, "Editorial care")}</h3>
+      <p>{phrase(pageLocale, "We will favor original summaries, link to official sources where possible, and mark disputed or uncertain lore clearly. Illustrated chapters and card selection will be added incrementally.")}</p>
+
+<h3>{phrase(pageLocale, "About the Author")}</h3>
+
+<p>
+  {phrase(pageLocale, "Chronicles of the Multiverse was created by")}{'\u00a0'}
+  <strong>DevIsola</strong>{phrase(pageLocale, ", an independent developer building a historical archive dedicated to the stories and lore of Magic: The Gathering.")}
+</p>
+
+<p>
+  {phrase(pageLocale, "The project brings together storytelling, historical research, and web development to make the history of the Multiverse easier to discover and explore.")}
+</p>
+
+<p>
+  {phrase(pageLocale, "The website is an independent, non-commercial fan initiative and is developed openly on GitHub.")}
+</p>
+
+<p>
+  {phrase(pageLocale, "You can follow the project's development and contributions through")}{'\u00a0'}
+  <a
+    class="inline-link"
+    href="https://github.com/DevIsola"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {phrase(pageLocale, "DevIsola's GitHub profile ↗")}
+  </a>.
+</p>
+
+      
+<section
+  class="support-panel"
+  aria-labelledby="support-heading"
+>
+  <p class="eyebrow">{phrase(pageLocale, "Support the project")}</p>
+
+  <h3 id="support-heading">
+    {phrase(pageLocale, "Help preserve the stories of the Multiverse.")}
+  </h3>
+
+  <p>
+    {phrase(pageLocale, "Chronicles of the Multiverse is a passion project built and maintained by DevIsola. Every chapter involves historical research, writing, card curation, and ongoing development.")}
+  </p>
+
+  <p>
+    {phrase(pageLocale, "If you enjoy the archive and would like to support my work, you can leave an optional contribution through Ko-fi.")}
+  </p>
+
+  <p>
+    <strong>
+      {phrase(pageLocale, "The archive will remain free and accessible to everyone, regardless of donations.")}
+    </strong>
+  </p>
+
+  <a
+    class="support-panel__link"
+    href="https://ko-fi.com/B1H328PBAR"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span aria-hidden="true">♥</span>
+    {phrase(pageLocale, "Support on Ko-fi")}
+    <span aria-hidden="true">↗</span>
+  </a>
+</section>
+
+      <h3>{phrase(pageLocale, "Fan-content notice")}</h3>
+      <p>{phrase(pageLocale, "This site is independent fan content and is not affiliated with, endorsed, or approved by Wizards of the Coast. Magic: The Gathering and associated characters, worlds, and card artwork are the property of their respective rights holders.")}</p>
+      <p>{phrase(pageLocale, "Read the")} <a class="inline-link" href="https://company.wizards.com/en/legal/fancontentpolicy" target="_blank" rel="noopener noreferrer">{phrase(pageLocale, "Wizards of the Coast Fan Content Policy ↗")}</a>.</p>
+      <a class="button button--dark" href={withBase('timeline/')}>{phrase(pageLocale, "Explore the historical timeline")} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>
