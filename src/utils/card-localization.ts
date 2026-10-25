@@ -48,3 +48,22 @@ export function cardLabels(locale: Locale) {
     archive: 'From the illustrated archive',
   };
 }
+
+/** Card images open the shared viewer, with a full-image link without JavaScript. */
+export function artworkAttributes(card: ReturnType<typeof archiveCard>, significance: string, locale: Locale) {
+  return {
+    href: card.imageUrl,
+    'aria-label': `${cardLabels(locale).enlarge}: ${card.name}`,
+    'data-card-artwork-open': '',
+    'data-canonical-id': card.canonicalId,
+    'data-printing-id': card.printingId,
+    'data-card-source': card.scryfallUrl,
+    'data-card-original-source': card.originalUrl,
+    'data-card-language': card.language,
+    'data-card-name': card.name,
+    'data-card-artist': card.artist,
+    'data-card-set': card.setCode,
+    'data-card-number': card.collectorNumber,
+    'data-card-significance': significance,
+  };
+}

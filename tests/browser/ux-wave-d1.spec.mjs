@@ -9,7 +9,7 @@ test('D1 timeline connects every published era to its exact illustrated printing
   const first = eras.first();
   await expect(first.locator('[data-timeline-artwork]')).toHaveAttribute('data-printing-id', /^[a-f\d-]{36}$/i);
   await expect(first.locator('.atlas-era__artwork figcaption')).toContainText('#');
-  await expect(first.locator('.atlas-era__artwork a')).toHaveAttribute('href', /scryfall\.com\/card\//);
+  await expect(first.locator('.atlas-era__artwork [data-card-artwork-open]')).toHaveAttribute('data-card-source', /scryfall\.com\/card\//);
   await expect(first.locator('.atlas-era__chronology')).toContainText('Story period');
   await expect(first.locator('.atlas-era__chronology')).toContainText('In publication');
 });

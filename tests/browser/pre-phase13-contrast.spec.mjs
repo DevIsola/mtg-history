@@ -14,8 +14,8 @@ for(const theme of ['light','dark']) {
       document.documentElement.dataset.theme = theme;
       const root = getComputedStyle(document.documentElement);
       const toc = document.querySelector('.chapter-toc__list a[aria-current="location"]');
-      const enlarge = document.querySelector('.historical-card__enlarge');
-      if (!toc || !enlarge) throw new Error('Missing TOC link or card viewer button');
+      const enlarge = document.querySelector('.historical-card__source');
+      if (!toc || !enlarge) throw new Error('Missing TOC link or card source link');
       return {
         link:getComputedStyle(toc).color,
         action:getComputedStyle(enlarge).color,

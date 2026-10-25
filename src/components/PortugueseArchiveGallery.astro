@@ -1,10 +1,9 @@
 ---
+import { archiveCard, artworkAttributes } from '../utils/card-localization';
 import { getCollection } from 'astro:content';
 import { withBase } from '../utils/paths';
 import { portugueseEra } from '../utils/pt-catalog.mjs';
 import { chapterCardUse } from '../utils/card-printings';
-import { localizedArchiveCard } from '../utils/pt-printings.mjs';
-import ptCatalog from '../data/pt-printings.json';
 
 const chapters = (await getCollection('chaptersPt')).sort((a, b) => a.data.order - b.data.order);
 const originalChapters = new Map((await getCollection('chapters')).map(chapter => [chapter.id, chapter]));
@@ -15,7 +14,7 @@ const sections = chapters.map(chapter => ({
     const original = originalChapters.get(chapter.id);
     if (!original) throw new Error(`Archive: missing canonical chapter ${chapter.id}`);
     const canonical = chapterCardUse(original, i, originalPrintings);
-    return {...localizedArchiveCard(canonical, ptCatalog), significance: chapter.data.cards[i].significance, originalName: canonical.name};
+    return {...archiveCard(canonical, 'pt-BR'), significance: chapter.data.cards[i].significance, originalName: canonical.name};
   }),
 }));
 const total = sections.reduce((count, chapter) => count + chapter.cards.length, 0);
@@ -51,7 +50,7 @@ const translated = sections.reduce((count, chapter) => count + chapter.cards.fil
             {section.cards.map(card => (
               <article class="archive-pt__card" data-pt-archive-card data-chapter={section.id} data-canonical-id={card.canonicalId}
                 data-displayed-id={card.printingId} data-search={`${section.name} ${card.name} ${card.originalName} ${card.artist} ${card.significance}`}>
-                <a class="archive-pt__art" href={card.scryfallUrl} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${card.name} no Scryfall`}>
+                <a class="archive-pt__art" {...artworkAttributes(card, card.significance, 'pt-BR')} target="_blank" rel="noopener noreferrer">
                   <img src={card.imageUrl} srcset={card.imageSrcset} sizes="(max-width: 680px) 45vw, 190px"
                     width="488" height="680" loading="lazy" decoding="async"
                     alt={`${card.name}, ilustração de ${card.artist}`} />

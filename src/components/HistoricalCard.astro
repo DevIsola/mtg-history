@@ -1,7 +1,7 @@
 
 ---
 import { getEntry } from 'astro:content';
-import { archiveCard, cardLabels } from '../utils/card-localization';
+import { archiveCard, cardLabels, artworkAttributes } from '../utils/card-localization';
 import { localeForPath } from '../utils/locale';
 
 type HistoricalCardData = { scryfallId: string; significance: string };
@@ -28,10 +28,9 @@ const cardUrl = displayed.scryfallUrl;
 <figure class={compact ? 'historical-card historical-card--plate' : 'historical-card'}
   data-canonical-id={printing.id} data-displayed-id={displayed.printingId} data-language={displayed.language}>
   <a
-    href={cardUrl}
+    {...artworkAttributes(displayed, card.significance, locale)}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label={pt ? `Ver ${displayed.name} no Scryfall` : `View ${card.name} on Scryfall`}
   >
     <img
       src={imageUrl}
@@ -73,26 +72,7 @@ const cardUrl = displayed.scryfallUrl;
       {labels.viewCard}
     </a>
     {pt && displayed.translated && <a class="historical-card__source" href={displayed.originalUrl} target="_blank" rel="noopener noreferrer">{labels.original}</a>}
-    <button
-      class="historical-card__enlarge"
-      type="button"
-      hidden
-      data-card-artwork-open
-      data-canonical-id={printing.id}
-      data-printing-id={displayed.printingId}
-      data-card-source={cardUrl}
-      data-card-original-source={displayed.originalUrl}
-      data-card-language={displayed.language}
-      data-card-name={displayed.name}
-      data-card-artist={displayed.artist}
-      data-card-set={card.setCode}
-      data-card-number={card.collectorNumber}
-      data-card-significance={card.significance}
-      aria-haspopup="dialog"
-      aria-controls="card-artwork-viewer"
-    >
-      {labels.enlarge}
-    </button>
+
   </figcaption>
 </figure>
 
@@ -201,20 +181,7 @@ const cardUrl = displayed.scryfallUrl;
     text-underline-offset: 3px;
   }
 
-  .historical-card__enlarge {
-    display: block;
-    margin-top: 0.75rem;
-    padding: 0.55rem 0.85rem;
-    min-height: 44px;
-    border: 1px solid var(--line);
-    background: var(--paper-deep);
-    color: var(--link-color);
-    font: inherit;
-    font-size: 0.82rem;
-    cursor: pointer;
-  }
-  .historical-card__enlarge[hidden] { display: none; }
-  .historical-card__enlarge:focus-visible { outline: 3px solid var(--link-color); outline-offset: 3px; }
+
 
   @media (max-width: bp.$small) {
     .historical-card {

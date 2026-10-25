@@ -11,7 +11,7 @@ test('Portuguese archive is a complete gallery with explicit language and canoni
   await page.goto(base + 'pt-br/archive/');
   await expect(page.locator('html')).toHaveAttribute('lang','pt-BR');
   await expect(page.locator('[data-archive-card]')).toHaveCount(136);
-  await expect(page.locator('[data-archive-card]').first().locator('a[href^="https://scryfall.com/card/"]')).toHaveCount(2);
+  await expect(page.locator('[data-archive-card]').first().locator('a[href^="https://scryfall.com/card/"]')).toHaveCount(1);
   await expect(page.locator('[data-archive-card]').first()).toHaveAttribute('data-canonical-id', /^[a-f\d-]{36}$/i);
   await expect(page.locator('.archive-card__classification').first()).toContainText('Referência ilustrativa');
 });
