@@ -15,7 +15,8 @@ async function files(directory) {
 }
 const pending = (await files(root)).filter(path => !['_headers', '_redirects'].includes(relative(root, path)));
 if (!pending.some(path => path.endsWith('index.html'))) throw new Error('No built HTML routes to probe');
-const report = { origin, checked: 0, pages: 0, mismatches: [] };
+const production = process.env.MTG_HOSTING_PRODUCTION === '1';
+const report = { origin, mode: production ? 'production' : 'staging', checked: 0, pages: 0, mismatches: [] };
 const hash = value => createHash('sha256').update(value).digest('hex');
 await Promise.all(Array.from({ length: 6 }, async () => {
   while (pending.length) {
@@ -29,7 +30,8 @@ await Promise.all(Array.from({ length: 6 }, async () => {
       if (hash(body) !== hash(await readFile(path))) throw new Error('body differs from reviewed artifact');
       if (file.endsWith('.html')) {
         report.pages++;
-        if (response.headers.get('x-robots-tag') !== 'noindex') throw new Error('missing staging noindex');
+        const robots = response.headers.get('x-robots-tag') ?? '';
+        if (production ? /noindex/i.test(robots) : robots !== 'noindex') throw new Error(production ? 'production noindex header' : 'missing staging noindex');
       }
       report.checked++;
     } catch (error) { report.mismatches.push({ route, error: error.message }); }

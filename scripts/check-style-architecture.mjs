@@ -69,7 +69,7 @@ export function auditStyles({ globalCss, foundation, tokens, reset, styles, conf
   if (/set this to true or false/i.test(workspace)) errors.push('pnpm build policy contains an undecided placeholder');
   if (manifest.scripts['check:styles'] !== 'node scripts/check-style-architecture.mjs' ||
       !manifest.scripts.verify.includes('pnpm run check:styles')) errors.push('verification does not gate style architecture');
-  const importer = lockfile.split(/^packages:\s*$/m)[0];
+  const importer = lockfile.split(/^---\s*$/m).map(document => document.split(/^packages:\s*$/m)[0]).join('\n');
   if (/^\s+(?:'@tailwindcss\/vite'|tailwindcss):/m.test(importer)) errors.push('lockfile importer retains Tailwind');
   if (!/^\s+sass:/m.test(importer)) errors.push('lockfile importer lacks Sass; run pnpm install --lockfile-only');
   if (!/import\s+["']\.\.\/styles\/global\.scss["']/.test(layout)) {

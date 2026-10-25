@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   webServer: {
     // Build here so standalone Playwright runs test the current source too.
-    command: `pnpm run build && pnpm exec astro preview --ignore-lock --host 127.0.0.1 --port ${port}`,
+    command: `${process.env.MTG_REUSE_BUILD === '1' ? '' : 'pnpm run build && '}pnpm exec astro preview --ignore-lock --host 127.0.0.1 --port ${port}`,
     url: `${baseURL}/mtg-history/`,
     reuseExistingServer: false,
     timeout: 120_000,

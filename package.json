@@ -39,7 +39,10 @@
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
     "preview:cloudflare": "wrangler dev --local --ip 127.0.0.1 --port 4325",
     "check:hosting": "playwright test --config playwright.hosting.config.mjs",
-    "check:localization": "node scripts/check-full-localization.mjs"
+    "check:localization": "node scripts/check-full-localization.mjs",
+    "build:cloudflare:production": "node scripts/build-cloudflare.mjs --production",
+    "ci:cloudflare:build": "node scripts/cloudflare-ci.mjs build",
+    "ci:cloudflare:deploy": "node scripts/cloudflare-ci.mjs deploy"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.3",
@@ -63,5 +66,6 @@
     "sass": "1.105.2",
     "typescript": "5.9.3",
     "wrangler": "4.152.0"
-  }
+  },
+  "packageManager": "pnpm@12.14.0"
 }

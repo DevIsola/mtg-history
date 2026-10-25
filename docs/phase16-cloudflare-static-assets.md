@@ -1,5 +1,7 @@
 # Phase 16 — Cloudflare Workers Static Assets
 
+**Current preparation:** [Phase 16.4 — Cloudflare-only CI/CD](phase16.4-cloudflare-builds.md) prepares production at `https://mtg-history.dev-disola.workers.dev`. The earlier staging preparation was merged in PR #158; work continues on the same phase branch. Production activation, Actions retirement and final cutover remain pending explicit acceptance. The staging record below is historical and does not certify the current 488-page production candidate.
+
 ## Scope and entry exception
 
 On 24 October 2026 the maintainer explicitly authorized: “Begin Phase 16 preparation; keep Phase 15 acceptance pending.” This is an exception for migration preparation and staging, not a Phase 15 visual sign-off or permission to retire GitHub Pages. The maintainer requested a free Cloudflare address because no custom domain is owned. Use a `workers.dev` address initially; no registrar purchase or DNS transfer is needed.
@@ -21,7 +23,7 @@ Run the normal published-base checks first, preserving `dist/` outside the repos
 ```sh
 pnpm install --frozen-lockfile
 pnpm run verify
-A11Y_ENFORCE=1 pnpm exec playwright test --workers 2
+MTG_REUSE_BUILD=1 A11Y_ENFORCE=1 pnpm exec playwright test --workers 2
 # Copy dist/ into your external review directory as github-pages-build/.
 pnpm run check:hosting
 # The local hosting suite supplies a test-only workers.dev origin and runs real Wrangler local serving.
@@ -47,7 +49,7 @@ The `_redirects` file handles `/mtg-history/...` requests arriving on the new ho
 
 Keep the published Pages workflow and clean default build available through migration acceptance. Rehearse rollback by rebuilding at the original origin/project base and checking its canonical, locale, search and deep-link behavior. For a defective Cloudflare stage, leave Pages published; roll back the staged deployment to its recorded prior version if one exists. A newly created first deployment has no older Worker version to roll back to. Do not delete an unrelated Worker or disable account-wide workers.dev routes.
 
-Only after final acceptance should a later commit on this same phase branch replace the production deployment workflow, with verification/browser quality before deployment, documented old-origin handling and an explicit Pages retirement action. Preserve the existing rule that feature pushes/PRs do not trigger automatic Actions.
+Phase 16.4 supersedes the proposed Actions-based production workflow: the accepted target is Workers Builds only, with full strict browser/performance checks local before merge. Retire all Actions definitions and disable Actions only after a Cloudflare candidate is proven and retirement accepted. Preserve Pages as the accepted legacy/rollback site until its separate retirement gate is met. See the Phase 16.4 activation sequence.
 
 ## Sources
 
@@ -70,4 +72,4 @@ Only after final acceptance should a later commit on this same phase branch repl
 
 The external review package is `/Users/devdisola/Documents/ChatGPT/MTG History Page/phase16-review`: exact Pages/staging artifacts, 52 live screenshots, axe reports, HTTP proof, deployment/verification logs, and local/public performance JSONs. The CLI deployment used the verified single account; the MCP connection could read Workers but rejected its subdomain write request, so no unsupported claim of MCP write access is made.
 
-**State: staging implementation and verification complete; Phase 16 production migration remains open.** Maintainer staging/visual acceptance, final production hostname, old-origin redirect strategy, production workflow cutover, removal of noindex and Pages retirement are still pending. Keep this PR in draft and continue on the same phase branch; do not merge this preparation as a separately accepted subphase. Phase 15 visual and Phase 14 historical/artwork acceptance remain pending as recorded.
+**State: staging implementation and verification complete; Phase 16 production migration remains open.** Maintainer staging/visual acceptance, final production hostname, old-origin redirect strategy, production workflow cutover, removal of noindex and Pages retirement are still pending. That staging preparation was subsequently merged in PR #158. Continue production work on the same phase branch and keep its new production-cutover PR in draft pending the Phase 16.4 acceptance gates. Phase 15 visual and Phase 14 historical/artwork acceptance remain pending as recorded.
