@@ -10,8 +10,8 @@ const validFiles = {
   'src/utils/card-images.mjs': 'cards.scryfall.io/',
   'src/components/HistoricalCard.astro': 'srcset={imageSrcset} sizes=',
   'src/pages/archive/index.astro': 'srcset={card.imageSrcset} sizes=',
-  'src/pages/discover/index.astro': 'srcset={record.imageSrcset} sizes=',
-  'src/pages/events/index.astro': 'srcset={imageSrcset} sizes=',
+  'src/components/pages/DiscoveryDirectory.astro': 'srcset={record.imageSrcset} sizes=',
+  'src/components/pages/EventDirectory.astro': 'srcset={imageSrcset} sizes=',
   'src/components/CardHoverPreview.astro': 'data-card-image-set={imageSrcset} image.srcset =',
   'src/utils/card-printings.ts': 'cardImageSrcsetForPrinting',
   'scripts/check-artwork-fidelity.mjs': 'cardImageUrlForPrinting(id)',
@@ -52,7 +52,7 @@ test('source audit blocks duplicate/noncanonical UUIDs and raw CDN links', () =>
 
 test('source audit rejects missing responsive tags, artwork hydration and unknown pages', () => {
   const files = { ...validFiles, 'src/pages/archive/index.astro': 'src={card.imageUrl}' };
-  delete files['src/pages/discover/index.astro'];
+  delete files['src/components/pages/DiscoveryDirectory.astro'];
   delete files['scripts/check-artwork-fidelity.mjs'];
   const errors = auditImageSource({ files, ids: [ID] }).join(' | ');
   assert.match(errors, /srcset=\{card.imageSrcset\}/);

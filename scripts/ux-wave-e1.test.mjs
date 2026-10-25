@@ -24,19 +24,23 @@ test('both character directories use the same safe full-card portrait renderer',
   const component = read('src/components/CharacterPortrait.astro');
   const english = read('src/pages/characters/index.astro');
   const portuguese = read('src/pages/pt-br/characters/index.astro');
-  for (const key of ["getEntry('cards'", 'localizedArchiveCard' , 'data-canonical-id', 'data-printing-id',
-    'data-language', 'card.imageSrcset', 'card.artist', 'significance', 'Carta em português (PT)',
-    'Edição original (EN)']) assert.ok(component.includes(key), key);
-  assert.match(english, /<CharacterPortrait printingId=\{character\.featuredCardId\}/);
-  assert.match(portuguese, /<CharacterPortrait printingId=\{person\.featuredCardId\}/);
-  assert.match(portuguese, /locale="pt-BR"/);
-  assert.match(portuguese, /hreflang="en"/);
-  assert.match(english, /data-character-card/);
-  assert.match(portuguese, /data-pt-entry/);
+  for (const key of ["getEntry('cards'", 'archiveCard(canonical, locale)' , 'data-canonical-id', 'data-printing-id',
+    'data-language', 'card.imageSrcset', 'card.artist', 'significance', 'labels.language',
+    'labels.fallback']) assert.ok(component.includes(key), key);
+  const shared = read('src/components/pages/CharacterDirectory.astro');
+  for (const route of [english, portuguese]) {
+    assert.match(route, /components\/pages\/CharacterDirectory\.astro/);
+    assert.match(route, /<Page \/>/);
+  }
+  assert.match(shared, /<CharacterPortrait printingId=\{character\.featuredCardId\}/);
+  assert.match(shared, /locale=\{pageLocale\}/);
+  assert.match(shared, /localized\('characters', record, pageLocale\)/);
+  assert.match(shared, /data-character-card/);
+  assert.match(shared, /data-search=\{searchText\}/);
 });
 
 test('profile retains biography, exact canonical illustration, sources and record navigation', () => {
-  const p = read('src/pages/characters/[id].astro');
+  const p = read('src/components/pages/CharacterProfilePage.astro');
   for (const key of ["getEntry('cards', profile.featuredCardId)",
     'HistoricalCard card={featuredCard}', 'CharacterRelationships id={profile.id}',
     'profile.biography.map', 'profile.source.url', 'relatedEvents.map',

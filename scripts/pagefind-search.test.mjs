@@ -36,7 +36,7 @@ test('build pipeline indexes static pages before link checks', () => {
   assert.match(read('src/layouts/BaseLayout.astro'), /<main id="main-content" data-pagefind-body>/);
   const header = read('src/components/SiteHeader.astro');
   // Both language choices use the original Pagefind search routes, not another search engine.
-  assert.match(header, /const search = withBase\(pt \? 'pt-br\/search\/' : 'search\/'\)/);
+  assert.match(header, /const search = localPath\('search\/', locale\)/);
   assert.match(header, /class="site-header__search" href=\{search\}/);
 });
 

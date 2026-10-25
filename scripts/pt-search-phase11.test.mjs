@@ -7,7 +7,6 @@ const read = file => readFileSync(new URL(`../${file}`, import.meta.url), 'utf8'
 const pt = read('src/pages/pt-br/search/index.astro');
 const en = read('src/pages/search/index.astro');
 const header = read('src/components/SiteHeader.astro');
-const home = read('src/pages/pt-br/index.astro');
 const util = read('src/utils/pagefind-search.mjs');
 const site = 'https://devisola.github.io';
 const base = '/mtg-history/';
@@ -48,7 +47,7 @@ test('Portuguese search rejects result URLs outside translated pages', () => {
   assert.match(pt, /excerpt\.textContent/);
 });
 
-test('Portuguese and English search advertise reciprocal SEO alternates only for search', () => {
+test('Portuguese search and complete chapters advertise reciprocal SEO alternates', () => {
   assert.equal(translatedSuffix(base + 'search/'), 'search/');
   assert.equal(translatedSuffix(base + 'pt-br/search/'), 'search/');
   assert.deepEqual(routeAlternates(base + 'search/', site), [
@@ -56,18 +55,20 @@ test('Portuguese and English search advertise reciprocal SEO alternates only for
     { lang: 'pt-BR', href: `${site}${base}pt-br/search/` },
   ]);
   for (const chapter of ['thran', 'omenpaths']) {
-    assert.deepEqual(routeAlternates(`${base}pt-br/chapters/${chapter}/`, site), []);
+    assert.deepEqual(routeAlternates(`${base}pt-br/chapters/${chapter}/`, site), [
+      { lang: 'en', href: `${site}${base}chapters/${chapter}/` },
+      { lang: 'pt-BR', href: `${site}${base}pt-br/chapters/${chapter}/` },
+    ]);
   }
 });
 
-test('Portuguese navigation and homepage link to real search without altering English search', () => {
+
+test('Portuguese navigation links the genuine search while bundle URLs remain outside locale prefixes', () => {
   assert.equal(uiFor('pt-BR').navigation[2], 'Buscar');
   assert.equal(uiFor('en').navigation[2], 'Search');
-  assert.match(header, /'pt-br\/search\/'/);
-  assert.match(header, /const search = withBase\(pt \? 'pt-br\/search\/' : 'search\/'\)/);
+  assert.match(header, /const search = localPath\('search\/', locale\)/);
   assert.match(header, /class="site-header__search" href=\{search\}/);
-  assert.match(home, /withBase\('pt-br\/search\/'\)/);
-  assert.match(home, /withBase\('search\/'\)/);
+  assert.doesNotMatch(pt, /withBase\('pt-br\/pagefind/);
 });
 
 test('Portuguese search handles query, statuses and no-JS navigation in PT-BR', () => {

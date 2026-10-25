@@ -60,9 +60,9 @@ test('chapter references reject a missing canonical printing', () => {
 
 test('event consumers compare Astro reference IDs rather than reference objects', () => {
   const paths = [
-    '../src/pages/discover/index.astro',
-    '../src/pages/events/index.astro',
-    '../src/pages/events/[id].astro',
+    '../src/components/pages/DiscoveryDirectory.astro',
+    '../src/components/pages/EventDirectory.astro',
+    '../src/components/pages/EventPage.astro',
   ];
   for (const path of paths) {
     const file = readFileSync(new URL(path, import.meta.url), 'utf8');

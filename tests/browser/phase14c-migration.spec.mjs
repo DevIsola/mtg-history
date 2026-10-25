@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import AxeBuilder from '@axe-core/playwright';
 import ledger from '../../docs/phase14c-migration-identities.json' with { type: 'json' };
 
@@ -12,11 +13,12 @@ for (const locale of ['', 'pt-br/']) {
       await expect(page.locator('h1')).toBeVisible();
       const href = await page.locator('link[rel="canonical"]').getAttribute('href');
       expect(href).toBe('https://devisola.github.io' + base + locale + 'chapters/' + id + '/');
-      await expect(page.locator('link[hreflang="pt-BR"]')).toHaveCount(0);
-      const printings = await page.locator('[data-printing-id]').evaluateAll(nodes => nodes.map(node => node.dataset.printingId));
-      expect(printings.length).toBeGreaterThanOrEqual(locale ? ledger.printings[id].length : 6);
+      await expect(page.locator('link[hreflang="pt-BR"]')).toHaveAttribute('href', 'https://devisola.github.io' + base + 'pt-br/chapters/' + id + '/');
+      const printings = await page.locator('.historical-card[data-canonical-id]').evaluateAll(nodes => nodes.map(node => node.dataset.canonicalId));
+      const source = readFileSync(new URL(`../../src/content/chapters/${id}.mdx`, import.meta.url), 'utf8');
+      const narrativeIds = [...source.matchAll(/<HistoricalMoment cardId=\{frontmatter\.cardIds\[(\d+)\]\}/g)].map(match => ledger.printings[id][Number(match[1])].id);
+      expect(printings).toEqual(narrativeIds);
       expect(printings.every(printing => ledger.printings[id].some(p => p.id === printing))).toBe(true);
-      if (locale) expect(printings).toEqual(ledger.printings[id].map(p => p.id));
       for (const theme of ['light', 'dark']) {
         await page.evaluate(theme => document.documentElement.dataset.theme = theme, theme);
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
@@ -44,8 +46,9 @@ test('old English section links reach the moved material with JavaScript disable
     await expect(page.locator('[id="' + anchor + '"]')).toBeVisible();
   }
   await page.goto(base + 'pt-br/chapters/march-of-the-machine/#a-missao-ao-nucleo-semente', { waitUntil: 'domcontentloaded' });
+  const target = await page.locator('#a-missao-ao-nucleo-semente a').getAttribute('href');
   await page.locator('#a-missao-ao-nucleo-semente a').click();
-  await expect(page).toHaveURL(/pt-br\/chapters\/new-phyrexia\/#a-missao-ao-nucleo-semente$/);
-  await expect(page.locator('#a-missao-ao-nucleo-semente h2')).toBeVisible();
+  expect(decodeURI(new URL(page.url()).pathname + new URL(page.url()).hash)).toBe(target);
+  await expect(page.locator('[id=' + JSON.stringify(decodeURIComponent(new URL(page.url()).hash.slice(1))) + ']')).toBeVisible();
   await context.close();
 });

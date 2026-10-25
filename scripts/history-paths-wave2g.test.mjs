@@ -43,13 +43,13 @@ test('invalid or editorially confused paths fail closed', () => {
 });
 
 test('chapter integration and static reading-path hub are accessible without JavaScript', () => {
-  const chapter = read('src/pages/chapters/[id].astro');
+  const chapter = read('src/components/ChapterReader.astro');
   const component = read('src/components/ChapterHistoryPaths.astro');
-  const hub = read('src/pages/paths/index.astro');
+  const hub = read('src/components/pages/HistoryPathsPage.astro');
   assert.match(chapter, /import ChapterHistoryPaths from/);
   assert.match(chapter, /<ChapterHistoryPaths chapterId=\{chapter\.id\} chapters=\{chapters\}/);
   assert.match(component, /aria-labelledby="history-paths-heading"/);
-  assert.match(component, /withBase\(`events\/\$\{next\.eventId\}\//);
+  assert.match(component, /localPath\(`events\/\$\{next\.eventId\}\/`, pageLocale\)/);
   assert.match(hub, /validateHistoryPaths\(/);
   assert.match(hub, /<ol>/);
   assert.match(hub, /withBase\(`events\/\$\{event\.id\}\//);

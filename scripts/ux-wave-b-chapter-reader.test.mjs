@@ -25,14 +25,21 @@ test('editorial plates keep original canonical printing and linked source', () =
   assert.match(moment, /<HistoricalCard card=\{\{ scryfallId: printing\.id, significance \}\} compact \/>/);
   assert.match(card, /compact\?: boolean;/);
   assert.match(card, /historical-card--plate/);
-  assert.match(card, /data-printing-id=\{printing\.id\}/);
+  assert.match(card, /data-canonical-id=\{printing\.id\}/);
+  assert.match(card, /data-printing-id=\{displayed\.printingId\}/);
+  assert.match(card, /archiveCard\(card, locale\)/);
+  assert.match(card, /data-card-original-source=\{displayed\.originalUrl\}/);
+  assert.match(card, /href=\{displayed\.originalUrl\}/);
   assert.match(card, /data-card-significance=\{card\.significance\}/);
   assert.match(card, /href=\{cardUrl\}/);
 });
 
 test('interpretation remains accessible with native details without JavaScript', () => {
   assert.match(card, /<details class="historical-card__interpretation">/);
-  assert.match(card, /<summary>Art and historical context<\/summary>/);
+  assert.match(card, /<summary>\{labels\.artContext\}<\/summary>/);
+  const labels = read('src/utils/card-localization.ts');
+  assert.match(labels, /artContext: 'Art and historical context'/);
+  assert.match(labels, /artContext: 'Arte e contexto histórico'/);
   assert.match(card, /<p class="historical-card__significance">\{card\.significance\}<\/p>/);
   assert.match(css, /\.chapter-prose \.historical-moment__illustration \.historical-card img/);
   assert.match(css, /object-fit: contain;/);

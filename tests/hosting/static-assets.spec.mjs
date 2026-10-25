@@ -69,10 +69,11 @@ test.describe('no-JavaScript migration links', () => {
       await page.goto('/mtg-history/' + locale + 'chapters/march-of-the-machine/#' + anchor, { waitUntil: 'domcontentloaded' });
       expect(new URL(page.url()).pathname).toBe('/' + locale + 'chapters/march-of-the-machine/');
       expect(new URL(page.url()).hash).toBe('#' + anchor);
+      const target = await page.locator('[id="' + anchor + '"] a').getAttribute('href');
       await page.locator('[id="' + anchor + '"] a').click();
       expect(new URL(page.url()).pathname).toBe('/' + locale + 'chapters/new-phyrexia/');
-      expect(new URL(page.url()).hash).toBe('#' + anchor);
-      await expect(page.locator('[id="' + anchor + '"]')).toBeVisible();
+      expect(new URL(page.url()).hash).toBe(new URL(target, page.url()).hash);
+      await expect(page.locator('[id="' + decodeURIComponent(new URL(page.url()).hash.slice(1)) + '"]')).toBeVisible();
     }
   });
 });

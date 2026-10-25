@@ -49,15 +49,15 @@ test('320px header retains navigation, language and settings without overflow',a
   await expect(page.locator('[data-reading-controls]')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 });
-test('Portuguese navigation retains local search and identifies English-only destinations',async({page})=>{
+test('Portuguese navigation retains local search and links every translated destination',async({page})=>{
   await page.setViewportSize({width:1440,height:900});
   await page.goto(root+'pt-br/');
   await expect(page.locator('html')).toHaveAttribute('lang','pt-BR');
   await expect(page.locator('.site-header__search')).toHaveAttribute('href',root+'pt-br/search/');
   const menu=page.locator('[data-site-explore-menu]');
   await menu.locator('summary').click();
-  await expect(menu.getByRole('link',{name:'Relações (EN)'})).toHaveAttribute('href',root+'relationships/');
-  await expect(menu.getByRole('link',{name:'Eventos'})).toHaveAttribute('href',root+'pt-br/events/');
+  await expect(menu.getByRole('link',{name:'Relações'})).toHaveAttribute('href',root+'pt-br/relationships/');
+  await expect(menu.getByRole('link',{name:'Acontecimentos'})).toHaveAttribute('href',root+'pt-br/events/');
 });
 test.describe('without JavaScript',()=>{
   test.use({javaScriptEnabled:false});

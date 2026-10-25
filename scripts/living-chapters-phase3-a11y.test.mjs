@@ -25,8 +25,8 @@ test('locale selector includes visible EN/PT in its accessible name', () => {
 });
 
 test('chapter reading summary includes visible Aa in its accessible name', () => {
-  const chapter = read('src/pages/chapters/[id].astro');
-  assert.match(chapter, /summary aria-label="Aa Reading preferences"/);
+  const chapter = read('src/components/ChapterReader.astro');
+  assert.match(chapter, /summary aria-label=\{phrase\(locale, "Aa Reading preferences"\)\}/);
 });
 
 test('jade and editorial links clear 4.5:1 on all light-theme paper surfaces', () => {

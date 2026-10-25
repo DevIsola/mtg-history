@@ -8,12 +8,12 @@ test('Read, Explore, About retain all navigational destinations', () => {
   assert.match(s,/data-site-explore-menu/);
   assert.match(s,/site-header__search/);
 });
-test('language control provides genuine pairs or clearly labeled home fallbacks', () => {
+test('language control preserves complete translated route pairs', () => {
   const s=read('src/components/SiteHeader.astro');
-  assert.match(s,/paired = isTranslatedRoute/);
+  assert.match(s,/const englishChoice = withBase\(suffix\)/);
+  assert.match(s,/const portugueseChoice = localPath\(suffix, 'pt-BR'\)/);
   assert.match(s,/site-header__languages/);
-  assert.match(s,/paired \? 'pt-BR' : undefined/);
-  assert.match(s,/Português\{!paired \? ' — início' : ''\}/);
+  assert.match(s,/hreflang="pt-BR"/);
 });
 test('context is grounded in chapter events rather than invented passage annotations', () => {
   const s=read('src/components/ChapterContextRail.astro');
@@ -23,7 +23,7 @@ test('context is grounded in chapter events rather than invented passage annotat
   assert.doesNotMatch(s,/People in this passage/);
 });
 test('layout adapts and settings never conceal content without JavaScript', () => {
-  const s=read('src/pages/chapters/[id].astro');
+  const s=read('src/components/ChapterReader.astro');
   const controls=read('src/components/ChapterReadingControls.astro');
   const style=read('src/styles/_ux-c1.scss');
   assert.match(s,/data-chapter-settings hidden/);

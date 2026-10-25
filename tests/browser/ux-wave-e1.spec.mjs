@@ -17,7 +17,7 @@ test('English character directory has 88 exact-printing portraits and retains fi
 
 test('Portuguese directory uses verified alternatives without losing canonical identity', async ({ page }) => {
   await page.goto(base + 'pt-br/characters/');
-  await expect(page.locator('[data-pt-entry]')).toHaveCount(88);
+  await expect(page.locator('[data-character-card]')).toHaveCount(88);
   await expect(page.locator('[data-character-portrait]')).toHaveCount(88);
   const portraits = page.locator('[data-character-portrait]');
   const count = await portraits.count();
@@ -27,9 +27,11 @@ test('Portuguese directory uses verified alternatives without losing canonical i
     expect(['en', 'pt']).toContain(lang);
     if (lang === 'en') expect(await p.getAttribute('data-printing-id')).toBe(await p.getAttribute('data-canonical-id'));
   }
-  await expect(page.locator('[data-pt-entry] a[hreflang="en"]')).toHaveCount(88);
-  await page.getByRole('searchbox', { name: 'Filtrar registros neste catálogo' }).fill('Urza');
-  await expect(page.locator('[data-pt-entry]:visible').first()).toBeVisible();
+  for (const href of await page.locator('[data-character-card]').evaluateAll(cards => cards.map(card => card.getAttribute('href')))) {
+    expect(href).toMatch(/^\/mtg-history\/pt-br\/characters\/[a-z0-9-]+\/$/);
+  }
+  await page.getByRole('searchbox', { name: 'Pesquisar personagens' }).fill('Urza');
+  await expect(page.locator('[data-character-card]:visible').first()).toBeVisible();
 });
 
 test('character biography presents navigable evidence sections and a curated card', async ({ page }) => {

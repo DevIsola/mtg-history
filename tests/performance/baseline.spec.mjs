@@ -9,6 +9,8 @@ const routes = [
   ['archive', `${root}archive/`],
   ['discovery', `${root}discover/`],
   ['chapter-08', `${root}chapters/war-of-the-spark/`],
+  ['pt-archive', `${root}pt-br/archive/`],
+  ['pt-chapter', `${root}pt-br/chapters/thran/`],
 ];
 
 for (const [name, path] of routes) {

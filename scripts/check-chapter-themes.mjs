@@ -64,7 +64,7 @@ export function auditChapterThemes({ scss, chapters, eras, page, globalStyles, m
 export async function checkChapterThemes() {
   const [scss, page, globalStyles, erasSource, manifest, files] = await Promise.all([
     readFile(new URL('src/styles/_chapter-themes.scss', root), 'utf8'),
-    readFile(new URL('src/pages/chapters/[id].astro', root), 'utf8'),
+    readFile(new URL('src/components/ChapterReader.astro', root), 'utf8'),
     readFile(new URL('src/styles/global.scss', root), 'utf8'),
     readFile(new URL('src/data/eras.ts', root), 'utf8'),
     readFile(new URL('package.json', root), 'utf8').then(JSON.parse),

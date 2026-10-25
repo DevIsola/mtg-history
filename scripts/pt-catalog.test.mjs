@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import { PORTUGUESE_ERAS, portugueseEra, normalizePortugueseQuery, matchesPortugueseQuery, portugueseCatalogStatus } from '../src/utils/pt-catalog.mjs';
 const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
 
-test('ten authored Portuguese summaries map to established historical chapters', () => {
+test('eleven authored Portuguese summaries map to established historical chapters', () => {
   const ids = ['thran','brothers-war','ice-age','weatherlight','otaria','mending','many-worlds','war-of-the-spark','new-phyrexia','march-of-the-machine','omenpaths'];
   assert.deepEqual(Object.keys(PORTUGUESE_ERAS), ids);
   for (const id of ids) {
@@ -35,25 +35,24 @@ test('count status reports zero and rejects inconsistent totals', () => {
   assert.throws(() => portugueseCatalogStatus(-1, 10), /Invalid/);
 });
 
-test('all four translated directories attach no-JS-safe search controls to their canonical lists', () => {
-  for (const [route, sourceMarker] of Object.entries({timeline:'eras.map',characters:'people.map',events:'events.map',archive:'chapters.map'})) {
-    const page = read(`src/pages/pt-br/${route}/index.astro`);
-    assert.ok(page.includes(sourceMarker));
-    for (const marker of ['data-pt-catalog','data-pt-entry',`id="${route}"`,'setupPortugueseCatalog','hreflang="en"']) {
-      assert.ok(page.includes(marker), `${route}: missing ${marker}`);
-    }
-    assert.ok(page.includes('em inglês'), `${route}: untranslated records must remain marked`);
-  }
-  assert.match(read('src/pages/pt-br/events/index.astro'), /data-pt-group/);
-});
 
-test('filter controls are progressive enhancement with semantic accessibility cues', () => {
-  const component = read('src/components/PortugueseCatalogControls.astro');
-  const script = read('src/utils/pt-catalog.mjs');
-  for (const term of ['data-pt-controls hidden', 'data-pt-query', 'data-pt-clear','role="status"','aria-live="polite"']) {
-    assert.ok(component.includes(term), term);
+test('complete translated era catalog preserves canonical identities and release metadata', () => {
+  const translated = JSON.parse(read('src/data/pt-br/eras.json'));
+  assert.deepEqual(Object.keys(translated), Object.keys(PORTUGUESE_ERAS));
+  for (const [id, record] of Object.entries(translated)) {
+    assert.ok(record.name && record.kicker && record.summary, id);
+    assert.doesNotMatch(record.summary, /lorem ipsum|tradução pendente/i);
   }
-  assert.match(script, /controls\.hidden = false/);
-  assert.match(script, /group\.hidden = !group\.querySelector/);
-  assert.match(script, /clear\.addEventListener\('click'/);
+});
+test('translated directories reuse accessible progressive controls without English record detours', () => {
+  for (const [component, marker] of [['TimelinePage','data-timeline-explorer'],['CharacterDirectory','data-character-directory'],['EventDirectory','historical-events']]) {
+    const source = read(`src/components/pages/${component}.astro`);
+    assert.ok(source.includes(marker), component);
+    assert.match(source, /localeForPath\(Astro.url.pathname\)/);
+    assert.match(source, /localized\('events'|localized\('characters'/);
+    assert.doesNotMatch(source, /hreflang="en"|\(EN\)/);
+  }
+  const archive = read('src/pages/pt-br/archive/index.astro');
+  for (const marker of ['archive-filters','data-archive-card','aria-live="polite"','archiveCard(canonical, locale)','card.originalUrl']) assert.ok(archive.includes(marker), marker);
+  assert.match(archive, /getCollection\('chaptersPt'\)/);
 });

@@ -46,7 +46,12 @@ test('the ancient Koilos stones and later invasion battle remain different recor
 });
 
 test('the reader displays pending research independently of source-verified claims', () => {
-  const page = read('src/pages/events/[id].astro');
+  const page = read('src/components/pages/EventPage.astro');
+  const route = read('src/pages/events/[id].astro');
+  const paths = read('src/utils/event-page.ts');
+  assert.match(route, /getStaticPaths = getEventStaticPaths/);
+  assert.match(paths, /historicalEvents\.map\(\(event\)/);
+  assert.match(paths, /reference\.id === event\.cardId/);
   const component = read('src/components/UnverifiedEventNotice.astro');
   assert.match(page, /Object\.values\(manualEventReviews\)\.find/);
   assert.match(page, /provenance && <EventEvidence entry=\{provenance\}/);

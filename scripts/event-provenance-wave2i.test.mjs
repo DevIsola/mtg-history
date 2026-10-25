@@ -61,10 +61,11 @@ test('orphan records, duplicate evidence and unsupported source claims are rejec
 });
 
 test('event page renders a qualified evidence panel and verification includes offline gate', () => {
-  const page = read('src/pages/events/[id].astro');
+  const page = read('src/components/pages/EventPage.astro');
   const panel = read('src/components/EventEvidence.astro');
   const packageJson = JSON.parse(read('package.json'));
   assert.match(page, /eventProvenance\[event.id\]/);
+  assert.match(page, /localized\('provenance', \{ id: event\.id, \.\.\.sourceProvenance \}, pageLocale\)/);
   assert.match(page, /provenance && <EventEvidence entry=\{provenance\} \/>/);
   assert.match(panel, /aria-labelledby="event-evidence-heading"/);
   assert.match(panel, /Publication dates are not in-world dates/);

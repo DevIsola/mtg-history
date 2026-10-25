@@ -22,7 +22,7 @@ test('Explore exists in two genuine localized routes with reciprocal alternates'
 test('shared navigation promotes Explore but keeps the existing indexed directory', () => {
   const header = read('src/components/SiteHeader.astro');
   assert.match(header, /Explore home/);
-  assert.match(header, /pt-br\/explore\//);
+  assert.match(header, /localPath\('explore\/', locale\)/);
   assert.match(header, /Encyclopedia directory/);
   assert.match(header, /discover\//);
   for (const path of ['timeline/', 'characters/', 'events/', 'relationships/', 'archive/', 'glossary/', 'paths/']) {
@@ -34,11 +34,11 @@ test('Explore metrics and illustrated interpretation derive from published recor
   const source = read('src/components/ExploreLanding.astro');
   for (const marker of [
     "getCollection('chapters')", "getCollection('cards')", 'characters.length', 'historicalEvents.length',
-    'characterRelationships.length', 'chapter.data.cardIds.length', 'chapterCardUse(', 'cardScryfallUrl(',
-    'illustration.significance', 'illustration.artist', 'illustration.collectorNumber',
-    'withBase(\'discover/\')', 'local(\'search/\')',
+    'characterRelationships.length', 'chapter.data.cardIds.length', 'chapterCardUse(', 'archiveCard(',
+    'illustration.significance', 'displayed.artist', 'illustration.collectorNumber',
+    'local(\'discover/\')', 'local(\'search/\')',
   ]) assert.ok(source.includes(marker), marker);
   assert.doesNotMatch(source, /fetch\(|new SearchIndex|new Worker/);
-  assert.match(source, /englishOnly: pt/);
-  assert.match(source, /hreflang=\{item\.englishOnly \? 'en' : undefined\}/);
+  assert.doesNotMatch(source, /englishOnly: pt/);
+  assert.match(source, /local\('characters\/'/);
 });
