@@ -35,7 +35,7 @@ test('D2 site integrates bilingual gallery and Ko-fi button without extra runtim
   const pt = read('src/components/PortugueseArchiveGallery.astro');
   const en = read('src/pages/archive/index.astro');
   const header = read('src/components/SiteHeader.astro');
-  for (const token of ['chapters.map', 'chapterCardUse', 'localizedArchiveCard', 'data-pt-archive-card', 'canonicalId', 'href', 'em inglês']) assert.ok(pt.includes(token),token);
+  for (const token of ['chapters.map', 'chapterCardUse', 'archiveCard', 'data-pt-archive-card', 'canonicalId', 'href', 'em inglês']) assert.ok(pt.includes(token),token);
   assert.match(en, /data-canonical-id=/);
   assert.match(en, /Illustrative reference/);
   assert.match(header, /site-header__support/);

@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import { chapterCardUse } from '../utils/card-printings';
-import { archiveCard, cardLabels } from '../utils/card-localization';
+import { archiveCard, cardLabels, artworkAttributes } from '../utils/card-localization';
 import { localeForPath } from '../utils/locale';
 
 interface Props {
@@ -24,9 +24,8 @@ const displayed = archiveCard(canonical, locale);
 <figure class={`homepage-artwork homepage-artwork--${variant}`}
   data-home-artwork data-canonical-id={canonical.scryfallId}
   data-displayed-id={displayed.printingId} data-language={displayed.language}>
-  <a class="homepage-artwork__image" href={displayed.scryfallUrl} target="_blank"
-    rel="noopener noreferrer"
-    aria-label={pt ? `Ver a impressão de ${displayed.name} no Scryfall` : `View the exact ${displayed.name} printing on Scryfall`}>
+  <a class="homepage-artwork__image" {...artworkAttributes(displayed, significance, locale)} target="_blank"
+    rel="noopener noreferrer">
     <img src={displayed.imageUrl} srcset={displayed.imageSrcset}
       sizes={variant === 'hero' ? '(max-width: 850px) 75vw, 300px' : '(max-width: 650px) 80vw, 220px'}
       width="488" height="680" decoding="async" loading={variant === 'hero' ? 'eager' : 'lazy'}

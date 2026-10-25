@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ArchiveChapterIndex from '../../../components/ArchiveChapterIndex.astro';
 import { localPath, phrase } from '../../../utils/locale';
-import { archiveCard, cardLabels } from '../../../utils/card-localization';
+import { archiveCard, cardLabels, artworkAttributes } from '../../../utils/card-localization';
 const locale = 'pt-BR' as const;
 const t = (english: string) => phrase(locale, english);
 const labels = cardLabels(locale);
@@ -269,10 +269,9 @@ const setCodes = [
               >
                 <a
                   class="archive-card__image"
-                  href={card.cardUrl}
+                  {...artworkAttributes(card, card.significance, locale)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${t('View ')}${card.name}${t(' on Scryfall')}`}
                 >
                   <img
                     src={card.imageUrl}

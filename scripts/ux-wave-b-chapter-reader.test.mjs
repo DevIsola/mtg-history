@@ -26,11 +26,11 @@ test('editorial plates keep original canonical printing and linked source', () =
   assert.match(card, /compact\?: boolean;/);
   assert.match(card, /historical-card--plate/);
   assert.match(card, /data-canonical-id=\{printing\.id\}/);
-  assert.match(card, /data-printing-id=\{displayed\.printingId\}/);
+  assert.match(card, /artworkAttributes\(displayed, card\.significance, locale\)/);
   assert.match(card, /archiveCard\(card, locale\)/);
-  assert.match(card, /data-card-original-source=\{displayed\.originalUrl\}/);
+  assert.match(read('src/utils/card-localization.ts'), /'data-card-original-source': card\.originalUrl/);
   assert.match(card, /href=\{displayed\.originalUrl\}/);
-  assert.match(card, /data-card-significance=\{card\.significance\}/);
+  assert.match(read('src/utils/card-localization.ts'), /'data-card-significance': significance/);
   assert.match(card, /href=\{cardUrl\}/);
 });
 

@@ -32,7 +32,7 @@ test('six network categories have distinct line colors, strong light/dark contra
 test('homepage illustration resolves one pinned chapter printing without fabricating an event scene', () => {
   const c = read('src/components/HomepageArtwork.astro');
   for (const token of ['getEntry(\'chapters\', chapterId)', 'chapterCardUse(chapter, 0, printings)', 'canonical.scryfallId',
-    'archiveCard(canonical, locale)', 'displayed.imageSrcset', 'displayed.scryfallUrl',
+    'archiveCard(canonical, locale)', 'displayed.imageSrcset', 'artworkAttributes(displayed, significance, locale)',
     'editorialChapter.data.cards[0].significance', 'data-canonical-id', 'data-displayed-id']) assert.ok(c.includes(token), token);
   assert.match(c, /not independent historical proof/);
   assert.match(c, /loading=\{variant === 'hero'/);

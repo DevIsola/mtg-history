@@ -43,6 +43,9 @@ const labels = cardLabels(localeForPath(Astro.url.pathname));
     overflow: auto;
   }
 
+  :global([data-card-artwork-open]) { cursor: zoom-in; }
+  :global([data-card-artwork-open]:focus-visible) { outline: 3px solid var(--link-color); outline-offset: 3px; }
+
   .card-artwork-viewer::backdrop { background: rgb(10 16 20 / 83%); }
   .card-artwork-viewer__shell { padding: clamp(1rem, 2.4vw, 1.7rem); }
   .card-artwork-viewer__actions { display: flex; justify-content: flex-end; margin-bottom: 0.75rem; }
@@ -85,7 +88,7 @@ const labels = cardLabels(localeForPath(Astro.url.pathname));
 
   const locale = document.documentElement.lang === 'pt-BR' ? 'pt-BR' : 'en';
   const dialog = document.querySelector<HTMLDialogElement>('#card-artwork-viewer');
-  if (dialog) {
+  if (dialog && typeof dialog.showModal === 'function') {
     const image = dialog.querySelector<HTMLImageElement>('[data-card-artwork-image]')!;
     const title = dialog.querySelector<HTMLElement>('[data-card-artwork-title]')!;
     const attribution = dialog.querySelector<HTMLElement>('[data-card-artwork-attribution]')!;
@@ -95,14 +98,13 @@ const labels = cardLabels(localeForPath(Astro.url.pathname));
     const language = dialog.querySelector<HTMLElement>('[data-card-artwork-language]')!;
     const originalWrap = dialog.querySelector<HTMLElement>('[data-card-artwork-original-wrap]')!;
     const closeButton = dialog.querySelector<HTMLButtonElement>('[data-card-artwork-close]')!;
-    let trigger: HTMLButtonElement | null = null;
+    let trigger: HTMLAnchorElement | null = null;
     let opening = false;
 
-    // Original Scryfall links work without this enhancement. Reveal buttons only
-    // after the dialog and its keyboard controls are installed.
-    for (const button of document.querySelectorAll<HTMLButtonElement>('[data-card-artwork-open]')) {
-      button.addEventListener('click', () => {
-        if (dialog.open || opening) return;
+    // Full-image links work without JavaScript; enhance them with the shared dialog.
+    for (const button of document.querySelectorAll<HTMLAnchorElement>('[data-card-artwork-open]')) {
+      button.addEventListener('click', (event) => {
+        if (dialog.open || opening) { event.preventDefault(); return; }
         let model;
         try {
           model = buildCardArtworkViewerModel({
@@ -117,6 +119,8 @@ const labels = cardLabels(localeForPath(Astro.url.pathname));
           console.error('Cannot open historical printing:', error);
           return;
         }
+
+        event.preventDefault();
 
         // The image delivery fallback may have replaced the prior card image.
         // Reset only the shared dialog's previous failure state.
@@ -138,7 +142,7 @@ const labels = cardLabels(localeForPath(Astro.url.pathname));
         language.textContent = button.dataset.cardLanguage === 'pt' ? 'Carta oficial em português (PT)' : 'Imagem da edição original (EN)';
         trigger = button;
 
-        const originalImage = button.closest('figure')?.querySelector<HTMLImageElement>('a > img') ?? null;
+        const originalImage = button.querySelector<HTMLImageElement>('img') ?? null;
         const motion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const animate = shouldAnimateCardArtwork({
           reducedMotion: motion,
@@ -174,7 +178,12 @@ const labels = cardLabels(localeForPath(Astro.url.pathname));
           show();
         }
       });
-      button.hidden = false;
+      button.setAttribute('role', 'button');
+      button.setAttribute('aria-haspopup', 'dialog');
+      button.setAttribute('aria-controls', 'card-artwork-viewer');
+      button.addEventListener('keydown', (event) => {
+        if (event.key === ' ') { event.preventDefault(); button.click(); }
+      });
     }
 
     closeButton.addEventListener('click', () => dialog.close());

@@ -1,5 +1,6 @@
 
 ---
+import { archiveCard, artworkAttributes } from '../../utils/card-localization';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveChapterIndex from '../../components/ArchiveChapterIndex.astro';
@@ -267,10 +268,9 @@ const setCodes = [
               >
                 <a
                   class="archive-card__image"
-                  href={card.cardUrl}
+                  {...artworkAttributes(archiveCard(card, 'en'), card.significance, 'en')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`View ${card.name} on Scryfall`}
                 >
                   <img
                     src={card.imageUrl}

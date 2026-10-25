@@ -2,7 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { chapterCardUse } from '../utils/card-printings';
-import { archiveCard, cardLabels } from '../utils/card-localization';
+import { archiveCard, cardLabels, artworkAttributes } from '../utils/card-localization';
 import { localeForPath } from '../utils/locale';
 
 interface Props { chapter: CollectionEntry<'chapters'> | CollectionEntry<'chaptersPt'>; }
@@ -18,10 +18,9 @@ const printings = new Map((await getCollection('cards')).map(({ id, data }) => [
 const canonical = chapterCardUse(canonicalChapter, 0, printings);
 const card = archiveCard(canonical, locale);
 const significance = editorialChapter.data.cards[0].significance;
-const source = card.scryfallUrl;
 ---
 <figure class="atlas-era__artwork" data-timeline-artwork data-printing-id={card.printingId} data-canonical-id={card.canonicalId} data-language={card.language}>
-  <a href={source} target="_blank" rel="noopener noreferrer" aria-label={pt ? `Ver a impressão exata de ${card.name} no Scryfall` : `View the exact ${card.name} printing on Scryfall`}>
+  <a {...artworkAttributes(card, significance, locale)} target="_blank" rel="noopener noreferrer">
     <img src={card.imageUrl} srcset={card.imageSrcset}
       sizes="(max-width: 900px) 180px, 230px" width="488" height="680"
       loading="lazy" decoding="async"

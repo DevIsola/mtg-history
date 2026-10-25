@@ -8,7 +8,7 @@ for (const [route, locale, minimum] of [['', 'en', 6], ['pt-br/', 'pt-BR', 6]]) 
     await expect(page.locator('[data-home-artwork]').first()).toHaveAttribute('data-canonical-id', /^[0-9a-f-]{36}$/);
     await expect(page.locator('.homepage-numbers dd')).toHaveCount(4);
     await expect(page.locator('.homepage-hero__grid h1')).toBeVisible();
-    await expect(page.locator('.homepage-artwork a').first()).toHaveAttribute('href', /scryfall\.com\/card\//);
+    await expect(page.locator('.homepage-artwork a').first()).toHaveAttribute('data-card-source', /scryfall\.com\/card\//);
     await page.setViewportSize({width: 320, height: 720});
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
   });

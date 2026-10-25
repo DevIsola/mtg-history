@@ -13,7 +13,7 @@ for (const [suffix, language, search] of [
     for (const destination of ['chapters', 'characters', 'events', 'relationships', 'archive', 'glossary', 'paths', 'directory']) {
       await expect(page.locator(`[data-explore-destination="${destination}"]`)).toHaveCount(1);
     }
-    await expect(page.locator('.explore-hero__artifact a[href^="https://scryfall.com/card/"]')).toHaveCount(language === 'pt-BR' ? 3 : 2);
+    await expect(page.locator('.explore-hero__artifact a[href^="https://scryfall.com/card/"]')).toHaveCount(language === 'pt-BR' ? 2 : 1);
     await expect(page.locator('.explore-hero__artifact figcaption')).toContainText('#');
     await expect(page.locator('link[rel="alternate"][hreflang="en"]')).toHaveAttribute('href', `https://devisola.github.io${root}explore/`);
     await expect(page.locator('link[rel="alternate"][hreflang="pt-BR"]')).toHaveAttribute('href', `https://devisola.github.io${root}pt-br/explore/`);

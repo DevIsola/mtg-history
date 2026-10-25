@@ -63,8 +63,32 @@ test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
   test('leaves original image and source links accessible', async ({ page }) => {
     await page.goto(chapter);
-    await expect(page.locator('[data-card-artwork-open]').first()).toBeHidden();
+    await expect(page.locator('[data-card-artwork-open]').first()).toBeVisible();
+    await expect(page.locator('[data-card-artwork-open]').first()).toHaveAttribute('href', /cards\.scryfall\.io\/normal\/front\//);
+    await expect(page.locator('.historical-card__enlarge')).toHaveCount(0);
     await expect(page.locator('.historical-moment .historical-card__source').first()).toHaveAttribute('href', /scryfall\.com\/card\//);
     await expect(page.locator('.historical-moment .historical-card img').first()).toHaveAttribute('alt', /illustrated by/i);
   });
 });
+
+for (const locale of ['', 'pt-br/']) {
+  test(`${locale || 'en/'}card images enlarge on every Scryfall-linked surface without a separate button`, async ({ page }) => {
+    for (const route of ['', 'timeline/', 'archive/', 'explore/', 'chapters/thran/']) {
+      await page.goto(`/mtg-history/${locale}${route}`);
+      const imageLink = page.locator('a[data-card-artwork-open]').first();
+      await expect(imageLink.locator('img')).toHaveCount(1);
+      await expect(page.locator('.historical-card__enlarge, button[data-card-artwork-open]')).toHaveCount(0);
+      const id = await imageLink.getAttribute('data-printing-id');
+      const url = page.url();
+      await imageLink.focus();
+      await imageLink.press('Space');
+      const dialog = page.locator('#card-artwork-viewer');
+      await expect(dialog).toBeVisible();
+      await expect(dialog.locator('[data-card-artwork-image]')).toHaveAttribute('src', new RegExp(`${id}\\.jpg$`));
+      await expect(dialog.locator('[data-card-artwork-source]')).toHaveAttribute('href', /scryfall\.com\/card\//);
+      expect(page.url()).toBe(url);
+      await page.keyboard.press('Escape');
+      await expect(imageLink).toBeFocused();
+    }
+  });
+}
