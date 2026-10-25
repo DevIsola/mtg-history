@@ -12,7 +12,7 @@ test('unavailable remote full-card images have an accessible replacement', async
   await expect(fallback).toHaveAttribute('role', 'img');
   await expect(fallback).toHaveAttribute('aria-label', /Glacian.*image unavailable/i);
   await expect(figure.locator('.historical-card__credit')).toContainText('Magali Villeneuve');
-  await expect(figure.getByRole('link', { name: /View Glacian.*Scryfall/ }).first())
+  await expect(figure.getByRole('link', { name: 'View card on Scryfall ↗' }))
     .toHaveAttribute('href', /scryfall\.com/);
 });
 

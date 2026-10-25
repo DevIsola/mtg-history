@@ -9,7 +9,7 @@ test('scrolling progressively reveals contextual cards without hiding content', 
   await expect.poll(() => pending.count()).toBeGreaterThan(0);
   const target = page.locator('.chapter-prose .historical-moment').last();
   await expect(target).toHaveAttribute('data-living-reveal', 'pending');
-  await expect(target.locator('.historical-card > a[href*="scryfall.com/card/"]')).toHaveCount(1);
+  await expect(target.locator('.historical-card > a[data-card-artwork-open][data-card-source*="scryfall.com/card/"]')).toHaveCount(1);
   await expect(target.locator('.historical-card__source[href*="scryfall.com/card/"]')).toHaveCount(1);
   await target.scrollIntoViewIfNeeded();
   await expect(target).toHaveAttribute('data-living-reveal', 'visible');

@@ -47,13 +47,13 @@ test('F2 English and Portuguese home hero share their canonical artwork referenc
   const original = page.locator('[data-home-artwork]').first();
   const id = await original.getAttribute('data-canonical-id');
   expect(id).toMatch(/^[0-9a-f-]{36}$/);
-  await expect(original.locator('a').first()).toHaveAttribute('href', /scryfall\.com\/card\//);
+  await expect(original.locator('a').first()).toHaveAttribute('data-card-source', /scryfall\.com\/card\//);
   await expect(original.locator('.homepage-artwork__credit')).toContainText('#');
   await page.goto(base + 'pt-br/');
   const translated = page.locator('[data-home-artwork]').first();
   await expect(translated).toHaveAttribute('data-canonical-id', id);
   await expect(translated.locator('.homepage-artwork__classification')).toContainText(/português|original \(EN\)/);
-  await expect(translated.locator('a').first()).toHaveAttribute('href', /scryfall\.com\/card\//);
+  await expect(translated.locator('a').first()).toHaveAttribute('data-card-source', /scryfall\.com\/card\//);
 });
 
 test('F2 network exposes text evidence, legend labels and accessible non-graph alternative', async ({ page }) => {
