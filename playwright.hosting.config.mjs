@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 const origin = process.env.MTG_SITE_ORIGIN ?? 'https://mtg-history.example.workers.dev';
 const remote = process.env.MTG_HOSTING_URL;
+const production = process.env.MTG_HOSTING_PRODUCTION === '1';
 export default defineConfig({
   testDir: './tests/hosting',
   outputDir: 'test-results/hosting',
@@ -14,7 +15,9 @@ export default defineConfig({
     { name: 'mobile-workers', use: { ...devices['Pixel 7'] } },
   ],
   webServer: remote ? undefined : {
-    command: 'pnpm run build:cloudflare && pnpm run preview:cloudflare',
+    command: production
+      ? 'pnpm exec wrangler dev --config wrangler.production.jsonc --local --ip 127.0.0.1 --port 4325'
+      : 'pnpm run build:cloudflare && pnpm run preview:cloudflare',
     env: { MTG_SITE_ORIGIN: origin, WRANGLER_SEND_METRICS: 'false' },
     url: 'http://127.0.0.1:4325/',
     reuseExistingServer: false,

@@ -41,3 +41,6 @@ coverage/
 .wrangler/
 .dev.vars
 .dev.vars.*
+
+# Local receipt for an already-validated Cloudflare build
+.cloudflare-build/

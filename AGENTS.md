@@ -23,4 +23,4 @@ Consult these guides before working on related tasks:
 
 ## Implementation and release
 
-Follow `docs/implementation-workflow.md`: one branch per complete phase/feature, incremental commits and pushes, and merge only when complete and accepted. Automatic CI runs after merge to main, not on feature pushes or pull requests. Run required checks locally before merge.
+Follow `docs/implementation-workflow.md`: one branch per complete phase/feature, incremental commits and pushes, and merge only when complete and accepted. Phase 16.4 prepares Cloudflare Workers Builds as the only automated build/deploy system, for main only. Run full strict browser and performance checks locally before merge. Keep current Actions and Pages unchanged until Cloudflare candidate proof and explicit retirement acceptance; do not merge or change live deployment settings without approval. See the implementation workflow for the transition gates.

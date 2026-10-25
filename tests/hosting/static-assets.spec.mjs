@@ -34,7 +34,8 @@ test('legacy project paths redirect with queries and missing pages stay 404', as
 test('fingerprinted assets cache immutably while HTML and Pagefind revalidate', async ({ page, request }) => {
   const response = await page.goto('/');
   expect(response.headers()['cache-control']).toContain('must-revalidate');
-  expect(response.headers()['x-robots-tag']).toBe('noindex');
+  if (process.env.MTG_HOSTING_PRODUCTION === '1') expect(response.headers()['x-robots-tag'] ?? '').not.toMatch(/noindex/i);
+  else expect(response.headers()['x-robots-tag']).toBe('noindex');
   const asset = await page.locator('link[rel="stylesheet"][href*="/_astro/"]').first().getAttribute('href');
   const css = await request.get(asset);
   expect(css.headers()['cache-control']).toContain('immutable');
@@ -43,7 +44,7 @@ test('fingerprinted assets cache immutably while HTML and Pagefind revalidate', 
   expect(index.headers()['cache-control']).toContain('must-revalidate');
   expect(index.headers()['content-type']).toMatch(/javascript/);
 });
-test('Pagefind palette and PT search use root URLs and restore keyboard focus', async ({ page }) => {
+test('Pagefind, PT search and card artwork viewer work at the root', async ({ page }) => {
   await page.goto('/');
   await page.locator('.site-header__search').click();
   const dialog = page.locator('[data-search-palette]');
@@ -58,6 +59,13 @@ test('Pagefind palette and PT search use root URLs and restore keyboard focus', 
   await page.goto('/pt-br/search/');
   await page.locator('#fulltext-query').fill('Phyrexia');
   await expect(page.locator('[data-fulltext-results] a').first()).toHaveAttribute('href', /^\/pt-br\//, { timeout: 15000 });
+  await page.goto('/pt-br/chapters/thran/');
+  const card = page.locator('[data-card-artwork-open]').first();
+  await card.click();
+  await expect(page.locator('#card-artwork-viewer')).toBeVisible();
+  await expect(page.locator('[data-card-artwork-source]')).toHaveAttribute('href', /scryfall\.com\/card\//);
+  await page.keyboard.press('Escape');
+  await expect(card).toBeFocused();
 });
 
 

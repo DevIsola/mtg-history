@@ -1,0 +1,19 @@
+{
+  "repository": "DevIsola/mtg-history",
+  "worker": "mtg-history",
+  "origin": "https://mtg-history.dev-disola.workers.dev",
+  "productionBranch": "main",
+  "automaticBranches": [
+    "main"
+  ],
+  "previewBuilds": false,
+  "buildCaching": true,
+  "rootDirectory": "/",
+  "buildCommand": "pnpm install --frozen-lockfile && pnpm run ci:cloudflare:build",
+  "deployCommand": "pnpm run ci:cloudflare:deploy",
+  "buildVariables": {
+    "NODE_VERSION": "26.12.0",
+    "PNPM_VERSION": "12.14.0",
+    "SKIP_DEPENDENCY_INSTALL": "true"
+  }
+}

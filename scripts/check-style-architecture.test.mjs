@@ -71,3 +71,9 @@ test('footer selectors are component-owned, not reintroduced in the foundation',
   assert.match(auditStyles({ ...good, foundation: good.foundation + '\n.site-footer { color: red }' }).join(' '), /footer selectors/);
   assert.match(auditStyles({ ...good, components: { ...good.components, 'SiteFooter.astro': '<footer></footer>' } }).join(' '), /SiteFooter\.astro.*Astro-scoped SCSS/);
 });
+
+test('pnpm toolchain lock documents do not hide the application Sass importer', () => {
+  const prefix = "---\nlockfileVersion: '9.0'\nimporters:\n  .:\n    packageManagerDependencies:\n      pnpm:\n        version: 12.14.0\npackages:\n  pnpm@12.14.0: {}\n---\n";
+  assert.deepEqual(auditStyles({ ...good, lockfile: prefix + good.lockfile }), []);
+  assert.match(auditStyles({ ...good, lockfile: prefix + good.lockfile.replace('sass:', 'tailwindcss:') }).join(' '), /lockfile importer lacks Sass/);
+});
