@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
-import { cardImageUrl, cardImageSrcset } from '../utils/card-printings';
+import { archiveCard } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
 
 interface Props {
   name: string;
@@ -10,14 +11,20 @@ interface Props {
 const { name, cardId } = Astro.props;
 const printing = await getEntry('cards', cardId);
 if (!printing) throw new Error(`Missing canonical card ${cardId}`);
-const card = printing.data;
-const imageUrl = cardImageUrl(printing.id);
-const imageSrcset = cardImageSrcset(printing.id);
+const locale = localeForPath(Astro.url.pathname);
+const pt = locale === 'pt-BR';
+const card = archiveCard({ ...printing.data, scryfallId: printing.id }, locale);
+const imageUrl = card.imageUrl;
+const imageSrcset = card.imageSrcset;
 ---
 
 <span
   class="card-hover"
   data-card-preview
+  data-canonical-id={printing.id}
+  data-displayed-id={card.printingId}
+  data-language={card.language}
+  data-card-original-source={card.originalUrl}
   data-card-image={imageUrl}
   data-card-image-set={imageSrcset}
   data-card-name={card.name}
@@ -29,7 +36,7 @@ const imageSrcset = cardImageSrcset(printing.id);
     class="card-hover__button"
     type="button"
     data-card-preview-button
-    aria-label={`Preview ${name}'s Magic card`}
+    aria-label={pt ? `Prévia da carta de Magic de ${name}` : `Preview ${name}'s Magic card`}
     aria-expanded="false"
     hidden
   >
@@ -134,6 +141,7 @@ const imageSrcset = cardImageSrcset(printing.id);
 
 <script>
   // Astro bundles this script only once even when a chapter has many links.
+  const pt = document.documentElement.lang === 'pt-BR';
   const previews = document.querySelectorAll<HTMLElement>('[data-card-preview]');
 
   if (previews.length > 0) {
@@ -254,17 +262,17 @@ const imageSrcset = cardImageSrcset(printing.id);
       );
       activeMode = mode;
 
-      const name = wrapper.dataset.cardName ?? 'Magic card';
+      const name = wrapper.dataset.cardName ?? (pt ? 'Carta de Magic' : 'Magic card');
       // A previously failed card must not leave its placeholder in a new preview.
       image.parentElement?.querySelector('.card-image-fallback')?.remove();
       image.style.removeProperty('display');
       delete image.dataset.cardImageFallbackApplied;
       image.srcset = wrapper.dataset.cardImageSet ?? '';
       image.src = wrapper.dataset.cardImage ?? '';
-      image.alt = `Magic: The Gathering card: ${name}`;
+      image.alt = `${pt ? 'Carta de Magic: The Gathering' : 'Magic: The Gathering card'}: ${name}`;
       cardName.textContent = name;
       cardDetails.textContent =
-        `${wrapper.dataset.cardSet ?? ''} · Illustrated by ${wrapper.dataset.cardArtist ?? ''}`;
+        `${wrapper.dataset.cardSet ?? ''} · ${pt ? 'Ilustração de' : 'Illustrated by'} ${wrapper.dataset.cardArtist ?? ''}${pt ? (wrapper.dataset.language === 'pt' ? ' · Carta oficial em português (PT)' : ' · Imagem da edição original (EN)') : ''}`;
 
       popover.hidden = false;
       positionPreview();

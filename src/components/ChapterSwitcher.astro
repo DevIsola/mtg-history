@@ -1,13 +1,17 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { withBase } from '../utils/paths';
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 interface Props {
-  chapters: CollectionEntry<'chapters'>[];
+  chapters: CollectionEntry<'chapters' | 'chaptersPt'>[];
   activeId: string;
 }
 
-const { chapters, activeId } = Astro.props;
+const { chapters: providedChapters, activeId } = Astro.props;
+const pageLocale = localeForPath(Astro.url.pathname);
+const chapterTranslations = new Map((pageLocale === 'pt-BR' ? await getCollection('chaptersPt') : []).map(chapter => [chapter.id, chapter]));
+const chapters = providedChapters.map(chapter => chapterTranslations.get(chapter.id) ?? chapter);
 const ordered = [...chapters].sort(
   (a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id),
 );
@@ -16,13 +20,15 @@ if (activeIndex < 0) throw new Error(`Unknown chapter for switcher: ${activeId}`
 const active = ordered[activeIndex];
 const previous = ordered[activeIndex - 1];
 const next = ordered[activeIndex + 1];
-const chapterHref = (id: string) => withBase(`chapters/${id}/#chapter-reader`);
+const chapterHref = (id: string) => localPath(`chapters/${id}/#chapter-reader`, pageLocale);
+
+const t = (english: string) => phrase(pageLocale, english);
 ---
 
-<nav class="chapter-switcher" aria-label="Switch chapters" data-chapter-switcher>
+<nav class="chapter-switcher" aria-label={t("Switch chapters")} data-chapter-switcher>
   <div class="chapter-switcher__identity">
     <span class="chapter-switcher__eyebrow">
-      Historical record · {String(activeIndex + 1).padStart(2, '0')} / {String(ordered.length).padStart(2, '0')}
+      {t('Historical record ·')} {String(activeIndex + 1).padStart(2, '0')} / {String(ordered.length).padStart(2, '0')}
     </span>
     <strong class="chapter-switcher__title">{active.data.title}</strong>
   </div>
@@ -32,18 +38,18 @@ const chapterHref = (id: string) => withBase(`chapters/${id}/#chapter-reader`);
       <a
         class="chapter-switcher__step"
         href={chapterHref(previous.id)}
-        aria-label={`Previous chapter: ${previous.data.title}`}
+        aria-label={`${t('Previous chapter: ')}${previous.data.title}`}
         rel="prev"
-      ><span aria-hidden="true">←</span><span>Previous</span></a>
+      ><span aria-hidden="true">←</span><span>{t("Previous")}</span></a>
     ) : <span class="chapter-switcher__step chapter-switcher__step--empty" aria-hidden="true"></span>}
 
     <details class="chapter-switcher__menu" data-chapter-menu>
       <summary>
-        <span>All chapters</span>
+        <span>{t("All chapters")}</span>
         <span class="chapter-switcher__chevron" aria-hidden="true">⌄</span>
       </summary>
       <div class="chapter-switcher__panel">
-        <p class="chapter-switcher__panel-title">Choose a chapter</p>
+        <p class="chapter-switcher__panel-title">{t("Choose a chapter")}</p>
         <ol>
           {ordered.map((chapter) => (
             <li>
@@ -59,14 +65,14 @@ const chapterHref = (id: string) => withBase(`chapters/${id}/#chapter-reader`);
                   <small>{chapter.data.chronology.storyPeriod}</small>
                 </span>
                 {chapter.id === activeId && (
-                  <span class="chapter-switcher__current">Reading</span>
+                  <span class="chapter-switcher__current">{t("Reading")}</span>
                 )}
               </a>
             </li>
           ))}
         </ol>
-        <a class="chapter-switcher__timeline" href={withBase('timeline/')}>
-          Full historical timeline <span aria-hidden="true">↗</span>
+        <a class="chapter-switcher__timeline" href={localPath('timeline/', pageLocale)}>
+          {t("Full historical timeline")} <span aria-hidden="true">↗</span>
         </a>
       </div>
     </details>
@@ -75,9 +81,9 @@ const chapterHref = (id: string) => withBase(`chapters/${id}/#chapter-reader`);
       <a
         class="chapter-switcher__step"
         href={chapterHref(next.id)}
-        aria-label={`Next chapter: ${next.data.title}`}
+        aria-label={`${t('Next chapter: ')}${next.data.title}`}
         rel="next"
-      ><span>Next</span><span aria-hidden="true">→</span></a>
+      ><span>{t("Next")}</span><span aria-hidden="true">→</span></a>
     ) : <span class="chapter-switcher__step chapter-switcher__step--empty" aria-hidden="true"></span>}
   </div>
 </nav>

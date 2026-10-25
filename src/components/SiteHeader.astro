@@ -1,47 +1,47 @@
 ---
 import { withBase } from '../utils/paths';
+import { localeForPath, localPath, phrase } from '../utils/locale';
 import ThemeToggle from './ThemeToggle.astro';
 import SearchPalette from './SearchPalette.astro';
-import { isTranslatedRoute, translatedSuffix, uiFor } from '../utils/i18n.mjs';
 
 interface Props { locale?: 'en' | 'pt-BR'; }
-const { locale = 'en' } = Astro.props;
-const ui = uiFor(locale);
+const { locale = localeForPath(Astro.url.pathname) } = Astro.props;
+const pageLocale = locale;
+const t = (english: string) => phrase(pageLocale, english);
 const pt = locale === 'pt-BR';
-const paired = isTranslatedRoute(Astro.url.pathname, withBase(''));
-const suffix = translatedSuffix(Astro.url.pathname, withBase(''));
-const home = withBase(pt ? 'pt-br/' : '');
-const timeline = withBase(pt ? 'pt-br/timeline/' : 'timeline/');
-const search = withBase(pt ? 'pt-br/search/' : 'search/');
-const about = withBase('about/');
-const englishChoice = withBase(paired ? suffix ?? '' : '');
-const portugueseChoice = withBase(paired ? 'pt-br/' + (suffix ?? '') : 'pt-br/');
+const suffix = Astro.url.pathname.slice(withBase('').length).replace(/^pt-br(?:\/|$)/, '');
+const home = localPath('', locale);
+const timeline = localPath('timeline/', locale);
+const search = localPath('search/', locale);
+const about = localPath('about/', locale);
+const englishChoice = withBase(suffix);
+const portugueseChoice = localPath(suffix, 'pt-BR');
 const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const selected = (href: string) => current === (href.replace(/\/+$/, '') || '/');
 const destinations = [
-  {label: pt ? 'Explorar' : 'Explore home', href: withBase(pt ? 'pt-br/explore/' : 'explore/')},
-  {label: pt ? 'Índice enciclopédico (EN)' : 'Encyclopedia directory', href: withBase('discover/')},
-  {label: pt ? 'Cronologia' : 'Timeline', href: timeline},
-  {label: pt ? 'Personagens' : 'Characters', href: withBase(pt ? 'pt-br/characters/' : 'characters/')},
-  {label: pt ? 'Eventos' : 'Events', href: withBase(pt ? 'pt-br/events/' : 'events/')},
-  {label: pt ? 'Relações (EN)' : 'Relationships', href: withBase('relationships/')},
-  {label: pt ? 'Arquivo ilustrado' : 'Illustrated archive', href: withBase(pt ? 'pt-br/archive/' : 'archive/')},
-  {label: pt ? 'Glossário (EN)' : 'Glossary', href: withBase('glossary/')},
-  {label: pt ? 'Caminhos históricos (EN)' : 'History paths', href: withBase('paths/')},
+  { label: t('Explore home'), href: localPath('explore/', locale) },
+  { label: t('Encyclopedia directory'), href: localPath('discover/', locale) },
+  { label: t('Timeline'), href: timeline },
+  { label: t('Characters'), href: localPath('characters/', locale) },
+  { label: t('Events'), href: localPath('events/', locale) },
+  { label: t('Relationships'), href: localPath('relationships/', locale) },
+  { label: t('Illustrated archive'), href: localPath('archive/', locale) },
+  { label: t('Glossary'), href: localPath('glossary/', locale) },
+  { label: t('History paths'), href: localPath('paths/', locale) },
 ];
-const readLabel = pt ? 'Ler' : 'Read';
-const exploreLabel = pt ? 'Explorar' : 'Explore';
-const aboutLabel = pt ? 'Sobre (EN)' : 'About';
-const searchLabel = pt ? 'Buscar mundos, pessoas, eventos…' : 'Search worlds, people, events…';
+const readLabel = t('Read');
+const exploreLabel = t('Explore');
+const aboutLabel = t('About');
+const searchLabel = t('Search worlds, people, events…');
 ---
 <header class="site-header">
   <div class="site-header__inner page-shell">
-    <a class="brand" href={home} aria-label={ui.homeAria}>
+    <a class="brand" href={home} aria-label={t('Chronicles of the Multiverse, home')}>
       <span class="brand__sigil" aria-hidden="true">✦</span>
-      <span class="brand__name">Chronicles <span>of the Multiverse</span></span>
+      <span class="brand__name">{t("Chronicles")} <span>{t("of the Multiverse")}</span></span>
     </a>
     <div class="site-header__actions">
-      <nav class="desktop-navigation" aria-label={ui.navAria}>
+      <nav class="desktop-navigation" aria-label={t('Main navigation')}>
         <a href={timeline} aria-current={selected(timeline) || current.includes('/chapters/') ? 'page' : undefined}>{readLabel}</a>
         <details class="site-explore-menu" data-site-explore-menu>
           <summary>{exploreLabel} <span aria-hidden="true">⌄</span></summary>
@@ -58,9 +58,9 @@ const searchLabel = pt ? 'Buscar mundos, pessoas, eventos…' : 'Search worlds, 
         <span class="site-header__search-text">{searchLabel}</span>
         <kbd class="site-header__shortcut" aria-hidden="true">⌘ K</kbd>
       </a>
-      <a class="site-header__support" href="https://ko-fi.com/B1H328PBAR" target="_blank" rel="noopener noreferrer" aria-label={ui.supportAria}>
+      <a class="site-header__support" href="https://ko-fi.com/B1H328PBAR" target="_blank" rel="noopener noreferrer" aria-label={t('Support DevIsola on Ko-fi')}>
         <span aria-hidden="true">♥</span>
-        <span class="site-header__support-text">{pt ? 'Apoiar' : 'Support'}</span>
+        <span class="site-header__support-text">{t('Support')}</span>
       </a>
       <ThemeToggle />
       <details class="site-header__languages">
@@ -68,17 +68,17 @@ const searchLabel = pt ? 'Buscar mundos, pessoas, eventos…' : 'Search worlds, 
           {pt ? 'PT' : 'EN'} <span aria-hidden="true">⌄</span>
         </summary>
         <div class="site-header__language-menu">
-          <a href={englishChoice} hreflang={paired ? 'en' : undefined} aria-current={!pt ? 'page' : undefined}>
-            English{!paired ? ' — home' : ''}
+          <a href={englishChoice} hreflang="en" aria-current={!pt ? 'page' : undefined}>
+            English
           </a>
-          <a href={portugueseChoice} hreflang={paired ? 'pt-BR' : undefined} aria-current={pt ? 'page' : undefined}>
-            Português{!paired ? ' — início' : ''}
+          <a href={portugueseChoice} hreflang="pt-BR" aria-current={pt ? 'page' : undefined}>
+            Português
           </a>
         </div>
       </details>
       <details class="mobile-navigation">
-        <summary aria-label={ui.toggle}><span>{ui.menu}</span><span aria-hidden="true">☰</span></summary>
-        <nav aria-label={ui.mobileAria}>
+        <summary aria-label={t('Toggle navigation')}><span>{t('Menu')}</span><span aria-hidden="true">☰</span></summary>
+        <nav aria-label={t('Mobile navigation')}>
           <a href={timeline} aria-current={selected(timeline) ? 'page' : undefined}>{readLabel}</a>
           {destinations.map(item => (
             <a href={item.href} aria-current={selected(item.href) ? 'page' : undefined}>{item.label}</a>

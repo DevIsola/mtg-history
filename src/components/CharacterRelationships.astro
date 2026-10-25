@@ -1,31 +1,34 @@
-
 ---
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
 import { getCollection } from 'astro:content';
 import PrintingMiniature from './PrintingMiniature.astro';
 
 import { characters } from '../data/characters';
+import { localized } from '../utils/localization';
 
 import {
   characterRelationships,
   type RelationshipCategory,
 } from '../data/relationships';
 
-import { withBase } from '../utils/paths';
-
 interface Props {
   id: string;
 }
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 
 const { id } = Astro.props;
 
 const charactersById = new Map(
   characters.map((character) => [
     character.id,
-    character,
+    localized('characters', character, pageLocale),
   ])
 );
 
-const chapters = await getCollection('chapters');
+const chapters = await getCollection(pageLocale === 'pt-BR' ? 'chaptersPt' : 'chapters');
 
 const chaptersById = new Map(
   chapters.map((chapter) => [
@@ -83,6 +86,7 @@ for (const relationship of characterRelationships) {
 }
 
 const related = characterRelationships
+  .map(relationship => localized('relationships', relationship, pageLocale))
   .filter(
     (relationship) =>
       relationship.a === id ||
@@ -103,7 +107,7 @@ const related = characterRelationships
     return {
       other,
       chapter,
-      category: categoryLabels[relationship.category],
+      category: phrase(pageLocale, categoryLabels[relationship.category]),
       label: fromA
         ? relationship.labelForA
         : relationship.labelForB,
@@ -121,21 +125,19 @@ const related = characterRelationships
     aria-labelledby="character-relations-heading"
   >
     <p class="eyebrow">
-      People behind the history
+      {t("People behind the history")}
     </p>
 
     <h2 id="character-relations-heading">
-      Relationships and connections
+      {t("Relationships and connections")}
     </h2>
 
     <p class="character-relations__intro">
-      Explore the figures connected to this character
-      through family, friendship, conflict,
-      or shared historical events.
+      {t("Explore the figures connected to this character through family, friendship, conflict, or shared historical events.")}
     </p>
 
-    <a class="text-link character-relations__explore" href={withBase('relationships/?person=' + id)}>
-      Explore this character's relationship network →
+    <a class="text-link character-relations__explore" href={localPath('relationships/?person=' + id, pageLocale)}>
+      {t("Explore this character's relationship network →")}
     </a>
 
     <ul class="character-relations__list">
@@ -155,9 +157,9 @@ const related = characterRelationships
 
                 <h3>
                   <a
-                    href={withBase(
+                    href={localPath(
                       `characters/${relationship.other.id}/`
-                    )}
+                    , pageLocale)}
                   >
                     {relationship.other.name}
                     <span aria-hidden="true">↗</span>
@@ -172,11 +174,11 @@ const related = characterRelationships
 
             <a
               class="character-relations__chapter"
-              href={withBase(
+              href={localPath(
                 `chapters/${relationship.chapter.id}/`
-              )}
+              , pageLocale)}
             >
-              Historical context:
+              {t('Historical context:')}
               {' '}
               {relationship.chapter.data.title}
               {' →'}

@@ -1,0 +1,448 @@
+---
+const pageLocale = localeForPath(Astro.url.pathname);
+const pt = pageLocale === 'pt-BR';
+const withBase = (path = '') => localPath(path, pageLocale);
+
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CharacterPortrait from '../../components/CharacterPortrait.astro';
+import { characters as canonical_characters } from '../../data/characters';
+import { characterCategories as canonicalCharacterCategories } from '../../data/characterCategories';
+import { localPath, localeForPath, phrase } from '../../utils/locale';
+import { localized } from '../../utils/localization';
+const characters = canonical_characters.map(record => localized('characters', record, pageLocale));
+const characterCategories = canonicalCharacterCategories.map(category => ({ ...category, label: phrase(pageLocale, category.label) }));
+
+
+const chapters = (await getCollection(pt ? 'chaptersPt' : 'chapters')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const chaptersById = new Map(
+  chapters.map((chapter) => [
+    chapter.id,
+    chapter,
+  ])
+);
+
+const knownCharacterIds = new Set(
+  characters.map((character) => character.id)
+);
+
+const knownCategories = new Set<string>();
+
+// Validate the editorial category registry.
+for (const category of characterCategories) {
+  if (knownCategories.has(category.id)) {
+    throw new Error(`Duplicate category: ${category.id}`);
+  }
+
+  knownCategories.add(category.id);
+
+  for (const id of category.characterIds) {
+    if (!knownCharacterIds.has(id)) {
+      throw new Error(
+        `Unknown character "${id}" in category "${category.id}"`
+      );
+    }
+  }
+}
+
+const orderedCharacters = [...characters]
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map((character) => {
+    const categories = characterCategories.filter(
+      (category) => category.characterIds.includes(character.id)
+    );
+
+    if (categories.length === 0) {
+      throw new Error(
+        `Character "${character.id}" has no directory category`
+      );
+    }
+
+    const relatedChapters = character.chapterIds
+      .map((id) => chaptersById.get(id))
+      .filter((chapter) => chapter !== undefined);
+
+    const searchText = [
+      character.name,
+      character.title,
+      character.role,
+      character.origin,
+      character.summary,
+      ...character.biography,
+      ...categories.map((category) => category.label),
+      ...relatedChapters.map((chapter) => chapter.data.title),
+    ].join(' ');
+
+    return {
+      character,
+      categories,
+      relatedChapters,
+      searchText,
+    };
+  });
+
+const origins = [
+  ...new Set(characters.map((character) => character.origin)),
+].sort((a, b) => a.localeCompare(b));
+---
+
+<BaseLayout locale={pageLocale}
+  title={phrase(pageLocale, "Historical characters")}
+  description={phrase(pageLocale, "Explore the people and beings who shaped Magic: The Gathering's fictional history.")}
+>
+  <section class="page-banner">
+    <div class="page-shell">
+      <p class="eyebrow eyebrow--light">
+        {phrase(pageLocale, "The historical archive")}
+      </p>
+
+      <h1>{phrase(pageLocale, "Characters of the")} <em>{phrase(pageLocale, "Multiverse.")}</em></h1>
+
+      <p>
+        {phrase(pageLocale, "Discover the people behind the wars, discoveries, and turning points of Magic's history.")}
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="section-spacing character-section"
+    aria-labelledby="character-directory-heading"
+    data-character-directory
+  >
+    <div class="page-shell">
+
+      <div class="character-section__intro">
+        <p class="eyebrow">{phrase(pageLocale, "An evolving encyclopedia")}</p>
+
+        <h2
+          id="character-directory-heading"
+          class="section-title"
+        >
+          {phrase(pageLocale, "The faces behind")} <em>{phrase(pageLocale, "history.")}</em>
+        </h2>
+
+        <p>
+          {phrase(pageLocale, "Each profile connects a historical figure to chapters, key events, relationships, illustrated cards, and official lore references.")}
+        </p>
+      </div>
+
+      <div class="character-directory__overview" aria-label={phrase(pageLocale, "Encyclopedia coverage")}>
+        <p><strong>{orderedCharacters.length}</strong> {phrase(pageLocale, "documented figures")}</p>
+        <p><strong>{origins.length}</strong> {phrase(pageLocale, "recorded origins")}</p>
+        <p><strong>{characterCategories.length}</strong> {phrase(pageLocale, "editorial role categories")}</p>
+      </div>
+      <p class="character-directory__art-note">{phrase(pageLocale, "Illustrated portraits show exact curated card printings, not independent proof of the biography or a specific historical scene.")}</p>
+      <a class="text-link character-network-link" href={withBase('relationships/')}>
+        {phrase(pageLocale, "Explore the interactive relationship network →")}
+      </a>
+
+      <!-- Hidden until JavaScript enables filtering. -->
+      <div
+        class="character-filter-panel"
+        id="character-filters"
+        hidden
+      >
+        <div class="character-filter-panel__heading">
+          <h3>{phrase(pageLocale, "Explore the characters")}</h3>
+
+          <p>
+            {phrase(pageLocale, "Search by name, role, story, or historical context. Combine filters to narrow the results.")}
+          </p>
+        </div>
+
+        <div class="character-filter-panel__grid">
+
+          <div class="character-filter-field character-filter-field--search">
+            <label for="character-search">
+              {phrase(pageLocale, "Search characters")}
+            </label>
+
+            <input
+              id="character-search"
+              type="search"
+              placeholder={phrase(pageLocale, "Urza, artificer, Phyrexia...")}
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="character-filter-field">
+            <label for="character-category">
+              {phrase(pageLocale, "Role category")}
+            </label>
+
+            <select id="character-category">
+              <option value="">{phrase(pageLocale, "All roles")}</option>
+
+              {characterCategories.map((category) => (
+                <option value={category.id}>
+                  {category.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div class="character-filter-field">
+            <label for="character-chapter">
+              {phrase(pageLocale, "Historical chapter")}
+            </label>
+
+            <select id="character-chapter">
+              <option value="">{phrase(pageLocale, "All chapters")}</option>
+
+              {chapters.map((chapter) => (
+                <option value={chapter.id}>
+                  {String(chapter.data.order).padStart(2, '0')}
+                  {' — '}
+                  {chapter.data.title}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div class="character-filter-field">
+            <label for="character-origin">
+              {phrase(pageLocale, "Home plane / region")}
+            </label>
+
+            <select id="character-origin">
+              <option value="">{phrase(pageLocale, "All origins")}</option>
+
+              {origins.map((origin) => (
+                <option value={origin}>
+                  {origin}
+                </option>
+              ))}
+            </select>
+          </div>
+
+        </div>
+
+        <div class="character-filter-panel__footer">
+          <p
+            id="character-filter-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {phrase(pageLocale, "Showing")} {orderedCharacters.length} {phrase(pageLocale, "of")}
+            {' '}{orderedCharacters.length} {phrase(pageLocale, "characters")}
+          </p>
+
+          <button
+            id="character-reset"
+            type="button"
+            disabled
+          >
+            {phrase(pageLocale, "Clear filters")}
+          </button>
+        </div>
+      </div>
+
+      <p
+        class="character-no-results"
+        id="character-no-results"
+        hidden
+      >
+        {phrase(pageLocale, "No characters match these filters. Try another search or clear your selections.")}
+      </p>
+
+      <div class="character-grid">
+        {orderedCharacters.map((entry) => {
+          const { character, categories, relatedChapters, searchText } =
+            entry;
+
+          const chapterCount = relatedChapters.length;
+
+          return (
+            <a
+              class="character-entry"
+              href={withBase(`characters/${character.id}/`)}
+              data-character-card
+              data-search={searchText}
+              data-categories={categories.map(
+                (category) => category.id
+              ).join(' ')}
+              data-chapters={character.chapterIds.join(' ')}
+              data-origin={character.origin}
+            >
+              <CharacterPortrait printingId={character.featuredCardId} referenceLink={false}
+                characterName={character.name} significance={character.featuredCard.significance} />
+
+              <span class="character-entry__body">
+                <span class="character-entry__eyebrow">
+                  {character.role}
+                </span>
+
+                <strong>{character.name}</strong>
+
+                <span class="character-entry__title">
+                  {character.title}
+                </span>
+
+                <span class="character-entry__summary">
+                  {character.summary}
+                </span>
+
+                <span class="character-entry__bottom">
+                  {chapterCount} {phrase(pageLocale, chapterCount === 1 ? 'published chapter' : 'published chapters')}
+
+                  <span aria-hidden="true">
+                    {phrase(pageLocale, "Explore →")}
+                  </span>
+                </span>
+              </span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { phrase, localeForPath } from '../../utils/locale';
+  const clientLocale = localeForPath(window.location.pathname);
+  const directory = document.querySelector<HTMLElement>(
+    '[data-character-directory]'
+  );
+
+  if (directory) {
+    const panel = directory.querySelector<HTMLElement>(
+      '#character-filters'
+    );
+
+    const search = directory.querySelector<HTMLInputElement>(
+      '#character-search'
+    );
+
+    const category = directory.querySelector<HTMLSelectElement>(
+      '#character-category'
+    );
+
+    const chapter = directory.querySelector<HTMLSelectElement>(
+      '#character-chapter'
+    );
+
+    const origin = directory.querySelector<HTMLSelectElement>(
+      '#character-origin'
+    );
+
+    const reset = directory.querySelector<HTMLButtonElement>(
+      '#character-reset'
+    );
+
+    const status = directory.querySelector<HTMLElement>(
+      '#character-filter-status'
+    );
+
+    const empty = directory.querySelector<HTMLElement>(
+      '#character-no-results'
+    );
+
+    const cards = Array.from(
+      directory.querySelectorAll<HTMLElement>(
+        '[data-character-card]'
+      )
+    );
+
+    const normalize = (value: string) =>
+      value
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+
+    if (
+      panel &&
+      search &&
+      category &&
+      chapter &&
+      origin &&
+      reset &&
+      status &&
+      empty
+    ) {
+      const indexedCards = cards.map((card) => ({
+        card,
+        text: normalize(card.dataset.search ?? ''),
+      }));
+
+      const applyFilters = () => {
+        const query = normalize(search.value);
+        const selectedCategory = category.value;
+        const selectedChapter = chapter.value;
+        const selectedOrigin = origin.value;
+
+        const isFiltering = Boolean(
+          query ||
+          selectedCategory ||
+          selectedChapter ||
+          selectedOrigin
+        );
+
+        let visibleCount = 0;
+
+        for (const { card, text } of indexedCards) {
+          const matchesText =
+            !query || text.includes(query);
+
+          const matchesCategory =
+            !selectedCategory ||
+            (card.dataset.categories ?? '')
+              .split(' ')
+              .includes(selectedCategory);
+
+          const matchesChapter =
+            !selectedChapter ||
+            (card.dataset.chapters ?? '')
+              .split(' ')
+              .includes(selectedChapter);
+
+          const matchesOrigin =
+            !selectedOrigin ||
+            card.dataset.origin === selectedOrigin;
+
+          const matches =
+            matchesText &&
+            matchesCategory &&
+            matchesChapter &&
+            matchesOrigin;
+
+          card.hidden = !matches;
+
+          if (matches) {
+            visibleCount++;
+          }
+        }
+
+        status.textContent =
+          phrase(clientLocale, "Showing {visible} of {total} characters").replace('{visible}', String(visibleCount)).replace('{total}', String(cards.length));
+
+        empty.hidden = visibleCount !== 0;
+        reset.disabled = !isFiltering;
+      };
+
+      search.addEventListener('input', applyFilters);
+      category.addEventListener('change', applyFilters);
+      chapter.addEventListener('change', applyFilters);
+      origin.addEventListener('change', applyFilters);
+
+      reset.addEventListener('click', () => {
+        search.value = '';
+        category.value = '';
+        chapter.value = '';
+        origin.value = '';
+
+        applyFilters();
+        search.focus();
+      });
+
+      panel.hidden = false;
+      applyFilters();
+    }
+  }
+</script>

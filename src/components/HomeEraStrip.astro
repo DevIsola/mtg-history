@@ -1,21 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
-import { portugueseEra } from '../utils/pt-catalog.mjs';
-import { withBase } from '../utils/paths';
+import { localeForPath, localPath, phrase } from '../utils/locale';
 interface Props { locale?: 'en' | 'pt-BR'; }
-const { locale = 'en' } = Astro.props;
-const pt = locale === 'pt-BR';
-const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const { locale = localeForPath(Astro.url.pathname) } = Astro.props;
+const t = (english: string) => phrase(locale, english);
+const chapters = (await getCollection(locale === 'pt-BR' ? 'chaptersPt' : 'chapters')).sort((a, b) => a.data.order - b.data.order);
 ---
 <section class="home-story" aria-labelledby="home-story-heading">
   <div class="page-shell">
     <div class="home-story__intro">
-      <div><p class="eyebrow">{pt ? 'A história até aqui' : 'The story so far'}</p><h2 id="home-story-heading">{pt ? 'Um Multiverso de histórias.' : 'A Multiverse of stories.'}</h2></div>
-      <p>{pt ? 'Dos Thran aos Caminhos Pressagiados, acompanhe os capítulos em ordem de leitura. A cronologia ficcional é distinta das datas de publicação.' : 'From the Thran to the Omenpaths, follow the chapters in editorial reading order. Story chronology and publication history remain distinct.'}</p>
-      <a class="text-link" href={withBase(pt ? 'pt-br/timeline/' : 'timeline/')}>{pt ? 'Ver a cronologia' : 'View full timeline'} →</a>
+      <div><p class="eyebrow">{t('The story so far')}</p><h2 id="home-story-heading">{t('A Multiverse of stories.')}</h2></div>
+      <p>{t('From the Thran to the Omenpaths, follow the chapters in editorial reading order. Story chronology and publication history remain distinct.')}</p>
+      <a class="text-link" href={localPath('timeline/', locale)}>{t('View full timeline')} →</a>
     </div>
-    <nav class="home-era-strip" aria-label={pt ? 'Capítulos em ordem de leitura' : 'Chapters in reading order'}>
-      <ol>{chapters.map(chapter => <li><a href={withBase((pt ? 'pt-br/' : '') + 'chapters/' + chapter.id + '/')}><span>{String(chapter.data.order).padStart(2, '0')}</span><strong>{pt ? portugueseEra(chapter.id).name : chapter.data.title}</strong></a></li>)}</ol>
+    <nav class="home-era-strip" aria-label={t('Chapters in reading order')}>
+      <ol>{chapters.map(chapter => <li><a href={localPath('chapters/' + chapter.id + '/', locale)}><span>{String(chapter.data.order).padStart(2, '0')}</span><strong>{chapter.data.title}</strong></a></li>)}</ol>
     </nav>
   </div>
 </section>

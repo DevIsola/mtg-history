@@ -1,15 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
-import { portugueseEra } from '../utils/pt-catalog.mjs';
+import { localeForPath, phrase } from '../utils/locale';
 interface Props { locale?: 'en' | 'pt-BR'; }
-const { locale = 'en' } = Astro.props;
-const pt = locale === 'pt-BR';
-const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const { locale = localeForPath(Astro.url.pathname) } = Astro.props;
+const t = (english: string) => phrase(locale, english);
+const chapters = (await getCollection(locale === 'pt-BR' ? 'chaptersPt' : 'chapters')).sort((a, b) => a.data.order - b.data.order);
 ---
-<nav class="archive-chapter-index" aria-label={pt ? 'Referências por capítulo' : 'Illustrations by chapter'}>
+<nav class="archive-chapter-index" aria-label={t('Illustrations by chapter')}>
   {chapters.map(chapter => <a class="chapter-cover" href={'#' + chapter.id}>
-    <span class="chapter-cover__number">{pt ? 'Capítulo' : 'Chapter'} {String(chapter.data.order).padStart(2, '0')}</span>
-    <strong>{pt ? portugueseEra(chapter.id).name : chapter.data.title}</strong>
-    <span>{chapter.data.cardIds.length} {pt ? 'referências ilustradas' : 'illustrated references'} →</span>
+    <span class="chapter-cover__number">{t('Chapter')} {String(chapter.data.order).padStart(2, '0')}</span>
+    <strong>{chapter.data.title}</strong>
+    <span>{chapter.data.cardIds.length} {t('illustrated references')} →</span>
   </a>)}
 </nav>

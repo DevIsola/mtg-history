@@ -1,10 +1,16 @@
 ---
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
 import PrintingMiniature from './PrintingMiniature.astro';
 import { characters } from '../data/characters';
+import { getCollection } from 'astro:content';
+import { localized } from '../utils/localization';
 import { historicalEvents } from '../data/events';
-import { withBase } from '../utils/paths';
 interface Props { chapterId: string; previousChapter?: { id: string; title: string } }
-const { chapterId, previousChapter } = Astro.props;
+const { chapterId, previousChapter: canonicalPreviousChapter } = Astro.props;
+const pageLocale = localeForPath(Astro.url.pathname);
+const previousEntry = pageLocale === 'pt-BR' && canonicalPreviousChapter ? await getCollection('chaptersPt').then(chapters => chapters.find(chapter => chapter.id === canonicalPreviousChapter.id)) : undefined;
+const previousChapter = canonicalPreviousChapter && { ...canonicalPreviousChapter, title: previousEntry?.data.title ?? canonicalPreviousChapter.title };
 const events = historicalEvents.filter(event => event.chapterId === chapterId);
 const occurrences = new Map<string, number>();
 for (const event of events) for (const id of new Set(event.characterIds)) {
@@ -12,37 +18,39 @@ for (const event of events) for (const id of new Set(event.characterIds)) {
 }
 const people = characters.filter(person => occurrences.has(person.id))
   .sort((a, b) => (occurrences.get(b.id) ?? 0) - (occurrences.get(a.id) ?? 0) || a.name.localeCompare(b.name))
-  .slice(0, 3);
-const highlightedEvents = events.slice(0, 2);
+  .slice(0, 3).map(person => localized('characters', person, pageLocale));
+const highlightedEvents = events.slice(0, 2).map(event => localized('events', event, pageLocale));
+
+const t = (english: string) => phrase(pageLocale, english);
 ---
 {(people.length > 0 || highlightedEvents.length > 0 || previousChapter) && (
-  <aside class="chapter-context-rail" aria-label="Related chapter records" data-chapter-context>
-    <h2>Explore this chapter</h2>
-    <p class="chapter-context-rail__note">Chapter-wide references, not a claim that every figure appears in this passage.</p>
+  <aside class="chapter-context-rail" aria-label={t("Related chapter records")} data-chapter-context>
+    <h2>{t("Explore this chapter")}</h2>
+    <p class="chapter-context-rail__note">{t("Chapter-wide references, not a claim that every figure appears in this passage.")}</p>
     {people.length > 0 && (
-      <section aria-label="People documented in this chapter">
-        <h3>People in the record</h3>
+      <section aria-label={t("People documented in this chapter")}>
+        <h3>{t("People in the record")}</h3>
         <ul>
           {people.map(person => (
-            <li><a href={withBase('characters/' + person.id + '/')}><PrintingMiniature printingId={person.featuredCardId} /><strong>{person.name}</strong><span>{person.role}</span></a></li>
+            <li><a href={localPath('characters/' + person.id + '/', pageLocale)}><PrintingMiniature printingId={person.featuredCardId} referenceLink={false} /><strong>{person.name}</strong><span>{person.role}</span></a></li>
           ))}
         </ul>
       </section>
     )}
     {highlightedEvents.length > 0 && (
-      <section aria-label="Selected historical events">
-        <h3>Documented events</h3>
+      <section aria-label={t("Selected historical events")}>
+        <h3>{t("Documented events")}</h3>
         <ul>
           {highlightedEvents.map(event => (
-            <li><a href={withBase('events/' + event.id + '/')}><strong>{event.title}</strong><span>{event.summary}</span></a></li>
+            <li><a href={localPath('events/' + event.id + '/', pageLocale)}><strong>{event.title}</strong><span>{event.summary}</span></a></li>
           ))}
         </ul>
       </section>
     )}
     {previousChapter && (
-      <section aria-label="Earlier chapter">
-        <h3>Earlier in the record</h3>
-        <a class="chapter-context-rail__previous" href={withBase('chapters/' + previousChapter.id + '/')}>
+      <section aria-label={t("Earlier chapter")}>
+        <h3>{t("Earlier in the record")}</h3>
+        <a class="chapter-context-rail__previous" href={localPath('chapters/' + previousChapter.id + '/', pageLocale)}>
           {previousChapter.title} <span aria-hidden="true">↗</span>
         </a>
       </section>

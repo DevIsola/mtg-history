@@ -3,16 +3,18 @@ import { getCollection } from 'astro:content';
 import { characters } from '../data/characters';
 import { historicalEvents } from '../data/events';
 import { characterRelationships } from '../data/relationships';
-import { portugueseEra } from '../utils/pt-catalog.mjs';
-import { withBase } from '../utils/paths';
-import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
+import { localeForPath, localPath, phrase } from '../utils/locale';
+import { archiveCard, cardLabels } from '../utils/card-localization';
+import { chapterCardUse } from '../utils/card-printings';
 
 interface Props { locale?: 'en' | 'pt-BR'; }
-const { locale = 'en' } = Astro.props;
+const { locale = localeForPath(Astro.url.pathname) } = Astro.props;
+const t = (english: string) => phrase(locale, english);
+const labels = cardLabels(locale);
 const pt = locale === 'pt-BR';
-const prefix = pt ? 'pt-br/' : '';
-const local = (path: string) => withBase(`${prefix}${path}`);
-const chapters = (await getCollection('chapters')).sort((a, b) => a.data.order - b.data.order);
+const local = (path: string) => localPath(path, locale);
+const canonicalChapters = await getCollection('chapters');
+const chapters = (locale === 'pt-BR' ? await getCollection('chaptersPt') : canonicalChapters).sort((a, b) => a.data.order - b.data.order);
 const selectedIds = ['thran', 'many-worlds', 'omenpaths'];
 const featured = selectedIds.map(id => {
   const chapter = chapters.find(item => item.id === id);
@@ -20,68 +22,67 @@ const featured = selectedIds.map(id => {
   return chapter;
 });
 const cardCatalog = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
-const illustration = chapterCardUse(featured[0], 0, cardCatalog);
-const evidenceHref = cardScryfallUrl(illustration);
-const heroImage = cardImageUrl(illustration.scryfallId);
-const heroSrcset = cardImageSrcset(illustration.scryfallId);
+const canonicalFeatured = canonicalChapters.find(chapter => chapter.id === featured[0].id)!;
+const canonicalIllustration = chapterCardUse(canonicalFeatured, 0, cardCatalog);
+const illustration = { ...canonicalIllustration, significance: featured[0].data.cards[0].significance };
+const displayed = archiveCard(illustration, locale);
+const evidenceHref = displayed.scryfallUrl;
+const heroImage = displayed.imageUrl;
+const heroSrcset = displayed.imageSrcset;
 
 type Destination = {
   id: string; number?: number; label: string; title: string; description: string;
-  href: string; englishOnly?: boolean;
+  href: string;
 };
 const destinations: Destination[] = [
   {
-    id: 'chapters', number: chapters.length, label: pt ? 'Capítulos' : 'Chapters',
-    title: pt ? 'Leia a história' : 'Read the history',
-    description: pt ? 'Onze capítulos organizados por períodos editoriais, não por uma única linha temporal universal.' : 'Eleven curated eras, arranged as an editorial reading sequence rather than one universal calendar.',
+    id: 'chapters', number: chapters.length, label: t("Chapters"),
+    title: t("Read the history"),
+    description: t("Eleven curated eras, arranged as an editorial reading sequence rather than one universal calendar."),
     href: local('timeline/'),
   },
   {
-    id: 'characters', number: characters.length, label: pt ? 'Personagens' : 'Characters',
-    title: pt ? 'Conheça os personagens' : 'Meet the characters',
-    description: pt ? 'Perfis de figuras que aparecem nos acontecimentos históricos.' : 'Profiles of the people behind the events and their connections across eras.',
+    id: 'characters', number: characters.length, label: t("Characters"),
+    title: t("Meet the characters"),
+    description: t("Profiles of the people behind the events and their connections across eras."),
     href: local('characters/'),
   },
   {
-    id: 'events', number: historicalEvents.length, label: pt ? 'Acontecimentos' : 'Events',
-    title: pt ? 'Explore os acontecimentos' : 'Trace the turning points',
-    description: pt ? 'Acontecimentos históricos vinculados aos capítulos e às figuras envolvidas.' : 'Historical events linked to chapters, participants, and selected illustrations.',
+    id: 'events', number: historicalEvents.length, label: t("Events"),
+    title: t("Trace the turning points"),
+    description: t("Historical events linked to chapters, participants, and selected illustrations."),
     href: local('events/'),
   },
   {
-    id: 'relationships', number: characterRelationships.length, label: pt ? 'Relações (EN)' : 'Relationships',
-    title: pt ? 'Veja as relações (EN)' : 'Follow the relationships',
-    description: pt ? 'Uma rede em inglês de alianças, rivalidades e outros vínculos documentados.' : 'An interactive network of documented alliances, conflicts, and family ties.',
-    href: withBase('relationships/'),
-    englishOnly: pt,
+    id: 'relationships', number: characterRelationships.length, label: t("Relationships"),
+    title: t("Follow the relationships"),
+    description: t("An interactive network of documented alliances, conflicts, and family ties."),
+    href: local('relationships/'),
   },
   {
     id: 'archive', number: chapters.reduce((total, chapter) => total + chapter.data.cardIds.length, 0),
-    label: pt ? 'Referências ilustradas' : 'Illustrated references',
-    title: pt ? 'Examine as cartas' : 'Examine the card archive',
-    description: pt ? 'Imagens associadas aos capítulos, com edições específicas e créditos dos artistas.' : 'Curated printings with artist credits and chapter-specific historical interpretation.',
+    label: t("Illustrated references"),
+    title: t("Examine the card archive"),
+    description: t("Curated printings with artist credits and chapter-specific historical interpretation."),
     href: local('archive/'),
   },
   {
-    id: 'glossary', label: pt ? 'Glossário (EN)' : 'Glossary',
-    title: pt ? 'Consulte o glossário (EN)' : 'Understand the terminology',
-    description: pt ? 'Termos de história e lore explicados em inglês.' : 'Short explanations of the places, concepts, and terms found in the narrative.',
-    href: withBase('glossary/'),
-    englishOnly: pt,
+    id: 'glossary', label: t("Glossary"),
+    title: t("Understand the terminology"),
+    description: t("Short explanations of the places, concepts, and terms found in the narrative."),
+    href: local('glossary/'),
   },
   {
-    id: 'paths', label: pt ? 'Percursos históricos (EN)' : 'History paths',
-    title: pt ? 'Siga outros percursos (EN)' : 'Follow a historical thread',
-    description: pt ? 'Percursos de leitura em inglês que conectam capítulos distintos.' : 'Curated reading sequences that connect events without merging distinct eras.',
-    href: withBase('paths/'),
-    englishOnly: pt,
+    id: 'paths', label: t("History paths"),
+    title: t("Follow a historical thread"),
+    description: t("Curated reading sequences that connect events without merging distinct eras."),
+    href: local('paths/'),
   },
   {
-    id: 'directory', label: pt ? 'Índice (EN)' : 'Encyclopedia directory',
-    title: pt ? 'Abra o índice completo (EN)' : 'Browse the full directory',
-    description: pt ? 'Índice em inglês com filtros por tipo de registro e capítulo.' : 'The existing structured directory, including record-type and chapter filters.',
-    href: withBase('discover/'),
-    englishOnly: pt,
+    id: 'directory', label: t("Encyclopedia directory"),
+    title: t("Browse the full directory"),
+    description: t("The existing structured directory, including record-type and chapter filters."),
+    href: local('discover/'),
   },
 ];
 ---
@@ -89,12 +90,10 @@ const destinations: Destination[] = [
   <section class="explore-hero" aria-labelledby="explore-heading">
     <div class="page-shell explore-hero__grid">
       <div class="explore-hero__copy">
-        <p class="eyebrow eyebrow--light">{pt ? 'Um atlas para o Multiverso' : 'The Multiverse, indexed'}</p>
-        <h1 id="explore-heading">{pt ? 'Explore a ' : 'Explore the '}<em>{pt ? 'história.' : 'archive.'}</em></h1>
+        <p class="eyebrow eyebrow--light">{t("The Multiverse, indexed")}</p>
+        <h1 id="explore-heading">{t("Explore the") + " "}<em>{t("archive.")}</em></h1>
         <p class="explore-hero__lead">
-          {pt
-            ? 'Comece por um período histórico, encontre uma pessoa ou acompanhe os acontecimentos que conectam mundos e personagens.'
-            : 'Begin with a historical era, follow a person, or investigate the events and printed cards that connect the stories.'}
+          {t("Begin with a historical era, follow a person, or investigate the events and printed cards that connect the stories.")}
         </p>
 
       </div>
@@ -106,29 +105,25 @@ const destinations: Destination[] = [
     <div class="page-shell">
       <div class="explore-section-heading">
         <div>
-          <p class="eyebrow">{pt ? 'Acervo histórico' : 'Navigate the collections'}</p>
-          <h2 class="section-title" id="explore-directory-heading">{pt ? 'Escolha o ' : 'Follow the '}<em>{pt ? 'assunto.' : 'evidence.'}</em></h2>
+          <p class="eyebrow">{t("Navigate the collections")}</p>
+          <h2 class="section-title" id="explore-directory-heading">{t("Follow the") + " "}<em>{t("evidence.")}</em></h2>
         </div>
-        <p>{pt
-          ? 'As contagens refletem os registros publicados. Referências ilustradas não representam, necessariamente, cenas históricas literais.'
-          : 'Counts reflect published data. An illustration can identify a person or theme rather than depict an exact historical event.'}</p>
+        <p>{t("Counts reflect published data. An illustration can identify a person or theme rather than depict an exact historical event.")}</p>
       </div>
       <div class="explore-directory__grid">
         {destinations.map(item => (
-          <a class="explore-destination" href={item.href} hreflang={item.englishOnly ? 'en' : undefined} data-explore-destination={item.id}>
+          <a class="explore-destination" href={item.href} data-explore-destination={item.id}>
             <span class="explore-destination__top">
               <span>{item.label}</span>
               {typeof item.number === 'number' && <strong>{item.number}</strong>}
             </span>
             <h3 class="explore-destination__title">{item.title}</h3>
             <span class="explore-destination__description">{item.description}</span>
-            <span class="explore-destination__action">{pt ? 'Abrir coleção' : 'Open collection'} <span aria-hidden="true">→</span></span>
+            <span class="explore-destination__action">{t("Open collection")} <span aria-hidden="true">→</span></span>
           </a>
         ))}
       </div>
-      <p class="explore-directory__note">{pt
-        ? 'Os dados históricos são separados das interpretações visuais. Consulte o capítulo, os créditos e a edição específica para avaliar uma imagem.'
-        : 'Historical sourcing and visual interpretation are separate. Consult the chapter, the artwork credit, and the exact printing when evaluating an image.'}</p>
+      <p class="explore-directory__note">{t("Historical sourcing and visual interpretation are separate. Consult the chapter, the artwork credit, and the exact printing when evaluating an image.")}</p>
     </div>
   </section>
 
@@ -136,21 +131,19 @@ const destinations: Destination[] = [
     <div class="page-shell">
       <div class="explore-section-heading">
         <div>
-          <p class="eyebrow">{pt ? 'Três portas de entrada' : 'Choose your starting point'}</p>
-          <h2 class="section-title" id="explore-ways-heading">{pt ? 'Uma história, ' : 'One history, '}<em>{pt ? 'muitos caminhos.' : 'many ways in.'}</em></h2>
+          <p class="eyebrow">{t("Choose your starting point")}</p>
+          <h2 class="section-title" id="explore-ways-heading">{t("One history,") + " "}<em>{t("many ways in.")}</em></h2>
         </div>
-        <p>{pt
-          ? 'Os períodos são agrupamentos editoriais. Narrativas em mundos diferentes podem acontecer ao mesmo tempo.'
-          : 'Chapters are editorial groupings: stories on different planes can overlap in time.'}</p>
+        <p>{t("Chapters are editorial groupings: stories on different planes can overlap in time.")}</p>
       </div>
       <div class="explore-featured">
         {featured.map((chapter, index) => (
           <a class="explore-feature" href={local(`chapters/${chapter.id}/`)}>
-            <span class="explore-feature__meta">{pt ? 'Capítulo' : 'Chapter'} {String(chapter.data.order).padStart(2, '0')}</span>
+            <span class="explore-feature__meta">{t("Chapter")} {String(chapter.data.order).padStart(2, '0')}</span>
             <span class="explore-feature__index" aria-hidden="true">0{index + 1}</span>
-            <h3>{pt ? portugueseEra(chapter.id).name : chapter.data.title}</h3>
-            <span class="explore-feature__description">{pt ? portugueseEra(chapter.id).summary : chapter.data.subtitle}</span>
-            <span class="explore-feature__link">{pt ? 'Ler em português' : 'Read this chapter'} →</span>
+            <h3>{chapter.data.title}</h3>
+            <span class="explore-feature__description">{chapter.data.subtitle}</span>
+            <span class="explore-feature__link">{t("Read this chapter")} →</span>
           </a>
         ))}
       </div>
@@ -159,20 +152,22 @@ const destinations: Destination[] = [
 
   <section class="explore-reference section-spacing"><div class="page-shell">
       <figure class="explore-hero__artifact">
-        <a href={evidenceHref} target="_blank" rel="noopener noreferrer" aria-label={`${illustration.name} — Scryfall`}>
+        <a href={evidenceHref} target="_blank" rel="noopener noreferrer" aria-label={`${displayed.name} — Scryfall`}>
           <img src={heroImage} srcset={heroSrcset} sizes="(max-width: 760px) 65vw, 280px"
             width="488" height="680" loading="eager" decoding="async"
-            alt={`${illustration.name}, ${pt ? 'ilustração de' : 'illustrated by'} ${illustration.artist}`} />
+            alt={`${displayed.name}, ${t("illustrated by")} ${displayed.artist}`} />
         </a>
         <figcaption>
-          <span>{pt ? 'Exemplo de referência ilustrada' : 'A curated illustrated reference'}</span>
-          <strong>{illustration.name}</strong>
-          <p>{pt ? 'Interpretação editorial (EN): ' : 'Editorial interpretation: '}{illustration.significance}</p>
-          <small>{pt ? 'Arte de' : 'Art by'} {illustration.artist} · {illustration.setCode.toUpperCase()} #{illustration.collectorNumber}</small>
-          <a href={evidenceHref} target="_blank" rel="noopener noreferrer">{pt ? 'Ver edição no Scryfall ↗' : 'Verify printing on Scryfall ↗'}</a>
+          <span>{t("A curated illustrated reference")}</span>
+          <strong>{displayed.name}</strong>
+          {pt && <small>{displayed.translated ? labels.language : labels.fallback}</small>}
+          <p>{t("Editorial interpretation:") + " "}{illustration.significance}</p>
+          <small>{t("Art by")} {displayed.artist} · {illustration.setCode.toUpperCase()} #{illustration.collectorNumber}</small>
+          <a href={evidenceHref} target="_blank" rel="noopener noreferrer">{t("Verify printing on Scryfall ↗")}</a>
+          {pt && displayed.translated && <a href={displayed.originalUrl} target="_blank" rel="noopener noreferrer">{labels.original}</a>}
         </figcaption>
       </figure>
-    <div><p class="eyebrow">{pt ? 'Busque nos textos' : 'Search the encyclopedia'}</p><h2 class="section-title">{pt ? 'Siga uma pista.' : 'Find your next thread.'}</h2><p>{pt ? 'Busque capítulos, personagens e acontecimentos no índice de textos já publicado.' : 'Find chapters, characters and events in the same full-text index used throughout the archive.'}</p><a class="button button--gold" href={local('search/')} data-search-palette-trigger>{pt ? 'Pesquisar no arquivo' : 'Search the archive'} <kbd aria-hidden="true">⌘ K</kbd></a></div>
+    <div><p class="eyebrow">{t("Search the encyclopedia")}</p><h2 class="section-title">{t("Find your next thread.")}</h2><p>{t("Find chapters, characters and events in the same full-text index used throughout the archive.")}</p><a class="button button--gold" href={local('search/')} data-search-palette-trigger>{t("Search the archive")} <kbd aria-hidden="true">⌘ K</kbd></a></div>
   </div></section>
 </div>
 

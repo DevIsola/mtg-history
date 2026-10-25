@@ -1,6 +1,8 @@
 ---
 import HistoricalCard from './HistoricalCard.astro';
 import { getEntry } from 'astro:content';
+import { archiveCard, cardLabels } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
 interface Props {
   cardId: string | { id: string; collection: 'cards' };
   significance: string;
@@ -10,13 +12,16 @@ const { cardId, significance } = Astro.props;
 const id = typeof cardId === 'string' ? cardId : cardId.id;
 const printing = await getEntry('cards', id);
 if (!printing) throw new Error(`Missing canonical card ${id}`);
+const locale = localeForPath(Astro.url.pathname);
+const labels = cardLabels(locale);
+const displayed = archiveCard({ ...printing.data, scryfallId: printing.id }, locale);
 ---
 
-<aside class="historical-moment" aria-label={'Historical illustration: ' + printing.data.name}>
+<aside class="historical-moment" aria-label={(locale === 'pt-BR' ? 'Ilustração histórica: ' : 'Historical illustration: ') + displayed.name}>
   <div class="historical-moment__copy">
     <p class="historical-moment__eyebrow">
       <span aria-hidden="true">✦</span>
-      From the illustrated archive
+      {labels.archive}
     </p>
     <div class="historical-moment__narrative">
       <slot />

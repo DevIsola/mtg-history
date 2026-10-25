@@ -1,15 +1,19 @@
-
 ---
+import { localeForPath, phrase } from '../utils/locale';
+
 import type { CollectionEntry } from 'astro:content';
 
 type Source =
-  CollectionEntry<'chapters'>['data']['sources'][number];
+  CollectionEntry<'chapters' | 'chaptersPt'>['data']['sources'][number];
 
 interface Props {
   sources: Source[];
 }
 
 const { sources } = Astro.props;
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 ---
 
 {sources.length > 0 && (
@@ -18,10 +22,10 @@ const { sources } = Astro.props;
     class="chapter-sources"
     aria-labelledby="chapter-sources-title"
   >
-    <p class="eyebrow">Historical research</p>
+    <p class="eyebrow">{t("Historical research")}</p>
 
     <h2 id="chapter-sources-title">
-      Sources &amp; Further Reading
+      {t("Sources & Further Reading")}
     </h2>
 
     <ol>
@@ -47,8 +51,8 @@ const { sources } = Astro.props;
             <p>
               {source.author && `${source.author} · `}
               {source.kind === 'official'
-                ? 'Official Magic publication'
-                : 'Book'}
+                ? t('Official Magic publication')
+                : t('Book')}
               {source.year && ` · ${source.year}`}
             </p>
           </div>

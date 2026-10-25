@@ -1,34 +1,40 @@
-
 ---
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
 import { historicalEvents } from '../data/events';
-import { withBase } from '../utils/paths';
+import { localized } from '../utils/localization';
 
 interface Props {
   id: string;
 }
 
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
+
 const { id } = Astro.props;
 
-const event = historicalEvents.find(
+const canonicalEvent = historicalEvents.find(
   (entry) => entry.id === id
 );
 
-if (!event) {
+if (!canonicalEvent) {
   throw new Error(`Unknown historical event: ${id}`);
 }
+const event = localized('events', canonicalEvent, pageLocale);
+
 ---
 
 <aside
   class="historical-event-reference"
-  aria-label="Related historical event"
+  aria-label={t("Related historical event")}
 >
   <p class="historical-event-reference__eyebrow">
-    Explore this historical event
+    {t("Explore this historical event")}
   </p>
 
   <a
     class="historical-event-reference__link"
-    href={withBase(`events/${event.id}/`)}
+    href={localPath(`events/${event.id}/`, pageLocale)}
   >
     <strong>{event.title}</strong>
     <span aria-hidden="true">↗</span>

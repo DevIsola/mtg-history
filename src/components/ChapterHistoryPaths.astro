@@ -1,40 +1,50 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { localeForPath, localPath, phrase } from '../utils/locale';
+
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { pathsForChapter } from '../data/history-paths.mjs';
-import { withBase } from '../utils/paths';
+import { localized } from '../utils/localization';
 
 interface Props {
   chapterId: string;
-  chapters: CollectionEntry<'chapters'>[];
+  chapters: CollectionEntry<'chapters' | 'chaptersPt'>[];
 }
-const { chapterId, chapters } = Astro.props;
+const { chapterId, chapters: providedChapters } = Astro.props;
+const pageLocale = localeForPath(Astro.url.pathname);
+const chapterTranslations = new Map((pageLocale === 'pt-BR' ? await getCollection('chaptersPt') : []).map(chapter => [chapter.id, chapter]));
+const chapters = providedChapters.map(chapter => chapterTranslations.get(chapter.id) ?? chapter);
 const byId = new Map(chapters.map((chapter) => [chapter.id, chapter.data.title]));
-const matches = pathsForChapter(chapterId);
+const matches = pathsForChapter(chapterId).map(match => {
+  const path = localized('paths', match.path, pageLocale);
+  return { ...match, path, current: path.steps[match.index], next: path.steps[match.index + 1] ?? null };
+});
+
+const t = (english: string) => phrase(pageLocale, english);
 ---
 
 {matches.length > 0 && (
   <aside class="chapter-history-paths" data-history-paths aria-labelledby="history-paths-heading">
-    <p class="eyebrow">Beyond this chapter</p>
-    <h2 id="history-paths-heading">Follow the historical connections</h2>
-    <p>Curated reading routes trace consequences across different eras. They are not a single calendar of the Multiverse.</p>
+    <p class="eyebrow">{t("Beyond this chapter")}</p>
+    <h2 id="history-paths-heading">{t("Follow the historical connections")}</h2>
+    <p>{t("Curated reading routes trace consequences across different eras. They are not a single calendar of the Multiverse.")}</p>
     <ul>
       {matches.map(({ path, index, next }) => (
         <li>
-          <a href={withBase(`paths/#${path.id}`)}>
+          <a href={localPath(`paths/#${path.id}`, pageLocale)}>
             <strong>{path.title}</strong>
-            <span>{index + 1} of {path.steps.length} chapters in this reading path</span>
+            <span>{index + 1} {t('of')} {path.steps.length} {t('chapters in this reading path')}</span>
           </a>
           {next && (
             <p>
-              Continue with <a href={withBase(`events/${next.eventId}/`)}>{byId.get(next.chapterId)}</a>.
+              {t("Continue with")} <a href={localPath(`events/${next.eventId}/`, pageLocale)}>{byId.get(next.chapterId)}</a>.
               {' '}{next.context}
             </p>
           )}
-          {!next && <p>This is the final stop. Review the full reading path to revisit its earlier connections.</p>}
+          {!next && <p>{t("This is the final stop. Review the full reading path to revisit its earlier connections.")}</p>}
         </li>
       ))}
     </ul>
-    <a class="text-link" href={withBase('paths/')}>Explore all historical reading paths →</a>
+    <a class="text-link" href={localPath('paths/', pageLocale)}>{t("Explore all historical reading paths →")}</a>
   </aside>
 )}
 

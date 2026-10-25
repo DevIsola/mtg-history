@@ -7,6 +7,9 @@ import displayFont from '@fontsource-variable/fraunces/files/fraunces-latin-wght
 import bodyFont from '@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2?url';
 import '../styles/global.scss';
 import SiteHeader from '../components/SiteHeader.astro';
+import { getEntry } from 'astro:content';
+import { archiveCard } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
 import atmosphereSource from '../assets/phase15-atmosphere.jpg';
 import SiteFooter from '../components/SiteFooter.astro';
 import CardArtworkViewer from '../components/CardArtworkViewer.astro';
@@ -19,14 +22,17 @@ interface Props {
   locale?: 'en' | 'pt-BR';
   printingId?: string;
 }
-const { title, description, locale = 'en', printingId } = Astro.props;
+const { title, description, locale = localeForPath(Astro.url.pathname), printingId } = Astro.props;
 const atmosphere = atmosphereSource;
 const ui = uiFor(locale);
 const alternates = routeAlternates(Astro.url.pathname, Astro.site, withBase(''));
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const socialTitle = `${title} | Chronicles of the Multiverse`;
+const brand = locale === "pt-BR" ? "Crônicas do Multiverso" : "Chronicles of the Multiverse";
+const socialTitle = `${title} | ${brand}`;
+const canonicalCard = printingId ? await getEntry("cards", printingId) : undefined;
+const displayPrintingId = canonicalCard ? archiveCard({ ...canonicalCard.data, scryfallId: canonicalCard.id }, locale).printingId : printingId;
 const socialImage = new URL(withBase('social-preview.png'), Astro.site).href;
-const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass on a dark star map';
+const socialImageAlt = locale === 'pt-BR' ? 'Crônicas do Multiverso: uma bússola celestial dourada sobre um mapa estelar escuro' : 'Chronicles of the Multiverse: a golden celestial compass on a dark star map';
 ---
 <!doctype html>
 <html lang={locale}>
@@ -64,11 +70,11 @@ const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass
 
     <meta name="theme-color" content="#11191d" />
     <meta name="description" content={description} />
-    {printingId && <meta name="archive-printing" content={printingId} data-pagefind-meta="printingId[content]" />}
+    {printingId && <meta name="archive-printing" content={displayPrintingId} data-pagefind-meta="printingId[content]" />}
     <link rel="canonical" href={canonical} />
     {alternates.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Chronicles of the Multiverse" />
+    <meta property="og:site_name" content={brand} />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
@@ -83,7 +89,7 @@ const socialImageAlt = 'Chronicles of the Multiverse: a golden celestial compass
     <meta name="twitter:title" content={socialTitle} />
     <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
-    <title>{title} | Chronicles of the Multiverse</title>
+    <title>{socialTitle}</title>
   </head>
   <body class="editorial-design" style={`--site-atmosphere: url("${atmosphere.src}")`}>
     <a class="skip-link" href="#main-content">{ui.skip}</a>

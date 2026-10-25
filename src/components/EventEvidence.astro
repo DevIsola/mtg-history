@@ -1,41 +1,46 @@
 ---
+import { localeForPath, phrase } from '../utils/locale';
+
 import type { EventProvenanceEntry } from '../data/event-provenance.mjs';
 interface Props { entry: EventProvenanceEntry; }
 const { entry } = Astro.props;
+
+const pageLocale = localeForPath(Astro.url.pathname);
+const t = (english: string) => phrase(pageLocale, english);
 ---
 <section class="event-evidence" aria-labelledby="event-evidence-heading">
-  <p class="eyebrow">Source and chronology review</p>
-  <h3 id="event-evidence-heading">Evidence for selected claims</h3>
+  <p class="eyebrow">{t("Source and chronology review")}</p>
+  <h3 id="event-evidence-heading">{t("Evidence for selected claims")}</h3>
   <dl>
-    <div><dt>In-world time ({entry.chronology.precision})</dt><dd><strong>{entry.chronology.label}</strong></dd></div>
-    <div><dt>Chronology qualification</dt><dd>{entry.chronology.basis}</dd></div>
+    <div><dt>{t('In-world time')} ({t(entry.chronology.precision)})</dt><dd><strong>{entry.chronology.label}</strong></dd></div>
+    <div><dt>{t("Chronology qualification")}</dt><dd>{entry.chronology.basis}</dd></div>
   </dl>
-  <h4>Official source references</h4>
+  <h4>{t("Official source references")}</h4>
   <ul>
     {entry.sources.map((source) => (
       <li>
         <a href={source.url} rel="noopener noreferrer">{source.title} ↗</a>
-        <span class="event-evidence__role">{source.role === 'story' ? 'Story' : source.role === 'retrospective' ? 'Retrospective account' : 'Design commentary'}</span>
+        <span class="event-evidence__role">{source.role === 'story' ? t('Story') : source.role === 'retrospective' ? t('Retrospective account') : t('Design commentary')}</span>
         <p>{source.supports}</p>
       </li>
     ))}
   </ul>
-  <p><strong>Artwork context:</strong> {entry.artworkNote}</p>
+  <p><strong>{t("Artwork context:")}</strong> {entry.artworkNote}</p>
   {entry.unresolvedClaims && entry.unresolvedClaims.length > 0 && (
     <section class="event-evidence__gaps" aria-labelledby="event-evidence-gaps-heading">
-      <h4 id="event-evidence-gaps-heading">Claims still awaiting primary-source confirmation</h4>
-      <p>These details remain in the historical narrative, but the sources listed above do not independently establish them.</p>
+      <h4 id="event-evidence-gaps-heading">{t("Claims still awaiting primary-source confirmation")}</h4>
+      <p>{t("These details remain in the historical narrative, but the sources listed above do not independently establish them.")}</p>
       <ul>
         {entry.unresolvedClaims.map((gap) => (
           <li>
             <strong>{gap.claim}</strong>
-            <p><strong>Evidence needed:</strong> {gap.requiredEvidence}</p>
+            <p><strong>{t("Evidence needed:")}</strong> {gap.requiredEvidence}</p>
           </li>
         ))}
       </ul>
     </section>
   )}
-  <p class="event-evidence__limit">Sources support the claims identified here, not necessarily every sentence in the narrative. Publication dates are not in-world dates.</p>
+  <p class="event-evidence__limit">{t("Sources support the claims identified here, not necessarily every sentence in the narrative. Publication dates are not in-world dates.")}</p>
 </section>
 <style lang="scss">
   .event-evidence { margin-block: 2rem; padding: clamp(1rem, 3vw, 1.5rem); background: var(--paper-white); border: 1px solid var(--line); border-radius: .85rem; color: var(--ink); }

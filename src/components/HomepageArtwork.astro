@@ -1,36 +1,29 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import { chapterCardUse, cardImageUrl, cardImageSrcset, cardScryfallUrl } from '../utils/card-printings';
-import { localizedArchiveCard } from '../utils/pt-printings.mjs';
-import ptCatalog from '../data/pt-printings.json';
+import { chapterCardUse } from '../utils/card-printings';
+import { archiveCard, cardLabels } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
 
 interface Props {
   chapterId: string;
   locale?: 'en' | 'pt-BR';
   variant?: 'hero' | 'tile' | 'editorial';
 }
-const { chapterId, locale = 'en', variant = 'tile' } = Astro.props;
+const { chapterId, locale = localeForPath(Astro.url.pathname), variant = 'tile' } = Astro.props;
 const pt = locale === 'pt-BR';
 const chapter = await getEntry('chapters', chapterId);
+const editorialChapter = pt ? await getEntry('chaptersPt', chapterId) : chapter;
+if (!editorialChapter) throw new Error(`Homepage: missing localized chapter ${chapterId}`);
+const labels = cardLabels(locale);
 if (!chapter) throw new Error(`Homepage: unknown chapter ${chapterId}`);
 const printings = new Map((await getCollection('cards')).map(({ id, data }) => [id, data]));
 const canonical = chapterCardUse(chapter, 0, printings);
-const displayed = pt ? localizedArchiveCard(canonical, ptCatalog) : {
-  canonicalId: canonical.scryfallId,
-  printingId: canonical.scryfallId,
-  name: canonical.name,
-  artist: canonical.artist,
-  setCode: canonical.setCode,
-  collectorNumber: canonical.collectorNumber,
-  imageUrl: cardImageUrl(canonical.scryfallId),
-  imageSrcset: cardImageSrcset(canonical.scryfallId),
-  scryfallUrl: cardScryfallUrl(canonical),
-  translated: false,
-};
+const significance = editorialChapter.data.cards[0].significance;
+const displayed = archiveCard(canonical, locale);
 ---
 <figure class={`homepage-artwork homepage-artwork--${variant}`}
   data-home-artwork data-canonical-id={canonical.scryfallId}
-  data-displayed-id={displayed.printingId}>
+  data-displayed-id={displayed.printingId} data-language={displayed.language}>
   <a class="homepage-artwork__image" href={displayed.scryfallUrl} target="_blank"
     rel="noopener noreferrer"
     aria-label={pt ? `Ver a impressão de ${displayed.name} no Scryfall` : `View the exact ${displayed.name} printing on Scryfall`}>
@@ -46,9 +39,10 @@ const displayed = pt ? localizedArchiveCard(canonical, ptCatalog) : {
     <strong>{displayed.name}</strong>
     <span class="homepage-artwork__credit">{displayed.artist} · {displayed.setCode.toUpperCase()} #{displayed.collectorNumber}</span>
     <details class="homepage-artwork__context">
-      <summary>{pt ? 'Contexto editorial (EN)' : 'Historical interpretation'}</summary>
-      <p>{canonical.significance}</p>
-      {pt && <p>{'A interpretação editorial acima permanece em inglês. A impressão canônica continua vinculada à referência histórica original.'}</p>}
+      <summary>{pt ? 'Interpretação histórica' : 'Historical interpretation'}</summary>
+      <p>{significance}</p>
+      {pt && <p>A ilustração selecionada não comprova sozinha a interpretação histórica. A impressão canônica continua vinculada à referência histórica original.</p>}
+      {pt && <a href={displayed.originalUrl} target="_blank" rel="noopener noreferrer">{labels.original}</a>}
     </details>
   </figcaption>
 </figure>

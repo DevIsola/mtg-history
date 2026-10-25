@@ -1,13 +1,20 @@
 ---
 import { getEntry } from 'astro:content';
-import { cardImageUrl, cardImageSrcset } from '../utils/card-printings';
-interface Props { printingId: string; }
-const { printingId } = Astro.props;
+import { archiveCard, cardLabels } from '../utils/card-localization';
+import { localeForPath } from '../utils/locale';
+interface Props { printingId: string; referenceLink?: boolean; }
+const { printingId, referenceLink = true } = Astro.props;
 const printing = await getEntry('cards', printingId);
 if (!printing) throw new Error('Missing printing ' + printingId);
-const card = printing.data;
+const locale = localeForPath(Astro.url.pathname);
+const pt = locale === 'pt-BR';
+const labels = cardLabels(locale);
+const card = archiveCard({ ...printing.data, scryfallId: printing.id }, locale);
 ---
-<figure class="printing-miniature" data-printing-miniature={printingId}>
-  <img src={cardImageUrl(printingId)} srcset={cardImageSrcset(printingId)} sizes="80px" width="488" height="680" loading="lazy" decoding="async" alt={card.name + ', illustrated by ' + card.artist} />
-  <figcaption>{card.name}<span>{card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</span></figcaption>
+<figure class="printing-miniature" data-printing-miniature={printingId} data-canonical-id={printingId} data-displayed-id={card.printingId} data-language={card.language} data-original-source={card.originalUrl}>
+  <img src={card.imageUrl} srcset={card.imageSrcset} sizes="80px" width="488" height="680" loading="lazy" decoding="async" alt={card.name + (pt ? ', ilustração de ' : ', illustrated by ') + card.artist} />
+  <figcaption>{card.name}<span>{card.artist} · {card.setCode.toUpperCase()} #{card.collectorNumber}</span>
+    {pt && <span>{card.translated ? labels.language : labels.fallback}</span>}
+    {pt && referenceLink && <a href={card.originalUrl} target="_blank" rel="noopener noreferrer">{labels.original}</a>}
+  </figcaption>
 </figure>
